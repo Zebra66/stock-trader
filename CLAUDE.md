@@ -119,6 +119,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ### Code Quality & Git
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
+- **Commit Prefix:** ALL commits made autonomously by the agent MUST be prefixed with `[agent]` in the commit message (e.g. `[agent] feat: update trading strategy`). This distinguishes agent commits from manual human commits and allows filtering.
 
 ### Bun + TypeScript Best Practices
 - **Native APIs:** Use native web standards like `fetch`, `Response`, and `Request` over third-party libraries (e.g., avoid `axios` or `node-fetch`).
