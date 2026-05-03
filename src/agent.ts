@@ -80,7 +80,7 @@ async function runAgent() {
   let modelName = "";
 
   if (mode === 'hourly') {
-    modelName = "gemini-1.5-pro";
+    modelName = "gemini-2.5-pro";
     prompt = `You are the Hourly Macro Strategist Agent for a standalone stock trader system designed to beat the S&P 500 over 3 months.
 Your Investment Universe is: ${THEMATIC_UNIVERSE}
 
@@ -92,7 +92,7 @@ Your tasks:
 5. Use 'writeFile' to completely update 'memory/MEMORY.md' with your new strategic directive. You must leave a clear, concise instruction for the 10-minute tactical agent to execute.
 6. You may also rewrite your own prompts or commands if you find a better strategy.`;
   } else if (mode === 'tactical') {
-    modelName = "gemini-1.5-flash";
+    modelName = "gemini-2.5-flash";
     prompt = `You are the 10-Minute Tactical Executor Agent for a stock trader system.
 Your Investment Universe is: ${THEMATIC_UNIVERSE}
 
