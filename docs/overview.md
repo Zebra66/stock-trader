@@ -29,10 +29,11 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 │  │  harness.ts  (single always-on process)              │   │
 │  │                                                      │   │
 │  │  Every 10 min:                                       │   │
-│  │    1. git pull origin main                           │   │
-│  │    2. Check market open (Alpaca API)                 │   │
-│  │    3. If 60 min elapsed → spawn agent hourly        │   │
-│  │    4. Spawn agent tactical                           │   │
+│  │    1. Check market open (Alpaca API)                 │   │
+│  │    2. If closed → skip everything, sleep 10 min      │   │
+│  │    3. git pull origin main          ← only if open   │   │
+│  │    4. If 60 min elapsed → spawn agent hourly        │   │
+│  │    5. Spawn agent tactical                           │   │
 │  │                                                      │   │
 │  │  Always-on co-routines:                              │   │
 │  │    • Web Dashboard (Elysia, port 3000)               │   │
@@ -44,17 +45,19 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 │  ┌───────────────┐          ┌──────────────────┐            │
 │  │  agent.ts     │          │  agent.ts         │           │
 │  │  mode=hourly  │          │  mode=tactical    │           │
-│  │  (gemini-2.5- │          │  (gemini-2.5-     │           │
-│  │   pro)        │          │   flash)          │           │
+│  │  (gemini-     │          │  (gemini-         │           │
+│  │  3.1-pro-     │          │  3-flash-         │           │
+│  │  preview)     │          │  preview)         │           │
 │  └───────┬───────┘          └────────┬──────────┘           │
 │          │ Function Calls            │ Function Calls        │
 │          ▼                           ▼                       │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │  3 Gemini Tools (registered as Function Declarations)│    │
+│  │  4 Registered Gemini Tools                          │    │
 │  │                                                     │    │
 │  │  readFile(path)          → Bun.file().text()        │    │
 │  │  writeFile(path,content) → Bun.write()              │    │
 │  │  executeBash(command)    → Bun.spawn(['sh','-c'...])│    │
+│  │  googleSearch (built-in) → Live web search          │    │
 │  └──────────────┬──────────────────────────────────────┘    │
 │                 │                                            │
 │     ┌───────────┴────────────────────────────────┐          │
@@ -70,42 +73,43 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 
 ## The 10-Minute Tactical Cycle
 
-Runs every 10 minutes while the market is open. Uses **Gemini 2.5 Flash** (fast, cheap).
+Runs every 10 minutes **while the market is open**. Uses **Gemini 3 Flash** (fast, low cost).
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  TACTICAL CYCLE (every 10 min)                               │
+│  TACTICAL CYCLE (every 10 min, market hours only)            │
 │                                                              │
-│  1. harness.ts: git pull origin main                         │
-│     └─ Any code/prompt changes from the previous cycle       │
-│        are now live before the next agent run                │
+│  1. isMarketOpen() — if closed, skip everything              │
 │                                                              │
-│  2. harness.ts: isMarketOpen() via Alpaca                    │
-│     └─ Skip entire cycle if market is closed                 │
+│  2. git pull origin main                                     │
+│     └─ agent.ts (spawned fresh each cycle) always picks up  │
+│        the latest code automatically                         │
 │                                                              │
 │  3. Bun.spawn → agent.ts tactical                            │
 │                                                              │
-│  4. agent.ts sends prompt to Gemini Flash:                   │
-│     "Read MEMORY.md, check positions, check prices,          │
-│      execute orders per the macro directive,                 │
-│      then commit memory changes to git."                     │
+│  4. Gemini 3 Flash reads state:                              │
+│     → readFile("memory/MEMORY.md") — macro directive        │
+│     → readFile("memory/todo.md")   — buy/sell conditions    │
 │                                                              │
-│  5. Gemini calls tools in a loop:                            │
-│     → readFile("memory/MEMORY.md")                           │
-│     → executeBash("bun run src/tools/alpaca_cli.ts           │
-│                    get-positions")                           │
-│     → executeBash("bun run src/tools/alpaca_cli.ts           │
-│                    get-latest-price --symbol NVDA")          │
-│     → executeBash("bun run src/tools/alpaca_cli.ts           │
-│                    submit-order --symbol NVDA --qty 5        │
-│                    --side buy")                              │
-│     → writeFile("memory/MEMORY.md", "<updated summary>")    │
-│     → executeBash("git add memory/ && git commit -m          │
-│                    '[agent] tactical: bought NVDA x5'        │
-│                    && git push")                             │
+│  5. Gets live portfolio + market data:                       │
+│     → alpaca_cli get-account                                 │
+│     → alpaca_cli get-positions                               │
+│     → alpaca_cli get-latest-price --symbol <each symbol>    │
 │                                                              │
-│  6. agent.ts process exits                                   │
-│  7. harness.ts waits 10 min, repeats                         │
+│  6. Google Search: quick news check on any symbol            │
+│     before executing an order                                │
+│                                                              │
+│  7. Executes orders matching todo.md conditions:             │
+│     → alpaca_cli submit-order --symbol NVDA --qty 5          │
+│                               --side buy                     │
+│                                                              │
+│  8. Updates state and commits:                               │
+│     → writeFile("memory/MEMORY.md") — execution summary     │
+│     → writeFile("memory/todo.md")   — update/close flags    │
+│     → git add memory/ && git commit -m "[agent] tactical:…" │
+│     → git push                                               │
+│                                                              │
+│  9. agent.ts process exits                                   │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -113,79 +117,105 @@ Runs every 10 minutes while the market is open. Uses **Gemini 2.5 Flash** (fast,
 
 ## The 1-Hour Macro Strategy Cycle
 
-Runs once per hour (the first 10-min tick where 60+ minutes have elapsed since the last hourly run). Uses **Gemini 2.5 Pro** (more capable, slightly more expensive).
+Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses **Gemini 3.1 Pro** (more capable, deeper reasoning).
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│  MACRO CYCLE (every 60 min)                                  │
+│  MACRO CYCLE (every 60 min, market hours only)               │
 │                                                              │
 │  1. Bun.spawn → agent.ts hourly                              │
 │                                                              │
-│  2. agent.ts sends prompt to Gemini Pro:                     │
-│     "Read memory files, evaluate multi-timeframe             │
-│      performance for key symbols (1w to 3y), optionally      │
-│      research top investor filings, formulate macro          │
-│      strategy, rewrite MEMORY.md with clear directive        │
-│      for the next 60 minutes of tactical cycles."            │
+│  2. Gemini 3.1 Pro reads current state:                      │
+│     → readFile("memory/MEMORY.md") — last directive + exec  │
+│     → readFile("memory/todo.md")   — tactical flags/issues  │
 │                                                              │
-│  3. Gemini calls tools in a loop:                            │
-│     → readFile("memory/MEMORY.md")                           │
-│     → readFile("memory/todo.md")                             │
-│     → executeBash("bun run src/tools/fmp_cli.ts              │
-│                    get-historical-performance                 │
-│                    --symbol QQQ")                            │
-│     → executeBash("bun run src/tools/fmp_cli.ts              │
-│                    get-analyst-estimates --symbol NVDA")     │
-│     → writeFile("memory/MEMORY.md", "<new strategy>")        │
-│     → writeFile("memory/todo.md", "<updated tasks>")         │
-│     → executeBash("git add memory/ && git commit -m          │
-│                    '[agent] hourly: updated macro strategy'  │
-│                    && git push")                             │
+│  3. The model decides which data it needs, then gathers it:  │
+│     → alpaca_cli get-positions + get-account                 │
+│     → fmp_cli get-historical-performance on ALL symbols      │
+│       (1w, 1m, 3m, 6m, 1y, 3y)                             │
+│     → fmp_cli get-analyst-estimates on key symbols           │
+│     → Google Search: breaking news, top investor moves,      │
+│       earnings calendars, macro events, analyst upgrades     │
 │                                                              │
-│  4. agent.ts process exits                                   │
-│  5. Tactical cycle runs immediately after (same tick)        │
+│  4. Analyses:                                                │
+│     - Are we in the right sectors?                           │
+│     - What did the tactical agent flag in todo.md?           │
+│     - Has anything changed that warrants a strategy shift?   │
+│                                                              │
+│  5. Writes new macro directive:                              │
+│     → writeFile("memory/MEMORY.md"):                         │
+│         • Current thesis                                     │
+│         • Priority actions for next hour                     │
+│         • Symbol | Bias | Rationale | Target % table         │
+│     → writeFile("memory/todo.md"):                           │
+│         • "BUY <T> if price < X — rationale"                 │
+│         • "SELL <T> if price > X or < Y — rationale"         │
+│         • "HOLD <T> — target allocation Z%"                  │
+│                                                              │
+│  6. Commits:                                                 │
+│     → git add memory/ && git commit -m "[agent] hourly:…"   │
+│     → git push                                               │
+│                                                              │
+│  7. agent.ts exits, then tactical cycle runs immediately     │
 └──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## What the Agent "Sees" — Its Workspace
+## The 4 Registered Gemini Tools
 
-The agent's working directory is the repository root. When it boots, it has access to:
-
-| Path | Purpose |
-|---|---|
-| `memory/MEMORY.md` | Primary inter-cycle communication. The Macro agent writes the strategy here; the Tactical agent reads it. |
-| `memory/todo.md` | Backlog of pending tasks/investigations for the agent. |
-| `memory/dry_run_ledger.json` | Manual bookkeeping ledger (used by the agent to track virtual trades if needed). |
-| `src/tools/alpaca_cli.ts` | CLI binary: account info, positions, prices, order execution. |
-| `src/tools/fmp_cli.ts` | CLI binary: analyst estimates, 1w–3y historical performance. |
-| `src/tools/system_cli.ts` | CLI binary: read/write files. |
-| `skills/` | Coding/debugging/trading skill documentation for the agent to read. |
-| `docs/` | Project documentation. |
-
-The agent can **read, write, and execute anything in this tree** via its 3 tools.
-
----
-
-## The 3 Registered Gemini Tools
-
-These are the only capabilities directly registered with the Gemini Function Calling API. Everything else is accessed via `executeBash`.
+These are the capabilities registered directly with the Gemini Function Calling API.
 
 | Tool | Signature | Implementation |
 |---|---|---|
 | `readFile` | `readFile(path: string)` | `Bun.file(path).text()` |
 | `writeFile` | `writeFile(path: string, content: string)` | `Bun.write(path, content)` |
 | `executeBash` | `executeBash(command: string)` | `Bun.spawn(['sh', '-c', command])` |
+| `googleSearch` | Built-in Gemini tool | Live Google Search results |
 
-The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are invoked **through** `executeBash`, not registered as separate tools. This design keeps the Gemini tool surface minimal while giving the agent full flexibility to discover and invoke any CLI command.
+The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are invoked **through** `executeBash` — this keeps the Gemini tool surface minimal while giving the agent full flexibility to discover and invoke any CLI command.
+
+**Google Search is used for:**
+- Breaking market news and macro events
+- Top investor portfolio filings (Burry, Ackman, Dalio, Buffett, Cathie Wood, etc.)
+- Analyst upgrades/downgrades and price target changes
+- Buy/sell timing best practices
+- Pre-trade news checks before executing any order
 
 ---
 
-## How Data Flows Between Harness and TypeScript App
+## What the Agent "Sees" — Workspace Structure
 
-The harness and the web dashboard share a single OS process, so state is communicated via **in-memory module-level variables** in `harness.ts`:
+The agent's working directory is the repository root. It has access to:
 
+| Path | Purpose |
+|---|---|
+| `memory/MEMORY.md` | **Primary communication bus.** Macro agent writes strategy; Tactical agent reads and executes. Both update after each cycle. |
+| `memory/todo.md` | **Action queue.** Macro writes buy/sell conditions; Tactical checks and clears them each cycle. |
+| `memory/dry_run_ledger.json` | Optional virtual ledger for manual bookkeeping. |
+| `src/tools/alpaca_cli.ts` | CLI: account info, positions, prices, order execution. |
+| `src/tools/fmp_cli.ts` | CLI: analyst estimates, 1w–3y historical performance. |
+| `src/tools/system_cli.ts` | CLI: read/write files. |
+| `skills/` | Skill docs the agent can read to improve its own approach. |
+| `docs/` | Project documentation. |
+
+---
+
+## How Data Flows Between Components
+
+### Inter-cycle state (agent → agent)
+```
+Hourly Agent writes:              Tactical Agent reads:
+  memory/MEMORY.md  ──────────→    memory/MEMORY.md (macro directive)
+  memory/todo.md    ──────────→    memory/todo.md   (buy/sell conditions)
+
+Tactical Agent writes:            Hourly Agent reads next cycle:
+  memory/MEMORY.md  (append) ─→    memory/MEMORY.md (exec summary)
+  memory/todo.md    (update) ─→    memory/todo.md   (flags/issues)
+```
+
+### Pause/Resume (dashboard ↔ harness)
+The harness and web dashboard share a single OS process, so the pause state is a simple in-memory variable:
 ```
 harness.ts                     web/server.ts
 ─────────────────────────────────────────────
@@ -194,26 +224,44 @@ let isPaused = false;  ←───── import { getPaused, setPaused }
 setPaused(true)        ←───── POST /api/toggle
 ```
 
-The dashboard also reads `memory/MEMORY.md` directly from disk on each request — no in-memory caching — so it always reflects the latest state written by the agent.
-
 ---
 
 ## Git as the Communication Bus
 
 Git is a first-class citizen of this system — not just version control. It serves two roles:
 
-1. **State persistence**: The agent writes `memory/MEMORY.md` and commits it. On the next cycle the harness runs `git pull`, so if running on multiple machines (or Cloud Run), all instances stay in sync.
+### 1. State persistence across machines
+The agent writes `memory/MEMORY.md` and commits it. The next cycle runs `git pull`, so if deployed to Cloud Run or running on multiple machines, all instances stay in sync.
 
-2. **Self-evolution**: The agent may rewrite its own source files (`src/agent.ts`, prompts, CLI tools) and commit them. On the next `git pull`, the harness picks up those changes, meaning the agent's self-modifications are live within one 10-minute cycle.
+### 2. Self-evolution
+The agent may rewrite its own source files (`src/agent.ts`, prompts, CLI tools) and commit them. On the next cycle, after `git pull`, the spawned child process loads the new code automatically.
 
 ```
 Agent modifies src/agent.ts
     → git add . && git commit -m "[agent] refactor: ..."
     → git push
-    
-Next harness tick:
-    → git pull                 ← new code downloaded
-    → Bun.spawn agent.ts      ← new code executes
+
+Next harness tick (market open):
+    → git pull                      ← new code downloaded
+    → Bun.spawn('bun run agent.ts') ← fresh process loads new code ✓
+```
+
+> **Important:** The harness process (`harness.ts`) itself does **NOT** auto-reload after a git pull. Only files spawned as fresh child processes (agent.ts) benefit. If `harness.ts` changes, it must be restarted manually. The web server (`server.ts`) uses `--hot` so it auto-reloads on file changes during local development.
+
+---
+
+## Commit Convention
+
+| Author | Prefix | Example |
+|---|---|---|
+| You (human) | *(none)* | `fix: update chart colors` |
+| Autonomous agent | `[agent]` | `[agent] tactical: bought NVDA x5` |
+
+Filter agent commits:
+```bash
+./scripts/git_agent_log.sh --oneline
+# or
+git log --grep='^\[agent\]' --oneline
 ```
 
 ---
@@ -238,7 +286,7 @@ Next harness tick:
 
 | Variable | Purpose |
 |---|---|
-| `GEMINI_API_KEY` | Gemini LLM API |
+| `GEMINI_API_KEY` | Gemini LLM API (Pro + Flash + Search) |
 | `ALPACA_API_KEY` / `ALPACA_API_SECRET` | Brokerage execution & market data |
 | `ALPACA_PAPER=true` | Paper trading mode |
 | `FMP_API_KEY` | Analyst estimates & historical data (optional) |

@@ -41,7 +41,13 @@ async function runCycle(): Promise<void> {
     return;
   }
 
+  // Only pull when the market is open — no point syncing code when nothing can trade
   await runGitPull();
+
+  // NOTE: agent.ts is spawned as a fresh child process every cycle, so it always
+  // picks up any code changes that arrived via git pull automatically.
+  // The harness process itself (this file) does NOT auto-reload after a git pull —
+  // it must be restarted manually if harness.ts itself changes.
 
   const now = Date.now();
   if (now - lastHourlyRun > 3_600_000) {
