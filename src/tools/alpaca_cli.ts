@@ -58,7 +58,25 @@ export const alpacaTools = {
       return `Error submitting order: ${(e as Error).message}`;
     }
   },
+
+  getMarketClock: async (): Promise<string> => {
+    try {
+      const clock = await alpaca.getClock();
+      return JSON.stringify(clock);
+    } catch (e: unknown) {
+      return `Error fetching market clock: ${(e as Error).message}`;
+    }
+  },
 };
+
+export async function isMarketOpen(): Promise<boolean> {
+  try {
+    const clock = await alpaca.getClock() as { is_open: boolean };
+    return clock.is_open;
+  } catch {
+    return false;
+  }
+}
 
 // ── CLI ────────────────────────────────────────────────────────────────────────
 
@@ -74,6 +92,9 @@ Commands:
 
   get-latest-price --symbol <TICKER>
       Get the latest OHLCV bar for a symbol.
+
+  get-clock
+      Get market clock: whether the market is currently open, next open/close times.
 
   submit-order --symbol <TICKER> --qty <n> --side <buy|sell>
                [--type <market|limit>] [--time-in-force <day|gtc>]
@@ -122,6 +143,10 @@ if (import.meta.main) {
 
     case 'get-positions':
       task = alpacaTools.getPositions();
+      break;
+
+    case 'get-clock':
+      task = alpacaTools.getMarketClock();
       break;
 
     case 'get-latest-price': {

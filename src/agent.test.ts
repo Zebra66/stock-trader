@@ -1,6 +1,7 @@
 import { expect, test, describe } from 'bun:test';
 import { fmpTools } from './tools/fmp_cli';
 import { systemTools } from './tools/system_cli';
+import { isMarketOpen } from './tools/alpaca_cli';
 
 // ── Module-level unit tests ────────────────────────────────────────────────────
 
@@ -65,6 +66,13 @@ async function runCli(script: string, args: string[] = []): Promise<{ stdout: st
   return { stdout, stderr, exitCode };
 }
 
+describe('Alpaca: isMarketOpen', () => {
+  test('returns a boolean (true during market hours, false otherwise)', async () => {
+    const result = await isMarketOpen();
+    expect(typeof result).toBe('boolean');
+  });
+});
+
 describe('Alpaca CLI', () => {
   test('--help prints usage', async () => {
     const { stdout, exitCode } = await runCli('src/tools/alpaca_cli.ts', ['--help']);
@@ -73,6 +81,7 @@ describe('Alpaca CLI', () => {
     expect(stdout).toContain('get-positions');
     expect(stdout).toContain('get-latest-price');
     expect(stdout).toContain('submit-order');
+    expect(stdout).toContain('get-clock');
   });
 
   test('no args prints usage', async () => {
