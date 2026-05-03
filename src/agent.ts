@@ -12,9 +12,7 @@ const modelTools = {
   getAccount: alpacaTools.getAccount,
   getPositions: alpacaTools.getPositions,
   getLatestPrice: alpacaTools.getLatestPrice,
-  submitOrder: process.env.ALPACA_PAPER === 'true' 
-    ? async (...args: any) => `[DRY RUN - ORDER MOCKED]: ${JSON.stringify(args)}` 
-    : alpacaTools.submitOrder,
+  submitOrder: alpacaTools.submitOrder,
   getAnalystEstimates: fmpTools.getAnalystEstimates,
   getHistoricalPerformance: fmpTools.getHistoricalPerformance,
   readFile: systemTools.readFile,
