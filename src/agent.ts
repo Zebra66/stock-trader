@@ -1,106 +1,126 @@
 import { GoogleGenAI, Type } from '@google/genai';
-import { systemTools } from './tools/system';
-import { alpacaTools } from './tools/alpaca';
-import { fmpTools } from './tools/fmp';
-import * as fs from 'fs/promises';
+import { systemTools } from './tools/system_cli';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const mode = process.argv[2]; // 'hourly' or 'tactical'
 
-// Define the tools for the model
-const modelTools = {
-  getAccount: alpacaTools.getAccount,
-  getPositions: alpacaTools.getPositions,
-  getLatestPrice: alpacaTools.getLatestPrice,
-  submitOrder: alpacaTools.submitOrder,
-  getAnalystEstimates: fmpTools.getAnalystEstimates,
-  getHistoricalPerformance: fmpTools.getHistoricalPerformance,
-  readFile: systemTools.readFile,
-  writeFile: systemTools.writeFile,
-  executeBash: systemTools.executeBash
-};
+interface FunctionDeclarationParam {
+  type: Type;
+  description?: string;
+}
 
-// Map JS functions to Gemini Tool Declarations
-const functionDeclarations: any[] = [
-  { name: 'getAccount', description: 'Get Alpaca account info' },
-  { name: 'getPositions', description: 'Get Alpaca current positions' },
-  { 
-    name: 'getLatestPrice', 
-    description: 'Get latest price for a symbol',
-    parameters: { type: Type.OBJECT, properties: { symbol: { type: Type.STRING } }, required: ['symbol'] }
-  },
-  {
-    name: 'submitOrder',
-    description: 'Submit an order (Buy/Sell) to Alpaca. Will mock if in paper/dry-run mode.',
-    parameters: {
-      type: Type.OBJECT,
-      properties: {
-        symbol: { type: Type.STRING },
-        qty: { type: Type.NUMBER },
-        side: { type: Type.STRING, description: 'buy or sell' }
-      },
-      required: ['symbol', 'qty', 'side']
-    }
-  },
-  {
-    name: 'getAnalystEstimates',
-    description: 'Get top analyst estimates from FMP for a symbol',
-    parameters: { type: Type.OBJECT, properties: { symbol: { type: Type.STRING } }, required: ['symbol'] }
-  },
-  {
-    name: 'getHistoricalPerformance',
-    description: 'Get 1w, 1m, 3m, 6m, 1y, 1.5y, 3y historical performance summary from FMP',
-    parameters: { type: Type.OBJECT, properties: { symbol: { type: Type.STRING } }, required: ['symbol'] }
-  },
+interface FunctionDeclaration {
+  name: string;
+  description: string;
+  parameters?: {
+    type: Type;
+    properties: Record<string, FunctionDeclarationParam>;
+    required: string[];
+  };
+}
+
+const functionDeclarations: FunctionDeclaration[] = [
   {
     name: 'readFile',
-    description: 'Read a local file',
-    parameters: { type: Type.OBJECT, properties: { path: { type: Type.STRING } }, required: ['path'] }
+    description: 'Read a local file and return its contents as a string.',
+    parameters: {
+      type: Type.OBJECT,
+      properties: { path: { type: Type.STRING, description: 'Relative or absolute file path' } },
+      required: ['path'],
+    },
   },
   {
     name: 'writeFile',
-    description: 'Write to a local file',
-    parameters: { type: Type.OBJECT, properties: { path: { type: Type.STRING }, content: { type: Type.STRING } }, required: ['path', 'content'] }
+    description: 'Write (or overwrite) a local file with the given content.',
+    parameters: {
+      type: Type.OBJECT,
+      properties: {
+        path:    { type: Type.STRING, description: 'File path to write' },
+        content: { type: Type.STRING, description: 'Full content to write' },
+      },
+      required: ['path', 'content'],
+    },
   },
   {
     name: 'executeBash',
-    description: 'Execute a bash command',
-    parameters: { type: Type.OBJECT, properties: { command: { type: Type.STRING } }, required: ['command'] }
-  }
+    description: 'Execute a bash command and return stdout (and stderr if non-empty). Use this to invoke CLI tools, git commands, or any shell operation.',
+    parameters: {
+      type: Type.OBJECT,
+      properties: { command: { type: Type.STRING, description: 'The bash command to run' } },
+      required: ['command'],
+    },
+  },
 ];
 
-const THEMATIC_UNIVERSE = "High-Tech/LLMs (QQQ, XLK, MSFT, GOOGL, NVDA, META), Nuclear (URA, NLR, CCJ, CEG), Space (ARKX, UFO, RKLB), Quantum (QTUM, IONQ, RGTI)";
+interface ReadFileArgs   { path: string }
+interface WriteFileArgs  { path: string; content: string }
+interface ExecuteBashArgs { command: string }
 
-async function runAgent() {
+async function dispatch(name: string, args: unknown): Promise<string> {
+  switch (name) {
+    case 'readFile':    return systemTools.readFile((args as ReadFileArgs).path);
+    case 'writeFile':   return systemTools.writeFile((args as WriteFileArgs).path, (args as WriteFileArgs).content);
+    case 'executeBash': return systemTools.executeBash((args as ExecuteBashArgs).command);
+    default:            return `Unknown function: ${name}`;
+  }
+}
+
+const UNIVERSE = 'High-Tech/LLMs (QQQ, XLK, MSFT, GOOGL, NVDA, META), Nuclear (URA, NLR, CCJ, CEG), Space (ARKX, UFO, RKLB), Quantum (QTUM, IONQ, RGTI)';
+
+const CLI_TOOLS_INTRO = `
+## Available CLI Tools (invoke via executeBash)
+
+Run \`--help\` on any tool to see full usage:
+  bun run src/tools/alpaca_cli.ts --help   # account, positions, prices, orders
+  bun run src/tools/fmp_cli.ts --help      # analyst estimates, historical performance
+  bun run src/tools/system_cli.ts --help   # read-file, write-file
+
+Quick reference:
+  bun run src/tools/alpaca_cli.ts get-account
+  bun run src/tools/alpaca_cli.ts get-positions
+  bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>
+  bun run src/tools/alpaca_cli.ts submit-order --symbol <TICKER> --qty <n> --side <buy|sell> [--type limit --limit-price <n>]
+  bun run src/tools/fmp_cli.ts get-analyst-estimates --symbol <TICKER>
+  bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>
+`.trim();
+
+async function runAgent(): Promise<void> {
   console.log(`Starting Agent in ${mode} mode...`);
 
-  let prompt = "";
-  let modelName = "";
+  let prompt = '';
+  let modelName = '';
 
   if (mode === 'hourly') {
-    modelName = "gemini-2.5-pro";
-    prompt = `You are the Hourly Macro Strategist Agent for a standalone stock trader system designed to beat the S&P 500 over 3 months.
-Your Investment Universe is: ${THEMATIC_UNIVERSE}
+    modelName = 'gemini-2.5-pro';
+    prompt = `You are the Hourly Macro Strategist Agent for an autonomous stock trader designed to beat the S&P 500 over 3 months.
+Investment Universe: ${UNIVERSE}
+
+${CLI_TOOLS_INTRO}
 
 Your tasks:
-1. Use 'executeBash' or 'readFile' to track recent portfolio changes of known top investors if possible.
-2. Use 'getHistoricalPerformance' on key symbols to evaluate multi-timeframe trends (1w to 3y).
-3. Read 'memory/MEMORY.md' and 'memory/todo.md' using 'readFile'.
-4. Formulate the overarching strategy for the next hour based on this data.
-5. Use 'writeFile' to completely update 'memory/MEMORY.md' with your new strategic directive. You must leave a clear, concise instruction for the 10-minute tactical agent to execute.
-6. You may also rewrite your own prompts or commands if you find a better strategy.`;
+1. Read memory/MEMORY.md and memory/todo.md via readFile.
+2. Use executeBash with the FMP CLI to evaluate multi-timeframe trends (1w–3y) on key symbols.
+3. Optionally check top-investor portfolio movements via executeBash (web scraping or public filings if accessible).
+4. Formulate the overarching macro strategy for the next hour.
+5. Rewrite memory/MEMORY.md (via writeFile) with a clear directive for the 10-minute Tactical Agent to execute.
+6. Update memory/todo.md with any pending actions.
+7. You may rewrite your own prompts, data-gathering scripts, or strategy logic if you identify improvements.`;
+
   } else if (mode === 'tactical') {
-    modelName = "gemini-2.5-flash";
-    prompt = `You are the 10-Minute Tactical Executor Agent for a stock trader system.
-Your Investment Universe is: ${THEMATIC_UNIVERSE}
+    modelName = 'gemini-2.5-flash';
+    prompt = `You are the 10-Minute Tactical Executor Agent for an autonomous stock trader.
+Investment Universe: ${UNIVERSE}
+
+${CLI_TOOLS_INTRO}
 
 Your tasks:
-1. Use 'readFile' to read 'memory/MEMORY.md' to understand the Hourly Macro Strategist's directive.
-2. Use 'getLatestPrice' to check immediate price action for symbols you are instructed to trade or hold.
-3. Use 'getPositions' and 'getAccount' to check current holdings and buying power.
-4. If the Strategy dictates, use 'submitOrder' to Buy or Sell stocks.
-5. You must follow the macro directive strictly.
-6. If the dashboard paused trading, 'submitOrder' will be mocked automatically. Check if we should hold.`;
+1. Read memory/MEMORY.md via readFile to get the Macro Strategist's directive.
+2. Use executeBash with the Alpaca CLI to check current positions and buying power.
+3. Use executeBash with the Alpaca CLI to fetch latest prices for symbols in the directive.
+4. Execute any buy/sell orders dictated by the strategy using the Alpaca CLI submit-order command.
+5. Update memory/MEMORY.md with a brief execution summary (what was done, current holdings, next action).
+6. Commit memory changes: executeBash with git add memory/ && git commit -m "tactical: <summary>"`;
+
   } else {
     console.error("Invalid mode. Use 'hourly' or 'tactical'.");
     process.exit(1);
@@ -108,54 +128,44 @@ Your tasks:
 
   const chat = ai.chats.create({
     model: modelName,
-    config: {
-      tools: [{ functionDeclarations }],
-    }
+    config: { tools: [{ functionDeclarations }] },
   });
 
   try {
     let response = await chat.sendMessage({ message: prompt });
-    
-    // Process function calls
+
     while (response.functionCalls && response.functionCalls.length > 0) {
+      const results = [];
+
       for (const call of response.functionCalls) {
         if (!call.name) continue;
-        console.log(`Model called function: ${call.name} with args:`, call.args);
-        
-        // Execute the actual function
-        const func = (modelTools as any)[call.name];
-        let result = "";
-        if (func) {
-          try {
-            // Function args are passed as an object or ordered params depending on implementation
-            // Since we defined our tools to take positional args mapped from the object properties:
-            const argValues = call.args ? Object.values(call.args as any) : [];
-            result = await func(...argValues);
-          } catch (e: any) {
-            result = `Function Error: ${e.message}`;
-          }
-        } else {
-          result = `Function ${call.name} not found.`;
+        console.log(`→ ${call.name}`, JSON.stringify(call.args).substring(0, 120));
+
+        let result: string;
+        try {
+          result = await dispatch(call.name, call.args);
+        } catch (e: unknown) {
+          result = `Function error: ${(e as Error).message}`;
         }
 
-        // Send the result back
-        console.log(`Function ${call.name} result:`, result.substring(0, 200) + '...');
-        response = await chat.sendMessage({ 
-          message: [{
-            functionResponse: {
-              name: call.name,
-              response: { result }
-            }
-          }]
+        console.log(`← ${call.name}: ${result.substring(0, 120)}...`);
+        results.push({
+          functionResponse: {
+            name: call.name,
+            response: { result },
+          },
         });
       }
-    }
-    
-    console.log(`Agent ${mode} run completed. Final response:`);
-    console.log(response.text);
 
-  } catch (error) {
-    console.error("Agent Execution Error:", error);
+      response = await chat.sendMessage({ message: results });
+    }
+
+    console.log(`\nAgent [${mode}] completed.`);
+    if (response.text) console.log(response.text);
+
+  } catch (error: unknown) {
+    console.error('Agent execution error:', (error as Error).message);
+    process.exit(1);
   }
 }
 
