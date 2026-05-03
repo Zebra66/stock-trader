@@ -3,7 +3,7 @@ export type AgentMode = 'hourly' | 'tactical';
 const UNIVERSE = 'High-Tech/LLMs (QQQ, XLK, MSFT, GOOGL, NVDA, META), Nuclear (URA, NLR, CCJ, CEG), Space (ARKX, UFO, RKLB), Quantum (QTUM, IONQ, RGTI)';
 
 const CLI_TOOLS_INTRO = `
-## Available CLI Tools (invoke via executeBash)
+## Available Repo CLI Tools
 
 Run \`--help\` on any tool to see full usage:
   bun run src/tools/alpaca_cli.ts --help   # account, positions, prices, orders

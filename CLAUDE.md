@@ -112,6 +112,12 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 
 ## Autonomous Stock Trader Rules
 
+### Agent Runtime
+- The scheduled `hourly` and `tactical` jobs run through the OpenCode SDK, not a direct `@google/genai` SDK loop.
+- Model selection for those jobs lives in `config/agent_runtime.json`.
+- OpenCode provider/runtime configuration lives in `opencode.json`.
+- `GEMINI_API_KEY` must be available in the runtime environment so OpenCode can use the Gemini provider.
+
 ### Execution & Testing Commands
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.
 - **Run Tests:** Execute `bun test` to run all unit tests in the project.

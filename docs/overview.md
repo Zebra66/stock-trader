@@ -2,7 +2,7 @@
 
 ## Goal
 
-Beat the S&P 500 over a 3-month period by operating an **autonomous, self-evolving AI trading agent** with zero hardcoded algorithms. All decisions — what to buy, when to sell, how to allocate — are made exclusively by the Gemini LLM, which can also update its own code, prompts, and strategy files between cycles.
+Beat the S&P 500 over a 3-month period by operating an **autonomous, self-evolving AI trading agent** with zero hardcoded algorithms. All decisions — what to buy, when to sell, how to allocate — are made by a Gemini-powered OpenCode coding agent running inside this repo workspace, which can also update its own code, prompts, and strategy files between cycles.
 
 The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live when ready) and is designed to be left running unattended, with a web dashboard as the human override mechanism.
 
@@ -45,27 +45,25 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 │  ┌───────────────┐          ┌──────────────────┐            │
 │  │  agent.ts     │          │  agent.ts         │           │
 │  │  mode=hourly  │          │  mode=tactical    │           │
-│  │  (gemini-     │          │  (gemini-         │           │
-│  │  3.1-pro-     │          │  3-flash-         │           │
-│  │  preview)     │          │  preview)         │           │
+│  │  OpenCode SDK │          │  OpenCode SDK     │           │
+│  │  config model │          │  config model     │           │
 │  └───────┬───────┘          └────────┬──────────┘           │
-│          │ Function Calls            │ Function Calls        │
+│          │ OpenCode session          │ OpenCode session      │
 │          ▼                           ▼                       │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │  4 Registered Gemini Tools                          │    │
+│  │  OpenCode Workspace Runtime                         │    │
 │  │                                                     │    │
-│  │  readFile(path)          → Bun.file().text()        │    │
-│  │  writeFile(path,content) → Bun.write()              │    │
-│  │  executeBash(command)    → Bun.spawn(['sh','-c'...])│    │
-│  │  googleSearch (built-in) → Live web search          │    │
+│  │  AGENTS.md / skills / prompts / bash / edits        │    │
+│  │  grep / glob / web tools / git-aware repo context   │    │
+│  │  provider config via opencode.json                  │    │
 │  └──────────────┬──────────────────────────────────────┘    │
 │                 │                                            │
-│     ┌───────────┴────────────────────────────────┐          │
-│     ▼                     ▼                      ▼          │
-│  memory/           prompts/                GitHub           │
-│  MEMORY.md         hourly.txt              (git push)       │
-│  todo.md           tactical.txt                              │
-│  dry_run_ledger.json  src/tools/*_cli.ts (Alpaca, FMP, System)│
+│     ┌───────────┴──────────────────────────────────┐        │
+│     ▼                    ▼                        ▼        │
+│  memory/          prompts/      config/         GitHub     │
+│  MEMORY.md        hourly.txt    agent_runtime.json(push)   │
+│  todo.md          tactical.txt                               │
+│  dry_run_ledger.json  opencode.json  src/tools/*_cli.ts     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -73,7 +71,7 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 
 ## The 10-Minute Tactical Cycle
 
-Runs every 10 minutes **while the market is open**. Uses **Gemini 3 Flash** (fast, low cost).
+Runs every 10 minutes **while the market is open**. Uses OpenCode SDK with the model configured for `tactical` in `config/agent_runtime.json`.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -87,28 +85,28 @@ Runs every 10 minutes **while the market is open**. Uses **Gemini 3 Flash** (fas
 │                                                              │
 │  3. Bun.spawn → agent.ts tactical                            │
 │                                                              │
-│  4. Gemini 3 Flash loads prompt + reads state:               │
+│  4. OpenCode starts in the repo root and loads:              │
 │     → prompts/tactical.txt — tactical instructions           │
-│     → readFile("memory/MEMORY.md") — macro directive        │
-│     → readFile("memory/todo.md")   — buy/sell conditions    │
+│     → memory/MEMORY.md — macro directive                     │
+│     → memory/todo.md   — buy/sell conditions                 │
+│     → AGENTS.md / skills / opencode.json                     │
 │                                                              │
-│  5. Gets live portfolio + market data:                       │
+│  5. Uses repo tools + CLI tools for portfolio data:          │
 │     → alpaca_cli get-account                                 │
 │     → alpaca_cli get-positions                               │
 │     → alpaca_cli get-latest-price --symbol <each symbol>    │
 │                                                              │
-│  6. Google Search: quick news check on any symbol            │
-│     before executing an order                                │
+│  6. OpenCode streams logs with `[opencode]` prefixes while   │
+│     it reasons, edits files, and runs tools                  │
 │                                                              │
 │  7. Executes orders matching todo.md conditions:             │
 │     → alpaca_cli submit-order --symbol NVDA --qty 5          │
 │                               --side buy                     │
 │                                                              │
 │  8. Updates state and commits:                               │
-│     → writeFile("memory/MEMORY.md") — execution summary     │
-│     → writeFile("memory/todo.md")   — update/close flags    │
-│     → git add memory/ && git commit -m "[agent] tactical:…" │
-│     → git push                                               │
+│     → memory/MEMORY.md — execution summary                   │
+│     → memory/todo.md   — update/close flags                  │
+│     → git add / git commit / git push                        │
 │                                                              │
 │  9. agent.ts process exits                                   │
 └──────────────────────────────────────────────────────────────┘
@@ -118,7 +116,7 @@ Runs every 10 minutes **while the market is open**. Uses **Gemini 3 Flash** (fas
 
 ## The 1-Hour Macro Strategy Cycle
 
-Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses **Gemini 3.1 Pro** (more capable, deeper reasoning).
+Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses OpenCode SDK with the model configured for `hourly` in `config/agent_runtime.json`.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -126,12 +124,13 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 │                                                              │
 │  1. Bun.spawn → agent.ts hourly                              │
 │                                                              │
-│  2. Gemini 3.1 Pro loads prompt + reads current state:       │
+│  2. OpenCode starts in the repo root and loads:              │
 │     → prompts/hourly.txt — hourly instructions               │
-│     → readFile("memory/MEMORY.md") — last directive + exec  │
-│     → readFile("memory/todo.md")   — tactical flags/issues  │
+│     → memory/MEMORY.md — last directive + exec               │
+│     → memory/todo.md   — tactical flags/issues               │
+│     → AGENTS.md / skills / opencode.json                     │
 │                                                              │
-│  3. The model decides which data it needs, then gathers it:  │
+│  3. The agent decides which data it needs, then gathers it:  │
 │     → alpaca_cli get-positions + get-account                 │
 │     → fmp_cli get-historical-performance on ALL symbols      │
 │       (1w, 1m, 3m, 6m, 1y, 3y)                             │
@@ -145,18 +144,17 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 │     - Has anything changed that warrants a strategy shift?   │
 │                                                              │
 │  5. Writes new macro directive:                              │
-│     → writeFile("memory/MEMORY.md"):                         │
+│     → memory/MEMORY.md:                                      │
 │         • Current thesis                                     │
 │         • Priority actions for next hour                     │
 │         • Symbol | Bias | Rationale | Target % table         │
-│     → writeFile("memory/todo.md"):                           │
+│     → memory/todo.md:                                        │
 │         • "BUY <T> if price < X — rationale"                 │
 │         • "SELL <T> if price > X or < Y — rationale"         │
 │         • "HOLD <T> — target allocation Z%"                  │
 │                                                              │
-│  6. Commits:                                                 │
-│     → git add memory/ && git commit -m "[agent] hourly:…"   │
-│     → git push                                               │
+│  6. Logs stream with `[opencode]` prefixes, then commits:    │
+│     → git add / git commit / git push                        │
 │                                                              │
 │  7. agent.ts exits, then tactical cycle runs immediately     │
 └──────────────────────────────────────────────────────────────┘
@@ -164,20 +162,25 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 
 ---
 
-## The 4 Registered Gemini Tools
+## OpenCode Runtime
 
-These are the capabilities registered directly with the Gemini Function Calling API.
+The agent runtime is no longer a hand-written Gemini function-calling loop. `src/agent.ts` now starts an OpenCode SDK session in the repository root and lets OpenCode use its native workspace-aware tooling.
 
-| Tool | Signature | Implementation |
-|---|---|---|
-| `readFile` | `readFile(path: string)` | `Bun.file(path).text()` |
-| `writeFile` | `writeFile(path: string, content: string)` | `Bun.write(path, content)` |
-| `executeBash` | `executeBash(command: string)` | `Bun.spawn(['sh', '-c', command])` |
-| `googleSearch` | Built-in Gemini tool | Live Google Search results |
+Key runtime inputs:
+- `opencode.json` — project-level OpenCode provider/runtime config
+- `config/agent_runtime.json` — mode-to-model mapping for `hourly` and `tactical`
+- `prompts/hourly.txt` / `prompts/tactical.txt` — task prompts
+- `AGENTS.md` and local skills — repo-specific guidance automatically available to OpenCode
 
-The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are invoked **through** `executeBash` — this keeps the Gemini tool surface minimal while giving the agent full flexibility to discover and invoke any CLI command.
+The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are still invoked from the repo shell environment, but now through OpenCode's native bash/tooling runtime instead of the old custom shell wrapper layer.
 
-**Google Search is used for:**
+**OpenCode is used for:**
+- Reading and editing repo files with project context
+- Discovering and applying local skills/instructions
+- Running bash and git commands in the repo root
+- Streaming structured runtime events that the harness logs with `[opencode]` prefixes
+
+**Gemini models are used for:**
 - Breaking market news and macro events
 - Top investor portfolio filings (Burry, Ackman, Dalio, Buffett, Cathie Wood, etc.)
 - Analyst upgrades/downgrades and price target changes
@@ -195,11 +198,13 @@ The agent's working directory is the repository root. It has access to:
 | `memory/MEMORY.md` | **Primary communication bus.** Macro agent writes strategy; Tactical agent reads and executes. Both update after each cycle. |
 | `memory/todo.md` | **Action queue.** Macro writes buy/sell conditions; Tactical checks and clears them each cycle. |
 | `memory/dry_run_ledger.json` | Optional virtual ledger for manual bookkeeping. |
+| `opencode.json` | Project-level OpenCode config. Limits providers, disables sharing/autoupdate, and reads `GEMINI_API_KEY` for the Gemini provider. |
+| `config/agent_runtime.json` | Declares which model OpenCode should use for `hourly` and `tactical` runs. |
 | `prompts/hourly.txt` | External system prompt template for the hourly macro strategist. Loaded by `src/agent.ts` at runtime. |
 | `prompts/tactical.txt` | External system prompt template for the 10-minute tactical executor. Loaded by `src/agent.ts` at runtime. |
 | `src/tools/alpaca_cli.ts` | CLI: account info, positions, prices, order execution. |
 | `src/tools/fmp_cli.ts` | CLI: analyst estimates, 1w–3y historical performance. |
-| `src/tools/system_cli.ts` | CLI: read/write files. |
+| `src/logger.ts` | Structured logging via `pino` for the harness and agent runtime. |
 | `skills/` | Skill docs the agent can read to improve its own approach. |
 | `docs/` | Project documentation. |
 
@@ -290,7 +295,7 @@ git log --grep='^\[agent\]' --oneline
 
 | Variable | Purpose |
 |---|---|
-| `GEMINI_API_KEY` | Gemini LLM API (Pro + Flash + Search) |
+| `GEMINI_API_KEY` | Gemini provider API key used by OpenCode via `opencode.json` |
 | `ALPACA_API_KEY` / `ALPACA_API_SECRET` | Brokerage execution & market data |
 | `ALPACA_PAPER=true` | Paper trading mode |
 | `FMP_API_KEY` | Analyst estimates & historical data (optional) |

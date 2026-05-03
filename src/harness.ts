@@ -1,11 +1,13 @@
 import { isMarketOpen } from './tools/alpaca_cli';
+import { logger } from './logger';
 
 let isPaused = false;
 let lastHourlyRun = 0;
+const repoRoot = new URL('..', import.meta.url).pathname;
 
 export function setPaused(paused: boolean) {
   isPaused = paused;
-  console.log(`Trading paused state set to: ${isPaused}`);
+  logger.info({ paused: isPaused }, 'Trading paused state updated');
 }
 
 export function getPaused() {
@@ -15,21 +17,22 @@ export function getPaused() {
 async function runGitPull(): Promise<void> {
   try {
     await Bun.$`git pull origin main`.quiet();
-    console.log('Git pull completed.');
+    logger.info('Git pull completed');
   } catch {
-    console.log('Git pull skipped or failed.');
+    logger.warn('Git pull skipped or failed');
   }
 }
 
 async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   if (isPaused && mode === 'tactical') {
-    console.log('Trading is paused. Skipping tactical agent.');
+    logger.info('Trading is paused. Skipping tactical agent');
     return;
   }
-  console.log(`[${new Date().toISOString()}] Spawning ${mode} agent...`);
+  logger.info({ mode }, 'Spawning agent');
   const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
     stdout: 'inherit',
     stderr: 'inherit',
+    cwd: repoRoot,
   });
   await proc.exited;
 }
@@ -37,7 +40,7 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
 async function runCycle(): Promise<void> {
   const open = await isMarketOpen();
   if (!open) {
-    console.log(`[${new Date().toISOString()}] Market is closed. Skipping cycle.`);
+    logger.info('Market is closed. Skipping cycle');
     return;
   }
 
@@ -59,7 +62,7 @@ async function runCycle(): Promise<void> {
 }
 
 export async function startHarnessLoop(): Promise<void> {
-  console.log('Starting Autonomous Harness Loop...');
+  logger.info({ repoRoot }, 'Starting Autonomous Harness Loop');
 
   // Start web server — shares process memory for the pause toggle
   await import('./web/server');

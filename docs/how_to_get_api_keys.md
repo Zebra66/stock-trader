@@ -6,7 +6,7 @@ This guide explains step-by-step how to generate the API credentials required to
 
 ## 1. Google Gemini API Key (`GEMINI_API_KEY`)
 
-The Gemini API acts as the "brain" of your trading system.
+The Gemini API acts as the model provider behind the OpenCode agent runtime. The project-level `opencode.json` reads `GEMINI_API_KEY` and uses it for both the `hourly` and `tactical` agent sessions.
 
 ### How to get it:
 1. Go to **[Google AI Studio](https://aistudio.google.com/)** and sign in with your Google account.
@@ -14,10 +14,11 @@ The Gemini API acts as the "brain" of your trading system.
 3. Click the **"Create API key"** button.
 4. Create the key in a new or existing Google Cloud Project.
 5. Copy the generated key and paste it as `GEMINI_API_KEY` in your `.env` file.
+6. OpenCode will pick it up through `opencode.json`, so no extra login step is required for the repo runtime.
 
 ### Estimated Cost: **~$0 to $2 / month**
-- **Free Tier**: Google provides a generous free tier for both Gemini 1.5 Flash (15 requests per minute) and Gemini 1.5 Pro (2 requests per minute). Given our execution loop (Flash every 10 mins, Pro every 60 mins), **you will likely stay entirely within the Free Tier**.
-- **Pay-as-you-go**: Even if you exceed the free tier, Gemini 1.5 Flash is incredibly cheap (approx. $0.075 per 1 million input tokens). Running 24/7, the cost would be negligible (under a few dollars a month).
+- **Free Tier**: Google usually provides a generous free tier for Gemini developer usage, but check the current quotas for the exact models you place in `config/agent_runtime.json`.
+- **Pay-as-you-go**: Actual spend now depends on the Gemini models selected for `hourly` and `tactical` inside `config/agent_runtime.json`, plus how much tool-driven context the OpenCode agent consumes during each run.
 
 ---
 
@@ -35,7 +36,7 @@ Alpaca is the brokerage that executes your trades and provides real-time market 
 6. Set `ALPACA_PAPER=true` in your `.env` to ensure you are trading with virtual money.
 
 ### Estimated Cost: **$0 / month**
-- **Trading**: Alpaca offers $0 commission trading on US stocks and ETFs.
+- **Trading**: Alpaca offers $0 commission trading on US stocks and ETFs for many retail flows, but regulatory fees and execution friction still apply.
 - **Market Data**: The free tier includes real-time IEX market data, which is sufficient for our 10-minute algorithms.
 - *Optional*: If you want full SIP (all exchanges) direct market data feeds in the future, Alpaca charges a $99/month data fee, but this is **not required** for the bot to function.
 

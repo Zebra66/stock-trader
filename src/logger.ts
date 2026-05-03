@@ -1,0 +1,11 @@
+import pino from 'pino';
+
+export type AppLogger = ReturnType<typeof pino>;
+
+const level = process.env.LOG_LEVEL ?? 'info';
+
+export const logger = pino({
+  level,
+  base: undefined,
+  timestamp: pino.stdTimeFunctions.isoTime,
+});

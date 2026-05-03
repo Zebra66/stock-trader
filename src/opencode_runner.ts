@@ -1,0 +1,147 @@
+import { createOpencode, type OpencodeClient } from '@opencode-ai/sdk';
+import type { AppLogger } from './logger';
+import { logger as rootLogger } from './logger';
+import { parseModelSpec } from './agent_config';
+
+export type AgentMode = 'hourly' | 'tactical';
+
+interface OpencodeSessionApi {
+  create(payload: { body: { title: string } }): Promise<{ data: { id: string } }>;
+  prompt(payload: {
+    path: { id: string };
+    body: {
+      model: { providerID: string; modelID: string };
+      parts: Array<{ type: 'text'; text: string }>;
+    };
+  }): Promise<{ data: { info?: { id?: string; error?: { message?: string } } } }>;
+}
+
+interface OpencodeEventApi {
+  subscribe(): Promise<{ stream: AsyncIterable<OpencodeEvent> }>;
+}
+
+interface OpencodeRuntime {
+  client: {
+    session: OpencodeSessionApi;
+    event: OpencodeEventApi;
+  };
+  server: { close(): void };
+}
+
+type OpencodeEvent = {
+  type: string;
+  properties: Record<string, unknown>;
+};
+
+type CreateClient = () => Promise<OpencodeRuntime>;
+
+export interface RunOpencodePromptOptions {
+  mode: AgentMode;
+  prompt: string;
+  model: string;
+  logger?: Pick<AppLogger, 'info' | 'warn' | 'error' | 'debug' | 'child'>;
+  createClient?: CreateClient;
+}
+
+export async function runOpencodePrompt(options: RunOpencodePromptOptions): Promise<void> {
+  const log = createChildLogger(options.logger ?? rootLogger, { component: 'opencode', mode: options.mode });
+  const createClient = options.createClient ?? createDefaultClient;
+  const runtime = await createClient();
+
+  try {
+    const session = await runtime.client.session.create({
+      body: { title: `${options.mode} agent run` },
+    });
+    const sessionID = session.data.id;
+    const sessionLogger = createChildLogger(log, { sessionID });
+    const events = await runtime.client.event.subscribe();
+    const idlePromise = streamSessionEvents(events.stream, sessionID, sessionLogger);
+
+    sessionLogger.info('[opencode] session created');
+
+    const response = await runtime.client.session.prompt({
+      path: { id: sessionID },
+      body: {
+        model: parseModelSpec(options.model),
+        parts: [{ type: 'text', text: options.prompt }],
+      },
+    });
+
+    await idlePromise;
+
+    const errorMessage = response.data.info?.error?.message;
+    if (errorMessage) {
+      throw new Error(`OpenCode session failed: ${errorMessage}`);
+    }
+
+    sessionLogger.info('[opencode] prompt completed');
+  } finally {
+    runtime.server.close();
+  }
+}
+
+function createChildLogger<T extends Pick<AppLogger, 'info' | 'warn' | 'error' | 'debug' | 'child'>>(
+  logger: T,
+  bindings: Record<string, string>,
+): T {
+  const child = logger.child(bindings) as T | undefined;
+  return child ?? logger;
+}
+
+async function createDefaultClient(): Promise<OpencodeRuntime> {
+  const runtime = await createOpencode();
+  return runtime as unknown as OpencodeRuntime;
+}
+
+async function streamSessionEvents(
+  stream: AsyncIterable<OpencodeEvent>,
+  sessionID: string,
+  logger: Pick<AppLogger, 'info' | 'warn' | 'error' | 'debug' | 'child'>,
+): Promise<void> {
+  for await (const event of stream) {
+    if (!belongsToSession(event, sessionID)) {
+      continue;
+    }
+
+    if (event.type === 'message.part.updated') {
+      const part = event.properties.part as { type?: string; text?: string } | undefined;
+      const delta = typeof event.properties.delta === 'string' ? event.properties.delta : undefined;
+      const text = delta ?? part?.text;
+
+      if (part?.type === 'text' && text) {
+        logger.info(`[opencode] ${text}`);
+      }
+      continue;
+    }
+
+    if (event.type === 'permission.updated') {
+      const title = typeof event.properties.title === 'string' ? event.properties.title : 'permission request';
+      logger.warn(`[opencode] permission requested: ${title}`);
+      continue;
+    }
+
+    if (event.type === 'file.edited') {
+      const file = typeof event.properties.file === 'string' ? event.properties.file : 'unknown';
+      logger.info(`[opencode] edited file: ${file}`);
+      continue;
+    }
+
+    if (event.type === 'session.error') {
+      const error = event.properties.error as { data?: { message?: string } } | undefined;
+      logger.error(`[opencode] session error: ${error?.data?.message ?? 'unknown error'}`);
+      return;
+    }
+
+    if (event.type === 'session.idle') {
+      logger.info('[opencode] session idle');
+      return;
+    }
+
+    logger.debug(`[opencode] event: ${event.type}`);
+  }
+}
+
+function belongsToSession(event: OpencodeEvent, sessionID: string): boolean {
+  const eventSessionID = event.properties.sessionID;
+  return typeof eventSessionID === 'string' ? eventSessionID === sessionID : true;
+}

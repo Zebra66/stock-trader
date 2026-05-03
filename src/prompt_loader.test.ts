@@ -6,8 +6,10 @@ describe('prompt loader', () => {
     const prompt = await buildPrompt('hourly');
 
     expect(prompt).toContain('Hourly Macro Strategist Agent');
+    expect(prompt).toContain('Available Repo CLI Tools');
     expect(prompt).toContain('Investment Universe: High-Tech/LLMs');
     expect(prompt).toContain('bun run src/tools/alpaca_cli.ts get-account');
+    expect(prompt).not.toContain('invoke via executeBash');
     expect(prompt).not.toContain('{{UNIVERSE}}');
     expect(prompt).not.toContain('{{CLI_TOOLS_INTRO}}');
   });
@@ -16,8 +18,10 @@ describe('prompt loader', () => {
     const prompt = await buildPrompt('tactical');
 
     expect(prompt).toContain('10-Minute Tactical Executor Agent');
+    expect(prompt).toContain('Available Repo CLI Tools');
     expect(prompt).toContain('Investment Universe: High-Tech/LLMs');
     expect(prompt).toContain('bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>');
+    expect(prompt).not.toContain('invoke via executeBash');
     expect(prompt).not.toContain('{{UNIVERSE}}');
     expect(prompt).not.toContain('{{CLI_TOOLS_INTRO}}');
   });
