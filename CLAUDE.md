@@ -119,3 +119,9 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ### Code Quality & Git
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
+
+### Bun + TypeScript Best Practices
+- **Native APIs:** Use native web standards like `fetch`, `Response`, and `Request` over third-party libraries (e.g., avoid `axios` or `node-fetch`).
+- **Bun Standard Library:** Prefer `Bun.file()` and `Bun.write()` over Node's `fs/promises` for faster I/O operations.
+- **Execution:** Always execute TypeScript files directly via `bun run <file.ts>`. Do not compile to JavaScript first using `tsc`.
+- **Typing Accuracy:** Use explicit `interface` and `type` definitions for all external API responses (e.g., Alpaca, FMP) to ensure safe property access.
