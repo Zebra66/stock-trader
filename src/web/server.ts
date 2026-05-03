@@ -23,13 +23,16 @@ const app = new Elysia()
               button { padding: 10px 20px; font-size: 16px; font-weight: bold; cursor: pointer; border-radius: 4px; border: none; }
               .btn-pause { background: #ef4444; color: white; }
               .btn-resume { background: #22c55e; color: white; }
+              .btn-back { background: #334155; color: #f8fafc; padding: 6px 14px; font-size: 0.875em; font-weight: normal; }
               pre { background: #020617; padding: 1rem; border-radius: 4px; overflow-x: auto; color: #a5b4fc; }
               .chart-container { position: relative; height: 400px; width: 100%; }
+              .commit-row { cursor: pointer; }
+              .commit-row:hover { background: #0f172a; }
           </style>
       </head>
       <body>
           <h1>Stock Trader Dashboard</h1>
-          
+
           <div class="card">
               <h2>Master Control</h2>
               <p>Current Status: <strong id="status-text">Loading...</strong></p>
@@ -46,6 +49,18 @@ const app = new Elysia()
           <div class="card">
               <h2>Strategy & Memory (MEMORY.md)</h2>
               <pre id="memory-content">Loading...</pre>
+          </div>
+
+          <div class="card">
+              <h2>Commit History</h2>
+              <div id="commits-list"><em style="color:#94a3b8">Loading...</em></div>
+              <div id="commit-diff-view" style="display:none">
+                  <div style="margin-bottom:1rem;display:flex;align-items:center;gap:1rem">
+                      <button class="btn-back" onclick="closeCommitDiff()">&#8592; Back</button>
+                      <strong id="diff-commit-title" style="color:#38bdf8;font-family:monospace;font-size:0.9em"></strong>
+                  </div>
+                  <pre id="diff-content" style="max-height:600px;overflow-y:auto;font-size:0.82em;line-height:1.45;color:#f8fafc"></pre>
+              </div>
           </div>
 
           <script>
@@ -84,7 +99,7 @@ const app = new Elysia()
                   try {
                       const res = await fetch('/api/chart-data');
                       const data = await res.json();
-                      
+
                       const ctx = document.getElementById('portfolioChart').getContext('2d');
                       if (portfolioChart) {
                           portfolioChart.destroy();
@@ -173,10 +188,91 @@ const app = new Elysia()
                   }
               }
 
+              function escHtml(s) {
+                  return String(s)
+                      .replace(/&/g, '&amp;')
+                      .replace(/</g, '&lt;')
+                      .replace(/>/g, '&gt;')
+                      .replace(/"/g, '&quot;');
+              }
+
+              async function fetchCommits() {
+                  try {
+                      const res = await fetch('/api/commits');
+                      const data = await res.json();
+                      const list = document.getElementById('commits-list');
+                      if (!data.commits || data.commits.length === 0) {
+                          list.innerHTML = '<em style="color:#94a3b8">No commits found.</em>';
+                          return;
+                      }
+                      let html = '<table style="width:100%;border-collapse:collapse;font-size:0.875em">';
+                      html += '<thead><tr style="color:#94a3b8;text-align:left;border-bottom:2px solid #334155">';
+                      html += '<th style="padding:6px 10px">Hash</th>';
+                      html += '<th style="padding:6px 10px">Date</th>';
+                      html += '<th style="padding:6px 10px">Author</th>';
+                      html += '<th style="padding:6px 10px">Message</th>';
+                      html += '</tr></thead><tbody>';
+                      for (const c of data.commits) {
+                          const date = new Date(c.date).toLocaleString();
+                          html += '<tr class="commit-row"';
+                          html += ' data-hash="' + escHtml(c.hash) + '"';
+                          html += ' data-msg="' + escHtml(c.message.substring(0, 80)) + '"';
+                          html += ' onclick="viewCommit(this.dataset.hash, this.dataset.msg)"';
+                          html += ' style="border-top:1px solid #1e3a5f">';
+                          html += '<td style="padding:6px 10px;font-family:monospace;color:#a5b4fc">' + escHtml(c.shortHash) + '</td>';
+                          html += '<td style="padding:6px 10px;color:#94a3b8;white-space:nowrap">' + escHtml(date) + '</td>';
+                          html += '<td style="padding:6px 10px;color:#94a3b8">' + escHtml(c.author) + '</td>';
+                          html += '<td style="padding:6px 10px">' + escHtml(c.message) + '</td>';
+                          html += '</tr>';
+                      }
+                      html += '</tbody></table>';
+                      list.innerHTML = html;
+                  } catch(e) {
+                      document.getElementById('commits-list').innerHTML = '<em style="color:#ef4444">Failed to load commits.</em>';
+                  }
+              }
+
+              async function viewCommit(hash, title) {
+                  document.getElementById('commits-list').style.display = 'none';
+                  const diffView = document.getElementById('commit-diff-view');
+                  diffView.style.display = 'block';
+                  document.getElementById('diff-commit-title').textContent = hash.substring(0, 8) + ' - ' + title;
+                  const pre = document.getElementById('diff-content');
+                  pre.innerHTML = '<em style="color:#94a3b8">Loading diff...</em>';
+                  try {
+                      const res = await fetch('/api/commit/' + hash);
+                      const data = await res.json();
+                      if (data.error) {
+                          pre.textContent = 'Error: ' + data.error;
+                          return;
+                      }
+                      const lines = data.diff.split('\\n');
+                      let out = '';
+                      for (const line of lines) {
+                          let color = '#cbd5e1';
+                          if (line.startsWith('+') && !line.startsWith('+++')) color = '#86efac';
+                          else if (line.startsWith('-') && !line.startsWith('---')) color = '#fca5a5';
+                          else if (line.startsWith('@@')) color = '#7dd3fc';
+                          else if (line.startsWith('diff ') || line.startsWith('index ') || line.startsWith('--- ') || line.startsWith('+++ ')) color = '#c4b5fd';
+                          else if (line.startsWith('commit ') || line.startsWith('Author:') || line.startsWith('Date:')) color = '#f9a8d4';
+                          out += '<span style="color:' + color + '">' + escHtml(line) + '</span>\\n';
+                      }
+                      pre.innerHTML = out;
+                  } catch(e) {
+                      pre.textContent = 'Failed to load diff.';
+                  }
+              }
+
+              function closeCommitDiff() {
+                  document.getElementById('commit-diff-view').style.display = 'none';
+                  document.getElementById('commits-list').style.display = 'block';
+              }
+
               fetchStatus();
               fetchMemory();
               renderChart();
-              
+              fetchCommits();
+
               setInterval(fetchStatus, 5000);
               setInterval(fetchMemory, 10000);
               setInterval(renderChart, 60000); // refresh graph every 60s
@@ -220,11 +316,11 @@ const app = new Elysia()
       const acts = await alpaca.getAccountActivities({ activityTypes: ['FILL'] } as any);
       const buys: any[] = [];
       const sells: any[] = [];
-      
+
       for (const act of acts) {
           if (!act.transaction_time || !act.price) continue;
           const timeMs = new Date(act.transaction_time).getTime();
-          
+
           // Map point's Y position to the portfolio's equity line
           let nearestEquity = historyData.length > 0 ? historyData[historyData.length - 1].y : 0;
           for (const h of historyData) {
@@ -256,6 +352,37 @@ const app = new Elysia()
       };
     } catch (e: any) {
       console.error(e);
+      return { error: e.message };
+    }
+  })
+  .get('/api/commits', async () => {
+    try {
+      const result = await Bun.$`git log --format=%H%x01%h%x01%an%x01%ai%x01%s -n 100`.quiet().text();
+      const lines = result.trim().split('\n').filter(line => line.length > 0);
+      const commits = lines.map(line => {
+        const parts = line.split('\x01');
+        return {
+          hash: parts[0] ?? '',
+          shortHash: parts[1] ?? '',
+          author: parts[2] ?? '',
+          date: parts[3] ?? '',
+          message: parts.slice(4).join('\x01'),
+        };
+      });
+      return { commits };
+    } catch (e: any) {
+      return { error: e.message, commits: [] };
+    }
+  })
+  .get('/api/commit/:hash', async ({ params }: { params: { hash: string } }) => {
+    const { hash } = params;
+    if (!/^[a-f0-9]{4,40}$/.test(hash)) {
+      return { error: 'Invalid commit hash' };
+    }
+    try {
+      const diff = await Bun.$`git show ${hash}`.quiet().text();
+      return { hash, diff };
+    } catch (e: any) {
       return { error: e.message };
     }
   })
