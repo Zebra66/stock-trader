@@ -357,7 +357,7 @@ const app = new Elysia()
   })
   .get('/api/commits', async () => {
     try {
-      const result = await Bun.$`git log --format=%H%x01%h%x01%an%x01%ai%x01%s -n 100`.quiet().text();
+      const result = await Bun.$`git log --grep=^\\[agent\\] --format=%H%x01%h%x01%an%x01%ai%x01%s -n 100`.quiet().text();
       const lines = result.trim().split('\n').filter(line => line.length > 0);
       const commits = lines.map(line => {
         const parts = line.split('\x01');
