@@ -9,5 +9,8 @@ if [ ! -f .env ]; then
   exit 1
 fi
 
-echo "Starting Web Dashboard Server locally..."
-bun run src/web/server.ts
+echo "Stopping existing Web Server instances..."
+pkill -f "bun.*src/web/server.ts" || true
+
+echo "Starting Web Dashboard Server locally with hot-reload..."
+bun run --hot src/web/server.ts
