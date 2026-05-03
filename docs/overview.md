@@ -10,12 +10,7 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 
 ## Investment Universe
 
-| Theme | Instruments |
-|---|---|
-| High-Tech / LLMs | QQQ, XLK, MSFT, GOOGL, NVDA, META |
-| Nuclear Energy | URA, NLR, CCJ, CEG |
-| Space | ARKX, UFO, RKLB |
-| Quantum Computing | QTUM, IONQ, RGTI |
+AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, META
 
 ---
 

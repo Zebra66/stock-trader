@@ -28,6 +28,11 @@ interface OpencodeRuntime {
   server: { close(): void };
 }
 
+interface StreamResult {
+  status: 'idle' | 'error';
+  errorMessage?: string;
+}
+
 type OpencodeEvent = {
   type: string;
   properties: Record<string, unknown>;
@@ -67,7 +72,11 @@ export async function runOpencodePrompt(options: RunOpencodePromptOptions): Prom
       },
     });
 
-    await idlePromise;
+    const streamResult = await idlePromise;
+
+    if (streamResult.status === 'error') {
+      throw new Error(`OpenCode session failed: ${streamResult.errorMessage ?? 'unknown error'}`);
+    }
 
     const errorMessage = response.data.info?.error?.message;
     if (errorMessage) {
@@ -97,7 +106,7 @@ async function streamSessionEvents(
   stream: AsyncIterable<OpencodeEvent>,
   sessionID: string,
   logger: Pick<AppLogger, 'info' | 'warn' | 'error' | 'debug' | 'child'>,
-): Promise<void> {
+): Promise<StreamResult> {
   for await (const event of stream) {
     if (!belongsToSession(event, sessionID)) {
       continue;
@@ -128,17 +137,20 @@ async function streamSessionEvents(
 
     if (event.type === 'session.error') {
       const error = event.properties.error as { data?: { message?: string } } | undefined;
-      logger.error(`[opencode] session error: ${error?.data?.message ?? 'unknown error'}`);
-      return;
+      const errorMessage = error?.data?.message ?? 'unknown error';
+      logger.error(`[opencode] session error: ${errorMessage}`);
+      return { status: 'error', errorMessage };
     }
 
     if (event.type === 'session.idle') {
       logger.info('[opencode] session idle');
-      return;
+      return { status: 'idle' };
     }
 
     logger.debug(`[opencode] event: ${event.type}`);
   }
+
+  return { status: 'idle' };
 }
 
 function belongsToSession(event: OpencodeEvent, sessionID: string): boolean {

@@ -1,6 +1,6 @@
 export type AgentMode = 'hourly' | 'tactical';
 
-const UNIVERSE = 'High-Tech/LLMs (QQQ, XLK, MSFT, GOOGL, NVDA, META), Nuclear (URA, NLR, CCJ, CEG), Space (ARKX, UFO, RKLB), Quantum (QTUM, IONQ, RGTI)';
+const UNIVERSE = 'AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, META';
 
 const CLI_TOOLS_INTRO = `
 ## Available Repo CLI Tools

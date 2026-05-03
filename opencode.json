@@ -5,10 +5,20 @@
   "enabled_providers": ["gemini"],
   "provider": {
     "gemini": {
+      "npm": "@ai-sdk/google",
+      "name": "Gemini",
       "options": {
         "apiKey": "{env:GEMINI_API_KEY}",
         "timeout": 600000,
         "chunkTimeout": 60000
+      },
+      "models": {
+        "gemini-3.1-pro-preview": {
+          "name": "Gemini 3.1 Pro Preview"
+        },
+        "gemini-3.1-flash-lite-preview": {
+          "name": "Gemini 3.1 Flash Lite Preview"
+        }
       }
     }
   }

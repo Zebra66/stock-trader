@@ -7,7 +7,7 @@ describe('prompt loader', () => {
 
     expect(prompt).toContain('Hourly Macro Strategist Agent');
     expect(prompt).toContain('Available Repo CLI Tools');
-    expect(prompt).toContain('Investment Universe: High-Tech/LLMs');
+    expect(prompt).toContain('Investment Universe: AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, META');
     expect(prompt).toContain('bun run src/tools/alpaca_cli.ts get-account');
     expect(prompt).not.toContain('invoke via executeBash');
     expect(prompt).not.toContain('{{UNIVERSE}}');
@@ -19,7 +19,7 @@ describe('prompt loader', () => {
 
     expect(prompt).toContain('10-Minute Tactical Executor Agent');
     expect(prompt).toContain('Available Repo CLI Tools');
-    expect(prompt).toContain('Investment Universe: High-Tech/LLMs');
+    expect(prompt).toContain('Investment Universe: AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, META');
     expect(prompt).toContain('bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>');
     expect(prompt).not.toContain('invoke via executeBash');
     expect(prompt).not.toContain('{{UNIVERSE}}');

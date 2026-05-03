@@ -3,12 +3,9 @@
 ## 1. Overview
 The Standalone Stock Trader System is an automated algorithmic trading bot designed to maximize portfolio value and beat the S&P 500 index over 3 months. It operates on a 10-minute interval to capture short-term intraday and swing trading opportunities. The system features a "Dry Run" validation phase (tracking virtual trades in local files) before being deployed to "Prod" with real capital.
 
-## 2. Investment Universe (Thematic)
-The bot focuses on high-growth and future-tech sectors. It prioritizes ETFs but includes key individual stocks:
-- **High-Tech & LLMs**: `QQQ`, `XLK`, `MSFT`, `GOOGL`, `NVDA`, `META`. Will dynamically track 2026 AI/LLM IPOs.
-- **Nuclear Energy**: `URA`, `NLR`, `CCJ`, `CEG`.
-- **Space Exploration**: `ARKX`, `UFO`, `RKLB`.
-- **Quantum Computing**: `QTUM`, `IONQ`, `RGTI`.
+## 2. Investment Universe
+The bot operates on this configured symbol list:
+`AVGO`, `EIS`, `GLD`, `GOOG`, `HOOD`, `META`, `NVDA`, `QQQ`, `QTUM`, `RKLB`, `SHLD`, `SOXX`, `VOO`, `ARKX`, `META`.
 
 ## 3. Autonomous LLM Agent Architecture
 There is **no custom algorithmic code, machine learning models, or hardcoded trading logic**. Instead, the system relies entirely on an autonomous coding-agent runtime acting as the decision engine.

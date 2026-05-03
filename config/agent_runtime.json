@@ -1,10 +1,10 @@
 {
   "modes": {
     "hourly": {
-      "model": "gemini/gemini-2.5-pro"
+      "model": "gemini/gemini-3.1-pro-preview"
     },
     "tactical": {
-      "model": "gemini/gemini-2.5-flash"
+      "model": "gemini/gemini-3.1-flash-lite-preview"
     }
   }
 }

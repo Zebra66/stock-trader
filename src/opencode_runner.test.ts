@@ -78,4 +78,58 @@ describe('opencode runner', () => {
     });
     expect(logs.some((entry) => entry.includes('[opencode] streamed chunk'))).toBe(true);
   });
+
+  test('throws when the session stream reports an error and does not log prompt completion', async () => {
+    const logs: string[] = [];
+
+    const fakeOpencode = {
+      client: {
+        event: {
+          subscribe: async () => ({
+            stream: createAsyncIterable([
+              {
+                type: 'session.error',
+                properties: {
+                  sessionID: 'session-2',
+                  error: { data: { message: 'model exploded' } },
+                },
+              },
+            ]),
+          }),
+        },
+        session: {
+          create: async () => ({ data: { id: 'session-2' } }),
+          prompt: async () => ({ data: { info: { id: 'message-2' } } }),
+        },
+      },
+      server: {
+        close: () => undefined,
+      },
+    };
+
+    await expect(
+      runOpencodePrompt({
+        mode: 'hourly',
+        prompt: 'test prompt',
+        model: 'gemini/gemini-3.1-pro-preview',
+        createClient: async () => fakeOpencode,
+        logger: {
+          info: (message: string) => logs.push(message),
+          warn: (message: string) => logs.push(message),
+          error: (message: string) => logs.push(message),
+          debug: (message: string) => logs.push(message),
+          child: () => ({
+            info: (message: string) => logs.push(message),
+            warn: (message: string) => logs.push(message),
+            error: (message: string) => logs.push(message),
+            debug: (message: string) => logs.push(message),
+            child: () => undefined as never,
+          }),
+        },
+      }),
+    ).rejects.toThrow('OpenCode session failed: model exploded');
+
+    expect(logs.some((entry) => entry.includes('[opencode] session error: model exploded'))).toBe(true);
+    expect(logs.some((entry) => entry.includes('[opencode] prompt completed'))).toBe(false);
+  });
 });
