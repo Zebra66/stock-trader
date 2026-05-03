@@ -62,10 +62,10 @@ The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live 
 │                 │                                            │
 │     ┌───────────┴────────────────────────────────┐          │
 │     ▼                     ▼                      ▼          │
-│  memory/           src/tools/*_cli.ts        GitHub         │
-│  MEMORY.md         (Alpaca, FMP, System)     (git push)     │
-│  todo.md                                                    │
-│  dry_run_ledger.json                                        │
+│  memory/           prompts/                GitHub           │
+│  MEMORY.md         hourly.txt              (git push)       │
+│  todo.md           tactical.txt                              │
+│  dry_run_ledger.json  src/tools/*_cli.ts (Alpaca, FMP, System)│
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -87,7 +87,8 @@ Runs every 10 minutes **while the market is open**. Uses **Gemini 3 Flash** (fas
 │                                                              │
 │  3. Bun.spawn → agent.ts tactical                            │
 │                                                              │
-│  4. Gemini 3 Flash reads state:                              │
+│  4. Gemini 3 Flash loads prompt + reads state:               │
+│     → prompts/tactical.txt — tactical instructions           │
 │     → readFile("memory/MEMORY.md") — macro directive        │
 │     → readFile("memory/todo.md")   — buy/sell conditions    │
 │                                                              │
@@ -125,7 +126,8 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 │                                                              │
 │  1. Bun.spawn → agent.ts hourly                              │
 │                                                              │
-│  2. Gemini 3.1 Pro reads current state:                      │
+│  2. Gemini 3.1 Pro loads prompt + reads current state:       │
+│     → prompts/hourly.txt — hourly instructions               │
 │     → readFile("memory/MEMORY.md") — last directive + exec  │
 │     → readFile("memory/todo.md")   — tactical flags/issues  │
 │                                                              │
@@ -193,6 +195,8 @@ The agent's working directory is the repository root. It has access to:
 | `memory/MEMORY.md` | **Primary communication bus.** Macro agent writes strategy; Tactical agent reads and executes. Both update after each cycle. |
 | `memory/todo.md` | **Action queue.** Macro writes buy/sell conditions; Tactical checks and clears them each cycle. |
 | `memory/dry_run_ledger.json` | Optional virtual ledger for manual bookkeeping. |
+| `prompts/hourly.txt` | External system prompt template for the hourly macro strategist. Loaded by `src/agent.ts` at runtime. |
+| `prompts/tactical.txt` | External system prompt template for the 10-minute tactical executor. Loaded by `src/agent.ts` at runtime. |
 | `src/tools/alpaca_cli.ts` | CLI: account info, positions, prices, order execution. |
 | `src/tools/fmp_cli.ts` | CLI: analyst estimates, 1w–3y historical performance. |
 | `src/tools/system_cli.ts` | CLI: read/write files. |
@@ -234,7 +238,7 @@ Git is a first-class citizen of this system — not just version control. It ser
 The agent writes `memory/MEMORY.md` and commits it. The next cycle runs `git pull`, so if deployed to Cloud Run or running on multiple machines, all instances stay in sync.
 
 ### 2. Self-evolution
-The agent may rewrite its own source files (`src/agent.ts`, prompts, CLI tools) and commit them. On the next cycle, after `git pull`, the spawned child process loads the new code automatically.
+The agent may rewrite its own source files (`src/agent.ts`, `prompts/*.txt`, CLI tools) and commit them. On the next cycle, after `git pull`, the spawned child process loads the new code automatically.
 
 ```
 Agent modifies src/agent.ts
