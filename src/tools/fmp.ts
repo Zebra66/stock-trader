@@ -1,8 +1,14 @@
-const FMP_API_KEY = process.env.FMP_API_KEY || 'dummy_key';
+const FMP_API_KEY = process.env.FMP_API_KEY;
+const isFmpDisabled = !FMP_API_KEY || FMP_API_KEY === 'dummy_key' || FMP_API_KEY === 'your_fmp_api_key_here';
+
 const BASE_URL = 'https://financialmodelingprep.com/api/v3';
 
 export const fmpTools = {
   getAnalystEstimates: async (symbol: string) => {
+    if (isFmpDisabled) {
+      console.warn("[FMP] FMP_API_KEY is missing. Returning disabled message.");
+      return `[WARNING]: FMP_API_KEY is not configured. Analyst estimates are disabled. Please rely on other data.`;
+    }
     try {
       const response = await fetch(`${BASE_URL}/analyst-estimates/${symbol}?apikey=${FMP_API_KEY}`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -14,6 +20,10 @@ export const fmpTools = {
   },
 
   getHistoricalPerformance: async (symbol: string) => {
+    if (isFmpDisabled) {
+      console.warn("[FMP] FMP_API_KEY is missing. Returning disabled message.");
+      return `[WARNING]: FMP_API_KEY is not configured. Historical performance is disabled. Please rely on other data.`;
+    }
     try {
       const response = await fetch(`${BASE_URL}/historical-price-full/${symbol}?apikey=${FMP_API_KEY}`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
