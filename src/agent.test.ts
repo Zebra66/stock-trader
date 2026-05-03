@@ -1,6 +1,6 @@
 import { expect, test, describe } from 'bun:test';
-import { fmpTools } from './tools/fmp';
-import { systemTools } from './tools/system';
+import { fmpTools } from './tools/fmp_cli';
+import { systemTools } from './tools/system_cli';
 
 // ── Module-level unit tests ────────────────────────────────────────────────────
 
@@ -67,7 +67,7 @@ async function runCli(script: string, args: string[] = []): Promise<{ stdout: st
 
 describe('Alpaca CLI', () => {
   test('--help prints usage', async () => {
-    const { stdout, exitCode } = await runCli('src/tools/alpaca.ts', ['--help']);
+    const { stdout, exitCode } = await runCli('src/tools/alpaca_cli.ts', ['--help']);
     expect(exitCode).toBe(0);
     expect(stdout).toContain('get-account');
     expect(stdout).toContain('get-positions');
@@ -76,25 +76,25 @@ describe('Alpaca CLI', () => {
   });
 
   test('no args prints usage', async () => {
-    const { stdout, exitCode } = await runCli('src/tools/alpaca.ts');
+    const { stdout, exitCode } = await runCli('src/tools/alpaca_cli.ts');
     expect(exitCode).toBe(0);
     expect(stdout).toContain('Usage:');
   });
 
   test('unknown command exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/alpaca.ts', ['bad-command']);
+    const { exitCode, stderr } = await runCli('src/tools/alpaca_cli.ts', ['bad-command']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('Unknown command');
   });
 
   test('get-latest-price without --symbol exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/alpaca.ts', ['get-latest-price']);
+    const { exitCode, stderr } = await runCli('src/tools/alpaca_cli.ts', ['get-latest-price']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('--symbol is required');
   });
 
   test('submit-order validates required flags', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/alpaca.ts', ['submit-order', '--symbol', 'NVDA']);
+    const { exitCode, stderr } = await runCli('src/tools/alpaca_cli.ts', ['submit-order', '--symbol', 'NVDA']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('--qty is required');
   });
@@ -102,26 +102,26 @@ describe('Alpaca CLI', () => {
 
 describe('FMP CLI', () => {
   test('--help prints usage', async () => {
-    const { stdout, exitCode } = await runCli('src/tools/fmp.ts', ['--help']);
+    const { stdout, exitCode } = await runCli('src/tools/fmp_cli.ts', ['--help']);
     expect(exitCode).toBe(0);
     expect(stdout).toContain('get-analyst-estimates');
     expect(stdout).toContain('get-historical-performance');
   });
 
   test('no args prints usage', async () => {
-    const { stdout, exitCode } = await runCli('src/tools/fmp.ts');
+    const { stdout, exitCode } = await runCli('src/tools/fmp_cli.ts');
     expect(exitCode).toBe(0);
     expect(stdout).toContain('Usage:');
   });
 
   test('unknown command exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/fmp.ts', ['bad-command']);
+    const { exitCode, stderr } = await runCli('src/tools/fmp_cli.ts', ['bad-command']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('Unknown command');
   });
 
   test('get-analyst-estimates without --symbol exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/fmp.ts', ['get-analyst-estimates']);
+    const { exitCode, stderr } = await runCli('src/tools/fmp_cli.ts', ['get-analyst-estimates']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('--symbol is required');
   });
@@ -129,7 +129,7 @@ describe('FMP CLI', () => {
 
 describe('System CLI', () => {
   test('--help prints usage', async () => {
-    const { stdout, exitCode } = await runCli('src/tools/system.ts', ['--help']);
+    const { stdout, exitCode } = await runCli('src/tools/system_cli.ts', ['--help']);
     expect(exitCode).toBe(0);
     expect(stdout).toContain('read-file');
     expect(stdout).toContain('write-file');
@@ -137,19 +137,19 @@ describe('System CLI', () => {
 
   test('read-file prints file contents', async () => {
     await Bun.write('/tmp/cli-test.txt', 'hello from cli');
-    const { stdout, exitCode } = await runCli('src/tools/system.ts', ['read-file', '--path', '/tmp/cli-test.txt']);
+    const { stdout, exitCode } = await runCli('src/tools/system_cli.ts', ['read-file', '--path', '/tmp/cli-test.txt']);
     expect(exitCode).toBe(0);
     expect(stdout).toContain('hello from cli');
   });
 
   test('read-file without --path exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/system.ts', ['read-file']);
+    const { exitCode, stderr } = await runCli('src/tools/system_cli.ts', ['read-file']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('--path is required');
   });
 
   test('unknown command exits non-zero', async () => {
-    const { exitCode, stderr } = await runCli('src/tools/system.ts', ['bad-command']);
+    const { exitCode, stderr } = await runCli('src/tools/system_cli.ts', ['bad-command']);
     expect(exitCode).not.toBe(0);
     expect(stderr).toContain('Unknown command');
   });

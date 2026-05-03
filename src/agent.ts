@@ -1,5 +1,5 @@
 import { GoogleGenAI, Type } from '@google/genai';
-import { systemTools } from './tools/system';
+import { systemTools } from './tools/system_cli';
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 const mode = process.argv[2]; // 'hourly' or 'tactical'
@@ -71,17 +71,17 @@ const CLI_TOOLS_INTRO = `
 ## Available CLI Tools (invoke via executeBash)
 
 Run \`--help\` on any tool to see full usage:
-  bun run src/tools/alpaca.ts --help   # account, positions, prices, orders
-  bun run src/tools/fmp.ts --help      # analyst estimates, historical performance
-  bun run src/tools/system.ts --help   # read-file, write-file
+  bun run src/tools/alpaca_cli.ts --help   # account, positions, prices, orders
+  bun run src/tools/fmp_cli.ts --help      # analyst estimates, historical performance
+  bun run src/tools/system_cli.ts --help   # read-file, write-file
 
 Quick reference:
-  bun run src/tools/alpaca.ts get-account
-  bun run src/tools/alpaca.ts get-positions
-  bun run src/tools/alpaca.ts get-latest-price --symbol <TICKER>
-  bun run src/tools/alpaca.ts submit-order --symbol <TICKER> --qty <n> --side <buy|sell> [--type limit --limit-price <n>]
-  bun run src/tools/fmp.ts get-analyst-estimates --symbol <TICKER>
-  bun run src/tools/fmp.ts get-historical-performance --symbol <TICKER>
+  bun run src/tools/alpaca_cli.ts get-account
+  bun run src/tools/alpaca_cli.ts get-positions
+  bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>
+  bun run src/tools/alpaca_cli.ts submit-order --symbol <TICKER> --qty <n> --side <buy|sell> [--type limit --limit-price <n>]
+  bun run src/tools/fmp_cli.ts get-analyst-estimates --symbol <TICKER>
+  bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>
 `.trim();
 
 async function runAgent(): Promise<void> {

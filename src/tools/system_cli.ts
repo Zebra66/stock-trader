@@ -37,7 +37,7 @@ export const systemTools = {
 // ── CLI ────────────────────────────────────────────────────────────────────────
 
 const HELP = `
-Usage: bun run src/tools/system.ts <command> [options]
+Usage: bun run src/tools/system_cli.ts <command> [options]
 
 Commands:
   read-file --path <PATH>
@@ -50,8 +50,8 @@ Options:
   --help   Show this help message.
 
 Examples:
-  bun run src/tools/system.ts read-file --path memory/MEMORY.md
-  bun run src/tools/system.ts write-file --path memory/todo.md --content "- [ ] Review positions"
+  bun run src/tools/system_cli.ts read-file --path memory/MEMORY.md
+  bun run src/tools/system_cli.ts write-file --path memory/todo.md --content "- [ ] Review positions"
 `.trim();
 
 function parseFlags(argv: string[]): Record<string, string> {

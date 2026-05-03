@@ -92,7 +92,7 @@ export const fmpTools = {
 // ── CLI ────────────────────────────────────────────────────────────────────────
 
 const HELP = `
-Usage: bun run src/tools/fmp.ts <command> [options]
+Usage: bun run src/tools/fmp_cli.ts <command> [options]
 
 Commands:
   get-analyst-estimates --symbol <TICKER>
@@ -108,8 +108,8 @@ Options:
   --help   Show this help message.
 
 Examples:
-  bun run src/tools/fmp.ts get-analyst-estimates --symbol NVDA
-  bun run src/tools/fmp.ts get-historical-performance --symbol QQQ
+  bun run src/tools/fmp_cli.ts get-analyst-estimates --symbol NVDA
+  bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ
 `.trim();
 
 function parseFlags(argv: string[]): Record<string, string> {

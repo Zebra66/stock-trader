@@ -1,6 +1,6 @@
 import { Elysia } from 'elysia';
 import { getPaused, setPaused } from '../harness';
-import { alpaca } from '../tools/alpaca';
+import { alpaca } from '../tools/alpaca_cli';
 import * as fs from 'fs/promises';
 
 const PORT = process.env.PORT || 3000;

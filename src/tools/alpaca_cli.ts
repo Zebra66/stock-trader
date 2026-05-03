@@ -63,7 +63,7 @@ export const alpacaTools = {
 // ── CLI ────────────────────────────────────────────────────────────────────────
 
 const HELP = `
-Usage: bun run src/tools/alpaca.ts <command> [options]
+Usage: bun run src/tools/alpaca_cli.ts <command> [options]
 
 Commands:
   get-account
@@ -84,11 +84,11 @@ Options:
   --help   Show this help message.
 
 Examples:
-  bun run src/tools/alpaca.ts get-account
-  bun run src/tools/alpaca.ts get-positions
-  bun run src/tools/alpaca.ts get-latest-price --symbol NVDA
-  bun run src/tools/alpaca.ts submit-order --symbol NVDA --qty 5 --side buy
-  bun run src/tools/alpaca.ts submit-order --symbol MSFT --qty 2 --side sell --type limit --limit-price 420
+  bun run src/tools/alpaca_cli.ts get-account
+  bun run src/tools/alpaca_cli.ts get-positions
+  bun run src/tools/alpaca_cli.ts get-latest-price --symbol NVDA
+  bun run src/tools/alpaca_cli.ts submit-order --symbol NVDA --qty 5 --side buy
+  bun run src/tools/alpaca_cli.ts submit-order --symbol MSFT --qty 2 --side sell --type limit --limit-price 420
 `.trim();
 
 function parseFlags(argv: string[]): Record<string, string> {

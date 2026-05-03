@@ -1,5 +1,5 @@
-import { alpacaTools } from './tools/alpaca';
-import { fmpTools } from './tools/fmp';
+import { alpacaTools } from './tools/alpaca_cli';
+import { fmpTools } from './tools/fmp_cli';
 
 async function runTests() {
   console.log("--- Testing Alpaca Connection ---");
