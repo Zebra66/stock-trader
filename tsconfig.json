@@ -6,7 +6,11 @@
     "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["bun"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
   },
-  "exclude": ["skills", "node_modules"]
+  "include": ["index.ts", "src/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["skills", "node_modules"],
 }
