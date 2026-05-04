@@ -43,3 +43,4 @@
 - [x] Latest Alpaca price data shows some **fresh pre-market prints** in leaders like **GOOG / NVDA / QQQ / SOXX**, but the market is still **closed / pre-open**, so require post-open confirmation before acting.
 - [x] Preferred long list remains **SOXX, GOOG, AVGO, QQQ**, with **NVDA** and **QTUM** secondary and **GLD / RKLB** small only.
 - [ ] Continue waiting for live cash-session confirmation before acting on any breakout/reclaim trigger.
+- [ ] 2026-05-04 tactical cycle completed with no orders; all watched names remained below their active entry triggers, so preserve cash and recheck after the open.
