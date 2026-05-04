@@ -45,7 +45,19 @@ export interface DashboardData {
   dayChange: number;
   dayChangePct: number;
   historyUnavailableMessage?: string;
+  periodStart: number;   // ms — start of the requested period window
+  periodEnd: number;     // ms — end of the requested period window
 }
+
+/** Supported view windows */
+export type ChartPeriod = '1D' | '1W' | '1M';
+
+/** Map period → Alpaca API period string and timeframe resolution */
+const PERIOD_CONFIG: Record<ChartPeriod, { alpacaPeriod: string; alpacaTimeframe: string; windowMs: number }> = {
+  '1D': { alpacaPeriod: '1D',  alpacaTimeframe: '10Min', windowMs: 24 * 60 * 60 * 1000 },
+  '1W': { alpacaPeriod: '1W',  alpacaTimeframe: '10Min', windowMs: 7 * 24 * 60 * 60 * 1000 },
+  '1M': { alpacaPeriod: '1M',  alpacaTimeframe: '30Min', windowMs: 30 * 24 * 60 * 60 * 1000 },
+};
 
 function parseNumeric(value: number | string | undefined): number {
   if (typeof value === 'number') {
@@ -86,7 +98,10 @@ function isHistoryUsable(history: DashboardPoint[], equity: number): boolean {
   return history.some((point) => point.y > 0);
 }
 
-export async function buildDashboardData(client: DashboardDataClient): Promise<DashboardData> {
+export async function buildDashboardData(
+  client: DashboardDataClient,
+  period: ChartPeriod = '1W',
+): Promise<DashboardData> {
   const account = await client.getAccount();
   const equity = parseNumeric(account.equity);
   const cash = parseNumeric(account.cash);
@@ -95,11 +110,19 @@ export async function buildDashboardData(client: DashboardDataClient): Promise<D
   const dayChange = equity - lastEquity;
   const dayChangePct = lastEquity === 0 ? 0 : dayChange / lastEquity;
 
+  const config = PERIOD_CONFIG[period] ?? PERIOD_CONFIG['1W'];
+  const nowMs = Date.now();
+  const periodEnd = nowMs;
+  const periodStart = nowMs - config.windowMs;
+
   let history: DashboardPoint[] = [];
   let historyUnavailableMessage: string | undefined;
 
   try {
-    const portfolioHistory = await client.getPortfolioHistory({ period: '1W', timeframe: '1H' });
+    const portfolioHistory = await client.getPortfolioHistory({
+      period: config.alpacaPeriod,
+      timeframe: config.alpacaTimeframe,
+    });
     const timestamps = portfolioHistory.timestamp ?? [];
     const equities = portfolioHistory.equity ?? [];
 
@@ -117,38 +140,47 @@ export async function buildDashboardData(client: DashboardDataClient): Promise<D
     historyUnavailableMessage = 'Portfolio history is currently unavailable.';
   }
 
-  let buys: DashboardTradePoint[] = [];
-  let sells: DashboardTradePoint[] = [];
+  // Always attempt to fetch trade activities regardless of history availability.
+  // We need them even if history has gaps so the user can see what trades happened.
+  let allBuys: DashboardTradePoint[] = [];
+  let allSells: DashboardTradePoint[] = [];
 
-  if (history.length > 0) {
-    try {
-      const activities = await client.getAccountActivities({ activityTypes: ['FILL'] });
+  try {
+    const activities = await client.getAccountActivities({ activityTypes: ['FILL'] });
 
-      for (const activity of activities) {
-        if (!activity.transaction_time) {
-          continue;
-        }
-
-        const timeMs = new Date(activity.transaction_time).getTime();
-        const point: DashboardTradePoint = {
-          x: timeMs,
-          y: findNearestEquity(history, timeMs),
-          symbol: activity.symbol,
-          qty: parseNumeric(activity.qty),
-          price: parseNumeric(activity.price),
-        };
-
-        if (activity.side === 'buy') {
-          buys.push(point);
-        } else {
-          sells.push(point);
-        }
+    for (const activity of activities) {
+      if (!activity.transaction_time) {
+        continue;
       }
-    } catch {
-      buys = [];
-      sells = [];
+
+      const timeMs = new Date(activity.transaction_time).getTime();
+
+      // Find y position: snap to nearest equity history point, or use 0 as fallback
+      const yVal = history.length > 0 ? findNearestEquity(history, timeMs) : 0;
+
+      const point: DashboardTradePoint = {
+        x: timeMs,
+        y: yVal,
+        symbol: activity.symbol,
+        qty: parseNumeric(activity.qty),
+        price: parseNumeric(activity.price),
+      };
+
+      if (activity.side === 'buy') {
+        allBuys.push(point);
+      } else {
+        allSells.push(point);
+      }
     }
+  } catch {
+    allBuys = [];
+    allSells = [];
   }
+
+  // Filter trades to the requested window only
+  const windowStart = history.length > 0 ? (history[0]?.x ?? periodStart) : periodStart;
+  const buys = allBuys.filter((p) => p.x >= windowStart);
+  const sells = allSells.filter((p) => p.x >= windowStart);
 
   return {
     history,
@@ -160,5 +192,7 @@ export async function buildDashboardData(client: DashboardDataClient): Promise<D
     dayChange,
     dayChangePct,
     historyUnavailableMessage,
+    periodStart: history.length > 0 ? (history[0]?.x ?? periodStart) : periodStart,
+    periodEnd: history.length > 0 ? (history[history.length - 1]?.x ?? periodEnd) : periodEnd,
   };
 }

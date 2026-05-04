@@ -6,7 +6,7 @@ import * as fs from 'fs/promises';
 import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
-import { buildDashboardData } from './dashboard_data';
+import { buildDashboardData, type ChartPeriod } from './dashboard_data';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
@@ -153,13 +153,19 @@ const app = new Elysia()
     .stat-val.cyan{color:var(--cyan)}.stat-val.green{color:var(--green)}.stat-val.red{color:var(--red)}
     .stat-ico{position:absolute;top:.9rem;right:.9rem;font-size:1.1rem;opacity:.6}
     /* CHART */
-    .chart-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+    .chart-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem}
     .chart-hdr h2{font-size:.9375rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
     .chart-hdr h2 span{font-size:.75rem;color:var(--t3);font-weight:400}
     .legend{display:flex;gap:.875rem;font-size:.75rem;color:var(--t2)}
     .legend-item{display:flex;align-items:center;gap:.35rem}
     .ldot{width:8px;height:8px;border-radius:50%}
     .chart-box{position:relative;height:340px;width:100%}
+    /* PERIOD NAV */
+    .chart-period-nav{display:flex;align-items:center;gap:.25rem}
+    .btn-period{padding:.3rem .65rem;font-size:.78rem;font-weight:600;border-radius:6px;border:1px solid #334155;background:transparent;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .18s;letter-spacing:.03em}
+    .btn-period:hover:not(:disabled){border-color:var(--cyan);color:var(--cyan)}
+    .btn-period.active{background:rgba(0,212,255,0.12);border-color:rgba(0,212,255,0.5);color:var(--cyan);box-shadow:0 0 8px rgba(0,212,255,0.12)}
+    .btn-period:disabled{opacity:.3;cursor:not-allowed}
     /* BOTTOM GRID */
     .bottom-grid{display:grid;grid-template-columns:2fr 3fr;gap:1rem;margin-top:1rem}
     .sec-title{font-size:.875rem;font-weight:600;color:var(--t1);margin-bottom:.875rem;display:flex;align-items:center;gap:.4rem}
@@ -303,12 +309,21 @@ const app = new Elysia()
   </div>
   <div class="card" style="margin-bottom:1rem">
     <div class="chart-hdr">
-      <h2>📊 Portfolio Performance <span id="chart-note">· 1 Week</span></h2>
-      <div class="legend">
-        <div class="legend-item"><span class="ldot" style="background:#00d4ff"></span>Equity</div>
-        <div class="legend-item"><span class="ldot" style="background:#00ff88"></span>Buy</div>
-        <div class="legend-item"><span class="ldot" style="background:#ff4757"></span>Sell</div>
-        <button class="btn-refresh" onclick="renderChart()" style="margin-left:.5rem" title="Refresh chart">⟳</button>
+      <h2>📊 Portfolio Performance <span id="chart-note" style="color:var(--t3);font-size:.75rem;font-weight:400"></span></h2>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+        <div class="legend">
+          <div class="legend-item"><span class="ldot" style="background:#00d4ff"></span>Equity</div>
+          <div class="legend-item"><span class="ldot" style="background:#00ff88"></span>Buy</div>
+          <div class="legend-item"><span class="ldot" style="background:#ff4757"></span>Sell</div>
+        </div>
+        <div class="chart-period-nav">
+          <button class="btn-period" id="btn-nav-prev" onclick="chartNav(-1)" title="Previous window">&#8592;</button>
+          <button class="btn-period active" id="btn-period-1D" onclick="setPeriod('1D')">D</button>
+          <button class="btn-period" id="btn-period-1W" onclick="setPeriod('1W')">W</button>
+          <button class="btn-period" id="btn-period-1M" onclick="setPeriod('1M')">M</button>
+          <button class="btn-period" id="btn-nav-next" onclick="chartNav(1)" title="Next window">&#8594;</button>
+          <button class="btn-refresh" onclick="renderChart(true)" style="margin-left:.25rem" title="Refresh chart">⟳</button>
+        </div>
       </div>
     </div>
     <div class="chart-box"><canvas id="portfolioChart"></canvas></div>
@@ -371,6 +386,20 @@ const app = new Elysia()
 <script>
   let chart=null;
   let selectedMode=null;
+  // ── Chart time-window state ──────────────────────────────────────────────────
+  // activePeriod: current zoom level ('1D' | '1W' | '1M')
+  // chartOffset:  how many windows back from "now" are we viewing (0 = latest)
+  // allHistory / allBuys / allSells: full dataset loaded from API for slicing
+  let activePeriod='1D';
+  let chartOffset=0;
+  let allHistory=[];
+  let allBuys=[];
+  let allSells=[];
+  let fullPeriodStart=0;
+  let fullPeriodEnd=0;
+
+  const WINDOW_MS={'1D':86400000,'1W':7*86400000,'1M':30*86400000};
+
   function formatMoney(value){
     return '$'+Number(value||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
   }
@@ -385,8 +414,53 @@ const app = new Elysia()
   }
   async function selectMode(mode){
     selectedMode=mode;
-    await renderChart();
+    chartOffset=0;
+    await renderChart(true);
   }
+
+  function setPeriod(p){
+    activePeriod=p;
+    chartOffset=0;
+    document.querySelectorAll('.btn-period[id^="btn-period-"]').forEach(b=>b.classList.remove('active'));
+    document.getElementById('btn-period-'+p)?.classList.add('active');
+    renderChart(true);
+  }
+
+  function chartNav(dir){
+    chartOffset=Math.max(0,chartOffset-dir);
+    sliceAndRenderWindow();
+  }
+
+  /** Slice allHistory/buys/sells to the active time window + offset, then update chart */
+  function sliceAndRenderWindow(){
+    if(!chart||allHistory.length===0) return;
+    const winMs=WINDOW_MS[activePeriod]||WINDOW_MS['1W'];
+    // windowEnd = fullPeriodEnd - (offset * winMs)
+    const windowEnd=fullPeriodEnd - chartOffset*winMs;
+    const windowStart=windowEnd - winMs;
+
+    const slicedHistory=allHistory.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+    const slicedBuys=allBuys.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+    const slicedSells=allSells.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+
+    chart.data.datasets[0].data=slicedHistory;
+    chart.data.datasets[1].data=slicedBuys;
+    chart.data.datasets[2].data=slicedSells;
+    chart.options.scales.x.min=windowStart;
+    chart.options.scales.x.max=windowEnd;
+    chart.update('none');
+
+    // Update nav button states
+    const canGoBack=windowStart>fullPeriodStart;
+    const canGoFwd=chartOffset>0;
+    document.getElementById('btn-nav-prev').disabled=!canGoBack;
+    document.getElementById('btn-nav-next').disabled=!canGoFwd;
+
+    // Update note label
+    const fmtDate=ms=>new Date(ms).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    document.getElementById('chart-note').innerText='· '+fmtDate(windowStart)+' — '+fmtDate(windowEnd);
+  }
+
   async function fetchStatus(){
     try{
       const d=await(await fetch('/api/status')).json();
@@ -406,10 +480,20 @@ const app = new Elysia()
   async function fetchMemory(){
     try{const t=await(await fetch('/api/memory')).text();document.getElementById('memory-content').innerText=t;}catch(e){}
   }
-  async function renderChart(){
+
+  async function renderChart(forceReload){
     try{
-      const query=selectedMode?'?mode='+encodeURIComponent(selectedMode):'';
-      const d=await(await fetch('/api/chart-data'+query)).json();
+      // Only hit the API when forceReload is true; otherwise just re-slice existing data
+      if(!forceReload&&chart&&allHistory.length>0){
+        sliceAndRenderWindow();
+        return;
+      }
+
+      const params=new URLSearchParams();
+      if(selectedMode) params.set('mode',selectedMode);
+      params.set('period','1M'); // always fetch max history from API; we slice client-side
+      const d=await(await fetch('/api/chart-data?'+params.toString())).json();
+
       if(d.error){
         clearDashboardStats();
         document.getElementById('mode-note').innerText='· '+(d.modeLabel||'Unavailable');
@@ -417,35 +501,136 @@ const app = new Elysia()
         setModeButtons(d.availableModes||[], d.mode);
         return;
       }
+
       selectedMode=d.mode;
       document.getElementById('eq-val').innerText=formatMoney(d.equity);
       document.getElementById('cash-val').innerText=formatMoney(d.cash);
       document.getElementById('bp-val').innerText=formatMoney(d.buyingPower);
 
-      const changeLabel=(d.dayChange >= 0 ? '+' : '-')+formatMoney(Math.abs(d.dayChange)).replace('$','')+' ('+((d.dayChangePct*100)>=0?'+':'')+(d.dayChangePct*100).toFixed(2)+'%)';
+      const changeLabel=(d.dayChange>=0?'+':'-')+formatMoney(Math.abs(d.dayChange)).replace('$','')+' ('+((d.dayChangePct*100)>=0?'+':'')+(d.dayChangePct*100).toFixed(2)+'%)';
       document.getElementById('dc-val').innerText=changeLabel;
-      document.getElementById('dc-val').className='stat-val '+(d.dayChange >= 0 ? 'green' : 'red');
+      document.getElementById('dc-val').className='stat-val '+(d.dayChange>=0?'green':'red');
       document.getElementById('mode-note').innerText='· '+d.modeLabel;
-      document.getElementById('chart-note').innerText=d.historyUnavailableMessage ? '· '+d.historyUnavailableMessage : '· 1 Week';
       setModeButtons(d.availableModes||[], d.mode);
+
+      // Store full dataset
+      allHistory=d.history||[];
+      allBuys=d.buys||[];
+      allSells=d.sells||[];
+      fullPeriodStart=d.periodStart||0;
+      fullPeriodEnd=d.periodEnd||Date.now();
+
+      if(allHistory.length===0){
+        document.getElementById('chart-note').innerText=d.historyUnavailableMessage?'· '+d.historyUnavailableMessage:'';
+      }
+
+      // Build initial window: activePeriod from the latest data point
+      const winMs=WINDOW_MS[activePeriod]||WINDOW_MS['1D'];
+      const windowEnd=fullPeriodEnd;
+      const windowStart=windowEnd-winMs;
+
+      const slicedHistory=allHistory.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+      const slicedBuys=allBuys.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+      const slicedSells=allSells.filter(p=>p.x>=windowStart&&p.x<=windowEnd);
+
       const ctx=document.getElementById('portfolioChart').getContext('2d');
       if(chart){chart.destroy();}
+
+      const timeUnit=activePeriod==='1D'?'hour':(activePeriod==='1W'?'day':'week');
+
       chart=new Chart(ctx,{
         type:'line',
         data:{datasets:[
-          {label:'Equity ($)',data:d.history,borderColor:'#00d4ff',backgroundColor:'rgba(0,212,255,0.08)',borderWidth:2,fill:true,pointRadius:0,tension:0.3,order:2},
-          {type:'scatter',label:'Buy',data:d.buys,backgroundColor:'#00ff88',borderColor:'#0a0f1e',borderWidth:1.5,pointRadius:7,pointHoverRadius:9,order:1},
-          {type:'scatter',label:'Sell',data:d.sells,backgroundColor:'#ff4757',borderColor:'#0a0f1e',borderWidth:1.5,pointRadius:7,pointHoverRadius:9,order:1}
+          {
+            label:'Equity ($)',
+            data:slicedHistory,
+            borderColor:'#00d4ff',
+            backgroundColor:'rgba(0,212,255,0.07)',
+            borderWidth:2,
+            fill:true,
+            pointRadius:0,
+            pointHoverRadius:3,
+            tension:0.2,
+            order:2
+          },
+          {
+            type:'scatter',
+            label:'Buy',
+            data:slicedBuys,
+            backgroundColor:'#00ff88',
+            borderColor:'#0a0f1e',
+            borderWidth:1.5,
+            pointRadius:8,
+            pointHoverRadius:11,
+            pointStyle:'triangle',
+            order:1
+          },
+          {
+            type:'scatter',
+            label:'Sell',
+            data:slicedSells,
+            backgroundColor:'#ff4757',
+            borderColor:'#0a0f1e',
+            borderWidth:1.5,
+            pointRadius:8,
+            pointHoverRadius:11,
+            pointStyle:'rectRot',
+            order:1
+          }
         ]},
-        options:{responsive:true,maintainAspectRatio:false,
-          interaction:{mode:'index',intersect:false},
-          plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e293b',borderColor:'rgba(0,212,255,0.3)',borderWidth:1,titleColor:'#94a3b8',bodyColor:'#f1f5f9',padding:10,callbacks:{label:function(c){let l=c.dataset.label+': ';if(c.raw&&typeof c.raw==='object'&&c.raw.symbol)l+=c.raw.symbol+' @$'+parseFloat(c.raw.price).toFixed(2)+' ('+c.raw.qty+' shs)';else l+='$'+c.parsed.y;return l;}}}},
+        options:{
+          responsive:true,
+          maintainAspectRatio:false,
+          animation:false,
+          interaction:{mode:'nearest',intersect:false,axis:'x'},
+          plugins:{
+            legend:{display:false},
+            tooltip:{
+              backgroundColor:'rgba(15,23,42,0.95)',
+              borderColor:'rgba(0,212,255,0.35)',
+              borderWidth:1,
+              titleColor:'#94a3b8',
+              bodyColor:'#f1f5f9',
+              padding:12,
+              cornerRadius:8,
+              callbacks:{
+                title:function(items){
+                  const ts=items[0]?.parsed?.x;
+                  if(!ts) return '';
+                  return new Date(ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+                },
+                label:function(c){
+                  const raw=c.raw;
+                  if(raw&&typeof raw==='object'&&raw.symbol){
+                    const action=c.dataset.label;
+                    const val=parseFloat(raw.price).toFixed(2);
+                    const qty=raw.qty;
+                    const total=(parseFloat(raw.price)*parseFloat(raw.qty)).toFixed(2);
+                    return action+': '+raw.symbol+' — '+qty+' shs @ $'+val+' = $'+total;
+                  }
+                  return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+                }
+              }
+            }
+          },
           scales:{
-            x:{type:'time',time:{unit:'day'},ticks:{color:'#475569'},grid:{color:'rgba(0,212,255,0.06)'}},
-            y:{ticks:{color:'#475569',callback:v=>'$'+v},grid:{color:'rgba(0,212,255,0.06)'}}
+            x:{
+              type:'time',
+              min:windowStart,
+              max:windowEnd,
+              time:{unit:timeUnit,displayFormats:{hour:'h:mm a',day:'MMM d',week:'MMM d'}},
+              ticks:{color:'#475569',maxRotation:0,autoSkip:true,maxTicksLimit:8},
+              grid:{color:'rgba(0,212,255,0.05)'}
+            },
+            y:{
+              ticks:{color:'#475569',callback:v=>'$'+Number(v).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})},
+              grid:{color:'rgba(0,212,255,0.05)'}
+            }
           }
         }
       });
+
+      sliceAndRenderWindow();
     }catch(e){console.error(e);}
   }
   function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
@@ -635,7 +820,7 @@ const app = new Elysia()
     if(e.key==='Escape') closeLogs();
   });
 
-  fetchStatus();fetchMemory();renderChart();fetchCommits();
+  fetchStatus();fetchMemory();renderChart(true);fetchCommits();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
@@ -773,13 +958,18 @@ const app = new Elysia()
       return "Memory file not found.";
     }
   })
-  .get('/api/chart-data', async ({ query }: { query: { mode?: string } }) => {
+  .get('/api/chart-data', async ({ query }: { query: { mode?: string; period?: string } }) => {
     const mode = resolveDashboardMode(query.mode);
     const { modes } = getConfiguredAlpacaModes();
+    // Accept period override; default to '1M' so we fetch max history and slice client-side
+    const validPeriods: ChartPeriod[] = ['1D', '1W', '1M'];
+    const period: ChartPeriod = validPeriods.includes(query.period as ChartPeriod)
+      ? (query.period as ChartPeriod)
+      : '1M';
 
     try {
       const alpaca = createAlpacaClient(mode);
-      const data = await buildDashboardData(alpaca);
+      const data = await buildDashboardData(alpaca, period);
 
       return {
         ...data,
@@ -787,10 +977,11 @@ const app = new Elysia()
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
       };
-    } catch (e: any) {
-      logger.error({ err: (e as Error).message, mode }, 'chart-data API error');
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.error({ err: msg, mode }, 'chart-data API error');
       return {
-        error: e.message,
+        error: msg,
         mode,
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
