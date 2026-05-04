@@ -3,9 +3,9 @@ import { isMarketOpen } from './tools/alpaca_cli';
 import { getLogger } from './logger';
 
 const logger = getLogger('harness');
+const TACTICAL_MINUTES = [10, 20, 30, 40, 50] as const;
 
 let isPaused = false;
-let lastHourlyRun = 0;
 const repoRoot = new URL('..', import.meta.url).pathname;
 
 export function setPaused(paused: boolean) {
@@ -40,10 +40,41 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   await proc.exited;
 }
 
-async function runCycle(): Promise<void> {
+export function getDelayUntilNextHourlyRun(now: Date): number {
+  return getNextHourlyRunAt(now).getTime() - now.getTime();
+}
+
+export function getDelayUntilNextTacticalRun(now: Date): number {
+  return getNextTacticalRunAt(now).getTime() - now.getTime();
+}
+
+export function getNextHourlyRunAt(now: Date): Date {
+  const next = new Date(now);
+
+  next.setMinutes(0, 0, 0);
+  next.setHours(next.getHours() + 1);
+
+  return next;
+}
+
+export function getNextTacticalRunAt(now: Date): Date {
+  const next = new Date(now);
+  const nextMinute = TACTICAL_MINUTES.find((minute) => minute > now.getMinutes());
+
+  if (nextMinute === undefined) {
+    next.setHours(next.getHours() + 1);
+    next.setMinutes(TACTICAL_MINUTES[0], 0, 0);
+  } else {
+    next.setMinutes(nextMinute, 0, 0);
+  }
+
+  return next;
+}
+
+async function runWhenMarketOpen(mode: 'hourly' | 'tactical'): Promise<void> {
   const open = await isMarketOpen();
   if (!open) {
-    logger.info('Market is closed. Skipping cycle');
+    logger.info({ mode }, 'Market is closed. Skipping scheduled run');
     return;
   }
 
@@ -55,13 +86,31 @@ async function runCycle(): Promise<void> {
   // The harness process itself (this file) does NOT auto-reload after a git pull —
   // it must be restarted manually if harness.ts itself changes.
 
-  const now = Date.now();
-  if (now - lastHourlyRun > 3_600_000) {
-    await spawnAgent('hourly');
-    lastHourlyRun = Date.now();
-  }
+  await spawnAgent(mode);
+}
 
-  await spawnAgent('tactical');
+function scheduleAlignedRun(
+  mode: 'hourly' | 'tactical',
+  getNextRunAt: (now: Date) => Date,
+): void {
+  const now = new Date();
+  const nextRunAt = getNextRunAt(now);
+  const delay = nextRunAt.getTime() - now.getTime();
+
+  logger.info({ mode, delayMs: delay, nextRunAt: nextRunAt.toISOString() }, 'Scheduled next aligned run');
+
+  setTimeout(async () => {
+    try {
+      await runWhenMarketOpen(mode);
+    } finally {
+      scheduleAlignedRun(mode, getNextRunAt);
+    }
+  }, delay);
+}
+
+async function runStartupCycle(): Promise<void> {
+  await runWhenMarketOpen('hourly');
+  await runWhenMarketOpen('tactical');
 }
 
 export async function startHarnessLoop(): Promise<void> {
@@ -70,9 +119,11 @@ export async function startHarnessLoop(): Promise<void> {
   // Start web server — shares process memory for the pause toggle
   await import('./web/server');
 
-  // Run an initial cycle immediately, then every 10 minutes
-  await runCycle();
-  setInterval(runCycle, 600_000); // [mili-seconds]
+  // Run both jobs once on startup, then switch to wall-clock aligned scheduling.
+  await runStartupCycle();
+
+  scheduleAlignedRun('hourly', getNextHourlyRunAt);
+  scheduleAlignedRun('tactical', getNextTacticalRunAt);
 }
 
 if (import.meta.main) {

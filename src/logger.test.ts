@@ -2,7 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { extractCallerLocation, formatLogLine } from './logger';
 
 describe('logger formatting', () => {
-  test('formats lines as timestamp level module message', () => {
+  test('formats lines in Nasdaq timezone with timezone suffix', () => {
     const line = formatLogLine({
       time: '2026-05-04T14:32:11.123Z',
       level: 30,
@@ -12,7 +12,7 @@ describe('logger formatting', () => {
     });
 
     expect(line).toBe(
-      '2026-05-04 14:32:11.123 | INFO  | pi_runner | assistant message  stopReason="toolUse"',
+      '2026-05-04 10:32:11.123 EDT | INFO  | pi_runner | assistant message  stopReason="toolUse"',
     );
   });
 
@@ -27,7 +27,7 @@ describe('logger formatting', () => {
     });
 
     expect(line).toBe(
-      '2026-05-04 14:32:11.123 | ERROR | pi_runner:173 | assistant message  stopReason="error"',
+      '2026-05-04 10:32:11.123 EDT | ERROR | pi_runner:173 | assistant message  stopReason="error"',
     );
   });
 });

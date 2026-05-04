@@ -39,6 +39,34 @@ function levelLabel(n: number): string {
   return LEVEL_LABELS[n] ?? 'INFO ';
 }
 
+const NASDAQ_TIMEZONE = 'America/New_York';
+const nasdaqDateTimeFormatter = new Intl.DateTimeFormat('en-CA', {
+  timeZone: NASDAQ_TIMEZONE,
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false,
+});
+const nasdaqTimezoneFormatter = new Intl.DateTimeFormat('en-US', {
+  timeZone: NASDAQ_TIMEZONE,
+  timeZoneName: 'short',
+});
+
+function formatNasdaqTimestamp(date: Date): string {
+  const parts = nasdaqDateTimeFormatter.formatToParts(date);
+  const lookup = new Map(parts.map((part) => [part.type, part.value]));
+  const timezone = nasdaqTimezoneFormatter
+    .formatToParts(date)
+    .find((part) => part.type === 'timeZoneName')?.value;
+
+  return `${lookup.get('year')}-${lookup.get('month')}-${lookup.get('day')} ` +
+    `${lookup.get('hour')}:${lookup.get('minute')}:${lookup.get('second')}.` +
+    `${String(date.getMilliseconds()).padStart(3, '0')} ${timezone ?? 'ET'}`;
+}
+
 // ─── Pretty-print a single pino JSON line ─────────────────────────────────────
 const SKIP_KEYS = new Set(['level', 'time', 'pid', 'hostname', 'module', 'caller', 'msg', 'v']);
 
@@ -69,11 +97,7 @@ function getCallerLocation(): string | undefined {
 export function formatLogLine(obj: Record<string, unknown>): string {
   // Timestamp
   const raw = typeof obj.time === 'string' ? obj.time : new Date().toISOString();
-  const d = new Date(raw);
-  const p = (n: number, w = 2) => String(n).padStart(w, '0');
-  const ts =
-    `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ` +
-    `${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}.${String(d.getMilliseconds()).padStart(3, '0')}`;
+  const ts = formatNasdaqTimestamp(new Date(raw));
 
   // Level, module, message
   const level = typeof obj.level === 'number' ? levelLabel(obj.level) : 'INFO ';
