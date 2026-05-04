@@ -48,3 +48,9 @@
 - [x] Fresh prices and nearby technical levels were refreshed for **GOOG / QQQ / AVGO / NVDA / SOXX / QTUM / RKLB**.
 - [x] Best-add watchlist remains **GOOG / QQQ**, with **AVGO** tertiary and **NVDA** secondary only on stronger confirmation.
 - [x] No prompt or code changes were made in this cycle.
+
+## 2026-05-05 Tactical Pass
+- [x] Fresh quote refresh via Yahoo Finance fallback showed: **AVGO 413.63, EIS 132.735, GLD 416.04, GOOG 381.10, HOOD 77.31, META 611.87, NVDA 197.665, QQQ 672.97, QTUM 135.89, RKLB 80.83, SHLD 68.395, SOXX 463.206, VOO 660.33, ARKX 32.685**.
+- [x] **No trade conditions triggered**: GOOG / QQQ / AVGO / NVDA remained below their reclaim zones.
+- [x] **Existing positions remained in hold zones**: SOXX held above stop and below trim, QTUM held above stop and below add/trim, RKLB held above stop and below trim.
+- [x] Alpaca account/positions endpoints returned **ECONNREFUSED**, so no broker-side order was attempted this cycle.
