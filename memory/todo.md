@@ -46,3 +46,4 @@
 - [x] Market was still pre-open at 07:10 ET and Alpaca latest bars remained stale 2026-05-01 reference prints, so no entries were justified.
 - [x] 2026-05-04 tactical refresh: account remained flat, news check was benign for the core longs, and stale bars still blocked any live entry.
 - [ ] Continue waiting for live cash-session confirmation before acting on any breakout/reclaim trigger.
+- [x] 2026-05-04 current run: market remained pre-open at 07:30 ET, latest Alpaca bars were still stale 2026-05-01 reference prints, and no tactical triggers were actionable without live confirmation.
