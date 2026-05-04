@@ -55,3 +55,17 @@
 - [x] Reviewed current live prices from the latest snapshot: **GOOG 378.545**, **QQQ 672.02**, **AVGO 412.43**, **NVDA 196.34**, **SOXX 461.76**, **QTUM 135.765**, **RKLB 79.81**.
 - [x] **No trades executed**: all buy candidates remained below their trigger bands, and the existing positions stayed above their stop levels.
 - [x] Continue to **avoid averaging down** and preserve cash until the next clean leadership reclaim.
+
+## 2026-05-04 15:40 ET Tactical Refresh Notes
+- [x] Refreshed live Alpaca account and latest prices for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**.
+- [x] Current live snapshot shows **no new trigger**: **GOOG 379.89** remains below its entry zone, **AVGO 416.81** is still below the breakout trigger, and **NVDA 198.83** is still below its re-entry zone.
+- [x] Held the existing book (**AVGO 1, SOXX 2, QTUM 2, QQQ 1, RKLB 1**) and placed **no orders** because the expected edge did not justify friction.
+- [x] Continue to respect the one-add discipline and keep the focus on **GOOG -> AVGO -> NVDA** in that order.
+
+## 2026-05-04 15:49 ET Tactical Refresh Notes
+- [x] Refreshed live Alpaca account and latest prices for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**.
+- [x] Latest live snapshot still shows **no clean trigger**: **GOOG 379.93** remains below entry, **AVGO 416.63** is not yet through the breakout trigger, and **NVDA 198.82** remains below re-entry.
+- [x] Checked Reuters-heavy Google News headlines for the trade candidates; no new adverse catalyst changed the decision.
+- [x] Held the existing book (**AVGO 1, SOXX 2, QTUM 2, QQQ 1, RKLB 1**) and placed **no orders** because the edge did not exceed estimated friction.
+- [x] Continue to prioritize **GOOG -> AVGO -> NVDA** and wait for better confirmation before adding exposure.
+

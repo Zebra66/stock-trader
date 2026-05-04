@@ -112,3 +112,32 @@ The live account is still correctly positioned as a **small, leadership-focused 
 - **Why:** GOOG, QQQ, AVGO, and NVDA all remained below their documented reclaim / breakout triggers; SOXX, QTUM, and RKLB stayed above stop levels and below trim levels.
 - **Current holdings:** unchanged at **SOXX 2**, **QTUM 2**, **RKLB 1**.
 - **Next expected action:** keep cash high and wait for a clean leadership reclaim in **GOOG** or **QQQ** first; only then consider **AVGO** or **NVDA** as secondary adds.
+
+## 2026-05-04 15:38 ET Tactical Execution Summary
+- Refreshed live Alpaca state: equity **$9,985.48**, cash **$7,618.05**, buying power **$17,524.98**.
+- Positions now: **AVGO 1**, **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- Executed **1 share AVGO buy** at **$416.95** after price reclaimed the tactical buy zone and semis remained stable enough to justify the add.
+- No other orders were placed. **GOOG** stayed just below trigger, and **NVDA** remained below its buy zone.
+- Next expected action: hold the new AVGO starter, watch for a clean trim signal in AVGO above the first target or a risk stop if momentum fades, while continuing to respect the one-add discipline.
+
+## 2026-05-04 14:41 ET Tactical Execution Summary
+- Refreshed live Alpaca state: equity **$9,985.18**, cash **$8,035.00**, buying power **$17,941.63**.
+- Positions unchanged: **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- No orders placed this cycle. **GOOG 380.57**, **AVGO 413.59**, and **NVDA 197.84** all remained below their buy triggers; existing holdings also stayed between their stop and trim levels.
+- Reuters headlines from Google News RSS were checked for the active candidates and did not reveal a fresh adverse shock.
+- Next expected action: keep cash elevated and wait for a clean **GOOG -> AVGO -> NVDA** trigger or a risk stop in an existing holding.
+
+## 2026-05-04 15:40 ET Tactical Execution Summary
+- Refreshed live Alpaca state: equity **$9,984.70**, cash **$7,618.05**, buying power **$17,524.20**.
+- Positions remain **AVGO 1**, **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- Rechecked latest prices for the full universe. **GOOG 379.89**, **AVGO 416.81**, and **NVDA 198.83** did **not** reach their buy triggers, so no new trade met the execution bar after friction.
+- Held existing positions; no orders were placed this cycle.
+- Next expected action: keep the current controlled net-long posture, watch for a clean GOOG setup first, and only then consider AVGO or NVDA if they confirm.
+
+## 2026-05-04 15:49 ET Tactical Execution Summary
+- Refreshed live Alpaca state: equity **$9,986.59**, cash **$7,618.05**, buying power **$17,526.09**.
+- Positions remain **AVGO 1**, **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- Rechecked latest prices for the full universe and Google News Reuters headlines for the trade candidates. **GOOG 379.93** stayed below entry, **AVGO 416.63** remained just under the breakout trigger, and **NVDA 198.82** stayed below its re-entry zone. No adverse catalyst changed the setup.
+- No orders were placed because none of the candidate setups cleared the 3x-friction bar.
+- Next expected action: keep the current controlled net-long posture, hold the existing book, and wait for **GOOG first**, then **AVGO**, then **NVDA** if confirmation improves.
+
