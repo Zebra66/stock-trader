@@ -54,3 +54,9 @@
 - [x] Best-add watchlist remains **GOOG first**, with **AVGO** secondary and **NVDA** tertiary.
 - [x] **AVGO starter position executed** at **416.95** and the book is now closer to the upper end of the tactical exposure band.
 - [x] `prompts/hourly.txt` was tightened to require **live Alpaca state** to override stale memory/todo before new decisions are made.
+
+## 2026-05-04 15:40 ET Tactical Refresh Notes
+- [x] Refreshed live Alpaca account and latest prices for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**.
+- [x] Current live snapshot shows **no new trigger**: **GOOG 379.89** remains below its entry zone, **AVGO 416.81** is still below the breakout trigger, and **NVDA 198.83** is still below its re-entry zone.
+- [x] Held the existing book (**AVGO 1, SOXX 2, QTUM 2, QQQ 1, RKLB 1**) and placed **no orders** because the expected edge did not justify friction.
+- [x] Continue to respect the one-add discipline and keep the focus on **GOOG -> AVGO -> NVDA** in that order.
