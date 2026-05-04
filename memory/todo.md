@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,984.91)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Current live positions: **SOXX 2 shares**, **QTUM 2 shares**, **QQQ 1 share**, and **RKLB 1 share**.
-- [ ] Current gross exposure is about **19.5%**. Cap gross exposure around **23-24%** for this hour unless the next hourly review explicitly raises it.
+- [ ] Use **account equity ($9,985.48)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Current live positions: **AVGO 1 share**, **SOXX 2 shares**, **QTUM 2 shares**, **QQQ 1 share**, and **RKLB 1 share**.
+- [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **23-24%** for this hour unless the next hourly review explicitly raises it.
 - [ ] Keep roughly **76%+ cash** after any new trade unless the tape materially improves.
 - [ ] Treat the current book as already having meaningful semiconductor / AI exposure.
 - [ ] If multiple setups trigger, prioritize in this order: **GOOG -> AVGO -> NVDA**.
@@ -23,7 +23,7 @@
 
 ## Active Buy / Sell Conditions For New Capital
 - [ ] **BUY GOOG** if price reclaims **381.0-381.4** and holds, or if it breaks above **383.0** with confirmation — Reuters-backed cloud/AI earnings quality and 1-week relative strength still make it the best incremental add. Start with **1 share** (~3.8% of equity). **SELL / REDUCE GOOG** above **387.2** to trim, or below **377.4** to cut risk.
-- [ ] **BUY AVGO** only if price reclaims **415.8-416.4** with semis firm, or if it breaks above **418.2** with confirmation — medium-term trend is strong, but because SOXX is already owned the setup must be cleaner than GOOG. Start with **1 share** (~4.2% of equity). **SELL / REDUCE AVGO** above **421.8** to trim, or below **410.4** to cut risk.
+- [x] **BUY AVGO** only if price reclaims **415.8-416.4** with semis firm, or if it breaks above **418.2** with confirmation — medium-term trend is strong, but because SOXX is already owned the setup must be cleaner than GOOG. Start with **1 share** (~4.2% of equity). **SELL / REDUCE AVGO** above **421.8** to trim, or below **410.4** to cut risk. **Executed 1 share at 416.95** on 2026-05-04 15:38 ET.
 - [ ] **BUY NVDA** only if price reclaims **199.4-199.9** with SOXX strong, or if it breaks above **201.2** cleanly — still a structural AI leader, but near-term momentum is weaker than GOOG and the book already has chip exposure. Start with **1 share** (~2.0% of equity). **SELL / REDUCE NVDA** above **204.0** to trim, or below **195.4** to cut risk.
 
 ## Avoid / Low-Priority Names This Hour
@@ -41,6 +41,7 @@
 - [ ] If SOXX, QTUM, QQQ, or RKLB hit their stop levels, reduce first and reassess before opening replacement positions.
 - [ ] If GOOG triggers cleanly, it is acceptable to take it as the **only** fresh add this hour.
 - [ ] If GOOG does not trigger but AVGO or NVDA does, take only the cleaner setup rather than forcing multiple trades.
+- [ ] AVGO starter position is now live; do not add again this hour unless the next hourly review explicitly authorizes a higher target.
 
 ## 2026-05-04 15:01 ET Hourly Refresh Notes
 - [x] Live Alpaca account confirms the book is **SOXX 2 shares**, **QTUM 2 shares**, **QQQ 1 share**, and **RKLB 1 share**.
@@ -51,4 +52,5 @@
 - [x] Fresh Alpaca prices were refreshed for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**.
 - [x] Macro/news refresh still supports **controlled net long with high cash**, not aggressive deployment.
 - [x] Best-add watchlist remains **GOOG first**, with **AVGO** secondary and **NVDA** tertiary.
+- [x] **AVGO starter position executed** at **416.95** and the book is now closer to the upper end of the tactical exposure band.
 - [x] `prompts/hourly.txt` was tightened to require **live Alpaca state** to override stale memory/todo before new decisions are made.

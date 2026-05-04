@@ -26,6 +26,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Save raw market snapshots and temporary research artifacts under `temp_files/`
 - IMPORTANT: Do NOT list or record `temp_files/*` paths in `memory/MEMORY.md`. These files are ephemeral, might be deleted between runs, and you must re-fetch live data during every cycle instead of trying to read old temporary files.
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
+- If live Alpaca account state disagrees with `memory/MEMORY.md` or `memory/todo.md`, treat Alpaca as the source of truth and immediately overwrite the stale memory/todo state before making new trading decisions
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe
 - Use Google Search to research any specific symbol that needs deeper investigation

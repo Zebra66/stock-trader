@@ -4,21 +4,22 @@
 ## Current Macro Thesis
 US equities remain **selectively risk-on but headline-fragile**. Reuters-heavy Google News RSS fallback continues to show **Middle East / oil-driven risk jitters**, and that is showing up in a softer afternoon tape even while the medium-term leadership structure is still intact. The best-performing parts of the universe over the last month to year are still **SOXX, AVGO, GOOG, QTUM, RKLB, and QQQ**, while **META, HOOD, GLD, and SHLD** remain weaker on short/intermediate relative strength.
 
-For this account, the correct posture is still **controlled net long with high cash**. Equity is **$9,984.91**, cash is **$8,035.00**, and current gross exposure is only about **19.5%**, so there is room for **one fresh add** without using leverage. That add should still be **GOOG first**, because it combines stronger 1-week momentum with Reuters-confirmed cloud/AI earnings strength and cleaner liquidity than the lower-quality laggards. Semiconductors remain a favored group structurally, but because the book already owns **SOXX**, any **AVGO / NVDA** add must require better confirmation than GOOG.
+For this account, the correct posture is still **controlled net long with high cash**. Equity is **$9,985.48**, cash is **$7,618.05**, and current gross exposure is about **23.7%**, so the book is now near the preferred tactical cap. The new **AVGO** starter is acceptable, but going forward any further adds should wait for a stronger setup. **GOOG** remains the next best incremental add if it later reclaims its trigger, because it combines stronger 1-week momentum with Reuters-confirmed cloud/AI earnings strength and cleaner liquidity than the lower-quality laggards. Semiconductors remain a favored group structurally, but because the book already owns **SOXX** and now **AVGO**, any **NVDA** add must require better confirmation than GOOG.
 
 ## Portfolio State
-- **Equity:** $9,984.91
-- **Cash:** $8,035.00
-- **Buying power:** $17,941.36
-- **Gross exposure:** ~19.5%
+- **Equity:** $9,985.48
+- **Cash:** $7,618.05
+- **Buying power:** $17,524.98
+- **Gross exposure:** ~23.7%
 - **Market status:** open
-- **Alpaca clock timestamp:** 2026-05-04T15:01:00-04:00
+- **Alpaca clock timestamp:** 2026-05-04T15:38:00-04:00
 - **Current positions:**
-  - **SOXX:** 2 shares @ 468.43 | market value $924.92 | unrealized P&L **-$11.94** (-1.27%) | allocation **9.26%**
-  - **QTUM:** 2 shares @ 137.00 | market value $271.44 | unrealized P&L **-$2.56** (-0.93%) | allocation **2.72%**
-  - **QQQ:** 1 share @ 673.26 | market value $672.39 | unrealized P&L **-$0.87** (-0.13%) | allocation **6.73%**
-  - **RKLB:** 1 share @ 80.88 | market value $81.16 | unrealized P&L **+$0.28** (+0.35%) | allocation **0.81%**
-- **Overall unrealized P&L:** **-$15.09**
+  - **AVGO:** 1 share @ 416.95 | market value $416.83 | unrealized P&L **-$0.12** (-0.03%) | allocation **4.17%**
+  - **SOXX:** 2 shares @ 468.43 | market value $925.90 | unrealized P&L **-$10.96** (-1.17%) | allocation **9.27%**
+  - **QTUM:** 2 shares @ 137.00 | market value $271.54 | unrealized P&L **-$2.46** (-0.90%) | allocation **2.72%**
+  - **QQQ:** 1 share @ 673.26 | market value $673.05 | unrealized P&L **-$0.21** (-0.03%) | allocation **6.74%**
+  - **RKLB:** 1 share @ 80.88 | market value $80.10 | unrealized P&L **-$0.78** (-0.96%) | allocation **0.80%**
+- **Overall unrealized P&L:** **-$14.53**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ`
@@ -101,6 +102,13 @@ For this account, the correct posture is still **controlled net long with high c
 - Leadership remains centered on **SOXX / GOOG / AVGO / QTUM / QQQ / RKLB**, but the afternoon tape is softer and still argues for **one-add maximum discipline**.
 - Tactical posture for the next hour: **hold current leaders, keep cash high, and allow at most one fresh add with GOOG as first priority**.
 - **Prompt review completed:** `prompts/hourly.txt` was tightened to explicitly require using **live Alpaca state as source of truth** and overwriting stale memory/todo before making new decisions. This reduces the risk of tactical actions based on outdated holdings.
+
+## 2026-05-04 15:38 ET Tactical Execution Summary
+- Refreshed live Alpaca state: equity **$9,985.48**, cash **$7,618.05**, buying power **$17,524.98**.
+- Positions now: **AVGO 1**, **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- Executed **1 share AVGO buy** at **$416.95** after price reclaimed the tactical buy zone and semis remained stable enough to justify the add.
+- No other orders were placed. **GOOG** stayed just below trigger, and **NVDA** remained below its buy zone.
+- Next expected action: hold the new AVGO starter, watch for a clean trim signal in AVGO above the first target or a risk stop if momentum fades, while continuing to respect the one-add discipline.
 
 ## 2026-05-04 14:41 ET Tactical Execution Summary
 - Refreshed live Alpaca state: equity **$9,985.18**, cash **$8,035.00**, buying power **$17,941.63**.
