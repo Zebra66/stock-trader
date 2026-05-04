@@ -137,17 +137,24 @@ export async function buildDashboardData(
     const timestamps = portfolioHistory.timestamp ?? [];
     const equities = portfolioHistory.equity ?? [];
 
-    const candidateHistory = timestamps.map((timestamp, index) => {
-      const xMs = parseNumeric(timestamp) * 1000;
-      const equityVal = parseNumeric(equities[index]);
-      // Y = P&L at this point in time (equity - invested capital up to that moment)
-      const investedAtPoint = totalInvestedAt(deposits, xMs);
-      const pnl = investedAtPoint > 0 ? equityVal - investedAtPoint : equityVal;
-      return { x: xMs, y: pnl };
-    });
+    // Step 1: build raw equity history and validate it has real data.
+    // isHistoryUsable MUST check raw equity (not P&L), because if the portfolio
+    // is down vs the deposit, all P&L values are negative — and the check
+    // `some(p => p.y > 0)` would wrongly declare real data "unavailable".
+    const rawHistory: DashboardPoint[] = timestamps.map((timestamp, index) => ({
+      x: parseNumeric(timestamp) * 1000,
+      y: parseNumeric(equities[index]),
+    }));
 
-    if (isHistoryUsable(candidateHistory, equity)) {
-      history = candidateHistory;
+    if (isHistoryUsable(rawHistory, equity)) {
+      // Step 2: transform Y from raw equity → P&L (equity - invested at that moment)
+      history = rawHistory.map((point) => {
+        const investedAtPoint = totalInvestedAt(deposits, point.x);
+        return {
+          x: point.x,
+          y: investedAtPoint > 0 ? point.y - investedAtPoint : point.y,
+        };
+      });
     } else {
       historyUnavailableMessage = 'Portfolio history is currently unavailable.';
     }
