@@ -1,0 +1,25 @@
+# Never bake secrets into the image
+.env
+.env.*
+
+# Runtime artefacts
+temp_files/
+logs/
+*.log
+
+# Dev/IDE
+node_modules/
+.git/
+.gitignore
+.DS_Store
+.idea/
+.cursor/
+.zed/
+.agents/
+.claude/
+
+# Scripts not needed inside container
+scripts/
+
+# Docs / memory / prompts are mounted or injected at runtime if needed
+# (keep prompts/ and memory/ for agent use)
