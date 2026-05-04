@@ -36,6 +36,6 @@ You also have access to Google Search — use it to:
 
 ### Step 5 — Update state and commit
 - Update `memory/MEMORY.md` — append an execution summary block:
-  - What was done this cycle, current holdings, next expected action
-- Update `memory/todo.md` — update/remove completed conditions, add any new flags
+  - What was done this cycle, current holdings, next expected action. Do NOT list ephemeral `temp_files/*` paths.
+- Update `memory/todo.md` — update/remove completed conditions, add any new flags. Do NOT list ephemeral `temp_files/*` paths.
 - Use git to commit memory updates and any intentional prompt/code/config changes with an `[agent]` prefix, then push

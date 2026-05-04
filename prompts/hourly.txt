@@ -24,6 +24,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Use bash with the FMP CLI to pull multi-timeframe performance (1w, 1m, 3m, 6m, 1y, 3y) for ALL symbols in the Investment Universe
 - If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
 - Save raw market snapshots and temporary research artifacts under `temp_files/`
+- IMPORTANT: Do NOT list or record `temp_files/*` paths in `memory/MEMORY.md`. These files are ephemeral, might be deleted between runs, and you must re-fetch live data during every cycle instead of trying to read old temporary files.
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe
@@ -48,7 +49,7 @@ First, decide which data and in which format you need to make a sound macro deci
   - Priority actions for the next hour
   - Clear table: Symbol | Bias (Buy/Hold/Sell) | Rationale | Target %
   - ALL the learnings that we created so far, in addition to the summary of the last run
-  - IMPORTANT: Keep `MEMORY.md` short (up to 500 lines). If it gets too long, create separate memory markdown files and reference them from `MEMORY.md` for specific learnings
+  - IMPORTANT: Keep `MEMORY.md` short (up to 500 lines). If it gets too long, create separate memory markdown files and reference them from `MEMORY.md` for specific learnings. Do NOT include references to ephemeral `temp_files/`.
 - Update `memory/todo.md` with specific, actionable buy/sell conditions for the tactical agent:
   - "BUY <TICKER> if price drops below <X> or breaks above <Y> with confirmation — rationale"
   - "SELL <TICKER> if price rises above <X> to trim, or drops below <Y> to cut risk — rationale"
