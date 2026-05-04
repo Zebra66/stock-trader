@@ -717,11 +717,22 @@ const app = new Elysia()
         return { error: `Cloud Logging API ${logsRes.status}: ${errText}`, entries: [], nextPageToken: '' };
       }
 
+      interface HttpRequest {
+        requestMethod?: string;
+        requestUrl?: string;
+        status?: number;
+        latency?: string;
+        responseSize?: string;
+        userAgent?: string;
+        remoteIp?: string;
+      }
       interface LogEntry {
         timestamp?: string;
         severity?: string;
         textPayload?: string;
         jsonPayload?: Record<string, unknown>;
+        httpRequest?: HttpRequest;
+        protoPayload?: Record<string, unknown>;
         insertId?: string;
       }
       interface LogsApiResponse {
@@ -731,12 +742,38 @@ const app = new Elysia()
       const data = await logsRes.json() as LogsApiResponse;
       const rawEntries = data.entries ?? [];
 
-      const entries = rawEntries.map((e) => ({
-        timestamp: e.timestamp ?? '',
-        severity: e.severity ?? 'DEFAULT',
-        message: e.textPayload ?? (e.jsonPayload ? JSON.stringify(e.jsonPayload) : ''),
-        insertId: e.insertId ?? '',
-      }));
+      const entries = rawEntries.map((e) => {
+        let message = '';
+        if (e.textPayload) {
+          // Plain-text log (formatted pino output via stdout)
+          message = e.textPayload;
+        } else if (e.jsonPayload) {
+          // Structured JSON log — pino fields or arbitrary JSON
+          const jp = e.jsonPayload;
+          const msg = jp['msg'] ?? jp['message'] ?? jp['log'];
+          message = typeof msg === 'string' ? msg : JSON.stringify(jp);
+        } else if (e.httpRequest) {
+          // Cloud Run HTTP access log
+          const r = e.httpRequest;
+          const latency = r.latency ? ` ${r.latency}` : '';
+          const size = r.responseSize ? ` ${r.responseSize}B` : '';
+          message = `${r.requestMethod ?? 'GET'} ${r.requestUrl ?? ''} → ${r.status ?? '?'}${latency}${size}`;
+        } else if (e.protoPayload) {
+          // Audit / proto log
+          const pp = e.protoPayload;
+          const methodName = pp['methodName'];
+          const status = (pp['status'] as Record<string, unknown> | undefined);
+          message = typeof methodName === 'string'
+            ? `${methodName}${status ? ` [${JSON.stringify(status)}]` : ''}`
+            : JSON.stringify(pp);
+        }
+        return {
+          timestamp: e.timestamp ?? '',
+          severity: e.severity ?? 'DEFAULT',
+          message,
+          insertId: e.insertId ?? '',
+        };
+      });
 
       return {
         entries,
