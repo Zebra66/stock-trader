@@ -5,6 +5,7 @@ import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
 import { getModel } from '@mariozechner/pi-ai';
 import type { AssistantMessage, AssistantMessageEvent, KnownProvider, StopReason, ToolResultMessage, UserMessage } from '@mariozechner/pi-ai';
 import { parseModelSpec } from './agent_config';
+import { appendStructuredLogEvent } from './logger';
 import fs from 'fs';
 import path from 'path';
 
@@ -12,6 +13,7 @@ type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 type NormalizedStatus = 'completed' | 'needs tool' | 'truncated' | 'aborted' | 'failed';
 type AssistantUpdateStatus = NormalizedStatus | 'thinking' | 'preparing tool' | 'responding';
 type LogSubject = 'user' | 'assistant' | 'toolStart' | 'tool' | 'session';
+type StructuredPiEventRecord = Record<string, unknown>;
 
 type PiEvent = AgentSessionEvent | { type: 'session_error'; [key: string]: unknown };
 
@@ -83,6 +85,10 @@ function omitUndefinedAndEmpty<T extends Record<string, unknown>>(value: T): T {
   ) as T;
 }
 
+function omitUndefined<T extends Record<string, unknown>>(value: T): T {
+  return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry !== undefined)) as T;
+}
+
 function isTextBlock(block: unknown): block is { type: 'text'; text: string } {
   return typeof block === 'object' && block !== null && 'type' in block && block.type === 'text' && 'text' in block && typeof block.text === 'string';
 }
@@ -134,6 +140,12 @@ function getPreviewFromUnknown(value: unknown): string | undefined {
   }
 
   if (typeof value === 'object' && value !== null) {
+    if ('stdout' in value && typeof value.stdout === 'string') {
+      return normalizePreviewText(value.stdout);
+    }
+    if ('stderr' in value && typeof value.stderr === 'string') {
+      return normalizePreviewText(value.stderr);
+    }
     if ('message' in value && typeof value.message === 'string') {
       return normalizePreviewText(value.message);
     }
@@ -236,6 +248,19 @@ function getUserMessageSummary(message: UserMessage) {
   });
 }
 
+function getFullTextFromContent(content: unknown): string | undefined {
+  if (typeof content === 'string') {
+    return content;
+  }
+
+  if (!Array.isArray(content)) {
+    return undefined;
+  }
+
+  const text = content.filter(isTextBlock).map((block) => block.text).join('');
+  return text.length > 0 ? text : undefined;
+}
+
 function getAssistantMessagePayload(message: AssistantMessage) {
   return omitUndefinedAndEmpty({
     eventType: 'message_end',
@@ -309,7 +334,134 @@ function getAssistantUpdatePayload(event: AssistantMessageEvent) {
   });
 }
 
+export function buildStructuredPiEventRecord(event: PiEvent): StructuredPiEventRecord | undefined {
+  if (event.type === 'message_update') {
+    const assistantEvent = event.assistantMessageEvent;
+
+    if (assistantEvent.type === 'text_delta') {
+      return undefined;
+    }
+
+    const partial = assistantEvent.type === 'done'
+      ? assistantEvent.message
+      : assistantEvent.type === 'error'
+        ? assistantEvent.error
+        : assistantEvent.partial;
+
+    return omitUndefined({
+      eventType: 'message_update',
+      assistantEventType: assistantEvent.type,
+      status: getAssistantUpdateStatus(assistantEvent),
+      stopReason: assistantEvent.type === 'done' ? partial.stopReason : undefined,
+      model: partial.model,
+      preview: getAssistantUpdatePayload(assistantEvent).preview,
+      contentBlockTypes: getContentBlockTypes(partial.content),
+      content: partial.content,
+      errorMessage: partial.errorMessage,
+      message: 'message' in partial && typeof partial.message === 'string' ? partial.message : undefined,
+    });
+  }
+
+  if (event.type === 'message_end') {
+    const { message } = event;
+
+    if (isAssistantMessage(message)) {
+      return omitUndefined({
+        eventType: 'message_end',
+        role: message.role,
+        status: getNormalizedStatus(message.stopReason),
+        stopReason: message.stopReason,
+        model: message.model,
+        responseId: message.responseId,
+        usage: message.usage,
+        timestamp: message.timestamp,
+        preview: getPreviewFromContent(message.content) ?? normalizePreviewText(message.errorMessage ?? ''),
+        contentBlockTypes: getContentBlockTypes(message.content),
+        content: message.content,
+        errorMessage: message.errorMessage,
+      });
+    }
+
+    if (isToolResultMessage(message)) {
+      return omitUndefined({
+        eventType: 'message_end',
+        role: message.role,
+        status: message.isError ? 'failed' : 'completed',
+        toolCallId: message.toolCallId,
+        toolName: message.toolName,
+        isError: message.isError,
+        timestamp: message.timestamp,
+        preview: getPreviewFromContent(message.content) ?? (message.isError ? getPreviewFromUnknown(message.details) : undefined),
+        contentBlockTypes: getContentBlockTypes(message.content).length > 0 ? getContentBlockTypes(message.content) : undefined,
+        content: Array.isArray(message.content) && message.content.length > 0 ? message.content : undefined,
+        details: message.details,
+      });
+    }
+
+    if (isUserMessage(message)) {
+      const promptText = getFullTextFromContent(message.content);
+      return omitUndefined({
+        eventType: 'message_end',
+        role: message.role,
+        status: 'sent',
+        preview: getPreviewFromContent(message.content),
+        promptLength: promptText?.length,
+        timestamp: message.timestamp,
+        contentBlockTypes: Array.isArray(message.content) ? getContentBlockTypes(message.content) : undefined,
+        fullContent: promptText,
+      });
+    }
+
+    return omitUndefined({
+      eventType: 'message_end',
+      role: message.role,
+      status: 'completed',
+      preview: getPreviewFromUnknown('content' in message ? message.content : undefined) ?? '[non-standard message]',
+      content: 'content' in message ? message.content : undefined,
+    });
+  }
+
+  if (event.type === 'tool_execution_start') {
+    return omitUndefined({
+      eventType: 'tool_execution_start',
+      status: 'started',
+      toolCallId: event.toolCallId,
+      toolName: event.toolName,
+      preview: getPreviewFromUnknown(event.args),
+      args: event.args,
+    });
+  }
+
+  if (event.type === 'tool_execution_end') {
+    return omitUndefined({
+      eventType: 'tool_execution_end',
+      status: event.isError ? 'failed' : 'completed',
+      toolCallId: event.toolCallId,
+      toolName: event.toolName,
+      preview: getPreviewFromUnknown(event.result),
+      isError: event.isError,
+      result: event.result,
+    });
+  }
+
+  if (event.type === 'session_error') {
+    return omitUndefined({
+      eventType: 'session_error',
+      status: 'failed',
+      preview: getPreviewFromUnknown('error' in event ? event.error : event),
+      error: 'error' in event ? event.error : event,
+    });
+  }
+
+  return undefined;
+}
+
 export function logPiEvent(log: PiLogger, event: PiEvent): void {
+  const structuredRecord = buildStructuredPiEventRecord(event);
+  if (structuredRecord) {
+    appendStructuredLogEvent(structuredRecord);
+  }
+
   if (event.type === 'message_update') {
     const assistantEvent = event.assistantMessageEvent;
 

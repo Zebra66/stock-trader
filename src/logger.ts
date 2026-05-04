@@ -1,6 +1,6 @@
 import pino from 'pino';
 import { Writable } from 'stream';
-import { mkdirSync } from 'fs';
+import { appendFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
 const LOG_CALLSITE = process.env.LOG_CALLSITE === '1';
@@ -24,6 +24,7 @@ const LOG_DIR = join(process.cwd(), 'temp_files', 'logs');
 mkdirSync(LOG_DIR, { recursive: true });
 
 export const LOG_FILE_PATH: string = join(LOG_DIR, `${SESSION_TIMESTAMP}_session.log`);
+export const EVENTS_LOG_FILE_PATH: string = join(LOG_DIR, `${SESSION_TIMESTAMP}_events.ndjson`);
 
 // ─── Level → label ────────────────────────────────────────────────────────────
 const LEVEL_LABELS: Record<number, string> = {
@@ -197,6 +198,16 @@ export type AppLogger = typeof rootLogger;
  */
 export function getLogger(module: string): AppLogger {
   return rootLogger.child({ module }) as AppLogger;
+}
+
+export function appendStructuredLogEvent(event: Record<string, unknown>): void {
+  const targetPath = process.env.PI_RUNNER_EVENTS_FILE ?? EVENTS_LOG_FILE_PATH;
+
+  try {
+    appendFileSync(targetPath, `${JSON.stringify(event)}\n`);
+  } catch {
+    // Avoid breaking primary app behavior if sidecar logging fails.
+  }
 }
 
 // Backwards-compatible default export (used by existing `import { logger }` calls)

@@ -20,6 +20,7 @@ You also have access to Google Search — use it freely to:
 ### Step 2 — Gather market intelligence
 First, decide which data and in which format you need to make a sound macro decision. Then:
 - Use bash with the FMP CLI to pull multi-timeframe performance (1w, 1m, 3m, 6m, 1y, 3y) for ALL symbols in the Investment Universe
+- If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe
 - Use Google Search to research any specific symbol that needs deeper investigation
@@ -27,6 +28,7 @@ First, decide which data and in which format you need to make a sound macro deci
 
 ### Step 3 — Analyse and decide
 - Review the amount of money left to invest and determine how much capital should be deployed or held in reserve
+- Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
 - Perform a current gain/loss analysis overall and per stock. Are there underperformers to cut or winners to let run?
 - Are we still in the right sectors? What is the macro trend?
 - Which positions should be increased, reduced, or exited?

@@ -1,6 +1,6 @@
-import { describe, expect, test } from 'bun:test';
+import { afterEach, describe, expect, test } from 'bun:test';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
-import { logPiEvent } from './pi_runner';
+import { buildStructuredPiEventRecord, logPiEvent } from './pi_runner';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -440,6 +440,96 @@ describe('pi runner logging', () => {
         preview: '128 bytes',
         isError: false,
       },
+    });
+  });
+});
+
+describe('pi runner structured event records', () => {
+  afterEach(async () => {
+    delete process.env.PI_RUNNER_EVENTS_FILE;
+  });
+
+  test('captures full user prompt content in structured records', () => {
+    const event = {
+      type: 'message_end',
+      message: {
+        role: 'user',
+        timestamp: 2,
+        content: 'Top secret prompt contents',
+      },
+    } as const;
+
+    expect(buildStructuredPiEventRecord(event)).toEqual({
+      eventType: 'message_end',
+      role: 'user',
+      status: 'sent',
+      preview: 'Top secret prompt contents',
+      promptLength: 26,
+      timestamp: 2,
+      fullContent: 'Top secret prompt contents',
+    });
+  });
+
+  test('captures full tool args and results in structured records', () => {
+    const startEvent = {
+      type: 'tool_execution_start',
+      toolCallId: 'tool-3',
+      toolName: 'bash',
+      args: { command: 'git status', timeout: 120000 },
+    } as const;
+
+    const endEvent = {
+      type: 'tool_execution_end',
+      toolCallId: 'tool-3',
+      toolName: 'bash',
+      result: { stdout: 'On branch main', exitCode: 0 },
+      isError: false,
+    } as const;
+
+    expect(buildStructuredPiEventRecord(startEvent)).toEqual({
+      eventType: 'tool_execution_start',
+      status: 'started',
+      toolCallId: 'tool-3',
+      toolName: 'bash',
+      preview: 'git status',
+      args: { command: 'git status', timeout: 120000 },
+    });
+
+    expect(buildStructuredPiEventRecord(endEvent)).toEqual({
+      eventType: 'tool_execution_end',
+      status: 'completed',
+      toolCallId: 'tool-3',
+      toolName: 'bash',
+      preview: 'On branch main',
+      isError: false,
+      result: { stdout: 'On branch main', exitCode: 0 },
+    });
+  });
+
+  test('captures raw error context for failed tool results in structured records', () => {
+    const event = {
+      type: 'message_end',
+      message: {
+        role: 'toolResult',
+        toolCallId: 'tool-4',
+        toolName: 'bash',
+        isError: true,
+        timestamp: 6,
+        content: [],
+        details: { exitCode: 7, stderr: 'command failed' },
+      },
+    } as const;
+
+    expect(buildStructuredPiEventRecord(event)).toEqual({
+      eventType: 'message_end',
+      role: 'toolResult',
+      status: 'failed',
+      toolName: 'bash',
+      toolCallId: 'tool-4',
+      preview: 'command failed',
+      isError: true,
+      timestamp: 6,
+      details: { exitCode: 7, stderr: 'command failed' },
     });
   });
 });
