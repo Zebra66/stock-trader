@@ -1,22 +1,23 @@
 # Hourly Macro Memory
-*Updated 2026-05-04 10:35 ET by the Hourly Macro Strategist.*
+*Updated 2026-05-04 11:00 ET by the Hourly Macro Strategist.*
 
 ## Current Macro Thesis
-US equities remain **selectively risk-on**, but leadership is still concentrated in **semiconductors, AI infrastructure, and large-cap growth** rather than broad market beta. The strongest medium-term trend cluster in the current universe is still **SOXX / AVGO / GOOG / QTUM / QQQ**, while **META, HOOD, and SHLD** continue to show weaker intermediate reaction quality. Reuters/Google News RSS fallback still points to a constructive tape, but the main near-term risks remain **oil/geopolitical pressure, earnings follow-through, and Fed/jobs sensitivity**, so controlled deployment is still the better path than forcing full exposure.
+US equities remain **selectively risk-on**, but leadership is still concentrated in **semiconductors, AI infrastructure, and large-cap growth**, not broad-market beta. The current universe leaders by multi-timeframe momentum are still **SOXX, AVGO, GOOG, QTUM, and QQQ**, while **META, HOOD, SHLD, and GLD** remain weaker on intermediate trend quality. Reuters-style headline fallback still supports the tape, but the main near-term macro risks are **oil/geopolitical pressure, Fed/jobs sensitivity, and post-earnings follow-through risk**.
 
-The live account is now **partially deployed**, and that live brokerage state should be treated as the source of truth over stale memory. Tactical accumulated **SOXX** and **QTUM** since the prior hourly note, leaving the book about **12% gross long** and still mostly in cash. With the opening tape mixed and current positions slightly below cost, the right posture for the next hour is **hold the existing leadership exposure, do not average down, and only add fresh risk if GOOG / QQQ / AVGO reclaim nearby levels with confirmation**.
+The live account is still **lightly deployed** at roughly **12.8% gross long**, with small unrealized losses but no structural damage. The right posture for the next hour is to **hold existing leadership exposure, keep at least 70% cash, avoid averaging down, and only deploy fresh capital into GOOG or QQQ on clean confirmation**. **AVGO** is still an acceptable secondary add if semis firm up, while **NVDA** remains lower priority until it regains cleaner short-term momentum.
 
 ## Portfolio State
-- **Equity:** $9,993.58
-- **Cash:** $8,789.14
-- **Buying power:** $18,704.17
-- **Gross exposure:** ~12.1%
+- **Equity:** $9,990.99
+- **Cash:** $8,708.26
+- **Buying power:** $18,620.70
+- **Gross exposure:** ~12.8%
 - **Market status:** open
-- **Alpaca clock timestamp:** 2026-05-04T10:31:40-04:00
+- **Alpaca clock timestamp:** 2026-05-04T11:00:39-04:00
 - **Current positions:**
-  - **SOXX:** 2 shares @ 468.43 | market value $930.98 | unrealized P&L **-$5.88** (-0.63%)
-  - **QTUM:** 2 shares @ 137.00 | market value $273.44 | unrealized P&L **-$0.56** (-0.20%)
-- **Overall unrealized P&L:** **-$6.44**
+  - **SOXX:** 2 shares @ 468.43 | market value $930.20 | unrealized P&L **-$6.66** (-0.71%) | allocation **9.31%**
+  - **QTUM:** 2 shares @ 137.00 | market value $272.64 | unrealized P&L **-$1.36** (-0.50%) | allocation **2.73%**
+  - **RKLB:** 1 share @ 80.88 | market value $79.89 | unrealized P&L **-$0.99** (-1.22%) | allocation **0.80%**
+- **Overall unrealized P&L:** **-$9.01**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ`
@@ -25,57 +26,60 @@ The live account is now **partially deployed**, and that live brokerage state sh
 - **Brokerage / account / prices:** Alpaca CLI (`get-account`, `get-positions`, `get-clock`, `get-latest-price`)
 - **News / search fallback:** **Google News RSS**, prioritizing **Reuters** and other major outlets because no direct Google Search workspace tool surfaced
 - **Raw artifacts from this cycle:**
-  - `temp_files/fmp_probe_2026-05-04_1011ET.txt`
-  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_1411.json`
-  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_1411.csv`
-  - `temp_files/alpaca_account_2026-05-04_1031ET.json`
-  - `temp_files/alpaca_positions_2026-05-04_1031ET.json`
-  - `temp_files/alpaca_clock_2026-05-04_1031ET.json`
-  - `temp_files/hourly_latest_prices_2026-05-04_1013ET.json`
-  - `temp_files/news_rss/hourly_news_summary_2026-05-04_1015ET.json`
+  - `temp_files/fmp_probe_latest.txt`
+  - `temp_files/alpaca_account_latest.json`
+  - `temp_files/alpaca_positions_latest.json`
+  - `temp_files/alpaca_clock_latest.json`
+  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_110130.json`
+  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_110130.csv`
+  - `temp_files/hourly_market_snapshot_yahoo_latest.json`
+  - `temp_files/hourly_market_snapshot_yahoo_latest.csv`
+  - `temp_files/hourly_latest_prices_latest.json`
+  - `temp_files/tech_levels_latest.json`
+  - `temp_files/news_rss/hourly_news_summary_latest.json`
 
 ## Performance Snapshot Used This Run
-- Best **1w** performers: **GOOG +8.74%**, **EIS +4.87%**, **QTUM +3.71%**, **SOXX +3.02%**, **QQQ +1.67%**
-- Best **1m** performers: **SOXX +38.15%**, **AVGO +33.64%**, **GOOG +28.71%**, **QTUM +24.39%**, **RKLB +15.64%**
-- Best **3m** performers: **SOXX +35.48%**, **AVGO +26.89%**, **QTUM +18.03%**, **GOOG +11.95%**, **EIS +11.94%**
-- Weak / broken **3m** names: **HOOD -23.06%**, **META -15.77%**, **SHLD -8.90%**, **GLD -6.01%**, **RKLB -2.19%**
-- Best **6m** performers: **SOXX +53.05%**, **GOOG +34.48%**, **EIS +30.01%**, **RKLB +24.36%**, **QTUM +18.84%**
-- Best **1y** performers: **RKLB +240.67%**, **SOXX +146.89%**, **GOOG +128.57%**, **AVGO +106.43%**, **QTUM +75.56%**
+- Best **1w** performers: **GOOG +8.88%**, **EIS +5.30%**, **QTUM +3.48%**, **SOXX +2.19%**, **SHLD +1.84%**
+- Best **1m** performers: **SOXX +37.04%**, **AVGO +32.50%**, **GOOG +28.87%**, **QTUM +24.12%**, **RKLB +18.06%**
+- Best **3m** performers: **SOXX +34.73%**, **AVGO +30.39%**, **QTUM +18.99%**, **GOOG +11.46%**, **EIS +10.08%**
+- Weak / broken **3m** names: **META -11.23%**, **HOOD -10.99%**, **SHLD -9.93%**, **GLD -7.80%**, **RKLB -1.61%**
+- Best **6m** performers: **SOXX +51.23%**, **GOOG +33.74%**, **EIS +30.52%**, **RKLB +30.36%**, **QTUM +20.52%**
+- Best **1y** performers: **RKLB +247.80%**, **SOXX +146.47%**, **GOOG +129.66%**, **AVGO +106.33%**, **QTUM +77.16%**
 
 ## Fresh External Context
-- **Macro / index backdrop:** Reuters fallback says the rally can still extend, but the next tests are **earnings, jobs data, oil, and geopolitical/Fed sensitivity**.
-- **Semiconductors / AI:** Reuters fallback remains supportive for chip leadership and AI capex; **SOXX** remains the cleanest sector expression.
-- **GOOG:** Reuters fallback stays positive after **Alphabet revenue topped expectations on a record cloud quarter**.
-- **AVGO:** No fresh same-day Reuters catalyst surfaced in the fallback scan, but medium-term AI/custom-silicon demand still supports keeping it on the add list if price confirms.
-- **NVDA:** Leadership quality is still high long term, but recent Reuters fallback shows investors remain sensitive to **AI-return skepticism**, making it lower priority than GOOG / QQQ while it sits below cleaner reclaim levels.
-- **HOOD:** Reuters fallback remains weak after **profit / transaction-revenue disappointment**.
-- **META:** Ackman ownership is only context; price action is still materially weaker than the preferred leaders.
-- **Top investor context:** Reuters fallback shows **Pershing Square bought Meta**, but that does not override the current relative-strength gap versus GOOG / SOXX / QQQ.
+- **Macro / index backdrop:** Reuters-style fallback still points to a constructive tape with the **S&P 500 and Nasdaq holding recent gains**, but **oil, geopolitical headlines, Fed tone, and jobs data** remain the main reasons to avoid forcing full deployment.
+- **Semiconductors / AI:** Reuters-style fallback remains supportive for chip leadership and AI capex; **SOXX** remains the cleanest sector expression and **AVGO** remains investable on confirmation.
+- **GOOG:** Positive backdrop persists after **Alphabet revenue topped expectations on a record cloud quarter**; still the cleanest single-stock add outside semis.
+- **AVGO:** No fresh same-hour catalyst surfaced, but medium-term AI/custom-silicon demand remains supportive.
+- **NVDA:** Long-run AI leadership remains intact, but near-term setup is still weaker than GOOG / QQQ while it sits below recent resistance.
+- **HOOD:** Recent headline flow remains weaker after **post-earnings transaction-revenue disappointment** and a **Barclays price-target cut**.
+- **META:** Ackman ownership is context only; price action remains materially weaker than the preferred leaders.
+- **Liquidity note:** **EIS** still shows a stale Alpaca print from **2026-05-01**, reinforcing that thin / stale quotes should not drive tactical entries.
 
 ## Priority Actions For The Next Hour
-1. Treat the **live Alpaca account** as the source of truth: current book is **SOXX + QTUM**, not all-cash.
-2. **Hold SOXX and QTUM** while they remain above their cut levels; do **not** average down.
-3. Keep overall gross exposure capped around **30%** for this hour; preserve at least **70% cash** unless the tape materially improves.
-4. Prioritize only **GOOG, QQQ, and AVGO** for fresh adds; **NVDA** is secondary and should only be bought on a cleaner reclaim.
-5. Keep **META, HOOD, SHLD, GLD, EIS, VOO, and ARKX** sidelined for fresh capital this hour.
+1. Treat the **live Alpaca account** as the source of truth: the book is **SOXX + QTUM + RKLB**, not flat.
+2. **Hold SOXX, QTUM, and RKLB** while they remain above their refreshed cut levels; do **not** average down.
+3. Keep overall gross exposure capped around **30%** for this hour and preserve at least **70% cash** unless the tape materially improves.
+4. Prioritize only **GOOG**, then **QQQ**, then **AVGO** for fresh adds; **NVDA** is still secondary.
+5. Keep **META, HOOD, SHLD, GLD, VOO, ARKX, and EIS** sidelined for fresh capital this hour.
 
 ## Bias Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| AVGO | Buy | Strong medium-term AI/custom-silicon trend, but current tape is weaker than GOOG / QQQ and needs price confirmation. | 4% |
-| EIS | Hold | Decent trend, but lower liquidity and geopolitical sensitivity keep it outside the core book. | 0% |
-| GLD | Hold | Hedge only; weak short/intermediate momentum and awkward sizing on a small account keep it inactive. | 0% |
-| GOOG | Buy | Best mix of earnings quality, cloud/AI monetization, and current relative strength outside semis. | 4% |
-| HOOD | Sell | Weak reaction quality after earnings and inferior setup versus the core leaders. | 0% |
-| META | Sell | Weak multi-timeframe price action and legal/spending overhang still outweigh outside-investor interest. | 0% |
-| NVDA | Hold | Long-term AI leader, but current setup is less attractive than SOXX / GOOG until momentum is reclaimed. | 2% |
-| QQQ | Buy | Best liquid wrapper for growth leadership if the tape broadens beyond the current semiconductor holdings. | 7% |
-| QTUM | Hold | Existing position is fine, but current size is already near the intended risk budget for this account. | 3% |
-| RKLB | Hold | Strong long-run trend, but still only deserves tiny satellite risk. | 1% |
-| SHLD | Sell | Weak intermediate trend and low setup quality do not justify capital. | 0% |
-| SOXX | Hold | Still the strongest sector-level expression of AI/chip leadership; current position is already near target size. | 10% |
-| VOO | Hold | Lower-alpha than QQQ while growth leadership persists. | 0% |
-| ARKX | Hold | Lower-quality theme expression than SOXX / QTUM / RKLB. | 0% |
+| AVGO | Buy | Strong AI/custom-silicon trend, but still needs price confirmation and should remain smaller than core sector exposure. | 4% |
+| EIS | Hold | Strong returns, but liquidity and stale quote risk make it unattractive for this account size right now. | 0% |
+| GLD | Hold | Hedge only; short/intermediate momentum is weak and sizing is awkward on a small account. | 0% |
+| GOOG | Buy | Best mix of earnings quality, cloud/AI monetization, liquidity, and relative strength outside semis. | 4% |
+| HOOD | Sell | Weak reaction quality and negative analyst follow-through leave it inferior to the core leaders. | 0% |
+| META | Sell | Weak multi-timeframe price action still outweighs top-investor headline support. | 0% |
+| NVDA | Hold | Long-term leader, but current setup is less attractive than GOOG / QQQ / SOXX until momentum is reclaimed. | 2% |
+| QQQ | Buy | Best liquid wrapper for growth leadership if the market broadens beyond the existing semiconductor positions. | 7% |
+| QTUM | Hold | Existing position is fine and already near intended size for this account. | 3% |
+| RKLB | Hold | Keep only as a tiny satellite; trend is volatile and should stay small. | 1% |
+| SHLD | Sell | Weak intermediate trend and poor setup quality do not justify capital. | 0% |
+| SOXX | Hold | Still the strongest sector-level expression of AI/chip leadership; existing size is already near target. | 10% |
+| VOO | Hold | Lower-alpha than QQQ while growth leadership remains intact. | 0% |
+| ARKX | Hold | Lower-quality thematic exposure than SOXX / QTUM / RKLB. | 0% |
 
 ## Standing Learnings
 - Default sizing must use **account equity**, not headline buying power. Margin use requires an explicit hourly decision.
@@ -94,34 +98,11 @@ The live account is now **partially deployed**, and that live brokerage state sh
 - **Yahoo Finance chart fallback works more reliably with browser-like headers; naive no-header requests can hit HTTP 429 rate limits.**
 - The **live brokerage account** overrides stale memory; if memory and Alpaca disagree, trust Alpaca and immediately update memory/todo.
 - On a **~$10k account**, one-share increments in names like **QQQ, GOOG, AVGO, and SOXX** are meaningful; target allocations must respect practical order granularity.
+- For thinner names or stale quotes (for example **EIS**), require fresh confirmation from a reliable live source before taking tactical action.
 
 ## Last Run Summary
-- The account is **not flat anymore**: tactical now holds **SOXX (2 shares)** and **QTUM (2 shares)**.
-- Current live equity is **$9,993.58**, cash is **$8,789.14**, and overall unrealized P&L is **-$6.44**.
-- **FMP historical performance** is still unavailable because **`FMP_API_KEY` is missing**, so this run again used the **Yahoo Finance chart API fallback**.
-- Fresh Reuters / Google News fallback still supports **SOXX / GOOG / QQQ / AVGO** as the best long list, while **META / HOOD / SHLD** remain weak.
-- **Prompt review completed:** no prompt change was made this cycle because the current hourly prompt already requires live account checks, fallbacks, friction awareness, and trigger refresh.
-
-## Execution Summary — 2026-05-04 Tactical Cycle
-- Re-checked the live account and confirmed the book is now **partially deployed** with **SOXX 2 shares, QTUM 2 shares, and RKLB 1 share**.
-- Refreshed account equity, cash, buying power, open positions, and latest prices from **Alpaca**.
-- Google News RSS / Reuters-style search on **RKLB** did not surface an immediate adverse catalyst that would invalidate the breakout entry.
-- Executed a **1-share RKLB buy** on the above-80.2 breakout, keeping size tiny and consistent with the satellite-risk rule.
-- No prompt or code changes were made in this tactical cycle.
-- Next expected action: **hold RKLB unless it loses 77.6**, and continue to wait for cleaner confirmation in **GOOG / QQQ / AVGO** before adding new core risk.
-
-## Execution Summary — 2026-05-04 Hourly Cycle
-- Re-checked the live account and found the book is now **partially invested**, not all cash: **SOXX 2 shares** and **QTUM 2 shares**.
-- Refreshed account equity, cash, buying power, open positions, market clock, and latest prices from **Alpaca**.
-- Re-probed FMP and confirmed **historical performance remains unavailable** because **`FMP_API_KEY` is not configured**.
-- Refreshed full-universe multi-timeframe performance using the **Yahoo Finance chart API fallback**.
-- Refreshed macro/news context via **Google News RSS / Reuters fallback** and kept the preference list centered on **GOOG / QQQ / AVGO** for additional risk.
-- No prompt or code changes were made in this hourly cycle.
-
-## Execution Summary — 2026-05-04 Tactical Cycle
-- Refreshed the live brokerage snapshot: **equity $9,994.96**, **cash $8,708.26**, **buying power $18,624.67**.
-- Current positions remain **SOXX 2**, **QTUM 2**, and **RKLB 1**; none reached their stop or trim thresholds.
-- Latest prices: **GOOG 379.58**, **QQQ 676.52**, **AVGO 417.595**, **NVDA 198.00**, so none of the new-buy triggers fully confirmed.
-- Quick Google News / Reuters checks surfaced constructive context for **GOOG** and no adverse catalyst strong enough to override the wait-and-see posture.
-- **No orders were sent** this cycle; the book remains small, leadership-biased, and under the gross-exposure cap.
-- Next expected action: keep cash high, hold **SOXX / QTUM / RKLB**, and only add if **GOOG / QQQ / AVGO / NVDA** reclaim their stated levels with confirmation.
+- Live account at 11:00 ET is still **lightly invested**: **SOXX 2 shares, QTUM 2 shares, RKLB 1 share**.
+- Current equity is **$9,990.99**, cash is **$8,708.26**, gross exposure is about **12.8%**, and overall unrealized P&L is **-$9.01**.
+- **FMP historical performance** remains unavailable because **`FMP_API_KEY` is missing**, so this run again used the **Yahoo Finance chart API fallback**.
+- Leadership remains centered on **SOXX / GOOG / QQQ / AVGO / QTUM**, while **META / HOOD / SHLD / GLD** remain weaker.
+- **Prompt review completed:** no prompt change was made this cycle because the current hourly prompt already requires live account checks, market-data fallbacks, friction awareness, and trigger refresh.
