@@ -1,7 +1,9 @@
 import { createOpencode, type OpencodeClient } from '@opencode-ai/sdk';
 import type { AppLogger } from './logger';
-import { logger as rootLogger } from './logger';
+import { getLogger } from './logger';
 import { parseModelSpec } from './agent_config';
+
+const rootLogger = getLogger('opencode');
 
 export type AgentMode = 'hourly' | 'tactical';
 

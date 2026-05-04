@@ -1,7 +1,9 @@
 import { loadAgentConfig } from './agent_config';
-import { logger } from './logger';
+import { getLogger } from './logger';
 import { runOpencodePrompt, type AgentMode } from './opencode_runner';
 import { buildPrompt } from './prompt_loader';
+
+const logger = getLogger('agent');
 
 const mode = process.argv[2] as AgentMode | undefined;
 

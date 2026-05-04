@@ -1,5 +1,7 @@
 import { isMarketOpen } from './tools/alpaca_cli';
-import { logger } from './logger';
+import { getLogger } from './logger';
+
+const logger = getLogger('harness');
 
 let isPaused = false;
 let lastHourlyRun = 0;

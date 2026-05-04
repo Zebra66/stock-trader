@@ -2,7 +2,9 @@ import { Elysia } from 'elysia';
 import { getPaused, setPaused } from '../harness';
 import { alpaca } from '../tools/alpaca_cli';
 import * as fs from 'fs/promises';
+import { getLogger } from '../logger';
 
+const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
 
 const app = new Elysia()
@@ -351,7 +353,7 @@ const app = new Elysia()
           sells
       };
     } catch (e: any) {
-      console.error(e);
+      logger.error({ err: (e as Error).message }, 'chart-data API error');
       return { error: e.message };
     }
   })
@@ -388,4 +390,4 @@ const app = new Elysia()
   })
   .listen(PORT);
 
-console.log(`Dashboard running at http://localhost:${PORT}`);
+logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);

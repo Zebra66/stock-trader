@@ -7,8 +7,8 @@ describe('agent config', () => {
 
     expect(config.modes.hourly.model).toContain('/');
     expect(config.modes.tactical.model).toContain('/');
-    expect(config.modes.hourly.model).toContain('gemini');
-    expect(config.modes.tactical.model).toContain('gemini');
+    expect(config.modes.hourly.model.toLowerCase()).toContain('gemini');
+    expect(config.modes.tactical.model.toLowerCase()).toContain('gemini');
   });
 
   test('parseModelSpec splits provider and model id', () => {

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { runOpencodePrompt } from './opencode_runner';
+import { buildTraderOpencodeConfig, runOpencodePrompt } from './opencode_runner';
 
 function createAsyncIterable<T>(items: T[]): AsyncIterable<T> {
   return {
@@ -12,6 +12,30 @@ function createAsyncIterable<T>(items: T[]): AsyncIterable<T> {
 }
 
 describe('opencode runner', () => {
+  test('builds a trader-specific Gemini provider config', () => {
+    expect(buildTraderOpencodeConfig()).toMatchObject({
+      provider: {
+        'trader-gemini': {
+          npm: '@ai-sdk/google',
+          name: 'Trader Gemini',
+          options: {
+            apiKey: '{env:GEMINI_API_KEY}',
+            timeout: 600000,
+            chunkTimeout: 60000,
+          },
+          models: {
+            'gemini-3.1-pro-preview': {
+              name: 'Gemini 3.1 Pro Preview',
+            },
+            'gemini-3.1-flash-lite-preview': {
+              name: 'Gemini 3.1 Flash Lite Preview',
+            },
+          },
+        },
+      },
+    });
+  });
+
   test('runs a session with the requested model and logs streamed opencode output', async () => {
     const logs: string[] = [];
     const promptCalls: Array<Record<string, unknown>> = [];
