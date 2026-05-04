@@ -1,12 +1,7 @@
-import Alpaca from '@alpacahq/alpaca-trade-api';
+import '../env';
+import { getDefaultAlpacaClient } from './alpaca_client_factory';
 
-const paper = process.env.ALPACA_PAPER === 'true';
-
-export const alpaca = new Alpaca({
-  keyId: process.env.ALPACA_API_KEY || 'dummy_key',
-  secretKey: process.env.ALPACA_API_SECRET || 'dummy_secret',
-  paper: paper,
-});
+export const alpaca = getDefaultAlpacaClient();
 
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
