@@ -2,7 +2,7 @@
 
 ## Goal
 
-Beat the S&P 500 over a 3-month period by operating an **autonomous, self-evolving AI trading agent** with zero hardcoded algorithms. All decisions — what to buy, when to sell, how to allocate — are made by a Gemini-powered OpenCode coding agent running inside this repo workspace, which can also update its own code, prompts, and strategy files between cycles.
+Beat the S&P 500 over a 3-month period by operating an **autonomous, self-evolving AI trading agent** with zero hardcoded algorithms. All decisions — what to buy, when to sell, how to allocate — are made by a Pi.dev coding agent running inside this repo workspace, which can also update its own code, prompts, and strategy files between cycles. The exact provider/model for each run is selected in `config/agent_runtime.json`.
 
 The system runs on real brokerage infrastructure (Alpaca Paper Trading → Live when ready) and is designed to be left running unattended, with a web dashboard as the human override mechanism.
 
@@ -40,17 +40,17 @@ AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, 
 │  ┌───────────────┐          ┌──────────────────┐            │
 │  │  agent.ts     │          │  agent.ts         │           │
 │  │  mode=hourly  │          │  mode=tactical    │           │
-│  │  OpenCode SDK │          │  OpenCode SDK     │           │
+│  │  Pi.dev agent │          │  Pi.dev agent     │           │
 │  │  config model │          │  config model     │           │
 │  └───────┬───────┘          └────────┬──────────┘           │
-│          │ OpenCode session          │ OpenCode session      │
+│          │ Pi.dev session            │ Pi.dev session        │
 │          ▼                           ▼                       │
 │  ┌─────────────────────────────────────────────────────┐    │
-│  │  OpenCode Workspace Runtime                         │    │
+│  │  Pi.dev Workspace Runtime                           │    │
 │  │                                                     │    │
 │  │  AGENTS.md / skills / prompts / bash / edits        │    │
 │  │  grep / glob / web tools / git-aware repo context   │    │
-│  │  provider config via opencode.json                  │    │
+│  │  trader model provider selected from config         │    │
 │  └──────────────┬──────────────────────────────────────┘    │
 │                 │                                            │
 │     ┌───────────┴──────────────────────────────────┐        │
@@ -66,7 +66,7 @@ AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, 
 
 ## The 10-Minute Tactical Cycle
 
-Runs every 10 minutes **while the market is open**. Uses OpenCode SDK with the model configured for `tactical` in `config/agent_runtime.json`.
+Runs every 10 minutes **while the market is open**. Uses the Pi.dev agent runtime with the model configured for `tactical` in `config/agent_runtime.json`.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -80,19 +80,19 @@ Runs every 10 minutes **while the market is open**. Uses OpenCode SDK with the m
 │                                                              │
 │  3. Bun.spawn → agent.ts tactical                            │
 │                                                              │
-│  4. OpenCode starts in the repo root and loads:              │
+│  4. Pi.dev starts in the repo root and loads:                │
 │     → prompts/tactical.txt — tactical instructions           │
 │     → memory/MEMORY.md — macro directive                     │
 │     → memory/todo.md   — buy/sell conditions                 │
-│     → AGENTS.md / skills / opencode.json                     │
+│     → AGENTS.md / skills / legacy `opencode.json`            │
 │                                                              │
 │  5. Uses repo tools + CLI tools for portfolio data:          │
 │     → alpaca_cli get-account                                 │
 │     → alpaca_cli get-positions                               │
 │     → alpaca_cli get-latest-price --symbol <each symbol>    │
 │                                                              │
-│  6. OpenCode streams logs with `[opencode]` prefixes while   │
-│     it reasons, edits files, and runs tools                  │
+│  6. The agent streams logs while it reasons, edits files,    │
+│     and runs tools                                           │
 │                                                              │
 │  7. Executes orders matching todo.md conditions:             │
 │     → alpaca_cli submit-order --symbol NVDA --qty 5          │
@@ -111,7 +111,7 @@ Runs every 10 minutes **while the market is open**. Uses OpenCode SDK with the m
 
 ## The 1-Hour Macro Strategy Cycle
 
-Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses OpenCode SDK with the model configured for `hourly` in `config/agent_runtime.json`.
+Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses the Pi.dev agent runtime with the model configured for `hourly` in `config/agent_runtime.json`.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -119,11 +119,11 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 │                                                              │
 │  1. Bun.spawn → agent.ts hourly                              │
 │                                                              │
-│  2. OpenCode starts in the repo root and loads:              │
+│  2. Pi.dev starts in the repo root and loads:                │
 │     → prompts/hourly.txt — hourly instructions               │
 │     → memory/MEMORY.md — last directive + exec               │
 │     → memory/todo.md   — tactical flags/issues               │
-│     → AGENTS.md / skills / opencode.json                     │
+│     → AGENTS.md / skills / legacy `opencode.json`            │
 │                                                              │
 │  3. The agent decides which data it needs, then gathers it:  │
 │     → alpaca_cli get-positions + get-account                 │
@@ -148,7 +148,7 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 │         • "SELL <T> if price > X or < Y — rationale"         │
 │         • "HOLD <T> — target allocation Z%"                  │
 │                                                              │
-│  6. Logs stream with `[opencode]` prefixes, then commits:    │
+│  6. Logs stream, then commits:                               │
 │     → git add / git commit / git push                        │
 │                                                              │
 │  7. agent.ts exits, then tactical cycle runs immediately     │
@@ -157,25 +157,28 @@ Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses
 
 ---
 
-## OpenCode Runtime
+## Pi.dev Runtime
 
-The agent runtime is no longer a hand-written Gemini function-calling loop. `src/agent.ts` now starts an OpenCode SDK session in the repository root and lets OpenCode use its native workspace-aware tooling.
+The agent runtime is no longer a hand-written Gemini function-calling loop. `src/agent.ts` now starts a Pi.dev coding-agent session in the repository root and lets the agent use its native workspace-aware tooling.
 
 Key runtime inputs:
-- `opencode.json` — project-level OpenCode provider/runtime config
+- `src/pi_runner.ts` — Pi.dev session bootstrapper used by the trading agent
+- `opencode.json` — legacy repo-level config file still present in the repo root
 - `config/agent_runtime.json` — mode-to-model mapping for `hourly` and `tactical`
 - `prompts/hourly.txt` / `prompts/tactical.txt` — task prompts
-- `AGENTS.md` and local skills — repo-specific guidance automatically available to OpenCode
+- `AGENTS.md` and local skills — repo-specific guidance automatically available to the Pi.dev agent
 
-The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are still invoked from the repo shell environment, but now through OpenCode's native bash/tooling runtime instead of the old custom shell wrapper layer.
+The CLI tools (`alpaca_cli.ts`, `fmp_cli.ts`) are still invoked from the repo shell environment, but now through the Pi.dev agent runtime instead of the old custom shell wrapper layer.
 
-**OpenCode is used for:**
+Each mode uses a single `provider/model` string in `config/agent_runtime.json`, so switching between `trader-gemini/...` and `trader-openai/...` is a one-line change per mode.
+
+**Pi.dev is used for:**
 - Reading and editing repo files with project context
 - Discovering and applying local skills/instructions
 - Running bash and git commands in the repo root
-- Streaming structured runtime events that the harness logs with `[opencode]` prefixes
+- Streaming structured runtime events during each agent run
 
-**Gemini models are used for:**
+**Configured LLM models are used for:**
 - Breaking market news and macro events
 - Top investor portfolio filings (Burry, Ackman, Dalio, Buffett, Cathie Wood, etc.)
 - Analyst upgrades/downgrades and price target changes
@@ -193,8 +196,9 @@ The agent's working directory is the repository root. It has access to:
 | `memory/MEMORY.md` | **Primary communication bus.** Macro agent writes strategy; Tactical agent reads and executes. Both update after each cycle. |
 | `memory/todo.md` | **Action queue.** Macro writes buy/sell conditions; Tactical checks and clears them each cycle. |
 | `memory/dry_run_ledger.json` | Optional virtual ledger for manual bookkeeping. |
-| `opencode.json` | Project-level OpenCode config. Limits providers, disables sharing/autoupdate, and reads `GEMINI_API_KEY` for the Gemini provider. |
-| `config/agent_runtime.json` | Declares which model OpenCode should use for `hourly` and `tactical` runs. |
+| `src/pi_runner.ts` | Pi.dev runner that creates the coding-agent session, resolves `trader-gemini/...` or `trader-openai/...`, and prepares the matching provider credentials. |
+| `opencode.json` | Legacy repo-level config file still present after the Pi.dev migration. |
+| `config/agent_runtime.json` | Declares which model the Pi.dev runtime should use for `hourly` and `tactical` runs. |
 | `prompts/hourly.txt` | External system prompt template for the hourly macro strategist. Loaded by `src/agent.ts` at runtime. |
 | `prompts/tactical.txt` | External system prompt template for the 10-minute tactical executor. Loaded by `src/agent.ts` at runtime. |
 | `src/tools/alpaca_cli.ts` | CLI: account info, positions, prices, order execution. |
@@ -288,9 +292,12 @@ git log --grep='^\[agent\]' --oneline
 
 **Required environment variables** (copy `.env.example` → `.env`):
 
+`.env` values override inherited shell environment variables for this app, so changing keys locally takes effect on the next run.
+
 | Variable | Purpose |
 |---|---|
-| `GEMINI_API_KEY` | Gemini provider API key used by OpenCode via `opencode.json` |
+| `GEMINI_API_KEY` | Gemini provider API key for `trader-gemini/...` models; `src/pi_runner.ts` maps it to `GOOGLE_GENERATIVE_AI_API_KEY` |
+| `OPENAI_API_KEY` | OpenAI provider API key for `trader-openai/...` models |
 | `ALPACA_API_KEY` / `ALPACA_API_SECRET` | Brokerage execution & market data |
 | `ALPACA_PAPER=true` | Paper trading mode |
 | `FMP_API_KEY` | Analyst estimates & historical data (optional) |

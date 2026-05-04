@@ -1,5 +1,5 @@
 {
-  "name": "stock-trader",
+  "name": "auto-stock",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -13,7 +13,11 @@
   "dependencies": {
     "@ai-sdk/google": "^3.0.67",
     "@alpacahq/alpaca-trade-api": "^3.1.3",
+    "@mariozechner/pi-agent-core": "^0.72.1",
+    "@mariozechner/pi-ai": "^0.72.1",
+    "@mariozechner/pi-coding-agent": "^0.72.1",
     "@opencode-ai/sdk": "^1.14.33",
+    "ai": "^6.0.174",
     "elysia": "^1.4.28",
     "pino": "^10.3.1"
   }

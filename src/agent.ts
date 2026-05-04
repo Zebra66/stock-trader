@@ -1,6 +1,8 @@
+import './env';
 import { loadAgentConfig } from './agent_config';
 import { getLogger } from './logger';
-import { runOpencodePrompt, type AgentMode } from './opencode_runner';
+import type { AgentMode } from './opencode_runner';
+import { PiRunner } from './pi_runner';
 import { buildPrompt } from './prompt_loader';
 
 const logger = getLogger('agent');
@@ -19,11 +21,12 @@ async function runAgent(): Promise<void> {
   const prompt = await buildPrompt(mode);
   const config = await loadAgentConfig();
   const model = config.modes[mode].model;
+  const runner = new PiRunner();
 
-  logger.info({ mode, model, repoRoot }, 'Starting OpenCode agent run');
+  logger.info({ mode, model, repoRoot }, 'Starting Pi agent run');
 
   try {
-    await runOpencodePrompt({ mode, prompt, model });
+    await runner.runPrompt({ mode, prompt, model, logger });
     logger.info({ mode }, 'Agent completed');
   } catch (error: unknown) {
     logger.error({ mode, error: (error as Error).message }, 'Agent execution error');

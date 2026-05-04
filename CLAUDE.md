@@ -113,10 +113,14 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ## Autonomous Stock Trader Rules
 
 ### Agent Runtime
-- The scheduled `hourly` and `tactical` jobs run through the OpenCode SDK, not a direct `@google/genai` SDK loop.
-- Model selection for those jobs lives in `config/agent_runtime.json`.
-- OpenCode provider/runtime configuration lives in `opencode.json`.
-- `GEMINI_API_KEY` must be available in the runtime environment so OpenCode can use the Gemini provider.
+- The scheduled `hourly` and `tactical` jobs run through the Pi.dev coding-agent runtime, not a direct `@google/genai` SDK loop.
+- Model selection for those jobs lives in `config/agent_runtime.json`, using a single `provider/model` string per mode.
+- The trader app uses `src/pi_runner.ts` to start Pi.dev agent sessions in the repo workspace.
+- Switching between Gemini and OpenAI is a one-line change per mode in `config/agent_runtime.json`.
+- The runtime environment must include the API key required by the configured provider.
+- For `trader-gemini/...` models, `PiRunner` maps `GEMINI_API_KEY` to `GOOGLE_GENERATIVE_AI_API_KEY` for the Pi.dev Google provider.
+- For `trader-openai/...` models, `OPENAI_API_KEY` must be present in the runtime environment.
+- Repo `.env` values intentionally override inherited shell environment variables for this app's process tree.
 
 ### Execution & Testing Commands
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.

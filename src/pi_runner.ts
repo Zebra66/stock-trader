@@ -1,3 +1,4 @@
+import './env';
 import { AgentRunner, AgentRunnerOptions } from './runner_interface';
 import { createAgentSession, loadSkillsFromDir, formatSkillsForPrompt } from '@mariozechner/pi-coding-agent';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
@@ -8,8 +9,17 @@ import fs from 'fs';
 import path from 'path';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
+type NormalizedStatus = 'completed' | 'needs tool' | 'truncated' | 'aborted' | 'failed';
+type AssistantUpdateStatus = NormalizedStatus | 'thinking' | 'preparing tool' | 'responding';
+type LogSubject = 'user' | 'assistant' | 'toolStart' | 'tool' | 'session';
 
 type PiEvent = AgentSessionEvent | { type: 'session_error'; [key: string]: unknown };
+
+interface ResolvedConfiguredProvider {
+  configuredProvider: string;
+  provider: KnownProvider;
+  modelID: string;
+}
 
 interface PiLogger {
   debug?: (payload: unknown, message?: string) => void;
@@ -50,58 +60,209 @@ function getContentBlockTypes(content: unknown): string[] {
     .filter((type): type is string => typeof type === 'string');
 }
 
-function getUserMessageSummary(message: UserMessage) {
-  if (typeof message.content === 'string') {
-    return {
-      contentKind: 'text',
-      textLength: message.content.length,
-      textPreview: message.content.slice(0, 200),
-    };
+function collapseWhitespace(value: string): string {
+  return value.replace(/\s+/g, ' ').trim();
+}
+
+function truncatePreview(value: string, maxLength = 200): string {
+  return value.length <= maxLength ? value : `${value.slice(0, maxLength)}...`;
+}
+
+function normalizePreviewText(value: string): string | undefined {
+  const collapsed = collapseWhitespace(value);
+  if (collapsed.length === 0) {
+    return undefined;
   }
 
-  const textPreview = message.content
-    .filter((block): block is { type: 'text'; text: string } => block.type === 'text')
-    .map((block) => block.text)
-    .join(' ')
-    .slice(0, 200);
+  return truncatePreview(collapsed);
+}
 
-  return {
-    contentKind: 'blocks',
-    contentBlockTypes: getContentBlockTypes(message.content),
-    textPreview,
-  };
+function omitUndefinedAndEmpty<T extends Record<string, unknown>>(value: T): T {
+  return Object.fromEntries(
+    Object.entries(value).filter(([, entry]) => entry !== undefined && (!Array.isArray(entry) || entry.length > 0)),
+  ) as T;
+}
+
+function isTextBlock(block: unknown): block is { type: 'text'; text: string } {
+  return typeof block === 'object' && block !== null && 'type' in block && block.type === 'text' && 'text' in block && typeof block.text === 'string';
+}
+
+function getPreviewFromContent(content: unknown): string | undefined {
+  if (typeof content === 'string') {
+    return normalizePreviewText(content);
+  }
+
+  if (!Array.isArray(content)) {
+    return undefined;
+  }
+
+  const textPreview = normalizePreviewText(content.filter(isTextBlock).map((block) => block.text).join(' '));
+  if (textPreview) {
+    return textPreview;
+  }
+
+  const blockTypes = getContentBlockTypes(content);
+  if (blockTypes.some((type) => type === 'tool-call' || type === 'toolCall' || type === 'tool_call')) {
+    return '[tool call blocks]';
+  }
+  if (blockTypes.includes('image')) {
+    return '[image content]';
+  }
+
+  return blockTypes.length > 0 ? '[non-text content]' : undefined;
+}
+
+function getPreviewFromUnknown(value: unknown): string | undefined {
+  const contentPreview =
+    typeof value === 'object' && value !== null && 'content' in value
+      ? getPreviewFromContent(value.content)
+      : undefined;
+  if (contentPreview) {
+    return contentPreview;
+  }
+
+  if (typeof value === 'string') {
+    return normalizePreviewText(value);
+  }
+
+  if (Array.isArray(value)) {
+    return getPreviewFromContent(value);
+  }
+
+  if (typeof value === 'number' || typeof value === 'boolean' || typeof value === 'bigint') {
+    return truncatePreview(String(value));
+  }
+
+  if (typeof value === 'object' && value !== null) {
+    if ('message' in value && typeof value.message === 'string') {
+      return normalizePreviewText(value.message);
+    }
+    if ('command' in value && typeof value.command === 'string') {
+      return normalizePreviewText(value.command);
+    }
+    if ('filePath' in value && typeof value.filePath === 'string') {
+      return normalizePreviewText(value.filePath);
+    }
+    if ('url' in value && typeof value.url === 'string') {
+      return normalizePreviewText(value.url);
+    }
+    if ('error' in value && typeof value.error === 'string') {
+      return normalizePreviewText(value.error);
+    }
+    if ('exitCode' in value && typeof value.exitCode === 'number') {
+      return `exit code ${value.exitCode}`;
+    }
+    if ('bytesRead' in value && typeof value.bytesRead === 'number') {
+      return `${value.bytesRead} bytes`;
+    }
+    if ('metadata' in value) {
+      return getPreviewFromUnknown(value.metadata);
+    }
+  }
+
+  return undefined;
+}
+
+function getNormalizedStatus(stopReason: StopReason): NormalizedStatus {
+  switch (stopReason) {
+    case 'stop':
+      return 'completed';
+    case 'toolUse':
+      return 'needs tool';
+    case 'length':
+      return 'truncated';
+    case 'aborted':
+      return 'aborted';
+    case 'error':
+      return 'failed';
+  }
+}
+
+function getAssistantUpdateStatus(event: AssistantMessageEvent): AssistantUpdateStatus {
+  switch (event.type) {
+    case 'thinking_delta':
+      return 'thinking';
+    case 'toolcall_delta':
+      return 'preparing tool';
+    case 'done':
+      return getNormalizedStatus(event.reason);
+    case 'error':
+      return 'failed';
+    default:
+      return 'responding';
+  }
+}
+
+function getEmoji(status: string, subject: LogSubject): string {
+  if (status === 'failed') {
+    return '❌';
+  }
+  if (status === 'truncated' || status === 'aborted') {
+    return '⚠️';
+  }
+  if (subject === 'user') {
+    return '📨';
+  }
+  if (subject === 'toolStart') {
+    return '🛠';
+  }
+  if (status === 'completed') {
+    return '✅';
+  }
+  if (subject === 'session') {
+    return '❌';
+  }
+
+  return '🤖';
+}
+
+function buildLogMessage(emoji: string, subject: string, status: string, preview?: string): string {
+  return preview ? `${emoji} ${subject} ${status}: ${preview}` : `${emoji} ${subject} ${status}`;
+}
+
+function getUserMessageSummary(message: UserMessage) {
+  const promptText = typeof message.content === 'string'
+    ? message.content
+    : message.content.filter(isTextBlock).map((block) => block.text).join(' ');
+
+  return omitUndefinedAndEmpty({
+    eventType: 'message_end' as const,
+    role: message.role,
+    status: 'sent' as const,
+    preview: getPreviewFromContent(message.content),
+    promptLength: promptText.length,
+    timestamp: message.timestamp,
+    contentBlockTypes: Array.isArray(message.content) ? getContentBlockTypes(message.content) : undefined,
+  });
 }
 
 function getAssistantMessagePayload(message: AssistantMessage) {
-  return {
+  return omitUndefinedAndEmpty({
     eventType: 'message_end',
     role: message.role,
+    status: getNormalizedStatus(message.stopReason),
     stopReason: message.stopReason,
-    errorMessage: message.errorMessage,
-    api: message.api,
-    provider: message.provider,
     model: message.model,
-    responseModel: message.responseModel,
     responseId: message.responseId,
     usage: message.usage,
     timestamp: message.timestamp,
     contentBlockTypes: getContentBlockTypes(message.content),
-    piMessage: message,
-  };
+    preview: getPreviewFromContent(message.content) ?? normalizePreviewText(message.errorMessage ?? ''),
+  });
 }
 
 function getToolResultPayload(message: ToolResultMessage) {
-  return {
+  return omitUndefinedAndEmpty({
     eventType: 'message_end',
     role: message.role,
+    status: message.isError ? 'failed' : 'completed',
     toolCallId: message.toolCallId,
     toolName: message.toolName,
     isError: message.isError,
     timestamp: message.timestamp,
     contentBlockTypes: getContentBlockTypes(message.content),
-    details: message.details,
-    piMessage: message,
-  };
+    preview: getPreviewFromContent(message.content) ?? (message.isError ? getPreviewFromUnknown(message.details) : undefined),
+  });
 }
 
 function isAssistantMessage(message: { role: string }): message is AssistantMessage {
@@ -132,18 +293,20 @@ function getAssistantUpdateLogLevel(event: AssistantMessageEvent): LogLevel {
 
 function getAssistantUpdatePayload(event: AssistantMessageEvent) {
   const partial = event.type === 'done' ? event.message : event.type === 'error' ? event.error : event.partial;
+  const errorPreview =
+    event.type === 'error'
+      ? getPreviewFromContent(partial.content) ?? normalizePreviewText(partial.errorMessage ?? '') ?? getPreviewFromUnknown(partial)
+      : undefined;
 
-  return {
+  return omitUndefinedAndEmpty({
     eventType: 'message_update',
     assistantEventType: event.type,
-    role: partial.role,
-    stopReason: partial.stopReason,
-    errorMessage: partial.errorMessage,
-    provider: partial.provider,
+    status: getAssistantUpdateStatus(event),
+    stopReason: event.type === 'done' ? partial.stopReason : undefined,
     model: partial.model,
     contentBlockTypes: getContentBlockTypes(partial.content),
-    partialMessage: partial,
-  };
+    preview: errorPreview ?? getPreviewFromContent(partial.content) ?? normalizePreviewText(partial.errorMessage ?? ''),
+  });
 }
 
 export function logPiEvent(log: PiLogger, event: PiEvent): void {
@@ -154,11 +317,12 @@ export function logPiEvent(log: PiLogger, event: PiEvent): void {
       return;
     }
 
+    const payload = getAssistantUpdatePayload(assistantEvent);
     logAtLevel(
       log,
       getAssistantUpdateLogLevel(assistantEvent),
-      getAssistantUpdatePayload(assistantEvent),
-      `[PiRunner] assistant ${assistantEvent.type}`,
+      payload,
+      buildLogMessage(getEmoji(payload.status, 'assistant'), payload.model ?? 'assistant', payload.status, payload.preview),
     );
     return;
   }
@@ -167,93 +331,101 @@ export function logPiEvent(log: PiLogger, event: PiEvent): void {
     const { message } = event;
 
     if (isAssistantMessage(message)) {
+      const payload = getAssistantMessagePayload(message);
       logAtLevel(
         log,
         getStopReasonLogLevel(message.stopReason),
-        getAssistantMessagePayload(message),
-        '[PiRunner] assistant message',
+        payload,
+        buildLogMessage(getEmoji(payload.status, 'assistant'), message.model ?? 'assistant', payload.status, payload.preview),
       );
       return;
     }
 
     if (isToolResultMessage(message)) {
+      const payload = getToolResultPayload(message);
       logAtLevel(
         log,
         message.isError ? 'error' : 'info',
-        getToolResultPayload(message),
-        '[PiRunner] tool result message',
+        payload,
+        buildLogMessage(getEmoji(payload.status, 'tool'), message.toolName, payload.status, payload.preview),
       );
       return;
     }
 
     if (isUserMessage(message)) {
+      const payload = getUserMessageSummary(message);
       logAtLevel(
         log,
         'info',
-        {
-          eventType: 'message_end',
-          role: message.role,
-          timestamp: message.timestamp,
-          ...getUserMessageSummary(message),
-        },
-        '[PiRunner] user message summary',
+        payload,
+        buildLogMessage(getEmoji(payload.status, 'user'), 'user', payload.status, payload.preview),
       );
       return;
     }
 
+    const preview = getPreviewFromUnknown('content' in message ? message.content : undefined) ?? '[non-standard message]';
     logAtLevel(
       log,
       'info',
       {
         eventType: 'message_end',
         role: message.role,
-        piMessage: message,
+        status: 'completed',
+        preview,
       },
-      '[PiRunner] non-standard message',
+      buildLogMessage('ℹ️', 'message', 'completed', preview),
     );
     return;
   }
 
   if (event.type === 'tool_execution_start') {
+    const preview = getPreviewFromUnknown(event.args);
+    const payload = omitUndefinedAndEmpty({
+      eventType: 'tool_execution_start' as const,
+      status: 'started' as const,
+      toolCallId: event.toolCallId,
+      toolName: event.toolName,
+      preview,
+    });
     logAtLevel(
       log,
       'info',
-      {
-        eventType: 'tool_execution_start',
-        toolCallId: event.toolCallId,
-        toolName: event.toolName,
-        args: event.args,
-      },
-      '[PiRunner] tool execution start',
+      payload,
+      buildLogMessage(getEmoji(payload.status, 'toolStart'), event.toolName, payload.status, payload.preview),
     );
     return;
   }
 
   if (event.type === 'tool_execution_end') {
+    const preview = getPreviewFromUnknown(event.result);
+    const payload = omitUndefinedAndEmpty({
+      eventType: 'tool_execution_end' as const,
+      status: event.isError ? 'failed' as const : 'completed' as const,
+      toolCallId: event.toolCallId,
+      toolName: event.toolName,
+      preview,
+      isError: event.isError,
+    });
     logAtLevel(
       log,
       event.isError ? 'error' : 'info',
-      {
-        eventType: 'tool_execution_end',
-        toolCallId: event.toolCallId,
-        toolName: event.toolName,
-        isError: event.isError,
-        result: event.result,
-      },
-      '[PiRunner] tool execution end',
+      payload,
+      buildLogMessage(getEmoji(payload.status, 'tool'), event.toolName, payload.status, payload.preview),
     );
     return;
   }
 
   if (event.type === 'session_error') {
+    const payload = omitUndefinedAndEmpty({
+      eventType: 'session_error' as const,
+      status: 'failed' as const,
+      preview: getPreviewFromUnknown('error' in event ? event.error : event),
+    });
     logAtLevel(
       log,
       'error',
-      {
-        eventType: 'session_error',
-        piEvent: event,
-      },
-      '[PiRunner] session error',
+      payload,
+      buildLogMessage(getEmoji(payload.status, 'session'), 'session', payload.status, payload.preview),
     );
   }
 }
@@ -261,18 +433,10 @@ export function logPiEvent(log: PiLogger, event: PiEvent): void {
 export class PiRunner implements AgentRunner {
   async runPrompt(options: AgentRunnerOptions): Promise<void> {
     const log: PiLogger = options.logger ?? console;
-    
-    // Map the GEMINI_API_KEY to the env var expected by the Google provider in pi-ai
-    if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY && process.env.GEMINI_API_KEY) {
-      process.env.GOOGLE_GENERATIVE_AI_API_KEY = process.env.GEMINI_API_KEY;
-    }
-    
-    // 1. Configure the Google model
-    const parsedModel = parseModelSpec(options.model);
-    // parseModelSpec returns providerID and modelID. 
-    // We map trader-gemini to google for pi-ai.
-    const provider = (parsedModel.providerID === 'trader-gemini' ? 'google' : parsedModel.providerID) as KnownProvider;
-    const model = getModel(provider, parsedModel.modelID as never);
+
+    const resolvedProvider = resolveConfiguredProvider(options.model);
+    applyProviderEnv(resolvedProvider.provider);
+    const model = getModel(resolvedProvider.provider, resolvedProvider.modelID as never);
     
     // 2. Create the Agent Session with Pi Coding Agent
     // This automatically supports read, write, edit, bash, and we can configure it to load skills.
@@ -312,5 +476,48 @@ export class PiRunner implements AgentRunner {
     // Add a trailing newline after generation
     process.stdout.write('\n');
     logAtLevel(log, 'info', { mode: options.mode }, '[PiRunner] prompt execution completed');
+  }
+}
+
+export function resolveConfiguredProvider(model: string): ResolvedConfiguredProvider {
+  const parsedModel = parseModelSpec(model);
+
+  switch (parsedModel.providerID) {
+    case 'trader-gemini':
+      return {
+        configuredProvider: parsedModel.providerID,
+        provider: 'google',
+        modelID: parsedModel.modelID,
+      };
+    case 'trader-openai':
+      return {
+        configuredProvider: parsedModel.providerID,
+        provider: 'openai',
+        modelID: parsedModel.modelID,
+      };
+    case 'google':
+    case 'openai':
+      return {
+        configuredProvider: parsedModel.providerID,
+        provider: parsedModel.providerID,
+        modelID: parsedModel.modelID,
+      } as ResolvedConfiguredProvider;
+    default:
+      throw new Error(`Unsupported model provider: ${parsedModel.providerID}`);
+  }
+}
+
+export function applyProviderEnv(provider: KnownProvider): void {
+  if (provider === 'google') {
+    if (process.env.GEMINI_API_KEY) {
+      process.env.GOOGLE_GENERATIVE_AI_API_KEY = process.env.GEMINI_API_KEY;
+    }
+    return;
+  }
+
+  if (provider === 'openai') {
+    if (!process.env.OPENAI_API_KEY) {
+      throw new Error('OPENAI_API_KEY is required for trader-openai models');
+    }
   }
 }

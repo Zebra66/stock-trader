@@ -1,4 +1,6 @@
-import { createOpencode, type OpencodeClient } from '@opencode-ai/sdk';
+import './env';
+import { createOpencode, type ServerOptions } from '@opencode-ai/sdk';
+import { AgentRunner, AgentRunnerOptions } from './runner_interface';
 import type { AppLogger } from './logger';
 import { getLogger } from './logger';
 import { parseModelSpec } from './agent_config';
@@ -40,14 +42,54 @@ type OpencodeEvent = {
   properties: Record<string, unknown>;
 };
 
-type CreateClient = () => Promise<OpencodeRuntime>;
+export type CreateClient = () => Promise<OpencodeRuntime>;
 
-export interface RunOpencodePromptOptions {
-  mode: AgentMode;
-  prompt: string;
-  model: string;
-  logger?: Pick<AppLogger, 'info' | 'warn' | 'error' | 'debug' | 'child'>;
+export interface RunOpencodePromptOptions extends AgentRunnerOptions {
   createClient?: CreateClient;
+}
+
+export class OpenCodeRunner implements AgentRunner {
+  async runPrompt(options: AgentRunnerOptions): Promise<void> {
+    return runOpencodePrompt(options as RunOpencodePromptOptions);
+  }
+}
+
+export function buildTraderOpencodeConfig(): NonNullable<ServerOptions['config']> {
+  return {
+    logLevel: 'DEBUG',
+    enabled_providers: ['trader-gemini'],
+    provider: {
+      'trader-gemini': {
+        npm: '@ai-sdk/google',
+        name: 'Trader Gemini',
+        options: {
+          apiKey: process.env.GEMINI_API_KEY,
+        },
+        models: {
+          'gemini-3.1-pro-preview': {
+            name: 'Gemini 3.1 Pro Preview',
+          },
+          'gemini-3.1-flash-lite-preview': {
+            name: 'Gemini 3.1 Flash Lite Preview',
+          },
+        },
+      },
+    },
+    permission: {
+      bash: 'allow',
+      edit: 'allow',
+      webfetch: 'allow',
+      doom_loop: 'allow',
+      external_directory: 'allow',
+    },
+  };
+}
+
+export function buildTraderOpencodeServerOptions(): ServerOptions {
+  return {
+    port: 0,
+    config: buildTraderOpencodeConfig(),
+  };
 }
 
 export async function runOpencodePrompt(options: RunOpencodePromptOptions): Promise<void> {
@@ -66,6 +108,7 @@ export async function runOpencodePrompt(options: RunOpencodePromptOptions): Prom
 
     sessionLogger.info('[opencode] session created');
 
+    console.log("[DEBUG] Calling runtime.client.session.prompt...");
     const response = await runtime.client.session.prompt({
       path: { id: sessionID },
       body: {
@@ -73,8 +116,10 @@ export async function runOpencodePrompt(options: RunOpencodePromptOptions): Prom
         parts: [{ type: 'text', text: options.prompt }],
       },
     });
+    console.log("[DEBUG] prompt() returned. Awaiting idlePromise...");
 
     const streamResult = await idlePromise;
+    console.log("[DEBUG] idlePromise resolved.");
 
     if (streamResult.status === 'error') {
       throw new Error(`OpenCode session failed: ${streamResult.errorMessage ?? 'unknown error'}`);
@@ -100,7 +145,7 @@ function createChildLogger<T extends Pick<AppLogger, 'info' | 'warn' | 'error' |
 }
 
 async function createDefaultClient(): Promise<OpencodeRuntime> {
-  const runtime = await createOpencode();
+  const runtime = await createOpencode(buildTraderOpencodeServerOptions());
   return runtime as unknown as OpencodeRuntime;
 }
 
@@ -149,7 +194,7 @@ async function streamSessionEvents(
       return { status: 'idle' };
     }
 
-    logger.debug(`[opencode] event: ${event.type}`);
+    logger.debug(`[opencode] event: ${event.type} ${JSON.stringify(event.properties)}`);
   }
 
   return { status: 'idle' };

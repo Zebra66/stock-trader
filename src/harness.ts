@@ -1,3 +1,4 @@
+import './env';
 import { isMarketOpen } from './tools/alpaca_cli';
 import { getLogger } from './logger';
 
@@ -71,7 +72,7 @@ export async function startHarnessLoop(): Promise<void> {
 
   // Run an initial cycle immediately, then every 10 minutes
   await runCycle();
-  setInterval(runCycle, 600_000);
+  setInterval(runCycle, 600_000); // [mili-seconds]
 }
 
 if (import.meta.main) {

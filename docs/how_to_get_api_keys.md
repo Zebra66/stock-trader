@@ -4,9 +4,30 @@ This guide explains step-by-step how to generate the API credentials required to
 
 ---
 
-## 1. Google Gemini API Key (`GEMINI_API_KEY`)
+## 1. LLM Provider API Keys
 
-The Gemini API acts as the model provider behind the OpenCode agent runtime. The project-level `opencode.json` reads `GEMINI_API_KEY` and uses it for both the `hourly` and `tactical` agent sessions.
+The Pi.dev agent runtime reads the model for each mode from `config/agent_runtime.json`. Each mode uses a single `provider/model` string, so switching between Gemini and OpenAI is a one-line change. You only need the API key for the provider used by the configured `hourly` and `tactical` models.
+
+The current default config is:
+
+```json
+{
+  "modes": {
+    "hourly": {
+      "model": "trader-openai/gpt-5.4"
+    },
+    "tactical": {
+      "model": "trader-openai/gpt-5.4-mini"
+    }
+  }
+}
+```
+
+If you want to switch back to Gemini, change those `model` lines to the corresponding `trader-gemini/...` values.
+
+### Google Gemini API Key (`GEMINI_API_KEY`)
+
+Use this when `config/agent_runtime.json` points to `trader-gemini/...` models. `src/pi_runner.ts` reads `GEMINI_API_KEY`, maps it to `GOOGLE_GENERATIVE_AI_API_KEY`, and uses it for Pi.dev's Google provider.
 
 ### How to get it:
 1. Go to **[Google AI Studio](https://aistudio.google.com/)** and sign in with your Google account.
@@ -14,11 +35,27 @@ The Gemini API acts as the model provider behind the OpenCode agent runtime. The
 3. Click the **"Create API key"** button.
 4. Create the key in a new or existing Google Cloud Project.
 5. Copy the generated key and paste it as `GEMINI_API_KEY` in your `.env` file.
-6. OpenCode will pick it up through `opencode.json`, so no extra login step is required for the repo runtime.
+6. Pi.dev will pick it up through `src/pi_runner.ts`, so no extra login step is required for the repo runtime.
 
 ### Estimated Cost: **~$0 to $2 / month**
 - **Free Tier**: Google usually provides a generous free tier for Gemini developer usage, but check the current quotas for the exact models you place in `config/agent_runtime.json`.
-- **Pay-as-you-go**: Actual spend now depends on the Gemini models selected for `hourly` and `tactical` inside `config/agent_runtime.json`, plus how much tool-driven context the OpenCode agent consumes during each run.
+- **Pay-as-you-go**: Actual spend depends on the configured models plus how much tool-driven context the Pi.dev agent consumes during each run.
+
+### OpenAI API Key (`OPENAI_API_KEY`)
+
+Use this when `config/agent_runtime.json` points to `trader-openai/...` models. `src/pi_runner.ts` passes OpenAI model IDs through to Pi.dev's `openai` provider.
+
+### How to get it:
+1. Go to **[OpenAI Platform](https://platform.openai.com/)** and sign in.
+2. Open **API keys** from the dashboard.
+3. Create a new secret key.
+4. Copy the generated key and paste it as `OPENAI_API_KEY` in your `.env` file.
+5. Keep your `.env` file checked out locally only. Do not commit real secrets.
+
+### Estimated Cost: **Usage-dependent**
+- OpenAI pricing depends on the exact models selected in `config/agent_runtime.json`.
+- The default OpenAI setup in this repo uses `trader-openai/gpt-5.4` for `hourly` and `trader-openai/gpt-5.4-mini` for `tactical`.
+- Check the current OpenAI pricing page before running unattended loops.
 
 ---
 

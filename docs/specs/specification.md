@@ -10,18 +10,18 @@ The bot operates on this configured symbol list:
 ## 3. Autonomous LLM Agent Architecture
 There is **no custom algorithmic code, machine learning models, or hardcoded trading logic**. Instead, the system relies entirely on an autonomous coding-agent runtime acting as the decision engine.
 1. **The Harness**: A lightweight Bun/TypeScript shell wakes the agent every 10 minutes and once per hour for macro work.
-2. **Agent Runtime**: `src/agent.ts` starts an **OpenCode SDK** session with the repository root as the workspace. The agent receives:
+2. **Agent Runtime**: `src/agent.ts` starts a **Pi.dev coding-agent** session with the repository root as the workspace. The agent receives:
    - repo-local prompts from `./prompts/`
    - persistent state from `./memory/`
    - repo guidance from `AGENTS.md` and local skills
-   - shell/file/search/web tooling from OpenCode's native workspace runtime
+   - shell/file/search/web tooling from the Pi.dev workspace runtime
 3. **Continuous Evolution**: The agent analyzes the market, executes trades via repo CLI tools, updates `./memory/MEMORY.md` and `./memory/todo.md`, and may also improve prompts, docs, or code when warranted.
-4. **Execution Tiers**: The exact model for each mode is configured in `./config/agent_runtime.json`, with separate entries for `hourly` and `tactical`. OpenCode uses the Gemini provider configured in `./opencode.json`.
+4. **Execution Tiers**: The exact model for each mode is configured in `./config/agent_runtime.json`, with separate entries for `hourly` and `tactical`. Each entry is a single `provider/model` string, so switching providers is a one-line change per mode. `src/pi_runner.ts` resolves `trader-gemini/...` to Pi.dev's `google` provider and `trader-openai/...` to Pi.dev's `openai` provider, then prepares the matching API credentials.
 
 ## 4. Core Technologies
 - **Language**: TypeScript
 - **Runtime**: Bun (https://bun.com/) for the Harness loop and fast script execution.
-- **Agent Framework**: OpenCode SDK (`@opencode-ai/sdk`) running a repo-aware coding-agent session in the project workspace.
+- **Agent Framework**: Pi.dev coding agent (`@mariozechner/pi-coding-agent` with `@mariozechner/pi-ai`) running a repo-aware agent session in the project workspace.
 - **Logging**: Pino structured logging for harness and agent runtime output.
 - **Web Framework**: ElysiaJS for the read-only dashboard.
 - **Deployment**: Google Cloud Run / Compute Engine.
@@ -33,7 +33,7 @@ There is **no custom algorithmic code, machine learning models, or hardcoded tra
 ## 6. Architecture & Workflow
 ### 6.1 Periodic Execution (10-Minute Heartbeat)
 1. **Wake Up & State Recovery**: Read `./memory/MEMORY.md` and `./memory/todo.md`.
-2. **Start Agent Session**: Launch the tactical OpenCode session in the repo root.
+2. **Start Agent Session**: Launch the tactical Pi.dev session in the repo root.
 3. **Fetch Data**: Get current prices, analyst estimations, and news via repo CLI tools and web research.
 4. **Execution Mode Evaluation**:
    - **Dry Run Mode**: Log buy/sell decisions and track PnL in a local SQLite/JSON ledger (`./memory/dry_run_ledger.json`). No actual broker orders are placed.
@@ -50,12 +50,12 @@ There is **no custom algorithmic code, machine learning models, or hardcoded tra
 .
 ├── src/                # TypeScript Source Code
 │   ├── harness.ts      # Scheduler / web server launcher
-│   ├── agent.ts        # OpenCode-backed hourly/tactical runner
+│   ├── agent.ts        # Pi.dev-backed hourly/tactical runner
 │   ├── tools/          # Alpaca, FMP, and system CLIs
 │   └── web/            # Dashboard UI and Google Auth
 ├── prompts/            # Hourly and tactical agent prompts
 ├── config/             # Agent runtime config (mode -> model)
-├── opencode.json       # OpenCode provider/runtime config
+├── opencode.json       # Legacy repo-level config retained after Pi.dev migration
 ├── scripts/            # Shell scripts (deploy.sh, run_local.sh, etc.)
 ├── docs/               # Documentation
 │   └── specs/          # Specifications (this file)

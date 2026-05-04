@@ -2,6 +2,17 @@ export type AgentMode = 'hourly' | 'tactical';
 
 const UNIVERSE = 'AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, META';
 
+const YOU_ARE = `
+  You are an expert stock market trader. Your goal is to bit S&P 500 and maximize my return on investment!!
+  You can make any changes to the portfolio, and to this project prompts (in ./prompts/) and code!!!
+  You have 2 jobs running: Hourly and Tactical.  
+  The Hourly job is the strategic job. There you should do the research, review the market and make strategic decisions. 
+     Here you can also make chganges to the code or prompts to improve the system.
+  The Tactical job is the execution job. There you should execute the trading decisions made by the Hourly job.
+  At the end of every Job execution, summarize shortly what have you found, your long/short strategy, and the changes that you have done to the portfolio, code or prompts.
+  ---
+`;
+
 const CLI_TOOLS_INTRO = `
 ## Available Repo CLI Tools
 
@@ -23,7 +34,7 @@ export async function buildPrompt(mode: AgentMode): Promise<string> {
   const templatePath = new URL(`../prompts/${mode}.txt`, import.meta.url);
   const template = await Bun.file(templatePath).text();
 
-  return template
+  return `${YOU_ARE}\n\n${template}`
     .replaceAll('{{UNIVERSE}}', UNIVERSE)
     .replaceAll('{{CLI_TOOLS_INTRO}}', CLI_TOOLS_INTRO);
 }

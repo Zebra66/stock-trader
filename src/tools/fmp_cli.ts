@@ -1,3 +1,4 @@
+import '../env';
 const FMP_BASE_URL = 'https://financialmodelingprep.com/api/v3';
 
 function isFmpDisabled(): boolean {

@@ -7,14 +7,14 @@ describe('agent config', () => {
 
     expect(config.modes.hourly.model).toContain('/');
     expect(config.modes.tactical.model).toContain('/');
-    expect(config.modes.hourly.model.toLowerCase()).toContain('gemini');
-    expect(config.modes.tactical.model.toLowerCase()).toContain('gemini');
+    expect(config.modes.hourly.model).toBe('trader-openai/gpt-5.4');
+    expect(config.modes.tactical.model).toBe('trader-openai/gpt-5.4-mini');
   });
 
   test('parseModelSpec splits provider and model id', () => {
-    expect(parseModelSpec('gemini/gemini-2.5-pro')).toEqual({
-      providerID: 'gemini',
-      modelID: 'gemini-2.5-pro',
+    expect(parseModelSpec('trader-openai/gpt-5.4')).toEqual({
+      providerID: 'trader-openai',
+      modelID: 'gpt-5.4',
     });
   });
 });

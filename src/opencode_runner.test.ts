@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { buildTraderOpencodeConfig, runOpencodePrompt } from './opencode_runner';
+import { buildTraderOpencodeConfig, buildTraderOpencodeServerOptions, runOpencodePrompt } from './opencode_runner';
 
 function createAsyncIterable<T>(items: T[]): AsyncIterable<T> {
   return {
@@ -14,14 +14,14 @@ function createAsyncIterable<T>(items: T[]): AsyncIterable<T> {
 describe('opencode runner', () => {
   test('builds a trader-specific Gemini provider config', () => {
     expect(buildTraderOpencodeConfig()).toMatchObject({
+      logLevel: 'DEBUG',
+      enabled_providers: ['trader-gemini'],
       provider: {
         'trader-gemini': {
           npm: '@ai-sdk/google',
           name: 'Trader Gemini',
           options: {
-            apiKey: '{env:GEMINI_API_KEY}',
-            timeout: 600000,
-            chunkTimeout: 60000,
+            apiKey: process.env.GEMINI_API_KEY,
           },
           models: {
             'gemini-3.1-pro-preview': {
@@ -33,6 +33,20 @@ describe('opencode runner', () => {
           },
         },
       },
+      permission: {
+        bash: 'allow',
+        edit: 'allow',
+        webfetch: 'allow',
+        doom_loop: 'allow',
+        external_directory: 'allow',
+      },
+    });
+  });
+
+  test('builds trader server options with an ephemeral port', () => {
+    expect(buildTraderOpencodeServerOptions()).toMatchObject({
+      port: 0,
+      config: buildTraderOpencodeConfig(),
     });
   });
 

@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'bun:test';
+import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
 import { logPiEvent } from './pi_runner';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
@@ -24,16 +25,16 @@ function createCapturingLogger() {
 }
 
 describe('pi runner logging', () => {
-  test('logs assistant message_end payloads with full Pi metadata at severity matching stopReason', () => {
+  test('logs assistant message_end payloads as readable completion summaries', () => {
     const { logger, logs } = createCapturingLogger();
 
     logPiEvent(logger, {
       type: 'message_end',
       message: {
         role: 'assistant',
-        api: 'google-generative-ai',
-        provider: 'google',
-        model: 'gemini-3.1-pro-preview',
+        api: 'openai-responses',
+        provider: 'openai',
+        model: 'gpt-5.4',
         responseId: 'resp-123',
         usage: {
           input: 120,
@@ -49,34 +50,31 @@ describe('pi runner logging', () => {
             total: 0,
           },
         },
-        stopReason: 'error',
-        errorMessage: 'provider failed',
+        stopReason: 'stop',
         timestamp: 1,
-        content: [],
+        content: [{ type: 'text', text: 'I updated the trading strategy.' }],
       },
     });
 
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
-      level: 'error',
-      message: '[PiRunner] assistant message',
+      level: 'info',
+      message: '✅ gpt-5.4 completed: I updated the trading strategy.',
       payload: {
         eventType: 'message_end',
         role: 'assistant',
-        stopReason: 'error',
-        provider: 'google',
-        model: 'gemini-3.1-pro-preview',
+        status: 'completed',
+        model: 'gpt-5.4',
         responseId: 'resp-123',
-        contentBlockTypes: [],
-        piMessage: {
-          errorMessage: 'provider failed',
-          stopReason: 'error',
-        },
+        preview: 'I updated the trading strategy.',
+        stopReason: 'stop',
+        contentBlockTypes: ['text'],
       },
     });
+    expect(logs[0].payload).not.toHaveProperty('piMessage');
   });
 
-  test('summarizes user message_end payloads instead of logging the full prompt', () => {
+  test('logs user message_end payloads with prompt preview and length', () => {
     const { logger, logs } = createCapturingLogger();
 
     logPiEvent(logger, {
@@ -91,19 +89,20 @@ describe('pi runner logging', () => {
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
       level: 'info',
-      message: '[PiRunner] user message summary',
+      message: '📨 user sent: Top secret prompt contents',
       payload: {
         eventType: 'message_end',
         role: 'user',
-        contentKind: 'text',
-        textLength: 26,
-        textPreview: 'Top secret prompt contents',
+        status: 'sent',
+        preview: 'Top secret prompt contents',
+        promptLength: 26,
+        timestamp: 2,
       },
     });
     expect(logs[0].payload).not.toHaveProperty('piMessage');
   });
 
-  test('logs toolResult message_end payloads with tool metadata', () => {
+  test('logs failed toolResult message_end payloads as readable summaries', () => {
     const { logger, logs } = createCapturingLogger();
 
     logPiEvent(logger, {
@@ -122,43 +121,324 @@ describe('pi runner logging', () => {
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
       level: 'error',
-      message: '[PiRunner] tool result message',
+      message: '❌ bash failed: command failed',
       payload: {
         eventType: 'message_end',
         role: 'toolResult',
+        status: 'failed',
         toolName: 'bash',
         toolCallId: 'tool-1',
+        preview: 'command failed',
         isError: true,
         contentBlockTypes: ['text'],
-        piMessage: {
-          toolName: 'bash',
-          isError: true,
+      },
+    });
+    expect(logs[0].payload).not.toHaveProperty('details');
+    expect(logs[0].payload).not.toHaveProperty('piMessage');
+  });
+
+  test('logs successful toolResult message_end payloads as readable summaries', () => {
+    const { logger, logs } = createCapturingLogger();
+
+    logPiEvent(logger, {
+      type: 'message_end',
+      message: {
+        role: 'toolResult',
+        toolCallId: 'tool-2',
+        toolName: 'read',
+        isError: false,
+        timestamp: 4,
+        content: [{ type: 'text', text: 'loaded README.md' }],
+        details: { bytesRead: 128 },
+      },
+    });
+
+    expect(logs).toHaveLength(1);
+    expect(logs[0]).toMatchObject({
+      level: 'info',
+      message: '✅ read completed: loaded README.md',
+      payload: {
+        eventType: 'message_end',
+        role: 'toolResult',
+        status: 'completed',
+        toolName: 'read',
+        toolCallId: 'tool-2',
+        preview: 'loaded README.md',
+        isError: false,
+        contentBlockTypes: ['text'],
+      },
+    });
+    expect(logs[0].payload).not.toHaveProperty('details');
+    expect(logs[0].payload).not.toHaveProperty('piMessage');
+  });
+
+  test('uses tool call fallback preview for tool-call-only assistant content', () => {
+    const { logger, logs } = createCapturingLogger();
+
+    logPiEvent(logger, {
+      type: 'message_end',
+      message: {
+        role: 'assistant',
+        api: 'openai-responses',
+        provider: 'openai',
+        model: 'gpt-5.4',
+        responseId: 'resp-tool',
+        usage: {
+          input: 10,
+          output: 5,
+          cacheRead: 0,
+          cacheWrite: 0,
+          totalTokens: 15,
+          cost: {
+            input: 0,
+            output: 0,
+            cacheRead: 0,
+            cacheWrite: 0,
+            total: 0,
+          },
         },
+        stopReason: 'toolUse',
+        timestamp: 10,
+        content: [{ type: 'toolCall' }],
+      },
+    } as never);
+
+    expect(logs).toHaveLength(1);
+    expect(logs[0]).toMatchObject({
+      level: 'info',
+      message: '🤖 gpt-5.4 needs tool: [tool call blocks]',
+      payload: {
+        eventType: 'message_end',
+        role: 'assistant',
+        status: 'needs tool',
+        model: 'gpt-5.4',
+        preview: '[tool call blocks]',
+        stopReason: 'toolUse',
+        contentBlockTypes: ['toolCall'],
       },
     });
   });
 
-  test('logs tool execution payloads with ids, args, result, and matching severity', () => {
+  test('logs assistant message_update events with model status and preview', () => {
+    const { logger, logs } = createCapturingLogger();
+    const event: Extract<AgentSessionEvent, { type: 'message_update' }> = {
+      type: 'message_update',
+      assistantMessageEvent: {
+        type: 'toolcall_delta',
+        partial: {
+          role: 'assistant',
+          model: 'gpt-5.4',
+          content: [{ type: 'text', text: 'bash git status' }],
+        },
+      },
+    };
+
+    logPiEvent(logger, event);
+
+    expect(logs).toHaveLength(1);
+    expect(logs[0]).toMatchObject({
+      level: 'debug',
+      message: '🤖 gpt-5.4 preparing tool: bash git status',
+      payload: {
+        eventType: 'message_update',
+        assistantEventType: 'toolcall_delta',
+        status: 'preparing tool',
+        model: 'gpt-5.4',
+        preview: 'bash git status',
+        contentBlockTypes: ['text'],
+      },
+    });
+    expect(logs[0].payload).not.toHaveProperty('partialMessage');
+  });
+
+  test('logs tool execution end payloads as readable summaries with compact previews', () => {
     const { logger, logs } = createCapturingLogger();
 
     logPiEvent(logger, {
       type: 'tool_execution_end',
       toolCallId: 'tool-2',
       toolName: 'read',
-      result: { content: [{ type: 'text', text: 'oops' }] },
+      result: { content: [{ type: 'text', text: 'file contents preview' }] },
       isError: true,
     });
 
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
       level: 'error',
-      message: '[PiRunner] tool execution end',
+      message: '❌ read failed: file contents preview',
       payload: {
         eventType: 'tool_execution_end',
+        status: 'failed',
         toolCallId: 'tool-2',
         toolName: 'read',
+        preview: 'file contents preview',
         isError: true,
-        result: { content: [{ type: 'text', text: 'oops' }] },
+      },
+    });
+    expect(logs[0].payload).not.toHaveProperty('result');
+  });
+
+  test('uses concise previews and omits irrelevant optional payload fields', () => {
+    const { logger, logs } = createCapturingLogger();
+
+    logPiEvent(logger, {
+      type: 'tool_execution_start',
+      toolCallId: 'tool-3',
+      toolName: 'bash',
+      args: { command: 'git status', timeout: 120000 },
+    });
+
+    logPiEvent(logger, {
+      type: 'message_update',
+      assistantMessageEvent: {
+        type: 'response_metadata',
+        partial: {
+          role: 'assistant',
+          model: 'gpt-5.4',
+        },
+      },
+    } as Extract<AgentSessionEvent, { type: 'message_update' }>);
+
+    logPiEvent(logger, {
+      type: 'session_error',
+      error: new Error('unexpected session error'),
+    });
+
+    expect(logs).toHaveLength(3);
+    expect(logs[0]).toMatchObject({
+      level: 'info',
+      message: '🛠 bash started: git status',
+      payload: {
+        eventType: 'tool_execution_start',
+        status: 'started',
+        toolCallId: 'tool-3',
+        toolName: 'bash',
+        preview: 'git status',
+      },
+    });
+    expect(logs[0].message).not.toContain('{');
+
+    expect(logs[1]).toMatchObject({
+      level: 'info',
+      message: '🤖 gpt-5.4 responding',
+      payload: {
+        eventType: 'message_update',
+        assistantEventType: 'response_metadata',
+        status: 'responding',
+        model: 'gpt-5.4',
+      },
+    });
+    expect(logs[1].payload).not.toHaveProperty('stopReason');
+    expect(logs[1].payload).not.toHaveProperty('contentBlockTypes');
+    expect(logs[1].payload).not.toHaveProperty('preview');
+
+    expect(logs[2]).toMatchObject({
+      level: 'error',
+      message: '❌ session failed: unexpected session error',
+      payload: {
+        eventType: 'session_error',
+        status: 'failed',
+        preview: 'unexpected session error',
+      },
+    });
+    expect(logs[2].message).not.toContain('Error:');
+  });
+
+  test('preserves raw prompt length and uses specific fallbacks for error and tool previews', () => {
+    const { logger, logs } = createCapturingLogger();
+
+    logPiEvent(logger, {
+      type: 'message_end',
+      message: {
+        role: 'user',
+        timestamp: 5,
+        content: 'Alpha   beta\n\ngamma',
+      },
+    });
+
+    logPiEvent(logger, {
+      type: 'message_update',
+      assistantMessageEvent: {
+        type: 'error',
+        error: {
+          role: 'assistant',
+          model: 'gpt-5.4',
+          message: 'provider exploded',
+        },
+      },
+    } as Extract<AgentSessionEvent, { type: 'message_update' }>);
+
+    logPiEvent(logger, {
+      type: 'message_end',
+      message: {
+        role: 'toolResult',
+        toolCallId: 'tool-4',
+        toolName: 'bash',
+        isError: true,
+        timestamp: 6,
+        content: [],
+        details: { exitCode: 7 },
+      },
+    });
+
+    logPiEvent(logger, {
+      type: 'tool_execution_end',
+      toolCallId: 'tool-5',
+      toolName: 'read',
+      result: { metadata: { bytesRead: 128 } },
+      isError: false,
+    });
+
+    expect(logs).toHaveLength(4);
+    expect(logs[0]).toMatchObject({
+      level: 'info',
+      message: '📨 user sent: Alpha beta gamma',
+      payload: {
+        eventType: 'message_end',
+        role: 'user',
+        status: 'sent',
+        preview: 'Alpha beta gamma',
+        promptLength: 19,
+        timestamp: 5,
+      },
+    });
+
+    expect(logs[1]).toMatchObject({
+      level: 'error',
+      message: '❌ gpt-5.4 failed: provider exploded',
+      payload: {
+        eventType: 'message_update',
+        assistantEventType: 'error',
+        status: 'failed',
+        model: 'gpt-5.4',
+        preview: 'provider exploded',
+      },
+    });
+
+    expect(logs[2]).toMatchObject({
+      level: 'error',
+      message: '❌ bash failed: exit code 7',
+      payload: {
+        eventType: 'message_end',
+        role: 'toolResult',
+        status: 'failed',
+        toolName: 'bash',
+        toolCallId: 'tool-4',
+        preview: 'exit code 7',
+        isError: true,
+      },
+    });
+
+    expect(logs[3]).toMatchObject({
+      level: 'info',
+      message: '✅ read completed: 128 bytes',
+      payload: {
+        eventType: 'tool_execution_end',
+        status: 'completed',
+        toolCallId: 'tool-5',
+        toolName: 'read',
+        preview: '128 bytes',
+        isError: false,
       },
     });
   });
