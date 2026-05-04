@@ -1,7 +1,7 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,993.81)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,984.91)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **SOXX 2 shares**, **QTUM 2 shares**, and **RKLB 1 share**.
 - [ ] Current gross exposure is about **12.9%**. Cap gross exposure around **30%** for this hour unless the next hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
@@ -69,4 +69,12 @@
 - [x] No buy or sell triggers fired this cycle; all fresh-entry candidates remained below their reclaim thresholds and the existing positions stayed above stops.
 - [x] Quick news scan did not surface any urgent adverse headlines for the names under consideration.
 - [x] No trade was placed because the edge never cleared the 3x-friction hurdle and none of the planned entry conditions triggered.
+- [x] Continue prioritizing **GOOG -> QQQ -> AVGO -> NVDA** for the next tactical opportunity.
+
+## 2026-05-04 11:56 ET Tactical Check
+- [x] Refreshed live prices for **AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, and ARKX**.
+- [x] Latest marks: **GOOG 379.92**, **QQQ 672.10**, **AVGO 413.33**, **NVDA 195.96**, **SOXX 462.455**, **QTUM 135.765**, **RKLB 80.17**.
+- [x] No buy or sell triggers fired this cycle; all new-capital candidates remained below reclaim thresholds and the existing positions stayed above stops.
+- [x] Quick Google News checks were constructive for **GOOG** and neutral-to-mixed for **QQQ / AVGO / NVDA**.
+- [x] No trade was placed because the edge never cleared the 3x-friction hurdle and no planned entry condition triggered.
 - [x] Continue prioritizing **GOOG -> QQQ -> AVGO -> NVDA** for the next tactical opportunity.
