@@ -4,12 +4,26 @@ import * as crypto from 'node:crypto';
 import { getPaused, setPaused } from '../harness';
 import * as fs from 'fs/promises';
 import { getLogger } from '../logger';
-import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, type AlpacaMode } from '../tools/alpaca_client_factory';
+import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData } from './dashboard_data';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
+
+// ─── Market Clock Cache ───────────────────────────────────────────────────────
+// Caches the Alpaca /v2/clock response for TTL_MS to avoid hammering the API.
+const CLOCK_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+interface ClockCache {
+  data: MarketClockData;
+  expiresAt: number;
+}
+interface MarketClockData {
+  is_open: boolean;
+  next_open: string;   // ISO-8601
+  next_close: string;  // ISO-8601
+}
+let clockCache: ClockCache | null = null;
 
 // ─── Authentication Helpers ──────────────────────────────────────────────────
 function signSession(email: string): string {
@@ -165,6 +179,29 @@ const app = new Elysia()
     pre.diff{font-family:var(--mono);font-size:.72rem;line-height:1.5;background:#020617;padding:.875rem;border-radius:8px;max-height:420px;overflow-y:auto}
     @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:1fr}}
     @media(max-width:600px){.stats-grid{grid-template-columns:1fr}.hdr-right .status-badge{display:none}}
+    /* ── MARKET TIMER ── */
+    .market-timer-bar{display:flex;align-items:center;justify-content:center;gap:1.5rem;padding:.65rem 1.5rem;border-bottom:1px solid transparent;backdrop-filter:blur(8px);transition:all .6s ease;position:relative;overflow:hidden;flex-wrap:wrap}
+    .market-timer-bar::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+    .market-timer-bar.market-open{background:linear-gradient(90deg,rgba(0,255,136,0.06),rgba(0,255,136,0.12),rgba(0,255,136,0.06));border-bottom-color:rgba(0,255,136,0.2)}
+    .market-timer-bar.market-open::before{background:radial-gradient(ellipse at center,rgba(0,255,136,0.08) 0%,transparent 70%);opacity:1}
+    .market-timer-bar.market-closed{background:linear-gradient(90deg,rgba(245,158,11,0.04),rgba(245,158,11,0.09),rgba(245,158,11,0.04));border-bottom-color:rgba(245,158,11,0.18)}
+    .market-timer-bar.market-closed::before{background:radial-gradient(ellipse at center,rgba(245,158,11,0.06) 0%,transparent 70%);opacity:1}
+    .mkt-status-pill{display:flex;align-items:center;gap:.5rem;padding:.28rem .8rem;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1px solid;white-space:nowrap}
+    .mkt-status-pill.open{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.5);color:#00ff88;box-shadow:0 0 12px rgba(0,255,136,0.15)}
+    .mkt-status-pill.closed{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.4);color:#fbbf24}
+    .mkt-pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+    .mkt-status-pill.open .mkt-pill-dot{animation:mkt-pulse-g 1.8s ease infinite}
+    .mkt-status-pill.closed .mkt-pill-dot{animation:mkt-pulse-a 2.4s ease infinite}
+    @keyframes mkt-pulse-g{0%,100%{box-shadow:0 0 0 0 rgba(0,255,136,0.6)}50%{box-shadow:0 0 0 4px rgba(0,255,136,0)}}
+    @keyframes mkt-pulse-a{0%,100%{opacity:1}50%{opacity:.35}}
+    .mkt-label{font-size:.72rem;color:var(--t2);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+    .mkt-countdown{display:flex;align-items:baseline;gap:.35rem}
+    .mkt-digits{font-family:var(--mono);font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.03em;line-height:1}
+    .market-timer-bar.market-open .mkt-digits{color:#00ff88;text-shadow:0 0 18px rgba(0,255,136,0.45)}
+    .market-timer-bar.market-closed .mkt-digits{color:#fbbf24;text-shadow:0 0 18px rgba(251,191,36,0.35)}
+    .mkt-unit{font-size:.65rem;color:var(--t3);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-left:-.2rem}
+    .mkt-sub{font-size:.7rem;color:var(--t3);white-space:nowrap}
+    @media(max-width:600px){.mkt-digits{font-size:1.1rem}.mkt-label{display:none}}
     /* ── LOGS BUTTON ── */
     .btn-logs{display:flex;align-items:center;gap:.4rem;padding:.45rem 1rem;font-size:.8125rem;font-weight:600;border-radius:8px;border:1px solid rgba(0,212,255,0.35);background:rgba(0,212,255,0.08);color:var(--cyan);cursor:pointer;font-family:var(--font);transition:all .2s}
     .btn-logs:hover{background:rgba(0,212,255,0.18);border-color:var(--cyan);box-shadow:0 0 12px rgba(0,212,255,0.2)}
@@ -238,6 +275,19 @@ const app = new Elysia()
     <button id="toggle-btn" class="btn-toggle pause" onclick="togglePause()">Loading...</button>
   </div>
 </header>
+<!-- ── MARKET TIMER BAR ── -->
+<div class="market-timer-bar" id="market-timer-bar">
+  <div class="mkt-status-pill" id="mkt-pill">
+    <span class="mkt-pill-dot"></span>
+    <span id="mkt-pill-text">Loading</span>
+  </div>
+  <span class="mkt-label" id="mkt-direction-label">—</span>
+  <div class="mkt-countdown">
+    <span class="mkt-digits" id="mkt-hours">—</span><span class="mkt-unit">h</span>
+    <span class="mkt-digits" id="mkt-mins">—</span><span class="mkt-unit">m</span>
+  </div>
+  <span class="mkt-sub" id="mkt-sub"></span>
+</div>
 <div class="wrap">
   <div class="stats-grid">
     <div class="stat-card"><span class="stat-ico">💰</span><div class="stat-lbl">Total Equity</div><div class="stat-val cyan" id="eq-val">—</div></div>
@@ -588,6 +638,87 @@ const app = new Elysia()
   fetchStatus();fetchMemory();renderChart();fetchCommits();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
+
+  // ── MARKET TIMER (Alpaca-powered) ───────────────────────────────────────────
+  (function initMarketTimer(){
+    // clock snapshot fetched once from /api/market-clock (Alpaca /v2/clock)
+    // { is_open: bool, next_open: ISO, next_close: ISO }
+    let clockSnapshot=null;
+    // When the current target timestamp expires we re-fetch
+    let targetMs=null;   // next_close (if open) or next_open (if closed) as ms
+    let marketIsOpen=false;
+
+    function pad2(n){return String(n).padStart(2,'0');}
+
+    function fmtEtTime(ms){
+      return new Date(ms).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
+    }
+    function fmtEtDate(ms){
+      const d=new Date(ms);
+      const today=new Date();
+      const tomorrow=new Date(today);tomorrow.setDate(today.getDate()+1);
+      const etDate=d.toLocaleDateString('en-US',{timeZone:'America/New_York',weekday:'long',month:'short',day:'numeric'});
+      const todayEt=today.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
+      const tomorrowEt=tomorrow.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
+      const justDate=d.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
+      if(justDate===todayEt) return 'today';
+      if(justDate===tomorrowEt) return 'tomorrow';
+      return etDate;
+    }
+
+    function renderTimer(){
+      if(!clockSnapshot) return;
+      const nowMs=Date.now();
+      const diffMs=Math.max(0,targetMs-nowMs);
+      const diffMin=Math.floor(diffMs/60000);
+      const hh=Math.floor(diffMin/60);
+      const mm=diffMin%60;
+
+      const bar=document.getElementById('market-timer-bar');
+      const pill=document.getElementById('mkt-pill');
+      const pillTxt=document.getElementById('mkt-pill-text');
+      const dirLabel=document.getElementById('mkt-direction-label');
+      const hoursEl=document.getElementById('mkt-hours');
+      const minsEl=document.getElementById('mkt-mins');
+      const subEl=document.getElementById('mkt-sub');
+
+      if(marketIsOpen){
+        bar.className='market-timer-bar market-open';
+        pill.className='mkt-status-pill open';
+        pillTxt.textContent='Market Open';
+        dirLabel.textContent='Closes in';
+        subEl.textContent='Closes '+fmtEtDate(targetMs)+' at '+fmtEtTime(targetMs)+' ET';
+      } else {
+        bar.className='market-timer-bar market-closed';
+        pill.className='mkt-status-pill closed';
+        pillTxt.textContent='Market Closed';
+        dirLabel.textContent='Opens in';
+        subEl.textContent='Opens '+fmtEtDate(targetMs)+' at '+fmtEtTime(targetMs)+' ET';
+      }
+      hoursEl.textContent=pad2(hh);
+      minsEl.textContent=pad2(mm);
+
+      // If the target has passed, re-fetch fresh clock data
+      if(diffMs===0) fetchClock();
+    }
+
+    async function fetchClock(){
+      try{
+        const d=await(await fetch('/api/market-clock')).json();
+        if(d.error){console.warn('market-clock error:',d.error);return;}
+        clockSnapshot=d;
+        marketIsOpen=!!d.is_open;
+        targetMs=marketIsOpen ? new Date(d.next_close).getTime() : new Date(d.next_open).getTime();
+        renderTimer();
+      }catch(e){console.warn('market-clock fetch failed',e);}
+    }
+
+    // Fetch once on load, then re-fetch when the target passes
+    fetchClock();
+    // Tick every 60 s to keep countdown current; aligned to minute boundary
+    const secNow=new Date().getSeconds();
+    setTimeout(()=>{renderTimer();setInterval(renderTimer,60000);},(60-secNow)*1000);
+  })();
 </script>
 </body>
 </html>`, {
@@ -601,6 +732,38 @@ const app = new Elysia()
   .post('/api/toggle', () => {
     setPaused(!getPaused());
     return { paused: getPaused() };
+  })
+  .get('/api/market-clock', async () => {
+    // Return cached result if still fresh
+    if (clockCache && Date.now() < clockCache.expiresAt) {
+      return clockCache.data;
+    }
+    try {
+      const { defaultMode } = getConfiguredAlpacaModes();
+      const creds = resolveAlpacaCredentials(defaultMode);
+      if (!creds) throw new Error('Alpaca credentials not configured');
+      const baseUrl = creds.paper
+        ? 'https://paper-api.alpaca.markets'
+        : 'https://api.alpaca.markets';
+      const res = await fetch(`${baseUrl}/v2/clock`, {
+        headers: {
+          'APCA-API-KEY-ID': creds.keyId,
+          'APCA-API-SECRET-KEY': creds.secretKey,
+        },
+      });
+      if (!res.ok) {
+        const errText = await res.text();
+        logger.warn({ status: res.status, body: errText }, 'Alpaca clock API error');
+        return { error: `Alpaca clock API ${res.status}` };
+      }
+      const data = await res.json() as MarketClockData;
+      clockCache = { data, expiresAt: Date.now() + CLOCK_CACHE_TTL_MS };
+      return data;
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.warn({ err: msg }, 'market-clock fetch failed');
+      return { error: msg };
+    }
   })
   .get('/api/memory', async () => {
     try {
