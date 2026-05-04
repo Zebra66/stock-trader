@@ -1,3 +1,5 @@
+import { type DepositEntry, totalInvestedAt } from './deposits';
+
 export interface AlpacaAccountSnapshot {
   equity?: number | string;
   cash?: number | string;
@@ -36,14 +38,17 @@ export interface DashboardTradePoint extends DashboardPoint {
 }
 
 export interface DashboardData {
-  history: DashboardPoint[];
+  history: DashboardPoint[];         // Y = P&L in USD at each point
   buys: DashboardTradePoint[];
   sells: DashboardTradePoint[];
-  equity: number;
+  equity: number;                    // current total equity
   cash: number;
   buyingPower: number;
   dayChange: number;
   dayChangePct: number;
+  totalInvested: number;             // total capital deposited up to now
+  currentPnl: number;               // equity - totalInvested (USD)
+  currentPnlPct: number;            // (currentPnl / totalInvested) * 100
   historyUnavailableMessage?: string;
   periodStart: number;   // ms — start of the requested period window
   periodEnd: number;     // ms — end of the requested period window
@@ -101,6 +106,7 @@ function isHistoryUsable(history: DashboardPoint[], equity: number): boolean {
 export async function buildDashboardData(
   client: DashboardDataClient,
   period: ChartPeriod = '1W',
+  deposits: DepositEntry[] = [],
 ): Promise<DashboardData> {
   const account = await client.getAccount();
   const equity = parseNumeric(account.equity);
@@ -110,8 +116,13 @@ export async function buildDashboardData(
   const dayChange = equity - lastEquity;
   const dayChangePct = lastEquity === 0 ? 0 : dayChange / lastEquity;
 
-  const config = PERIOD_CONFIG[period] ?? PERIOD_CONFIG['1W'];
+  // P&L baseline: total capital invested up to now
   const nowMs = Date.now();
+  const totalInvested = totalInvestedAt(deposits, nowMs);
+  const currentPnl = totalInvested > 0 ? equity - totalInvested : 0;
+  const currentPnlPct = totalInvested > 0 ? (currentPnl / totalInvested) * 100 : 0;
+
+  const config = PERIOD_CONFIG[period] ?? PERIOD_CONFIG['1W'];
   const periodEnd = nowMs;
   const periodStart = nowMs - config.windowMs;
 
@@ -126,10 +137,14 @@ export async function buildDashboardData(
     const timestamps = portfolioHistory.timestamp ?? [];
     const equities = portfolioHistory.equity ?? [];
 
-    const candidateHistory = timestamps.map((timestamp, index) => ({
-      x: parseNumeric(timestamp) * 1000,
-      y: parseNumeric(equities[index]),
-    }));
+    const candidateHistory = timestamps.map((timestamp, index) => {
+      const xMs = parseNumeric(timestamp) * 1000;
+      const equityVal = parseNumeric(equities[index]);
+      // Y = P&L at this point in time (equity - invested capital up to that moment)
+      const investedAtPoint = totalInvestedAt(deposits, xMs);
+      const pnl = investedAtPoint > 0 ? equityVal - investedAtPoint : equityVal;
+      return { x: xMs, y: pnl };
+    });
 
     if (isHistoryUsable(candidateHistory, equity)) {
       history = candidateHistory;
@@ -155,7 +170,7 @@ export async function buildDashboardData(
 
       const timeMs = new Date(activity.transaction_time).getTime();
 
-      // Find y position: snap to nearest equity history point, or use 0 as fallback
+      // Find y position: snap to nearest P&L history point, or use 0 as fallback
       const yVal = history.length > 0 ? findNearestEquity(history, timeMs) : 0;
 
       const point: DashboardTradePoint = {
@@ -191,6 +206,9 @@ export async function buildDashboardData(
     buyingPower,
     dayChange,
     dayChangePct,
+    totalInvested,
+    currentPnl,
+    currentPnlPct,
     historyUnavailableMessage,
     periodStart: history.length > 0 ? (history[0]?.x ?? periodStart) : periodStart,
     periodEnd: history.length > 0 ? (history[history.length - 1]?.x ?? periodEnd) : periodEnd,

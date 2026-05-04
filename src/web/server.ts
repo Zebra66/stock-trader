@@ -7,6 +7,7 @@ import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
+import { readDeposits, addDeposit, type DepositEntry } from './deposits';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
@@ -296,7 +297,7 @@ const app = new Elysia()
 </div>
 <div class="wrap">
   <div class="stats-grid">
-    <div class="stat-card"><span class="stat-ico">💰</span><div class="stat-lbl">Total Equity</div><div class="stat-val cyan" id="eq-val">—</div></div>
+    <div class="stat-card"><span class="stat-ico">💰</span><div class="stat-lbl">Total Equity</div><div class="stat-val cyan" id="eq-val">—</div><div class="stat-sub" id="eq-pnl-pct" style="font-size:.75rem;margin-top:.2rem;font-weight:600"></div></div>
     <div class="stat-card"><span class="stat-ico">💵</span><div class="stat-lbl">Cash</div><div class="stat-val cyan" id="cash-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">📅</span><div class="stat-lbl">Day Change</div><div class="stat-val" id="dc-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">⚡</span><div class="stat-lbl">Buying Power</div><div class="stat-val cyan" id="bp-val">—</div></div>
@@ -312,7 +313,7 @@ const app = new Elysia()
       <h2>📊 Portfolio Performance <span id="chart-note" style="color:var(--t3);font-size:.75rem;font-weight:400"></span></h2>
       <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
         <div class="legend">
-          <div class="legend-item"><span class="ldot" style="background:#00d4ff"></span>Equity</div>
+          <div class="legend-item"><span class="ldot" style="background:#00d4ff"></span>P&amp;L</div>
           <div class="legend-item"><span class="ldot" style="background:#00ff88"></span>Buy</div>
           <div class="legend-item"><span class="ldot" style="background:#ff4757"></span>Sell</div>
         </div>
@@ -507,6 +508,15 @@ const app = new Elysia()
       document.getElementById('cash-val').innerText=formatMoney(d.cash);
       document.getElementById('bp-val').innerText=formatMoney(d.buyingPower);
 
+      // Show P&L% in parentheses under Total Equity
+      const pnlPct=d.currentPnlPct??0;
+      const pnlPctEl=document.getElementById('eq-pnl-pct');
+      if(pnlPctEl){
+        const sign=pnlPct>=0?'+':'';
+        pnlPctEl.innerText='('+sign+pnlPct.toFixed(2)+'% return)';
+        pnlPctEl.style.color=pnlPct>=0?'var(--green)':'var(--red)';
+      }
+
       const changeLabel=(d.dayChange>=0?'+':'-')+formatMoney(Math.abs(d.dayChange)).replace('$','')+' ('+((d.dayChangePct*100)>=0?'+':'')+(d.dayChangePct*100).toFixed(2)+'%)';
       document.getElementById('dc-val').innerText=changeLabel;
       document.getElementById('dc-val').className='stat-val '+(d.dayChange>=0?'green':'red');
@@ -542,9 +552,10 @@ const app = new Elysia()
         type:'line',
         data:{datasets:[
           {
-            label:'Equity ($)',
+            label:'P&L ($)',
             data:slicedHistory,
             borderColor:'#00d4ff',
+            // Fill green above zero, red below zero — determined dynamically in tooltip
             backgroundColor:'rgba(0,212,255,0.07)',
             borderWidth:2,
             fill:true,
@@ -608,7 +619,9 @@ const app = new Elysia()
                     const total=(parseFloat(raw.price)*parseFloat(raw.qty)).toFixed(2);
                     return action+': '+raw.symbol+' — '+qty+' shs @ $'+val+' = $'+total;
                   }
-                  return c.dataset.label+': $'+c.parsed.y.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+                  const pnl=c.parsed.y;
+                  const sign=pnl>=0?'+':'';
+                  return 'P&L: '+sign+'$'+pnl.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
                 }
               }
             }
@@ -623,8 +636,14 @@ const app = new Elysia()
               grid:{color:'rgba(0,212,255,0.05)'}
             },
             y:{
-              ticks:{color:'#475569',callback:v=>'$'+Number(v).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})},
-              grid:{color:'rgba(0,212,255,0.05)'}
+              ticks:{color:'#475569',callback:function(v){
+                const n=Number(v);
+                const sign=n>=0?'+':'-';
+                return sign+'$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
+              }},
+              grid:{color:'rgba(0,212,255,0.05)'},
+              // Draw a zero-line in a distinct colour
+              border:{color:'rgba(0,212,255,0.2)'}
             }
           }
         }
@@ -969,7 +988,8 @@ const app = new Elysia()
 
     try {
       const alpaca = createAlpacaClient(mode);
-      const data = await buildDashboardData(alpaca, period);
+      const deposits = await readDeposits();
+      const data = await buildDashboardData(alpaca, period, deposits);
 
       return {
         ...data,
@@ -986,6 +1006,36 @@ const app = new Elysia()
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
       };
+    }
+  })
+
+  // ─── Investment Deposits Ledger ──────────────────────────────────────────────
+  .get('/api/deposits', async () => {
+    try {
+      const entries = await readDeposits();
+      return { deposits: entries };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg, deposits: [] };
+    }
+  })
+  .post('/api/deposits', async ({ body }: { body: unknown }) => {
+    try {
+      const b = body as Partial<DepositEntry>;
+      const amount = Number(b.amount);
+      if (!Number.isFinite(amount) || amount === 0) {
+        return { error: 'amount must be a non-zero number (positive = deposit, negative = withdrawal)' };
+      }
+      const at = b.at ? String(b.at) : new Date().toISOString();
+      const note = b.note ? String(b.note) : undefined;
+      const entry: DepositEntry = { amount, at, ...(note ? { note } : {}) };
+      const entries = await addDeposit(entry);
+      logger.info({ amount, at, note }, 'New investment deposit recorded');
+      return { ok: true, deposits: entries };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.error({ err: msg }, 'Failed to record deposit');
+      return { error: msg };
     }
   })
   .get('/api/commits', async () => {
