@@ -51,3 +51,12 @@
 - [x] Macro/news refresh still supports **controlled net long with high cash**, not aggressive deployment.
 - [x] Best-add watchlist now emphasizes **GOOG first**, with **AVGO** secondary and **NVDA** tertiary.
 - [x] **No prompt or code changes** were made in this cycle.
+
+## 2026-05-04 14:41 ET Tactical Refresh Notes
+- [x] Live Alpaca snapshot refreshed: **$9,985.18 equity / $8,035.00 cash / $17,941.63 buying power**.
+- [x] Live positions remain **SOXX 2**, **QTUM 2**, **QQQ 1**, **RKLB 1**.
+- [x] Fresh Alpaca prices were checked for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**.
+- [x] No buy trigger fired: **GOOG 380.57**, **AVGO 413.59**, and **NVDA 197.84** stayed below their entry thresholds.
+- [x] No trim or stop level was hit for **SOXX / QTUM / QQQ / RKLB**.
+- [x] Reuters headlines from Google News RSS did not show a fresh adverse shock for the active names.
+- [x] No orders were sent this cycle.
