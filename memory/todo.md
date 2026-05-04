@@ -39,3 +39,4 @@
 - Latest reference prices remained close to prior-close / post-close levels; the tactical agent should demand **fresh live confirmation** before entering.
 - The preferred long list remains **SOXX, GOOG, AVGO, QQQ**, with **NVDA** and **QTUM** secondary and **RKLB** small only.
 - Portfolio remains **100% cash / no positions**; preserve optionality until a defined trigger is hit with enough edge to clear friction.
+- 2026-05-04 Tactical cycle: refreshed prices were still prior-close / after-hours prints, and no symbol reached its entry condition. Keep all trigger levels unchanged for the next live cash-session check.
