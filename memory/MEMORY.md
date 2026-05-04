@@ -1,23 +1,23 @@
 # Hourly Macro Memory
-*Updated 2026-05-04 12:50 ET by the Hourly Macro Strategist.*
+*Updated 2026-05-04 13:05 ET by the Hourly Macro Strategist.*
 
 ## Current Macro Thesis
-US equities remain **selectively risk-on**, but this is still a **leadership market**, not a broad, low-friction beta chase. The strongest intermediate trends in the current universe remain concentrated in **semiconductors, AI infrastructure, and liquid large-cap growth**: **SOXX, AVGO, GOOG, QTUM, and QQQ** still lead on 1m-1y windows, while **META, HOOD, SHLD, and GLD** remain weaker or less attractive on current trend quality. Midday tape action is softer than earlier, so the right posture is still **controlled net long exposure with large cash reserves**, not aggressive deployment.
+US equities remain **selectively risk-on**, but the intraday tape has softened as **Middle East / oil headlines** add friction. This still looks like a **leadership market**, not a broad beta market: the strongest multi-timeframe trends in the current universe remain concentrated in **semiconductors, AI infrastructure, and liquid large-cap growth** — especially **SOXX, AVGO, GOOG, QTUM, and QQQ**. The right posture remains **controlled net long with large cash reserves**, because leadership is still intact but the macro tape is not clean enough to justify aggressive deployment.
 
-The live account is still **lightly invested** at roughly **12.7% gross long**, and the current drawdown is small enough that there is no need to force a rebalance. The best next adds remain **GOOG first, QQQ second**, with **AVGO** only on cleaner semiconductor confirmation and **NVDA** still secondary until its short-term tape improves. The tactical job should keep cash high, avoid averaging down, and demand enough edge to overcome real-world spread/slippage/fees.
+The live account is still **lightly invested** at roughly **12.8% gross long**, and current unrealized losses remain small. The best fresh adds for the next hour are still **GOOG first, QQQ second**, with **AVGO** only on stronger semiconductor confirmation and **NVDA** still secondary until its short-term tape improves. Tactical execution should stay patient, avoid averaging down, and require enough expected edge to overcome spread, slippage, CAT, SEC, and FINRA sell-side fees.
 
 ## Portfolio State
-- **Equity:** $9,980.82
+- **Equity:** $9,983.26
 - **Cash:** $8,708.26
-- **Buying power:** $18,610.53
-- **Gross exposure:** ~12.7%
+- **Buying power:** $18,612.97
+- **Gross exposure:** ~12.8%
 - **Market status:** open
-- **Alpaca clock timestamp:** 2026-05-04T12:49:41-04:00
+- **Alpaca clock timestamp:** 2026-05-04T13:02:32-04:00
 - **Current positions:**
-  - **SOXX:** 2 shares @ 468.43 | market value $921.76 | unrealized P&L **-$15.10** (-1.61%) | allocation **9.24%**
-  - **QTUM:** 2 shares @ 137.00 | market value $270.83 | unrealized P&L **-$3.17** (-1.16%) | allocation **2.71%**
-  - **RKLB:** 1 share @ 80.88 | market value $79.97 | unrealized P&L **-$0.91** (-1.13%) | allocation **0.80%**
-- **Overall unrealized P&L:** **-$19.18**
+  - **SOXX:** 2 shares @ 468.43 | market value $923.14 | unrealized P&L **-$13.72** (-1.46%) | allocation **9.25%**
+  - **QTUM:** 2 shares @ 137.00 | market value $270.99 | unrealized P&L **-$3.01** (-1.10%) | allocation **2.71%**
+  - **RKLB:** 1 share @ 80.88 | market value $80.70 | unrealized P&L **-$0.18** (-0.23%) | allocation **0.81%**
+- **Overall unrealized P&L:** **-$16.91**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ`
@@ -27,21 +27,22 @@ The live account is still **lightly invested** at roughly **12.7% gross long**, 
 - **News / search fallback:** **Google News RSS**, prioritizing **Reuters** and other major outlets because no direct Google Search workspace tool surfaced
 
 ## Performance Snapshot Used This Run
-- Best **1w** performers: **GOOG +9.02%**, **EIS +4.30%**, **QTUM +2.67%**, **SOXX +1.22%**, **QQQ +1.08%**
-- Best **1m** performers: **SOXX +35.74%**, **AVGO +30.89%**, **GOOG +29.03%**, **QTUM +23.15%**, **RKLB +18.18%**
-- Best **3m** performers: **SOXX +33.37%**, **AVGO +28.52%**, **QTUM +17.82%**, **GOOG +11.52%**, **EIS +9.03%**
-- Weak / broken **3m** names: **META -11.75%**, **HOOD -11.69%**, **SHLD -10.62%**, **GLD -8.84%**, **ARKX -0.97%**
-- Best **6m** performers: **SOXX +49.49%**, **GOOG +33.73%**, **RKLB +30.49%**, **EIS +28.00%**, **QTUM +18.86%**
-- Best **1y** performers: **RKLB +256.05%**, **SOXX +144.46%**, **GOOG +128.82%**, **AVGO +105.11%**, **QTUM +74.46%**
-- Best **3y** performers: **RKLB +1978.96%**, **HOOD +768.81%**, **NVDA +586.07%**, **AVGO +553.37%**, **GOOG +257.72%**
+- Best **1w** performers: **GOOG +9.26%**, **EIS +4.22%**, **QTUM +2.73%**, **SOXX +1.39%**, **QQQ +1.15%**
+- Weak **1w** names: **META -9.89%**, **NVDA -9.03%**, **HOOD -8.53%**, **GLD -3.45%**, **RKLB -1.93%**
+- Best **1m** performers: **SOXX +34.19%**, **AVGO +31.05%**, **GOOG +27.93%**, **QTUM +22.51%**, **RKLB +19.26%**
+- Best **3m** performers: **SOXX +33.59%**, **AVGO +28.64%**, **QTUM +17.88%**, **GOOG +11.77%**, **NVDA +9.26%**
+- Weak / broken **3m** names: **HOOD -11.81%**, **META -11.60%**, **SHLD -10.56%**, **GLD -8.64%**, **ARKX -0.70%**
+- Best **6m** performers: **SOXX +51.16%**, **RKLB +43.04%**, **GOOG +33.73%**, **EIS +27.41%**, **QTUM +21.19%**
+- Best **1y** performers: **RKLB +259.01%**, **SOXX +144.87%**, **GOOG +129.33%**, **AVGO +105.29%**, **QTUM +74.56%**
+- Best **3y** performers: **RKLB +1996.24%**, **HOOD +767.68%**, **NVDA +587.06%**, **AVGO +553.94%**, **GOOG +258.53%**
 
 ## Fresh External Context
-- **Macro / index backdrop:** Reuters-style fallback still frames the market as constructive, with upcoming **earnings and jobs data** able to extend the rally, but **oil/geopolitical pressure** remains a valid reason to keep cash rather than forcing size.
-- **Semiconductors / AI:** Reuters-style semiconductor coverage remains supportive of the AI capex cycle, and the **SOXX / AVGO** trend still looks stronger than most of the universe on an intermediate basis.
-- **GOOG:** Reuters reported **Alphabet revenue topping expectations on a record cloud quarter**, and a second Reuters item highlighted Google Cloud momentum as part of still-expanding hyperscaler AI spend. That keeps **GOOG** the cleanest single-stock add in the universe.
-- **META:** Reuters-style commentary remains less supportive because the market still wants a clearer AI payoff; price action remains materially weaker than GOOG.
-- **HOOD:** Google News fallback surfaced fresh analyst-reset coverage pointing to **Barclays cutting/rebasing price targets after weak Q1 results**, reinforcing that HOOD is lower quality than the preferred leaders.
-- **Investor-flow context:** No fresh, high-conviction top-investor portfolio change surfaced that is strong enough to override current price action in this universe.
+- **Macro / index backdrop:** Reuters-heavy Google News fallback shows **Wall Street softer on Middle East tensions and oil concerns**, while US equity-fund inflows have eased. That argues for keeping cash high rather than forcing new exposure.
+- **Semiconductors / AI:** The broader AI capex narrative remains supportive, but the near-term tape is less clean than earlier in the session. **SOXX / AVGO** still lead on the medium-term trend, but new semiconductor adds should require confirmation.
+- **GOOG:** Reuters reported **Alphabet revenue topping expectations on a record cloud quarter**, and separately highlighted that **Google Cloud is pulling ahead as Big Tech AI spending continues to swell**. That keeps **GOOG** the cleanest single-stock add in the universe.
+- **HOOD:** Fresh Google News fallback surfaced **Mizuho and Barclays target resets / cuts after Q1 results**, reinforcing that **HOOD** remains lower quality than the core leaders.
+- **META:** Analyst/news flow is mixed, but price action remains materially weaker than GOOG, and capex concerns are still part of the debate. Until relative strength improves, it stays sidelined.
+- **Investor-flow context:** Google News fallback shows **Cathie Wood buying Meta / Alphabet / Robinhood**, but this is context only and is not strong enough to override current trend quality.
 - **Liquidity note:** **EIS** still shows a stale Alpaca print from **2026-05-01**, so it should remain sidelined unless a fresh live quote confirms the move.
 
 ## Priority Actions For The Next Hour
@@ -58,8 +59,8 @@ The live account is still **lightly invested** at roughly **12.7% gross long**, 
 | EIS | Hold | Good longer-term returns, but liquidity and stale-quote risk make it unsuitable right now. | 0% |
 | GLD | Hold | Hedge only; short/intermediate momentum is weak and the account is too small to make it a clean core position. | 0% |
 | GOOG | Buy | Best mix of earnings quality, cloud/AI monetization, liquidity, and current relative strength outside semis. | 4% |
-| HOOD | Sell | Weak earnings follow-through plus analyst-reset pressure leave it inferior to the core leaders. | 0% |
-| META | Sell | Weak multi-timeframe price action still outweighs headline investor interest. | 0% |
+| HOOD | Sell | Weak earnings follow-through plus analyst target resets leave it inferior to the core leaders. | 0% |
+| META | Sell | Weak multi-timeframe price action still outweighs mixed analyst sentiment. | 0% |
 | NVDA | Hold | Long-term leader, but near-term setup is still less attractive than GOOG / QQQ until momentum improves. | 2% |
 | QQQ | Buy | Best liquid wrapper for growth leadership if the market firms beyond current semiconductor exposure. | 7% |
 | QTUM | Hold | Existing position is acceptable and already near intended size for this account. | 3% |
@@ -87,18 +88,12 @@ The live account is still **lightly invested** at roughly **12.7% gross long**, 
 - The **live brokerage account** overrides stale memory; if memory and Alpaca disagree, trust Alpaca and immediately update memory/todo.
 - On a **~$10k account**, one-share increments in names like **QQQ, GOOG, AVGO, and SOXX** are meaningful; target allocations must respect practical order granularity.
 - For thinner names or stale quotes (for example **EIS**), require fresh confirmation from a reliable live source before taking tactical action.
+- When macro headlines are risk-negative but leadership trends remain intact, prefer **waiting for confirmation** over buying shallow weakness.
 
 ## Last Run Summary
-- Live account at 12:49 ET remains **lightly invested**: **SOXX 2 shares, QTUM 2 shares, RKLB 1 share**.
-- Current equity is **$9,980.82**, cash is **$8,708.26**, gross exposure is about **12.7%**, and overall unrealized P&L is **-$19.18**.
+- Live account at 13:02 ET remains **lightly invested**: **SOXX 2 shares, QTUM 2 shares, RKLB 1 share**.
+- Current equity is **$9,983.26**, cash is **$8,708.26**, gross exposure is about **12.8%**, and overall unrealized P&L is **-$16.91**.
 - **FMP historical performance** remains unavailable because **`FMP_API_KEY` is missing**, so this run again used the **Yahoo Finance chart API fallback**.
 - Leadership remains centered on **SOXX / GOOG / QQQ / AVGO / QTUM**, while **META / HOOD / SHLD / GLD** remain weaker.
 - Tactical posture for the next hour: **stay net long the current leaders, keep cash high, and only add on clean reclaim/breakout confirmation**.
 - **Prompt review completed:** no prompt change was made this cycle because the current hourly prompt already requires live account checks, market-data fallbacks, friction awareness, and trigger refresh.
-
-## Tactical Execution Summary
-- Refreshed the full watchlist and confirmed that **no buy/sell conditions were met** on this pass.
-- Held the existing book of **SOXX, QTUM, and RKLB**; no orders were placed.
-- Alpaca account/positions lookups returned **ECONNREFUSED**, so quote confirmation used the **Yahoo Finance chart API fallback** for this cycle.
-- Fresh quotes showed the key candidates still below reclaim levels: **GOOG 381.10**, **QQQ 672.97**, **AVGO 413.63**, **NVDA 197.67**.
-- Next expected action: keep cash high, avoid averaging down, and wait for a cleaner reclaim/breakout before deploying new capital.
