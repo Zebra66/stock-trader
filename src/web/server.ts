@@ -145,7 +145,7 @@ const app = new Elysia()
     .card{background:var(--bgc);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .3s}
     .card:hover{border-color:var(--border-h)}
     /* STATS */
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.25rem 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:1.25rem 0}
     .stat-card{background:var(--bgc);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;position:relative;overflow:hidden;transition:all .3s}
     .stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent)}
     .stat-card:hover{border-color:var(--border-h);transform:translateY(-2px)}
@@ -184,6 +184,7 @@ const app = new Elysia()
     .btn-back{padding:.35rem .8rem;background:#1e293b;color:var(--t2);border:1px solid #334155;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:var(--font);transition:all .2s}
     .btn-back:hover{border-color:var(--cyan);color:var(--cyan)}
     pre.diff{font-family:var(--mono);font-size:.72rem;line-height:1.5;background:#020617;padding:.875rem;border-radius:8px;max-height:420px;overflow-y:auto}
+    @media(max-width:1100px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:1fr}}
     @media(max-width:600px){.stats-grid{grid-template-columns:1fr}.hdr-right .status-badge{display:none}}
     /* ── MARKET TIMER ── */
@@ -301,6 +302,7 @@ const app = new Elysia()
     <div class="stat-card"><span class="stat-ico">💵</span><div class="stat-lbl">Cash</div><div class="stat-val cyan" id="cash-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">📅</span><div class="stat-lbl">Day Change</div><div class="stat-val" id="dc-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">⚡</span><div class="stat-lbl">Buying Power</div><div class="stat-val cyan" id="bp-val">—</div></div>
+    <div class="stat-card"><span class="stat-ico">📊</span><div class="stat-lbl">vs S&amp;P 500</div><div class="stat-val" id="sp500-val">—</div><div class="stat-sub" id="sp500-sub" style="font-size:.68rem;margin-top:.2rem;color:var(--t3)"></div></div>
   </div>
   <div class="card" style="margin-bottom:1rem">
     <div class="chart-hdr" style="margin-bottom:0">
@@ -693,6 +695,25 @@ const app = new Elysia()
   }
   function closeCommitDiff(){document.getElementById('commit-diff-view').style.display='none';document.getElementById('commits-list').style.display='block';}
 
+  async function fetchSP500(){
+    try{
+      const d=await(await fetch('/api/sp500-comparison')).json();
+      const el=document.getElementById('sp500-val');
+      const sub=document.getElementById('sp500-sub');
+      if(d.error||d.changePct==null){if(el)el.innerText='N/A';return;}
+      const pct=d.changePct;
+      const sign=pct>=0?'+':'';
+      if(el){
+        el.innerText=sign+pct.toFixed(2)+'%';
+        el.className='stat-val '+(pct>=0?'green':'red');
+      }
+      if(sub){
+        const startDate=d.startDate?new Date(d.startDate).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
+        sub.innerText='SPY since '+startDate;
+      }
+    }catch(e){console.warn('sp500 fetch failed',e);}
+  }
+
   // ── CLOUD LOGS ──────────────────────────────────────────────────────────────
   const logsState={
     severity:'',
@@ -839,7 +860,7 @@ const app = new Elysia()
     if(e.key==='Escape') closeLogs();
   });
 
-  fetchStatus();fetchMemory();renderChart(true);fetchCommits();
+  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
@@ -1036,6 +1057,97 @@ const app = new Elysia()
       const msg = e instanceof Error ? e.message : String(e);
       logger.error({ err: msg }, 'Failed to record deposit');
       return { error: msg };
+    }
+  })
+  // ─── S&P 500 Comparison ──────────────────────────────────────────────────────
+  // Fetches SPY bar on first-deposit day and latest bar, returns % change.
+  .get('/api/sp500-comparison', async () => {
+    try {
+      const deposits = await readDeposits();
+      if (deposits.length === 0) {
+        return { error: 'No deposits recorded yet', changePct: null };
+      }
+
+      // Use the earliest deposit as day-1 baseline
+      const firstDeposit = deposits[0]!;
+      const startDate = firstDeposit.at;
+
+      const { defaultMode } = getConfiguredAlpacaModes();
+      const creds = resolveAlpacaCredentials(defaultMode);
+      if (!creds) return { error: 'Alpaca credentials not configured', changePct: null };
+
+      // Alpaca market data API (separate host from brokerage API)
+      const dataBase = 'https://data.alpaca.markets';
+      const headers = {
+        'APCA-API-KEY-ID': creds.keyId,
+        'APCA-API-SECRET-KEY': creds.secretKey,
+      };
+
+      // ── Fetch SPY bar on/after first deposit date (handles weekends/holidays) ──
+      const startDay = startDate.substring(0, 10); // YYYY-MM-DD
+      // Scan up to 7 calendar days forward to find the first trading day
+      const endScan = new Date(startDay);
+      endScan.setDate(endScan.getDate() + 7);
+      const endScanStr = endScan.toISOString().substring(0, 10);
+
+      const startRes = await fetch(
+        `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${startDay}&end=${endScanStr}&limit=1&feed=iex`,
+        { headers },
+      );
+
+      interface AlpacaBar { t: string; o: number; c: number; h: number; l: number; v: number; }
+      interface AlpacaBarsResponse { bars: AlpacaBar[] | null; }
+
+      if (!startRes.ok) {
+        const errText = await startRes.text();
+        logger.warn({ status: startRes.status, body: errText }, 'SPY start bar fetch failed');
+        return { error: `Alpaca data API ${startRes.status}`, changePct: null };
+      }
+      const startData = await startRes.json() as AlpacaBarsResponse;
+      const startBar = startData.bars?.[0];
+      if (!startBar) {
+        return { error: 'No SPY data found near first deposit date', changePct: null };
+      }
+      const spyStart = startBar.c; // closing price of first trading day
+
+      // ── Fetch latest SPY bar ──
+      const today = new Date();
+      const todayStr = today.toISOString().substring(0, 10);
+      // Go back 7 days to ensure we capture the most recent closed trading day
+      const lookbackDate = new Date(today);
+      lookbackDate.setDate(lookbackDate.getDate() - 7);
+      const lookbackStr = lookbackDate.toISOString().substring(0, 10);
+
+      const latestRes = await fetch(
+        `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${lookbackStr}&end=${todayStr}&limit=5&feed=iex`,
+        { headers },
+      );
+      if (!latestRes.ok) {
+        const errText = await latestRes.text();
+        logger.warn({ status: latestRes.status, body: errText }, 'SPY latest bar fetch failed');
+        return { error: `Alpaca data API ${latestRes.status}`, changePct: null };
+      }
+      const latestData = await latestRes.json() as AlpacaBarsResponse;
+      const bars = latestData.bars ?? [];
+      const latestBar = bars[bars.length - 1];
+      if (!latestBar) {
+        return { error: 'No recent SPY bar found', changePct: null };
+      }
+      const spyCurrent = latestBar.c;
+
+      const changePct = ((spyCurrent - spyStart) / spyStart) * 100;
+
+      return {
+        changePct: Math.round(changePct * 100) / 100,
+        startDate: startBar.t,
+        latestDate: latestBar.t,
+        spyStart: Math.round(spyStart * 100) / 100,
+        spyCurrent: Math.round(spyCurrent * 100) / 100,
+      };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.warn({ err: msg }, 'sp500-comparison failed');
+      return { error: msg, changePct: null };
     }
   })
   .get('/api/commits', async () => {
