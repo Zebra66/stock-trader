@@ -141,6 +141,15 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
 - **Commit Prefix:** ONLY commits created autonomously by the Pi.dev agent runtime may use the `[agent]` prefix in the commit message (e.g. `[agent] feat: update trading strategy`). Do NOT use `[agent]` for any interactive commits made in OpenCode or for any other human-driven or non-Pi.dev workflow.
 
+### Code Development Framework: Bun Only
+- **PRIMARY RUNTIME IS BUN.** If you need to write any new code, scripts, or utilities, write them in **TypeScript and execute with `bun run <file.ts>`**. Do NOT use Python, Node.js, or any other runtime.
+- **Shell HTTP → use `bun -e`:** If you need to make HTTP requests in bash, use an inline `bun -e` script with native `fetch()` instead of `curl` or `wget`. Example:
+  ```sh
+  bun -e 'const r = await fetch("https://api.example.com/data"); console.log(await r.json());'
+  ```
+- **No python scripts:** Do not write `.py` files or use `python3` for new functionality. Python is only available as a last resort for one-off shell commands that have no Bun equivalent.
+- **No Node.js:** Do not use `node`, `ts-node`, `npx`, or `npm`. Always use `bun`, `bunx`, and `bun install`.
+
 ### Bun + TypeScript Best Practices
 - **Native APIs:** Use native web standards like `fetch`, `Response`, and `Request` over third-party libraries (e.g., avoid `axios` or `node-fetch`).
 - **Bun Standard Library:** Prefer `Bun.file()` and `Bun.write()` over Node's `fs/promises` for faster I/O operations.
