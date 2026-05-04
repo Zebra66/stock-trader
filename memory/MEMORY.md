@@ -1,23 +1,24 @@
 # Hourly Macro Memory
-*Updated 2026-05-04 13:05 ET by the Hourly Macro Strategist.*
+*Updated 2026-05-04 13:32 ET by the Tactical Executor.*
 
 ## Current Macro Thesis
 US equities remain **selectively risk-on**, but the intraday tape has softened as **Middle East / oil headlines** add friction. This still looks like a **leadership market**, not a broad beta market: the strongest multi-timeframe trends in the current universe remain concentrated in **semiconductors, AI infrastructure, and liquid large-cap growth** — especially **SOXX, AVGO, GOOG, QTUM, and QQQ**. The right posture remains **controlled net long with large cash reserves**, because leadership is still intact but the macro tape is not clean enough to justify aggressive deployment.
 
-The live account is still **lightly invested** at roughly **12.8% gross long**, and current unrealized losses remain small. The best fresh adds for the next hour are still **GOOG first, QQQ second**, with **AVGO** only on stronger semiconductor confirmation and **NVDA** still secondary until its short-term tape improves. Tactical execution should stay patient, avoid averaging down, and require enough expected edge to overcome spread, slippage, CAT, SEC, and FINRA sell-side fees.
+The live account is now **more deployed** after a fresh **1-share QQQ starter**; gross long exposure is roughly **19.6%** and still within the tactical cap. Current unrealized losses remain small. The next fresh-add candidate is still **GOOG first** if it reclaims its trigger, while **AVGO** remains conditional on stronger semiconductor confirmation and **NVDA** remains secondary until its short-term tape improves. Tactical execution should stay patient, avoid averaging down, and require enough expected edge to overcome spread, slippage, CAT, SEC, and FINRA sell-side fees.
 
 ## Portfolio State
-- **Equity:** $9,983.26
-- **Cash:** $8,708.26
-- **Buying power:** $18,612.97
-- **Gross exposure:** ~12.8%
+- **Equity:** $9,988.03
+- **Cash:** $8,035.00
+- **Buying power:** $17,944.48
+- **Gross exposure:** ~19.6%
 - **Market status:** open
-- **Alpaca clock timestamp:** 2026-05-04T13:02:32-04:00
+- **Alpaca clock timestamp:** 2026-05-04T13:32:00-04:00
 - **Current positions:**
-  - **SOXX:** 2 shares @ 468.43 | market value $923.14 | unrealized P&L **-$13.72** (-1.46%) | allocation **9.25%**
-  - **QTUM:** 2 shares @ 137.00 | market value $270.99 | unrealized P&L **-$3.01** (-1.10%) | allocation **2.71%**
-  - **RKLB:** 1 share @ 80.88 | market value $80.70 | unrealized P&L **-$0.18** (-0.23%) | allocation **0.81%**
-- **Overall unrealized P&L:** **-$16.91**
+  - **SOXX:** 2 shares @ 468.43 | market value $927.17 | unrealized P&L **-$9.69** (-1.03%) | allocation **9.28%**
+  - **QTUM:** 2 shares @ 137.00 | market value $272.10 | unrealized P&L **-$1.90** (-0.69%) | allocation **2.72%**
+  - **QQQ:** 1 share @ 673.26 | market value $673.20 | unrealized P&L **-$0.06** (-0.01%) | allocation **6.74%**
+  - **RKLB:** 1 share @ 80.88 | market value $80.56 | unrealized P&L **-$0.32** (-0.40%) | allocation **0.81%**
+- **Overall unrealized P&L:** **-$11.97**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ`
@@ -46,7 +47,7 @@ The live account is still **lightly invested** at roughly **12.8% gross long**, 
 - **Liquidity note:** **EIS** still shows a stale Alpaca print from **2026-05-01**, so it should remain sidelined unless a fresh live quote confirms the move.
 
 ## Priority Actions For The Next Hour
-1. Treat the **live Alpaca account** as the source of truth: the book is still **SOXX + QTUM + RKLB**.
+1. Treat the **live Alpaca account** as the source of truth: the book is now **SOXX + QTUM + QQQ + RKLB**.
 2. **Hold existing positions** while they stay above refreshed risk levels; do **not** average down.
 3. Keep gross exposure capped around **25%** for this hour and preserve at least **75% cash** unless the market materially strengthens.
 4. Prioritize fresh risk only in **GOOG**, then **QQQ**. **AVGO** is allowed only on stronger semiconductor confirmation; **NVDA** stays secondary.
@@ -91,9 +92,14 @@ The live account is still **lightly invested** at roughly **12.8% gross long**, 
 - When macro headlines are risk-negative but leadership trends remain intact, prefer **waiting for confirmation** over buying shallow weakness.
 
 ## Last Run Summary
-- Live account at 13:02 ET remains **lightly invested**: **SOXX 2 shares, QTUM 2 shares, RKLB 1 share**.
-- Current equity is **$9,983.26**, cash is **$8,708.26**, gross exposure is about **12.8%**, and overall unrealized P&L is **-$16.91**.
+- Live account at 13:32 ET is now **SOXX 2 shares, QTUM 2 shares, QQQ 1 share, and RKLB 1 share**.
+- Current equity is **$9,988.03**, cash is **$8,035.00**, gross exposure is about **19.6%**, and overall unrealized P&L is **-$11.97**.
 - **FMP historical performance** remains unavailable because **`FMP_API_KEY` is missing**, so this run again used the **Yahoo Finance chart API fallback**.
 - Leadership remains centered on **SOXX / GOOG / QQQ / AVGO / QTUM**, while **META / HOOD / SHLD / GLD** remain weaker.
-- Tactical posture for the next hour: **stay net long the current leaders, keep cash high, and only add on clean reclaim/breakout confirmation**.
-- **Prompt review completed:** no prompt change was made this cycle because the current hourly prompt already requires live account checks, market-data fallbacks, friction awareness, and trigger refresh.
+- Tactical posture for the next hour: **hold the starter QQQ long, keep cash high, and only add on clean reclaim/breakout confirmation**.
+- **Prompt review completed:** no prompt or code changes were made this cycle because the current hourly prompt already requires live account checks, market-data fallbacks, friction awareness, and trigger refresh.
+
+## Tactical Execution Summary 2026-05-04 13:32 ET
+- Bought **1 share of QQQ** at a limit of **673.40**; fill came in at **673.26** when the market held the 672.6-673.2 reclaim zone.
+- No other trades were taken because **GOOG**, **AVGO**, and **NVDA** did not confirm their respective entry triggers.
+- Current posture: **net long leaders, but still cash-heavy**; next likely action is to watch **GOOG** for its reclaim trigger and **QQQ** for the 679.5 trim area.

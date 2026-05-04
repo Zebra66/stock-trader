@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,983.26)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Current live positions: **SOXX 2 shares**, **QTUM 2 shares**, and **RKLB 1 share**.
-- [ ] Current gross exposure is about **12.8%**. Cap gross exposure around **25%** for this hour unless the next hourly review explicitly raises it.
+- [ ] Use **account equity ($9,988.03)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Current live positions: **SOXX 2 shares**, **QTUM 2 shares**, **QQQ 1 share**, and **RKLB 1 share**.
+- [ ] Current gross exposure is about **19.6%**. Cap gross exposure around **25%** for this hour unless the next hourly review explicitly raises it.
 - [ ] Keep at least **75% cash** after any new trades unless the tape materially improves.
 - [ ] Treat the current book as already having semiconductor / AI exposure. Prefer **GOOG** and **QQQ** before adding more correlated chip risk.
 - [ ] If multiple setups trigger, prioritize in this order: **GOOG -> QQQ -> AVGO -> NVDA -> RKLB**.
@@ -20,7 +20,7 @@
 
 ## Active Buy / Sell Conditions For New Capital
 - [ ] **BUY GOOG** if price reclaims **381.2-381.8** and holds, or if it breaks above **383.6** with confirmation — earnings quality and cloud/AI follow-through remain best-in-class. Start with **1 share** (~3.8% of equity). **SELL / REDUCE GOOG** above **387.8** to trim, or below **376.0** to cut risk.
-- [ ] **BUY QQQ** if price reclaims **672.6-673.2** and holds, or if it breaks above **675.0** with confirmation — broad growth leadership remains stronger than broad-market beta. Start with **1 share** (~6.7% of equity). **SELL / REDUCE QQQ** above **679.5** to trim, or below **667.0** to cut risk.
+- [x] **BUY QQQ** if price reclaims **672.6-673.2** and holds, or if it breaks above **675.0** with confirmation — broad growth leadership remains stronger than broad-market beta. Started with **1 share** at **673.26** (~6.7% of equity). **SELL / REDUCE QQQ** above **679.5** to trim, or below **667.0** to cut risk.
 - [ ] **BUY AVGO** only if price reclaims **413.5-414.5** and semis are firm, or if it breaks above **417.0** with confirmation — keep it smaller than SOXX because the sector is already represented. Start with **1 share** (~4.1% of equity). **SELL / REDUCE AVGO** above **421.5** to trim, or below **407.0** to cut risk.
 - [ ] **BUY NVDA** only if price reclaims **197.8-198.5** with SOXX strong, or if it breaks above **200.5** cleanly — still a leader, but currently lower priority than GOOG / QQQ. Start with **1 share** (~2.0% of equity). **SELL / REDUCE NVDA** above **204.0** to trim, or below **193.8** to cut risk.
 
@@ -40,11 +40,12 @@
 - [ ] If both GOOG and QQQ trigger cleanly, it is acceptable to take both; otherwise prefer the cleaner setup rather than forcing exposure.
 
 ## 2026-05-04 13:05 ET Hourly Refresh Notes
-- [x] Live Alpaca account confirms the book is **SOXX 2 shares**, **QTUM 2 shares**, and **RKLB 1 share**.
-- [x] Account snapshot at 13:02 ET: **$9,983.26 equity / $8,708.26 cash / $18,612.97 buying power**.
-- [x] Current unrealized P&L is **-$16.91** overall (**SOXX -$13.72, QTUM -$3.01, RKLB -$0.18**).
+- [x] Live Alpaca account confirms the book is **SOXX 2 shares**, **QTUM 2 shares**, **QQQ 1 share**, and **RKLB 1 share**.
+- [x] Account snapshot at 13:32 ET: **$9,988.03 equity / $8,035.00 cash / $17,944.48 buying power**.
+- [x] Current unrealized P&L is **-$11.97** overall (**SOXX -$9.69, QTUM -$1.90, QQQ -$0.06, RKLB -$0.32**).
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] Fresh prices and nearby technical levels were refreshed for **GOOG / QQQ / AVGO / NVDA / SOXX / QTUM / RKLB**.
-- [x] Best-add watchlist remains **GOOG / QQQ**, with **AVGO** tertiary and **NVDA** secondary only on stronger confirmation.
+- [x] **QQQ** trigger fired and the starter position was executed at **673.26**; the next decision point is the **679.5 trim** or **667.0 stop**.
+- [x] Best-add watchlist now emphasizes **GOOG** first, with **AVGO** tertiary and **NVDA** secondary only on stronger confirmation.
 - [x] No prompt or code changes were made in this cycle.
