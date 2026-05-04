@@ -27,8 +27,8 @@ AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX, 
 │  │    1. Check market open (Alpaca API)                 │   │
 │  │    2. If closed → skip everything, sleep 10 min      │   │
 │  │    3. git pull origin main          ← only if open   │   │
-│  │    4. If 60 min elapsed → spawn agent hourly        │   │
-│  │    5. Spawn agent tactical                           │   │
+│  │    4. If at :35 past the hour → spawn agent hourly   │   │
+│  │    5. If at :10/:20/:30/:40/:50 → spawn agent tact.  │   │
 │  │                                                      │   │
 │  │  Always-on co-routines:                              │   │
 │  │    • Web Dashboard (Elysia, port 3000)               │   │
@@ -111,7 +111,7 @@ Runs every 10 minutes **while the market is open**. Uses the Pi.dev agent runtim
 
 ## The 1-Hour Macro Strategy Cycle
 
-Runs once per hour on the first 10-min tick where 60+ minutes have elapsed. Uses the Pi.dev agent runtime with the model configured for `hourly` in `config/agent_runtime.json`.
+Runs once per hour, aligned to **:35 past each hour** (9:35, 10:35 … 3:35 PM ET) — 5 minutes after the 9:30 AM Nasdaq open. Uses the Pi.dev agent runtime with the model configured for `hourly` in `config/agent_runtime.json`. Tactical agents at :40 and :50 always receive fresh directives within minutes of each hourly run.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐

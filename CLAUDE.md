@@ -122,6 +122,13 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - For `trader-openai/...` models, `OPENAI_API_KEY` must be present in the runtime environment.
 - Repo `.env` values intentionally override inherited shell environment variables for this app's process tree.
 
+### Scheduling
+- **Hourly agent**: Runs at **:35 past every hour** (9:35, 10:35, 11:35 … 3:35 PM ET) while the market is open.
+  - Fires 5 minutes after the 9:30 AM Nasdaq open, giving the opening volatility time to settle.
+  - Tactical agents at :40 and :50 immediately receive fresh directives after each hourly run.
+- **Tactical agent**: Runs every 10 minutes at **:10, :20, :30, :40, :50** past each hour while the market is open.
+- Both jobs are skipped when the market is closed unless `--force-run` is passed.
+
 ### Execution & Testing Commands
 - **Live Deployment:** The application is deployed on Google Cloud Run and is live at [https://auto-stock-trader-pxeqygrzga-uc.a.run.app](https://auto-stock-trader-pxeqygrzga-uc.a.run.app)
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.

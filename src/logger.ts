@@ -56,7 +56,7 @@ const nasdaqTimezoneFormatter = new Intl.DateTimeFormat('en-US', {
   timeZoneName: 'short',
 });
 
-function formatNasdaqTimestamp(date: Date): string {
+export function formatNasdaqTimestamp(date: Date): string {
   const parts = nasdaqDateTimeFormatter.formatToParts(date);
   const lookup = new Map(parts.map((part) => [part.type, part.value]));
   const timezone = nasdaqTimezoneFormatter

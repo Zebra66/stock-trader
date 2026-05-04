@@ -9,7 +9,10 @@ The bot operates on this configured symbol list:
 
 ## 3. Autonomous LLM Agent Architecture
 There is **no custom algorithmic code, machine learning models, or hardcoded trading logic**. Instead, the system relies entirely on an autonomous coding-agent runtime acting as the decision engine.
-1. **The Harness**: A lightweight Bun/TypeScript shell wakes the agent every 10 minutes and once per hour for macro work.
+1. **The Harness**: A lightweight Bun/TypeScript shell schedules both agent modes against wall-clock time:
+   - **Hourly agent** fires at **:35 past each hour** (9:35, 10:35 … 3:35 PM ET) — 5 min after the 9:30 AM Nasdaq open.
+   - **Tactical agent** fires at **:10, :20, :30, :40, :50** past each hour.
+   - Both are skipped when the market is closed unless `--force-run` is passed.
 2. **Agent Runtime**: `src/agent.ts` starts a **Pi.dev coding-agent** session with the repository root as the workspace. The agent receives:
    - repo-local prompts from `./prompts/`
    - persistent state from `./memory/`

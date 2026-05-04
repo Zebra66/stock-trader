@@ -42,16 +42,25 @@ describe('harness market gate', () => {
 });
 
 describe('harness scheduler alignment', () => {
-  test('hourly delay aligns to the top of the next hour', () => {
+  test('hourly delay aligns to :35 past the current hour', () => {
+    // now = 09:07:15 UTC; minutes=7 < 35, so next target = 09:35:00 UTC
+    // delay = 27 min 45 s = 1665 s
     const now = new Date('2026-05-04T09:07:15.000Z');
 
-    expect(getDelayUntilNextHourlyRun(now)).toBe(52 * 60 * 1000 + 45 * 1000);
+    expect(getDelayUntilNextHourlyRun(now)).toBe(27 * 60 * 1000 + 45 * 1000);
   });
 
-  test('hourly next run timestamp lands on the next top of hour', () => {
+  test('hourly next run timestamp lands on :35 of the current hour when before :35', () => {
     const now = new Date('2026-05-04T09:07:15.000Z');
 
-    expect(getNextHourlyRunAt(now).toISOString()).toBe('2026-05-04T10:00:00.000Z');
+    expect(getNextHourlyRunAt(now).toISOString()).toBe('2026-05-04T09:35:00.000Z');
+  });
+
+  test('hourly rolls over to :35 of next hour when already past :35', () => {
+    // now = 09:40:00 UTC; minutes=40 >= 35, so next target = 10:35:00 UTC
+    const now = new Date('2026-05-04T09:40:00.000Z');
+
+    expect(getNextHourlyRunAt(now).toISOString()).toBe('2026-05-04T10:35:00.000Z');
   });
 
   test('tactical delay aligns to the next 10-minute boundary after startup', () => {

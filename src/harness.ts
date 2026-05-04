@@ -1,6 +1,6 @@
 import './env';
 import { isMarketOpen } from './tools/alpaca_cli';
-import { getLogger } from './logger';
+import { getLogger, formatNasdaqTimestamp } from './logger';
 
 const logger = getLogger('harness');
 const TACTICAL_MINUTES = [10, 20, 30, 40, 50] as const;
@@ -78,8 +78,17 @@ export function getDelayUntilNextTacticalRun(now: Date): number {
 export function getNextHourlyRunAt(now: Date): Date {
   const next = new Date(now);
 
-  next.setMinutes(0, 0, 0);
-  next.setHours(next.getHours() + 1);
+  // Target the :35 mark of each hour so the first run of the trading day
+  // lands at 9:35 AM ET — 5 minutes after the 9:30 AM Nasdaq open —
+  // giving tactical agents at :40 and :50 fresh directives immediately.
+  if (now.getMinutes() < 35) {
+    // Still before :35 this hour — target this hour's :35
+    next.setMinutes(35, 0, 0);
+  } else {
+    // Already past :35 — target next hour's :35
+    next.setHours(next.getHours() + 1);
+    next.setMinutes(35, 0, 0);
+  }
 
   return next;
 }
@@ -132,7 +141,7 @@ function scheduleAlignedRun(
   const nextRunAt = getNextRunAt(now);
   const delay = nextRunAt.getTime() - now.getTime();
 
-  logger.info({ mode, delayMs: delay, nextRunAt: nextRunAt.toISOString() }, 'Scheduled next aligned run');
+  logger.info({ mode, delayMs: delay, nextRunAt: formatNasdaqTimestamp(nextRunAt) }, 'Scheduled next aligned run');
 
   setTimeout(async () => {
     try {
