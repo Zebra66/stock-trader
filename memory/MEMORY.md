@@ -2,9 +2,9 @@
 *Updated 2026-05-04 by the Hourly Macro Strategist.*
 
 ## Current Macro Thesis
-The tape remains **mixed-to-risk-on**, with AI infrastructure, semiconductors, and cloud still leading while the broader macro backdrop is less friendly than price alone suggests. QQQ, GOOG, AVGO, SOXX, and QTUM all show strong 1-month and 3-month momentum, and GOOG just confirmed fundamental support with a strong AI/cloud-driven earnings print. At the same time, the Fed just held rates steady with a more hawkish tone, large brokerages are shifting toward **no 2026 cuts**, and oil / Middle East headlines are adding event risk. That argues for selective deployment, not full-throttle chasing.
+The market remains **selectively risk-on**, but leadership is narrower than a simple index read suggests. The strongest 3-month trends in the universe are still **SOXX (+28.97%)**, **AVGO (+27.38%)**, **QTUM (+13.50%)**, and **GOOG (+13.16%)**, while **QQQ (+7.10%)** continues to outpace **VOO (+3.80%)**. Reuters and other current coverage also point to the same core driver: AI/cloud demand is still supporting hyperscalers and semiconductor infrastructure, with Alphabet just posting a strong cloud-led quarter and Broadcom still benefiting from AI revenue optimism.
 
-The best path to outperform over the next 3 months is to keep capital concentrated in the strongest liquid trends while preserving cash for volatility. Semis and AI enablers remain the leadership group, but recent post-earnings reactions in META and HOOD show that the market is punishing weaker quality-of-reaction and rising spend without immediate upside. Gold remains a useful hedge candidate, but only on better entry levels because its short-term trend has cooled even as its 6-month and 1-year performance stays strong.
+The caution is that price leadership is no longer broad or consequence-free. Reuters coverage around the latest earnings cycle shows **Meta being punished for heavier AI spend with less immediate payoff clarity**, **Robinhood missing on profit / transaction revenue**, and **Nvidia still facing “good results but not good enough” expectations risk**. Oil-shock headlines and Fed/event risk also argue against using full buying power. The right stance is to **stay long the best liquid AI / semiconductor winners, keep meaningful cash, and avoid forcing broken names**.
 
 ## Portfolio State
 - Equity: **$10,000**
@@ -12,14 +12,20 @@ The best path to outperform over the next 3 months is to keep capital concentrat
 - Cash: **$10,000**
 - Current positions: **none**
 - Gross exposure: **0%**
-- Tactical carryover: previous `memory/todo.md` had no active symbol instructions; this run rebuilds the tactical playbook from scratch.
+- Current P/L: **$0 realized / $0 unrealized** because the book is flat.
+
+## Data & Research Sources Used This Run
+- **Historical performance fallback:** Yahoo Finance chart API via `https://query1.finance.yahoo.com/v8/finance/chart/<symbol>?range=3y&interval=1d`
+- **Live price check:** Alpaca CLI latest-price endpoint
+- **News / search fallback:** Google News RSS queries via bash because no dedicated Google Search tool surfaced in this workspace session
+- **Why fallback was needed:** `FMP_API_KEY` is not configured, so FMP historical-performance calls are unavailable
 
 ## Priority Actions For The Next Hour
-1. **Deploy only starter longs on confirmation** in the highest-quality leaders: **SOXX, QQQ, GOOG, AVGO**.
-2. Treat **NVDA and QTUM** as secondary adds, and **RKLB** as a small satellite trade only.
-3. Keep at least **50% cash** until breadth and macro calm improve; **do not use margin by default** even though buying power is $20,000.
-4. Keep **META and HOOD sidelined** until they repair post-earnings damage; keep **GLD** as a hedge / diversification candidate, not a chase.
-5. Monitor oil, Fed no-cut repricing, and follow-through in hyperscaler / AI capex sentiment.
+1. **Deploy only starter longs on confirmation** in **SOXX, GOOG, AVGO, and QQQ**.
+2. Keep **NVDA** as a lower-priority add only if it reclaims momentum; keep **QTUM** as a small thematic add and **RKLB** as a very small satellite trade only.
+3. Keep at least **54% cash** until breadth broadens or macro/event risk eases; **do not use margin by default**.
+4. Keep **META, HOOD, SHLD** sidelined; keep **GLD** as a hedge candidate only on better entry or renewed risk-off confirmation.
+5. Watch for **Fed / oil / geopolitics** to hit crowded AI leadership and avoid chasing extended gap-ups.
 
 ## Standing Learnings
 - Default sizing must use **account equity**, not headline buying power. Margin use requires an explicit hourly decision.
@@ -28,34 +34,37 @@ The best path to outperform over the next 3 months is to keep capital concentrat
 - Never average down. Add only to winners, and each add must be smaller than or equal to the prior add.
 - Prefer liquid leaders in leading groups over laggards, story stocks, or low-liquidity names.
 - Cash is a valid position when macro, geopolitical, or correlation risk rises.
-- If external data tooling is unavailable (example: FMP API missing), use a fallback public data source and record that fact in memory.
+- If external data tooling is unavailable, use a public fallback source reachable from bash and record that source in memory.
+- Tactical price levels must be refreshed from the latest market snapshot each hourly cycle; do **not** blindly reuse stale thresholds.
+- Distinguish **quality of earnings reaction** from raw fundamentals: GOOG improved on both, while META and HOOD weakened despite still-relevant long-term stories.
 
 ## Performance Snapshot Used This Run
-- Leadership over 1m / 3m: **SOXX, AVGO, GOOG, QTUM, QQQ**
-- Strong but higher-risk momentum: **RKLB, EIS**
-- Weak recent reactions: **META, HOOD, SHLD**
-- Hedge / diversification candidate with short-term pullback: **GLD**
+- Best 3m performers: **SOXX +28.97%**, **AVGO +27.38%**, **QTUM +13.50%**, **GOOG +13.16%**, **EIS +9.78%**, **QQQ +7.10%**
+- Weak / broken on 3m basis: **HOOD -27.24%**, **META -17.55%**, **GLD -14.66%**, **SHLD -11.15%**, **RKLB -8.02%**, **ARKX -1.15%**
+- Best 1m momentum: **SOXX +37.58%**, **AVGO +34.38%**, **GOOG +29.95%**, **QTUM +23.68%**, **RKLB +20.28%**
+- Relative laggard inside AI leadership: **NVDA +3.09% over 3m**, despite still-strong **+77.81% over 1y**
 
 ## Bias Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| AVGO | Buy | Strong multi-timeframe momentum and AI infrastructure exposure; use only on confirmation or orderly retest. | 6% |
-| EIS | Hold | Strong trend, but geopolitical/event risk is high and liquidity is not top-tier. Not a priority deployment. | 0% |
-| GLD | Hold | Useful macro hedge; long-term trend strong, but short-term pullback means buy better prices rather than chase. | 5% |
-| GOOG | Buy | Strongest post-earnings fundamental confirmation in the universe; cloud/AI momentum improving. | 6% |
-| HOOD | Sell | Weak post-earnings reaction and poor recent relative strength. Keep sidelined until clear repair. | 0% |
-| META | Sell | Market is punishing capex-heavy setup; relative strength and reaction quality both weakened. | 0% |
-| NVDA | Buy | Still a core AI leader, but currently less clean than SOXX/AVGO/GOOG. Buy only on regained momentum. | 5% |
-| QQQ | Buy | Clean index-level growth leadership with better relative strength than VOO. | 8% |
-| QTUM | Buy | Strong thematic momentum with better trend quality than most speculative names. | 4% |
-| RKLB | Buy | High-upside space leader, but keep size small because volatility and execution risk are high. | 2% |
-| SHLD | Sell | Recent momentum and relative strength have weakened; not worth scarce risk budget now. | 0% |
-| SOXX | Buy | Best expression of semiconductor/AI leadership; strongest broad theme in the universe. | 10% |
-| VOO | Hold | Healthy broad market trend, but not the best alpha vehicle while growth leadership remains intact. | 0% |
-| ARKX | Hold | Acceptable small satellite only if space momentum broadens; not a first-line allocation. | 0% |
+| AVGO | Buy | Strong multi-timeframe momentum and supportive AI revenue sentiment; favor orderly confirmation over chasing. | 7% |
+| EIS | Hold | Trend is still positive, but liquidity and geopolitical/event risk keep it out of the core book. | 0% |
+| GLD | Hold | Good hedge candidate, but recent 1m / 3m performance is cooling; buy only on support or renewed risk-off demand. | 4% |
+| GOOG | Buy | Best mix of earnings confirmation, cloud/AI strength, and recent relative strength in the universe. | 7% |
+| HOOD | Sell | Profit miss and weak transaction revenue keep this in the penalty box until price repairs. | 0% |
+| META | Sell | Market is discounting higher AI spend and legal / execution risk more than upside right now. | 0% |
+| NVDA | Hold | Long-term leader, but near-term relative strength is weaker than SOXX / AVGO / GOOG. Only buy on renewed momentum. | 4% |
+| QQQ | Buy | Cleaner broad-growth vehicle than VOO while tech/AI leadership remains intact. | 8% |
+| QTUM | Buy | Solid thematic AI/quantum basket with positive momentum, but keep size below core liquid leaders. | 4% |
+| RKLB | Hold | Strong long-run trend but weak recent 3m tape; acceptable only as a very small satellite breakout trade. | 2% |
+| SHLD | Sell | Multi-timeframe trend has deteriorated and it does not deserve scarce risk budget. | 0% |
+| SOXX | Buy | Still the best broad expression of semiconductor/AI leadership, despite crowding risk. | 10% |
+| VOO | Hold | Healthy market beta, but inferior alpha posture versus QQQ while growth leadership persists. | 0% |
+| ARKX | Hold | Not strong enough versus SOXX / QQQ / RKLB to earn capital yet. | 0% |
 
 ## Last Run Summary
-- No portfolio positions were open at the start of this cycle.
-- Market leadership remains concentrated in semis, AI infrastructure, and selected cloud names.
-- Post-earnings weakness in **META** and **HOOD** argues against forcing exposure into broken names.
-- FMP CLI historical data was unavailable because `FMP_API_KEY` is not configured, so this run used a fallback public market-data source for return calculations.
+- The portfolio is still flat; there were **no underperformers to cut and no winners to trim** this cycle.
+- FMP historical data remained unavailable because **`FMP_API_KEY` is missing**, so this run used the **Yahoo Finance chart API fallback**.
+- Market leadership remains concentrated in **semis, AI infrastructure, and cloud**, with **GOOG, SOXX, and AVGO** showing the cleanest current setup quality.
+- **META** and **HOOD** remain avoid names after weak earnings/reaction quality, while **GLD** stays a hedge candidate instead of a chase.
+- Prompt improvement this run: strengthen explicit fallback-search guidance and require refreshing tactical levels from the latest price snapshot.

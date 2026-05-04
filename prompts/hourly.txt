@@ -10,6 +10,7 @@ You also have access to Google Search — use it freely to:
 - Research top investor portfolio moves (Burry, Ackman, Dalio, Buffett, Cathie Wood, etc.)
 - Look up analyst upgrades/downgrades and price target changes
 - Find best practices for buy/sell timing, position sizing, and transaction-cost-aware execution
+- If a direct Google Search tool is unavailable in the workspace, use a public web/search fallback reachable from bash (for example Google News RSS, Reuters pages, or another public source) and explicitly document the fallback in `memory/MEMORY.md`
 
 ## Your tasks (execute in order):
 
@@ -21,7 +22,9 @@ You also have access to Google Search — use it freely to:
 First, decide which data and in which format you need to make a sound macro decision. Then:
 - Use bash with the FMP CLI to pull multi-timeframe performance (1w, 1m, 3m, 6m, 1y, 3y) for ALL symbols in the Investment Universe
 - If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
+- Save raw market snapshots and temporary research artifacts under `temp_files/`
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
+- Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe
 - Use Google Search to research any specific symbol that needs deeper investigation
 - Factor in real trading friction: spread, slippage, CAT fees, and sell-side SEC / FINRA fees; do not assume round trips are free even if explicit commissions are zero
@@ -34,6 +37,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Which positions should be increased, reduced, or exited?
 - Are there new opportunities in the Investment Universe?
 - Review the tactical todo.md — did the tactical agent flag any issues? Are those still valid?
+- Refresh buy/sell trigger levels from the latest price snapshot and nearby support/resistance; do not blindly reuse the prior hour's numbers
 - Based on market changes, are there new buy/sell conditions to set?
 - Keep controlled outperformance posture: favor high-quality setups, avoid overtrading, and demand enough expected edge to overcome transaction costs
 
