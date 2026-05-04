@@ -3,6 +3,8 @@ import { Writable } from 'stream';
 import { mkdirSync } from 'fs';
 import { join } from 'path';
 
+const LOG_CALLSITE = process.env.LOG_CALLSITE === '1';
+
 // ─── Session timestamp ────────────────────────────────────────────────────────
 // All harness child processes share SESSION_TIMESTAMP via env var (set in run_local.sh).
 // Falls back to "now" when running standalone (tests, manual invocation, etc.).
@@ -38,9 +40,33 @@ function levelLabel(n: number): string {
 }
 
 // ─── Pretty-print a single pino JSON line ─────────────────────────────────────
-const SKIP_KEYS = new Set(['level', 'time', 'pid', 'hostname', 'module', 'msg', 'v']);
+const SKIP_KEYS = new Set(['level', 'time', 'pid', 'hostname', 'module', 'caller', 'msg', 'v']);
 
-function prettyLine(obj: Record<string, unknown>): string {
+export function extractCallerLocation(stack?: string): string | undefined {
+  if (!stack) {
+    return undefined;
+  }
+
+  for (const line of stack.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed.includes('/src/') || trimmed.includes('/src/logger.ts') || trimmed.includes('/node_modules/')) {
+      continue;
+    }
+
+    const match = trimmed.match(/:(\d+):(\d+)\)?$/);
+    if (match) {
+      return match[1];
+    }
+  }
+
+  return undefined;
+}
+
+function getCallerLocation(): string | undefined {
+  return extractCallerLocation(new Error().stack);
+}
+
+export function formatLogLine(obj: Record<string, unknown>): string {
   // Timestamp
   const raw = typeof obj.time === 'string' ? obj.time : new Date().toISOString();
   const d = new Date(raw);
@@ -52,6 +78,8 @@ function prettyLine(obj: Record<string, unknown>): string {
   // Level, module, message
   const level = typeof obj.level === 'number' ? levelLabel(obj.level) : 'INFO ';
   const module = typeof obj.module === 'string' ? obj.module : 'app';
+  const caller = typeof obj.caller === 'string' ? obj.caller : undefined;
+  const location = caller ? `${module}:${caller}` : module;
   const msg = typeof obj.msg === 'string' ? obj.msg : '';
 
   // Extra bindings
@@ -63,7 +91,7 @@ function prettyLine(obj: Record<string, unknown>): string {
   }
 
   const suffix = extras.length > 0 ? `  ${extras.join(' ')}` : '';
-  return `${ts} | ${level} | ${module.padEnd(20)} | ${msg}${suffix}`;
+  return `${ts} | ${level} | ${location} | ${msg}${suffix}`;
 }
 
 // ─── Dual-write stream: stdout + session log file ────────────────────────────
@@ -83,7 +111,7 @@ function makeLogStream(): Writable {
         if (!trimmed) continue;
         try {
           const obj = JSON.parse(trimmed) as Record<string, unknown>;
-          formatted.push(prettyLine(obj));
+          formatted.push(formatLogLine(obj));
         } catch {
           // Non-JSON passthrough (e.g. bun test runner header lines)
           formatted.push(trimmed);
@@ -117,6 +145,14 @@ const rootLogger = pino(
     level,
     base: undefined,   // suppress pid / hostname
     timestamp: pino.stdTimeFunctions.isoTime,
+    mixin() {
+      if (!LOG_CALLSITE) {
+        return {};
+      }
+
+      const caller = getCallerLocation();
+      return caller ? { caller } : {};
+    },
   },
   makeLogStream(),
 );
@@ -133,7 +169,7 @@ export type AppLogger = typeof rootLogger;
  *   log.info('Starting harness loop');
  *
  * Output:
- *   2026-05-04 07:19:21.042 | INFO  | harness              | Starting harness loop
+ *   2026-05-04 07:19:21.042 | INFO  | harness | Starting harness loop
  */
 export function getLogger(module: string): AppLogger {
   return rootLogger.child({ module }) as AppLogger;
