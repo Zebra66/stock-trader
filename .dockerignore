@@ -1,7 +1,6 @@
 # Never bake secrets into the image
 .env
 .env.*
-
 # Runtime artefacts
 temp_files/
 logs/
@@ -9,7 +8,8 @@ logs/
 
 # Dev/IDE
 node_modules/
-.git/
+# NOTE: .git/ is intentionally NOT excluded — the Pi.dev agent needs the full
+# git repo (history + remote config) to run `git commit` and `git push`.
 .gitignore
 .DS_Store
 .idea/

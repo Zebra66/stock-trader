@@ -106,6 +106,8 @@ FMP_API_KEY=$(fetch_secret "fmp-api-key")
 GOOGLE_OAUTH_CLIENT_ID=$(fetch_secret "google-oauth-client-id")
 GOOGLE_OAUTH_CLIENT_SECRET=$(fetch_secret "google-oauth-client-secret")
 ALLOWED_USER_EMAIL=$(fetch_secret "allowed-user-email")
+GITHUB_PAT=$(fetch_secret "github-pat")
+GITHUB_REPO="Zebra66/stock-trader"
 
 # Validate required secrets
 MISSING=()
@@ -129,6 +131,7 @@ fi
 [ -z "$OPENAI_API_KEY" ]  && echo -e "${YELLOW}⚠ openai-api-key not found — OpenAI model will be unavailable${NC}"
 [ -z "$FMP_API_KEY" ]     && echo -e "${YELLOW}⚠ fmp-api-key not found — FMP market data will be unavailable${NC}"
 [ -z "$ALPACA_LIVE_API_KEY" ] && echo -e "${YELLOW}⚠ alpaca-live-api-key not found — live trading disabled${NC}"
+[ -z "$GITHUB_PAT" ]      && echo -e "${YELLOW}⚠ github-pat not found — commit history panel will be unavailable${NC}"
 
 echo -e "${GREEN}✓ Secrets retrieved${NC}"
 
@@ -201,7 +204,9 @@ gcloud run deploy "$SERVICE_NAME" \
   --set-env-vars="FMP_API_KEY=${FMP_API_KEY}" \
   --set-env-vars="GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}" \
   --set-env-vars="GOOGLE_OAUTH_CLIENT_SECRET=${GOOGLE_OAUTH_CLIENT_SECRET}" \
-  --set-env-vars="ALLOWED_USER_EMAIL=${ALLOWED_USER_EMAIL}"
+  --set-env-vars="ALLOWED_USER_EMAIL=${ALLOWED_USER_EMAIL}" \
+  --set-env-vars="GITHUB_PAT=${GITHUB_PAT}" \
+  --set-env-vars="GITHUB_REPO=${GITHUB_REPO}"
 
 SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" --region "$REGION" --format 'value(status.url)')
 echo -e "${GREEN}✓ Deployed at: $SERVICE_URL${NC}"
