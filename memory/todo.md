@@ -35,5 +35,6 @@
 
 ## 2026-05-04 Tactical Cycle Notes
 - Live prices were refreshed; **no active buy condition was met** for the preferred long candidates.
+- The market was closed at the time of review, so the closest setup (**AVGO**) was intentionally left unfilled until the next confirmed session open.
 - Portfolio remains **100% cash / no positions**; hold discipline until a defined trigger is hit.
 - Re-evaluate **SOXX, GOOG, AVGO, QQQ, NVDA, QTUM, GLD, RKLB** on the next run and only trade if price enters a trigger zone with clear confirmation and edge > estimated friction.
