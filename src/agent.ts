@@ -27,6 +27,16 @@ async function runAgent(): Promise<void> {
 
   try {
     await runner.runPrompt({ mode, prompt, model, logger });
+    
+    // Auto-stage all changes (including new memory files) so they are captured.
+    // .gitignore ensures temp_files/ and other sensitive files are not staged.
+    try {
+      await Bun.$`git add .`.quiet();
+      logger.info({ mode }, 'Auto-staged changes after run');
+    } catch (gitError: unknown) {
+      logger.warn({ mode, error: (gitError as Error).message }, 'Failed to auto-stage changes');
+    }
+
     logger.info({ mode }, 'Agent completed');
   } catch (error: unknown) {
     logger.error({ mode, error: (error as Error).message }, 'Agent execution error');

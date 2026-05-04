@@ -125,7 +125,8 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ### Execution & Testing Commands
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.
 - **Run Tests:** Execute `bun test` to run all unit tests in the project.
-- **Temporary Files:** Write all temporary files, debug artifacts, and captured logs under `./temp_files/`.
+- **Temporary Files:** Write all temporary files, debug artifacts, and captured logs under `./temp_files/`. Artifacts in this directory MUST NOT be saved to git.
+- **Agent Memory:** Files intended to be persisted across runs (e.g. `todo.md`, `MEMORY.md`, or new learning files) MUST be stored in the `./memory/` directory. These files should be tracked and committed to git.
 
 ### Code Quality & Git
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.

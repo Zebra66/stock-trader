@@ -40,3 +40,4 @@
 - The preferred long list remains **SOXX, GOOG, AVGO, QQQ**, with **NVDA** and **QTUM** secondary and **RKLB** small only.
 - Portfolio remains **100% cash / no positions**; preserve optionality until a defined trigger is hit with enough edge to clear friction.
 - 2026-05-04 Tactical cycle: refreshed prices were still prior-close / after-hours prints, and no symbol reached its entry condition. Keep all trigger levels unchanged for the next live cash-session check.
+- 2026-05-04 Tactical cycle update: live reference checks stayed below every active trigger, so no orders were justified after friction. Continue to wait for a cash-session reclaim/breakout in SOXX, GOOG, AVGO, QQQ, NVDA, QTUM, GLD, or RKLB before trading.
