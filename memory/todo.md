@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,990.99)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,993.81)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **SOXX 2 shares**, **QTUM 2 shares**, and **RKLB 1 share**.
-- [ ] Current gross exposure is about **12.8%**. Cap gross exposure around **30%** for this hour unless the next hourly review explicitly raises it.
+- [ ] Current gross exposure is about **12.9%**. Cap gross exposure around **30%** for this hour unless the next hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Treat the current book as already having semiconductor / AI exposure. Prefer **GOOG** and **QQQ** before adding more correlated chip risk.
 - [ ] If multiple setups trigger, prioritize in this order: **GOOG -> QQQ -> AVGO -> NVDA -> RKLB**.
@@ -48,3 +48,10 @@
 - [x] Fresh prices and nearby technical levels were refreshed for **GOOG / QQQ / AVGO / NVDA / SOXX / QTUM / RKLB**.
 - [x] Best-add watchlist remains **GOOG / QQQ / AVGO**, with **NVDA** secondary.
 - [x] No prompt or code changes were made in this cycle.
+
+## 2026-05-04 11:15 ET Tactical Check
+- [x] Refreshed live prices for **AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, and ARKX**.
+- [x] No buy or sell triggers fired this cycle: **GOOG 379.43**, **QQQ 675.465**, **AVGO 417.615**, and **NVDA 197.71** stayed below their buy-reclaim thresholds.
+- [x] Existing positions stayed safely above their stops: **SOXX 466.02**, **QTUM 136.55**, **RKLB 80.46**.
+- [x] No trade was placed because the edge never cleared the 3x-friction hurdle.
+- [x] Continue prioritizing **GOOG -> QQQ -> AVGO -> NVDA** for the next tactical opportunity.
