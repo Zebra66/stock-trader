@@ -25,18 +25,6 @@ The live account is still **lightly deployed** at roughly **12.8% gross long**, 
 - **Historical performance fallback:** **Yahoo Finance chart API** via `query2.finance.yahoo.com` with browser-like headers
 - **Brokerage / account / prices:** Alpaca CLI (`get-account`, `get-positions`, `get-clock`, `get-latest-price`)
 - **News / search fallback:** **Google News RSS**, prioritizing **Reuters** and other major outlets because no direct Google Search workspace tool surfaced
-- **Raw artifacts from this cycle:**
-  - `temp_files/fmp_probe_latest.txt`
-  - `temp_files/alpaca_account_latest.json`
-  - `temp_files/alpaca_positions_latest.json`
-  - `temp_files/alpaca_clock_latest.json`
-  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_110130.json`
-  - `temp_files/hourly_market_snapshot_yahoo_2026-05-04_110130.csv`
-  - `temp_files/hourly_market_snapshot_yahoo_latest.json`
-  - `temp_files/hourly_market_snapshot_yahoo_latest.csv`
-  - `temp_files/hourly_latest_prices_latest.json`
-  - `temp_files/tech_levels_latest.json`
-  - `temp_files/news_rss/hourly_news_summary_latest.json`
 
 ## Performance Snapshot Used This Run
 - Best **1w** performers: **GOOG +8.88%**, **EIS +5.30%**, **QTUM +3.48%**, **SOXX +2.19%**, **SHLD +1.84%**
@@ -121,3 +109,12 @@ The live account is still **lightly deployed** at roughly **12.8% gross long**, 
 - Existing positions stayed above their stop levels: **SOXX 458.5**, **QTUM 134.8**, **RKLB 77.4**.
 - **No trades were placed** because the edge never cleared the 3x-friction hurdle and the market did not give a clean trigger.
 - Next expected action: keep the book small, continue prioritizing **GOOG -> QQQ -> AVGO -> NVDA**, and only act when a reclaim / breakout level is confirmed.
+
+## 2026-05-04 11:30 ET Tactical Execution Summary
+- Live Alpaca account remains lightly deployed: equity **$9,985.21**, cash **$8,708.26**, buying power **$18,614.92**, with gross exposure still about **12.8%**.
+- Holdings are unchanged: **SOXX 2 shares**, **QTUM 2 shares**, and **RKLB 1 share**; the live marks are roughly **SOXX 462.42**, **QTUM 135.90**, and **RKLB 80.29**.
+- Refreshed tactical prices stayed below all buy-reclaim thresholds for **GOOG (378.53)**, **QQQ (672.53)**, **AVGO (414.45)**, and **NVDA (195.79)**.
+- Existing positions remained above stops: **SOXX 458.5**, **QTUM 134.8**, and **RKLB 77.4**.
+- Quick news check using Google News / Reuters-style fallback did not surface any urgent adverse headlines that would change the plan.
+- **No orders were executed** this cycle because no entry condition met the trigger and the edge did not justify forcing risk.
+- Next expected action: keep cash high, hold the current book, and wait for **GOOG** or **QQQ** confirmation first; only consider **AVGO** or **NVDA** if their reclaim levels trigger cleanly while the tape stays firm.
