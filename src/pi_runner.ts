@@ -497,7 +497,7 @@ export function logPiEvent(log: PiLogger, event: PiEvent): void {
       const payload = getToolResultPayload(message);
       logAtLevel(
         log,
-        message.isError ? 'error' : 'info',
+        message.isError ? 'warn' : 'info',
         payload,
         buildLogMessage(getEmoji(payload.status, 'tool'), message.toolName, payload.status, payload.preview),
       );
@@ -560,7 +560,7 @@ export function logPiEvent(log: PiLogger, event: PiEvent): void {
     });
     logAtLevel(
       log,
-      event.isError ? 'error' : 'info',
+      event.isError ? 'warn' : 'info',
       payload,
       buildLogMessage(getEmoji(payload.status, 'tool'), event.toolName, payload.status, payload.preview),
     );
