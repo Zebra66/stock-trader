@@ -41,3 +41,4 @@
 - Latest reference prices from Alpaca still looked like **2026-05-01 after-hours/reference bars**, so demand **fresh live confirmation** before entering.
 - The preferred long list remains **SOXX, GOOG, AVGO, QQQ**, with **NVDA** and **QTUM** secondary and **RKLB / GLD** small only.
 - Portfolio remains **100% cash / no positions**; preserve optionality until a defined trigger is hit with enough edge to clear friction.
+- [x] 2026-05-04 tactical refresh: rechecked all universe symbols; Alpaca still showed stale 2026-05-01 reference bars and no live cash-session trigger was actionable, so no orders were placed.
