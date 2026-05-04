@@ -49,3 +49,4 @@
 - [x] 2026-05-04 current run: market remained pre-open at 07:30 ET, latest Alpaca bars were still stale 2026-05-01 reference prints, and no tactical triggers were actionable without live confirmation.
 - [x] 2026-05-04 latest run: account is still flat, no conditions cleared, and no orders were submitted.
 - [x] 2026-05-04 07:50 ET check: market still closed, Alpaca latest bars remained stale 2026-05-01 reference prints, and no trigger justified a trade.
+- [x] 2026-05-04 08:11 ET check: market was still pre-open, SOXX briefly printed above its breakout level, but live cash-session confirmation was still absent so no order was submitted.

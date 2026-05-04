@@ -106,10 +106,11 @@ The caution remains execution quality and timing. **Alpaca latest-price data is 
 
 ## Execution Summary — 2026-05-04 Tactical Cycle (Latest Run)
 - Confirmed the book is still **flat** with **$10,000 equity / $10,000 cash / no positions**.
-- The latest Alpaca prints remain stale reference bars, so no buy condition met the live-confirmation requirement.
+- Refreshed the universe again at **08:11 ET**; the market remained **closed / pre-open** even though a few symbols now printed same-day reference bars.
+- **SOXX** was the only name hovering at a tactical breakout level, but it still lacked live cash-session confirmation, so no order was placed.
 - Strategy remains **long-only in leaders**: SOXX, GOOG, AVGO, and QQQ remain the preferred core names; META / HOOD / SHLD remain avoid names.
 - No portfolio, prompt, or code changes were made beyond refreshing memory state.
-- Next expected action: wait for live cash-session confirmation and only act if the setup clears the 3x-friction hurdle.
+- Next expected action: wait for the cash open and only act if the setup clears the 3x-friction hurdle with a clean hold.
 
 ## Execution Summary — 2026-05-04 Tactical Cycle (07:50 ET Check)
 - Refreshed account, positions, clock, and latest prices; the book remains **100% cash** with **$10,000 equity** and no holdings.
