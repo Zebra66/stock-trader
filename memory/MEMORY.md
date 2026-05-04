@@ -143,3 +143,18 @@ For the next hour, the best path to controlled outperformance is still to **pref
 - Quick news scan via Google News RSS / Reuters did not surface any fresh adverse catalyst for the names that were closest to trigger zones.
 - No prompt or code changes were made in this cycle.
 - Next expected action: keep cash until the opening window is fully digested, then only act if SOXX / GOOG / AVGO / QQQ / NVDA / QTUM / GLD / RKLB cleanly confirm their stated levels.
+
+## Execution Summary — 2026-05-04 Tactical Cycle — 10:21 ET
+- Account now shows **$9,997.62 equity / $8,789.14 cash** with **SOXX 2 shares** and **QTUM 2 shares** in the book; RKLB is pending confirmation because broker connectivity has been intermittent.
+- QTUM triggered its breakout condition and filled on a **2-share marketable limit buy at 137.10**; SOXX was held unchanged because the existing 2-share position is already near its target weight.
+- RKLB tagged the **78.0-78.6** reclaim zone and a **1-share limit buy at 78.55** was submitted, but fill confirmation has not yet been observed.
+- Direct Google News lookup was **not available** because `news.google.com` DNS resolution failed from this workspace, so the decision used the cached Reuters context plus current price action.
+- No prompt or code changes were made this cycle.
+- Next expected action: confirm RKLB fill once broker access stabilizes, then continue monitoring SOXX / QTUM for follow-through and respect all published sell/trim levels.
+
+## Execution Summary — 2026-05-04 Tactical Cycle — 10:30 ET
+- Re-checked account state: **$9,993.02 equity / $8,789.14 cash / 2 SOXX / 2 QTUM**; no RKLB position is visible, so the earlier RKLB limit did not confirm into holdings.
+- Refreshed live prices for the full universe: **SOXX 465.63, GOOG 378.93, AVGO 416.065, QQQ 675.29, NVDA 197.71, QTUM 136.84, GLD 419.76, RKLB 79.97, META 605.83, HOOD 77.46, EIS 131.53, SHLD 68.89, VOO 663.06, ARKX 32.795**.
+- No fresh buy/sell trigger cleared the rules without violating the no-averaging-down constraint, so no orders were submitted.
+- News scan via Google News RSS showed no immediate adverse catalyst for the names under consideration; SOXX remained supported, while QTUM-related headlines were mostly about other quantum names rather than the ETF itself.
+- Next expected action: keep the book small and disciplined, wait for a true reclaim/breakout that is also a winner before adding, and continue respecting the 56% cash floor.
