@@ -32,3 +32,8 @@
 - [ ] Adds must be smaller than prior entries and only into winners.
 - [ ] If setups fail or breadth deteriorates intraday, do nothing and preserve cash.
 - [ ] If oil / geopolitics trigger a broad gap-up in gold and a broad gap-down in growth, prefer patience over reactive opening prints.
+
+## 2026-05-04 Tactical Cycle Notes
+- Live prices were refreshed; **no active buy condition was met** for the preferred long candidates.
+- Portfolio remains **100% cash / no positions**; hold discipline until a defined trigger is hit.
+- Re-evaluate **SOXX, GOOG, AVGO, QQQ, NVDA, QTUM, GLD, RKLB** on the next run and only trade if price enters a trigger zone with clear confirmation and edge > estimated friction.
