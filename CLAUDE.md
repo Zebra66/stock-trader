@@ -123,6 +123,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - Repo `.env` values intentionally override inherited shell environment variables for this app's process tree.
 
 ### Execution & Testing Commands
+- **Live Deployment:** The application is deployed on Google Cloud Run and is live at [https://auto-stock-trader-pxeqygrzga-uc.a.run.app](https://auto-stock-trader-pxeqygrzga-uc.a.run.app)
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.
 - **Run Tests:** Execute `bun test` to run all unit tests in the project.
 - **Temporary Files:** Write all temporary files, debug artifacts, and captured logs under `./temp_files/`. Artifacts in this directory MUST NOT be saved to git.
@@ -131,7 +132,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ### Code Quality & Git
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
-- **Commit Prefix:** ALL commits made autonomously by the agent MUST be prefixed with `[agent]` in the commit message (e.g. `[agent] feat: update trading strategy`). This distinguishes agent commits from manual human commits and allows filtering.
+- **Commit Prefix:** ONLY commits created autonomously by the Pi.dev agent runtime may use the `[agent]` prefix in the commit message (e.g. `[agent] feat: update trading strategy`). Do NOT use `[agent]` for any interactive commits made in OpenCode or for any other human-driven or non-Pi.dev workflow.
 
 ### Bun + TypeScript Best Practices
 - **Native APIs:** Use native web standards like `fetch`, `Response`, and `Request` over third-party libraries (e.g., avoid `axios` or `node-fetch`).

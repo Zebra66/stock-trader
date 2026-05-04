@@ -84,7 +84,8 @@ gcloud services enable \
   run.googleapis.com \
   containerregistry.googleapis.com \
   artifactregistry.googleapis.com \
-  secretmanager.googleapis.com 2>/dev/null || true
+  secretmanager.googleapis.com \
+  logging.googleapis.com 2>/dev/null || true
 echo -e "${GREEN}✓ APIs enabled${NC}"
 
 # ─── Step 3: Retrieve secrets from Secret Manager ─────────────────────────────

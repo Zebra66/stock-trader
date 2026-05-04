@@ -1,5 +1,6 @@
 import '../env';
 import { Elysia } from 'elysia';
+import * as crypto from 'node:crypto';
 import { getPaused, setPaused } from '../harness';
 import * as fs from 'fs/promises';
 import { getLogger } from '../logger';
@@ -9,6 +10,39 @@ import { buildDashboardData } from './dashboard_data';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
+
+// ─── Authentication Helpers ──────────────────────────────────────────────────
+function signSession(email: string): string {
+  const expires = Date.now() + 7 * 24 * 60 * 60 * 1000; // 1 week
+  const data = `${email}|${expires}`;
+  const secret = process.env.SESSION_SECRET || process.env.GOOGLE_OAUTH_CLIENT_SECRET || 'fallback_secret';
+  const hmac = crypto.createHmac('sha256', secret).update(data).digest('hex');
+  return Buffer.from(`${data}|${hmac}`).toString('base64');
+}
+
+function verifySession(token: string): boolean {
+  if (!token) return false;
+  try {
+    const decoded = Buffer.from(token, 'base64').toString('utf8');
+    const [email, expiresStr, hmac] = decoded.split('|');
+    if (!process.env.ALLOWED_USER_EMAIL || email !== process.env.ALLOWED_USER_EMAIL) return false;
+    if (Date.now() > parseInt(expiresStr, 10)) return false;
+    const secret = process.env.SESSION_SECRET || process.env.GOOGLE_OAUTH_CLIENT_SECRET || 'fallback_secret';
+    const expectedHmac = crypto.createHmac('sha256', secret).update(`${email}|${expiresStr}`).digest('hex');
+    return crypto.timingSafeEqual(Buffer.from(hmac), Buffer.from(expectedHmac));
+  } catch {
+    return false;
+  }
+}
+
+function getOrigin(request: Request): string {
+  const proto = request.headers.get('x-forwarded-proto');
+  const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
+  if (proto && host) {
+    return `${proto}://${host}`;
+  }
+  return new URL(request.url).origin;
+}
 
 function parseRequestedMode(value: string | undefined): AlpacaMode | undefined {
   return value === 'paper' || value === 'live' ? value : undefined;
@@ -25,6 +59,27 @@ function resolveDashboardMode(requestedMode?: string): AlpacaMode {
 }
 
 const app = new Elysia()
+  .onRequest(({ request, set }) => {
+    const url = new URL(request.url);
+    if (url.pathname.startsWith('/auth') || url.pathname === '/favicon.svg') return;
+    
+    const cookieHeader = request.headers.get('cookie') || '';
+    const match = cookieHeader.match(/auth_session=([^;]+)/);
+    const token = match ? match[1] : null;
+
+    if (!token || !verifySession(token)) {
+      if (url.pathname.startsWith('/api/')) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      }
+      return new Response(null, {
+        status: 302,
+        headers: { Location: '/auth/google' }
+      });
+    }
+  })
   .get('/favicon.svg', () => {
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0a0f1e"/><polyline points="4,24 10,16 16,20 22,10 28,14" stroke="#00d4ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="10" r="2.5" fill="#00ff88"/></svg>`;
     return new Response(svg, { headers: { 'Content-Type': 'image/svg+xml', 'Cache-Control': 'public, max-age=86400' } });
@@ -110,6 +165,60 @@ const app = new Elysia()
     pre.diff{font-family:var(--mono);font-size:.72rem;line-height:1.5;background:#020617;padding:.875rem;border-radius:8px;max-height:420px;overflow-y:auto}
     @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:1fr}}
     @media(max-width:600px){.stats-grid{grid-template-columns:1fr}.hdr-right .status-badge{display:none}}
+    /* ── LOGS BUTTON ── */
+    .btn-logs{display:flex;align-items:center;gap:.4rem;padding:.45rem 1rem;font-size:.8125rem;font-weight:600;border-radius:8px;border:1px solid rgba(0,212,255,0.35);background:rgba(0,212,255,0.08);color:var(--cyan);cursor:pointer;font-family:var(--font);transition:all .2s}
+    .btn-logs:hover{background:rgba(0,212,255,0.18);border-color:var(--cyan);box-shadow:0 0 12px rgba(0,212,255,0.2)}
+    /* ── LOGS MODAL ── */
+    .logs-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
+    .logs-overlay.open{display:flex}
+    .logs-modal{background:#0a0f1e;border:1px solid rgba(0,212,255,0.25);border-radius:16px;display:flex;flex-direction:column;width:100%;height:100%;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,0.6)}
+    .logs-header{display:flex;align-items:center;gap:.875rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(0,212,255,0.12);flex-shrink:0}
+    .logs-title{font-size:1rem;font-weight:700;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-right:auto}
+    .logs-close{background:none;border:1px solid #334155;color:#94a3b8;border-radius:8px;cursor:pointer;padding:.35rem .75rem;font-size:.8rem;font-family:var(--font);transition:all .2s}
+    .logs-close:hover{border-color:var(--cyan);color:var(--cyan)}
+    .logs-toolbar{display:flex;align-items:center;gap:.75rem;padding:.875rem 1.25rem;border-bottom:1px solid rgba(0,212,255,0.08);flex-shrink:0;flex-wrap:wrap}
+    .sev-pills{display:flex;gap:.375rem}
+    .sev-pill{padding:.3rem .75rem;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.04em;border:1px solid;cursor:pointer;transition:all .2s;font-family:var(--font);text-transform:uppercase}
+    .sev-pill.all{border-color:#475569;color:#94a3b8;background:transparent}
+    .sev-pill.all.active{background:#1e293b;border-color:#94a3b8;color:#f1f5f9}
+    .sev-pill.debug{border-color:#6366f1;color:#818cf8;background:transparent}
+    .sev-pill.debug.active{background:rgba(99,102,241,0.15);border-color:#6366f1;color:#a5b4fc}
+    .sev-pill.info{border-color:#0ea5e9;color:#38bdf8;background:transparent}
+    .sev-pill.info.active{background:rgba(14,165,233,0.12);border-color:#0ea5e9;color:#7dd3fc}
+    .sev-pill.warning{border-color:#f59e0b;color:#fbbf24;background:transparent}
+    .sev-pill.warning.active{background:rgba(245,158,11,0.12);border-color:#f59e0b;color:#fde68a}
+    .sev-pill.error{border-color:#ef4444;color:#f87171;background:transparent}
+    .sev-pill.error.active{background:rgba(239,68,68,0.12);border-color:#ef4444;color:#fca5a5}
+    .sev-pill.critical{border-color:#dc2626;color:#f87171;background:transparent}
+    .sev-pill.critical.active{background:rgba(220,38,38,0.2);border-color:#dc2626;color:#fca5a5;box-shadow:0 0 8px rgba(220,38,38,0.25)}
+    .logs-search{flex:1;min-width:180px;background:#111827;border:1px solid #1e293b;border-radius:8px;padding:.4rem .8rem;color:#f1f5f9;font-family:var(--mono);font-size:.78rem;outline:none;transition:border-color .2s}
+    .logs-search:focus{border-color:rgba(0,212,255,0.45);box-shadow:0 0 0 3px rgba(0,212,255,0.08)}
+    .logs-search::placeholder{color:#475569}
+    .btn-refresh{padding:.4rem .875rem;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(0,212,255,0.08));border:1px solid rgba(0,212,255,0.35);color:var(--cyan);border-radius:8px;cursor:pointer;font-size:.78rem;font-family:var(--font);font-weight:600;transition:all .2s}
+    .btn-refresh:hover{background:rgba(0,212,255,0.2);transform:scale(1.03)}
+    .logs-body{flex:1;overflow-y:auto;padding:.5rem 0}
+    .logs-table{width:100%;border-collapse:collapse}
+    .logs-table th{text-align:left;padding:.5rem 1.25rem;color:#475569;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #0f172a;position:sticky;top:0;background:#0a0f1e;z-index:1}
+    .logs-table td{padding:.45rem 1.25rem;border-bottom:1px solid rgba(255,255,255,0.03);font-size:.75rem;vertical-align:top;font-family:var(--mono)}
+    .log-ts{color:#475569;white-space:nowrap;min-width:170px}
+    .log-sev{font-weight:700;white-space:nowrap;min-width:70px;text-transform:uppercase;font-size:.68rem;letter-spacing:.06em}
+    .log-sev.DEFAULT,.log-sev.DEBUG{color:#818cf8}
+    .log-sev.INFO{color:#38bdf8}
+    .log-sev.WARNING{color:#fbbf24}
+    .log-sev.ERROR{color:#f87171}
+    .log-sev.CRITICAL{color:#f87171;text-shadow:0 0 8px rgba(248,113,113,0.5)}
+    .log-msg{color:#cbd5e1;word-break:break-word;line-height:1.5}
+    .log-row:hover td{background:rgba(0,212,255,0.03)}
+    .logs-footer{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.25rem;border-top:1px solid rgba(0,212,255,0.08);flex-shrink:0;font-size:.78rem;color:#475569}
+    .logs-count{font-family:var(--mono)}
+    .logs-pager{display:flex;align-items:center;gap:.5rem}
+    .btn-page{padding:.3rem .75rem;background:#111827;border:1px solid #1e293b;border-radius:6px;color:#94a3b8;cursor:pointer;font-size:.75rem;font-family:var(--font);transition:all .2s}
+    .btn-page:hover:not(:disabled){border-color:var(--cyan);color:var(--cyan)}
+    .btn-page:disabled{opacity:.35;cursor:not-allowed}
+    .logs-empty{text-align:center;padding:3rem;color:#475569;font-family:var(--mono);font-size:.82rem}
+    .logs-loading{text-align:center;padding:3rem;color:var(--cyan);font-size:.82rem;animation:fade-pulse 1.4s ease infinite}
+    @keyframes fade-pulse{0%,100%{opacity:.5}50%{opacity:1}}
+    .log-highlight{background:rgba(253,224,71,0.15);border-radius:2px;color:#fde047}
   </style>
 </head>
 <body>
@@ -122,6 +231,10 @@ const app = new Elysia()
   </div>
   <div class="hdr-right">
     <div class="status-badge active" id="status-badge"><span class="sdot" id="status-dot"></span><span id="status-text">Loading...</span></div>
+    <button id="logs-btn" class="btn-logs" onclick="openLogs()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
+      Cloud Logs
+    </button>
     <button id="toggle-btn" class="btn-toggle pause" onclick="togglePause()">Loading...</button>
   </div>
 </header>
@@ -167,6 +280,42 @@ const app = new Elysia()
     </div>
   </div>
 </div>
+
+<!-- ── CLOUD LOGS MODAL ────────────────────────────────────────────────────── -->
+<div class="logs-overlay" id="logs-overlay" onclick="handleOverlayClick(event)">
+  <div class="logs-modal" onclick="event.stopPropagation()">
+    <div class="logs-header">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="2" width="16" height="2.5" rx="1.25" fill="#00d4ff"/><rect x="1" y="7.75" width="12" height="2.5" rx="1.25" fill="#00d4ff" opacity=".7"/><rect x="1" y="13.5" width="14" height="2.5" rx="1.25" fill="#00d4ff" opacity=".45"/></svg>
+      <span class="logs-title">☁️ Cloud Logs</span>
+      <span class="logs-count" id="logs-count"></span>
+      <button class="logs-close" onclick="closeLogs()">✕ Close</button>
+    </div>
+    <div class="logs-toolbar">
+      <div class="sev-pills">
+        <button class="sev-pill all active" id="pill-all" onclick="setSeverity('')">All</button>
+        <button class="sev-pill debug" id="pill-debug" onclick="setSeverity('DEBUG')">Debug</button>
+        <button class="sev-pill info" id="pill-info" onclick="setSeverity('INFO')">Info</button>
+        <button class="sev-pill warning" id="pill-warning" onclick="setSeverity('WARNING')">Warning</button>
+        <button class="sev-pill error" id="pill-error" onclick="setSeverity('ERROR')">Error</button>
+        <button class="sev-pill critical" id="pill-critical" onclick="setSeverity('CRITICAL')">Critical</button>
+      </div>
+      <input class="logs-search" id="logs-search" type="search" placeholder="Search logs…" oninput="debounceSearch()">
+      <button class="btn-refresh" onclick="loadLogs(true)">⟳ Refresh</button>
+    </div>
+    <div class="logs-body" id="logs-body">
+      <div class="logs-loading">Loading cloud logs…</div>
+    </div>
+    <div class="logs-footer">
+      <span class="logs-count" id="logs-footer-count">—</span>
+      <div class="logs-pager">
+        <button class="btn-page" id="btn-prev" onclick="goPage(-1)" disabled>← Prev</button>
+        <span id="page-label" style="font-family:var(--mono);color:#94a3b8">Page 1</span>
+        <button class="btn-page" id="btn-next" onclick="goPage(1)" disabled>Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   let chart=null;
   let selectedMode=null;
@@ -287,6 +436,139 @@ const app = new Elysia()
     }catch(e){pre.textContent='Failed to load diff.';}
   }
   function closeCommitDiff(){document.getElementById('commit-diff-view').style.display='none';document.getElementById('commits-list').style.display='block';}
+
+  // ── CLOUD LOGS ──────────────────────────────────────────────────────────────
+  const logsState={
+    severity:'',
+    search:'',
+    page:0,
+    pageTokens:[''],   // pageTokens[i] = token to fetch page i
+    lastCount:0,
+    debounceTimer:null,
+  };
+
+  function openLogs(){
+    document.getElementById('logs-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+    if(logsState.lastCount===0) loadLogs(true);
+  }
+  function closeLogs(){
+    document.getElementById('logs-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function handleOverlayClick(e){
+    if(e.target===document.getElementById('logs-overlay')) closeLogs();
+  }
+
+  function setSeverity(sev){
+    logsState.severity=sev;
+    document.querySelectorAll('.sev-pill').forEach(p=>p.classList.remove('active'));
+    const id=sev?'pill-'+sev.toLowerCase():'pill-all';
+    document.getElementById(id)?.classList.add('active');
+    loadLogs(true);
+  }
+
+  let _searchTimer=null;
+  function debounceSearch(){
+    clearTimeout(_searchTimer);
+    _searchTimer=setTimeout(()=>{
+      logsState.search=document.getElementById('logs-search').value.trim();
+      loadLogs(true);
+    },400);
+  }
+
+  function goPage(dir){
+    const next=logsState.page+dir;
+    if(next<0) return;
+    logsState.page=next;
+    if(!logsState.pageTokens[next]) return;
+    loadLogs(false);
+  }
+
+  function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  function highlight(text,search){
+    if(!search) return escH(text);
+    const esc=escH(text);
+    const idx=esc.toLowerCase().indexOf(search.toLowerCase());
+    if(idx<0) return esc;
+    return esc.substring(0,idx)+'<mark class="log-highlight">'+esc.substring(idx,idx+search.length)+'</mark>'+esc.substring(idx+search.length);
+  }
+
+  function fmtTs(iso){
+    if(!iso) return '';
+    try{
+      const d=new Date(iso);
+      return d.toLocaleString('en-US',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+    }catch{return iso;}
+  }
+
+  async function loadLogs(reset){
+    if(reset){
+      logsState.page=0;
+      logsState.pageTokens=[''];
+    }
+    const body=document.getElementById('logs-body');
+    body.innerHTML='<div class="logs-loading">Fetching logs…</div>';
+    document.getElementById('btn-prev').disabled=true;
+    document.getElementById('btn-next').disabled=true;
+
+    const token=logsState.pageTokens[logsState.page]??'';
+    const params=new URLSearchParams({limit:'50'});
+    if(logsState.severity) params.set('severity',logsState.severity);
+    if(logsState.search) params.set('search',logsState.search);
+    if(token) params.set('pageToken',token);
+
+    try{
+      const res=await fetch('/api/logs?'+params.toString());
+      const data=await res.json();
+
+      if(data.error){
+        body.innerHTML='<div class="logs-empty">⚠ '+escH(data.error)+'</div>';
+        document.getElementById('logs-footer-count').textContent='Error fetching logs';
+        return;
+      }
+
+      const entries=data.entries||[];
+      logsState.lastCount=entries.length;
+
+      if(data.nextPageToken && !logsState.pageTokens[logsState.page+1]){
+        logsState.pageTokens[logsState.page+1]=data.nextPageToken;
+      }
+
+      // Render table
+      if(entries.length===0){
+        body.innerHTML='<div class="logs-empty">No log entries found.</div>';
+      } else {
+        let h='<table class="logs-table"><thead><tr><th>Timestamp</th><th>Level</th><th>Message</th></tr></thead><tbody>';
+        for(const e of entries){
+          const sev=(e.severity||'DEFAULT').toUpperCase();
+          h+='<tr class="log-row">';
+          h+='<td class="log-ts">'+escH(fmtTs(e.timestamp))+'</td>';
+          h+='<td class="log-sev '+escH(sev)+'">'+escH(sev)+'</td>';
+          h+='<td class="log-msg">'+highlight(e.message||'',logsState.search)+'</td>';
+          h+='</tr>';
+        }
+        h+='</tbody></table>';
+        body.innerHTML=h;
+      }
+
+      const pageNum=logsState.page+1;
+      document.getElementById('page-label').textContent='Page '+pageNum;
+      document.getElementById('logs-footer-count').textContent=entries.length+' entries (page '+pageNum+')';
+      document.getElementById('btn-prev').disabled=logsState.page===0;
+      document.getElementById('btn-next').disabled=!logsState.pageTokens[logsState.page+1];
+
+    }catch(err){
+      body.innerHTML='<div class="logs-empty">Failed to load logs: '+escH(String(err))+'</div>';
+    }
+  }
+
+  // Keyboard shortcut: Escape closes modal
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') closeLogs();
+  });
+
   fetchStatus();fetchMemory();renderChart();fetchCommits();
   setInterval(fetchStatus,5000);setInterval(fetchMemory,15000);setInterval(renderChart,60000);
 </script>
@@ -364,6 +646,184 @@ const app = new Elysia()
       return { hash, diff };
     } catch (e: any) {
       return { error: e.message };
+    }
+  })
+
+  // ─── Cloud Logs API ──────────────────────────────────────────────────────────
+  // Query params:
+  //   severity  – DEFAULT | DEBUG | INFO | WARNING | ERROR | CRITICAL
+  //   search    – free-text filter (matched against textPayload)
+  //   pageToken – opaque cursor returned by previous response
+  //   limit     – max entries per page (default 50, max 200)
+  .get('/api/logs', async ({ query }: { query: { severity?: string; search?: string; pageToken?: string; limit?: string } }) => {
+    const GCP_PROJECT = process.env.GCP_PROJECT ?? 'stock-auto-trader-495209';
+    const SERVICE_NAME = process.env.CLOUD_RUN_SERVICE ?? 'auto-stock-trader';
+    const REGION = process.env.CLOUD_RUN_REGION ?? 'us-central1';
+
+    const VALID_SEVERITIES = new Set(['DEFAULT', 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']);
+    const severity = query.severity && VALID_SEVERITIES.has(query.severity.toUpperCase())
+      ? query.severity.toUpperCase()
+      : '';
+    const search = (query.search ?? '').trim();
+    const pageToken = (query.pageToken ?? '').trim();
+    const limit = Math.min(Math.max(parseInt(query.limit ?? '50', 10) || 50, 10), 200);
+
+    // Build Cloud Logging filter (same syntax as gcloud logging read)
+    let filter = `resource.type="cloud_run_revision" AND resource.labels.service_name="${SERVICE_NAME}" AND resource.labels.location="${REGION}"`;
+    if (severity) filter += ` AND severity>=${severity}`;
+    if (search) filter += ` AND textPayload:"${search.replace(/"/g, '')}"`;
+
+    try {
+      // ── Get access token from GCP metadata server (works automatically in Cloud Run) ──
+      const tokenRes = await fetch(
+        'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token',
+        { headers: { 'Metadata-Flavor': 'Google' } },
+      );
+      if (!tokenRes.ok) {
+        const msg = `Metadata server returned ${tokenRes.status}. Is this running in Cloud Run?`;
+        logger.warn(msg);
+        return { error: msg, entries: [], nextPageToken: '' };
+      }
+      const { access_token } = await tokenRes.json() as { access_token: string };
+
+      // ── Call Cloud Logging entries:list REST API ──
+      interface LoggingRequestBody {
+        resourceNames: string[];
+        filter: string;
+        orderBy: string;
+        pageSize: number;
+        pageToken?: string;
+      }
+      const body: LoggingRequestBody = {
+        resourceNames: [`projects/${GCP_PROJECT}`],
+        filter,
+        orderBy: 'timestamp desc',
+        pageSize: limit,
+      };
+      if (pageToken) body.pageToken = pageToken;
+
+      const logsRes = await fetch('https://logging.googleapis.com/v2/entries:list', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!logsRes.ok) {
+        const errText = await logsRes.text();
+        logger.warn({ status: logsRes.status, body: errText }, 'Cloud Logging API error');
+        return { error: `Cloud Logging API ${logsRes.status}: ${errText}`, entries: [], nextPageToken: '' };
+      }
+
+      interface LogEntry {
+        timestamp?: string;
+        severity?: string;
+        textPayload?: string;
+        jsonPayload?: Record<string, unknown>;
+        insertId?: string;
+      }
+      interface LogsApiResponse {
+        entries?: LogEntry[];
+        nextPageToken?: string;
+      }
+      const data = await logsRes.json() as LogsApiResponse;
+      const rawEntries = data.entries ?? [];
+
+      const entries = rawEntries.map((e) => ({
+        timestamp: e.timestamp ?? '',
+        severity: e.severity ?? 'DEFAULT',
+        message: e.textPayload ?? (e.jsonPayload ? JSON.stringify(e.jsonPayload) : ''),
+        insertId: e.insertId ?? '',
+      }));
+
+      return {
+        entries,
+        nextPageToken: data.nextPageToken ?? '',
+        total: entries.length,
+      };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.warn({ err: msg }, 'cloud logs fetch failed');
+      return { error: msg, entries: [], nextPageToken: '' };
+    }
+  })
+  
+  // ─── Authentication Endpoints ────────────────────────────────────────────────
+  .get('/auth/google', ({ request, set }) => {
+    const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID;
+    if (!clientId) {
+      set.status = 500;
+      return 'GOOGLE_OAUTH_CLIENT_ID not set. Check environment variables.';
+    }
+    
+    const origin = getOrigin(request);
+    const redirectUri = process.env.OAUTH_REDIRECT_URI || `${origin}/auth/google/callback`;
+    const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=email%20profile&access_type=online`;
+    
+    return new Response(null, {
+      status: 302,
+      headers: { Location: authUrl }
+    });
+  })
+  .get('/auth/google/callback', async ({ request, set }) => {
+    const url = new URL(request.url);
+    const code = url.searchParams.get('code');
+    if (!code) {
+      set.status = 400;
+      return 'No code provided in callback.';
+    }
+
+    const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID;
+    const clientSecret = process.env.GOOGLE_OAUTH_CLIENT_SECRET;
+    if (!clientId || !clientSecret) {
+      set.status = 500;
+      return 'OAuth credentials not set in environment.';
+    }
+
+    const origin = getOrigin(request);
+    const redirectUri = process.env.OAUTH_REDIRECT_URI || `${origin}/auth/google/callback`;
+    
+    try {
+      const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          code,
+          client_id: clientId,
+          client_secret: clientSecret,
+          redirect_uri: redirectUri,
+          grant_type: 'authorization_code'
+        })
+      });
+      const tokenData = await tokenRes.json();
+      if (!tokenData.access_token) {
+        set.status = 400;
+        return `OAuth token error: ${JSON.stringify(tokenData)}`;
+      }
+
+      const userRes = await fetch('https://www.googleapis.com/oauth2/v2/userinfo', {
+        headers: { Authorization: `Bearer ${tokenData.access_token}` }
+      });
+      const userData = await userRes.json();
+      
+      const allowedEmail = process.env.ALLOWED_USER_EMAIL;
+      if (!allowedEmail || userData.email !== allowedEmail) {
+        set.status = 403;
+        return `Access denied for ${userData.email}. Only ${allowedEmail} is allowed.`;
+      }
+
+      const sessionToken = signSession(userData.email);
+      set.headers['Set-Cookie'] = `auth_session=${sessionToken}; Path=/; HttpOnly; Max-Age=604800; SameSite=Lax`;
+      
+      return new Response(null, {
+        status: 302,
+        headers: { Location: '/' }
+      });
+    } catch (e: any) {
+      set.status = 500;
+      return `Error processing OAuth callback: ${e.message}`;
     }
   })
   .listen(PORT);
