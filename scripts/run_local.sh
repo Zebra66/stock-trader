@@ -1,5 +1,31 @@
 #!/bin/bash
 
+HELP="Usage: ./scripts/run_local.sh [options]
+
+Options:
+  --force-run  Pass through to src/harness.ts and run even when market is closed
+  --help       Show this help message"
+
+force_run=false
+
+for arg in "$@"; do
+  case "$arg" in
+    --force-run)
+      force_run=true
+      ;;
+    --help)
+      echo "$HELP"
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $arg"
+      echo
+      echo "$HELP"
+      exit 1
+      ;;
+  esac
+done
+
 # Ensure we are in the project root
 cd "$(dirname "$0")/.."
 
@@ -20,4 +46,8 @@ mkdir -p temp_files/logs
 echo "Starting Autonomous Stock Trader (Local Mode)..."
 echo "Session log: ${LOG_FILE}"
 
-bun run src/harness.ts
+if [ "$force_run" = true ]; then
+  bun run src/harness.ts --force-run
+else
+  bun run src/harness.ts
+fi

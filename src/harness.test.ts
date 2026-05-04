@@ -4,7 +4,42 @@ import {
   getDelayUntilNextTacticalRun,
   getNextHourlyRunAt,
   getNextTacticalRunAt,
+  parseHarnessArgs,
+  shouldRunWhenMarketClosed,
 } from './harness';
+
+describe('harness CLI args', () => {
+  test('parses --force-run', () => {
+    expect(parseHarnessArgs(['--force-run'])).toEqual({
+      forceRun: true,
+      help: false,
+    });
+  });
+
+  test('parses --help', () => {
+    expect(parseHarnessArgs(['--help'])).toEqual({
+      forceRun: false,
+      help: true,
+    });
+  });
+
+  test('defaults to no flags', () => {
+    expect(parseHarnessArgs([])).toEqual({
+      forceRun: false,
+      help: false,
+    });
+  });
+});
+
+describe('harness market gate', () => {
+  test('does not run closed-market cycles by default', () => {
+    expect(shouldRunWhenMarketClosed(false)).toBe(false);
+  });
+
+  test('runs closed-market cycles in force-run mode', () => {
+    expect(shouldRunWhenMarketClosed(true)).toBe(true);
+  });
+});
 
 describe('harness scheduler alignment', () => {
   test('hourly delay aligns to the top of the next hour', () => {

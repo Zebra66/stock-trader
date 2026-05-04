@@ -4,9 +4,25 @@ import { getLogger } from './logger';
 
 const logger = getLogger('harness');
 const TACTICAL_MINUTES = [10, 20, 30, 40, 50] as const;
+const HELP = `
+Usage: bun run src/harness.ts [options]
+
+Options:
+  --force-run  Start the harness and agents even when the market is closed
+  --help       Show this help message
+`.trim();
 
 let isPaused = false;
 const repoRoot = new URL('..', import.meta.url).pathname;
+
+interface HarnessArgs {
+  forceRun: boolean;
+  help: boolean;
+}
+
+interface HarnessOptions {
+  forceRun: boolean;
+}
 
 export function setPaused(paused: boolean) {
   isPaused = paused;
@@ -15,6 +31,17 @@ export function setPaused(paused: boolean) {
 
 export function getPaused() {
   return isPaused;
+}
+
+export function parseHarnessArgs(argv: string[]): HarnessArgs {
+  return {
+    forceRun: argv.includes('--force-run'),
+    help: argv.includes('--help'),
+  };
+}
+
+export function shouldRunWhenMarketClosed(forceRun: boolean): boolean {
+  return forceRun;
 }
 
 async function runGitPull(): Promise<void> {
@@ -31,7 +58,7 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
     logger.info('Trading is paused. Skipping tactical agent');
     return;
   }
-  logger.info({ mode }, 'Spawning agent');
+  logger.info({ mode }, '🤖 Spawning agent');
   const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
     stdout: 'inherit',
     stderr: 'inherit',
@@ -71,11 +98,18 @@ export function getNextTacticalRunAt(now: Date): Date {
   return next;
 }
 
-async function runWhenMarketOpen(mode: 'hourly' | 'tactical'): Promise<void> {
+async function runWhenMarketOpen(
+  mode: 'hourly' | 'tactical',
+  options: HarnessOptions,
+): Promise<void> {
   const open = await isMarketOpen();
-  if (!open) {
+  if (!open && !shouldRunWhenMarketClosed(options.forceRun)) {
     logger.info({ mode }, 'Market is closed. Skipping scheduled run');
     return;
+  }
+
+  if (!open && options.forceRun) {
+    logger.info({ mode }, 'Market is closed. Continuing because --force-run is enabled');
   }
 
   // Only pull when the market is open — no point syncing code when nothing can trade
@@ -92,6 +126,7 @@ async function runWhenMarketOpen(mode: 'hourly' | 'tactical'): Promise<void> {
 function scheduleAlignedRun(
   mode: 'hourly' | 'tactical',
   getNextRunAt: (now: Date) => Date,
+  options: HarnessOptions,
 ): void {
   const now = new Date();
   const nextRunAt = getNextRunAt(now);
@@ -101,31 +136,43 @@ function scheduleAlignedRun(
 
   setTimeout(async () => {
     try {
-      await runWhenMarketOpen(mode);
+      await runWhenMarketOpen(mode, options);
     } finally {
-      scheduleAlignedRun(mode, getNextRunAt);
+      scheduleAlignedRun(mode, getNextRunAt, options);
     }
   }, delay);
 }
 
-async function runStartupCycle(): Promise<void> {
-  await runWhenMarketOpen('hourly');
-  await runWhenMarketOpen('tactical');
+async function runStartupCycle(options: HarnessOptions): Promise<void> {
+  await runWhenMarketOpen('hourly', options);
+  await runWhenMarketOpen('tactical', options);
 }
 
-export async function startHarnessLoop(): Promise<void> {
-  logger.info({ repoRoot }, 'Starting Autonomous Harness Loop');
+export async function startHarnessLoop(options: HarnessOptions = { forceRun: false }): Promise<void> {
+  logger.info(
+    { repoRoot, forceRun: options.forceRun },
+    options.forceRun
+      ? 'Starting Autonomous Harness Loop in --force-run mode'
+      : 'Starting Autonomous Harness Loop',
+  );
 
   // Start web server — shares process memory for the pause toggle
   await import('./web/server');
 
   // Run both jobs once on startup, then switch to wall-clock aligned scheduling.
-  await runStartupCycle();
+  await runStartupCycle(options);
 
-  scheduleAlignedRun('hourly', getNextHourlyRunAt);
-  scheduleAlignedRun('tactical', getNextTacticalRunAt);
+  scheduleAlignedRun('hourly', getNextHourlyRunAt, options);
+  scheduleAlignedRun('tactical', getNextTacticalRunAt, options);
 }
 
 if (import.meta.main) {
-  startHarnessLoop();
+  const args = parseHarnessArgs(process.argv.slice(2));
+
+  if (args.help) {
+    console.log(HELP);
+    process.exit(0);
+  }
+
+  startHarnessLoop({ forceRun: args.forceRun });
 }
