@@ -258,13 +258,14 @@ const app = new Elysia()
         <div class="legend-item"><span class="ldot" style="background:#00d4ff"></span>Equity</div>
         <div class="legend-item"><span class="ldot" style="background:#00ff88"></span>Buy</div>
         <div class="legend-item"><span class="ldot" style="background:#ff4757"></span>Sell</div>
+        <button class="btn-refresh" onclick="renderChart()" style="margin-left:.5rem" title="Refresh chart">⟳</button>
       </div>
     </div>
     <div class="chart-box"><canvas id="portfolioChart"></canvas></div>
   </div>
   <div class="bottom-grid">
     <div class="card">
-      <div class="sec-title">🧠 Agent Memory</div>
+      <div class="sec-title">🧠 Agent Memory <button class="btn-refresh" onclick="fetchMemory()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh memory">⟳</button></div>
       <pre class="mem" id="memory-content">Loading...</pre>
     </div>
     <div class="card">
@@ -585,11 +586,8 @@ const app = new Elysia()
   });
 
   fetchStatus();fetchMemory();renderChart();fetchCommits();
-  // Poll less aggressively to keep Cloud Run HTTP access log volume low.
-  // status: every 30s (just paused/active badge — rarely changes)
-  // memory: every 60s (file only updates when agent runs)
-  // chart:  every 5min (market data doesn't need sub-minute refresh)
-  setInterval(fetchStatus,30000);setInterval(fetchMemory,60000);setInterval(renderChart,300000);
+  // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
+  setInterval(fetchStatus, 20000);
 </script>
 </body>
 </html>`, {
