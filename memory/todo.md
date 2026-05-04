@@ -10,6 +10,7 @@
 - [ ] Estimated friction reminder: liquid mega-cap / ETF names can still cost roughly **5-20 bps** round trip once spread/slippage/fees are included; thinner names can cost materially more.
 - [ ] Avoid opening fresh positions in the first **15 minutes** after the cash open or immediately after a major macro / oil / Fed / geopolitical headline.
 - [ ] If the latest prices available are still **2026-05-01 after-hours/reference prints**, wait for live cash-session confirmation rather than forcing a pre-open fill.
+- [x] Tactical cycle 2026-05-04: confirmed stale reference bars persisted and no live cash-session trigger was actionable, so no orders were placed.
 
 ## Active Buy / Sell Conditions
 - [ ] **BUY SOXX** if price breaks above **467.5** and holds, or if it pulls back into **461.0-462.5** and reclaims support cleanly — semiconductor leadership remains the strongest macro trend. **HOLD SOXX** toward **11%** target allocation. **SELL or REDUCE SOXX** above **486** to trim, or below **455.5** to cut risk.
