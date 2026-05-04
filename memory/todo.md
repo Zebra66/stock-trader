@@ -9,7 +9,7 @@
 - [ ] Estimated friction reminder: liquid mega-cap / ETF names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included; thinner names can cost materially more.
 - [ ] Prefer marketable limit orders whenever spreads are not tight. Use limit orders for **EIS, RKLB, SHLD, ARKX**, and consider them for **QTUM** and **GLD** if spreads widen.
 - [ ] Do **not** open fresh positions in the first **15 minutes** after the cash open.
-- [ ] Current market state is still **pre-open**. A few leaders now show fresh pre-market prints, but that is **not** cash-session confirmation.
+- [x] Current market state is post-open; no confirmed breakout/reclaim setup triggered after the cash open, so the book stayed flat.
 - [ ] If oil / geopolitics / Fed headlines hit near the open, prefer patience over reactive fills.
 
 ## Active Buy / Sell Conditions
@@ -47,3 +47,4 @@
 - [x] No adverse-news review was needed because no order conditions were met.
 - [x] 2026-05-04 Tactical cycle: refreshed live Alpaca prices, found no actionable breakouts/reclaims, and submitted no orders; continue waiting for post-open confirmation before risking capital.
 - [x] 2026-05-04 Tactical cycle (latest): refreshed live prices show SOXX 466.07, GOOG 379.57, AVGO 420.315, QQQ 674.22, NVDA 200.31, QTUM 135.12, GLD 419.38, RKLB 78.21, META 606.995, HOOD 77.55, EIS 131.53, SHLD 68.435, VOO 661.84, and ARKX 32.72; still no completed buy/sell condition, and the book stayed flat because we are still inside the opening-15-minute no-trade window.
+- [x] 2026-05-04 Tactical cycle (09:49 ET): refreshed live prices show SOXX 465.905, GOOG 378.97, AVGO 420.04, QQQ 675.11, NVDA 199.33, QTUM 135.12, GLD 418.83, RKLB 77.285, HOOD 76.61, EIS 131.53, SHLD 68.54, VOO 662.4, and ARKX 32.58; no buy/sell conditions triggered, and no orders were submitted.
