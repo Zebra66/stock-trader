@@ -58,3 +58,12 @@
 - Market structure: multi-timeframe fallback data continues to favor **GOOG, SOXX, AVGO, QQQ, QTUM**; **META** and **HOOD** remain the clearest weak-relative-strength names.
 - External context: Reuters-prioritized fallback coverage remained constructive for **Alphabet / cloud / AI**, still negative for **HOOD** and burdened by legal / spending noise for **META**. Oil / Middle East headlines remain the main macro risk, but Reuters also showed a constructive open as oil eased.
 - Decision: no immediate portfolio change. Keep gross exposure near **30%**, authorize **one more GOOG share only above 389.2 with regular-hours confirmation**, and tighten discipline around **RKLB** as the weakest satellite holding.
+
+## 11:11 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,028.13**, cash **$8,180.20**, buying power **$18,208.33**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1**; **no SOXX position** remains in the broker.
+- Goal check: the account is still **positive in dollars**, but still **trails SPY since inception** because gross exposure is too low.
+- Market structure: fallback multi-timeframe data still favors **SOXX, GOOG, AVGO, QTUM, QQQ**, while **META** and **HOOD** remain weaker.
+- External context: Reuters-prioritized fallback coverage stayed constructive as **oil pulled back despite Middle East tension**; fresh **top-investor** and **analyst-action** coverage remained insufficient.
+- Decision: allow **one** selective add only this hour — **SOXX above 481.2** is preferred, **GOOG above 389.4** is secondary — and require a live positions refresh after any order before placing another one.

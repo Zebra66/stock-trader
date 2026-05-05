@@ -82,4 +82,6 @@ First, decide which data and in which format you need to make a sound macro deci
 - IMPORTANT: Every change to this prompt needs to be explained and reviewed in the commit message or a separate note, as it impacts actual money!
 
 ### Step 7 — Commit
-- Use git to commit memory updates, prompt updates, and any intentional code/config changes with an `[agent]` prefix, then push
+- Use git to commit memory updates, prompt updates, and any intentional code/config changes with a descriptive message that **respects higher-priority repo rules and AGENTS instructions**
+- In autonomous runtime contexts where `[agent]` commits are explicitly allowed, use that prefix; in interactive sessions where repo instructions forbid it, **do not** use `[agent]`
+- Push after verification if repo policy allows
