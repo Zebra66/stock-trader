@@ -1,13 +1,13 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 03:01 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-05 04:13 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($9,997.22)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,001.78)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
 - [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
 - [ ] Because the market is currently **closed**, do **not** use overnight bars as trade confirmation.
-- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an additional confirmation check before acting; prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
+- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an additional confirmation check; prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
 - [ ] Estimated friction reminder: liquid mega-cap / ETF names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included; thinner names can cost materially more.
 - [ ] Use **marketable limit orders** when spreads are not very tight.
@@ -47,37 +47,9 @@
 
 ## Current Hourly Refresh Result
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,997.22 equity / $7,618.05 cash / $17,615.27 buying power**.
-- [x] Current unrealized P&L is **-$2.78** overall (**AVGO +$2.23, QQQ +$2.22, QTUM $0.00, RKLB -$0.23, SOXX -$7.00**).
+- [x] Account snapshot: **$10,001.78 equity / $7,618.05 cash / $17,619.83 buying power**.
+- [x] Current unrealized P&L is **+$1.81** overall (**AVGO +$2.24, QQQ +$3.33, QTUM -$0.94, RKLB +$0.36, SOXX -$3.18**).
 - [x] Latest Alpaca bars refreshed for the full universe; several remain **thin / stale** because the market is closed.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] News fallback stayed **constructive for GOOG**, **negative for HOOD**, and **constructive-but-secondary for RKLB**; macro and investor feeds were too stale / noisy to drive new trades.
+- [x] News fallback stayed **constructive for GOOG**, **negative for HOOD**, and **insufficient / non-actionable** for macro, semis, RKLB, and top-investor searches.
 - [x] **No trade is authorized while the market is closed.**
-- [x] Tactical cycle completed with no orders; **GOOG** remained below the 384.5 breakout trigger and no existing holding hit a trim/stop level.
-- [x] Keep monitoring the next regular session for fresh confirmation before acting on any stale overnight quote.
-
-## Tactical Execution Summary — 2026-05-05
-- [x] No orders placed this cycle because the market is closed and GOOG stayed below the buy trigger with a thin overnight quote.
-- [x] Live account remains at roughly **23.8% gross exposure** with holdings **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] No existing position drifted enough to justify a trim or a resize.
-- [x] Keep **GOOG** as the only fresh-buy candidate; do not substitute lower-quality names while confirmation is weak.
-
-## Tactical Execution Summary — 2026-05-05
-- [x] No orders placed this cycle; the market is still closed and GOOG remained below the buy trigger.
-- [x] Live account snapshot refreshed to **$9,997.60 equity / $7,618.05 cash / $17,615.65 buying power** with the same holdings: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Existing positions stayed inside their hold bands; no trim / stop level was hit.
-- [x] GOOG stayed the only approved fresh-buy candidate, and the quick news check did not reveal a conflicting catalyst.
-- [x] Continue to wait for regular-hours confirmation before acting on any breakout or breakdown.
-
-## Tactical Execution Summary — 2026-05-05 04:16 ET
-- [x] No orders placed this cycle; the market is still closed and GOOG remained below the buy trigger.
-- [x] Live account snapshot refreshed to **$10,001.30 equity / $7,618.05 cash / $17,619.35 buying power** with the same holdings: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Latest prices: **AVGO 416.51**, **QQQ 672.25**, **QTUM 135.63**, **RKLB 80.29**, **SOXX 460.76**, **GOOG 379.03**, **EIS 132.54**, **GLD 414.26**, **HOOD 76.56**, **META 609.52**, **NVDA 197.86**, **SHLD 68.05**, **VOO 660.10**, **ARKX 32.55**.
-- [x] Existing positions stayed inside their hold bands; no trim / stop level was hit.
-- [x] Keep **GOOG** as the only fresh-buy candidate; do not substitute lower-quality names while confirmation is weak.
-
-## Tactical Execution Summary — 2026-05-05 03:xx ET
-- [x] No trades were placed this cycle because the market is still closed and no position hit a trim / stop level.
-- [x] Live account remains near **$9,997.77 equity / $7,618.05 cash / $17,615.82 buying power** with **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Latest live prices checked for the full universe; quotes for several names remain thin or stale overnight, so no order was forced.
-- [x] Keep waiting for regular-hours GOOG confirmation; do not open lower-quality substitutes while the market is closed.
