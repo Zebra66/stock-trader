@@ -1,7 +1,7 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,990.64)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,990.87)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **AVGO 1 share @ 416.95**, **QQQ 1 share @ 673.26**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.88**, **SOXX 2 shares @ 468.43**.
 - [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
@@ -57,3 +57,10 @@
 - [x] No buy or sell conditions were triggered with sufficient confidence after accounting for friction and quote quality.
 - [x] No orders were submitted.
 - [ ] Next session focus: watch **GOOG** first; only act on a regular-hours breakout above **384.5** or a same-session reclaim of **375.0** after a pullback into **372.0-374.0**. Continue to ignore stale / illiquid prints.
+
+## 2026-05-05 10-Minute Tactical Execution Update
+- [x] Live account refreshed again: **$9,990.87 equity / $7,618.05 cash / $17,608.92 buying power**.
+- [x] Latest prices refreshed for the tactical universe: **AVGO 416.36, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.34, QTUM 137.00, RKLB 80.62, SHLD 68.05, SOXX 463.75, VOO 660.10, ARKX 32.55**.
+- [x] GOOG still failed both entry triggers, so no new capital was deployed.
+- [x] No existing holding reached a trim or stop threshold with enough edge to overcome friction.
+- [x] Market remains closed; keep waiting for regular-hours confirmation before any tactical order.
