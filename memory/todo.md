@@ -1,29 +1,30 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 04:13 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-05 05:07 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,001.78)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,002.34)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
 - [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
 - [ ] Because the market is currently **closed**, do **not** use overnight bars as trade confirmation.
-- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an additional confirmation check; prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
+- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an extra confirmation check; prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
 - [ ] Estimated friction reminder: liquid mega-cap / ETF names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included; thinner names can cost materially more.
 - [ ] Use **marketable limit orders** when spreads are not very tight.
 - [ ] **Do not average down** any existing position.
-- [ ] If a symbol shows a **stale quote**, **very low trade count**, or obvious overnight illiquidity, do **not** trade it unless a **second source confirms** the move.
+- [ ] If Alpaca shows **TradeCount < 10** or clearly thin after-hours volume in an actionable symbol, require **regular-hours confirmation** or a **second source** before trading.
 
 ## Existing Positions
 - [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** **TRIM / SELL 1 share** above **424.0** on regular-hours strength through the recent 5-day high zone, or **SELL 1 share** below **394.5** to cut risk on a loss of short-term support.
 - [ ] **HOLD QQQ** — target allocation **~7%** is already filled. **Do not add.** **TRIM / SELL 1 share** above **677.0** if momentum extends through recent highs, or **SELL 1 share** below **653.5** on a break of the recent 5-day low zone.
 - [ ] **HOLD SOXX** — current size is already near the desired **~9%** target allocation. **Do not add.** **TRIM 1 share** above **470.0** if strength extends through recent resistance, or **SELL 1 share** below **431.5** if the breakout structure fails.
-- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** **TRIM 1 share** above **137.5** if regular-hours upside extends through the recent high, or **SELL 1 share** below **127.5** to cut risk on a loss of short-term support.
+- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** **TRIM 1 share** above **137.2** if regular-hours upside extends through the recent high, or **SELL 1 share** below **127.5** to cut risk on a loss of short-term support.
 - [ ] **HOLD RKLB** — keep this as a tiny satellite only. **TRIM / SELL 1 share** above **84.0** if strength extends, or **SELL 1 share** below **74.0** to cut risk on a deeper pullback.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY GOOG** only if price breaks above **384.5** during regular hours and holds with confirmation, or if it pulls back into **372.0-375.0** and then reclaims **376.0** in the same session.
-- [ ] Because the latest Alpaca overnight bar for **GOOG** had only **1 trade**, require either **regular-hours confirmation** or a **second-source quote check** before acting.
+- [ ] **BUY GOOG** only if price breaks above **384.5** during regular hours and holds with confirmation, or if it pulls back into **376.5-377.5** and then reclaims **378.0** in the same session.
+- [ ] Alpaca printed only **1 after-hours trade** for **GOOG** at **379.03**, so require either **regular-hours confirmation** or a **second-source quote check** before acting.
+- [ ] Yahoo regular-session reference price for **GOOG** was about **379.64** with a recent day range of **376.77-384.18**; use that range as the current structure anchor, not the thin after-hours print.
 - [ ] If **GOOG** triggers, start with **1 share** only (about **3.8%** of equity).
 - [ ] Once opened, **TRIM / SELL GOOG** above **392.5** or **CUT GOOG** below **368.0**.
 - [ ] If **GOOG does not trigger**, accept the current book and keep cash high rather than forcing a lower-quality substitute.
@@ -47,32 +48,9 @@
 
 ## Current Hourly Refresh Result
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$10,001.78 equity / $7,618.05 cash / $17,619.83 buying power**.
-- [x] Current unrealized P&L is **+$1.81** overall (**AVGO +$2.24, QQQ +$3.33, QTUM -$0.94, RKLB +$0.36, SOXX -$3.18**).
+- [x] Account snapshot: **$10,002.34 equity / $7,618.05 cash / $17,620.39 buying power**.
+- [x] Current unrealized P&L is about **+$2.34** overall (**AVGO +$1.55, QQQ +$3.08, QTUM -$1.08, RKLB +$0.28, SOXX -$1.49**).
 - [x] Latest Alpaca bars refreshed for the full universe; several remain **thin / stale** because the market is closed.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] News fallback stayed **constructive for GOOG**, **negative for HOOD**, and **insufficient / non-actionable** for macro, semis, RKLB, and top-investor searches.
-- [x] Rechecked live prices: **GOOG 379.03** remained below the breakout trigger and above the pullback re-entry band, so no new entry was justified.
+- [x] Recent fallback news stayed **constructive for GOOG**, **negative for HOOD**, and **insufficient / non-actionable** for top-investor moves, RKLB, and broad semiconductor headlines.
 - [x] **No trade is authorized while the market is closed.**
-
-## Current Tactical Cycle Check — 2026-05-05
-- [x] Rechecked live account, positions, and latest prices; no material allocation drift required action.
-- [x] **GOOG** stayed below the **384.5** breakout trigger and above the **376** reclaim threshold, so no entry was justified.
-- [x] No existing holding hit its trim or stop level; all positions stayed inside their hold bands.
-- [x] The market remained closed, so the correct action was to stay flat and preserve cash.
-
-## Current Tactical Cycle Check — 2026-05-05 04:40 ET
-- [x] Refreshed live account: equity **$10,002.93** / cash **$7,618.05** / buying power **$17,620.98**.
-- [x] Refreshed live positions: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**; no position drift required action.
-- [x] Rechecked latest prices: **AVGO 418.98, QQQ 676.53, QTUM 136.53, RKLB 81.37, SOXX 467.47, GOOG 379.03**.
-- [x] **GOOG** remained below **384.5** and above **376**, so no entry was justified.
-- [x] Recent **GOOG Reuters** coverage remained constructive, but broader macro headlines still showed Middle East / oil risk-off pressure; no catalyst overrode the no-trade rule while the market is closed.
-- [x] No trade was authorized; continue to wait for regular-hours confirmation.
-
-## Current Tactical Cycle Check — 2026-05-05 04:50 ET
-- [x] Refreshed live account: equity **$10,002.79** / cash **$7,618.05** / buying power **$17,620.84**.
-- [x] Refreshed live positions: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**; no position drift required action.
-- [x] Rechecked latest prices: **AVGO 419.02, QQQ 676.45, QTUM 136.53, RKLB 81.35, SOXX 467.43, GOOG 379.03**.
-- [x] **GOOG** remained below **384.5** and above **376**, so no entry was justified.
-- [x] Recent **GOOG Reuters** coverage remained constructive, but broader macro risk-off headlines still pointed to Middle East / oil pressure; no catalyst overrode the no-trade rule while the market remained effectively closed.
-- [x] No trade was authorized; continue to wait for regular-hours confirmation.
