@@ -66,9 +66,8 @@
 
 ## Tactical Cycle Log — 2026-05-06
 - [x] Refreshed account / positions / clock / latest prices.
-- [x] No orders were submitted because the QQQ add trigger was not fully authorized: **QQQ > 683.1** was present, but **SPY remained below 725.1** and the tape was still extended-hours / thin.
+- [x] No orders were submitted because the market was still closed and the QQQ add trigger was not fully authorized.
 - [x] Existing sell levels for **AVGO, GOOG, QQQ, QTUM, and SOXX** were not hit, so the book remains unchanged.
-- [x] Follow-up refresh confirmed the same no-trade posture: **QQQ 682.76** remained below **683.1**, **SPY 723.94** remained below **725.1**, and several actionable symbols still had thin after-hours trade counts.
-- [x] Live account stayed effectively flat at about **$10,058.34 equity / $7,774.88 cash / $17,833.22 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Late-cycle recheck confirmed no trade: although extended-hours references showed **QQQ ~687.08** and **SPY ~726.55**, the next-session rule still requires **regular-hours confirmation after 09:40 ET**, so the entry remained unauthorized.
-- [x] Current account remained about **$10,058.50 equity / $7,774.88 cash / $17,833.38 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Refreshed latest values show **QQQ 682.76** below **683.1** and **SPY 723.94** below **725.1**, so the breakout entry stayed inactive.
+- [x] Live account refreshed to about **$10,062.08 equity / $7,774.88 cash / $17,836.96 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Current setup still requires **regular-hours confirmation after 09:40 ET** before any fresh add, so the entry remains unauthorized.
