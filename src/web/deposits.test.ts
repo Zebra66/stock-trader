@@ -7,6 +7,7 @@ import {
   addDeposit,
   totalInvestedAt,
   computePnlPercent,
+  syncDepositsFromAlpaca,
   type DepositEntry,
 } from './deposits';
 import { buildDashboardData } from './dashboard_data';
@@ -185,5 +186,52 @@ describe('buildDashboardData P&L history', () => {
     expect(data.totalInvested).toBe(25000);
     expect(data.currentPnl).toBeCloseTo(1000, 2);       // 26000 - 25000
     expect(data.currentPnlPct).toBeCloseTo(4.0, 2);    // 1000 / 25000 * 100
+  });
+});
+
+// ── syncDepositsFromAlpaca ───────────────────────────────────────────────────
+
+describe('syncDepositsFromAlpaca', () => {
+  test('syncs new deposits from Alpaca without duplicating existing ones', async () => {
+    await withTempDeposits([{ amount: 1000, at: '2026-05-01T10:00:00Z', note: 'existing' }], async () => {
+      const mockClient = {
+        getAccountActivities: async () => [
+          { activity_type: 'CSD', net_amount: '1000', transaction_time: '2026-05-01T10:00:00Z' }, // Duplicate
+          { activity_type: 'CSD', net_amount: '500', transaction_time: '2026-05-02T10:00:00Z' }, // New deposit
+          { activity_type: 'CSW', net_amount: '200', transaction_time: '2026-05-03T10:00:00Z' }, // New withdrawal
+        ]
+      };
+
+      await syncDepositsFromAlpaca(mockClient);
+
+      const entries = await readDeposits();
+      expect(entries).toHaveLength(3);
+      
+      expect(entries[0]?.amount).toBe(1000);
+      expect(entries[0]?.note).toBe('existing');
+
+      expect(entries[1]?.amount).toBe(500);
+      expect(entries[1]?.note).toBe('Auto-synced CSD');
+
+      expect(entries[2]?.amount).toBe(-200);
+      expect(entries[2]?.note).toBe('Auto-synced CSW');
+    });
+  });
+
+  test('does not write to file if no new deposits are found', async () => {
+    await withTempDeposits([{ amount: 1000, at: '2026-05-01T10:00:00Z' }], async () => {
+      const mockClient = {
+        getAccountActivities: async () => [
+          { activity_type: 'CSD', net_amount: '1000', transaction_time: '2026-05-01T10:00:00Z' }
+        ]
+      };
+
+      const statBefore = await fs.stat(ORIG_FILE);
+      await new Promise(r => setTimeout(r, 10)); // Ensure mtime would change if written
+      await syncDepositsFromAlpaca(mockClient);
+      const statAfter = await fs.stat(ORIG_FILE);
+      
+      expect(statAfter.mtimeMs).toBe(statBefore.mtimeMs);
+    });
   });
 });

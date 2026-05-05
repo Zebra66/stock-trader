@@ -139,7 +139,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 ### Code Quality & Git
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
-- **Commit Prefix:** ONLY commits created autonomously by the Pi.dev agent runtime may use the `[agent]` prefix in the commit message (e.g. `[agent] feat: update trading strategy`). Do NOT use `[agent]` for any interactive commits made in OpenCode or for any other human-driven or non-Pi.dev workflow.
+- **Commit Prefix:** NEVER create commits with a prefix of `[agent]` in an interactive session with me!!! Commits with that prefix are only OK to be created by the autonomous code of this project (like the Pi.dev runtime) to distinguish them from ones that we do interactively during development!!
 
 ### Code Development Framework: Bun Only
 - **PRIMARY RUNTIME IS BUN.** If you need to write any new code, scripts, or utilities, write them in **TypeScript and execute with `bun run <file.ts>`**. Do NOT use Python, Node.js, or any other runtime.

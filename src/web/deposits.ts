@@ -1,5 +1,8 @@
 import * as fs from 'fs/promises';
+import { getLogger } from '../logger';
+import { getDefaultAlpacaClient } from '../tools/alpaca_client_factory';
 
+const logger = getLogger('deposits');
 const DEPOSITS_FILE = 'data/investment_deposits.json';
 
 export interface DepositEntry {
@@ -61,4 +64,54 @@ export function totalInvestedAt(deposits: DepositEntry[], atMs: number): number 
 export function computePnlPercent(currentEquity: number, totalInvested: number): number {
   if (totalInvested <= 0) return 0;
   return ((currentEquity - totalInvested) / totalInvested) * 100;
+}
+
+/**
+ * Periodically sync transfers and cash deposits from Alpaca.
+ * This reads 'TRANS', 'CSD', and 'CSW' activities and appends them
+ * if they are not already recorded in the local file.
+ */
+export async function syncDepositsFromAlpaca(client?: any): Promise<void> {
+  try {
+    const alpaca = client ?? getDefaultAlpacaClient();
+    // Catch errors gracefully if the paper account doesn't support these types
+    const activities = await alpaca.getAccountActivities({ activityTypes: ['CSD', 'CSW', 'TRANS'] }).catch(() => []);
+    
+    if (!activities || activities.length === 0) return;
+
+    const existingDeposits = await readDeposits();
+    const existingSet = new Set(existingDeposits.map(d => `${d.at}_${d.amount}`));
+    
+    let added = false;
+    for (const activity of activities) {
+      if (!activity.transaction_time || !activity.net_amount) continue;
+      
+      const amount = Number(activity.net_amount);
+      if (!amount || Number.isNaN(amount)) continue;
+      
+      const isWithdrawal = activity.activity_type === 'CSW';
+      const finalAmount = isWithdrawal ? -Math.abs(amount) : Math.abs(amount);
+      const at = activity.transaction_time;
+      
+      const key = `${at}_${finalAmount}`;
+      if (!existingSet.has(key)) {
+        existingDeposits.push({
+          amount: finalAmount,
+          at,
+          note: `Auto-synced ${activity.activity_type}`
+        });
+        existingSet.add(key);
+        added = true;
+      }
+    }
+
+    if (added) {
+      existingDeposits.sort((a, b) => new Date(a.at).getTime() - new Date(b.at).getTime());
+      await writeDeposits(existingDeposits);
+      logger.info('Synced new deposits/withdrawals from Alpaca');
+    }
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    logger.warn({ err: msg }, 'Failed to sync deposits from Alpaca');
+  }
 }

@@ -45,6 +45,7 @@ Tell the sub-agent to use `GPT-5.4 mini` and to execute this workflow:
 - never stage obvious secrets or unrelated changes
 - run the relevant verification commands before commit
 - create a new commit without amend unless the user explicitly asked for amend
+- never use the `[agent]` prefix in the commit message (this is reserved for autonomous headless runs)
 - push the current branch normally
 - never use force push unless the user explicitly asked for it
 - return a concise report with: staged files, verification results, commit SHA, pushed branch, and any skipped files
@@ -117,7 +118,7 @@ Execute a safe git workflow:
 2. Stage only files that belong to the requested change.
 3. Do not stage unrelated edits, generated noise, or likely secrets.
 4. Run the smallest relevant verification before commit.
-5. Create a new commit that follows repo commit conventions.
+5. Create a new commit that follows repo commit conventions. NEVER use the `[agent]` prefix in the commit message!
 6. Push the current branch safely. Never force-push unless the user explicitly asked.
 7. Return: verification results, staged files, commit SHA, branch pushed, and any issues.
 ```
@@ -129,6 +130,7 @@ Execute a safe git workflow:
 - amending by default
 - force-pushing to get around a rejected push
 - trusting the sub-agent result without checking local git state afterward
+- using the `[agent]` prefix in the commit message
 
 ## Quick Reference
 

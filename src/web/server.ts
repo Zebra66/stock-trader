@@ -1487,3 +1487,8 @@ const app = new Elysia()
   .listen(PORT);
 
 logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);
+
+// Start background task to sync deposits hourly
+import { syncDepositsFromAlpaca } from './deposits';
+setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
+syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
