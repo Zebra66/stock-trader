@@ -20,19 +20,19 @@ The next regular session should stay focused on **protecting capital, avoiding s
 - **What must change next session:** only add on **high-quality regular-hours confirmation**; avoid redundant semi chasing; keep gross exposure capped until the account is back above breakeven.
 
 ## Portfolio State
-- **Equity:** $9,994.28
+- **Equity:** $9,994.13
 - **Cash:** $7,618.05
-- **Buying power:** $17,612.33
+- **Buying power:** $17,612.18
 - **Gross exposure:** ~23.8%
 - **Market status:** closed
-- **Alpaca clock timestamp:** 2026-05-05T02:40:26.278378417-04:00
+- **Alpaca clock timestamp:** 2026-05-05T02:50:14.763503009-04:00
 - **Current positions:**
   - **AVGO:** 1 share @ 416.95 | market value **$418.17** | unrealized P&L **+$1.22** (+0.29%) | allocation **4.18%**
-  - **QQQ:** 1 share @ 673.26 | market value **$674.95** | unrealized P&L **+$1.69** (+0.25%) | allocation **6.75%**
+  - **QQQ:** 1 share @ 673.26 | market value **$675.00** | unrealized P&L **+$1.74** (+0.26%) | allocation **6.75%**
   - **QTUM:** 2 shares @ 137.00 | market value **$274.00** | unrealized P&L **$0.00** (0.00%) | allocation **2.74%**
-  - **RKLB:** 1 share @ 80.88 | market value **$80.51** | unrealized P&L **-$0.37** (-0.46%) | allocation **0.81%**
-  - **SOXX:** 2 shares @ 468.43 | market value **$928.60** | unrealized P&L **-$8.26** (-0.88%) | allocation **9.29%**
-- **Overall unrealized P&L:** **-$5.72**
+  - **RKLB:** 1 share @ 80.88 | market value **$80.45** | unrealized P&L **-$0.43** (-0.53%) | allocation **0.80%**
+  - **SOXX:** 2 shares @ 468.43 | market value **$928.46** | unrealized P&L **-$8.40** (-0.90%) | allocation **9.29%**
+- **Overall unrealized P&L:** **-$5.87**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>` for the full universe
@@ -180,3 +180,10 @@ The next regular session should stay focused on **protecting capital, avoiding s
 - **Live positions:** **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
 - **Current live prices:** AVGO **418.17**, EIS **132.54**, GLD **414.26**, GOOG **379.03**, HOOD **76.56**, META **609.52**, NVDA **197.86**, QQQ **674.95**, QTUM **137.00**, RKLB **80.51**, SHLD **68.05**, SOXX **464.30**, VOO **660.10**, ARKX **32.55**, SPY **717.80**.
 - **Next expected action:** hold cash, keep existing winners, and wait for the next regular-hours session to see whether **GOOG** or an existing stop / trim level becomes actionable.
+
+## Tactical Execution Summary — 2026-05-05 02:50 ET
+- **Cycle result:** no trades executed; the market is still closed and none of the tracked symbols reached a valid regular-hours trigger.
+- **Live account:** **$9,994.13 equity**, **$7,618.05 cash**, **$17,612.18 buying power**, **23.8% gross exposure**.
+- **Live positions:** **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
+- **Current live prices:** AVGO **418.17**, EIS **132.54**, GLD **414.26**, GOOG **379.03**, HOOD **76.56**, META **609.52**, NVDA **197.86**, QQQ **675.00**, QTUM **137.00**, RKLB **80.45**, SHLD **68.05**, SOXX **464.23**, VOO **660.10**, ARKX **32.55**, SPY **717.80**.
+- **Next expected action:** keep cash high, maintain the current winners, and wait for regular-hours confirmation on **GOOG** or a confirmed stop / trim event in an existing holding.
