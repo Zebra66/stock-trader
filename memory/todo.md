@@ -1,8 +1,8 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,984.26)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Current live positions: **AVGO 1 share @ 415.06**, **QQQ 1 share @ 672.21**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.62**, **SOXX 2 shares @ 462.16**.
+- [ ] Use **account equity ($9,984.14)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Current live positions: **AVGO 1 share @ 414.50**, **QQQ 1 share @ 672.65**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.62**, **SOXX 2 shares @ 462.16**.
 - [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
@@ -71,5 +71,13 @@
 - [x] Live positions refreshed: **AVGO 1 @ 415.06, QQQ 1 @ 672.21, QTUM 2 @ 137.00, RKLB 1 @ 80.62, SOXX 2 @ 462.16**.
 - [x] Latest prices refreshed for **AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX**.
 - [x] Google News RSS check: coverage remained mixed but no adverse headline was strong enough to justify a trade.
+- [x] Market remains **closed**; **GOOG 379.03** is still below the **383.5** breakout trigger and did not reach the **375.0-376.0 pullback / 377.0 reclaim** setup.
+- [x] No orders placed this cycle; preserve cash and wait for regular-hours confirmation.
+
+## 2026-05-05 Tactical Check — 10-Minute Update
+- [x] Live Alpaca account refreshed: **$9,984.14 equity / $7,618.05 cash / $17,602.19 buying power**.
+- [x] Live positions refreshed: **AVGO 1 @ 414.50, QQQ 1 @ 672.65, QTUM 2 @ 137.00, RKLB 1 @ 80.62, SOXX 2 @ 462.16**.
+- [x] Latest prices refreshed for **AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX**.
+- [x] Google News RSS check remained mixed-to-positive for GOOG / semis and did not surface any adverse headline strong enough to justify a trade.
 - [x] Market remains **closed**; **GOOG 379.03** is still below the **383.5** breakout trigger and did not reach the **375.0-376.0 pullback / 377.0 reclaim** setup.
 - [x] No orders placed this cycle; preserve cash and wait for regular-hours confirmation.
