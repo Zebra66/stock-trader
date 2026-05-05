@@ -307,6 +307,7 @@ const app = new Elysia()
     <div class="stat-card"><span class="stat-ico">💰</span><div class="stat-lbl">Total Equity</div><div class="stat-val cyan" id="eq-val">—</div><div class="stat-sub" id="eq-pnl-pct" style="font-size:.75rem;margin-top:.2rem;font-weight:600"></div></div>
     <div class="stat-card"><span class="stat-ico">💵</span><div class="stat-lbl">Cash</div><div class="stat-val cyan" id="cash-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">📅</span><div class="stat-lbl">Day Change</div><div class="stat-val" id="dc-val">—</div></div>
+    <div class="stat-card"><span class="stat-ico">📈</span><div class="stat-lbl">Total P&amp;L</div><div class="stat-val" id="pnl-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">⚡</span><div class="stat-lbl">Buying Power</div><div class="stat-val cyan" id="bp-val">—</div></div>
     <div class="stat-card"><span class="stat-ico">📊</span><div class="stat-lbl">vs S&amp;P 500</div><div class="stat-val" id="sp500-val">—</div><div class="stat-sub" id="sp500-sub" style="font-size:.68rem;margin-top:.2rem;color:var(--t3)"></div></div>
   </div>
@@ -434,6 +435,8 @@ const app = new Elysia()
     document.getElementById('bp-val').innerText='—';
     document.getElementById('dc-val').innerText='—';
     document.getElementById('dc-val').className='stat-val';
+    const pnlClr=document.getElementById('pnl-val');
+    if(pnlClr){pnlClr.innerText='—';pnlClr.className='stat-val';}
     if(chart){chart.destroy();chart=null;}
   }
   async function selectMode(mode){
@@ -530,6 +533,13 @@ const app = new Elysia()
       document.getElementById('eq-val').innerText=formatMoney(d.equity);
       document.getElementById('cash-val').innerText=formatMoney(d.cash);
       document.getElementById('bp-val').innerText=formatMoney(d.buyingPower);
+
+      const pnlVal=d.currentPnl??0;
+      const pnlEl=document.getElementById('pnl-val');
+      if(pnlEl){
+        pnlEl.innerText=(pnlVal>=0?'+$':'-$')+Math.abs(pnlVal).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+        pnlEl.className='stat-val '+(pnlVal>=0?'green':'red');
+      }
 
       // Show P&L% in parentheses under Total Equity
       const pnlPct=d.currentPnlPct??0;
