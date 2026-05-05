@@ -2,9 +2,9 @@
 *Refreshed 2026-05-05 07:00 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,001.50)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,001.98)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
-- [ ] Current gross exposure is **23.83%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
+- [ ] Current gross exposure is **23.84%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
 - [ ] The market is currently **closed / pre-market**. **Do nothing while closed.**
 - [ ] Because several broker quotes are thin, require **regular-hours confirmation** before acting on any breakout / breakdown.
@@ -48,9 +48,10 @@
 
 ## Current Hourly Refresh Result
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$10,001.50 equity / $7,618.05 cash / $17,619.55 buying power**.
-- [x] Current unrealized P&L is about **+$1.50** overall (**AVGO +$1.33, QQQ +$2.79, QTUM -$0.80, RKLB +$0.22, SOXX -$2.04**).
+- [x] Account snapshot: **$10,001.98 equity / $7,618.05 cash / $17,620.03 buying power**.
+- [x] Current unrealized P&L is about **+$1.98** overall (**AVGO +$1.22, QQQ +$2.93, QTUM -$0.80, RKLB +$0.19, SOXX -$1.56**).
 - [x] Latest Alpaca prices were refreshed for the full universe; several remain **thin / stale** because the market is closed.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
 - [x] Recent dated fallback news stayed **constructive for GOOG / AI-capex**, **supportive but selective for semis**, and **insufficient for fresh top-investor moves**.
 - [x] **No trade is authorized while the market is closed.**
+- [x] Tactical cycle refreshed latest prices again; **GOOG** still did **not** trigger because the market remains closed and the after-hours print stayed thin.
