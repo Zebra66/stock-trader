@@ -41,3 +41,11 @@
 - Quote quality: Alpaca after-hours / pre-market bars remained thin for **GOOG, EIS, GLD, META, NVDA, QQQ, QTUM, SOXX**; regular-session Yahoo Finance chart data was again used for multi-timeframe returns and structure.
 - External context: FMP remained unavailable because `FMP_API_KEY` is missing. Reuters-dated fallback news from **2026-04-29 to 2026-04-30** supported **GOOG / Google Cloud / AI-capex leadership** and kept semis constructive but selective. **HOOD** and **top-investor** coverage remained insufficient for action.
 - Decision: no trade while the market is closed; hold the existing AI / semiconductor sleeve, keep gross exposure capped near **30%**, keep at least **70% cash**, and keep **GOOG** as the only approved fresh long once regular-hours confirmation appears.
+
+## 09:00 ET — Hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,011.19**, cash **$7,618.05**, buying power **$17,629.24**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: broker prints were still thin pre-market for several actionable names, including **GOOG**; Yahoo intraday confirmation showed **GOOG ~380.6** pre-market against a regular-session **5-day high of 384.18**.
+- External context: FMP remained unavailable because `FMP_API_KEY` is missing, so Yahoo Finance chart data was used again. Reuters / Google News RSS kept the macro backdrop constructive for **AI / cloud**, but flagged **oil / Middle East stress** as the main near-term macro risk.
+- Decision: no trade while the market is closed; continue holding the current AI / semiconductor sleeve, avoid trimming tiny winners too early, keep gross exposure capped near **30%**, keep at least **70% cash**, and keep **GOOG** as the only approved fresh long once regular-hours confirmation appears.
