@@ -165,3 +165,13 @@ This run occurred **after the regular-session close**, so the correct posture is
 - Latest after-hours references: **AVGO 427.40**, **GOOG 384.10**, **QQQ 681.83**, **QTUM 139.17**, **SOXX 484.08**, **SPY 723.78**.
 - No position has hit a stop or trim level; the book remains constructively long but underinvested.
 - Next expected action: wait for the next regular session; **QQQ** remains the only fresh-add candidate, and only if it reclaims **683.1+** while **SPY stays above 724.8** and the tape is orderly.
+
+## Tactical Execution Summary — 2026-05-06
+- Refreshed live Alpaca **account, positions, latest prices, and market clock** before the next session.
+- Market status is still **closed**; Alpaca clock shows **next open 2026-05-06 09:30 ET** and **next close 2026-05-06 16:00 ET**.
+- Live account now shows **$10,038.61 equity / $7,774.88 cash / $17,813.49 buying power**.
+- Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Latest quotes: **AVGO 427.79**, **GOOG 384.16**, **QQQ 682.09**, **QTUM 139.20**, **SOXX 482.74**, **SPY 723.94**, **NVDA 196.13**, **META 604.05**, **HOOD 77.21**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.265**.
+- No buy/sell condition was met: **QQQ** stayed below **683.1** and **SPY** stayed below **724.8**, so the correct action was to remain inactive.
+- Quote quality is still thin in **EIS**, **QTUM**, **SHLD**, **VOO**, and **ARKX**, so any future action there still needs second-source confirmation.
+- Next expected action: wait for a regular-hours confirmation; if the tape opens strong enough, **QQQ** remains the only fresh-add candidate, otherwise stay flat and protect cash.

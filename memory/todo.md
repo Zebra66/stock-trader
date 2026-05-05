@@ -69,3 +69,11 @@
 - [x] Live positions unchanged: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - [x] Latest prices remain below the next-session QQQ trigger: **QQQ 681.83** vs **683.1**, **SPY 723.78** vs **724.8**.
 - [x] No execution warranted this cycle; stay patient until regular-hours confirmation.
+
+## Latest Tactical Check — 2026-05-06 pre-open
+- [x] Live account refreshed: **$10,038.61 equity / $7,774.88 cash / $17,813.49 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Latest prices: **AVGO 427.79**, **GOOG 384.16**, **QQQ 682.09**, **QTUM 139.20**, **SOXX 482.74**, **SPY 723.94**, **NVDA 196.13**, **META 604.05**, **HOOD 77.21**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.265**.
+- [x] QQQ still has **not** cleared the fresh-add trigger: **682.09 < 683.1**.
+- [x] SPY is still below the risk filter: **723.94 < 724.8**.
+- [x] No trade was justified this cycle; stay flat until regular-hours confirmation or the next hourly refresh.
