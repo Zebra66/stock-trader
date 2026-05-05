@@ -57,14 +57,14 @@
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
 
 ## Current Hourly Refresh Result
-- [x] Live Alpaca account confirmed the book is **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
-- [x] Current account snapshot: **$10,031.49 equity / $7,698.25 cash / $17,729.74 buying power**.
-- [x] Current unrealized P&L is about **+$19.68** overall.
-- [x] Latest Alpaca prices refreshed: **AVGO 429.99**, **GOOG 382.58**, **QQQ 681.29**, **QTUM 139.04**, **RKLB 77.05**, **SOXX 483.90**, **NVDA 197.64**, **META 601.75**, **HOOD 77.41**, **SPY 723.35**.
-- [x] Quote-quality warning: **EIS TradeCount 1**, **GLD 1**, **QTUM 1**, **SHLD 4**, **VOO 2**, **ARKX 1** — require second-source confirmation before acting in those names.
+- [x] Live Alpaca account confirms the book is now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**; **RKLB** has been fully exited.
+- [x] Current account snapshot: **$10,033.90 equity / $7,774.88 cash / $17,808.78 buying power**.
+- [x] Current unrealized P&L is about **+$21.62** overall.
+- [x] Latest Alpaca prices refreshed: **AVGO 431.34**, **GOOG 381.99**, **QQQ 681.95**, **QTUM 139.505**, **SOXX 485.40**, **RKLB 76.82**, **SPY 723.91**, **NVDA 197.20**, **META 603.20**, **HOOD 77.41**.
+- [x] Quote-quality warning: **EIS TradeCount 1**, **GLD 1**, **QTUM 3**, **SHLD 3**, **VOO 2**, **ARKX 1** — require second-source confirmation before acting in those names.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
 - [x] Reuters-prioritized Google News RSS fallback remained constructive for **Alphabet / cloud / AI**, while the broader tape softened on **Middle East / oil** worries.
-- [x] Strategy change this hour: none. Keep the book selective, keep new capital flat unless **GOOG** confirms a breakout, and keep **RKLB** as the recycle candidate.
+- [x] Strategy change this hour: none. Keep the book selective, keep new capital flat unless **GOOG** confirms a breakout, and keep the book otherwise unchanged.
 
 ## Tactical Cycle Outcome — 2026-05-05 13:09 ET
 - Checked live account / positions / prices again before acting.
@@ -80,3 +80,10 @@
 - Executed the active stop/recycle signal: **sold 1 share of RKLB at a marketable limit of $76.55** after regular-hours confirmation showed price below the **76.6** stop.
 - Live positions are now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - Completed condition removed from the active watchlist for now; only the **GOOG** breakout buy remains the authorized fresh-capital setup.
+
+## Tactical Cycle Outcome — 2026-05-05 13:49 ET
+- Refreshed live Alpaca state after the RKLB exit cleared through broker records: **equity $10,033.90**, **cash $7,774.88**, **buying power $17,808.78**, **gross exposure about 22.5%**, and **cash weight about 77.5%**.
+- Live positions are now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**; RKLB is fully exited.
+- Latest prices: **AVGO $431.34**, **GOOG $381.99**, **QQQ $681.95**, **QTUM $139.505**, **RKLB $76.82**, **SOXX $485.40**, **SPY $723.91**.
+- Decision: **no trades**; **GOOG** remains below the **389.1** breakout trigger, **RKLB** is no longer held, and the other hold / trim thresholds were not reached.
+- Next expected action: stay flat on new capital unless **GOOG** reclaims **389.1** with regular-hours confirmation; otherwise keep the selective book unchanged.
