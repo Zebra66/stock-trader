@@ -2,9 +2,9 @@
 *Refreshed 2026-05-05 12:01 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,030.19)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,034.74)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 1**.
-- [ ] Current gross exposure is **23.25%**. Cap gross exposure near **28%**.
+- [ ] Current gross exposure is **23.30%**. Cap gross exposure near **28%**.
 - [ ] Keep at least **72% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **open**.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
@@ -50,16 +50,16 @@
 
 ## Current Hourly Refresh Result
 - [x] Live Alpaca account confirmed the book is **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
-- [x] Current account snapshot: **$10,030.19 equity / $7,698.25 cash / $17,728.44 buying power**.
-- [x] Current unrealized P&L is about **+$18.20** overall.
-- [x] Latest Alpaca prices refreshed: **AVGO 426.95**, **GOOG 383.75**, **QQQ 681.33**, **QTUM 139.30**, **RKLB 77.50**, **SOXX 483.91**, **NVDA 197.66**, **META 602.26**, **HOOD 77.65**, **SPY 723.08**.
-- [x] Quote-quality warning: **EIS TradeCount 1**, **GLD 3**, **QTUM 1**, **SHLD 1**, **ARKX 2**, **SOXX 7** — require second-source confirmation before acting in those names.
+- [x] Current account snapshot: **$10,034.74 equity / $7,698.25 cash / $17,732.99 buying power**.
+- [x] Current unrealized P&L is about **+$22.25** overall.
+- [x] Latest Alpaca prices refreshed: **AVGO 428.39**, **GOOG 384.40**, **QQQ 681.65**, **QTUM 139.405**, **RKLB 77.07**, **SOXX 485.08**, **NVDA 197.94**, **META 601.335**, **HOOD 77.20**, **SPY 723.58**.
+- [x] Quote-quality warning: **EIS TradeCount 1**, **GLD 4**, **QTUM 1**, **SHLD 1**, **ARKX 5**, **SOXX 9** — require second-source confirmation before acting in those names.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
 - [x] Reuters-prioritized Google News RSS fallback remained constructive for **Alphabet / cloud / semis**, with no fresh high-conviction positive catalyst for **RKLB**.
 - [x] Strategy change this hour: the book is still **slightly trailing SPY**, but the gap is small enough that the right answer is **one selective GOOG add at breakout only**, not broad chasing.
 
 ## Tactical Execution Summary
-- **Cycle time:** 2026-05-05 16:11 ET
+- **Cycle time:** 2026-05-05 16:19 ET
 - **Action taken:** No orders placed.
-- **Why:** **GOOG** stayed below the breakout trigger (**383.85 vs 389.2**), **RKLB** stayed above the downside stop (**77.14 vs 77.0**), and every other symbol stayed inside its hold / trim zone.
+- **Why:** **GOOG** stayed below the breakout trigger (**384.4 vs 389.2**), **RKLB** stayed above the downside stop (**77.07 vs 77.0**), and every other symbol stayed inside its hold / trim zone.
 - **Next watch:** keep new capital flat unless **GOOG** reclaims and holds **389.2** in regular hours; otherwise wait for either a clearer **RKLB** recycle or the next hourly directive.
