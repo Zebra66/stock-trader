@@ -1,11 +1,13 @@
 import { describe, expect, test } from 'bun:test';
 import {
+  createSerializedScheduledRunner,
   createSerializedRunner,
   getDelayUntilNextHourlyRun,
   getDelayUntilNextTacticalRun,
   getNextHourlyRunAt,
   getNextTacticalRunAt,
   parseHarnessArgs,
+  runMarketGatedAgent,
   shouldRunWhenMarketClosed,
 } from './harness';
 
@@ -119,5 +121,40 @@ describe('harness run serialization', () => {
     await Promise.all([hourlyRun, tacticalRun]);
 
     expect(events).toEqual(['start:hourly', 'end:hourly', 'start:tactical', 'end:tactical']);
+  });
+
+  test('rechecks market status after a queued run waits behind another run', async () => {
+    const events: string[] = [];
+    let marketOpen = true;
+    let releaseHourly: (() => void) | undefined;
+    const hourlyStarted = Promise.withResolvers<void>();
+
+    const runSerialized = createSerializedScheduledRunner((mode, options) => runMarketGatedAgent(mode, options, {
+      isMarketOpen: async () => marketOpen,
+      runGitPull: async () => {
+        events.push(`pull:${mode}`);
+      },
+      spawnAgent: async (mode) => {
+        events.push(`start:${mode}`);
+        if (mode === 'hourly') {
+          hourlyStarted.resolve();
+          await new Promise<void>((resolve) => {
+            releaseHourly = resolve;
+          });
+        }
+        events.push(`end:${mode}`);
+      },
+    }));
+
+    const hourlyRun = runSerialized('hourly', { forceRun: false });
+    await hourlyStarted.promise;
+
+    marketOpen = false;
+    const tacticalRun = runSerialized('tactical', { forceRun: false });
+
+    releaseHourly?.();
+    await Promise.all([hourlyRun, tacticalRun]);
+
+    expect(events).toEqual(['pull:hourly', 'start:hourly', 'end:hourly']);
   });
 });

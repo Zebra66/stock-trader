@@ -25,6 +25,13 @@ interface HarnessOptions {
 }
 
 type AgentRunFunction = (mode: 'hourly' | 'tactical') => Promise<void>;
+type ScheduledRunFunction = (mode: 'hourly' | 'tactical', options: HarnessOptions) => Promise<void>;
+
+interface MarketGatedAgentDeps {
+  isMarketOpen: () => Promise<boolean>;
+  runGitPull: () => Promise<void>;
+  spawnAgent: AgentRunFunction;
+}
 
 export function setPaused(paused: boolean) {
   isPaused = paused;
@@ -82,7 +89,45 @@ export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction 
   };
 }
 
-const runAgentSerialized = createSerializedRunner(spawnAgent);
+export function createSerializedScheduledRunner(run: ScheduledRunFunction): ScheduledRunFunction {
+  let queue = Promise.resolve();
+
+  return (mode, options) => {
+    const nextRun = queue.then(() => run(mode, options));
+    queue = nextRun.catch((error: unknown) => {
+      logger.error({ mode, error: (error as Error).message }, 'Serialized scheduled run failed');
+    });
+
+    return nextRun;
+  };
+}
+
+export async function runMarketGatedAgent(
+  mode: 'hourly' | 'tactical',
+  options: HarnessOptions,
+  deps: MarketGatedAgentDeps = { isMarketOpen, runGitPull, spawnAgent },
+): Promise<void> {
+  const open = await deps.isMarketOpen();
+  if (!open && !shouldRunWhenMarketClosed(options.forceRun)) {
+    logger.info({ mode }, 'Market is closed. Skipping scheduled run');
+    return;
+  }
+
+  if (!open && options.forceRun) {
+    logger.info({ mode }, 'Market is closed. Continuing because --force-run is enabled');
+  }
+
+  // Only pull when the run is allowed — no point syncing code when nothing can trade.
+  await deps.runGitPull();
+
+  // NOTE: agent.ts is spawned as a fresh child process every cycle, so it always
+  // picks up any code changes that arrived via git pull automatically.
+  // The harness process itself (this file) does NOT auto-reload after a git pull —
+  // it must be restarted manually if harness.ts itself changes.
+  await deps.spawnAgent(mode);
+}
+
+const runScheduledSerialized = createSerializedScheduledRunner(runMarketGatedAgent);
 
 export function getDelayUntilNextHourlyRun(now: Date): number {
   return getNextHourlyRunAt(now).getTime() - now.getTime();
@@ -128,25 +173,7 @@ async function runWhenMarketOpen(
   mode: 'hourly' | 'tactical',
   options: HarnessOptions,
 ): Promise<void> {
-  const open = await isMarketOpen();
-  if (!open && !shouldRunWhenMarketClosed(options.forceRun)) {
-    logger.info({ mode }, 'Market is closed. Skipping scheduled run');
-    return;
-  }
-
-  if (!open && options.forceRun) {
-    logger.info({ mode }, 'Market is closed. Continuing because --force-run is enabled');
-  }
-
-  // Only pull when the market is open — no point syncing code when nothing can trade
-  await runGitPull();
-
-  // NOTE: agent.ts is spawned as a fresh child process every cycle, so it always
-  // picks up any code changes that arrived via git pull automatically.
-  // The harness process itself (this file) does NOT auto-reload after a git pull —
-  // it must be restarted manually if harness.ts itself changes.
-
-  await runAgentSerialized(mode);
+  await runScheduledSerialized(mode, options);
 }
 
 function scheduleAlignedRun(
