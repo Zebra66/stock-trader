@@ -43,10 +43,18 @@
 
 ## 2026-05-05 Hourly Refresh Notes
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,991.64 equity / $7,618.05 cash / $17,609.69 buying power**.
-- [x] Current unrealized P&L is **-$8.36** overall (**AVGO -$0.37, QQQ +$1.12, QTUM $0.00, RKLB -$0.25, SOXX -$8.86**).
+- [x] Account snapshot: **$9,992.71 equity / $7,618.05 cash / $17,610.76 buying power**.
+- [x] Current unrealized P&L is **-$7.29** overall (**AVGO -$0.12, QQQ +$1.43, QTUM $0.00, RKLB -$0.20, SOXX -$8.40**).
+- [x] Latest prices refreshed: **AVGO 416.83, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.69, QTUM 137.00, RKLB 80.68, SHLD 68.05, SOXX 464.23, VOO 660.10, ARKX 32.55**.
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] The market is currently **closed**, and several after-hours Alpaca prints were **thin**, so tactical action still requires **regular-hours confirmation**.
+- [x] GOOG did **not** trigger either the breakout or pullback-reclaim entry conditions, so no new capital was deployed.
 - [x] Best-add watchlist remains only **GOOG**; no add is authorized for **AVGO / QQQ / SOXX / QTUM / RKLB** this cycle.
 - [x] Prompt review complete: **no prompt change approved** this run.
+
+## 2026-05-05 Tactical Execution Log
+- [x] Reviewed all live conditions for **AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX**.
+- [x] No orders were executed because the market is closed and no symbol met a clean regular-hours trigger.
+- [x] Held all current positions; no trims or adds were justified after accounting for thin after-hours prints and trading friction.
+- [x] Next expected action: wait for the next regular session and only act if GOOG or an existing holding crosses its defined trigger with confirmation.
