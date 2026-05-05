@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,990.86)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,992.67)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **AVGO 1 share**, **QQQ 1 share**, **QTUM 2 shares**, **RKLB 1 share**, **SOXX 2 shares**.
-- [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
+- [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
@@ -72,7 +72,7 @@
 - **Market status:** closed; no regular-hours confirmation available for a new entry.
 - **Live book:** unchanged — **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - **Account snapshot:** **$9,992.67 equity / $7,618.05 cash / $17,610.72 buying power**.
-- **Latest Alpaca prices used:** **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 672.25, QTUM 135.63, RKLB 80.29, SHLD 68.05, SOXX 460.76, VOO 660.10, ARKX 32.55, SPY 717.80**.
-- **News check:** Google News RSS found no symbol-specific adverse headline for the active book; GOOG headlines stayed constructive, while weak META / HOOD coverage remained irrelevant because those names are not active buys.
+- **Latest Alpaca prices used:** **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.56, QTUM 137.00, RKLB 80.62, SHLD 68.05, SOXX 464.02, VOO 660.10, ARKX 32.55, SPY 717.80**.
+- **News check:** Google News RSS scan stayed mixed; GOOG remained constructive, while AVGO / SOXX were mixed-to-constructive and QQQ macro coverage still leaned cautious on oil / Middle East headlines.
 - **Action:** no trade. GOOG stayed below the breakout trigger and the book did not offer a friction-adjusted edge large enough to justify new risk.
 - **Next step:** keep cash high, hold current positions, and wait for a regular-hours GOOG confirmation or an existing stop / trim trigger.

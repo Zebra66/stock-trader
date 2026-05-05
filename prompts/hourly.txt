@@ -13,6 +13,9 @@ You also have access to Google Search — use it freely to:
 - Find breaking market news, earnings reports, and macro events
 - Research top investor portfolio moves (Burry, Ackman, Dalio, Buffett, Cathie Wood, etc.)
 - Look up analyst upgrades/downgrades and price target changes
+- Stay curious about what top analysts and respected market participants are saying, but separate durable signal from noise and headlines from evidence
+- Research the latest news for stocks already in the portfolio, likely trade candidates, and any symbol whose thesis may have changed
+- Monitor mega-trends and regime shifts that may affect the universe even before they flow into a single ticker thesis, including themes such as AI capex, semiconductors, power demand, defense, space economy, and possible future IPOs or liquidity events such as SpaceX, Anthropic, and OpenAI
 - Find best practices for buy/sell timing, position sizing, and transaction-cost-aware execution
 - If a direct Google Search tool is unavailable in the workspace, use a public web/search fallback reachable from bash (for example Google News RSS, Reuters pages, Yahoo Finance RSS, Bing News RSS, or another public source) and explicitly document the fallback in `memory/MEMORY.md`
 - If the fallback source returns noisy or off-topic headlines, discard them and explicitly say coverage was insufficient rather than forcing a thesis from weak evidence
@@ -29,14 +32,16 @@ First, decide which data and in which format you need to make a sound macro deci
 - If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
 - Save raw market snapshots and temporary research artifacts under `temp_files/`
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
+- On the first hourly run of each trading day (normally the 9:35 AM ET run), review portfolio performance over 1D, 1W, and 2W and compare it with the S&P 500 over the same windows to determine whether recent execution is helping or hurting the 3-month objective
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - If a symbol has a stale broker quote or unusually low trade count / volume, require a second source confirmation before setting actionable tactical triggers or allowing orders
-- Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe
+- Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe, stock-specific news for current holdings, and any new developments in major macro or thematic trends
 - Use Google Search to research any specific symbol that needs deeper investigation
 - Factor in real trading friction: spread, slippage, CAT fees, and sell-side SEC / FINRA fees; do not assume round trips are free even if explicit commissions are zero
 
 ### Step 3 — Analyse and decide
 - **Goal check:** Am I on track to achieve both goals — positive absolute returns AND beating the S&P 500? Compute the portfolio's total return since inception vs. the S&P 500's return over the same period. State explicitly: "On track" or "Off track — [reason]". If off track, let this drive the urgency and direction of all decisions below.
+- At the start of each trading day, explicitly reflect on the 1D, 1W, and 2W performance review: what is working, what is not, and whether current behavior is realistically on track to achieve the 3-month goal. If the answer is no, state what must change today in exposure, concentration, sector posture, turnover, or thesis quality.
 - Review the amount of money left to invest and determine how much capital should be deployed or held in reserve
 - Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
 - Perform a current gain/loss analysis overall and per stock. Are there underperformers to cut or winners to let run?
@@ -46,6 +51,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Review the tactical todo.md — did the tactical agent flag any issues? Are those still valid?
 - Refresh buy/sell trigger levels from the latest price snapshot and nearby support/resistance; do not blindly reuse the prior hour's numbers
 - Based on market changes, are there new buy/sell conditions to set?
+- For analyst commentary, investor moves, and mega-trends, distinguish between: actionable now, worth monitoring, and interesting but not actionable yet. Tie any actionable theme back to specific holdings, target sectors, or watchlist symbols.
 - Keep controlled outperformance posture: favor high-quality setups, avoid overtrading, and demand enough expected edge to overcome transaction costs
 
 ### Step 4 — Update directives
@@ -53,6 +59,7 @@ First, decide which data and in which format you need to make a sound macro deci
   - Current macro thesis (1-2 paragraphs)
   - Priority actions for the next hour
   - Clear table: Symbol | Bias (Buy/Hold/Sell) | Rationale | Target %
+  - Separate notes for: current holdings, near-term watchlist, and macro themes to monitor
   - ALL the learnings that we created so far, in addition to the summary of the last run
   - IMPORTANT: Keep `MEMORY.md` short (up to 500 lines). If it gets too long, create separate memory markdown files and reference them from `MEMORY.md` for specific learnings
 - Update `memory/todo.md` with specific, actionable buy/sell conditions for the tactical agent:
@@ -63,7 +70,7 @@ First, decide which data and in which format you need to make a sound macro deci
 
 ### Step 5 — Prompt Review and Self-Improvement
 - Review this prompt (`prompts/hourly.txt`) to evaluate its effectiveness
-- Suggest and make changes for the next run if you find any improvements or adjustments that would help you perform better as a trader
+- Suggest and make changes for the next run only if you find a concrete gap, ambiguity, or failure mode that would materially improve future decisions or execution
 - IMPORTANT: Every change to this prompt needs to be explained and reviewed in the commit message or a separate note, as it impacts actual money!
 
 ### Step 6 — Commit

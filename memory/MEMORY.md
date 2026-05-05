@@ -130,9 +130,9 @@ The account is still **off track on the absolute-return goal** and remains too e
 - **Market status:** closed; next regular session opens **2026-05-05 09:30 ET**.
 - **Live book:** unchanged — **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - **Account snapshot:** **$9,992.67 equity / $7,618.05 cash / $17,610.72 buying power**; gross exposure remains about **23.8%**.
-- **Fresh Alpaca latest prices:** **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 672.25, QTUM 135.63, RKLB 80.29, SHLD 68.05, SOXX 460.76, VOO 660.10, ARKX 32.55, SPY 717.80**.
+- **Fresh Alpaca latest prices:** **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.56, QTUM 137.00, RKLB 80.62, SHLD 68.05, SOXX 464.02, VOO 660.10, ARKX 32.55, SPY 717.80**.
 - **Decision:** no orders placed. GOOG stayed below the **384.0** breakout trigger and did not show the **372.0-375.0** pullback/reclaim setup; existing holdings also stayed below trim levels.
-- **News check:** Google News RSS showed no symbol-specific adverse headline that changed the plan; macro tone still included Middle East / oil caution.
+- **News check:** Google News RSS scan stayed mixed; GOOG remained constructive, while AVGO / SOXX were mixed-to-constructive and QQQ macro coverage still leaned cautious on oil / Middle East headlines.
 - **Next expected action:** hold the current book, preserve cash, and only act on a regular-hours GOOG confirmation or an existing stop / trim trigger.
 - **Code / prompt changes:** none this cycle.
 
