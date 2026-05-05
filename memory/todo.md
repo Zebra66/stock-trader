@@ -1,8 +1,8 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,989.00)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Current live positions: **AVGO 1 share @ 416.95**, **QQQ 1 share @ 673.26**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.88**, **SOXX 2 shares @ 468.43**.
+- [ ] Use **account equity ($9,989.60)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Current live positions: **AVGO 1 share @ 416.22**, **QQQ 1 share @ 674.13**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.62**, **SOXX 2 shares @ 463.29**.
 - [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
@@ -43,8 +43,8 @@
 
 ## 2026-05-05 Hourly Refresh Notes
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,989.00 equity / $7,618.05 cash / $17,607.05 buying power**.
-- [x] Current unrealized P&L is **-$11.00** overall (**AVGO -$0.95, QQQ +$0.49, QTUM $0.00, RKLB -$0.26, SOXX -$10.28**).
+- [x] Account snapshot: **$9,989.60 equity / $7,618.05 cash / $17,607.65 buying power**.
+- [x] Current unrealized P&L is **-$10.40** overall (**AVGO -$0.73, QQQ +$0.87, QTUM $0.00, RKLB -$0.26, SOXX -$10.28**).
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] The market is currently **closed**, and several after-hours Alpaca prints were **thin**, so tactical action still requires **regular-hours confirmation**.
@@ -64,3 +64,8 @@
 - [x] Current after-hours prints still do **not** justify a trade: **GOOG 379.03** is below the 385.0 breakout trigger, and all existing positions remain inside their hold bands.
 - [x] No orders were submitted because the market is closed and the expected edge did not clear estimated friction.
 - [x] Keep cash high and wait for regular-hours confirmation before any new capital deployment.
+
+## 2026-05-05 Tactical Cycle Closeout
+- [x] Refreshed live account, positions, latest prices, and Google News RSS context.
+- [x] No orders were submitted; **GOOG 379.03** remained below the **385.0** breakout trigger and all held names stayed inside their hold bands.
+- [x] Current posture stays cash-heavy with a no-add / no-average-down bias until regular-hours confirmation.
