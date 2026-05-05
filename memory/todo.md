@@ -86,7 +86,13 @@
 - [x] No orders were sent; the run is still outside regular hours and the QQQ / SPY breakout filter is not satisfied.
 - [x] Keep all existing regular-hours-only triggers unchanged for the next session.
 
+## Tactical Cycle Result — 2026-05-06 pre-open refresh
+- [x] Live account refreshed: **$10,050.49 equity / $7,774.88 cash / $17,825.37 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] No orders were sent; the run is still outside regular hours and the QQQ / SPY breakout filter is not satisfied.
+- [x] Keep all existing regular-hours-only triggers unchanged for the next session.
+
 ## Current Closed-Market Refresh Result — 2026-05-06 pre-open
-- [x] Latest prices: **AVGO 435.35**, **EIS 135.17**, **GLD 418.07**, **GOOG 389.11**, **HOOD 77.30**, **META 603.58**, **NVDA 196.79**, **QQQ 682.76**, **QTUM 139.20**, **RKLB 78.77**, **SHLD 67.55**, **SOXX 487.47**, **VOO 665.30**, **ARKX 32.265**, **SPY 723.94**.
+- [x] Latest prices: **AVGO 434.78**, **EIS 135.17**, **GLD 418.07**, **GOOG 389.25**, **HOOD 77.30**, **META 603.58**, **NVDA 196.79**, **QQQ 683.68**, **QTUM 139.51**, **RKLB 78.77**, **SHLD 67.55**, **SOXX 488.88**, **VOO 665.30**, **ARKX 32.265**, **SPY 723.94**.
 - [x] Quote-quality warning remains for the thin prints: **AVGO 9 trades**, **GOOG 4**, **QQQ 2**, **SOXX 4**, **SPY 5**, **EIS 1**, **HOOD 1**, **ARKX 2** — keep using regular-hours confirmation and a second source when needed.
 - [x] No trade was justified because QQQ is still below **684.2** and SPY is still below **725.4**.
