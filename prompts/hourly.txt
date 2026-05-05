@@ -19,6 +19,7 @@ You also have access to Google Search — use it freely to:
 - Find best practices for buy/sell timing, position sizing, and transaction-cost-aware execution
 - If a direct Google Search tool is unavailable in the workspace, use a public web/search fallback reachable from bash (for example Google News RSS, Reuters pages, Yahoo Finance RSS, Bing News RSS, or another public source) and explicitly document the fallback in `memory/MEMORY.md`
 - If the fallback source returns noisy or off-topic headlines, discard them and explicitly say coverage was insufficient rather than forcing a thesis from weak evidence
+- If fallback news/search results are stale (for example older than 7 calendar days) or lack a clear publication date, treat them as non-actionable background only and explicitly say coverage was insufficient rather than letting stale headlines influence trades
 
 ## Your tasks (execute in order):
 
