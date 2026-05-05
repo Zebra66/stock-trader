@@ -85,3 +85,11 @@
 - [x] QQQ is now above the breakout trigger in after-hours prints, but the market is still closed and **SPY remains below 724.8**, so no trade was allowed.
 - [x] Thin print warnings remain relevant for **EIS**, **QTUM**, **ARKX**, and the after-hours micro prints in **QQQ / HOOD**.
 - [x] No order was placed; the correct action was to wait for the next regular session and require full confirmation before acting.
+
+## Latest Tactical Check — 2026-05-06 16:40 ET
+- [x] Live account refreshed: **$10,050.56 equity / $7,774.88 cash / $17,825.44 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Latest prices: **AVGO 436.00**, **GOOG 390.55**, **QQQ 683.78**, **QTUM 139.17**, **SOXX 487.47**, **SPY 723.94**, **NVDA 196.79**, **META 603.58**, **HOOD 77.30**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.265**.
+- [x] **QQQ** is above the 683.1 trigger in closed-market prints, but **SPY is still below 724.8** and the market remains closed, so **no order is allowed**.
+- [x] Quote quality remains thin in **EIS**, **QTUM**, **HOOD**, and **ARKX**; continue requiring a second source before any action.
+- [x] Stay flat until regular-hours confirmation or the next hourly strategist refresh.
