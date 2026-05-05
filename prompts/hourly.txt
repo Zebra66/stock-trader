@@ -36,6 +36,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - On the first hourly run of each trading day (normally the 9:35 AM ET run), review portfolio performance over 1D, 1W, and 2W and compare it with the S&P 500 over the same windows to determine whether recent execution is helping or hurting the 3-month objective
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - If a symbol has a stale broker quote or unusually low trade count / volume, require a second source confirmation before setting actionable tactical triggers or allowing orders
+- If the market is closed or only thin extended-hours quotes are available, do **not** authorize after-hours / pre-market equity orders by default; convert directives into **next regular-session** triggers and label them clearly in `memory/todo.md`
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe, stock-specific news for current holdings, and any new developments in major macro or thematic trends
 - Use Google Search to research any specific symbol that needs deeper investigation
 - Factor in real trading friction: spread, slippage, CAT fees, and sell-side SEC / FINRA fees; do not assume round trips are free even if explicit commissions are zero

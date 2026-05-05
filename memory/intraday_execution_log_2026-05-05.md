@@ -94,3 +94,12 @@
 - Market structure: fresh Yahoo fallback data again favors **SOXX, GOOG, QTUM, AVGO, and QQQ**; **META, HOOD, SHLD, and ARKX** remain weaker uses of capital.
 - External context: Reuters-focused fallback coverage stayed constructive for **Alphabet / cloud / AI** and the broad growth tape, while **oil / Middle East** tension remains the key macro threat.
 - Decision: keep the strategy **constructively selective**, keep **GOOG** as hold-only below cost basis, and authorize **only one fresh QQQ add above 682.85 with SPY above 724.3, regular-hours confirmation, and no new long after 15:50 ET**.
+
+## 16:01 ET — Post-close hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-06 09:30 ET**.
+- Account: equity **$10,029.20**, cash **$7,774.88**, buying power **$17,804.08**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account remains **positive in dollars**, but still **trails SPY since inception** because gross exposure is too low.
+- Market structure: fresh Yahoo fallback data still favors **GOOG, SOXX, QTUM, AVGO, and QQQ**; **META, HOOD, SHLD, GLD, and ARKX** remain lower-priority uses of capital.
+- External context: Reuters-focused fallback coverage still shows **oil / Middle East** as the main macro risk, while fresh Reuters coverage also showed **Nasdaq / AI-chip leadership** and continued constructive **Google Cloud / AI** momentum.
+- Decision: **no after-hours equity orders**. Carry the winners overnight, keep **GOOG** as hold-only below cost basis, and convert the next add plan into a **next-regular-session QQQ trigger above 683.1 with SPY above 724.8 and orderly tape**.

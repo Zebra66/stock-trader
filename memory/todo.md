@@ -1,66 +1,58 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 15:00 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-05 16:01 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,034.35)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,029.20)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **SOXX 1**.
 - [ ] Current gross exposure is about **22.5%**. Cap gross exposure near **30%**.
 - [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
-- [x] The market is **open**.
+- [x] The market is **closed**.
+- [ ] Because the market is closed, place **no after-hours or pre-market equity orders**.
+- [ ] Convert all directives below into **next regular-session only** actions.
+- [ ] Earliest allowed new entry is **after 09:40 ET** on the next regular session and only after the next hourly refresh remains consistent.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
-- [ ] Because this is late in the session, **do not open a new long after 15:50 ET** unless a later hourly cycle explicitly changes that rule.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
 - [ ] Estimated friction reminder: even liquid names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included.
 - [ ] Use **marketable limit orders** when spreads are not very tight.
 - [ ] **Do not average down** any existing position.
 - [ ] If Alpaca shows **TradeCount < 10** or obviously thin volume in an actionable symbol, require a **second source** confirmation or skip the order.
 - [ ] After **any filled or suspected-filled order**, immediately refresh **positions** before considering a second order in the same cycle.
-- [ ] This hour, allow **at most one fresh long add**.
-- [ ] If **SPY** is trading **below 724.3** or the broad tape turns clearly risk-off on fresh macro headlines, **skip all new breakout buys** this cycle.
+- [ ] This plan allows **at most one fresh long add** before the next hourly strategist refresh.
+- [ ] If **SPY** is trading **below 724.8** or the broad tape turns clearly risk-off on fresh macro headlines, **skip all new breakout buys**.
+- [ ] If the next session gaps materially above trigger levels, wait for the first pullback / hold rather than chasing the first print.
 
-## 2026-05-05 15:09 ET Cycle Outcome
-- [x] No trade executed: **QQQ** stayed below the **682.85** trigger at **682.44**.
-- [x] **SPY** stayed above the support filter at **724.73**, but that was not enough to justify a buy without QQQ confirmation.
-- [x] No position drift required an urgent rebalance; existing holdings remained inside guardrails.
-- [x] Preserve the remaining cash buffer and wait for the next cleaner QQQ confirmation.
-
-## 2026-05-05 15:19 ET Cycle Outcome
-- [x] No trade executed: **QQQ** is still below the **682.85** trigger at **682.49**.
-- [x] **SPY** remains supportive at **724.85**, but the QQQ breakout condition is still unconfirmed.
-- [x] Continue to hold **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** and keep all existing guardrails intact.
-
-## Current Hourly Refresh Result — 2026-05-05 15:00 ET
-- [x] Live account refreshed: **$10,034.35 equity / $7,774.88 cash / $17,809.23 buying power**.
+## Current Closed-Market Refresh Result — 2026-05-05 16:01 ET
+- [x] Live account refreshed: **$10,029.20 equity / $7,774.88 cash / $17,804.08 buying power**.
 - [x] Live positions are **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Current unrealized P&L is about **+$26.68** overall.
-- [x] Refreshed prices: **AVGO 430.70**, **GOOG 382.38**, **QQQ 682.38**, **QTUM 139.45**, **SOXX 484.98**, **SPY 724.34**, **NVDA 196.75**, **META 600.95**, **HOOD 77.07**, **EIS 134.58**, **GLD 418.79**, **RKLB 78.61**, **SHLD 67.44**, **VOO 665.89**, **ARKX 32.23**.
-- [x] Quote-quality warning: **EIS TradeCount 1**, **QTUM 1**, **SHLD 1**, **VOO 4**, **ARKX 3** — require second-source confirmation before acting in those names.
+- [x] Current unrealized P&L is about **+$21.52** overall.
+- [x] Refreshed prices: **AVGO 427.35**, **GOOG 384.31**, **QQQ 681.53**, **QTUM 139.20**, **SOXX 482.60**, **SPY 723.78**, **NVDA 196.50**, **META 604.92**, **HOOD 77.04**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.27**.
+- [x] Quote-quality warning: **EIS TradeCount 1**, **QTUM 8**, **SHLD 13**, **VOO 55**, **ARKX 2**, **SPY 11** in the closing bar snapshot — require second-source confirmation before acting when tape quality looks thin.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] Reuters-prioritized Google News RSS fallback remained supportive for **AI / cloud / growth leadership**, while **oil / Middle East** headlines remain the main macro risk.
-- [x] Second-source Yahoo structure check confirms **QQQ day high ~682.72 / day low ~677.51** and **SPY day high ~724.70 / day low ~721.50**.
+- [x] Reuters-prioritized Google News RSS fallback remained supportive for **Nasdaq / AI-chip leadership** and **Google Cloud / AI**, while **oil / Middle East** headlines remain the main macro risk.
+- [x] Second-source Yahoo structure check confirms **QQQ day high ~682.77 / day low ~677.51**, **SPY day high ~725.04 / day low ~721.50**, **GOOG day high ~388.96 / day low ~380.35**, **AVGO day high ~433.39 / day low ~419.35**, and **SOXX day high ~486.18 / day low ~470.24**.
 
 ## Existing Positions
-- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add this hour.** Only **TRIM / SELL 1 share above 435.5** on a sharp regular-hours extension, or **SELL 1 share below 427.8** if support fails.
-- [ ] **HOLD GOOG** — starter remains valid, but **do not average down**. No fresh add is authorized below cost basis. Only **TRIM / SELL 1 share above 389.2** on a clean regular-hours reclaim, or **SELL 1 share below 379.8** if structure fails.
-- [ ] **HOLD QQQ** — this is the only authorized fresh-add candidate this hour. **BUY 1 share only if price breaks above 682.85 during regular hours and holds with confirmation while SPY stays above 724.3.** After a fill, **TRIM / SELL 1 share above 688.6** on continued extension, or **SELL 1 share below 677.4** on a break of short-term support.
-- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** Only **TRIM 1 share above 140.0** on continued regular-hours strength, or **SELL 1 share below 137.4** to cut risk. Because **quote quality is thin**, require a **second source quote check** before acting.
-- [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add this hour.** Only **TRIM / SELL 1 share above 488.4** on a sharp regular-hours extension, or **SELL 1 share below 479.8** if the breakout clearly fails.
+- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** Only **TRIM / SELL 1 share above 434.8** on a sharp regular-hours extension, or **SELL 1 share below 419.2** if support fails.
+- [ ] **HOLD GOOG** — starter remains valid, but **do not average down**. No fresh add is authorized below cost basis. **HOLD above 380.3 support**; **SELL 1 share below 379.8** only if structure clearly fails during regular hours.
+- [ ] **HOLD QQQ** — this remains the only authorized fresh-add candidate. **BUY 1 share only if price breaks above 683.1 during regular hours and holds with confirmation while SPY stays above 724.8.** After a fill, **TRIM / SELL 1 share above 689.5** on continued extension, or **SELL 1 share below 677.4** on a break of short-term support.
+- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** Only **TRIM 1 share above 141.0** on continued regular-hours strength, or **SELL 1 share below 137.3** to cut risk. Because **quote quality is thin**, require a **second source quote check** before acting.
+- [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add.** Only **TRIM / SELL 1 share above 488.8** on a sharp regular-hours extension, or **SELL 1 share below 470.0** if the breakout clearly fails.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY QQQ 1 share only if price breaks above 682.85 during regular hours, SPY remains above 724.3, and the tape stays orderly** — rationale: best high-liquidity way to reduce cash drag while large-cap growth leadership persists.
+- [ ] **BUY QQQ 1 share only if price breaks above 683.1 during regular hours, SPY remains above 724.8, and the tape stays orderly** — rationale: best high-liquidity way to reduce cash drag while large-cap growth leadership persists.
 - [ ] For a **QQQ** add, require sane spread / tape quality and keep post-fill exposure **<= 30% gross** and **>= 70% cash**.
-- [ ] If **QQQ** does not trigger, **stay flat on new capital this hour**.
+- [ ] If **QQQ** does not trigger cleanly, **stay flat on new capital** until the next hourly strategist refresh.
 - [ ] **Do not buy GOOG** below its current average entry price of **386.64**.
-- [ ] **Do not buy AVGO or SOXX** again this hour; current positions already fill the intended semiconductor slots.
+- [ ] **Do not buy AVGO or SOXX** again without a later hourly strategist upgrade; current positions already fill the intended semiconductor slots.
 - [ ] **Do not buy GLD** unless a future hourly cycle explicitly authorizes a hedge posture.
 
-## Avoid / Low-Priority Names This Hour
-- [ ] **AVOID NVDA** for fresh capital this hour; current semiconductor exposure is sufficient and the incremental allocation is better used in **QQQ**.
-- [ ] **AVOID META** this hour; legal / regulatory and spending noise keep it below the preferred setups.
-- [ ] **AVOID HOOD** this hour; trend quality remains weaker than the current leaders.
+## Avoid / Low-Priority Names
+- [ ] **AVOID NVDA** for fresh capital right now; current semiconductor exposure is sufficient and the incremental allocation is better used in **QQQ**.
+- [ ] **AVOID META** right now; legal / regulatory and spending noise keep it below the preferred setups.
+- [ ] **AVOID HOOD** right now; trend quality remains weaker than the current leaders.
 - [ ] **AVOID EIS** unless a future hourly cycle upgrades it and a second source confirms liquidity.
-- [ ] **AVOID SHLD** this hour; defense remains lower priority than AI / growth leadership.
-- [ ] **AVOID GLD** this hour unless a clear risk-off shock appears.
+- [ ] **AVOID SHLD** right now; defense remains lower priority than AI / growth leadership.
+- [ ] **AVOID GLD** unless a clear risk-off shock appears.
 - [ ] **AVOID VOO** for new capital while **QQQ** remains the preferred broad growth vehicle.
 - [ ] **AVOID ARKX** unless space momentum broadens materially and a later hourly cycle explicitly upgrades it.
 
@@ -70,21 +62,4 @@
 - [ ] Ignore noisy or stale fallback headlines; only act on news that is clearly recent and tied to the symbol, sector, or macro tape.
 - [ ] If oil / geopolitical headlines accelerate and the broad index turns sharply risk-off, prioritize stop discipline over breakout buying.
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
-
-## 2026-05-05 15:32 ET Cycle Outcome
-- [x] No trade executed: **QQQ** remained below the **682.85** trigger at **682.28**.
-- [x] **SPY** stayed supportive at **724.74**, but the QQQ breakout condition still did not confirm.
-- [x] Reuters-focused news check did not surface a fresh adverse catalyst that would change the decision.
-- [x] Continue to hold **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** and wait for a cleaner future add window.
-
-## 2026-05-05 15:40 ET Cycle Outcome
-- [x] No trade executed: **QQQ** is still below the **682.85** trigger at **682.11**.
-- [x] **SPY** remains supportive at **724.77**, but the only authorized fresh add still lacks breakout confirmation.
-- [x] Reuters-focused news check did not surface a fresh adverse catalyst that would change the decision.
-- [x] Continue to hold **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** and stay flat on new capital until a cleaner trigger appears.
-
-## 2026-05-05 15:49 ET Cycle Outcome
-- [x] No trade executed: **QQQ** remained below the **682.85** trigger at **681.81**.
-- [x] **SPY** stayed supportive at **724.47**, but the breakout condition still did not confirm.
-- [x] Live holdings remained **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** with no drift requiring action.
-- [x] Preserve cash and wait for a later QQQ confirmation only if regular-hours strength returns.
+- [ ] If the next run is still outside regular hours, carry the same no-trade posture forward rather than forcing activity.
