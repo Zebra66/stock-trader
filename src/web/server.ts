@@ -26,6 +26,16 @@ interface MarketClockData {
 }
 let clockCache: ClockCache | null = null;
 
+// ─── API Caches ──────────────────────────────────────────────────────────────
+interface CacheEntry {
+  data: any;
+  expiresAt: number;
+}
+const chartDataCache = new Map<string, CacheEntry>();
+const CHART_CACHE_TTL_MS = 60 * 1000; // 1 minute
+
+let sp500Cache: CacheEntry | null = null;
+const SP500_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
 // ─── Authentication Helpers ──────────────────────────────────────────────────
 function signSession(email: string): string {
   const expires = Date.now() + 7 * 24 * 60 * 60 * 1000; // 1 week
@@ -1007,17 +1017,26 @@ const app = new Elysia()
       ? (query.period as ChartPeriod)
       : '1M';
 
+    const cacheKey = `${mode}:${period}`;
+    const cached = chartDataCache.get(cacheKey);
+    if (cached && Date.now() < cached.expiresAt) {
+      return cached.data;
+    }
+
     try {
       const alpaca = createAlpacaClient(mode);
       const deposits = await readDeposits();
       const data = await buildDashboardData(alpaca, period, deposits);
 
-      return {
+      const result = {
         ...data,
         mode,
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
       };
+
+      chartDataCache.set(cacheKey, { data: result, expiresAt: Date.now() + CHART_CACHE_TTL_MS });
+      return result;
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
       logger.error({ err: msg, mode }, 'chart-data API error');
@@ -1062,6 +1081,9 @@ const app = new Elysia()
   // ─── S&P 500 Comparison ──────────────────────────────────────────────────────
   // Fetches SPY bar on first-deposit day and latest bar, returns % change.
   .get('/api/sp500-comparison', async () => {
+    if (sp500Cache && Date.now() < sp500Cache.expiresAt) {
+      return sp500Cache.data;
+    }
     try {
       const deposits = await readDeposits();
       if (deposits.length === 0) {
@@ -1083,32 +1105,44 @@ const app = new Elysia()
         'APCA-API-SECRET-KEY': creds.secretKey,
       };
 
-      // ── Fetch SPY bar on/after first deposit date (handles weekends/holidays) ──
-      const startDay = startDate.substring(0, 10); // YYYY-MM-DD
-      // Scan up to 7 calendar days forward to find the first trading day
-      const endScan = new Date(startDay);
-      endScan.setDate(endScan.getDate() + 7);
-      const endScanStr = endScan.toISOString().substring(0, 10);
+      // ── Get original SPY value ──
+      let spyStart: number;
+      let spyStartDateStr: string | undefined;
+      try {
+        const spyCsv = await fs.readFile('./memory/spy.csv', 'utf8');
+        spyStart = parseFloat(spyCsv.trim());
+        if (Number.isNaN(spyStart)) throw new Error('Invalid spy.csv');
+        spyStartDateStr = startDate;
+      } catch (err) {
+        // Fallback to fetch if file is missing
+        const startDay = startDate.substring(0, 10);
+        const endScan = new Date(startDay);
+        endScan.setDate(endScan.getDate() + 7);
+        const endScanStr = endScan.toISOString().substring(0, 10);
 
-      const startRes = await fetch(
-        `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${startDay}&end=${endScanStr}&limit=1&feed=iex`,
-        { headers },
-      );
+        const startRes = await fetch(
+          `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${startDay}&end=${endScanStr}&limit=1&feed=iex`,
+          { headers },
+        );
+
+        if (!startRes.ok) {
+          const errText = await startRes.text();
+          logger.warn({ status: startRes.status, body: errText }, 'SPY start bar fetch failed');
+          return { error: `Alpaca data API ${startRes.status}`, changePct: null };
+        }
+        const startData = await startRes.json() as { bars: { c: number, t: string }[] | null };
+        const startBar = startData.bars?.[0];
+        if (!startBar) {
+          return { error: 'No SPY data found near first deposit date', changePct: null };
+        }
+        spyStart = startBar.c;
+        spyStartDateStr = startBar.t;
+        await fs.mkdir('./memory', { recursive: true }).catch(() => {});
+        await fs.writeFile('./memory/spy.csv', spyStart.toString(), 'utf8');
+      }
 
       interface AlpacaBar { t: string; o: number; c: number; h: number; l: number; v: number; }
       interface AlpacaBarsResponse { bars: AlpacaBar[] | null; }
-
-      if (!startRes.ok) {
-        const errText = await startRes.text();
-        logger.warn({ status: startRes.status, body: errText }, 'SPY start bar fetch failed');
-        return { error: `Alpaca data API ${startRes.status}`, changePct: null };
-      }
-      const startData = await startRes.json() as AlpacaBarsResponse;
-      const startBar = startData.bars?.[0];
-      if (!startBar) {
-        return { error: 'No SPY data found near first deposit date', changePct: null };
-      }
-      const spyStart = startBar.c; // closing price of first trading day
 
       // ── Fetch latest SPY bar ──
       const today = new Date();
@@ -1137,13 +1171,16 @@ const app = new Elysia()
 
       const changePct = ((spyCurrent - spyStart) / spyStart) * 100;
 
-      return {
+      const result = {
         changePct: Math.round(changePct * 100) / 100,
-        startDate: startBar.t,
+        startDate: spyStartDateStr,
         latestDate: latestBar.t,
         spyStart: Math.round(spyStart * 100) / 100,
         spyCurrent: Math.round(spyCurrent * 100) / 100,
       };
+      
+      sp500Cache = { data: result, expiresAt: Date.now() + SP500_CACHE_TTL_MS };
+      return result;
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
       logger.warn({ err: msg }, 'sp500-comparison failed');

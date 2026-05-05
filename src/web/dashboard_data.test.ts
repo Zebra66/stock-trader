@@ -102,7 +102,7 @@ describe('buildDashboardData', () => {
     expect(data.buys[0]?.symbol).toBe('MSFT');
   });
 
-  test('uses 10Min timeframe for 1D and 1W periods', async () => {
+  test('uses 5Min timeframe for 1D and 1W periods', async () => {
     const calls: Array<{ period: string; timeframe: string }> = [];
     await buildDashboardData(
       {
@@ -112,7 +112,7 @@ describe('buildDashboardData', () => {
       },
       '1D',
     );
-    expect(calls[0]?.timeframe).toBe('10Min');
+    expect(calls[0]?.timeframe).toBe('5Min');
 
     await buildDashboardData(
       {
@@ -122,7 +122,7 @@ describe('buildDashboardData', () => {
       },
       '1W',
     );
-    expect(calls[1]?.timeframe).toBe('10Min');
+    expect(calls[1]?.timeframe).toBe('5Min');
   });
 
   test('periodStart and periodEnd are populated from history', async () => {
