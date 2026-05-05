@@ -166,7 +166,8 @@ This run happened **after the regular-session close**, so the correct posture is
 ## Tactical Execution Summary — 2026-05-06 pre-open
 - Refreshed live **Alpaca account**, **positions**, and **latest prices** at the current tactical checkpoint.
 - No orders were placed. The market is still outside regular hours and the only authorized fresh add remains a regular-hours **QQQ** confirmation.
-- Live book remains **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** with about **$10,050.49 equity**, **$7,774.88 cash**, and roughly **22.7% gross exposure**.
-- Latest price check: **QQQ 683.68**, **SPY 723.94**, **AVGO 434.78**, **GOOG 389.25**, **QTUM 139.51**, **SOXX 488.88**; QQQ and SPY remain below the breakout filter, so there was no actionable entry.
-- Quote quality remains thin in after-hours prints, especially for QQQ and SPY, so regular-hours confirmation is still required before any order.
+- Live book remains **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** with about **$10,049.01 equity**, **$7,774.88 cash**, and roughly **22.7% gross exposure**.
+- Latest broker prices: **QQQ 684.00**, **SPY 723.94**, **AVGO 433.41**, **GOOG 389.14**, **QTUM 139.51**, **SOXX 488.56**; the fresh broker snapshot still leaves QQQ below the **684.2** breakout trigger and SPY below the **725.4** filter.
+- Quote quality remains thin in pre-market prints, especially for QQQ and SPY, so regular-hours confirmation is still required before any order.
+- News scan stayed constructive for AI / chip leadership, but Reuters coverage also highlighted renewed oil / Middle East risk; that reinforces the no-chase posture.
 - Next expected action: wait for the next regular session and only consider **one QQQ add** if price breaks above **684.2** with **SPY above 725.4** and tape quality remains orderly; otherwise stay flat and protect capital.
