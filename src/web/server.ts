@@ -241,6 +241,29 @@ const app = new Elysia()
     .logs-loading{text-align:center;padding:3rem;color:var(--cyan);font-size:.82rem;animation:fade-pulse 1.4s ease infinite}
     @keyframes fade-pulse{0%,100%{opacity:.5}50%{opacity:1}}
     .log-highlight{background:rgba(253,224,71,0.15);border-radius:2px;color:#fde047}
+    /* ── NAV BAR ── */
+    nav.nav-bar{display:flex;align-items:center;gap:.25rem}
+    .nav-btn{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;font-size:.8125rem;font-weight:600;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .2s;white-space:nowrap}
+    .nav-btn:hover{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);color:var(--t1)}
+    /* ── PORTFOLIO MODAL ── */
+    .portfolio-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
+    .portfolio-overlay.open{display:flex}
+    .portfolio-modal{background:#0a0f1e;border:1px solid rgba(0,212,255,0.25);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:1200px;margin:0 auto;max-height:100%;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,0.6)}
+    .portfolio-header{display:flex;align-items:center;gap:.875rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(0,212,255,0.12);flex-shrink:0}
+    .portfolio-title{font-size:1rem;font-weight:700;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-right:auto}
+    .portfolio-close{background:none;border:1px solid #334155;color:#94a3b8;border-radius:8px;cursor:pointer;padding:.35rem .75rem;font-size:.8rem;font-family:var(--font);transition:all .2s}
+    .portfolio-close:hover{border-color:var(--cyan);color:var(--cyan)}
+    .portfolio-body{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:1.5rem}
+    .portfolio-section-title{font-size:.875rem;font-weight:600;color:var(--t1);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+    .ptable{width:100%;border-collapse:collapse}
+    .ptable th{text-align:left;padding:.5rem .75rem;color:var(--t2);font-weight:500;text-transform:uppercase;font-size:.65rem;letter-spacing:.08em;border-bottom:1px solid #1e293b}
+    .ptable td{padding:.55rem .75rem;border-bottom:1px solid #0f172a;vertical-align:middle;font-family:var(--mono);font-size:.78rem}
+    .ptable tr:last-child td{border-bottom:none}
+    .ptable tbody tr:hover td{background:rgba(0,212,255,0.03)}
+    .p-pos{color:var(--green)}.p-neg{color:var(--red)}
+    .p-buy{color:var(--green);font-weight:700}.p-sell{color:var(--red);font-weight:700}
+    .portfolio-loading{text-align:center;padding:3rem;color:var(--cyan);font-size:.82rem;animation:fade-pulse 1.4s ease infinite}
+    .portfolio-empty{text-align:center;padding:2rem;color:#475569;font-family:var(--mono);font-size:.82rem}
   </style>
 </head>
 <body>
@@ -251,12 +274,18 @@ const app = new Elysia()
     </div>
     <span class="brand-name">Auto Stock</span>
   </div>
+  <nav class="nav-bar">
+    <button class="nav-btn" onclick="openPortfolio()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12V6L7 2l5 4v6h-3.5V9h-3v3H2z" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
+      Portfolio
+    </button>
+    <button class="nav-btn" onclick="openLogs()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
+      Logs
+    </button>
+  </nav>
   <div class="hdr-right">
     <div class="status-badge active" id="status-badge"><span class="sdot" id="status-dot"></span><span id="status-text">Loading...</span></div>
-    <button id="logs-btn" class="btn-logs" onclick="openLogs()">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
-      Cloud Logs
-    </button>
     <button id="toggle-btn" class="btn-toggle pause" onclick="togglePause()">Loading...</button>
   </div>
 </header>
@@ -323,6 +352,21 @@ const app = new Elysia()
         </div>
         <pre class="diff" id="diff-content"></pre>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PORTFOLIO MODAL ─────────────────────────────────────────────────────── -->
+<div class="portfolio-overlay" id="portfolio-overlay" onclick="handlePortfolioOverlayClick(event)">
+  <div class="portfolio-modal" onclick="event.stopPropagation()">
+    <div class="portfolio-header">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 15V7.5L9 3l6 4.5V15h-4.5v-4.5h-3V15H3z" stroke="#00d4ff" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+      <span class="portfolio-title">📈 Portfolio</span>
+      <button class="btn-refresh" onclick="loadPortfolio()" style="font-size:.75rem;padding:.3rem .7rem" title="Refresh">⟳ Refresh</button>
+      <button class="portfolio-close" onclick="closePortfolio()">✕ Close</button>
+    </div>
+    <div class="portfolio-body" id="portfolio-body">
+      <div class="portfolio-loading">Loading portfolio…</div>
     </div>
   </div>
 </div>
@@ -691,6 +735,82 @@ const app = new Elysia()
     }catch(e){console.warn('sp500 fetch failed',e);}
   }
 
+  // ── PORTFOLIO ────────────────────────────────────────────────────────────────
+  function fmtNum(v){return parseFloat(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+  function openPortfolio(){
+    document.getElementById('portfolio-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+    loadPortfolio();
+  }
+  function closePortfolio(){
+    document.getElementById('portfolio-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function handlePortfolioOverlayClick(e){
+    if(e.target===document.getElementById('portfolio-overlay')) closePortfolio();
+  }
+  async function loadPortfolio(){
+    const body=document.getElementById('portfolio-body');
+    body.innerHTML='<div class="portfolio-loading">Loading portfolio…</div>';
+    const params=new URLSearchParams();
+    if(selectedMode) params.set('mode',selectedMode);
+    try{
+      const d=await(await fetch('/api/portfolio?'+params.toString())).json();
+      if(d.error){
+        body.innerHTML='<div class="portfolio-empty">⚠ '+escH(d.error)+'</div>';
+        return;
+      }
+      let html='';
+      // ── Holdings ──
+      html+='<div><div class="portfolio-section-title">🏦 Current Holdings</div>';
+      const positions=d.positions||[];
+      if(positions.length===0){
+        html+='<div class="portfolio-empty">No open positions.</div>';
+      }else{
+        html+='<table class="ptable"><thead><tr><th>Symbol</th><th>Qty</th><th>Avg Entry</th><th>Current Price</th><th>Market Value</th><th>Cost Basis</th><th>Unrealized P&L</th><th>P&L %</th></tr></thead><tbody>';
+        for(const p of positions){
+          const pnl=parseFloat(p.unrealized_pl||0);
+          const pnlPct=parseFloat(p.unrealized_plpc||0)*100;
+          const cls=pnl>=0?'p-pos':'p-neg';
+          html+='<tr><td style="color:var(--t1);font-weight:600">'+escH(p.symbol)+'</td>';
+          html+='<td>'+escH(String(p.qty))+'</td>';
+          html+='<td>$'+fmtNum(p.avg_entry_price)+'</td>';
+          html+='<td>$'+fmtNum(p.current_price)+'</td>';
+          html+='<td>$'+fmtNum(p.market_value)+'</td>';
+          html+='<td>$'+fmtNum(p.cost_basis)+'</td>';
+          html+='<td class="'+cls+'">'+(pnl>=0?'+':'')+fmtNum(pnl)+'</td>';
+          html+='<td class="'+cls+'">'+(pnlPct>=0?'+':'')+pnlPct.toFixed(2)+'%</td></tr>';
+        }
+        html+='</tbody></table>';
+      }
+      html+='</div>';
+      // ── Trade History ──
+      html+='<div><div class="portfolio-section-title">📋 Trade History</div>';
+      const trades=d.trades||[];
+      if(trades.length===0){
+        html+='<div class="portfolio-empty">No trades found.</div>';
+      }else{
+        html+='<table class="ptable"><thead><tr><th>Date</th><th>Symbol</th><th>Action</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>';
+        for(const t of trades){
+          const dt=new Date(t.transaction_time).toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+          const total=(parseFloat(t.price||0)*parseFloat(t.qty||0)).toFixed(2);
+          const cls=t.side==='buy'?'p-buy':'p-sell';
+          html+='<tr><td style="color:var(--t2);white-space:nowrap">'+escH(dt)+'</td>';
+          html+='<td style="color:var(--t1);font-weight:600">'+escH(t.symbol||'—')+'</td>';
+          html+='<td class="'+cls+'">'+escH((t.side||'').toUpperCase())+'</td>';
+          html+='<td>'+escH(String(t.qty||'—'))+'</td>';
+          html+='<td>$'+fmtNum(t.price)+'</td>';
+          html+='<td>$'+escH(total)+'</td></tr>';
+        }
+        html+='</tbody></table>';
+      }
+      html+='</div>';
+      body.innerHTML=html;
+    }catch(err){
+      body.innerHTML='<div class="portfolio-empty">Failed to load portfolio: '+escH(String(err))+'</div>';
+    }
+  }
+
   // ── CLOUD LOGS ──────────────────────────────────────────────────────────────
   const logsState={
     severity:'',
@@ -832,9 +952,9 @@ const app = new Elysia()
     }
   }
 
-  // Keyboard shortcut: Escape closes modal
+  // Keyboard shortcut: Escape closes open modals
   document.addEventListener('keydown',e=>{
-    if(e.key==='Escape') closeLogs();
+    if(e.key==='Escape'){closeLogs();closePortfolio();}
   });
 
   fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
@@ -1375,6 +1495,71 @@ const app = new Elysia()
     }
   })
   
+  // ─── Portfolio Endpoint ──────────────────────────────────────────────────────
+  .get('/api/portfolio', async ({ query }: { query: { mode?: string } }) => {
+    const mode = resolveDashboardMode(query.mode);
+    try {
+      const creds = resolveAlpacaCredentials(mode);
+      if (!creds) {
+        return { error: `${getAlpacaModeLabel(mode)} credentials not configured`, positions: [], trades: [] };
+      }
+      const baseUrl = creds.paper ? 'https://paper-api.alpaca.markets' : 'https://api.alpaca.markets';
+      const headers = {
+        'APCA-API-KEY-ID': creds.keyId,
+        'APCA-API-SECRET-KEY': creds.secretKey,
+      };
+
+      interface AlpacaPosition {
+        symbol: string;
+        qty: string;
+        avg_entry_price: string;
+        current_price: string;
+        market_value: string;
+        cost_basis: string;
+        unrealized_pl: string;
+        unrealized_plpc: string;
+        side: string;
+      }
+      interface AlpacaTradeActivity {
+        id: string;
+        symbol?: string;
+        side?: string;
+        qty?: string;
+        price?: string;
+        transaction_time?: string;
+      }
+
+      const [posRes, actRes] = await Promise.all([
+        fetch(`${baseUrl}/v2/positions`, { headers }),
+        fetch(`${baseUrl}/v2/account/activities?activity_type=FILL&page_size=100`, { headers }),
+      ]);
+
+      if (!posRes.ok) {
+        const errText = await posRes.text();
+        logger.warn({ status: posRes.status }, 'portfolio positions API error');
+        return { error: `Alpaca positions API ${posRes.status}: ${errText}`, positions: [], trades: [] };
+      }
+      if (!actRes.ok) {
+        const errText = await actRes.text();
+        logger.warn({ status: actRes.status }, 'portfolio activities API error');
+        return { error: `Alpaca activities API ${actRes.status}: ${errText}`, positions: [], trades: [] };
+      }
+
+      const positions = await posRes.json() as AlpacaPosition[];
+      const activities = await actRes.json() as AlpacaTradeActivity[];
+
+      const trades = activities
+        .filter((a) => !!a.transaction_time)
+        .sort((a, b) => new Date(b.transaction_time!).getTime() - new Date(a.transaction_time!).getTime());
+
+      return { positions, trades, mode };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.error({ err: msg, mode }, 'portfolio API error');
+      return { error: msg, positions: [], trades: [] };
+    }
+  })
+
   // ─── Authentication Endpoints ────────────────────────────────────────────────
   .get('/auth/google', ({ request, set }) => {
     const clientId = process.env.GOOGLE_OAUTH_CLIENT_ID;
