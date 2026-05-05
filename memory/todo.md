@@ -7,8 +7,8 @@
 - [ ] Current gross exposure is about **22.5%**. Cap gross exposure near **30%**.
 - [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **closed**.
-- [ ] Because the market is closed, place **no after-hours or pre-market equity orders**.
-- [ ] Convert all directives below into **next regular-session only** actions.
+- [x] Because the market is closed, place **no after-hours or pre-market equity orders**.
+- [x] Convert all directives below into **next regular-session only** actions.
 - [ ] Earliest allowed new entry is **after 09:40 ET** on the next regular session and only after the next hourly refresh remains consistent.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
@@ -63,3 +63,9 @@
 - [ ] If oil / geopolitical headlines accelerate and the broad index turns sharply risk-off, prioritize stop discipline over breakout buying.
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
 - [ ] If the next run is still outside regular hours, carry the same no-trade posture forward rather than forcing activity.
+
+## Latest Tactical Check — 2026-05-05 16:10 ET
+- [x] Alpaca refreshed again: **$10,030.63 equity / $7,774.88 cash / $17,805.51 buying power**.
+- [x] Live positions unchanged: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Latest prices remain below the next-session QQQ trigger: **QQQ 681.83** vs **683.1**, **SPY 723.78** vs **724.8**.
+- [x] No execution warranted this cycle; stay patient until regular-hours confirmation.
