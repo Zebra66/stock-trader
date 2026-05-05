@@ -2,38 +2,38 @@
 *Updated 2026-05-05 by the Hourly Macro Strategist.*
 
 ## Current Macro Thesis
-US equities are still in a **selective AI / semiconductor-led risk-on regime**, but the edge remains concentrated rather than broad. The strongest 1m-6m trends in the universe are still **SOXX, AVGO, GOOG, QTUM, QQQ, and RKLB**, while **GLD, HOOD, META, and SHLD** continue to lag on the key intermediate windows. That keeps the right posture unchanged: stay focused on liquid growth leaders, avoid forcing laggard rotations, and keep a large cash reserve until a new high-quality trigger appears.
+US equities are still in a **selective AI / semiconductor-led risk-on regime**, but the edge remains concentrated rather than broad. The strongest 1m-6m trends in the universe are still **SOXX, AVGO, GOOG, QTUM, QQQ, and RKLB**, while **HOOD, META, SHLD, and GLD** remain weaker or lower-priority on the key intermediate windows. That keeps the right posture unchanged: hold current liquid leaders, avoid laggard rotations, and keep a large cash reserve until a fresh high-quality setup appears.
 
-The live account remains positioned correctly for that backdrop: **small exposure in current leaders plus high cash**. Equity is **$9,981.22**, cash is **$7,618.05**, and gross long exposure is about **23.7%** of equity, so there is still no reason to deploy leverage or chase thin after-hours prints. The market is currently **closed**, and several Alpaca latest bars were clearly **thin / stale** after hours — especially **EIS, GLD, GOOG, META, NVDA, QQQ, QTUM, and SOXX** — so the next tactical cycle must keep requiring **regular-hours confirmation**, plus a **second-source quote check** for any stale symbol before trading.
+The live account remains positioned correctly for that backdrop: **small exposure in current leaders plus high cash**. Equity is now **$10,006.68**, cash is **$7,618.05**, and gross long exposure is about **23.9%** of equity. The market is currently **closed**, and several Alpaca latest bars were clearly **thin / stale after hours** — especially **EIS, GLD, GOOG, META, NVDA, QQQ, QTUM, and SOXX** — so the next tactical cycle must keep requiring **regular-hours confirmation**, plus a **second-source quote check** for any stale symbol before trading.
 
 ## Portfolio State
-- **Equity:** $9,981.22
+- **Equity:** $10,006.68
 - **Cash:** $7,618.05
-- **Buying power:** $17,599.27
-- **Gross exposure:** ~23.7%
+- **Buying power:** $17,624.73
+- **Gross exposure:** ~23.9%
 - **Market status:** closed
-- **Alpaca clock timestamp:** 2026-05-04T19:50:26.954735151-04:00
+- **Alpaca clock timestamp:** 2026-05-04T20:01:34.608379779-04:00
 - **Current positions:**
-  - **AVGO:** 1 share @ 416.95 | market value **$415.00** | unrealized P&L **-$1.95** (-0.47%) | allocation **4.16%**
-  - **QQQ:** 1 share @ 673.26 | market value **$672.07** | unrealized P&L **-$1.19** (-0.18%) | allocation **6.73%**
-  - **QTUM:** 2 shares @ 137.00 | market value **$273.06** | unrealized P&L **-$0.94** (-0.34%) | allocation **2.74%**
-  - **RKLB:** 1 share @ 80.88 | market value **$80.54** | unrealized P&L **-$0.34** (-0.42%) | allocation **0.81%**
-  - **SOXX:** 2 shares @ 468.43 | market value **$922.50** | unrealized P&L **-$14.36** (-1.53%) | allocation **9.25%**
-- **Overall unrealized P&L:** **-$18.78**
+  - **AVGO:** 1 share @ 416.95 | market value **$422.05** | unrealized P&L **+$5.10** (+1.22%) | allocation **4.22%**
+  - **QQQ:** 1 share @ 673.26 | market value **$672.22** | unrealized P&L **-$1.04** (-0.15%) | allocation **6.72%**
+  - **QTUM:** 2 shares @ 137.00 | market value **$274.00** | unrealized P&L **$0.00** (0.00%) | allocation **2.74%**
+  - **RKLB:** 1 share @ 80.88 | market value **$80.40** | unrealized P&L **-$0.48** (-0.59%) | allocation **0.80%**
+  - **SOXX:** 2 shares @ 468.43 | market value **$939.96** | unrealized P&L **+$3.10** (+0.33%) | allocation **9.39%**
+- **Overall unrealized P&L:** **+$6.68**
 
 ## Data & Research Sources Used This Run
-- **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol QQQ`
+- **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol AVGO`
 - **FMP status:** unavailable because **`FMP_API_KEY` is not configured**
 - **Historical performance fallback:** **Yahoo Finance chart API** via `query1.finance.yahoo.com` with browser-like headers
 - **Brokerage / account / prices:** **Alpaca CLI** (`get-account`, `get-positions`, `get-clock`, `get-latest-price`)
 - **News / search fallback:** **Google News RSS** plus **Bing News RSS** because no direct Google Search tool surfaced in this workspace
-- **Fallback quality note:** symbol-specific coverage was usable for **GOOG / AVGO / semis**, but investor-move and some macro coverage remained **mixed / noisy / partly stale** and was **not strong enough to drive portfolio changes by itself**
+- **Fallback quality note:** symbol-specific coverage was usable for **GOOG / AVGO / semis**, but investor-move and analyst coverage remained **mixed / noisy / incomplete** and was **not strong enough to drive portfolio changes by itself**
 - **Raw artifacts from this cycle:**
   - `temp_files/alpaca_account_hourly_2026-05-05Tcurrent.json`
   - `temp_files/alpaca_positions_hourly_2026-05-05Tcurrent.json`
   - `temp_files/alpaca_clock_hourly_2026-05-05Tcurrent.json`
   - `temp_files/alpaca_latest_prices_hourly_2026-05-05Tcurrent.txt`
-  - `temp_files/fmp_probe_qqq_2026-05-05Tcurrent.txt`
+  - `temp_files/fmp_probe_avgo_2026-05-05Tcurrent.txt`
   - `temp_files/hourly_market_snapshot_yahoo_2026-05-05Tcurrent.json`
   - `temp_files/hourly_market_snapshot_yahoo_2026-05-05Tcurrent.csv`
   - `temp_files/tech_levels_latest.json`
@@ -41,19 +41,18 @@ The live account remains positioned correctly for that backdrop: **small exposur
 
 ## Performance Snapshot Used This Run
 - Best **1w** performers: **GOOG +8.93%**, **EIS +4.60%**, **QTUM +2.88%**, **SOXX +1.46%**, **QQQ +1.30%**
-- Best **1m** performers: **SOXX +36.06%**, **AVGO +32.41%**, **GOOG +28.93%**, **QTUM +23.40%**, **RKLB +18.57%**
+- Best **1m** performers: **SOXX +34.28%**, **AVGO +32.46%**, **GOOG +27.54%**, **QTUM +22.69%**, **RKLB +18.68%**
 - Best **3m** performers: **SOXX +31.01%**, **AVGO +25.79%**, **QTUM +16.23%**, **GOOG +10.07%**, **EIS +10.05%**
 - Best **6m** performers: **SOXX +49.83%**, **GOOG +33.62%**, **RKLB +30.93%**, **EIS +28.36%**, **QTUM +19.10%**
 - Weak / broken **3m-6m** names: **HOOD -14.86% / -47.95%**, **META -13.59% / -4.28%**, **SHLD -8.54% / -1.03%**, **GLD -2.91% / +12.45%**
-- Best **1y** performers: **RKLB +249.33%**, **SOXX +143.15%**, **GOOG +128.96%**, **AVGO +104.53%**, **QTUM +74.16%**
+- Best **1y** performers: **RKLB +257.25%**, **SOXX +145.03%**, **GOOG +128.63%**, **AVGO +107.50%**, **QTUM +74.81%**
 
 ## Fresh External Context
-- **Macro / tape:** fallback headline quality was mixed, but the usable read-through still points to a market led by **AI infrastructure and semiconductors**, with intermittent **valuation / inflation / yield** anxiety rather than a clean broad risk-off regime.
-- **GOOG:** still the cleanest missing core position in the book. The usable fallback headlines remained constructive around **cloud / enterprise AI demand**, and Yahoo close data (**379.64**) broadly confirmed the thin Alpaca after-hours quote (**379.03**).
-- **AVGO / SOXX / NVDA:** semi leadership remains intact on price performance, but near-term headlines show more **sentiment volatility** after a large run; that argues for **holding winners, not chasing adds**.
-- **META / HOOD:** fallback coverage stayed weaker and less compelling than GOOG or the semiconductor leaders; both remain lower-priority destinations for fresh capital.
-- **GLD:** still less attractive while the dominant alpha opportunity remains concentrated in growth leadership rather than defensive hedging.
-- **Top-investor context:** fallback investor coverage was too noisy / generic to justify acting on it.
+- **Macro / tape:** fallback headline quality was mixed, but the usable read-through still points to a market led by **AI infrastructure and semiconductors**, with intermittent **inflation / yield / valuation** anxiety rather than a clean broad risk-off regime.
+- **GOOG:** still the cleanest missing core position in the book. Fallback coverage remained constructive around **cloud / enterprise AI / backlog strength**, and Yahoo close data (**379.64**) broadly confirmed the thin Alpaca after-hours quote (**379.03**).
+- **AVGO / SOXX / NVDA:** semiconductor leadership remains intact on price performance, but the group is extended enough that the right move is still **hold winners, do not chase adds**.
+- **META / HOOD:** coverage was less compelling than **GOOG** or the semiconductor leaders, and their intermediate trend quality remains worse.
+- **Top-investor / analyst context:** fallback coverage was too stale, empty, or generic to justify acting on it.
 
 ## Priority Actions For The Next Hour
 1. Treat the **live Alpaca account** as the source of truth: the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
@@ -65,12 +64,12 @@ The live account remains positioned correctly for that backdrop: **small exposur
 ## Bias Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| AVGO | Hold | Strong AI / custom-silicon leader, but the existing starter already fills intended single-name exposure. | 4% |
+| AVGO | Hold | Strong AI / custom-silicon leader, and the existing starter already fills intended single-name exposure. | 4% |
 | EIS | Hold | Momentum is respectable, but liquidity / stale-quote risk still disqualifies it. | 0% |
 | GLD | Hold | Hedge only; current alpha opportunity remains in growth leadership, not gold. | 0% |
 | GOOG | Buy | Best missing high-liquidity quality position in the universe if regular-hours confirmation appears. | 4% |
-| HOOD | Sell | Weak intermediate trend and lower-quality earnings mix still make it inferior to core tech leaders. | 0% |
-| META | Sell | Still lagging GOOG and the semiconductor leaders; fallback news / sentiment remains less constructive. | 0% |
+| HOOD | Sell | Weak intermediate trend and lower-quality setup than core tech leaders. | 0% |
+| META | Sell | Still lagging GOOG and the semiconductor leaders on trend quality. | 0% |
 | NVDA | Hold | Structural AI leader, but redundant with current semiconductor exposure. | 0% |
 | QQQ | Hold | Existing 1-share position is already near intended broad-growth allocation. | 7% |
 | QTUM | Hold | Existing position remains a valid secondary AI / quantum sleeve near target. | 3% |
@@ -106,7 +105,7 @@ The live account remains positioned correctly for that backdrop: **small exposur
 - If the fallback market-snapshot artifact uses the exchange-session date instead of the local run date, keep the file and document the date mismatch rather than discarding usable data.
 
 ## Last Run Summary
-- Live Alpaca state shows the book is still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$9,981.05 equity**, **$7,618.05 cash**, and about **23.7% gross exposure**.
+- Live Alpaca state shows the book is still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$10,006.68 equity**, **$7,618.05 cash**, and about **23.9% gross exposure**.
 - **FMP historical performance** remains unavailable because **`FMP_API_KEY` is missing**, so this run again used the **Yahoo Finance chart API fallback**.
 - Leadership still favors **SOXX / AVGO / GOOG / QTUM / QQQ**, while **HOOD / META / SHLD / GLD** remain weaker.
 - No new tactical trade is authorized while the market is **closed** and several quotes remain **thin after hours**.
@@ -114,8 +113,8 @@ The live account remains positioned correctly for that backdrop: **small exposur
 - **Prompt review result:** no prompt edit applied this run; the prompt is still serviceable and no safe, high-signal improvement was identified that justified changing live trading instructions.
 
 ## 10-Minute Tactical Cycle Summary
-- **Action:** Reviewed the live book, refreshed quotes for AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX, checked symbol-specific Google News RSS for GOOG / AVGO / SOXX / QQQ / NVDA / META, and confirmed no tradeable trigger with acceptable edge after friction.
-- **Holdings:** AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2; equity $9,981.22; cash $7,618.05; gross exposure ~23.7%.
-- **Decision:** No orders placed. GOOG stayed below the buy trigger; all existing positions stayed between trim and stop levels; market remains a hold/cash-preservation setup.
-- **Next expected action:** Wait for regular-hours confirmation, especially on GOOG; otherwise continue holding the current leaders and preserve cash until a higher-conviction setup appears.
-- **Code / prompt changes:** None this cycle.
+- **Action:** Reviewed the live book, refreshed quotes for **AVGO / EIS / GLD / GOOG / HOOD / META / NVDA / QQQ / QTUM / RKLB / SHLD / SOXX / VOO / ARKX**, refreshed multi-timeframe performance with the Yahoo fallback, and checked fallback news coverage for macro / semis / GOOG / AVGO / NVDA / META.
+- **Long / short posture:** **Long selective AI / semiconductor leaders, short nothing, keep cash high.**
+- **Holdings:** AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2; equity $10,006.68; cash $7,618.05; gross exposure ~23.9%.
+- **Decision:** No orders placed. GOOG remains on watch, but no regular-hours confirmation is available yet and existing positions remain inside their hold bands.
+- **Portfolio / code / prompt changes:** Portfolio unchanged; code unchanged; prompt unchanged.

@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,981.22)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,006.68)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **AVGO 1 share**, **QQQ 1 share**, **QTUM 2 shares**, **RKLB 1 share**, **SOXX 2 shares**.
-- [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
+- [ ] Current gross exposure is about **23.9%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
@@ -13,20 +13,21 @@
 - [ ] If a symbol shows a **stale quote** or unusually low trade count, do **not** trade it unless a **second source confirms** the move.
 
 ## Existing Positions
-- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add**. **TRIM / SELL 1 share** above **423.0** if strength extends, or **SELL 1 share** below **408.5** to cut risk.
+- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add**. **TRIM / SELL 1 share** above **423.5** if strength extends, or **SELL 1 share** below **409.0** to cut risk.
 - [ ] **HOLD QQQ** — target allocation **~7%** is already filled. **Do not add**. **TRIM / SELL 1 share** above **679.0** if strength extends, or **SELL 1 share** below **664.0** to cut risk.
-- [ ] **HOLD SOXX** — current size is already near the desired **~9%** target allocation. **Do not add**. **TRIM 1 share** above **469.0** if strength extends, or **SELL 1 share** below **455.0** to cut risk.
+- [ ] **HOLD SOXX** — current size is already near the desired **~9%** target allocation. **Do not add**. **TRIM 1 share** above **468.0** if strength extends, or **SELL 1 share** below **456.0** to cut risk.
 - [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add**. **TRIM 1 share** above **139.0** if strength extends, or **SELL 1 share** below **133.5** to cut risk.
-- [ ] **HOLD RKLB** — keep this as a tiny satellite only. **TRIM / SELL 1 share** above **84.0** if strength extends, or **SELL 1 share** below **77.8** to cut risk.
+- [ ] **HOLD RKLB** — keep this as a tiny satellite only. **TRIM / SELL 1 share** above **84.0** if strength extends, or **SELL 1 share** below **78.0** to cut risk.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY GOOG** only if price reclaims **381.5-382.0** during regular hours and holds with confirmation, or if it breaks above **383.5** with confirmation. Because the latest broker after-hours print was **thin**, require either **regular-hours confirmation** or a **second-source quote check** before acting. Start with **1 share** (~3.8% of equity). **TRIM / SELL GOOG** above **389.5** or **CUT GOOG** below **374.0**.
+- [ ] **BUY GOOG** only if price breaks above **383.5** during regular hours and holds with confirmation, or if it pulls back into **375.0-376.0** and then reclaims **377.0** on the same session. Because the latest broker after-hours print was **thin**, require either **regular-hours confirmation** or a **second-source quote check** before acting. Start with **1 share** (~3.8% of equity).
+- [ ] **TRIM / SELL GOOG** above **390.0** or **CUT GOOG** below **374.0** once opened.
 - [ ] If **GOOG does not trigger**, accept the current book and keep cash high rather than forcing a lower-quality substitute.
 
 ## Avoid / Low-Priority Names This Hour
 - [ ] **AVOID NVDA** for fresh capital this hour unless a future hourly cycle explicitly reopens it; current semi exposure is already sufficient.
 - [ ] **AVOID META** unless a future hourly cycle explicitly upgrades it; price trend and sentiment still lag GOOG and the chip leaders.
-- [ ] **AVOID HOOD** unless a future hourly cycle explicitly upgrades it; crypto-linked earnings quality remains inferior.
+- [ ] **AVOID HOOD** unless a future hourly cycle explicitly upgrades it; setup quality remains inferior.
 - [ ] **AVOID EIS** unless price clears on tight spreads **and** a fresh second-source quote confirms the move; current broker quote is stale / illiquid.
 - [ ] **AVOID SHLD** this hour; defense theme remains lower-priority than AI / growth leadership.
 - [ ] **AVOID GLD** this hour unless a clear risk-off shock appears; current macro tape still favors growth over gold.
@@ -42,17 +43,10 @@
 
 ## 2026-05-05 Hourly Refresh Notes
 - [x] Live Alpaca account confirms the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,981.22 equity / $7,618.05 cash / $17,599.27 buying power**.
-- [x] Current unrealized P&L is **-$18.78** overall (**AVGO -$1.95, QQQ -$1.19, QTUM -$0.94, RKLB -$0.34, SOXX -$14.36**).
+- [x] Account snapshot: **$10,006.68 equity / $7,618.05 cash / $17,624.73 buying power**.
+- [x] Current unrealized P&L is **+$6.68** overall (**AVGO +$5.10, QQQ -$1.04, QTUM $0.00, RKLB -$0.48, SOXX +$3.10**).
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] The market is currently **closed**, and several after-hours Alpaca prints were **thin**, so tactical action still requires **regular-hours confirmation**.
 - [x] Best-add watchlist remains only **GOOG**; no add is authorized for **AVGO / QQQ / SOXX / QTUM / RKLB** this cycle.
 - [x] Prompt review complete: **no prompt change approved** this run.
-- [x] 10-minute tactical refresh complete: all tracked symbols were checked, but **no orders were placed** because GOOG did not reclaim the buy zone and the existing positions remained between their trim and stop levels.
-
-## 2026-05-05 10-Minute Tactical Execution
-- [x] Live Alpaca refresh confirms the book is still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$9,981.22 equity** and **$7,618.05 cash**.
-- [x] Latest after-hours quotes stayed outside all active trigger levels: **GOOG 379.03** below buy zone, **AVGO 415.00 / QQQ 672.07 / QTUM 136.53 / RKLB 80.54 / SOXX 461.25** all still between trim and stop bands.
-- [x] Google News RSS checks for **GOOG / AVGO / SOXX / QQQ / NVDA / META** did not surface a symbol-specific adverse catalyst strong enough to change the no-trade decision.
-- [x] No orders were submitted this cycle; keep cash high and wait for regular-hours confirmation before considering GOOG again.
