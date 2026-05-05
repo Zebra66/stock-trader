@@ -1,7 +1,7 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,981.05)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,981.22)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **AVGO 1 share**, **QQQ 1 share**, **QTUM 2 shares**, **RKLB 1 share**, **SOXX 2 shares**.
 - [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
@@ -42,11 +42,17 @@
 
 ## 2026-05-05 Hourly Refresh Notes
 - [x] Live Alpaca account confirms the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,981.05 equity / $7,618.05 cash / $17,599.10 buying power**.
-- [x] Current unrealized P&L is **-$18.95** overall (**AVGO -$1.64, QQQ -$1.09, QTUM -$0.94, RKLB -$0.68, SOXX -$14.60**).
+- [x] Account snapshot: **$9,981.22 equity / $7,618.05 cash / $17,599.27 buying power**.
+- [x] Current unrealized P&L is **-$18.78** overall (**AVGO -$1.95, QQQ -$1.19, QTUM -$0.94, RKLB -$0.34, SOXX -$14.36**).
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] The market is currently **closed**, and several after-hours Alpaca prints were **thin**, so tactical action still requires **regular-hours confirmation**.
 - [x] Best-add watchlist remains only **GOOG**; no add is authorized for **AVGO / QQQ / SOXX / QTUM / RKLB** this cycle.
 - [x] Prompt review complete: **no prompt change approved** this run.
 - [x] 10-minute tactical refresh complete: all tracked symbols were checked, but **no orders were placed** because GOOG did not reclaim the buy zone and the existing positions remained between their trim and stop levels.
+
+## 2026-05-05 10-Minute Tactical Execution
+- [x] Live Alpaca refresh confirms the book is still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$9,981.22 equity** and **$7,618.05 cash**.
+- [x] Latest after-hours quotes stayed outside all active trigger levels: **GOOG 379.03** below buy zone, **AVGO 415.00 / QQQ 672.07 / QTUM 136.53 / RKLB 80.54 / SOXX 461.25** all still between trim and stop bands.
+- [x] Google News RSS checks for **GOOG / AVGO / SOXX / QQQ / NVDA / META** did not surface a symbol-specific adverse catalyst strong enough to change the no-trade decision.
+- [x] No orders were submitted this cycle; keep cash high and wait for regular-hours confirmation before considering GOOG again.
