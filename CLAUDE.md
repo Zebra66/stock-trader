@@ -112,6 +112,11 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 
 ## Autonomous Stock Trader Rules
 
+### Trading Goal
+- **Primary objective:** Generate **positive absolute returns** — the portfolio must make money, not just lose less than the benchmark.
+- **Secondary objective:** **Beat the S&P 500** on a risk-adjusted basis over the same period.
+- Both goals must be met. Outperforming a falling S&P 500 while the portfolio is also down is not a success.
+
 ### Agent Runtime
 - The scheduled `hourly` and `tactical` jobs run through the Pi.dev coding-agent runtime, not a direct `@google/genai` SDK loop.
 - Model selection for those jobs lives in `config/agent_runtime.json`, using a single `provider/model` string per mode.
