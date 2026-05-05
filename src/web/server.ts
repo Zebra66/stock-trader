@@ -1,6 +1,5 @@
 import '../env';
 import { Elysia } from 'elysia';
-import * as crypto from 'node:crypto';
 import { getPaused, setPaused } from '../harness';
 import * as fs from 'fs/promises';
 import { getLogger } from '../logger';
@@ -8,6 +7,7 @@ import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resol
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
+import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
@@ -36,39 +36,6 @@ const CHART_CACHE_TTL_MS = 60 * 1000; // 1 minute
 
 let sp500Cache: CacheEntry | null = null;
 const SP500_CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
-// ─── Authentication Helpers ──────────────────────────────────────────────────
-function signSession(email: string): string {
-  const expires = Date.now() + 7 * 24 * 60 * 60 * 1000; // 1 week
-  const data = `${email}|${expires}`;
-  const secret = process.env.SESSION_SECRET || process.env.GOOGLE_OAUTH_CLIENT_SECRET || 'fallback_secret';
-  const hmac = crypto.createHmac('sha256', secret).update(data).digest('hex');
-  return Buffer.from(`${data}|${hmac}`).toString('base64');
-}
-
-function verifySession(token: string): boolean {
-  if (!token) return false;
-  try {
-    const decoded = Buffer.from(token, 'base64').toString('utf8');
-    const [email, expiresStr, hmac] = decoded.split('|');
-    if (!process.env.ALLOWED_USER_EMAIL || email !== process.env.ALLOWED_USER_EMAIL) return false;
-    if (Date.now() > parseInt(expiresStr, 10)) return false;
-    const secret = process.env.SESSION_SECRET || process.env.GOOGLE_OAUTH_CLIENT_SECRET || 'fallback_secret';
-    const expectedHmac = crypto.createHmac('sha256', secret).update(`${email}|${expiresStr}`).digest('hex');
-    return crypto.timingSafeEqual(Buffer.from(hmac), Buffer.from(expectedHmac));
-  } catch {
-    return false;
-  }
-}
-
-function getOrigin(request: Request): string {
-  const proto = request.headers.get('x-forwarded-proto');
-  const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
-  if (proto && host) {
-    return `${proto}://${host}`;
-  }
-  return new URL(request.url).origin;
-}
-
 function parseRequestedMode(value: string | undefined): AlpacaMode | undefined {
   return value === 'paper' || value === 'live' ? value : undefined;
 }
@@ -92,7 +59,7 @@ const app = new Elysia()
     const match = cookieHeader.match(/auth_session=([^;]+)/);
     const token = match ? match[1] : null;
 
-    if (!token || !verifySession(token)) {
+    if (!token || !verifySession(token, { allowedEmail: process.env.ALLOWED_USER_EMAIL })) {
       if (url.pathname.startsWith('/api/')) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
           status: 401,
@@ -1473,7 +1440,7 @@ const app = new Elysia()
       }
 
       const sessionToken = signSession(userData.email);
-      set.headers['Set-Cookie'] = `auth_session=${sessionToken}; Path=/; HttpOnly; Max-Age=604800; SameSite=Lax`;
+      set.headers['Set-Cookie'] = createAuthCookie(sessionToken);
       
       return new Response(null, {
         status: 302,

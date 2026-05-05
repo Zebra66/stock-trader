@@ -24,6 +24,8 @@ interface HarnessOptions {
   forceRun: boolean;
 }
 
+type AgentRunFunction = (mode: 'hourly' | 'tactical') => Promise<void>;
+
 export function setPaused(paused: boolean) {
   isPaused = paused;
   logger.info({ paused: isPaused }, 'Trading paused state updated');
@@ -66,6 +68,21 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   });
   await proc.exited;
 }
+
+export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction {
+  let queue = Promise.resolve();
+
+  return (mode) => {
+    const nextRun = queue.then(() => run(mode));
+    queue = nextRun.catch((error: unknown) => {
+      logger.error({ mode, error: (error as Error).message }, 'Serialized agent run failed');
+    });
+
+    return nextRun;
+  };
+}
+
+const runAgentSerialized = createSerializedRunner(spawnAgent);
 
 export function getDelayUntilNextHourlyRun(now: Date): number {
   return getNextHourlyRunAt(now).getTime() - now.getTime();
@@ -129,7 +146,7 @@ async function runWhenMarketOpen(
   // The harness process itself (this file) does NOT auto-reload after a git pull —
   // it must be restarted manually if harness.ts itself changes.
 
-  await spawnAgent(mode);
+  await runAgentSerialized(mode);
 }
 
 function scheduleAlignedRun(

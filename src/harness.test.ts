@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import {
+  createSerializedRunner,
   getDelayUntilNextHourlyRun,
   getDelayUntilNextTacticalRun,
   getNextHourlyRunAt,
@@ -85,5 +86,38 @@ describe('harness scheduler alignment', () => {
     const now = new Date('2026-05-04T09:58:00.000Z');
 
     expect(getDelayUntilNextTacticalRun(now)).toBe(12 * 60 * 1000);
+  });
+});
+
+describe('harness run serialization', () => {
+  test('queues agent runs so tactical waits for a long hourly run', async () => {
+    const events: string[] = [];
+    let releaseHourly: (() => void) | undefined;
+    const hourlyStarted = Promise.withResolvers<void>();
+
+    const runSerialized = createSerializedRunner(async (mode) => {
+      events.push(`start:${mode}`);
+
+      if (mode === 'hourly') {
+        hourlyStarted.resolve();
+        await new Promise<void>((resolve) => {
+          releaseHourly = resolve;
+        });
+      }
+
+      events.push(`end:${mode}`);
+    });
+
+    const hourlyRun = runSerialized('hourly');
+    await hourlyStarted.promise;
+    const tacticalRun = runSerialized('tactical');
+
+    await Promise.resolve();
+    expect(events).toEqual(['start:hourly']);
+
+    releaseHourly?.();
+    await Promise.all([hourlyRun, tacticalRun]);
+
+    expect(events).toEqual(['start:hourly', 'end:hourly', 'start:tactical', 'end:tactical']);
   });
 });

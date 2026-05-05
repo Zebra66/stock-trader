@@ -120,7 +120,7 @@ describe('pi runner logging', () => {
 
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
-      level: 'error',
+      level: 'warn',
       message: '❌ bash failed: command failed',
       payload: {
         eventType: 'message_end',
@@ -264,7 +264,7 @@ describe('pi runner logging', () => {
 
     expect(logs).toHaveLength(1);
     expect(logs[0]).toMatchObject({
-      level: 'error',
+      level: 'warn',
       message: '❌ read failed: file contents preview',
       payload: {
         eventType: 'tool_execution_end',
@@ -416,7 +416,7 @@ describe('pi runner logging', () => {
     });
 
     expect(logs[2]).toMatchObject({
-      level: 'error',
+      level: 'warn',
       message: '❌ bash failed: exit code 7',
       payload: {
         eventType: 'message_end',
