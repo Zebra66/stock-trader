@@ -2,9 +2,9 @@
 *Refreshed 2026-05-05 09:00 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,011.19)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
-- [ ] Current gross exposure is **23.91%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
+- [ ] Use **account equity ($10,026.86)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
+- [ ] Current gross exposure is **27.88%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
 - [x] The market is now **open**. Continue to do nothing unless a valid trigger and confirmation are present.
 - [ ] Because several broker quotes are thin, require **regular-hours confirmation** before acting on any breakout / breakdown.
@@ -24,12 +24,12 @@
 - [ ] **HOLD RKLB** — keep this as a tiny satellite only. **TRIM / SELL 1 share above 84.0** only if strength extends cleanly, or **SELL 1 share below 76.8** to cut risk on a deeper pullback.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY GOOG** only if price breaks above **384.5** during regular hours and holds with confirmation, or if it pulls back into **376.8-377.8** and then reclaims **379.0** in the same session.
-- [ ] Start with **1 share only** if **GOOG** triggers (about **3.8%** of equity).
-- [ ] After entry, **TRIM / SELL GOOG above 392.5** or **CUT GOOG below 368.0**.
-- [ ] Alpaca printed only **1 pre-market trade** for **GOOG** at **380.96**, so require either **regular-hours confirmation** or a **second-source quote check** before acting.
-- [ ] Yahoo intraday confirmation showed **GOOG ~380.6** pre-market, with regular-session **5-day high 384.18** and pullback support around **376.8-377.8**.
-- [ ] If **GOOG does not trigger**, accept the current book and keep cash high rather than forcing a lower-quality substitute.
+- [x] **BUY GOOG** only if price breaks above **384.5** during regular hours and holds with confirmation, or if it pulls back into **376.8-377.8** and then reclaims **379.0** in the same session. **Filled 1 share at 386.64**.
+- [x] Start with **1 share only** if **GOOG** triggers (about **3.8%** of equity). That entry has now been placed.
+- [x] After entry, **TRIM / SELL GOOG above 392.5** or **CUT GOOG below 368.0**.
+- [x] Alpaca printed only **1 pre-market trade** for **GOOG** at **380.96**, so require either **regular-hours confirmation** or a **second-source quote check** before acting.
+- [x] Yahoo intraday confirmation showed **GOOG ~380.6** pre-market, with regular-session **5-day high 384.18** and pullback support around **376.8-377.8**.
+- [x] GOOG did trigger, so the correct fallback path of staying flat was superseded; no lower-quality substitute was needed.
 
 ## Avoid / Low-Priority Names This Hour
 - [ ] **AVOID NVDA** for fresh capital this hour unless a future hourly cycle explicitly reopens it; current semiconductor exposure is already sufficient and GOOG still ranks ahead on timing.
@@ -57,7 +57,7 @@
 - [x] Recent fallback Reuters / Google News RSS stayed constructive for **GOOG / AI-capex**, selective but supportive for semis, and insufficient for fresh **top-investor** action.
 - [x] **No trade is authorized while the market is closed.**
 - [x] Fresh live quotes refreshed: **AVGO 420.8**, **QQQ 678.19**, **QTUM 138.83**, **RKLB 81.66**, **SOXX 470.57**, and **GOOG 380.6 pre-market**.
-- [x] **GOOG** remained below the authorized regular-hours entry rule, so no order was placed this cycle.
+- [x] **GOOG** cleared the regular-hours entry rule after the open and was bought as planned.
 
 ## Tactical Cycle Note — 2026-05-05 09:19 ET
 - [x] Refreshed live account/positions and quotes again; holdings remain **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with equity **$10,014.74** and cash **$7,618.05**.
@@ -69,3 +69,9 @@
 - [x] Refreshed live prices: **AVGO 422.98**, **QQQ 678.40**, **QTUM 137.86**, **RKLB 82.78**, **SOXX 472.17**, and **GOOG 380.61**.
 - [x] None of the held positions reached trim or stop levels, and **GOOG** still did not clear the approved entry trigger.
 - [x] No trade was placed; waiting for a cleaner trigger remains the correct tactical choice.
+
+## Tactical Cycle Note — 2026-05-05 09:41 ET
+- [x] GOOG broke above the approved **384.5** trigger in regular hours with healthy trade count / volume, and no adverse same-day catalyst was found in the news check.
+- [x] Entered **1 share GOOG** with a marketable limit order; filled around **386.64**.
+- [x] Updated live book is now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with equity **$10,026.86** and cash **$7,231.41**.
+- [x] Next expected action: hold the new GOOG starter and continue to respect the existing trim / stop levels.
