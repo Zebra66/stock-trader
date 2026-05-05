@@ -3,8 +3,8 @@
 
 ## Book-Level Safeguards
 - [ ] Use **account equity ($10,031.49)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 1**.
-- [ ] Current gross exposure is **23.26%**. Cap gross exposure near **28%**.
+- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **SOXX 1**.
+- [ ] Current gross exposure is about **22.5%**. Cap gross exposure near **28%**.
 - [ ] Keep at least **72% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **open**.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
@@ -29,7 +29,7 @@
 - [ ] **HOLD GOOG** — starter remains valid. **Do not average down.** Only **TRIM / SELL 1 share above 397.0** on a clean regular-hours extension, or **SELL 1 share below 376.0** if structure fails.
 - [ ] **HOLD QQQ** — target allocation **~7%** is already filled. **Do not add this hour.** Only **TRIM / SELL 1 share above 688.5** on a clean regular-hours extension, or **SELL 1 share below 673.0** on a break of short-term support.
 - [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** Only **TRIM 1 share above 141.2** on continued regular-hours strength, or **SELL 1 share below 136.2** to cut risk. Because **quote quality is thin**, require a **second source quote check** before acting.
-- [ ] **SELL RKLB** if price rebounds to **79.2** and stalls, or **SELL 1 share below 76.6** on regular-hours confirmation — rationale: weakest held name and best recycle source for future higher-conviction adds.
+- [x] **SELL RKLB** if price rebounds to **79.2** and stalls, or **SELL 1 share below 76.6** on regular-hours confirmation — rationale: weakest held name and best recycle source for future higher-conviction adds. **Completed: sold 1 share at $76.55**.
 - [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add.** Only **TRIM / SELL 1 share above 489.0** on a sharp regular-hours extension, or **SELL 1 share below 468.0** if the breakout clearly fails.
 
 ## Active Buy / Sell Conditions For New Capital
@@ -75,3 +75,8 @@
 - Checked live account / positions / prices again before acting.
 - **GOOG** remained below the **389.1** breakout trigger at **$381.15**, **SPY** stayed above the **721.5** risk-off cutoff at **$723.55**, and **RKLB** stayed between the recycle thresholds at **$77.34**.
 - No trades were placed; there was no authorized entry / exit with sufficient edge after friction.
+
+## Tactical Cycle Outcome — 2026-05-05 13:40 ET
+- Executed the active stop/recycle signal: **sold 1 share of RKLB at a marketable limit of $76.55** after regular-hours confirmation showed price below the **76.6** stop.
+- Live positions are now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Completed condition removed from the active watchlist for now; only the **GOOG** breakout buy remains the authorized fresh-capital setup.
