@@ -17,6 +17,13 @@
 - [ ] This hour, allow **at most one fresh long add**.
 - [ ] If **SPY** is trading **below 721.5** or the broad tape is clearly risk-off on fresh macro headlines, **skip all new breakout buys** this cycle.
 
+## Latest Tactical Check — 2026-05-05 13:29 ET
+- [x] Live account refreshed again: **$10,034.12 equity / $7,698.25 cash / $17,732.37 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
+- [x] Refreshed prices: **AVGO 431.57**, **GOOG 380.94**, **QQQ 681.79**, **QTUM 139.51**, **RKLB 76.99**, **SOXX 485.57**, **SPY 723.85**, **NVDA 197.77**, **META 602.14**, **HOOD 77.50**, **EIS 134.58**, **GLD 418.45**, **SHLD 67.57**, **VOO 665.47**, **ARKX 32.23**.
+- [x] GOOG stayed well below the **389.1** breakout trigger, RKLB stayed above the **76.6** stop trigger, and no trim / exit thresholds were hit for the current holdings.
+- [x] Decision: no trade; the correct action was to remain flat on new capital and preserve the existing selective book.
+
 ## Existing Positions
 - [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** Only **TRIM / SELL 1 share above 434.5** on a clear regular-hours extension, or **SELL 1 share below 419.0** to cut risk on a support loss.
 - [ ] **HOLD GOOG** — starter remains valid. **Do not average down.** Only **TRIM / SELL 1 share above 397.0** on a clean regular-hours extension, or **SELL 1 share below 376.0** if structure fails.
