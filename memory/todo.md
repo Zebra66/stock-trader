@@ -2,9 +2,9 @@
 *Refreshed 2026-05-05 11:11 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,028.13)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**. There is **no live SOXX position**.
-- [ ] Current gross exposure is **18.43%**. Cap gross exposure near **28%**.
+- [ ] Use **account equity ($10,031.09)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 1**.
+- [ ] Current gross exposure is **23.26%**. Cap gross exposure near **28%**.
 - [ ] Keep at least **75% cash** after any new trade.
 - [x] The market is **open**.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
@@ -24,7 +24,7 @@
 - [ ] **HOLD RKLB** only as a tiny satellite. **SELL 1 share above 80.5** into a rebound to recycle capital into higher-quality ideas, or **SELL 1 share below 77.4** to cut risk on support failure.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY SOXX 1 share only if price breaks above 481.2 during regular hours and holds with confirmation** — rationale: strongest sector ETF in the universe, live book is currently flat it, and this is the preferred way to restore high-conviction exposure.
+- [x] **BUY SOXX 1 share only if price breaks above 481.2 during regular hours and holds with confirmation** — rationale: strongest sector ETF in the universe, live book was flat it, and the add was executed this cycle on confirmed strength.
 - [ ] For a **SOXX** add, require healthy trade quality and a reasonably tight spread. If the tape is jumpy, skip it.
 - [ ] **BUY GOOG 1 share only if price breaks above 389.4 during regular hours and holds with confirmation, and only if SOXX has not already triggered in the same cycle** — rationale: best diversified AI / cloud add if SOXX does not trigger first.
 - [ ] If neither **SOXX** nor **GOOG** triggers, **stay flat on new capital this hour**.
@@ -48,10 +48,10 @@
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
 
 ## Current Hourly Refresh Result
-- [x] Live Alpaca account confirmed the book is **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1**, with **no SOXX position**.
-- [x] Account snapshot: **$10,028.13 equity / $8,180.20 cash / $18,208.33 buying power**.
-- [x] Current unrealized P&L is about **+$16.20** overall.
-- [x] Latest Alpaca prices refreshed: **AVGO 425.29**, **GOOG 384.54**, **QQQ 681.13**, **QTUM 138.79**, **RKLB 78.85**, **SOXX 480.92**, **NVDA 197.07**, **META 602.91**, **HOOD 78.11**, **SPY 723.34**.
+- [x] Live Alpaca account confirmed the book is now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
+- [x] Post-trade account snapshot: **$10,031.09 equity / $7,698.25 cash / $17,729.34 buying power**.
+- [x] Current unrealized P&L is about **+$19.43** overall.
+- [x] Latest Alpaca prices refreshed: **AVGO 427.04**, **GOOG 384.75**, **QQQ 681.27**, **QTUM 138.79**, **RKLB 79.12**, **SOXX 481.62**, **NVDA 197.16**, **META 603.52**, **HOOD 77.88**, **SPY 723.38**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] Reuters-prioritized Google News RSS fallback kept **macro / oil** constructive enough for a selective risk-on posture, while **GOOG** and **SOXX** remain the best add candidates and **META / HOOD** remain weaker.
-- [x] Strategy change this hour: the book is still **slightly trailing SPY** and is now **more underinvested**, so **one selective breakout add** is authorized — **SOXX first, GOOG second** — while keeping tight post-order reconciliation discipline.
+- [x] Reuters-prioritized Google News RSS fallback did not surface a fresh same-day semiconductor-specific negative catalyst; SOXX strength remained intact and the breakout add was allowed.
+- [x] Strategy change this hour: the book is still **slightly trailing SPY** and remains **constructively underinvested**, with **SOXX** now added on confirmed strength and **GOOG** left as the next secondary add if needed later.

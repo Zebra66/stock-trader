@@ -139,3 +139,9 @@ That argues for a **measured re-risking posture**, not broad chasing. The next-h
 - The live broker now shows **no SOXX position**; stale memory was reconciled to the live account and the book is now **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1**.
 - The strategy remains **off track versus SPY**, so the next-hour change is to allow **one selective exposure upgrade only**: **SOXX** on breakout is preferred, **GOOG** on breakout is secondary, and **RKLB** remains the only active recycle candidate.
 - **Prompt review:** a concrete prompt conflict was identified in the commit-instruction wording, so `prompts/hourly.txt` should be updated to respect higher-priority repo rules in interactive sessions.
+
+## Tactical Execution Summary — 2026-05-05
+- **What happened:** confirmed the live broker state, verified SOXX breakout strength with a second-source Yahoo check, and executed a **1-share SOXX add** above the 481.2 trigger.
+- **Current holdings:** **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
+- **Current posture:** still constructive / selective long, with the new SOXX add restoring a bit of high-conviction semiconductor exposure while keeping cash elevated.
+- **Next expected action:** hold unless **GOOG** clears its higher add trigger later or **RKLB** breaks support / rebounds into a recycle opportunity.
