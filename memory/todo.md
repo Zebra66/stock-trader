@@ -1,10 +1,16 @@
 # Tactical Todo For Next Execution
 *Refreshed 2026-05-05 17:03 ET by the Hourly Macro Strategist.*
 
+## Tactical Cycle Result — 2026-05-05 17:10 ET
+- [x] Live account refreshed again: **$10,054.26 equity / $7,774.88 cash / $17,829.14 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] No orders were sent; the market is closed and QQQ / SPY remain below the current breakout filter on the latest quote snapshot.
+- [x] Keep all existing regular-hours-only triggers unchanged for the next session.
+
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,048.28)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,054.26)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **SOXX 1**.
-- [ ] Current gross exposure is about **22.6%**. Cap gross exposure near **30%**.
+- [ ] Current gross exposure is about **22.7%**. Cap gross exposure near **30%**.
 - [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **closed**.
 - [x] Because the market is closed, place **no after-hours or pre-market equity orders**.
