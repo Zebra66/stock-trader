@@ -76,3 +76,12 @@
 - Market structure: fallback multi-timeframe data again favors **SOXX, GOOG, QTUM, AVGO, and QQQ**, while **META, HOOD, and RKLB** remain weaker or lower conviction.
 - External context: Reuters-prioritized fallback coverage turned incrementally softer for the broad tape because the **S&P 500 pulled back from a record high on Middle East worries**, but **Alphabet / Google Cloud / AI monetization** still have the cleanest positive news support.
 - Decision: keep the strategy **selectively constructive**, authorize **only one fresh GOOG add above 389.1 with regular-hours confirmation**, and keep **RKLB** as the first recycle candidate on either a rebound toward **79.2** or a breakdown below **76.6**.
+
+## 14:05 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,034.65**, cash **$7,774.88**, buying power **$17,809.53**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**; **RKLB remains fully exited**.
+- Goal check: the account is still **positive in dollars**, but still **trails SPY since inception** because the book remains only about **22.5% gross exposed**.
+- Market structure: fallback multi-timeframe data still favors **SOXX, AVGO, GOOG, QTUM, and QQQ**; the strongest incremental risk-adjusted idea is now a **liquid QQQ add**, not a GOOG add below cost basis.
+- External context: Reuters-prioritized Google News RSS fallback still shows **Middle East / oil** as the main macro risk, but intraday coverage also shows **Wall Street rebounding as oil eases**, so the tape does not justify a full defensive posture.
+- Decision: keep the strategy **constructively selective**, relax the reserve to **70% cash minimum / 30% gross max**, prohibit **averaging down GOOG**, and authorize **only one fresh QQQ add above 683.2 with SPY above 724.0 and regular-hours confirmation**.
