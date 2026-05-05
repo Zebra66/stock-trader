@@ -78,8 +78,16 @@
 - [x] Next expected action: keep cash high and wait for regular-hours confirmation before any GOOG entry or existing-position trim.
 
 ## Tactical Cycle Update — 2026-05-05 (current cycle)
-- [x] Live Alpaca account refreshed again: **$10,012.20 equity / $7,618.05 cash / $17,630.25 buying power**.
+- [x] Live Alpaca account refreshed again: **$10,011.36 equity / $7,618.05 cash / $17,629.41 buying power**.
 - [x] Holdings remain **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - [x] Latest quotes were refreshed for the whole universe; only **GOOG** is still a possible new-capital candidate, and its price is still below the trigger band.
 - [x] No orders were placed because the market is closed / pre-market and confirmation quality is weak.
 - [x] Next expected action: wait for regular-hours confirmation; only consider **GOOG** on a valid break above **383.5** or a same-session reclaim of **378.0** from the **376.5-377.5** zone.
+
+## Tactical Cycle Update — 2026-05-05 (pre-open refresh)
+- [x] Live Alpaca account refreshed again: **$10,011.36 equity / $7,618.05 cash / $17,629.41 buying power**.
+- [x] Market clock confirmed **pre-open** at **2026-05-05T08:50:37.100398396-04:00**; no trade was authorized while closed.
+- [x] Holdings remain **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** and stay inside the plan.
+- [x] GOOG remains below trigger on the thin after-hours print at **379.03**.
+- [x] No orders were placed this cycle.
+- [x] Next expected action: wait for the regular-session open and only act on GOOG if it breaks **383.5** with confirmation or reclaims **378.0** from **376.5-377.5** in the same session.

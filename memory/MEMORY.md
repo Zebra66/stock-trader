@@ -165,8 +165,8 @@ Fresh fallback news was mixed in quality, but the best recent and dated signal s
 - **Next expected action:** keep cash high, hold the current sleeve, and wait for regular-hours confirmation before any GOOG entry or trim.
 
 ## Tactical Execution Log — 2026-05-05 (current tactical cycle)
-- Refreshed the live Alpaca account again: **$10,012.20 equity / $7,618.05 cash / $17,630.25 buying power**.
+- Refreshed the live Alpaca account again: **$10,011.36 equity / $7,618.05 cash / $17,629.41 buying power**.
 - Holdings remain **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- Latest live prices: **AVGO 419.81**, **QQQ 677.80**, **QTUM 137.88**, **RKLB 81.36**, **SOXX 469.71**, **GOOG 379.03**; GOOG still does not meet the new-capital trigger.
-- **No orders were placed** because the market is closed / pre-market and the current book remains within plan.
-- **Next expected action:** wait for regular-hours confirmation; only consider **GOOG** on a valid break above **383.5** or a same-session reclaim of **378.0** from the **376.5-377.5** zone. Watch the existing trim levels for SOXX / QTUM only once regular hours confirm strength.
+- Latest live prices stayed mixed but orderly: **AVGO 416.51**, **QQQ 677.77**, **QTUM 135.63**, **RKLB 80.29**, **SOXX 469.45**, **GOOG 379.03**. The book remains inside plan and GOOG still does not meet the new-capital trigger.
+- **No orders were placed** because the market is still **closed / pre-market** and no trigger was confirmed in regular hours.
+- **Next expected action:** wait for the 9:30 ET open and only consider **GOOG** on a valid break above **383.5** or a same-session reclaim of **378.0** from the **376.5-377.5** zone. Keep existing trim levels for SOXX / QTUM watch-only until regular-hours confirmation.
