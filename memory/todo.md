@@ -1,9 +1,9 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,991.12)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($9,990.86)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Current live positions: **AVGO 1 share**, **QQQ 1 share**, **QTUM 2 shares**, **RKLB 1 share**, **SOXX 2 shares**.
-- [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
+- [ ] Current gross exposure is about **23.7%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
@@ -43,10 +43,10 @@
 
 ## 2026-05-05 Hourly Refresh Notes
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$9,991.12 equity / $7,618.05 cash / $17,609.17 buying power**.
-- [x] Current unrealized P&L is **-$8.88** overall (**AVGO +$0.11, QQQ +$0.74, QTUM $0.00, RKLB -$0.31, SOXX -$9.42**).
-- [x] Latest Alpaca quotes refreshed: **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 672.25, QTUM 135.63, RKLB 80.29, SHLD 68.05, SOXX 460.76, VOO 660.10, ARKX 32.55**.
-- [x] Yahoo fallback closes / level set refreshed: **AVGO 416.50, EIS 132.85, GLD 414.71, GOOG 379.64, HOOD 76.55, META 610.41, NVDA 198.48, QQQ 672.88, QTUM 135.69, RKLB 80.31, SHLD 68.08, SOXX 462.06, VOO 660.12, ARKX 32.51**.
+- [x] Account snapshot: **$9,990.86 equity / $7,618.05 cash / $17,608.91 buying power**.
+- [x] Current unrealized P&L is **-$9.14** overall (**AVGO -$0.45, QQQ +$0.99, QTUM $0.00, RKLB -$0.26, SOXX -$9.42**).
+- [x] Latest Alpaca quotes refreshed: **AVGO 416.50, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.25, QTUM 137.00, RKLB 80.62, SHLD 68.05, SOXX 463.72, VOO 660.10, ARKX 32.55, SPY 717.80**.
+- [x] Yahoo fallback closes / level set refreshed: **AVGO 416.50, EIS 132.85, GLD 414.71, GOOG 379.64, HOOD 76.55, META 610.41, NVDA 198.48, QQQ 672.88, QTUM 135.69, RKLB 80.31, SHLD 68.08, SOXX 462.06, VOO 660.12, ARKX 32.51, SPY 718.01**.
 - [x] Re-checked FMP and confirmed historical performance remains unavailable because **`FMP_API_KEY` is missing**.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback**.
 - [x] The market is currently **closed**, and several after-hours Alpaca prints were **thin**, so tactical action still requires **regular-hours confirmation**.
@@ -62,7 +62,8 @@
 ## 2026-05-05 10-Min Tactical Cycle Result
 - **Market status:** closed; no regular-hours confirmation available for a new entry.
 - **Live book:** unchanged — **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- **Account snapshot:** **$9,990.99 equity / $7,618.05 cash / $17,609.04 buying power**.
-- **Latest Alpaca prices used:** **AVGO 416.51, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.43, QTUM 137.00, RKLB 80.57, SHLD 68.05, SOXX 463.72, VOO 660.10, ARKX 32.55, SPY 717.80**.
+- **Account snapshot:** **$9,990.86 equity / $7,618.05 cash / $17,608.91 buying power**.
+- **Latest Alpaca prices used:** **AVGO 416.50, EIS 132.54, GLD 414.26, GOOG 379.03, HOOD 76.56, META 609.52, NVDA 197.86, QQQ 674.25, QTUM 137.00, RKLB 80.62, SHLD 68.05, SOXX 463.72, VOO 660.10, ARKX 32.55, SPY 717.80**.
+- **News check:** quick Google News RSS scan found no symbol-specific adverse headline for the current book that changed the plan; GOOG headlines stayed constructive, while weak META / HOOD coverage remains irrelevant because those names are not active buys.
 - **Action:** no trade. GOOG stayed below the breakout trigger and the book did not offer a friction-adjusted edge large enough to justify any new risk.
 - **Next step:** keep cash high, hold current positions, and wait for a regular-hours GOOG confirmation or an existing stop / trim trigger.

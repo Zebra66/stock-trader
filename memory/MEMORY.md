@@ -7,24 +7,24 @@ US equities are still in a **selective AI / semiconductor-led risk-on regime**, 
 The account is still **off track on the absolute-return goal** and remains too early / too flat versus SPY to claim durable outperformance. That means the next hour should stay focused on **protecting capital, avoiding low-quality trades, and only adding to the single best missing liquid leader**. Right now that remains **GOOG**, but only on **regular-hours confirmation** because several Alpaca after-hours quotes were thin or stale.
 
 ## Goal Check
-- **Portfolio since inception:** **-0.09%** (**$9,991.12** vs initial **$10,000.00**)
+- **Portfolio since inception:** **-0.09%** (**$9,990.86** vs initial **$10,000.00**)
 - **S&P 500 proxy (SPY) over same tradable window:** **0.00%** (first post-inception close **718.01** on **2026-05-04** vs latest close **718.01** on **2026-05-04**)
 - **Status:** **Off track — absolute return is still negative, and the benchmark window is still too short / flat to prove sustained outperformance.**
 
 ## Portfolio State
-- **Equity:** $9,991.12
+- **Equity:** $9,990.86
 - **Cash:** $7,618.05
-- **Buying power:** $17,609.17
-- **Gross exposure:** ~23.8%
+- **Buying power:** $17,608.91
+- **Gross exposure:** ~23.7%
 - **Market status:** closed
 - **Alpaca clock timestamp:** 2026-05-05T01:00:50.772666131-04:00
 - **Current positions:**
-  - **AVGO:** 1 share @ 416.95 | market value **$417.06** | unrealized P&L **+$0.11** (+0.03%) | allocation **4.17%**
-  - **QQQ:** 1 share @ 673.26 | market value **$674.00** | unrealized P&L **+$0.74** (+0.11%) | allocation **6.75%**
+  - **AVGO:** 1 share @ 416.95 | market value **$416.50** | unrealized P&L **-$0.45** (-0.11%) | allocation **4.17%**
+  - **QQQ:** 1 share @ 673.26 | market value **$674.25** | unrealized P&L **+$0.99** (+0.15%) | allocation **6.75%**
   - **QTUM:** 2 shares @ 137.00 | market value **$274.00** | unrealized P&L **$0.00** (0.00%) | allocation **2.74%**
-  - **RKLB:** 1 share @ 80.88 | market value **$80.57** | unrealized P&L **-$0.31** (-0.38%) | allocation **0.81%**
+  - **RKLB:** 1 share @ 80.88 | market value **$80.62** | unrealized P&L **-$0.26** (-0.32%) | allocation **0.81%**
   - **SOXX:** 2 shares @ 468.43 | market value **$927.44** | unrealized P&L **-$9.42** (-1.01%) | allocation **9.28%**
-- **Overall unrealized P&L:** **-$8.88**
+- **Overall unrealized P&L:** **-$9.14**
 
 ## Data & Research Sources Used This Run
 - **Historical performance (attempted):** `bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>` for the full universe
