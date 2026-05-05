@@ -1,8 +1,8 @@
 # Tactical Todo For Next Execution
 
 ## Book-Level Instructions
-- [ ] Use **account equity ($9,991.60)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Current live positions: **AVGO 1 share @ 416.50**, **QQQ 1 share @ 674.38**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.67**, **SOXX 2 shares @ 464.00**.
+- [ ] Use **account equity ($9,991.67)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Current live positions: **AVGO 1 share @ 416.50**, **QQQ 1 share @ 674.37**, **QTUM 2 shares @ 137.00**, **RKLB 1 share @ 80.75**, **SOXX 2 shares @ 464.00**.
 - [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trades unless the tape materially improves.
 - [ ] Because the market is currently **closed**, do **not** use thin after-hours bars as trade confirmation. The next actionable window is the next **regular market session**.
@@ -78,8 +78,8 @@
 - [x] Next session focus remains **GOOG** first; keep the current cash-heavy posture until regular-hours confirmation.
 
 ## 2026-05-05 Tactical Cycle Closeout (current run)
-- [x] Refreshed live account, positions, latest prices, and Google News RSS context for the full actionable universe.
-- [x] Current live snapshot: equity **$9,991.53**, cash **$7,618.05**, buying power **$17,609.58**; holdings still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- [x] Refreshed live account, positions, and latest prices for the full actionable universe.
+- [x] Current live snapshot: equity **$9,991.67**, cash **$7,618.05**, buying power **$17,609.72**; holdings still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - [x] Latest prices confirmed **GOOG 379.03**; no breakout / reclaim trigger cleared and all held names remained inside their hold bands.
 - [x] No orders were submitted after accounting for quote quality, stale after-hours conditions, and estimated friction.
 - [x] Next session focus remains **GOOG** first; keep the current cash-heavy posture until regular-hours confirmation.
