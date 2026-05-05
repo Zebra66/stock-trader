@@ -25,3 +25,11 @@
 - Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - Quote quality: Alpaca after-hours prints remained thin for **GOOG, META, NVDA, QQQ, QTUM, SOXX, EIS, GLD**; Yahoo chart meta was used as second-source confirmation for likely traded names.
 - Decision: keep high cash, hold current positions, and keep **GOOG** as the only active fresh-long candidate for the next regular session.
+
+## 06:05 ET — Hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,003.30**, cash **$7,618.05**, buying power **$17,621.35**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: Alpaca after-hours prints remained thin for **GOOG, EIS, GLD, META, NVDA, QQQ, QTUM, SOXX**; Yahoo Finance chart data was again used as second-source confirmation and for multi-timeframe returns because `FMP_API_KEY` is still missing.
+- External context: fallback Google News RSS stayed constructive for **GOOG**, negative for **HOOD**, mixed / mostly low-quality for **AVGO** and **NVDA**, and insufficient for fresh top-investor moves.
+- Decision: no trade while the market is closed; keep gross exposure capped near **30%**, keep at least **70% cash**, and leave **GOOG** as the only approved fresh long for the next regular session.

@@ -1,13 +1,13 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 05:07 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-05 06:05 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,002.34)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,003.30)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
-- [ ] Current gross exposure is about **23.8%**. Cap gross exposure around **30%** unless a future hourly review explicitly raises it.
+- [ ] Current gross exposure is about **23.8%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
 - [ ] Because the market is currently **closed**, do **not** use overnight bars as trade confirmation.
-- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an extra confirmation check; prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
+- [ ] If the next regular session opens with an **overnight gap greater than 1.5%** in the actionable symbol, require an extra confirmation check and prefer the **:50 tactical cycle** over the **:40 cycle** if the open is disorderly.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
 - [ ] Estimated friction reminder: liquid mega-cap / ETF names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included; thinner names can cost materially more.
 - [ ] Use **marketable limit orders** when spreads are not very tight.
@@ -48,14 +48,9 @@
 
 ## Current Hourly Refresh Result
 - [x] Live Alpaca account confirmed the book is **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
-- [x] Account snapshot: **$10,002.34 equity / $7,618.05 cash / $17,620.39 buying power**.
-- [x] Current unrealized P&L is about **+$2.34** overall (**AVGO +$1.55, QQQ +$3.08, QTUM -$1.08, RKLB +$0.28, SOXX -$1.49**).
+- [x] Account snapshot: **$10,003.30 equity / $7,618.05 cash / $17,621.35 buying power**.
+- [x] Current unrealized P&L is about **+$3.30** overall (**AVGO +$1.85, QQQ +$3.34, QTUM -$0.80, RKLB +$0.37, SOXX -$1.46**).
 - [x] Latest Alpaca bars refreshed for the full universe; several remain **thin / stale** because the market is closed.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] Recent fallback news stayed **constructive for GOOG**, **negative for HOOD**, and **insufficient / non-actionable** for top-investor moves, RKLB, and broad semiconductor headlines.
+- [x] Recent fallback news stayed **constructive for GOOG**, **negative for HOOD**, and **insufficient for fresh top-investor moves**.
 - [x] **No trade is authorized while the market is closed.**
-- [x] **Tactical cycle 2026-05-05 05:10 ET:** no conditions met; all triggers remain unhit, so the correct action was to stay flat and wait for regular-hours confirmation.
-- [x] **Tactical cycle 2026-05-05 05:20 ET:** refreshed live quotes for the full universe; all actionable symbols remained below their buy / trim thresholds and no stop levels were violated, so no trade was warranted.
-- [x] **Tactical cycle 2026-05-05 05:30 ET:** refreshed the live broker snapshot, confirmed the market is closed, checked GOOG / AVGO / NVDA news via Google News RSS, and found no triggered buy, trim, or stop condition; staying flat was the correct action.
-- [x] **Tactical cycle 2026-05-05 05:40 ET:** refreshed the live broker account, positions, clock, and latest universe quotes; confirmed the market is still closed; reviewed fresh GOOG / AVGO / macro oil headlines; and found no valid buy, trim, or stop trigger, so the correct action was to stay flat again.
-- [x] **Tactical cycle 2026-05-05 05:50 ET:** refreshed the live broker account, positions, and latest quotes for the full universe; confirmed the market is still closed; and found no buy, trim, or stop trigger, so staying flat remained the right decision.
