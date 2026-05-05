@@ -130,14 +130,12 @@ Fresh fallback news was mixed in quality, but the best recent and dated signal s
 
 ## Last Run Summary
 - Refreshed live Alpaca account, positions, market clock, and latest prices for the full approved universe.
-- Confirmed the book remains **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$10,001.98 equity**, **$7,618.05 cash**, and **23.84% gross exposure**.
+- Confirmed the book remains **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with **$10,006.17 equity**, **$7,618.05 cash**, and about **23.86% gross exposure**.
 - Reconfirmed that **FMP is unavailable** because **`FMP_API_KEY` is missing**, so multi-timeframe returns were refreshed with the **Yahoo Finance chart API fallback**.
-- Refreshed support / resistance structure and kept **GOOG** as the only fresh-long candidate, subject to **regular-hours confirmation**.
-- Used **Google News RSS** with **Reuters-focused retry queries**; recent actionable items supported **GOOG / AI-capex leadership**, while **top-investor** and **HOOD** coverage were not strong enough to change positioning.
-- **No orders were placed** because the market is closed and several broker quotes were too thin for action.
+- Kept **GOOG** as the only fresh-long candidate, but its latest tape was still a thin after-hours print and did not justify an order while the market is closed.
+- No orders were placed because the market is closed and confirmation quality remains weak.
 - **Prompt review:** no prompt change made this cycle; no new failure mode justified altering `prompts/hourly.txt`.
 - **Strategy:** stay long a small AI / semiconductor sleeve, keep cash high, and do not short anything this hour.
-
 ## Tactical Execution Log — 2026-05-05 (latest cycle)
 - Refreshed Alpaca again and the book is still **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
 - The account is now **$10,005.00 equity / $7,618.05 cash / $17,623.05 buying power** with roughly **23.86% gross exposure**.
@@ -151,3 +149,10 @@ Fresh fallback news was mixed in quality, but the best recent and dated signal s
 - Refreshed latest prices for the full approved universe; **GOOG** remained the only candidate worth watching, but its thin after-hours print at **379.03** did not meet either regular-hours trigger, and a second-source Yahoo check still anchored the regular market price near **379.64**.
 - **No trade** was executed. Next action is to wait for the open and only act on GOOG if it breaks **383.5** with confirmation or reclaims **378.0** after a pullback into **376.5-377.5**.
 - Refreshed this tactical cycle again: account now shows **$10,002.80 equity / $7,618.05 cash / $17,620.85 buying power** with the same held book (**AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**). Latest quotes were still thin/closed-session prints, and **GOOG** remained below trigger on the stale after-hours tape, so the correct action stayed **no trade**.
+
+## Tactical Execution Log — 2026-05-05 (current cycle)
+- Refreshed the live Alpaca account again: **$10,006.17 equity / $7,618.05 cash / $17,624.22 buying power**.
+- Holdings are unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Latest quotes remain mostly thin / closed-session prints. GOOG still sits around **379.03** on a single after-hours trade and remains below the active trigger band.
+- **No orders were placed** because the market is closed and the book remains within plan.
+- **Next expected action:** wait for regular-hours confirmation; only consider GOOG on a valid break above **383.5** or a same-session reclaim of **378.0** from the **376.5-377.5** zone.
