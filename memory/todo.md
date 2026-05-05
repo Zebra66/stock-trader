@@ -93,3 +93,11 @@
 - [x] **QQQ** is above the 683.1 trigger in closed-market prints, but **SPY is still below 724.8** and the market remains closed, so **no order is allowed**.
 - [x] Quote quality remains thin in **EIS**, **QTUM**, **HOOD**, and **ARKX**; continue requiring a second source before any action.
 - [x] Stay flat until regular-hours confirmation or the next hourly strategist refresh.
+
+## Latest Tactical Check — 2026-05-06 pre-open
+- [x] Alpaca clock still shows the market **closed** with **next open 2026-05-06 09:30 ET** and **next close 2026-05-06 16:00 ET**.
+- [x] Live account refreshed: **$10,043.78 equity / $7,774.88 cash / $17,818.66 buying power**.
+- [x] Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Latest prices: **AVGO 433.75**, **GOOG 388.04**, **QQQ 682.76**, **QTUM 139.17**, **SOXX 486.01**, **SPY 723.94**, **NVDA 196.79**, **META 603.58**, **HOOD 77.30**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.265**.
+- [x] **QQQ** still has not cleared the fresh-add trigger and **SPY** is still below the risk filter, so there is no actionable breakout.
+- [x] No trade was justified this cycle; stay flat until regular-hours confirmation or the next hourly refresh.

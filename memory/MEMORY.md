@@ -192,3 +192,12 @@ This run occurred **after the regular-session close**, so the correct posture is
 - QQQ is back above the breakout trigger in closed-market prints, but **SPY remains below 724.8** and the market is still closed, so **no order was allowed**.
 - No position drift required action; the book remains constructively long but underinvested.
 - Next expected action: wait for the next regular-session confirmation before considering the single authorized **QQQ** add.
+
+## Tactical Execution Summary — 2026-05-06 pre-open
+- Refreshed live Alpaca **account, positions, clock, and latest prices** for the new session window.
+- Market status is still **closed**; Alpaca clock shows **next open 2026-05-06 09:30 ET** and **next close 2026-05-06 16:00 ET**.
+- Live account now shows **$10,043.78 equity / $7,774.88 cash / $17,818.66 buying power**.
+- Live positions remain **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Latest quotes: **AVGO 433.75**, **GOOG 388.04**, **QQQ 682.76**, **QTUM 139.17**, **SOXX 486.01**, **SPY 723.94**, **NVDA 196.79**, **META 603.58**, **HOOD 77.30**, **EIS 135.17**, **GLD 418.07**, **RKLB 78.77**, **SHLD 67.55**, **VOO 665.30**, **ARKX 32.265**.
+- QQQ still has **not** cleared the fresh-add trigger and SPY is still below the risk filter, so the correct action remains **no trade**.
+- Next expected action: wait for regular-hours confirmation; **QQQ** remains the only fresh-add candidate if both breakout and tape filters line up.
