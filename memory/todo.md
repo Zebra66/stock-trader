@@ -6,7 +6,7 @@
 - [ ] Live positions are **AVGO 1**, **QQQ 1**, **QTUM 2**, **RKLB 1**, **SOXX 2**.
 - [ ] Current gross exposure is **23.91%**. Cap gross exposure near **30%** unless a future hourly review explicitly raises it.
 - [ ] Keep at least **70% cash** after any new trade unless a future hourly review explicitly authorizes a more aggressive posture.
-- [ ] The market is currently **closed / pre-market**. **Do nothing while closed.**
+- [x] The market is now **open**. Continue to do nothing unless a valid trigger and confirmation are present.
 - [ ] Because several broker quotes are thin, require **regular-hours confirmation** before acting on any breakout / breakdown.
 - [ ] If the open shows an **overnight gap greater than 1.5%** in an actionable symbol, prefer waiting for the **:50 tactical cycle** unless the tape is orderly and confirmation quality is strong.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
@@ -63,3 +63,9 @@
 - [x] Refreshed live account/positions and quotes again; holdings remain **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2** with equity **$10,014.74** and cash **$7,618.05**.
 - [x] **GOOG** is still below the regular-hours buy trigger, so the correct action remains **no trade** until confirmation arrives.
 - [x] No new adverse catalyst was required to override the plan because no order condition was met.
+
+## Tactical Cycle Note — 2026-05-05 09:30 ET
+- [x] Market clock now shows the session is **open**.
+- [x] Refreshed live prices: **AVGO 422.98**, **QQQ 678.40**, **QTUM 137.86**, **RKLB 82.78**, **SOXX 472.17**, and **GOOG 380.61**.
+- [x] None of the held positions reached trim or stop levels, and **GOOG** still did not clear the approved entry trigger.
+- [x] No trade was placed; waiting for a cleaner trigger remains the correct tactical choice.
