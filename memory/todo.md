@@ -1,113 +1,62 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 20:00 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-06 13:35 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,044.48)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,075.14)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 2**, **QTUM 2**, **SOXX 1**.
-- [ ] Current gross exposure is about **29.6%**. Cap gross exposure near **30%**.
-- [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
-- [x] The market is **closed**.
-- [x] Because the market is closed, place **no after-hours or pre-market equity orders**.
-- [x] Convert all directives below into **next regular-session only** actions.
-- [ ] Earliest allowed new entry is **after 09:40 ET** on the next regular session and only after fresh regular-hours confirmation.
+- [ ] Current gross exposure is about **29.7%**. This cycle may expand only to about **37% gross exposure** and must keep at least **63% cash**.
+- [ ] **No leverage** is authorized.
+- [ ] The market is **open**.
+- [ ] Earliest allowed new entry is **immediate during regular hours**, but **no new long after 15:45 ET**.
 - [ ] Use **regular-hours confirmation** before acting on any breakout or breakdown.
-- [ ] Anchor next-session levels to **regular-session highs/lows**, not thin extended-hours prints.
+- [ ] Use **marketable limit orders** when spreads are not extremely tight.
 - [ ] Skip any trade where the expected move to first trim is not clearly at least **3x** estimated total round-trip friction.
 - [ ] Estimated friction reminder: even liquid names can still cost roughly **5-20 bps** round trip once spread, slippage, CAT, SEC, and FINRA sell-side fees are included.
-- [ ] Use **marketable limit orders** when spreads are not very tight.
 - [ ] **Do not average down** any existing position.
-- [ ] If Alpaca shows **TradeCount < 10**, a stale timestamp, or obviously thin volume in an actionable symbol, require a **second source** confirmation or skip the order.
-- [ ] After **any filled or suspected-filled order**, immediately refresh **positions** before considering a second order in the same cycle.
+- [ ] After **any filled or suspected-filled order**, immediately refresh **positions** before considering a second order.
 - [ ] This plan allows **at most one fresh long add** before the next hourly strategist refresh.
-- [ ] If **SPY** is trading **below 725.1** or the broad tape turns clearly risk-off on fresh macro headlines, **skip all new breakout buys**.
-- [ ] If the next session gaps materially above trigger levels, wait for the first pullback / hold rather than chasing the first print.
-- [ ] Because the book is underinvested, **do not routine-trim single-share winners on marginal strength**; trim only on a clear climactic extension or if support fails.
+- [ ] If **SPY** is trading **below 730.8** or fresh macro headlines turn the tape clearly risk-off, **skip all new breakout buys**.
+- [ ] Because IEX quote quality was uneven today, require a **second source** for any action outside **QQQ / SPY**. For **QQQ**, if the latest broker 1-minute bar shows **TradeCount < 10**, still confirm the move with a second source before ordering.
+- [ ] If spreads widen materially, timestamps look stale, or the tape turns disorderly, do nothing.
+- [ ] Do **not** routine-trim winners on minor strength; trim only on a clear extension or a confirmed support break.
 
-## Current Closed-Market Refresh Result — 2026-05-05 20:00 ET
-- [x] Live account refreshed: **$10,044.48 equity / $7,774.88 cash / $17,819.36 buying power**.
-- [x] Live positions are **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Current unrealized P&L is about **+$36.80** overall.
-- [x] Alpaca after-hours quote warning: **AVGO 9 trades**, **GOOG 4**, **QQQ 2**, **QTUM 8**, **SOXX 4**, **SPY 5** in the latest post-close snapshot — require regular-hours confirmation and use a second source when needed.
-- [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] Google News RSS fallback remained supportive for **Nasdaq / AI leadership** and **Alphabet / Google cloud / AI**, while **oil / Middle East** headlines remain the main macro risk.
-- [x] Second-source regular-session structure check shows **QQQ day high 682.77 / day low 677.51**, **SPY day high 725.04 / day low 721.49**, **GOOG day high 388.96 / day low 380.35**, **AVGO day high 433.39 / day low 419.35**, **QTUM day high 139.61 / day low 137.41**, and **SOXX day high 486.18 / day low 470.24**.
+## Current Live Refresh Result — 2026-05-06 13:35 ET
+- [x] Live account refreshed: **$10,075.14 equity / $7,084.87 cash / $17,160.01 buying power**.
+- [x] Live positions are **AVGO 1, GOOG 1, QQQ 2, QTUM 2, SOXX 1**.
+- [x] Current unrealized P&L is about **+$68.71** overall.
+- [x] Portfolio is **positive in dollars**, but currently **behind SPY since inception** because the book is still underinvested.
+- [x] FMP remained unavailable because **`FMP_API_KEY` is missing**, so returns were refreshed with the **Yahoo Finance chart API fallback**.
+- [x] Google Search was unavailable in the workspace, so news was refreshed with **Reuters-focused Google News RSS** fallback.
+- [x] Broker quote-quality warning: **GOOG** and **QTUM** showed wide / messy quotes, and **AVGO** also had light IEX trade count. Use second-source confirmation before acting on those names.
+- [x] Second-source structure check shows **QQQ today high 692.85 / low 686.48**, **SPY 732.56 / 727.82**, **GOOG 396.38 / 387.20**, **AVGO 437.68 / 417.78**, **QTUM 142.93 / 140.60**, **SOXX 502.64 / 487.86**.
 
 ## Existing Positions
-- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** **SELL 1 share below 419.2** only if regular-hours support clearly fails. **Trim only above 440.0** on a climactic regular-hours extension with orderly tape.
-- [ ] **HOLD GOOG** — starter remains valid, but **do not average down** and **no fresh add is authorized this cycle**. **SELL 1 share below 380.2** only if structure clearly fails during regular hours.
-- [ ] **HOLD QQQ** — the authorized fresh-add was completed with a 1-share buy at 690.0 during regular hours, so no more adds are authorized before the next hourly refresh. **TRIM / SELL 1 share above 692.0** on continued extension, or **SELL 1 share below 677.4** on a break of short-term support.
-- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** **SELL 1 share below 137.3** to cut risk. **Trim 1 share above 142.0** only on continued regular-hours strength and only after a **second source quote check**.
-- [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add.** **SELL 1 share below 469.8** if the breakout clearly fails. **Trim only above 500.0** on a climactic regular-hours extension; do not trim on minor strength.
+- [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** **SELL 1 share below 417.6** only if regular-hours support clearly fails and a second source agrees. **Trim only above 438.0** on a climactic regular-hours extension.
+- [ ] **HOLD GOOG** — target allocation **~4%** is already filled. **Do not add.** **SELL 1 share below 386.8** only if regular-hours structure fails and a second source confirms, because the broker quote spread was unreliable.
+- [ ] **HOLD QQQ** — target allocation can increase toward **~20%** this cycle. **SELL / trim 1 share above 698.5** only on a climactic regular-hours extension. **SELL 1 share below 685.8** if the breakout clearly fails during regular hours.
+- [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** **SELL 1 share below 140.4** only if regular-hours support fails and a second source confirms. **Trim 1 share above 144.0** only on continued strength and only after a second-source quote check.
+- [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add.** **SELL 1 share below 487.4** if the breakout clearly fails. **Trim only above 507.5** on a climactic regular-hours extension; do not trim on minor strength.
 
 ## Active Buy / Sell Conditions For New Capital
-- [x] **BUY QQQ 1 share only if price breaks above 683.1 during regular hours, SPY remains above 725.1, and the tape stays orderly** — rationale: best high-liquidity way to reduce cash drag while large-cap growth leadership persists. **Filled 2026-05-06 at 690.0 limit.**
-- [ ] For a **QQQ** add, require sane spread / tape quality and keep post-fill exposure **<= 30% gross** and **>= 70% cash**.
+- [ ] **BUY QQQ 1 share only if price breaks and holds above 693.0 during regular hours, SPY remains above 732.0, and the tape stays orderly** — rationale: highest-quality liquid way to reduce cash drag while growth leadership persists.
+- [ ] For the **QQQ** add, require a sane spread, broker timestamp freshness, and either **broker TradeCount >= 10** or a **second source** confirming the breakout within roughly **15 bps**.
+- [ ] Use a **marketable limit**, not a blind market order, if the trigger fires.
+- [ ] After any **QQQ** fill, refresh positions immediately and place **no additional new trade** before the next hourly strategist refresh.
 - [ ] If **QQQ** does not trigger cleanly, **stay flat on new capital** until the next hourly strategist refresh.
-- [ ] **Do not buy GOOG, AVGO, SOXX, or QTUM** again without a later hourly strategist upgrade.
-- [ ] **Do not buy GLD** unless a future hourly cycle explicitly authorizes a hedge posture.
+- [ ] **Do not buy GOOG, AVGO, SOXX, QTUM, NVDA, GLD, META, HOOD, EIS, RKLB, SHLD, VOO, or ARKX** this cycle.
 
 ## Avoid / Low-Priority Names
-- [ ] **AVOID NVDA** for fresh capital right now; current semiconductor exposure is sufficient and the incremental allocation is better used in **QQQ**.
-- [ ] **AVOID META** right now; recent relative trend remains weaker than the preferred setups.
-- [ ] **AVOID HOOD** right now; trend quality remains weaker than the current leaders.
-- [ ] **AVOID EIS** unless a future hourly cycle upgrades it and a second source confirms liquidity.
-- [ ] **AVOID SHLD** right now; defense remains lower priority than AI / growth leadership.
-- [ ] **AVOID GLD** unless a clear risk-off shock appears.
-- [ ] **AVOID VOO** for new capital while **QQQ** remains the preferred broad growth vehicle.
-- [ ] **AVOID ARKX** unless space momentum broadens materially and a later hourly cycle explicitly upgrades it.
+- [ ] **AVOID META** right now; recent relative trend remains weaker than the preferred AI leaders.
+- [ ] **AVOID GLD** unless a later hourly cycle explicitly shifts into hedge posture.
+- [ ] **AVOID SHLD** while defense continues to lag the growth leaders.
+- [ ] **AVOID VOO** for new capital while **QQQ** remains the preferred broad vehicle.
+- [ ] **AVOID HOOD** and **RKLB** for fresh capital despite better short-term momentum; they remain lower-quality than the current core book.
+- [ ] **AVOID EIS** and **ARKX** unless a future hourly cycle upgrades them and quote quality is confirmed.
 
 ## Tactical Behavior Reminders
-- [ ] If the tape turns disorderly or spread / trade-count quality degrades, do nothing.
+- [ ] If the tape turns disorderly or quote quality degrades, do nothing.
 - [ ] If any existing holding hits its stop level, reduce first and reassess before opening replacement positions.
 - [ ] Ignore noisy or stale fallback headlines; only act on news that is clearly recent and from a trusted source.
 - [ ] If oil / geopolitical headlines accelerate and the broad index turns sharply risk-off, prioritize stop discipline over breakout buying.
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
-- [ ] If the next run is still outside regular hours, carry the same no-trade posture forward rather than forcing activity.
-
-## Tactical Cycle Log — 2026-05-05 20:00 ET
-- [x] Refreshed account / positions / clock / latest prices.
-- [x] No orders were submitted because the market was still closed and the QQQ add trigger remained next-session only.
-- [x] Existing sell levels for **AVGO, GOOG, QQQ, QTUM, and SOXX** were not hit, so the book remains unchanged.
-- [x] Refreshed latest values show **QQQ 682.76** below **683.1** and **SPY 723.94** below **725.1**, so the breakout entry stayed inactive.
-- [x] Live account refreshed to about **$10,044.48 equity / $7,774.88 cash / $17,819.36 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Current setup still requires **regular-hours confirmation after 09:40 ET** before any fresh add, so the entry remains unauthorized.
-- [x] Google News RSS fallback still supports the broad AI / Nasdaq thesis, but investor and analyst-action coverage remained insufficient.
-
-## Tactical Cycle Log — 2026-05-06 Midday Check
-- [x] Refreshed account / positions / clock / latest prices again.
-- [x] No orders were submitted because the market was still closed and the plan remained next-session only.
-- [x] Alpaca showed **QTUM 137.00**, which is below the written stop, but Yahoo later showed **QTUM 139.17** with the same post-close window, so the Alpaca print was treated as stale / unsupported and no forced exit was taken.
-- [x] Second-source quote check also showed **QQQ 681.61** and **SPY 723.77**, so the breakout buy trigger stayed inactive.
-- [x] Live account remains about **$10,050.66 equity / $7,774.88 cash / $17,825.54 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
-
-## Tactical Cycle Log — 2026-05-06 20:20 ET
-- [x] Refreshed account / positions / clock / latest prices again.
-- [x] No orders were submitted because the market is still closed and no after-hours equity trading is authorized.
-- [x] Live prices now show **QQQ 685.5** above its breakout trigger, but **SPY 723.94** is still below the required **725.1** tape filter, so the QQQ add remains inactive.
-- [x] **QTUM 137.0** remains below the stop level, but the exit must wait for regular-hours confirmation.
-- [x] Live account is **$10,046.71 equity / $7,774.88 cash / $17,821.59 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
-
-## Tactical Cycle Log — 2026-05-06 20:30 ET
-- [x] Refreshed account / positions / clock / latest prices again.
-- [x] No orders were submitted because the market is still closed and no after-hours equity trading is authorized.
-- [x] Latest Alpaca prices show **QQQ 682.76** and **SPY 723.94**, so the authorized QQQ add remains inactive because both the breakout and tape filter are not satisfied.
-- [x] Existing holdings remain above tactical stop levels, so no defensive sells were triggered.
-- [x] Live account is **$10,041.09 equity / $7,774.88 cash / $17,815.97 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
-
-## Tactical Cycle Log — 2026-05-06 20:52 ET
-- [x] Refreshed account / positions / clock / latest prices again.
-- [x] No orders were submitted because the market is still closed and no after-hours equity trading is authorized.
-- [x] Live prices now show **QQQ 682.76** and **SPY 723.94**, so the authorized QQQ add remains inactive because both the breakout and tape filter are not satisfied.
-- [x] **QTUM 139.20** remains above the stop level, so no defensive sell was triggered.
-- [x] Live account is **$10,043.99 equity / $7,774.88 cash / $17,818.87 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
-
-## Tactical Cycle Log — 2026-05-06 09:54 ET
-- [x] Refreshed the live account, positions, clock, latest prices, and news after the regular-session breakout cleared.
-- [x] Entered **1 share QQQ** with a **$690.00 limit** after confirming **QQQ 689.19-690.30** and **SPY 728.76-729.60** on two sources, both above their trigger filters.
-- [x] Current holdings are now **AVGO 1, GOOG 1, QQQ 2, QTUM 2, SOXX 1**.
-- [x] Current account is **$10,064.53 equity / $7,084.87 cash / $17,149.40 buying power**.
-- [x] Next expected action: hold the book; only manage the new **QQQ** add with the existing **692.0 / 677.4** trim-stop framework and do not add more new capital before the next hourly strategist refresh.
+- [ ] If the next run is outside regular hours, convert any unmet entry into a **next regular-session** trigger rather than forcing activity.
