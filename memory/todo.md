@@ -3,8 +3,8 @@
 
 ## Book-Level Safeguards
 - [ ] Use **account equity ($10,044.48)** as the sizing base. Do **not** size from raw margin buying power.
-- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **SOXX 1**.
-- [ ] Current gross exposure is about **22.6%**. Cap gross exposure near **30%**.
+- [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 2**, **QTUM 2**, **SOXX 1**.
+- [ ] Current gross exposure is about **29.6%**. Cap gross exposure near **30%**.
 - [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **closed**.
 - [x] Because the market is closed, place **no after-hours or pre-market equity orders**.
@@ -35,12 +35,12 @@
 ## Existing Positions
 - [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** **SELL 1 share below 419.2** only if regular-hours support clearly fails. **Trim only above 440.0** on a climactic regular-hours extension with orderly tape.
 - [ ] **HOLD GOOG** — starter remains valid, but **do not average down** and **no fresh add is authorized this cycle**. **SELL 1 share below 380.2** only if structure clearly fails during regular hours.
-- [ ] **HOLD QQQ** — this remains the only authorized fresh-add candidate. **BUY 1 share only if price breaks above 683.1 during regular hours and holds with confirmation while SPY stays above 725.1.** If it gaps above the trigger at the open, wait for a pullback that **holds above 682.7** before buying. After a fill, **TRIM / SELL 1 share above 692.0** on continued extension, or **SELL 1 share below 677.4** on a break of short-term support.
+- [ ] **HOLD QQQ** — the authorized fresh-add was completed with a 1-share buy at 690.0 during regular hours, so no more adds are authorized before the next hourly refresh. **TRIM / SELL 1 share above 692.0** on continued extension, or **SELL 1 share below 677.4** on a break of short-term support.
 - [ ] **HOLD QTUM** — current size is already near the desired **~3%** target allocation. **Do not add.** **SELL 1 share below 137.3** to cut risk. **Trim 1 share above 142.0** only on continued regular-hours strength and only after a **second source quote check**.
 - [ ] **HOLD SOXX** — target allocation **~5%** is already filled. **Do not add.** **SELL 1 share below 469.8** if the breakout clearly fails. **Trim only above 500.0** on a climactic regular-hours extension; do not trim on minor strength.
 
 ## Active Buy / Sell Conditions For New Capital
-- [ ] **BUY QQQ 1 share only if price breaks above 683.1 during regular hours, SPY remains above 725.1, and the tape stays orderly** — rationale: best high-liquidity way to reduce cash drag while large-cap growth leadership persists.
+- [x] **BUY QQQ 1 share only if price breaks above 683.1 during regular hours, SPY remains above 725.1, and the tape stays orderly** — rationale: best high-liquidity way to reduce cash drag while large-cap growth leadership persists. **Filled 2026-05-06 at 690.0 limit.**
 - [ ] For a **QQQ** add, require sane spread / tape quality and keep post-fill exposure **<= 30% gross** and **>= 70% cash**.
 - [ ] If **QQQ** does not trigger cleanly, **stay flat on new capital** until the next hourly strategist refresh.
 - [ ] **Do not buy GOOG, AVGO, SOXX, or QTUM** again without a later hourly strategist upgrade.
@@ -104,3 +104,10 @@
 - [x] **QTUM 139.20** remains above the stop level, so no defensive sell was triggered.
 - [x] Live account is **$10,043.99 equity / $7,774.88 cash / $17,818.87 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
+
+## Tactical Cycle Log — 2026-05-06 09:54 ET
+- [x] Refreshed the live account, positions, clock, latest prices, and news after the regular-session breakout cleared.
+- [x] Entered **1 share QQQ** with a **$690.00 limit** after confirming **QQQ 689.19-690.30** and **SPY 728.76-729.60** on two sources, both above their trigger filters.
+- [x] Current holdings are now **AVGO 1, GOOG 1, QQQ 2, QTUM 2, SOXX 1**.
+- [x] Current account is **$10,064.53 equity / $7,084.87 cash / $17,149.40 buying power**.
+- [x] Next expected action: hold the book; only manage the new **QQQ** add with the existing **692.0 / 677.4** trim-stop framework and do not add more new capital before the next hourly strategist refresh.
