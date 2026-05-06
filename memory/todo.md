@@ -75,8 +75,16 @@
 
 ## Tactical Cycle Log — 2026-05-06 Midday Check
 - [x] Refreshed account / positions / clock / latest prices again.
-- [x] No orders were submitted because the market is still closed and the plan remains next-session only.
+- [x] No orders were submitted because the market was still closed and the plan remained next-session only.
 - [x] Alpaca showed **QTUM 137.00**, which is below the written stop, but Yahoo later showed **QTUM 139.17** with the same post-close window, so the Alpaca print was treated as stale / unsupported and no forced exit was taken.
 - [x] Second-source quote check also showed **QQQ 681.61** and **SPY 723.77**, so the breakout buy trigger stayed inactive.
 - [x] Live account remains about **$10,050.66 equity / $7,774.88 cash / $17,825.54 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
+
+## Tactical Cycle Log — 2026-05-06 20:20 ET
+- [x] Refreshed account / positions / clock / latest prices again.
+- [x] No orders were submitted because the market is still closed and no after-hours equity trading is authorized.
+- [x] Live prices now show **QQQ 685.5** above its breakout trigger, but **SPY 723.94** is still below the required **725.1** tape filter, so the QQQ add remains inactive.
+- [x] **QTUM 137.0** remains below the stop level, but the exit must wait for regular-hours confirmation.
+- [x] Live account is **$10,046.71 equity / $7,774.88 cash / $17,821.59 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.

@@ -149,7 +149,14 @@ The account is still **positive in absolute dollars and fractionally ahead of SP
 
 ## Tactical Execution Update — 2026-05-06 Midday Check
 - **What happened:** refreshed the live Alpaca account, positions, clock, and latest prices for the full directive universe; no orders were submitted.
-- **Why no trade:** the market is still **closed**, so the plan remains next-session only. **QQQ** stayed below the breakout trigger at **686.43 vs. 683.1** in Alpaca terms but the broader tape filter was still below threshold in the second source (**SPY 723.77 vs. 725.1**). **QTUM** printed below the internal stop on Alpaca, but Yahoo showed a materially higher post-close price, so the quote was treated as stale/unsupported and no forced exit was taken outside regular hours.
+- **Why no trade:** the market was still **closed**, so the plan remained next-session only. **QQQ** was above the breakout trigger in Alpaca terms but the broader tape filter was still below threshold in the second source (**SPY 723.77 vs. 725.1**). **QTUM** printed below the internal stop on Alpaca, but Yahoo showed a materially higher post-close price, so the quote was treated as stale/unsupported and no forced exit was taken outside regular hours.
 - **Current holdings:** unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - **Current account:** about **$10,050.66 equity / $7,774.88 cash / $17,825.54 buying power**.
 - **Next expected action:** wait for the next regular session; only consider a **QQQ** add if price breaks and holds above the refreshed trigger with **SPY above 725.1** and orderly tape, and only review **QTUM** for a sell if regular-hours structure confirms the stop.
+
+## Tactical Execution Update — 2026-05-06 20:20 ET
+- **What happened:** refreshed the live Alpaca account, positions, clock, and latest prices again; no orders were submitted.
+- **Why no trade:** the market is still **closed**. **QQQ** is now at **685.5** and therefore above the breakout trigger, but **SPY is 723.94**, still below the tape filter at **725.1**, so the fresh-add condition is not met. **QTUM** is at **137.0**, below the written stop, but no after-hours liquidation was allowed; the exit must wait for regular-hours confirmation.
+- **Current holdings:** unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- **Current account:** **$10,046.71 equity / $7,774.88 cash / $17,821.59 buying power**.
+- **Next expected action:** at the next regular session, consider **QQQ** only if **SPY reclaims 725.1** and the tape stays orderly; otherwise stay flat on new capital. Revisit **QTUM** only if regular-hours structure confirms the stop.
