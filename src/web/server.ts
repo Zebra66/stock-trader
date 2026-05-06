@@ -124,7 +124,7 @@ const app = new Elysia()
     .card{background:var(--bgc);border:1px solid var(--border);border-radius:12px;padding:1.25rem;transition:border-color .3s}
     .card:hover{border-color:var(--border-h)}
     /* STATS */
-    .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin:1.25rem 0}
+    .stats-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem;margin:1.25rem 0}
     .stat-card{background:var(--bgc);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;position:relative;overflow:hidden;transition:all .3s}
     .stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent)}
     .stat-card:hover{border-color:var(--border-h);transform:translateY(-2px)}
@@ -428,7 +428,7 @@ const app = new Elysia()
   const WINDOW_MS={'1D':86400000,'1W':7*86400000,'1M':30*86400000};
 
   function formatMoney(value){
-    return '$'+Number(value||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    return '$'+Number(value||0).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
   }
   ${getModeButtonsFunctionSource()}
   function clearDashboardStats(){
@@ -539,7 +539,7 @@ const app = new Elysia()
       const pnlVal=d.currentPnl??0;
       const pnlEl=document.getElementById('pnl-val');
       if(pnlEl){
-        pnlEl.innerText=(pnlVal>=0?'+$':'-$')+Math.abs(pnlVal).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+        pnlEl.innerText=(pnlVal>=0?'+$':'-$')+Math.abs(pnlVal).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});
         pnlEl.className='stat-val '+(pnlVal>=0?'green':'red');
       }
 
