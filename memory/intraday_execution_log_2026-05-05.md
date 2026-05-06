@@ -112,3 +112,12 @@
 - Market structure: fresh Yahoo fallback data still favors **SOXX, GOOG, QTUM, AVGO, and QQQ**, while **META, HOOD, GLD, SHLD, and ARKX** remain lower-priority uses of capital.
 - External context: Reuters-focused fallback coverage still points to **Nasdaq / AI leadership** as the positive driver and **oil / Middle East** as the main macro threat; investor and analyst screens remained too noisy or thin to upgrade into action.
 - Decision: **no after-hours equity orders**. Keep the only fresh-add authorization on **QQQ above 683.1 with SPY above 725.1 during regular hours**, and stop the tactical agent from routine-trimming small winner positions unless support breaks or a truly climactic extension appears.
+
+## 20:00 ET — Night hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-06 09:30 ET**.
+- Account: equity **$10,044.48**, cash **$7,774.88**, buying power **$17,819.36**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account remains **positive in dollars and fractionally ahead of SPY since inception** at roughly **+0.44%** vs **SPY +0.43%** from the **2026-05-01** benchmark close, but the lead is now razor-thin because gross exposure is still only about **22.6%**.
+- Market structure: fresh Yahoo fallback data still favors **SOXX, GOOG, QTUM, AVGO, and QQQ** over **META, HOOD, SHLD, GLD, and ARKX** on the 1-week to 3-month windows.
+- External context: Reuters-focused Google News RSS fallback stayed constructive on **Nasdaq / AI-chip leadership** and added a fresh positive **Anthropic / Google cloud-and-chip spending** item, while **oil / Middle East** remains the main macro threat. Investor and analyst-action screens were still too noisy or irrelevant to upgrade into action.
+- Decision: **no after-hours equity orders**. Keep the only fresh-add authorization on **QQQ above 683.1 with SPY above 725.1 during regular hours**, keep **GOOG / AVGO / QTUM / SOXX** hold-only, and require regular-hours confirmation plus a second source for any symbol showing thin broker trade counts.

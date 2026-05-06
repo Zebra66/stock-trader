@@ -1,10 +1,10 @@
 # Tactical Todo For Next Execution
-*Refreshed 2026-05-05 19:05 ET by the Hourly Macro Strategist.*
+*Refreshed 2026-05-05 20:00 ET by the Hourly Macro Strategist.*
 
 ## Book-Level Safeguards
-- [ ] Use **account equity ($10,059.17)** as the sizing base. Do **not** size from raw margin buying power.
+- [ ] Use **account equity ($10,044.48)** as the sizing base. Do **not** size from raw margin buying power.
 - [ ] Live positions are **AVGO 1**, **GOOG 1**, **QQQ 1**, **QTUM 2**, **SOXX 1**.
-- [ ] Current gross exposure is about **22.7%**. Cap gross exposure near **30%**.
+- [ ] Current gross exposure is about **22.6%**. Cap gross exposure near **30%**.
 - [ ] Keep at least **70% cash** after any new trade. **No leverage** is authorized.
 - [x] The market is **closed**.
 - [x] Because the market is closed, place **no after-hours or pre-market equity orders**.
@@ -23,14 +23,14 @@
 - [ ] If the next session gaps materially above trigger levels, wait for the first pullback / hold rather than chasing the first print.
 - [ ] Because the book is underinvested, **do not routine-trim single-share winners on marginal strength**; trim only on a clear climactic extension or if support fails.
 
-## Current Closed-Market Refresh Result — 2026-05-05 19:05 ET
-- [x] Live account refreshed: **$10,059.17 equity / $7,774.88 cash / $17,834.05 buying power**.
+## Current Closed-Market Refresh Result — 2026-05-05 20:00 ET
+- [x] Live account refreshed: **$10,044.48 equity / $7,774.88 cash / $17,819.36 buying power**.
 - [x] Live positions are **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
-- [x] Current unrealized P&L is about **+$51.39** overall.
+- [x] Current unrealized P&L is about **+$36.80** overall.
 - [x] Alpaca after-hours quote warning: **AVGO 9 trades**, **GOOG 4**, **QQQ 2**, **QTUM 8**, **SOXX 4**, **SPY 5** in the latest post-close snapshot — require regular-hours confirmation and use a second source when needed.
 - [x] Multi-timeframe performance was refreshed using the **Yahoo Finance chart API fallback** because **`FMP_API_KEY` is missing**.
-- [x] Google News RSS fallback remained supportive for **Nasdaq / AI leadership** and **Alphabet / cloud / AI**, while **oil / Middle East** headlines remain the main macro risk.
-- [x] Second-source regular-session structure check shows **QQQ day high 682.77 / day low 677.51**, **SPY day high 725.04 / day low 721.50**, **GOOG day high 388.96 / day low 380.35**, **AVGO day high 433.39 / day low 419.35**, **QTUM day high 139.61 / day low 137.42**, and **SOXX day high 486.18 / day low 470.24**.
+- [x] Google News RSS fallback remained supportive for **Nasdaq / AI leadership** and **Alphabet / Google cloud / AI**, while **oil / Middle East** headlines remain the main macro risk.
+- [x] Second-source regular-session structure check shows **QQQ day high 682.77 / day low 677.51**, **SPY day high 725.04 / day low 721.49**, **GOOG day high 388.96 / day low 380.35**, **AVGO day high 433.39 / day low 419.35**, **QTUM day high 139.61 / day low 137.41**, and **SOXX day high 486.18 / day low 470.24**.
 
 ## Existing Positions
 - [ ] **HOLD AVGO** — target allocation **~4%** is already filled. **Do not add.** **SELL 1 share below 419.2** only if regular-hours support clearly fails. **Trim only above 440.0** on a climactic regular-hours extension with orderly tape.
@@ -64,12 +64,19 @@
 - [ ] If live broker state differs from memory, trust the broker and update memory before trading again.
 - [ ] If the next run is still outside regular hours, carry the same no-trade posture forward rather than forcing activity.
 
-## Tactical Cycle Log — 2026-05-06
+## Tactical Cycle Log — 2026-05-05 20:00 ET
 - [x] Refreshed account / positions / clock / latest prices.
-- [x] No orders were submitted because the market was still closed and the QQQ add trigger was not fully authorized.
+- [x] No orders were submitted because the market was still closed and the QQQ add trigger remained next-session only.
 - [x] Existing sell levels for **AVGO, GOOG, QQQ, QTUM, and SOXX** were not hit, so the book remains unchanged.
 - [x] Refreshed latest values show **QQQ 682.76** below **683.1** and **SPY 723.94** below **725.1**, so the breakout entry stayed inactive.
-- [x] Live account refreshed to about **$10,062.08 equity / $7,774.88 cash / $17,836.96 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Live account refreshed to about **$10,044.48 equity / $7,774.88 cash / $17,819.36 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
 - [x] Current setup still requires **regular-hours confirmation after 09:40 ET** before any fresh add, so the entry remains unauthorized.
-- [x] Night check completed: Alpaca and Yahoo both showed **QQQ below 683.1** and **SPY below 725.1**, so no breakout buy was authorized and no orders were submitted.
-- [x] Live broker state remains unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1** with no stop levels hit.
+- [x] Google News RSS fallback still supports the broad AI / Nasdaq thesis, but investor and analyst-action coverage remained insufficient.
+
+## Tactical Cycle Log — 2026-05-06 Midday Check
+- [x] Refreshed account / positions / clock / latest prices again.
+- [x] No orders were submitted because the market is still closed and the plan remains next-session only.
+- [x] Alpaca showed **QTUM 137.00**, which is below the written stop, but Yahoo later showed **QTUM 139.17** with the same post-close window, so the Alpaca print was treated as stale / unsupported and no forced exit was taken.
+- [x] Second-source quote check also showed **QQQ 681.61** and **SPY 723.77**, so the breakout buy trigger stayed inactive.
+- [x] Live account remains about **$10,050.66 equity / $7,774.88 cash / $17,825.54 buying power** with holdings unchanged at **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- [x] Next session still requires regular-hours confirmation before any new add; only **QQQ** remains the authorized fresh-buy candidate, and **QTUM** should only be revisited for a sell if regular-hours structure confirms the stop.
