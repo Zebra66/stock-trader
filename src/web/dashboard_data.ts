@@ -61,7 +61,7 @@ export type ChartPeriod = '1D' | '1W' | '1M';
 const PERIOD_CONFIG: Record<ChartPeriod, { alpacaPeriod: string; alpacaTimeframe: string; windowMs: number }> = {
   '1D': { alpacaPeriod: '1D',  alpacaTimeframe: '5Min', windowMs: 24 * 60 * 60 * 1000 },
   '1W': { alpacaPeriod: '1W',  alpacaTimeframe: '5Min', windowMs: 7 * 24 * 60 * 60 * 1000 },
-  '1M': { alpacaPeriod: '1M',  alpacaTimeframe: '15Min', windowMs: 30 * 24 * 60 * 60 * 1000 },
+  '1M': { alpacaPeriod: '30D', alpacaTimeframe: '5Min', windowMs: 30 * 24 * 60 * 60 * 1000 },
 };
 
 function parseNumeric(value: number | string | undefined): number {
@@ -138,23 +138,29 @@ export async function buildDashboardData(
     const equities = portfolioHistory.equity ?? [];
 
     // Step 1: build raw equity history and validate it has real data.
-    // isHistoryUsable MUST check raw equity (not P&L), because if the portfolio
-    // is down vs the deposit, all P&L values are negative — and the check
-    // `some(p => p.y > 0)` would wrongly declare real data "unavailable".
+    // Filter out null or exactly 0 points which indicate missing API data.
     const rawHistory: DashboardPoint[] = timestamps
       .map((timestamp, index) => ({
         x: parseNumeric(timestamp) * 1000,
-        y: parseNumeric(equities[index]),
+        y: equities[index] === null || equities[index] === undefined ? 0 : parseNumeric(equities[index]),
       }))
-      .filter(point => point.x % (10 * 60 * 1000) === 0);
+      .filter(point => point.x % (10 * 60 * 1000) === 0 && point.y !== 0);
 
     if (isHistoryUsable(rawHistory, equity)) {
-      // Step 2: transform Y from raw equity → P&L (equity - invested at that moment)
+      // Anchoring approach: Alpaca's historical equity baseline can become disjointed from
+      // actual account equity after deposits/withdrawals/resets. 
+      // We calculate the offset between real-time equity and the most recent historical point,
+      // and shift the entire historical equity curve by this offset.
+      const lastRawEquity = rawHistory[rawHistory.length - 1].y;
+      const equityOffset = equity - lastRawEquity;
+
+      // Step 2: transform Y from raw equity → P&L (adjusted_equity - invested at that moment)
       history = rawHistory.map((point) => {
+        const adjustedEquity = point.y + equityOffset;
         const investedAtPoint = totalInvestedAt(deposits, point.x);
         return {
           x: point.x,
-          y: investedAtPoint > 0 ? point.y - investedAtPoint : point.y,
+          y: investedAtPoint > 0 ? adjustedEquity - investedAtPoint : adjustedEquity,
         };
       });
     } else {

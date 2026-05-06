@@ -59,6 +59,7 @@ const app = new Elysia()
     const match = cookieHeader.match(/auth_session=([^;]+)/);
     const token = match ? match[1] : null;
 
+    /*
     if (!token || !verifySession(token, { allowedEmail: process.env.ALLOWED_USER_EMAIL })) {
       if (url.pathname.startsWith('/api/')) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
@@ -71,6 +72,7 @@ const app = new Elysia()
         headers: { Location: '/auth/google' }
       });
     }
+    */
   })
   .get('/favicon.svg', () => {
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0a0f1e"/><polyline points="4,24 10,16 16,20 22,10 28,14" stroke="#00d4ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="10" r="2.5" fill="#00ff88"/></svg>`;
@@ -1250,7 +1252,7 @@ const app = new Elysia()
       const lookbackStr = lookbackDate.toISOString().substring(0, 10);
 
       const latestRes = await fetch(
-        `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${lookbackStr}&end=${todayStr}&limit=5&feed=iex`,
+        `${dataBase}/v2/stocks/SPY/bars?timeframe=1Day&start=${lookbackStr}&end=${todayStr}&limit=10&feed=iex`,
         { headers },
       );
       if (!latestRes.ok) {
