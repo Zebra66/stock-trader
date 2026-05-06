@@ -139,28 +139,56 @@ export async function buildDashboardData(
 
     // Step 1: build raw equity history and validate it has real data.
     // Filter out null or exactly 0 points which indicate missing API data.
-    const rawHistory: DashboardPoint[] = timestamps
-      .map((timestamp, index) => ({
-        x: parseNumeric(timestamp) * 1000,
-        y: equities[index] === null || equities[index] === undefined ? 0 : parseNumeric(equities[index]),
-      }))
+    let rawHistory: DashboardPoint[] = timestamps
+      .map((timestamp, index) => {
+        let y = equities[index] === null || equities[index] === undefined ? 0 : parseNumeric(equities[index]);
+        const x = parseNumeric(timestamp) * 1000;
+        
+        // Alpaca paper API bug: sometimes returns P&L instead of total equity.
+        // If the value is tiny compared to the real account equity, it's P&L.
+        // We normalize it to True Equity by adding the invested capital at that time.
+        if (Math.abs(y) < equity * 0.5 && y !== 0) {
+          y += totalInvestedAt(deposits, x);
+        }
+        return { x, y };
+      })
       .filter(point => point.x % (10 * 60 * 1000) === 0 && point.y !== 0);
 
     if (isHistoryUsable(rawHistory, equity)) {
-      // Anchoring approach: Alpaca's historical equity baseline can become disjointed from
-      // actual account equity after deposits/withdrawals/resets. 
-      // We calculate the offset between real-time equity and the most recent historical point,
-      // and shift the entire historical equity curve by this offset.
-      const lastRawEquity = rawHistory[rawHistory.length - 1].y;
-      const equityOffset = equity - lastRawEquity;
+      // 1. Stitching: Alpaca's history often has massive artificial drops/spikes at market open 
+      // when overnight positions fail to price. We detect and remove jumps > 10% of portfolio.
+      let runningOffset = 0;
+      let unadjustedPrev = rawHistory[0].y;
+      
+      for (let i = 1; i < rawHistory.length; i++) {
+        const unadjustedCurr = rawHistory[i].y;
+        const change = unadjustedCurr - unadjustedPrev;
+        
+        if (Math.abs(change) > equity * 0.10) {
+          runningOffset -= change;
+        }
+        
+        rawHistory[i].y += runningOffset;
+        unadjustedPrev = unadjustedCurr;
+      }
 
-      // Step 2: transform Y from raw equity → P&L (adjusted_equity - invested at that moment)
+      // 2. Linear Tilt: Instead of shifting the entire curve (which breaks the start point),
+      // we linearly interpolate an offset so the start remains untouched, but the end 
+      // perfectly anchors to the real-time account equity.
+      const lastRawEquity = rawHistory[rawHistory.length - 1].y;
+      const endOffset = equity - lastRawEquity;
+
+      for (let i = 0; i < rawHistory.length; i++) {
+        const progress = rawHistory.length > 1 ? i / (rawHistory.length - 1) : 1;
+        rawHistory[i].y += endOffset * progress;
+      }
+
+      // Step 2: transform Y from true equity → P&L (adjusted_equity - invested at that moment)
       history = rawHistory.map((point) => {
-        const adjustedEquity = point.y + equityOffset;
         const investedAtPoint = totalInvestedAt(deposits, point.x);
         return {
           x: point.x,
-          y: investedAtPoint > 0 ? adjustedEquity - investedAtPoint : adjustedEquity,
+          y: investedAtPoint > 0 ? point.y - investedAtPoint : point.y,
         };
       });
     } else {

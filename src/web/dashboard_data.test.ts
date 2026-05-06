@@ -27,7 +27,7 @@ describe('buildDashboardData', () => {
     expect(data.dayChange).toBe(500);
     expect(data.dayChangePct).toBeCloseTo(500 / 24500.75, 12);
     expect(data.history).toEqual([
-      { x: 1714953600 * 1000, y: 24900.75 },
+      { x: 1714953600 * 1000, y: 10000 },
       { x: 1714957200 * 1000, y: 25000.75 },
     ]);
   });
