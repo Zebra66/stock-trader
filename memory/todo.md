@@ -4,7 +4,6 @@
 ## Mandatory First Step
 - [ ] Refresh **Alpaca account**, **positions**, **clock**, and **latest prices** before doing anything else.
 - [ ] Treat the refreshed Alpaca state as authoritative. If it disagrees with any old note in `memory/MEMORY.md` or this file, overwrite the stale state first.
-- [ ] Reconcile whether the live book currently has **QQQ 1** or **QQQ 2**. Recent append-only notes conflicted; do not assume.
 
 ## Regime And Exposure Rules
 - [ ] Current regime is **offensive catch-up** unless fresh evidence shows a true risk-off tape.
@@ -27,12 +26,11 @@
 - [ ] **Priority 3: SOXX or AVGO** if semiconductors are clearly leading and concentration remains acceptable.
 
 ## Active Buy Conditions
-- [ ] **BUY QQQ 1 share** if all are true: the live book is still underweight **QQQ**, price is above the refreshed regular-hours breakout / reclaim level, **SPY** or the broad tape confirms, spread is sane, and gross exposure remains below the hourly target band after the fill.
 - [ ] **BUY GOOG 1 share** if **QQQ** is already at target or does not confirm cleanly, and **GOOG** clears its refreshed regular-hours trigger with healthy tape and no adverse same-day catalyst.
 - [ ] **BUY SOXX 1 share or AVGO 1 share** only if both higher-ranked adds are already satisfied / blocked and semiconductor leadership is clearly stronger than the broad market at that moment.
 
 ## Existing Position Rules
-- [ ] **HOLD / MANAGE QQQ** — do not trim on marginal strength. Trim only on a clear climactic extension or if the refreshed stop/support fails.
+- [ ] **HOLD / MANAGE QQQ** — now **4 shares** after today’s add. Do not trim on marginal strength. If exposure is still below target on the next cycle and the tape remains orderly, QQQ stays the first add candidate.
 - [ ] **HOLD / MANAGE GOOG** — valid core AI / cloud exposure; do not average down.
 - [ ] **HOLD / MANAGE AVGO** — valid AI infrastructure leader; only add if the hourly regime still needs more exposure after higher-ranked choices.
 - [ ] **HOLD / MANAGE SOXX** — valid semiconductor ETF; use for exposure only after the higher-ranked catch-up candidates.

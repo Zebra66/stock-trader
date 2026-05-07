@@ -5,7 +5,10 @@
 - **Regime:** **Offensive catch-up**
 - **Why:** the system has been too cash-heavy for too long. Even when the book was green, it was usually only **~22-30% gross long** with **~70-77% cash**, which is not enough to reliably beat **SPY** in a constructive growth tape.
 - **Default posture:** increase exposure in the **highest-quality liquid leaders** unless there is clear fresh evidence of a true risk-off regime.
-- **Broker-state warning:** recent memory blocks disagree on whether the latest live book held **QQQ 1** or **QQQ 2**. The next hourly and tactical runs must refresh **Alpaca account + positions first** and overwrite stale summaries immediately.
+- **Broker-state warning:** stale notes previously disagreed on whether the book held **QQQ 1** or **QQQ 2**. Live Alpaca has now been refreshed and overrides those notes.
+- **Current live book after this cycle:** **GOOG 1, QQQ 4, QTUM 2, SOXX 1**.
+- **Current gross exposure:** about **39.2%** of equity; still below the 45-60% target band.
+- **Next expected action:** if the tape stays orderly and QQQ remains the clean leader, keep using **QQQ** for the next catch-up add; otherwise move to **GOOG**.
 
 ## Current Macro Thesis
 The best-performing and cleanest themes in the approved universe remain **AI infrastructure, semiconductors, and large-cap growth**. Across recent files, the strongest recurring candidates are still **QQQ, GOOG, SOXX, AVGO, and QTUM**, while **META, HOOD, SHLD, GLD, and ARKX** continue to rank lower on trend quality, expected edge, or liquidity.
@@ -85,3 +88,4 @@ The main strategic problem is no longer symbol selection; it is **insufficient d
 - Historical performance fallback when **FMP** is unavailable: **Yahoo Finance chart API**.
 - Search/news fallback when direct Google Search is unavailable: **Google News RSS**, filtered for recency and source quality.
 - Detailed execution history belongs in `memory/intraday_execution_log_2026-05-05.md`, not in the live control sheet.
+- Tactical note: Alpaca latest-price was unreliable for several symbols this cycle, so Yahoo Finance chart data was used as the fallback confirmation source.
