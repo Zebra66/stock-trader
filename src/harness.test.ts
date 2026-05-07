@@ -8,6 +8,7 @@ import {
   getNextTacticalRunAt,
   parseHarnessArgs,
   runMarketGatedAgent,
+  startHarnessLoop,
   shouldRunWhenMarketClosed,
 } from './harness';
 
@@ -191,5 +192,51 @@ describe('harness run serialization', () => {
     await Promise.all([hourlyRun, secondHourlyRun]);
 
     expect(events).toEqual(['pull:hourly', 'start:hourly', 'end:hourly']);
+  });
+});
+
+describe('harness startup scheduling', () => {
+  test('installs aligned timers before the startup cycle finishes', async () => {
+    const events: string[] = [];
+    let releaseStartupCycle: (() => void) | undefined;
+
+    const startPromise = startHarnessLoop(
+      { forceRun: false },
+      {
+        loadWebServer: async () => {
+          events.push('load-web-server');
+        },
+        runStartupCycle: async () => {
+          events.push('startup-cycle:start');
+          await new Promise<void>((resolve) => {
+            releaseStartupCycle = resolve;
+          });
+          events.push('startup-cycle:end');
+        },
+        scheduleAlignedRun: (mode) => {
+          events.push(`schedule:${mode}`);
+        },
+      },
+    );
+
+    await Promise.resolve();
+
+    expect(events).toEqual([
+      'load-web-server',
+      'schedule:hourly',
+      'schedule:tactical',
+      'startup-cycle:start',
+    ]);
+
+    releaseStartupCycle?.();
+    await startPromise;
+
+    expect(events).toEqual([
+      'load-web-server',
+      'schedule:hourly',
+      'schedule:tactical',
+      'startup-cycle:start',
+      'startup-cycle:end',
+    ]);
   });
 });

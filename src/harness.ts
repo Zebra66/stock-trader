@@ -24,6 +24,16 @@ interface HarnessOptions {
   forceRun: boolean;
 }
 
+interface StartHarnessDeps {
+  loadWebServer: () => Promise<unknown>;
+  runStartupCycle: (options: HarnessOptions) => Promise<void>;
+  scheduleAlignedRun: (
+    mode: 'hourly' | 'tactical',
+    getNextRunAt: (now: Date) => Date,
+    options: HarnessOptions,
+  ) => void;
+}
+
 type AgentRunFunction = (mode: 'hourly' | 'tactical') => Promise<void>;
 type ScheduledRunFunction = (mode: 'hourly' | 'tactical', options: HarnessOptions) => Promise<void>;
 
@@ -207,7 +217,14 @@ async function runStartupCycle(options: HarnessOptions): Promise<void> {
   await runWhenMarketOpen('tactical', options);
 }
 
-export async function startHarnessLoop(options: HarnessOptions = { forceRun: false }): Promise<void> {
+export async function startHarnessLoop(
+  options: HarnessOptions = { forceRun: false },
+  deps: StartHarnessDeps = {
+    loadWebServer: () => import('./web/server'),
+    runStartupCycle,
+    scheduleAlignedRun,
+  },
+): Promise<void> {
   logger.info(
     { repoRoot, forceRun: options.forceRun },
     options.forceRun
@@ -216,13 +233,16 @@ export async function startHarnessLoop(options: HarnessOptions = { forceRun: fal
   );
 
   // Start web server — shares process memory for the pause toggle
-  await import('./web/server');
+  await deps.loadWebServer();
 
-  // Run both jobs once on startup, then switch to wall-clock aligned scheduling.
-  await runStartupCycle(options);
+  // Install wall-clock aligned scheduling immediately so later windows are not
+  // missed while the startup cycle is still working through a long run.
+  deps.scheduleAlignedRun('hourly', getNextHourlyRunAt, options);
+  deps.scheduleAlignedRun('tactical', getNextTacticalRunAt, options);
 
-  scheduleAlignedRun('hourly', getNextHourlyRunAt, options);
-  scheduleAlignedRun('tactical', getNextTacticalRunAt, options);
+  // Run both jobs once on startup. Per-mode serialization prevents overlap with
+  // the aligned timers above while still letting hourly and tactical progress independently.
+  await deps.runStartupCycle(options);
 }
 
 if (import.meta.main) {
