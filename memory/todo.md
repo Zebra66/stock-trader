@@ -1,12 +1,13 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-07 after completing the current catch-up add.*
+*Updated 2026-05-07 after a market-closed tactical check using the live paper portfolio snapshot.*
 
 ## Current State
-- Market is open.
+- Market is closed.
 - Regime remains **offensive catch-up**.
 - Live book: **GOOG 1, QQQ 5, QTUM 2, SOXX 1**.
-- Gross exposure is now about **46.1%**, which is inside the **45-60%** target band.
-- This cycle executed **1 trade**: bought **1 QQQ** at **695.43**.
+- Account equity / cash / buying power: **$10,061.70 / $5,417.87 / $15,479.57**.
+- Gross exposure is about **46.2%**, which is inside the **45-60%** target band.
+- No trade was executed this cycle.
 
 ## Standing Rules
 - Use **account equity** for sizing.
@@ -22,7 +23,7 @@
 3. **SOXX** or **AVGO** if semis clearly outperform.
 
 ## Position Rules
-- **HOLD / MANAGE QQQ** — now **5 shares** after this cycle.
+- **HOLD / MANAGE QQQ** — now **5 shares**.
 - **HOLD / MANAGE GOOG** — valid core AI / cloud exposure.
 - **HOLD / MANAGE QTUM** — hold-only unless later expanded by the strategist.
 - **HOLD / MANAGE SOXX** — valid semiconductor ETF, but not the first add while QQQ / GOOG remain cleaner.

@@ -38,6 +38,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels
 - If a symbol has a stale broker quote or unusually low trade count / volume, require a second source confirmation before setting actionable tactical triggers or allowing orders
 - If the market is closed or only thin extended-hours quotes are available, do **not** authorize after-hours / pre-market equity orders by default; convert directives into **next regular-session** triggers and label them clearly in `memory/todo.md`
+- If **live broker/account refresh and market-data refresh both fail or time out across primary and fallback sources**, explicitly classify the run as a **data blackout**, preserve only the **last confirmed** account state in `memory/MEMORY.md`, and set `memory/todo.md` to **no-trade / hold-only** until fresh data is available
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe, stock-specific news for current holdings, and any new developments in major macro or thematic trends
 - Use Google Search to research any specific symbol that needs deeper investigation
 - Factor in real trading friction: spread, slippage, CAT fees, and sell-side SEC / FINRA fees; do not assume round trips are free even if explicit commissions are zero
