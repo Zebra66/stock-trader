@@ -44,6 +44,11 @@ First, decide which data and in which format you need to make a sound macro deci
 ### Step 3 — Analyse and decide
 - **Goal check:** Am I on track to achieve both goals — positive absolute returns AND beating the S&P 500? Compute the portfolio's total return since inception vs. the S&P 500's return over the same period. State explicitly: "On track" or "Off track — [reason]". If off track, let this drive the urgency and direction of all decisions below.
 - At the start of each trading day, explicitly reflect on the 1D, 1W, and 2W performance review: what is working, what is not, and whether current behavior is realistically on track to achieve the 3-month goal. If the answer is no, state what must change today in exposure, concentration, sector posture, turnover, or thesis quality.
+- Diagnose the main reason for being off track or only marginally on track. You must explicitly choose the dominant cause from: **cash drag**, **bad symbol selection**, **late entries / poor execution**, **excessive turnover / friction**, or **macro regime mismatch**.
+- Classify the current posture as exactly one of: **defensive**, **neutral**, or **offensive catch-up**.
+- If the dominant issue is **cash drag** or **underdeployment**, default to **offensive catch-up** unless you have clear, current evidence of a true risk-off tape. In that regime, you must define a same-day target gross-exposure band and a ranked deployment queue of **1-3 add candidates**.
+- If live gross exposure is below the lower bound of your target band and the market is open / orderly, you must explain how new capital will be deployed today. Do not stop at "stay selective" or a generic watchlist.
+- If you keep cash materially above your stated target band, write the exact blocker preventing deployment right now.
 - Before writing tactical instructions, design your own safeguards for the next hour based on current conditions. Do not rely only on static rules in this prompt. Decide what risk limits, confirmation requirements, order constraints, exposure caps, stale-data checks, or no-trade conditions are appropriate right now, then encode those safeguards clearly in `memory/todo.md`.
 - Review the amount of money left to invest and determine how much capital should be deployed or held in reserve
 - Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
@@ -60,13 +65,18 @@ First, decide which data and in which format you need to make a sound macro deci
 ### Step 4 — Dreaming memory maintenance
 - Perform a "Dreaming" task every hourly run before updating directives: review `memory/MEMORY.md`, `memory/todo.md`, and any other relevant files under `memory/`.
 - Distill accumulated memories into the smallest useful current state. Merge duplicate or overlapping learnings, remove stale closed-market summaries that add no decision value, reconcile conflicting account snapshots against live Alpaca data, and keep only information that improves future trading decisions.
+- If `MEMORY.md` or `todo.md` contains conflicting holdings, conflicting exposure numbers, or contradictory tactical outcomes, replace the stale state with a single authoritative current state rather than appending another note.
 - If a memory item is still useful but too detailed for `MEMORY.md`, move it to a focused markdown file under `memory/` and reference it from `MEMORY.md`.
 - Preserve auditability: do not delete material trade rationale, executed-order history, or important failures. Summarize them instead when they become historical rather than actionable.
 
 ### Step 5 — Update directives
 - Update `memory/MEMORY.md` with:
+  - Current regime: **defensive**, **neutral**, or **offensive catch-up**
   - Current macro thesis (1-2 paragraphs)
+  - Goal check and dominant failure mode
+  - Current gross exposure, target gross-exposure band, and why that band is appropriate now
   - Priority actions for the next hour
+  - Ranked deployment queue for fresh capital when applicable
   - Clear table: Symbol | Bias (Buy/Hold/Sell) | Rationale | Target %
   - Separate notes for: current holdings, near-term watchlist, and macro themes to monitor
   - ALL the learnings that we created so far, in addition to the summary of the last run
@@ -75,6 +85,8 @@ First, decide which data and in which format you need to make a sound macro deci
   - "BUY <TICKER> if price drops below <X> or breaks above <Y> with confirmation — rationale"
   - "SELL <TICKER> if price rises above <X> to trim, or drops below <Y> to cut risk — rationale"
   - "HOLD <TICKER> — target allocation <Y>%"
+  - Ranked execution priority for new capital
+  - Explicit no-trade conditions
   - Any other instructions for the tactical agent
 
 ### Step 6 — Prompt Review and Self-Improvement

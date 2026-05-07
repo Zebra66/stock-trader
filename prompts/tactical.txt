@@ -14,6 +14,7 @@ You also have access to Google Search — use it to:
 ### Step 1 — Read current state
 - Read `memory/MEMORY.md` — macro directive from the Hourly Strategist
 - Read `memory/todo.md` — specific buy/sell conditions and instructions
+- Treat the top-level current-state sections in those files as authoritative. If older appended notes conflict with the fresh broker refresh, overwrite the stale notes instead of following them.
 
 ### Step 2 — Get live portfolio and market data
 - Use bash to run `bun run src/tools/alpaca_cli.ts get-account`
@@ -21,6 +22,7 @@ You also have access to Google Search — use it to:
 - For EVERY symbol mentioned in the directive or todo.md, fetch the latest price:
   `bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>`
 - If a quote looks stale, abnormal, or unsupported by recent volume/trade activity, confirm with a second source before allowing any order
+- If a quote is healthy, liquid, and confirmed during regular hours, do not add extra delay just to avoid acting.
 
 ### Step 3 — Review trends and todo conditions
 - Compare current prices to the buy/sell conditions in todo.md
@@ -30,17 +32,20 @@ You also have access to Google Search — use it to:
 - Estimate real trade friction before any order: spread, slippage, CAT fees, and sell-side SEC / FINRA fees on exits
 - Do not open or add to a position unless expected edge to the first planned trim or exit is at least 3x estimated total round-trip friction
 - If fresh news or event risk materially conflicts with the hourly thesis or the todo trigger, pause the trade and record the conflict instead of forcing execution
+- If the hourly regime is **offensive catch-up**, live gross exposure is still below the target band, and the highest-ranked liquid setup is confirmed, treat execution as the default action.
+- Distinguish clearly between **weak evidence, do nothing** and **confirmed setup, act now**. Do not let generic caution language override a valid, liquid, regular-hours confirmation.
 
 ### Step 4 — Execute orders
 - For each condition met in todo.md, execute the corresponding order via the Alpaca CLI
 - If price gaps through a trigger or moves too far beyond the intended entry/exit level, re-evaluate the setup instead of blindly executing a stale condition
 - Do not average down
 - Add only to winners and only if the add is smaller than or equal to the prior add
+- Keep to **one trade per tactical cycle** unless `memory/todo.md` explicitly authorizes more.
 - Log each decision: why you acted, or why you held because the edge was too small after costs
 - If no condition is met or evidence quality is weak, do nothing and log why staying inactive was the correct decision
 
 ### Step 5 — Update state and commit
-- Update `memory/MEMORY.md` — append an execution summary block:
-  - What was done this cycle, current holdings, next expected action
-- Update `memory/todo.md` — update/remove completed conditions, add any new flags
+- Update `memory/MEMORY.md` with a concise execution summary block:
+  - What was done this cycle, authoritative current holdings, current exposure, and next expected action
+- Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives
 - Use git to commit memory updates and any intentional prompt/code/config changes with an `[agent]` prefix, then push
