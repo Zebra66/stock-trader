@@ -1,91 +1,95 @@
 # Hourly Macro Memory
-*Reset 2026-05-07 by interactive review to remove stale drift and force controlled catch-up behavior.*
+*Authoritative state refreshed 2026-05-07 11:44 ET from live Alpaca REST + Yahoo Finance fallback data.*
 
 ## Current Regime
 - **Regime:** **Offensive catch-up**
-- **Why:** the system has been too cash-heavy for too long. Even when the book was green, it was usually only **~22-30% gross long** with **~70-77% cash**, which is not enough to reliably beat **SPY** in a constructive growth tape.
-- **Default posture:** increase exposure in the **highest-quality liquid leaders** unless there is clear fresh evidence of a true risk-off regime.
-- **Broker-state warning:** stale notes previously disagreed on whether the book held **QQQ 1** or **QQQ 2**. Live Alpaca has now been refreshed and overrides those notes.
-- **Current live book after this cycle:** **GOOG 1, QQQ 4, QTUM 2, SOXX 1**.
-- **Current gross exposure:** about **39.2%** of equity; still below the 45-60% target band.
-- **Next expected action:** if the tape stays orderly and QQQ remains the clean leader, keep using **QQQ** for the next catch-up add; otherwise move to **GOOG**.
+- **Goal check:** **Off track — positive absolute return, but trailing SPY since inception because the book is still too underinvested.**
+- **Portfolio since inception (2026-04-30):** **+0.87%** vs **SPY +2.10%**
+- **Start-of-day review:**
+  - **1D:** portfolio **-0.05%** vs SPY roughly **flat to slightly up**
+  - **1W:** portfolio **+0.87%** vs SPY **+2.10%**
+  - **2W:** **N/A due to insufficient live history**
+- **Dominant failure mode:** **cash drag**
 
 ## Current Macro Thesis
-The best-performing and cleanest themes in the approved universe remain **AI infrastructure, semiconductors, and large-cap growth**. Across recent files, the strongest recurring candidates are still **QQQ, GOOG, SOXX, AVGO, and QTUM**, while **META, HOOD, SHLD, GLD, and ARKX** continue to rank lower on trend quality, expected edge, or liquidity.
+The tape is still constructive for **large-cap growth, AI infrastructure, and semiconductors**. Multi-timeframe fallback returns keep **SOXX, GOOG, QTUM, QQQ, AVGO, and NVDA** ahead of the broader market on the 1-month to 1-year windows, while **SHLD, META, and HOOD** are materially weaker on current trend quality. Broad market context is not risk-off enough to justify keeping most of the account in cash.
 
-The main strategic problem is no longer symbol selection; it is **insufficient deployment**. The system has correctly learned to avoid stale quotes, weak catalysts, and noisy headlines, but it has over-applied those safeguards into a habit of preserving cash. Unless the next live check shows clear risk-off conditions, the correct adjustment is to **deploy more capital into the top-ranked liquid leaders** rather than keep defending an underinvested posture.
+What is working is the core direction: the current book is profitable and concentrated in the right growth/AI cluster. What is not working is deployment. Live gross exposure is only about **32.5%**, so even a correct thesis is not translating into benchmark outperformance. The system needs **measured same-day adds into liquid winners**, not more passive cash preservation.
 
-## Goal Check
-- **Latest tracked account range in memory:** roughly **$10,041-$10,065 equity** on a **$10,000** starting balance.
-- **Latest tracked benchmark conclusion:** inconsistent across stale summaries, but every version shows the edge versus **SPY** is **small** and vulnerable.
-- **Status:** **Off track — not because the account is deeply red, but because benchmark outperformance is too thin and the system is still carrying too much cash to achieve the 3-month objective with confidence.**
+## Live Account State
+- **Equity:** **$10,087.19**
+- **Cash:** **$6,807.41**
+- **Long market value:** **$3,279.78**
+- **Gross exposure:** **32.5%**
+- **Target gross-exposure band:** **45-55%** during regular hours while the tape stays orderly
+- **Why this band fits now:** we are behind SPY mainly because of underdeployment, the market is open and orderly, and we can increase exposure without using leverage or forcing low-quality names.
 
-## Exposure Plan
-- **Primary diagnosis:** **cash drag** is the first problem to solve.
-- **Target gross exposure during regular hours when the tape is orderly:** **45-60%**.
-- **Current reliable exposure range from recent files:** **22-30% gross**.
-- **Default rule:** if the next live hourly run still finds exposure below **45%** and the market is not clearly risk-off, the strategist must authorize a same-day catch-up plan with **1-3 ranked adds**.
-- **Do not justify staying above 55% cash** without writing a specific reason tied to market regime, quote quality, or event risk.
+## Current Holdings
+- **QQQ** — 3 shares — about **20.8%** of equity — unrealized **+$41.46**
+- **SOXX** — 1 share — about **5.0%** — unrealized **+$20.47**
+- **GOOG** — 1 share — about **3.9%** — unrealized **+$6.69**
+- **QTUM** — 2 shares — about **2.8%** — unrealized **+$11.72**
+- **No AVGO position is live right now**
+- **Current blocker to immediate deployment:** the preferred add names are still below their refreshed reclaim / breakout triggers at this moment; the blocker is **entry timing**, not a broad risk-off regime.
+
+## Priority Actions For The Next Hour
+1. **Reduce cash drag** with staged adds only if regular-hours confirmation is present.
+2. **Primary add:** GOOG on a clean reclaim above intraday resistance.
+3. **Secondary add:** AVGO on a reclaim; if semis re-accelerate, SOXX is acceptable.
+4. Use **QQQ** only as the reserve add because it is already the largest position.
+5. Do **not** authorize trades from stale or abnormal quotes; refresh broker state before each order.
 
 ## Ranked Deployment Queue
-1. **QQQ** — preferred broad, liquid catch-up vehicle when large-cap growth leadership is intact.
-2. **GOOG** — best single-name add when cloud / AI momentum is confirmed in regular hours.
-3. **SOXX** or **AVGO** — only if semiconductors are clearly leading and concentration remains acceptable after the first add.
-
-## Holdings And State Rules
-- **Live Alpaca state is the only source of truth.**
-- Expected live core book from recent runs is some combination of **AVGO, GOOG, QQQ, QTUM, and SOXX**.
-- Because recent append-only summaries conflicted, **do not trust old tactical notes over a fresh broker refresh**.
-- If the next live run shows a symbol already at or above its target weight, skip it and move to the next ranked candidate.
-
-## What Must Change Now
-1. Stop treating every constructive tape as a reason to hold **70%+ cash**.
-2. Use safeguards to block bad trades, not to block nearly all trades.
-3. When off track because of underdeployment, increase exposure through the **top-ranked liquid names** first.
-4. Keep trimming low-conviction satellites faster than core leaders.
-5. Keep the memory short and authoritative; move history to logs, keep only the current playbook here.
+1. **GOOG** — under target, strong 1m/3m trend, liquid single-name AI/cloud leader.
+2. **AVGO** — strong AI infrastructure trend; re-entry is preferred over chasing weaker themes.
+3. **SOXX** — acceptable semiconductor add if the group regains intraday momentum.
+4. **Reserve only:** **QQQ** if the market strengthens and the first 3 names do not trigger cleanly.
 
 ## Bias Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| AVGO | Buy | Strong AI infrastructure leader; acceptable add only after QQQ / GOOG or when semis clearly lead. | 6% |
-| EIS | Hold | Positive trend but weaker liquidity and lower expected alpha than core ideas. | 0% |
-| GLD | Hold | Hedge candidate only if a true risk-off regime emerges. | 0% |
-| GOOG | Buy | Best single-name catch-up candidate when regular-hours confirmation is present. | 8% |
-| HOOD | Sell | Weaker trend and lower setup quality than the core leaders. | 0% |
-| META | Sell | Still inferior to the preferred AI / growth leaders on near-term edge. | 0% |
-| NVDA | Hold | Structural winner, but current tactical edge is usually lower than QQQ / GOOG / SOXX. | 0% |
-| QQQ | Buy | Best broad, liquid way to reduce cash drag while growth leadership persists. | 18% |
-| QTUM | Hold | Thematic sleeve is acceptable, but not the first place for new catch-up capital. | 4% |
-| RKLB | Sell | Satellite only; recycled unless a later hourly thesis explicitly reopens it. | 0% |
-| SHLD | Sell | Defense theme still trails AI / growth leadership on expected edge. | 0% |
-| SOXX | Buy | Best semiconductor ETF in the universe, but secondary to QQQ for broad catch-up sizing. | 8% |
-| VOO | Hold | Lower expected alpha than QQQ while growth leadership remains intact. | 0% |
-| ARKX | Hold | Inferior thematic expression versus QQQ / SOXX / GOOG right now. | 0% |
+| AVGO | Buy | Strong AI infrastructure trend; preferred re-entry only on regular-hours reclaim. | 5% |
+| EIS | Hold | Positive trend, but weaker expected alpha and lower urgency than core AI/growth leaders. | 0% |
+| GLD | Hold | Hedge only if a real risk-off regime appears; not needed in current tape. | 0% |
+| GOOG | Buy | Best underweight liquid add in the live book; strong multi-timeframe momentum. | 8% |
+| HOOD | Sell | Weak 1m/6m/1y relative trend; inferior use of capital. | 0% |
+| META | Sell | Lags current AI infrastructure / large-cap growth leaders. | 0% |
+| NVDA | Hold | Structural winner, but not the first use of fresh capital versus GOOG/AVGO/SOXX. | 0% |
+| QQQ | Hold / Reserve Buy | Best broad beta sleeve, but already the largest position. | 20% |
+| QTUM | Hold | Profitable thematic sleeve; keep, but lower priority for fresh capital. | 3% |
+| RKLB | Sell | Satellite only; not a priority while liquid AI leaders are available. | 0% |
+| SHLD | Sell | Weak recent trend versus growth/AI alternatives. | 0% |
+| SOXX | Buy | Highest-quality semiconductor ETF in the universe; add only on confirmed regain of strength. | 7% |
+| VOO | Hold | Fine benchmark exposure, but lower expected alpha than QQQ while growth leads. | 0% |
+| ARKX | Hold | Theme is interesting, but current edge trails GOOG/QQQ/SOXX/AVGO. | 0% |
 
 ## Near-Term Watchlist
-- **QQQ:** first deployment vehicle if the live book is still underweight and the regular-session tape is orderly.
-- **GOOG:** second-ranked add; preferred when single-name momentum is stronger than index-level beta.
-- **SOXX / AVGO:** only for further catch-up after the first add if semis are still leading.
-- **QTUM:** hold-only unless a later hourly review explicitly upgrades it.
-- **GLD:** watch only for regime change, not for proactive deployment.
+- **GOOG:** reclaim candidate above intraday resistance.
+- **AVGO:** preferred semiconductor single-name re-entry.
+- **SOXX:** ETF add only if semis stop lagging intraday.
+- **QQQ:** reserve catch-up add if leadership broadens and the book is still underexposed.
+- **GLD:** monitor only for a true regime shift.
+
+## Macro Themes To Monitor
+- **Actionable now:** AI/cloud monetization and semiconductor infrastructure demand.
+- **Worth monitoring:** oil / geopolitics as the main risk-off spoiler; defense and gold only if that stress spills into the tape.
+- **Interesting but not actionable yet:** space / IPO optionality and top-investor portfolio headlines. Current coverage was too thin or noisy to drive trades.
 
 ## Standing Learnings
-- Default sizing must use **account equity**, not headline buying power.
-- Commission-free does **not** mean friction-free; include spread, slippage, CAT, SEC sell fees, and FINRA TAF in expected edge.
-- Never average down. Add only to winners, and each add must be smaller than or equal to the prior add unless the hourly strategist explicitly authorizes a reset.
-- Prefer liquid leaders in leading groups over laggards, story stocks, or low-liquidity names.
-- Cash is valid only when it is solving a real risk problem; **persistent cash drag is itself a failure mode**.
-- If external data tooling is unavailable, use a public fallback source reachable from bash / Bun and record that source in memory.
-- Tactical price levels must be refreshed each hourly cycle; do **not** blindly reuse stale thresholds.
-- The **live brokerage account** overrides stale memory; if memory and Alpaca disagree, trust Alpaca and update memory immediately.
-- For thinner names or stale quotes, require fresh confirmation from a reliable second source before trading.
-- If fallback investor / analyst coverage is stale, noisy, or weakly sourced, explicitly say coverage was insufficient rather than forcing a thesis.
-- If the portfolio is off track mainly because of underdeployment, fix the problem with **ranked exposure upgrades**, not with endless no-trade logging.
+- Use **account equity**, not raw buying power, for sizing.
+- **No leverage.**
+- **Do not average down.** Adds must be into strength or clean reclaims.
+- Commission-free does not mean friction-free; require enough edge to clear spread, slippage, CAT, SEC, and FINRA costs.
+- The **live Alpaca account** is the only source of truth for holdings and exposure.
+- If **FMP** is unavailable, use **Yahoo Finance chart API** for return snapshots and price structure.
+- Direct Google Search was unavailable this run; **Bing News RSS** returned insufficient coverage, so **Yahoo Finance RSS** was used for dated market and symbol news.
+- If news / investor / analyst fallback coverage is weak, say so explicitly instead of forcing a thesis.
+- If the account is younger than a required lookback window, mark that window **N/A** rather than substituting a shorter sample.
+- Detailed execution history belongs in the dated intraday logs, not in this control sheet.
 
-## Data And Audit Trail
-- Primary broker/account source: **Alpaca CLI**.
-- Historical performance fallback when **FMP** is unavailable: **Yahoo Finance chart API**.
-- Search/news fallback when direct Google Search is unavailable: **Google News RSS**, filtered for recency and source quality.
-- Detailed execution history belongs in `memory/intraday_execution_log_2026-05-05.md`, not in the live control sheet.
-- Tactical note: Alpaca latest-price was unreliable for several symbols this cycle, so Yahoo Finance chart data was used as the fallback confirmation source.
+## Last Run Summary
+- Refreshed the live broker state with direct Alpaca REST fallback because the Alpaca CLI timed out.
+- Confirmed the live book is **GOOG 1, QQQ 3, QTUM 2, SOXX 1**, with **no AVGO**.
+- Confirmed the account is **green in dollars but behind SPY**; the dominant problem remains **cash drag**.
+- Set the next-hour playbook to prioritize **GOOG**, then **AVGO**, then **SOXX**, with **QQQ only as a reserve add**.
+- Updated the hourly prompt to mark unsupported lookbacks as **N/A** instead of silently substituting shorter history.
