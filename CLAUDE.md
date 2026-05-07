@@ -133,7 +133,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - **Live Deployment:** The application is deployed on Google Cloud Run and is live at [https://auto-stock-trader-pxeqygrzga-uc.a.run.app](https://auto-stock-trader-pxeqygrzga-uc.a.run.app)
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.
 - **Run Tests:** Execute `bun test` to run all unit tests in the project.
-- **Temporary Files:** Write all temporary files, debug artifacts, and captured logs under `./temp_files/`. Artifacts in this directory MUST NOT be saved to git.
+- **Temporary Files:** All temp files, debug artifacts, and captured logs must be created under `./temp_files/`. Artifacts in this directory MUST NOT be saved to git.
 - **Agent Memory:** Files intended to be persisted across runs (e.g. `todo.md`, `MEMORY.md`, or new learning files) MUST be stored in the `./memory/` directory. These files should be tracked and committed to git.
 
 ### Code Quality & Git
