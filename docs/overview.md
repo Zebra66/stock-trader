@@ -263,7 +263,8 @@ Next harness tick (market open):
 | Author | Prefix | Example |
 |---|---|---|
 | You (human) | *(none)* | `fix: update chart colors` |
-| Autonomous agent | `[agent]` | `[agent] tactical: bought NVDA x5` |
+| Autonomous hourly agent | `[agent] Hourly:` | `[agent] Hourly: refresh macro outlook and tactical plan` |
+| Autonomous tactical agent | `[agent] Tactical:` | `[agent] Tactical: bought NVDA x5` |
 
 Filter agent commits:
 ```bash

@@ -29,7 +29,7 @@ type ScheduledRunFunction = (mode: 'hourly' | 'tactical', options: HarnessOption
 
 interface MarketGatedAgentDeps {
   isMarketOpen: () => Promise<boolean>;
-  runGitPull: () => Promise<void>;
+  runGitPull: (mode: 'hourly' | 'tactical') => Promise<void>;
   spawnAgent: AgentRunFunction;
 }
 
@@ -53,18 +53,18 @@ export function shouldRunWhenMarketClosed(forceRun: boolean): boolean {
   return forceRun;
 }
 
-async function runGitPull(): Promise<void> {
+async function runGitPull(mode: 'hourly' | 'tactical'): Promise<void> {
   try {
     await Bun.$`git pull origin main`.quiet();
-    logger.info('Git pull completed');
+    logger.info({ mode }, 'Git pull completed');
   } catch {
-    logger.warn('Git pull skipped or failed');
+    logger.warn({ mode }, 'Git pull skipped or failed');
   }
 }
 
 async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   if (isPaused && mode === 'tactical') {
-    logger.info('Trading is paused. Skipping tactical agent');
+    logger.info({ mode }, 'Trading is paused. Skipping tactical agent');
     return;
   }
   logger.info({ mode }, '🤖 Spawning agent');
@@ -77,11 +77,14 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
 }
 
 export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction {
-  let queue = Promise.resolve();
+  const queues: Record<'hourly' | 'tactical', Promise<void>> = {
+    hourly: Promise.resolve(),
+    tactical: Promise.resolve(),
+  };
 
   return (mode) => {
-    const nextRun = queue.then(() => run(mode));
-    queue = nextRun.catch((error: unknown) => {
+    const nextRun = queues[mode].then(() => run(mode));
+    queues[mode] = nextRun.catch((error: unknown) => {
       logger.error({ mode, error: (error as Error).message }, 'Serialized agent run failed');
     });
 
@@ -90,11 +93,14 @@ export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction 
 }
 
 export function createSerializedScheduledRunner(run: ScheduledRunFunction): ScheduledRunFunction {
-  let queue = Promise.resolve();
+  const queues: Record<'hourly' | 'tactical', Promise<void>> = {
+    hourly: Promise.resolve(),
+    tactical: Promise.resolve(),
+  };
 
   return (mode, options) => {
-    const nextRun = queue.then(() => run(mode, options));
-    queue = nextRun.catch((error: unknown) => {
+    const nextRun = queues[mode].then(() => run(mode, options));
+    queues[mode] = nextRun.catch((error: unknown) => {
       logger.error({ mode, error: (error as Error).message }, 'Serialized scheduled run failed');
     });
 
@@ -118,7 +124,7 @@ export async function runMarketGatedAgent(
   }
 
   // Only pull when the run is allowed — no point syncing code when nothing can trade.
-  await deps.runGitPull();
+  await deps.runGitPull(mode);
 
   // NOTE: agent.ts is spawned as a fresh child process every cycle, so it always
   // picks up any code changes that arrived via git pull automatically.

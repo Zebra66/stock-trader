@@ -22,24 +22,25 @@ async function runAgent(): Promise<void> {
   const config = await loadAgentConfig();
   const model = config.modes[mode].model;
   const runner = new PiRunner();
+  const modeLogger = logger.child({ mode });
 
-  logger.info({ mode, model, repoRoot }, 'Starting Pi agent run');
+  modeLogger.info({ model, repoRoot }, 'Starting Pi agent run');
 
   try {
-    await runner.runPrompt({ mode, prompt, model, logger });
+    await runner.runPrompt({ mode, prompt, model, logger: modeLogger });
     
     // Auto-stage all changes (including new memory files) so they are captured.
     // .gitignore ensures temp_files/ and other sensitive files are not staged.
     try {
       await Bun.$`git add .`.quiet();
-      logger.info({ mode }, 'Auto-staged changes after run');
+      modeLogger.info('Auto-staged changes after run');
     } catch (gitError: unknown) {
-      logger.warn({ mode, error: (gitError as Error).message }, 'Failed to auto-stage changes');
+      modeLogger.warn({ error: (gitError as Error).message }, 'Failed to auto-stage changes');
     }
 
-    logger.info({ mode }, 'Agent completed');
+    modeLogger.info('Agent completed');
   } catch (error: unknown) {
-    logger.error({ mode, error: (error as Error).message }, 'Agent execution error');
+    modeLogger.error({ error: (error as Error).message }, 'Agent execution error');
     process.exit(1);
   }
 }

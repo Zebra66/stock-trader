@@ -1375,7 +1375,7 @@ const app = new Elysia()
   //   limit     – max entries per page (default 50, max 200)
   .get('/api/logs', async ({ query }: { query: { severity?: string; search?: string; pageToken?: string; limit?: string; hideHttp?: string } }) => {
     const GCP_PROJECT = process.env.GCP_PROJECT ?? 'stock-auto-trader-495209';
-    const SERVICE_NAME = process.env.CLOUD_RUN_SERVICE ?? 'auto-stock-trader';
+    const SERVICE_NAME = process.env.CLOUD_RUN_SERVICE ?? 'stock-trader';
     const REGION = process.env.CLOUD_RUN_REGION ?? 'us-central1';
 
     const VALID_SEVERITIES = new Set(['DEFAULT', 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']);

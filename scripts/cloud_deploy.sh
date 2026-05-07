@@ -205,6 +205,9 @@ gcloud run deploy "$SERVICE_NAME" \
   --set-env-vars="GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}" \
   --set-env-vars="GOOGLE_OAUTH_CLIENT_SECRET=${GOOGLE_OAUTH_CLIENT_SECRET}" \
   --set-env-vars="ALLOWED_USER_EMAIL=${ALLOWED_USER_EMAIL}" \
+  --set-env-vars="GCP_PROJECT=${PROJECT_ID}" \
+  --set-env-vars="CLOUD_RUN_SERVICE=${SERVICE_NAME}" \
+  --set-env-vars="CLOUD_RUN_REGION=${REGION}" \
   --set-env-vars="GITHUB_PAT=${GITHUB_PAT}" \
   --set-env-vars="GITHUB_REPO=${GITHUB_REPO}"
 

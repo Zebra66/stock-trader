@@ -8,11 +8,12 @@ echo "Building and deploying to Google Cloud Run..."
 PROJECT_ID=$(gcloud config get-value project)
 IMAGE_NAME="gcr.io/$PROJECT_ID/stock-trader"
 
-# Build the container
-docker build -t $IMAGE_NAME .
-
-# Push the container
-docker push $IMAGE_NAME
+# Build and push an amd64 image so Cloud Run can execute it.
+docker buildx build \
+  --platform linux/amd64 \
+  -t $IMAGE_NAME \
+  --push \
+  .
 
 # Deploy to Cloud Run
 # Note: You should configure environment variables securely via the Cloud Console or Secret Manager.

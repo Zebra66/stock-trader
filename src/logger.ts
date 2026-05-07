@@ -40,6 +40,16 @@ function levelLabel(n: number): string {
   return LEVEL_LABELS[n] ?? 'INFO ';
 }
 
+function getModePrefix(mode: unknown): string | undefined {
+  if (mode === 'hourly') {
+    return 'Hourly:';
+  }
+  if (mode === 'tactical') {
+    return 'Tactical:';
+  }
+  return undefined;
+}
+
 const NASDAQ_TIMEZONE = 'America/New_York';
 const nasdaqDateTimeFormatter = new Intl.DateTimeFormat('en-CA', {
   timeZone: NASDAQ_TIMEZONE,
@@ -105,7 +115,9 @@ export function formatLogLine(obj: Record<string, unknown>): string {
   const module = typeof obj.module === 'string' ? obj.module : 'app';
   const caller = typeof obj.caller === 'string' ? obj.caller : undefined;
   const location = caller ? `${module}:${caller}` : module;
-  const msg = typeof obj.msg === 'string' ? obj.msg : '';
+  const rawMsg = typeof obj.msg === 'string' ? obj.msg : '';
+  const modePrefix = getModePrefix(obj.mode);
+  const msg = modePrefix && !rawMsg.startsWith(modePrefix) ? `${modePrefix} ${rawMsg}` : rawMsg;
 
   // Extra bindings
   const extras: string[] = [];

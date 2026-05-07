@@ -92,7 +92,42 @@ describe('harness scheduler alignment', () => {
 });
 
 describe('harness run serialization', () => {
-  test('queues agent runs so tactical waits for a long hourly run', async () => {
+  test('queues same-mode agent runs in order', async () => {
+    const events: string[] = [];
+    let releaseHourly: (() => void) | undefined;
+    const hourlyStarted = Promise.withResolvers<void>();
+    let hourlyRuns = 0;
+
+    const runSerialized = createSerializedRunner(async (mode) => {
+      events.push(`start:${mode}`);
+
+      if (mode === 'hourly') {
+        hourlyRuns += 1;
+        if (hourlyRuns === 1) {
+          hourlyStarted.resolve();
+          await new Promise<void>((resolve) => {
+            releaseHourly = resolve;
+          });
+        }
+      }
+
+      events.push(`end:${mode}`);
+    });
+
+    const hourlyRun = runSerialized('hourly');
+    await hourlyStarted.promise;
+    const secondHourlyRun = runSerialized('hourly');
+
+    await Promise.resolve();
+    expect(events).toEqual(['start:hourly']);
+
+    releaseHourly?.();
+    await Promise.all([hourlyRun, secondHourlyRun]);
+
+    expect(events).toEqual(['start:hourly', 'end:hourly', 'start:hourly', 'end:hourly']);
+  });
+
+  test('allows tactical and hourly runs to proceed independently', async () => {
     const events: string[] = [];
     let releaseHourly: (() => void) | undefined;
     const hourlyStarted = Promise.withResolvers<void>();
@@ -114,16 +149,16 @@ describe('harness run serialization', () => {
     await hourlyStarted.promise;
     const tacticalRun = runSerialized('tactical');
 
-    await Promise.resolve();
-    expect(events).toEqual(['start:hourly']);
+    await tacticalRun;
+    expect(events).toEqual(['start:hourly', 'start:tactical', 'end:tactical']);
 
     releaseHourly?.();
-    await Promise.all([hourlyRun, tacticalRun]);
+    await hourlyRun;
 
-    expect(events).toEqual(['start:hourly', 'end:hourly', 'start:tactical', 'end:tactical']);
+    expect(events).toEqual(['start:hourly', 'start:tactical', 'end:tactical', 'end:hourly']);
   });
 
-  test('rechecks market status after a queued run waits behind another run', async () => {
+  test('rechecks market status after a same-mode queued run waits behind another run', async () => {
     const events: string[] = [];
     let marketOpen = true;
     let releaseHourly: (() => void) | undefined;
@@ -131,8 +166,8 @@ describe('harness run serialization', () => {
 
     const runSerialized = createSerializedScheduledRunner((mode, options) => runMarketGatedAgent(mode, options, {
       isMarketOpen: async () => marketOpen,
-      runGitPull: async () => {
-        events.push(`pull:${mode}`);
+      runGitPull: async (pullMode) => {
+        events.push(`pull:${pullMode}`);
       },
       spawnAgent: async (mode) => {
         events.push(`start:${mode}`);
@@ -150,10 +185,10 @@ describe('harness run serialization', () => {
     await hourlyStarted.promise;
 
     marketOpen = false;
-    const tacticalRun = runSerialized('tactical', { forceRun: false });
+    const secondHourlyRun = runSerialized('hourly', { forceRun: false });
 
     releaseHourly?.();
-    await Promise.all([hourlyRun, tacticalRun]);
+    await Promise.all([hourlyRun, secondHourlyRun]);
 
     expect(events).toEqual(['pull:hourly', 'start:hourly', 'end:hourly']);
   });

@@ -10,7 +10,7 @@
 #   ./scripts/cloud_get_logs.sh --severity ERROR      # only ERROR+ logs
 #   ./scripts/cloud_get_logs.sh --json                # raw JSON (pipe to jq, etc.)
 
-SERVICE_NAME="auto-stock-trader"
+SERVICE_NAME="stock-trader"
 PROJECT_ID="stock-auto-trader-495209"
 REGION="us-central1"
 

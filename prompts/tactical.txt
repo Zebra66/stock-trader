@@ -48,4 +48,4 @@ You also have access to Google Search — use it to:
 - Update `memory/MEMORY.md` with a concise execution summary block:
   - What was done this cycle, authoritative current holdings, current exposure, and next expected action
 - Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives
-- Use git to commit memory updates and any intentional prompt/code/config changes with an `[agent]` prefix, then push
+- Use git to commit memory updates and any intentional prompt/code/config changes with the exact title format `[agent] Tactical: <message text>`, then push

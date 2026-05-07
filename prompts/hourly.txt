@@ -96,5 +96,6 @@ First, decide which data and in which format you need to make a sound macro deci
 
 ### Step 7 — Commit
 - Use git to commit memory updates, prompt updates, and any intentional code/config changes with a descriptive message that **respects higher-priority repo rules and AGENTS instructions**
-- In autonomous runtime contexts where `[agent]` commits are explicitly allowed, use that prefix; in interactive sessions where repo instructions forbid it, **do not** use `[agent]`
+- In autonomous runtime contexts where `[agent]` commits are explicitly allowed, the commit title **must** be formatted exactly as `[agent] Hourly: <message text>`
+- In interactive sessions where repo instructions forbid `[agent]`, **do not** use this prefix rule
 - Push after verification if repo policy allows

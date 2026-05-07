@@ -30,6 +30,26 @@ describe('logger formatting', () => {
       '2026-05-04 10:32:11.123 EDT | ERROR | pi_runner:173 | assistant message  stopReason="error"',
     );
   });
+
+  test('prefixes hourly and tactical log messages by mode', () => {
+    const hourlyLine = formatLogLine({
+      time: '2026-05-04T14:32:11.123Z',
+      level: 30,
+      module: 'agent',
+      mode: 'hourly',
+      msg: 'Agent completed',
+    });
+    const tacticalLine = formatLogLine({
+      time: '2026-05-04T14:32:11.123Z',
+      level: 30,
+      module: 'agent',
+      mode: 'tactical',
+      msg: 'Agent completed',
+    });
+
+    expect(hourlyLine).toBe('2026-05-04 10:32:11.123 EDT | INFO  | agent | Hourly: Agent completed  mode="hourly"');
+    expect(tacticalLine).toBe('2026-05-04 10:32:11.123 EDT | INFO  | agent | Tactical: Agent completed  mode="tactical"');
+  });
 });
 
 describe('logger caller extraction', () => {
