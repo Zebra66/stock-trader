@@ -1,5 +1,5 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-08 after a during-hours tactical check using the live paper portfolio snapshot.*
+*Updated 2026-05-08 after a during-hours tactical hold check using the live paper portfolio snapshot.*
 
 ## Current State
 - Market is open.

@@ -18,7 +18,7 @@
 - **Next expected action:** **hold**. If exposure later falls back below target while the tape stays orderly, the next add should still start with **GOOG** unless QQQ reasserts as the cleanest leader.
 
 ## Current Macro Thesis
-The approved universe still favors **AI infrastructure, semiconductors, and large-cap growth**. Tactical emphasis remains on **QQQ, GOOG, SOXX, AVGO, and QTUM**. The key change this cycle is that the portfolio is already inside the target exposure band, so the priority is disciplined management rather than more catch-up deployment.
+The approved universe still favors **AI infrastructure, semiconductors, and large-cap growth**. Tactical emphasis remains on **QQQ, GOOG, SOXX, AVGO, and QTUM**. The key change this cycle is that the portfolio remains inside the target exposure band, so the priority is disciplined management rather than more catch-up deployment.
 
 ## Goal Check
 - **Latest tracked account equity:** **$10,130.64**
