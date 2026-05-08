@@ -1,12 +1,12 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-07 after a market-closed tactical check using the live paper portfolio snapshot.*
+*Updated 2026-05-08 after a during-hours tactical check using the live paper portfolio snapshot.*
 
 ## Current State
-- Market is closed.
+- Market is open.
 - Regime remains **offensive catch-up**.
 - Live book: **GOOG 1, QQQ 5, QTUM 2, SOXX 1**.
-- Account equity / cash / buying power: **$10,061.70 / $5,417.87 / $15,479.57**.
-- Gross exposure is about **46.2%**, which is inside the **45-60%** target band.
+- Account equity / cash / buying power: **$10,130.64 / $5,417.86 / $15,548.50**.
+- Gross exposure is about **46.5%**, which is inside the **45-60%** target band.
 - No trade was executed this cycle.
 
 ## Standing Rules
