@@ -55,6 +55,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Before writing tactical instructions, design your own safeguards for the next hour based on current conditions. Do not rely only on static rules in this prompt. Decide what risk limits, confirmation requirements, order constraints, exposure caps, stale-data checks, or no-trade conditions are appropriate right now, then encode those safeguards clearly in `memory/todo.md`.
 - Review the amount of money left to invest and determine how much capital should be deployed or held in reserve
 - Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
+- Before authorizing any add, calculate the **post-trade weight** of the affected symbol / ETF. If the new weight would exceed **40% for a diversified ETF** or **15% for a single stock**, either justify the concentration explicitly or move to the next candidate.
 - Perform a current gain/loss analysis overall and per stock. Are there underperformers to cut or winners to let run?
 - Are we still in the right sectors? What is the macro trend?
 - Which positions should be increased, reduced, or exited?
