@@ -42,6 +42,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Use Google Search to find: latest market news, top investor portfolio changes, analyst sentiment for the universe, stock-specific news for current holdings, and any new developments in major macro or thematic trends
 - Use Google Search to research any specific symbol that needs deeper investigation
 - Factor in real trading friction: spread, slippage, CAT fees, and sell-side SEC / FINRA fees; do not assume round trips are free even if explicit commissions are zero
+- When a bash step needs more than a very short inline script, avoid fragile shell quoting. Write a temporary TypeScript helper under `temp_files/` and run it with `bun run` instead of embedding a long `bun -e` or heavily quoted one-liner.
 
 ### Step 3 — Analyse and decide
 - **Goal check:** Am I on track to achieve both goals — positive absolute returns AND beating the S&P 500? Compute the portfolio's total return since inception vs. the S&P 500's return over the same period. State explicitly: "On track" or "Off track — [reason]". If off track, let this drive the urgency and direction of all decisions below.
@@ -97,7 +98,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - IMPORTANT: Every change to this prompt needs to be explained and reviewed in the commit message or a separate note, as it impacts actual money!
 
 ### Step 7 — Commit
-- Use git to commit memory updates, prompt updates, and any intentional code/config changes with a descriptive message that **respects higher-priority repo rules and AGENTS instructions**
-- In autonomous runtime contexts where `[agent]` commits are explicitly allowed, the commit title **must** be formatted exactly as `[agent] Hourly: <message text>`
-- In interactive sessions where repo instructions forbid `[agent]`, **do not** use this prefix rule
-- Push after verification if repo policy allows
+- This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
+- Use git to commit memory updates, prompt updates, and any intentional code/config changes with the exact title format `[agent] Hourly: <message text>`.
+- If there is nothing to commit, say so explicitly instead of creating an empty commit.
+- After verification, push the resulting commit to the tracked remote branch for this repo.
