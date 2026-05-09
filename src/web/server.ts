@@ -6,7 +6,9 @@ import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
+import { AGENT_COMMITS_LIMIT, getAgentCommitsSince, summarizeRecentAgentCommits } from './commits';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
+import { deriveLogSeverity } from './log_severity';
 import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
 
 const logger = getLogger('web-server');
@@ -886,6 +888,16 @@ const app = new Elysia()
 
   function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
+  function displaySeverity(severity,message){
+    const normalized=String(severity||'').toUpperCase();
+    if(normalized && normalized!=='DEFAULT') return normalized;
+    if(/\|\s*ERROR\s*\|/i.test(message)) return 'ERROR';
+    if(/\|\s*WARN\s*\|/i.test(message)) return 'WARNING';
+    if(/\|\s*INFO\s*\|/i.test(message)) return 'INFO';
+    if(/\|\s*DEBUG\s*\|/i.test(message)) return 'DEBUG';
+    return 'DEFAULT';
+  }
+
   function highlight(text,search){
     if(!search) return escH(text);
     const esc=escH(text);
@@ -942,7 +954,7 @@ const app = new Elysia()
       } else {
         let h='<table class="logs-table"><thead><tr><th>Timestamp</th><th>Level</th><th>Message</th></tr></thead><tbody>';
         for(const e of entries){
-          const sev=(e.severity||'DEFAULT').toUpperCase();
+          const sev=displaySeverity(e.severity,e.message||'');
           h+='<tr class="log-row">';
           h+='<td class="log-ts">'+escH(fmtTs(e.timestamp))+'</td>';
           h+='<td class="log-sev '+escH(sev)+'">'+escH(sev)+'</td>';
@@ -1056,7 +1068,10 @@ const app = new Elysia()
 </script>
 </body>
 </html>`, {
-      headers: { 'Content-Type': 'text/html' },
+      headers: {
+        'Content-Type': 'text/html',
+        'Cache-Control': 'no-store, max-age=0',
+      },
     });
   })
 
@@ -1297,9 +1312,10 @@ const app = new Elysia()
     if (GITHUB_PAT) headers['Authorization'] = `Bearer ${GITHUB_PAT}`;
 
     try {
-      // Fetch up to 100 recent commits
+      const since = getAgentCommitsSince();
+      // Fetch up to 100 commits from the last week.
       const res = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=100`,
+        `https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=${AGENT_COMMITS_LIMIT}&since=${encodeURIComponent(since)}`,
         { headers },
       );
       if (!res.ok) {
@@ -1307,26 +1323,8 @@ const app = new Elysia()
         logger.warn({ status: res.status, body: errText }, 'GitHub commits API error');
         return { error: `GitHub API ${res.status}: ${errText}`, commits: [] };
       }
-
-      interface GithubCommit {
-        sha: string;
-        commit: {
-          author: { name: string; date: string };
-          message: string;
-        };
-      }
-
-      const data = await res.json() as GithubCommit[];
-      // Filter to [agent] commits only
-      const commits = data
-        .filter((c) => c.commit.message.startsWith('[agent]'))
-        .map((c) => ({
-          hash: c.sha,
-          shortHash: c.sha.substring(0, 7),
-          author: c.commit.author.name,
-          date: c.commit.author.date,
-          message: c.commit.message.split('\n')[0] ?? c.commit.message,
-        }));
+      const data = await res.json();
+      const commits = summarizeRecentAgentCommits(data as Parameters<typeof summarizeRecentAgentCommits>[0]);
 
       return { commits };
     } catch (e: unknown) {
@@ -1489,7 +1487,7 @@ const app = new Elysia()
         }
         return {
           timestamp: e.timestamp ?? '',
-          severity: e.severity ?? 'DEFAULT',
+          severity: deriveLogSeverity(e.severity, message),
           message,
           insertId: e.insertId ?? '',
         };
