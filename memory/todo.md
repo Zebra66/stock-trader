@@ -3,7 +3,7 @@
 
 ## Current State
 - Regime: **offensive catch-up**
-- Account equity / cash / gross exposure: **$10,207.68 / $4,705.34 / 53.9%**
+- Account equity / cash / gross exposure: **$10,208.37 / $4,705.34 / 53.9%**
 - Target gross-exposure band: **58-66%**
 - Live book: **QQQ 6, GOOG 1, QTUM 2, SOXX 1**
 - Dominant issue: **cash drag**
@@ -55,4 +55,4 @@
 The strategy for this hour is simple: **reduce cash drag with one clean add into semiconductor leadership, but do not add to already-overweight QQQ.**
 
 ## [tactical] Current Cycle Result
-- [tactical] No trade executed. **SOXX** was the lead candidate, but the live price at **531.14** remained just below the **531.40** trigger, so the correct action was to hold and wait for confirmation.
+- [tactical] No trade executed. **SOXX** was the lead candidate, but the live price at **530.93** remained just below the **531.40** trigger; **AVGO 429.23** and **GOOG 390.97** also stayed below their respective buy thresholds, so holding was the correct action.

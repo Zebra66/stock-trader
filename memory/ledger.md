@@ -13,3 +13,8 @@ Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
 - Gross exposure is 53.9%, below the 58-66% target band but QQQ is already hold-only.
 - Alpaca and Yahoo quotes were fresh and aligned; no symbol-specific adverse catalyst forced action.
 
+2026-05-11 : 12:33 : [tactical] No trade: SOXX, AVGO, and GOOG all stayed below their live buy triggers, so cash drag remains but risk stayed disciplined.
+- SOXX printed 530.93 versus the 531.40 breakout threshold.
+- AVGO at 429.23 and GOOG at 390.97 also missed their confirmation levels.
+- Alpaca and Yahoo quotes stayed aligned and no adverse catalyst forced action.
+

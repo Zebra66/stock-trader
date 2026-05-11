@@ -5,7 +5,7 @@
 - **Regime:** **offensive catch-up**
 - **Goal check:** **Off track — the portfolio is profitable in dollars, but it is still trailing SPY since inception.**
 - **Dominant failure mode:** **cash drag**
-- **Current account / cash / gross exposure:** **$10,207.68 equity / $4,705.34 cash / 53.9% gross exposure**
+- **Current account / cash / gross exposure:** **$10,208.37 equity / $4,705.34 cash / 53.9% gross exposure**
 - **Target gross-exposure band:** **58-66%**
 - **Why this band now:** the market is open and orderly, semis / Nasdaq remain the clear leadership group, but existing **QQQ** concentration is already above the default ETF cap, so new deployment should diversify into other leaders instead of adding more index beta.
 
@@ -102,3 +102,9 @@ The portfolio is no longer severely underexposed, but it is still carrying enoug
 - Quote freshness was good across **SPY / QQQ / SOXX / GOOG / AVGO / NVDA** between Alpaca and Yahoo; **QTUM** remains thin and hold-only.
 - FMP remains unavailable because **FMP_API_KEY** is not configured, so the run used **Yahoo Finance chart API** for multi-timeframe returns.
 - No code changes were needed beyond a small prompt hardening to prevent fresh adds into already-overweight positions without an explicit override.
+
+## [tactical] Execution Summary — 2026-05-11 12:29 ET
+- [tactical] No trade executed this cycle.
+- [tactical] Authoritative holdings remain **QQQ 6, GOOG 1, QTUM 2, SOXX 1** with **$10,208.37 equity / $4,705.34 cash / 53.9% gross exposure**.
+- [tactical] SOXX stayed just under the 531.40 breakout trigger; AVGO and GOOG also remained below their buy thresholds.
+- [tactical] Next expected action: keep waiting for a valid SOXX reclaim/breakout or, failing that, the next clean AVGO/GOOG confirmation while staying inside the 58-66% exposure band.
