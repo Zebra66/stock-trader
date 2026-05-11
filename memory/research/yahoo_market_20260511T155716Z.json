@@ -1,0 +1,800 @@
+{
+  "fetchedAt": "2026-05-11T15:58:16.024Z",
+  "symbols": [
+    {
+      "symbol": "AVGO",
+      "asOf": "2026-05-11T15:57:51.000Z",
+      "currentPrice": 430.33,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NMS",
+      "recentHigh5": 430.33,
+      "recentLow5": 412.56,
+      "recentHigh20": 430.33,
+      "recentLow20": 380.78,
+      "avgVolume20": 19693864,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 416.5,
+          "returnPct": 3.32
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 371.55,
+          "returnPct": 15.82
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 342.76,
+          "returnPct": 25.55
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 351.96,
+          "returnPct": 22.27
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 208.2,
+          "returnPct": 106.69
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 62.767,
+          "returnPct": 585.6
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "EIS",
+      "asOf": "2026-05-11T15:57:21.000Z",
+      "currentPrice": 136.305,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 136.88,
+      "recentLow5": 134.94,
+      "recentHigh20": 136.88,
+      "recentLow20": 126.35,
+      "avgVolume20": 85618,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 132.85,
+          "returnPct": 2.6
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 125.59,
+          "returnPct": 8.53
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 123.24,
+          "returnPct": 10.6
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 105.62,
+          "returnPct": 29.05
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 82.51,
+          "returnPct": 65.2
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 54.81,
+          "returnPct": 148.69
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "GLD",
+      "asOf": "2026-05-11T15:57:50.000Z",
+      "currentPrice": 434.43,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 434.43,
+      "recentLow5": 418.27,
+      "recentHigh20": 445.93,
+      "recentLow20": 414.71,
+      "avgVolume20": 6565347,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 414.71,
+          "returnPct": 4.76
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 437.13,
+          "returnPct": -0.62
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 467.63,
+          "returnPct": -7.1
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 379.87,
+          "returnPct": 14.36
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 306.84,
+          "returnPct": 41.58
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 187.13,
+          "returnPct": 132.15
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "GOOG",
+      "asOf": "2026-05-11T15:57:54.000Z",
+      "currentPrice": 391.25,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NMS",
+      "recentHigh5": 397.05,
+      "recentLow5": 384.27,
+      "recentHigh20": 397.05,
+      "recentLow20": 330.47,
+      "avgVolume20": 18122264,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 379.64,
+          "returnPct": 3.06
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 315.72,
+          "returnPct": 23.92
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 311.33,
+          "returnPct": 25.67
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 291.74,
+          "returnPct": 34.11
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 154.38,
+          "returnPct": 153.43
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 116.9,
+          "returnPct": 234.69
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "HOOD",
+      "asOf": "2026-05-11T15:57:54.000Z",
+      "currentPrice": 79.06,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NMS",
+      "recentHigh5": 79.06,
+      "recentLow5": 76.28,
+      "recentHigh20": 91.275,
+      "recentLow20": 71.2,
+      "avgVolume20": 34513279,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 76.55,
+          "returnPct": 3.28
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 69.19,
+          "returnPct": 14.27
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 77.97,
+          "returnPct": 1.4
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 131.93,
+          "returnPct": -40.07
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 54.65,
+          "returnPct": 44.67
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 9.65,
+          "returnPct": 719.27
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "META",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 603.36,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NMS",
+      "recentHigh5": 616.81,
+      "recentLow5": 603.36,
+      "recentHigh20": 688.55,
+      "recentLow20": 603.36,
+      "avgVolume20": 15818083,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 610.41,
+          "returnPct": -1.15
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 629.86,
+          "returnPct": -4.21
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 668.69,
+          "returnPct": -9.77
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 627.08,
+          "returnPct": -3.78
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 592.49,
+          "returnPct": 1.83
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 235.79,
+          "returnPct": 155.89
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "NVDA",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 221.73,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NMS",
+      "recentHigh5": 221.73,
+      "recentLow5": 196.5,
+      "recentHigh20": 221.73,
+      "recentLow20": 196.5,
+      "avgVolume20": 148228005,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 198.48,
+          "returnPct": 11.71
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 188.63,
+          "returnPct": 17.55
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 190.05,
+          "returnPct": 16.67
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 193.16,
+          "returnPct": 14.79
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 116.65,
+          "returnPct": 90.08
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 28.578,
+          "returnPct": 675.88
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "QQQ",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 714.07,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NGM",
+      "recentHigh5": 714.07,
+      "recentLow5": 681.61,
+      "recentHigh20": 714.07,
+      "recentLow20": 628.6,
+      "avgVolume20": 39457161,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 672.88,
+          "returnPct": 6.12
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 611.07,
+          "returnPct": 16.86
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 613.11,
+          "returnPct": 16.47
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 621.57,
+          "returnPct": 14.88
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 487.97,
+          "returnPct": 46.33
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 326.2,
+          "returnPct": 118.91
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "QTUM",
+      "asOf": "2026-05-11T15:57:13.000Z",
+      "currentPrice": 147.515,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NGM",
+      "recentHigh5": 147.515,
+      "recentLow5": 139.17,
+      "recentHigh20": 147.515,
+      "recentLow20": 122.06,
+      "avgVolume20": 491772,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 135.69,
+          "returnPct": 8.71
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 116.69,
+          "returnPct": 26.42
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 119.1,
+          "returnPct": 23.86
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 111.15,
+          "returnPct": 32.72
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 80.13,
+          "returnPct": 84.09
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 44.22,
+          "returnPct": 233.59
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "RKLB",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 119.74,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NCM",
+      "recentHigh5": 119.74,
+      "recentLow5": 78.58,
+      "recentHigh20": 119.74,
+      "recentLow20": 72.22,
+      "avgVolume20": 25232040,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 80.31,
+          "returnPct": 49.1
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 68.05,
+          "returnPct": 75.96
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 69.62,
+          "returnPct": 71.99
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 51.24,
+          "returnPct": 133.68
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 20.51,
+          "returnPct": 483.81
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 4.1,
+          "returnPct": 2820.49
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "SHLD",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 64.8,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 67.96,
+      "recentLow5": 64.8,
+      "recentHigh20": 74.59,
+      "recentLow20": 64.8,
+      "avgVolume20": 1865201,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 68.08,
+          "returnPct": -4.82
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 72.7,
+          "returnPct": -10.87
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 71.39,
+          "returnPct": -9.23
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 66.4,
+          "returnPct": -2.41
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 53.38,
+          "returnPct": 21.39
+        },
+        "3y": null
+      },
+      "seriesLength": 666,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "SOXX",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 530.98,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "NGM",
+      "recentHigh5": 530.98,
+      "recentLow5": 482.73,
+      "recentHigh20": 530.98,
+      "recentLow20": 401.24,
+      "avgVolume20": 6671057,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 462.06,
+          "returnPct": 14.92
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 386.6,
+          "returnPct": 37.35
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 360.2,
+          "returnPct": 47.41
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 295.15,
+          "returnPct": 79.9
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 193.94,
+          "returnPct": 173.79
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 137.0067,
+          "returnPct": 287.56
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "VOO",
+      "asOf": "2026-05-11T15:57:53.000Z",
+      "currentPrice": 680.445,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 680.445,
+      "recentLow5": 665.3,
+      "recentHigh20": 680.445,
+      "recentLow20": 638.35,
+      "avgVolume20": 5727103,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 660.12,
+          "returnPct": 3.08
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 624.6,
+          "returnPct": 8.94
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 636.35,
+          "returnPct": 6.93
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 627.91,
+          "returnPct": 8.37
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 518.65,
+          "returnPct": 31.2
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 378.66,
+          "returnPct": 79.7
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "ARKX",
+      "asOf": "2026-05-11T15:57:25.000Z",
+      "currentPrice": 34.94,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "BTS",
+      "recentHigh5": 34.94,
+      "recentLow5": 32.26,
+      "recentHigh20": 34.94,
+      "recentLow20": 31.73,
+      "avgVolume20": 751019,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 32.51,
+          "returnPct": 7.47
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 31.37,
+          "returnPct": 11.38
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 31.28,
+          "returnPct": 11.7
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 29.12,
+          "returnPct": 19.99
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 19.3,
+          "returnPct": 81.04
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 13.476,
+          "returnPct": 159.28
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "SPY",
+      "asOf": "2026-05-11T15:57:55.000Z",
+      "currentPrice": 740.115,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 740.115,
+      "recentLow5": 723.77,
+      "recentHigh20": 740.115,
+      "recentLow20": 694.46,
+      "avgVolume20": 48733687,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 718.01,
+          "returnPct": 3.08
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 679.46,
+          "returnPct": 8.93
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 691.96,
+          "returnPct": 6.96
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 683,
+          "returnPct": 8.36
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 564.34,
+          "returnPct": 31.15
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 412.13,
+          "returnPct": 79.58
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "XLE",
+      "asOf": "2026-05-11T15:57:48.000Z",
+      "currentPrice": 56.81,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 59.45,
+      "recentLow5": 55.7,
+      "recentHigh20": 59.65,
+      "recentLow20": 55.02,
+      "avgVolume20": 40680739,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 59.39,
+          "returnPct": -4.34
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 56.94,
+          "returnPct": -0.23
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 54.98,
+          "returnPct": 3.33
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 45.765,
+          "returnPct": 24.13
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 41.215,
+          "returnPct": 37.84
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 39.2,
+          "returnPct": 44.92
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    },
+    {
+      "symbol": "XLF",
+      "asOf": "2026-05-11T15:57:53.000Z",
+      "currentPrice": 51.105,
+      "previousClose": null,
+      "dayChangePct": null,
+      "exchange": "PCX",
+      "recentHigh5": 51.84,
+      "recentLow5": 51.105,
+      "recentHigh20": 52.63,
+      "recentLow20": 51.105,
+      "avgVolume20": 31853572,
+      "returns": {
+        "1w": {
+          "anchorDate": "2026-05-04T13:30:00.000Z",
+          "anchorClose": 51.58,
+          "returnPct": -0.92
+        },
+        "1m": {
+          "anchorDate": "2026-04-10T13:30:00.000Z",
+          "anchorClose": 50.77,
+          "returnPct": 0.66
+        },
+        "3m": {
+          "anchorDate": "2026-02-11T14:30:00.000Z",
+          "anchorClose": 52.74,
+          "returnPct": -3.1
+        },
+        "6m": {
+          "anchorDate": "2025-11-11T14:30:00.000Z",
+          "anchorClose": 53.21,
+          "returnPct": -3.96
+        },
+        "1y": {
+          "anchorDate": "2025-05-09T13:30:00.000Z",
+          "anchorClose": 49.86,
+          "returnPct": 2.5
+        },
+        "3y": {
+          "anchorDate": "2023-05-11T13:30:00.000Z",
+          "anchorClose": 32.03,
+          "returnPct": 59.55
+        }
+      },
+      "seriesLength": 752,
+      "rawSource": "Yahoo Finance chart API"
+    }
+  ]
+}

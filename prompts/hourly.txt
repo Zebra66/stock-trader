@@ -56,6 +56,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Review the amount of money left to invest and determine how much capital should be deployed or held in reserve
 - Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
 - Before authorizing any add, calculate the **post-trade weight** of the affected symbol / ETF. If the new weight would exceed **40% for a diversified ETF** or **15% for a single stock**, either justify the concentration explicitly or move to the next candidate.
+- If a position already exceeds the default concentration cap before the contemplated trade, treat it as **hold-only by default** unless you write an explicit override rationale in `memory/MEMORY.md`.
 - Perform a current gain/loss analysis overall and per stock. Are there underperformers to cut or winners to let run?
 - Which positions should be increased, reduced, or exited?
 - Review the tactical todo.md — did the tactical agent flag any issues? Are those still valid?
