@@ -1,58 +1,65 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-11 11:58 ET by the hourly strategist.*
+*Updated 2026-05-11 13:05 ET by the hourly strategist.*
 
 ## Current State
-- Regime: **offensive catch-up**
-- Account equity / cash / gross exposure: **$10,208.37 / $4,705.34 / 53.9%**
-- Target gross-exposure band: **58-66%**
-- Live book: **QQQ 6, GOOG 1, QTUM 2, SOXX 1**
-- Dominant issue: **cash drag**
-- Goal status: **positive in dollars, but still trailing SPY since inception**
-- Tactical focus universe: **QQQ, SOXX, AVGO, GOOG, NVDA, QTUM, SPY**
+- **Regime:** **offensive catch-up**
+- **Account equity / cash / buying power:** **$10,200.91 / $4,705.34 / $14,906.25**
+- **Live holdings:** **GOOG 1, QQQ 6, QTUM 2, SOXX 1**
+- **Current gross exposure:** **53.9%**
+- **Target gross exposure:** **65-75%**
+- **Dominant issue:** **cash drag**
+- **Objective for the rest of today:** add roughly **$1.1k-$2.1k** of exposure, but only through confirmed setups.
+
+## Execution Safeguards
+- **Use account equity for sizing. No leverage. No shorts.**
+- **Max 1 trade per tactical cycle. Max 3 net new adds for the rest of today.**
+- **Stop adding once gross exposure reaches 65%+** or cash falls below roughly **$3,000**, unless the hourly strategist refreshes the plan.
+- **Require a fresh tradable quote before any order.** If the live broker quote is stale, unavailable, or differs from Yahoo fallback by more than **0.5%**, **do not trade** that symbol.
+- **Do not average down.** Only buy strength or orderly pullbacks that are still above strategic support.
+- If there is a sudden macro headline shock, disorderly reversal, or broad tech selloff, **pause and hold**.
 
 ## Ranked Execution Priority
 1. **SOXX**
-2. **AVGO**
-3. **GOOG**
-
-## Safeguards
-- **Regular session only. No after-hours or pre-market equity orders.**
-- **No leverage.** Size from account equity.
-- **Maximum one fill per tactical cycle.**
-- After any fill, **refresh positions and account state** before considering anything else.
-- **Stop new buys once gross exposure reaches 58%+** or if the first buy fills cleanly into the target band.
-- **No new QQQ buys this hour.** Current QQQ weight is already about **42% of equity**.
-- If the latest Alpaca bar is older than **5 minutes**, do not trade that symbol.
-- If Alpaca and Yahoo prices differ by more than **0.35%**, do not trade that symbol.
-- If the tape turns disorderly (**SPY < 735** and **QQQ < 707** together), do not add risk.
-- **No buys after 15:50 ET.** If a trigger has not fired by then, carry it as a next-regular-session idea only.
-- **QTUM remains hold-only** unless a second source confirms a fresh quote and volume looks normal.
+2. **GOOG**
+3. **NVDA**
+4. **QQQ only as a fallback add**, not a priority, because it is already the largest position.
 
 ## Actionable Orders
-- **BUY SOXX if price breaks above 531.40 with confirmation** — require **SPY > 740.30**, **QQQ > 714.00**, Alpaca and Yahoo both confirming, and use a limit order near the live market. **Qty: 1 share.** Rationale: strongest sector ETF, best non-QQQ way to reduce cash drag and move gross exposure into band.
-- **BUY SOXX if price dips below 527.00 and then reclaims 528.20 with confirmation** — require **NVDA green on the day** and **SPY > 738.80**. **Qty: 1 share.** Rationale: controlled pullback entry into the strongest leadership sleeve.
-- **BUY AVGO if SOXX does not fill and AVGO breaks above 431.20 with confirmation** — require **SOXX and NVDA both green on the day** and quote quality to look normal. **Qty: 1 share.** Rationale: strong AI-infrastructure momentum with lower concentration risk than QQQ.
-- **BUY GOOG if neither SOXX nor AVGO fills and GOOG reclaims 392.50 after holding above 390.50** — require **QQQ > 713.50** and **SPY > 739.50**. **Qty: 1 share.** Rationale: trend is still positive, but use a controlled reclaim rather than chasing weaker relative strength.
-- **BUY GOOG if price later breaks above 397.20 with confirmation** — only if no earlier buy filled. **Qty: 1 share.** Rationale: breakout continuation through the recent 5-day high.
+### 1) SOXX — primary add
+- **BUY SOXX if price breaks above 533.0 with confirmation** (QQQ green vs prior close and NVDA also positive) — rationale: semiconductor leadership remains the strongest sector expression.
+- **BUY SOXX if price pulls back into 523-526 and holds** without QQQ breaking down — rationale: buy orderly retracement instead of chasing.
+- **HOLD SOXX — target allocation 8-12%.**
+- **SELL SOXX if price loses 519.0** on a confirmed breakdown — rationale: protect capital if semi leadership fails.
 
-## Hold / Risk Rules
-- **HOLD QQQ — target allocation 42%. No new buys this hour.**
-- **SELL 1 QQQ if price falls below 706.80 with SPY below 734.80** — rationale: protect the already-overweight core position if the breakout fails.
-- **HOLD SOXX — target allocation 10%.**
-- **SELL SOXX if price falls below 523.00 with Yahoo confirmation and NVDA also weak** — rationale: protect the strongest winner if semiconductor leadership cracks.
-- **HOLD GOOG — target allocation 6%.**
-- **SELL GOOG if price falls below 388.20 with QQQ weak at the same time** — rationale: avoid letting the slowest current position turn into a real drag.
-- **HOLD QTUM — target allocation 3%. No new buys this hour.**
-- **SELL QTUM if price falls below 143.50 and Yahoo confirms the move** — rationale: thin quote quality requires confirmation before acting.
+### 2) GOOG — secondary add
+- **BUY GOOG if price trades in 388-391 and stabilizes / reclaims 391** while QQQ is flat-to-green — rationale: add on controlled pullback inside a strong medium-term uptrend.
+- **BUY GOOG if price breaks above 398.5 with confirmation** — rationale: fresh trend continuation through the 20-day high zone.
+- **HOLD GOOG — target allocation 6-10%.**
+- **SELL GOOG if price loses 379.5** — rationale: pullback has turned into real trend damage.
+
+### 3) NVDA — optional third add
+- **BUY NVDA if price breaks above 222.6 with confirmation** (SOXX firm and QQQ positive) — rationale: clean single-name AI leadership breakout.
+- **BUY NVDA if price pulls back into 217-218.5 and holds** — rationale: controlled entry on support rather than chasing.
+- **HOLD NVDA if opened — target allocation 0-8%.**
+- **SELL NVDA if price loses 214.5 after entry** — rationale: failed breakout / failed support.
+
+### Existing positions
+- **HOLD QQQ — target allocation 38-45%.**
+  - Do **not** add QQQ if it would push the weight above **45%** of equity.
+  - **Only fallback BUY QQQ above 715.0 with confirmation** if SOXX / GOOG / NVDA do not trigger and the tape is still strongly risk-on.
+  - **SELL QQQ only if price loses 704.0** with broad tech weakness — capital protection only.
+- **HOLD QTUM — target allocation 3-5%.**
+  - No fresh add unless the primary queue fails and the hourly strategist refreshes the plan.
+  - **SELL QTUM if price loses 142.0** — failed momentum support.
 
 ## Explicit No-Trade Conditions
-- No trades if broker/account state or market data becomes stale / conflicting.
-- No trades if a buy trigger fires but the benchmark confirmation fails.
-- No trades in **META, HOOD, RKLB, SHLD, ARKX, EIS, GLD, VOO, XLE, or XLF** this cycle unless a later hourly review explicitly upgrades them.
-- No second buy after the portfolio moves into the target exposure band.
+- Market not open for regular-session trading.
+- Broker quote unavailable or stale and cannot be confirmed.
+- Price is already far beyond the trigger and the entry would require obvious chasing.
+- Gross exposure is already **65%+**.
+- A breaking headline materially changes the thesis and has not yet been reviewed.
 
-## Execution Note
-The strategy for this hour is simple: **reduce cash drag with one clean add into semiconductor leadership, but do not add to already-overweight QQQ.**
-
-## [tactical] Current Cycle Result
-- [tactical] No trade executed. **SOXX** was the lead candidate, but the live price at **530.93** remained just below the **531.40** trigger; **AVGO 429.23** and **GOOG 390.97** also stayed below their respective buy thresholds, so holding was the correct action.
+## If Nothing Triggers
+- **Hold the current book.**
+- Keep the queue in the same order: **SOXX → GOOG → NVDA**.
+- Do not force a trade just because cash is available; the edge still needs to clear transaction costs.

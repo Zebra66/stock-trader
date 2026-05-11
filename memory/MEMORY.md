@@ -1,121 +1,85 @@
 # Hourly Macro Memory
-*Updated 2026-05-11 11:58 ET using direct Alpaca REST, Yahoo Finance chart API fallback, and Google News RSS fallback.*
+*Updated 2026-05-11 13:05 ET from fallback-confirmed broker state and live market-data fallback snapshots saved under `temp_files/`.*
 
 ## Current Regime
-- **Regime:** **offensive catch-up**
-- **Goal check:** **Off track — the portfolio is profitable in dollars, but it is still trailing SPY since inception.**
+- **Regime:** **Offensive catch-up**
+- **Goal check:** **Off track — portfolio is positive in absolute terms, but not yet beating the S&P 500.** Since the 2026-05-01 deposit, account return is **+2.01%** vs **SPY +2.64%**.
 - **Dominant failure mode:** **cash drag**
-- **Current account / cash / gross exposure:** **$10,208.37 equity / $4,705.34 cash / 53.9% gross exposure**
-- **Target gross-exposure band:** **58-66%**
-- **Why this band now:** the market is open and orderly, semis / Nasdaq remain the clear leadership group, but existing **QQQ** concentration is already above the default ETF cap, so new deployment should diversify into other leaders instead of adding more index beta.
-
-## Tactical Execution Summary — 2026-05-11
-- Alpaca CLI requests for account, positions, and per-symbol prices timed out, and a direct REST fallback also failed to return in time.
-- No orders were placed this cycle.
-- Last confirmed book remains the prior broker snapshot: **GOOG 1, QQQ 5, QTUM 2, SOXX 1**.
-- Current posture stays **hold / wait for a clean live refresh**.
+- **Current gross exposure:** **53.9%**
+- **Target gross-exposure band:** **65-75%**
+- **Why this band now:** the tape is still risk-on and AI / semiconductor leadership remains intact, but the account is young and already concentrated in QQQ, so catch-up should come through selective adds rather than max deployment or leverage.
 
 ## Current Macro Thesis
-The tape is still decisively risk-on for AI infrastructure, semiconductors, and large-cap growth. Multi-timeframe strength remains best in **SOXX, NVDA, AVGO, QTUM, QQQ, and GOOG**, while energy and financial ETF alternatives are lagging on the 1-week to 3-month windows. The best way to catch up is still to stay long leadership, but to do it with tighter concentration discipline than earlier in the week.
+US large-cap growth remains the leadership regime. Nasdaq / AI / semiconductor strength is still the cleanest actionable theme: **QQQ, SOXX, NVDA, AVGO, GOOG, and QTUM** all show strong 1M and 3M momentum, while **SPY/VOO** are lagging and defensive alternatives like **GLD** are not the best use of fresh capital right now. News fallback coverage also points the same way: Reuters noted fresh S&P/Nasdaq highs on AI and earnings optimism, while recent Alphabet / Broadcom / chip-demand coverage continues to reinforce hyperscaler AI capex and inference infrastructure demand.
 
-The portfolio is no longer severely underexposed, but it is still carrying enough cash to drag against a strong benchmark. Because **QQQ is already about 42% of equity**, the next incremental risk should go into **SOXX first**, then **AVGO**, then **GOOG on a clean reclaim**, not into another QQQ add. Fallback news coverage was mostly noisy; price leadership is the primary signal, while Google News RSS is only background context this cycle.
+The portfolio is making money, but not fast enough to satisfy both objectives because too much capital is still idle while the strongest part of the universe is rallying. Recent execution is mixed: **1D portfolio +0.31% vs SPY +0.25%** is acceptable, but **1W portfolio +2.12% vs SPY +2.98%** shows the book is still underdeployed. **2W = N/A due to insufficient live history.** What must change today is not the sector posture; it is the **deployment level**. Increase exposure toward the lower edge of the target band through the best AI / semi setups, while avoiding over-adding to already-dominant QQQ unless it clearly remains the cleanest vehicle.
 
-## Goal Check And Recent Performance Review
-- **Since inception (2026-05-01): portfolio +2.08% vs SPY +2.72%** using the $10,000 deposit baseline and **SPY 720.49 → 740.12**.
-- **1D portfolio review:** **+0.26%** vs prior live equity (**$10,181.18 → $10,207.68**). What worked: semis and QQQ exposure. What did not: GOOG lagged intraday.
-- **1W portfolio review:** **about +2.08%** from the first full live-history week baseline near **$10,000**. Positive, but still not enough to beat SPY.
-- **2W portfolio review:** **N/A due to insufficient live history**.
-- **Assessment:** current behavior is **not yet on track** for the 3-month goal because the account is still trailing the benchmark despite a favorable tape. What must change today: deploy remaining cash into the strongest non-QQQ leaders, avoid adding to already-overweight QQQ, and keep turnover selective so friction stays low.
-
-## Exposure Plan
-- **Authoritative live holdings:** **QQQ 6, GOOG 1, QTUM 2, SOXX 1**
-- **Current gross exposure:** **53.9%**
-- **Target band:** **58-66%**
-- **Same-day deployment plan:** one **SOXX** add is the cleanest immediate move because it brings gross exposure close to the target band without increasing QQQ concentration. If SOXX does not confirm, rotate to **AVGO**, then **GOOG**.
-- **Exact blocker preventing more aggressive deployment right now:** **QQQ is already above the default 40% diversified-ETF concentration cap**, and lower-liquidity alternatives like **QTUM** still require stricter quote confirmation.
+## Account State
+- **Equity / cash / buying power:** **$10,200.91 / $4,705.34 / $14,906.25**
+- **Current holdings:** **GOOG 1, QQQ 6, QTUM 2, SOXX 1**
+- **Per-position unrealized P&L:**
+  - **SOXX:** +10.44%
+  - **QTUM:** +7.59%
+  - **QQQ:** +2.87%
+  - **GOOG:** +0.98%
+- **Recent fill to preserve in memory:** tactical added **QQQ 1 @ 712.52** on **2026-05-11 11:12 ET**, lifting exposure from the prior sub-50% zone to roughly **54%**.
 
 ## Priority Actions For The Next Hour
-1. **Authorize one SOXX add** on a confirmed regular-session breakout or reclaim.
-2. **Keep QQQ hold-only** this hour because it is already above the default ETF concentration cap.
-3. **Use AVGO as the second deployment tool** if SOXX does not trigger.
-4. **Use GOOG only as the third choice** on a controlled reclaim; it remains positive overall but is weaker intraday than the semis.
-5. **No leverage, no after-hours equity orders, and no second buy once gross exposure reaches 58%+.**
+1. **Deploy toward 65-75% gross exposure** if confirmation rules are met; do not sit on excess cash in a still-orderly AI-led tape.
+2. **Primary add queue:** **SOXX**, then **GOOG**, then **NVDA**.
+3. **Do not cut current winners** just because they are green; the current problem is underdeployment, not bad open positions.
+4. **Do not add to QQQ above a ~45% account weight** unless SOXX / GOOG / NVDA triggers fail and QQQ is the only confirmed leader.
+5. **No leverage. No averaging down. No stale-quote orders.**
 
 ## Ranked Deployment Queue
-1. **SOXX** — strongest sector ETF, cleanest non-QQQ catch-up vehicle; post-trade weight about **10.4%** after a 1-share add.
-2. **AVGO** — strong AI infrastructure momentum with acceptable post-trade weight near **4.2%**.
-3. **GOOG** — still trend-positive, but lower immediate relative strength than semis; post-trade weight near **7.7%** after a 1-share add.
+1. **SOXX** — strongest broad semiconductor expression; 1W **+14.8%**, 1M **+37.2%**; adds leadership without single-name event risk.
+2. **GOOG** — still strong on 1M / 6M / 1Y, but currently pulling back intraday; preferable as a controlled add on weakness / reclaim rather than chasing only high-beta semis.
+3. **NVDA** — top-quality AI leader with strong relative strength, but only initiate on confirmed breakout or orderly pullback because it is near short-term highs.
 
-## Bias Table
+## Universe Bias Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | Hold only | Core Nasdaq exposure is working, but current weight is already above the default ETF cap | 42 |
-| SOXX | Buy | Strongest leadership ETF and best next deployment candidate | 10 |
-| AVGO | Buy | Strong AI-infrastructure momentum; better diversification than another QQQ add | 4 |
-| GOOG | Hold / selective buy | Positive trend, but only on reclaim / confirmation because relative strength is softer than semis | 6 |
-| QTUM | Hold only | Trend is strong, but broker trade count / volume remains thin | 3 |
-| NVDA | Watch / possible future buy | Leadership intact, but SOXX is the cleaner ETF expression right now | 0 |
-| VOO | Avoid | Lower upside than existing tech leadership | 0 |
-| XLE | Avoid | 1-week relative strength is weak; macro-news coverage was insufficient for a pivot | 0 |
-| XLF | Avoid | Financials lag the current tech-led tape | 0 |
-| META | Avoid | Weaker near-term trend than the current leaders | 0 |
-| HOOD | Avoid | Not a better use of capital than semis / Nasdaq leadership | 0 |
-| RKLB | Watch only | Explosive momentum, but too gap-prone for disciplined hourly deployment | 0 |
-| GLD | Avoid | Defensive hedge would dilute catch-up in the current tape | 0 |
-| EIS | Watch only | Good trend, but not better than SOXX / AVGO / GOOG today | 0 |
-| ARKX | Avoid | Lower-conviction thematic beta than current leaders | 0 |
-| SHLD | Avoid | Negative short-term relative strength | 0 |
+| AVGO | Hold/Watch | Strong trend, but weaker near-term setup than SOXX/NVDA today | 0-6 |
+| EIS | Avoid | Not a top relative-strength theme vs AI / semis | 0 |
+| GLD | Avoid for now | Useful hedge only if tape turns risk-off; not current edge | 0-5 |
+| GOOG | **Buy** | AI stack exposure, strong medium-term momentum, current pullback may offer entry | 6-10 |
+| HOOD | Watch | Good momentum, but outside current highest-conviction macro sleeve | 0-3 |
+| META | Avoid | Weak 1W / 1M relative trend vs the rest of the universe | 0 |
+| NVDA | **Buy** | AI leader; actionable only with price confirmation | 0-8 |
+| QQQ | Hold | Core broad growth exposure already large; do not let it dominate further without reason | 38-45 |
+| QTUM | Hold | Valid AI/quantum thematic sleeve; smaller supporting position only | 3-5 |
+| RKLB | Watch only | Outstanding momentum and news, but too extended after a near-parabolic 1W / 1M move | 0-3 |
+| SHLD | Avoid | Weak relative trend | 0 |
+| SOXX | **Buy** | Best sector ETF expression of current leadership | 8-12 |
+| VOO | Hold/Avoid adds | Fine benchmark exposure, but weaker upside than QQQ/SOXX in current regime | 0-5 |
+| ARKX | Watch | Positive trend, but secondary to RKLB / semis / QQQ | 0-3 |
 
-## Current Holdings
-- **QQQ 6** — strongest core position; keep it, but do not add this hour.
-- **SOXX 1** — small winner with the best add setup right now.
-- **QTUM 2** — keep as a hold-only satellite unless quote quality materially improves.
-- **GOOG 1** — profitable but slower than semis; buy only on reclaim / confirmation.
+## Notes
+### Current holdings
+- **QQQ** is the anchor position and already close to the max intended weight.
+- **SOXX** and **QTUM** are the best current winners; let them run.
+- **GOOG** is still constructive and should be treated as an add-on-pullback candidate, not a laggard to cut.
 
-## Near-Term Watchlist
-- **SOXX** above **531.40** or reclaim through **528.20** after a controlled dip.
-- **AVGO** above **431.20** with semiconductor breadth confirmation.
-- **GOOG** reclaim through **392.50** after holding **390.50+**, or later breakout above **397.20**.
-- **NVDA** remains a leadership confirmation signal for SOXX / AVGO rather than the first direct add.
+### Near-term watchlist
+- **NVDA** — cleanest single-name breakout candidate.
+- **AVGO** — still valid, but setup is slightly less urgent than SOXX / GOOG / NVDA.
+- **RKLB** — interesting and supported by recent contract/news flow, but current move is too extended for disciplined same-day deployment.
 
-## Macro Themes To Monitor
-- **Actionable now:** AI capex, semiconductor leadership, Nasdaq momentum, cloud / inference infrastructure demand.
-- **Worth monitoring:** Fed-rate repricing, benchmark breadth beneath the mega-cap surface, any abrupt reversal in semis after the recent surge.
-- **Interesting but not actionable yet:** energy / geopolitical headlines, financials commentary, and top-investor / analyst-flow coverage; this cycle's fallback coverage was too noisy or too generic to trade directly from.
+### Macro themes to monitor
+- **Actionable now:** AI capex, semiconductor leadership, Nasdaq breadth.
+- **Worth monitoring:** export-control / geopolitical headline risk; whether GOOG’s pullback is only normal digestion or the start of relative weakness.
+- **Interesting but not actionable yet:** top-investor portfolio-change coverage was insufficient / noisy this run, so no investor-copycat thesis is authorized.
 
-## Tactical Focus Universe
-**QQQ, SOXX, AVGO, GOOG, NVDA, QTUM, SPY**
-
-## Research Files
-- `memory/research/alpaca_hourly_20260511T155716Z.json` — live account, positions, clock, portfolio history, latest Alpaca bars.
-- `memory/research/yahoo_market_20260511T155716Z.json` — multi-timeframe return snapshot for the tracked universe via Yahoo Finance chart API.
-- `memory/research/news_20260511T155716Z.json` — Google News RSS fallback scan; mostly background only this cycle.
-- `memory/intraday_execution_log_2026-05-11.md` — intraday run notes for today.
+## Data / Research Notes
+- **Broker fallback used:** Alpaca CLI timed out repeatedly this run. Account state was therefore taken from the deployed dashboard endpoints: `/api/chart-data`, `/api/portfolio`, `/api/market-clock`, `/api/sp500-comparison`.
+- **Market-data fallback used:** **Yahoo Finance chart endpoint** for universe returns, live reference prices, and support/resistance ranges because `FMP_API_KEY` is unavailable.
+- **Search fallback used:** **Google News RSS** because a direct Google Search tool was unavailable in the workspace.
+- **Quote confirmation:** fallback broker prices and Yahoo prices matched closely enough for **GOOG / QQQ / SOXX** to treat the snapshot as tradable, but tactical execution must still confirm a fresh live quote before any order.
 
 ## Standing Learnings
 - Size from **account equity**, not buying power.
-- **Commission-free is not friction-free**; spreads, slippage, and sell-side fees still matter.
+- **Commission-free ≠ friction-free**; expected edge must clear spread, slippage, CAT, SEC, and FINRA costs.
 - **Never average down.**
-- When the live book is below target in a strong tape, assume **cash drag** until proven otherwise.
-- For low-trade-count names like **QTUM**, require second-source confirmation before authorizing a fresh order.
-- If the portfolio is already inside the target band, switch from catch-up to management discipline; if it is below band in a strong tape, define an explicit same-day deployment plan.
-- If a current position already exceeds the default concentration cap, treat it as **hold-only by default** unless a new explicit override is written.
-- When fallback news is noisy, let **price leadership outrank headlines** rather than forcing a thesis from weak coverage.
-
-## Last Run Summary
-- Reconciled stale memory against live Alpaca data: the authoritative book is now **QQQ 6, GOOG 1, QTUM 2, SOXX 1**.
-- Current account state improved to **$10,207.68 equity**, but the account still trails SPY since inception.
-- Quote freshness was good across **SPY / QQQ / SOXX / GOOG / AVGO / NVDA** between Alpaca and Yahoo; **QTUM** remains thin and hold-only.
-- FMP remains unavailable because **FMP_API_KEY** is not configured, so the run used **Yahoo Finance chart API** for multi-timeframe returns.
-- No code changes were needed beyond a small prompt hardening to prevent fresh adds into already-overweight positions without an explicit override.
-
-## [tactical] Execution Summary — 2026-05-11 12:29 ET
-- [tactical] No trade executed this cycle.
-- [tactical] Authoritative holdings remain **QQQ 6, GOOG 1, QTUM 2, SOXX 1** with **$10,208.37 equity / $4,705.34 cash / 53.9% gross exposure**.
-- [tactical] SOXX stayed just under the 531.40 breakout trigger; AVGO and GOOG also remained below their buy thresholds.
-- [tactical] Next expected action: keep waiting for a valid SOXX reclaim/breakout or, failing that, the next clean AVGO/GOOG confirmation while staying inside the 58-66% exposure band.
-
-## [tactical] Execution Summary — 2026-05-11 later cycle
-- [tactical] Live broker data could not be refreshed again because both the Alpaca CLI and direct REST fallback timed out.
-- [tactical] The safest decision was to hold the current winners and avoid forcing a stale add.
-- [tactical] No trade executed; the next opportunity should wait for a clean confirmed refresh or a clear breakout in QQQ.
+- If broker quotes are stale or unavailable, require a second source confirmation before authorizing orders.
+- If direct broker tooling hangs, use the deployed dashboard endpoints and label the state **fallback-confirmed**.
+- If direct Google Search is unavailable, use dated public-news fallback sources and ignore stale/noisy headlines.
