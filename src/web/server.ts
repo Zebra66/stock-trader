@@ -176,6 +176,7 @@ const app = new Elysia()
     .market-timer-bar.market-closed{background:linear-gradient(90deg,rgba(245,158,11,0.04),rgba(245,158,11,0.09),rgba(245,158,11,0.04));border-bottom-color:rgba(245,158,11,0.18)}
     .market-timer-bar.market-closed::before{background:radial-gradient(ellipse at center,rgba(245,158,11,0.06) 0%,transparent 70%);opacity:1}
     .mkt-status-pill{display:flex;align-items:center;gap:.5rem;padding:.28rem .8rem;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1px solid;white-space:nowrap}
+    .mkt-ny-time{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
     .mkt-status-pill.open{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.5);color:#00ff88;box-shadow:0 0 12px rgba(0,255,136,0.15)}
     .mkt-status-pill.closed{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.4);color:#fbbf24}
     .mkt-pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
@@ -296,6 +297,7 @@ const app = new Elysia()
 <!-- ── MARKET TIMER BAR ── -->
 <div class="market-timer-bar" id="market-timer-bar">
   <div class="mkt-status-pill" id="mkt-pill">
+    <span id="mkt-ny-time" class="mkt-ny-time">--:-- ET</span>
     <span class="mkt-pill-dot"></span>
     <span id="mkt-pill-text">Loading</span>
   </div>
@@ -999,6 +1001,9 @@ const app = new Elysia()
     function fmtEtTime(ms){
       return new Date(ms).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
     }
+    function fmtCurrentEtTime(){
+      return new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false})+' ET';
+    }
     function fmtEtDate(ms){
       const d=new Date(ms);
       const today=new Date();
@@ -1022,11 +1027,14 @@ const app = new Elysia()
 
       const bar=document.getElementById('market-timer-bar');
       const pill=document.getElementById('mkt-pill');
+      const nyTimeEl=document.getElementById('mkt-ny-time');
       const pillTxt=document.getElementById('mkt-pill-text');
       const dirLabel=document.getElementById('mkt-direction-label');
       const hoursEl=document.getElementById('mkt-hours');
       const minsEl=document.getElementById('mkt-mins');
       const subEl=document.getElementById('mkt-sub');
+
+      nyTimeEl.textContent=fmtCurrentEtTime();
 
       if(marketIsOpen){
         bar.className='market-timer-bar market-open';
