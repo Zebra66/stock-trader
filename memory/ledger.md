@@ -29,3 +29,8 @@ Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
 - The portfolio is still positive in dollars but trails SPY since inception, so cash drag remains the dominant issue once data visibility is restored.
 - All prior tactical entry/exit thresholds were invalidated as stale and replaced with no-trade / hold-only instructions.
 
+2026-05-11 : 17:43 : [tactical] No trade: the run was already in blackout mode, so I preserved the last confirmed book.
+- Market close and data-blackout directives made all prior breakout/reclaim triggers stale.
+- Hold-only book remains QQQ 6, GOOG 1, QTUM 2, SOXX 1 at 53.9% gross exposure.
+- Next-session queue stays SOXX → AVGO → GOOG after fresh data returns.
+

@@ -43,3 +43,6 @@
 
 ## Execution Note
 The strategy for the next tactical cycle is simple: **protect capital by not trading blind**. Preserve the last confirmed book and wait for a later successful data refresh before attempting to reduce cash drag.
+
+[tactical] 2026-05-11 16:26 ET: No trade. The blackout directive made all prior intraday triggers stale, so I did not place any after-hours or pre-market orders.
+[tactical] Keep the next-session queue unchanged: **SOXX → AVGO → GOOG** once a later run restores fresh data.
