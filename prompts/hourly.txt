@@ -105,6 +105,8 @@ First, decide which data and in which format you need to make a sound macro deci
 - If there is nothing to commit, say so explicitly instead of creating an empty commit.
 - After verification, push the resulting commit to the tracked remote branch for this repo.
 
-### Step 7 - ledger
-- Maintain a file ./memory/ledger.md where you will maintain a log of all the findings and decisions you took.
-- The format is <YYYY-MM-DD : HH:MM> : TL;DR sentence, and then up to 5 bullet points of detailed reasoning. The time is in NY timezone.
+### Step 8 - ledger
+- Append one entry to `./memory/ledger.md` on every run by executing:
+  `bun run src/tools/ledger_cli.ts append --mode hourly --tldr "<one-sentence summary>" --detail "<reason 1>" --detail "<reason 2>"`
+- Include the most important findings, actions taken, or reasons for inaction. Keep it to one TL;DR sentence plus up to 5 bullets.
+- The CLI writes the timestamp in NY timezone for you. Do not skip this step even if you made no trade.
