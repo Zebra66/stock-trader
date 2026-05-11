@@ -1,0 +1,28 @@
+# Never bake secrets into the image
+.env
+.env.*
+# Runtime artefacts
+temp_files/
+logs/
+*.log
+
+# Dev/IDE
+node_modules/
+# NOTE: .git/ is intentionally NOT excluded — the Pi.dev agent needs the full
+# git repo (history + remote config) to run `git commit` and `git push`.
+.gitignore
+.DS_Store
+.idea/
+.cursor/
+.zed/
+.agents/
+.claude/
+
+# Exclude deploy/helper scripts — but keep scripts/start.sh (container entrypoint)
+scripts/cloud_deploy.sh
+scripts/cloud_get_logs.sh
+scripts/run_local.sh
+scripts/setup_secrets.sh
+
+# Docs / memory / prompts are mounted or injected at runtime if needed
+# (keep prompts/ and memory/ for agent use)

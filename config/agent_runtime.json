@@ -1,0 +1,10 @@
+{
+  "modes": {
+    "hourly": {
+      "model": "trader-openai/gpt-5.4"
+    },
+    "tactical": {
+      "model": "trader-openai/gpt-5.4-mini"
+    }
+  }
+}
