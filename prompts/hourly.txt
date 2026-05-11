@@ -35,6 +35,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
 - Save raw market snapshots and temporary research artifacts under `memory/` and add links to them in `memory/MEMORY.md`
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
+- If the Alpaca CLI or direct brokerage calls hang or fail, use the deployed dashboard broker-state endpoints (`/api/chart-data`, `/api/portfolio`, `/api/market-clock`, `/api/sp500-comparison`) as a fallback source for account state, positions, recent fills, and benchmark comparison; clearly label that state as **fallback-confirmed** rather than direct-broker-confirmed
 - Review portfolio performance over 1D, 1W, and 2W and compare it with the Goals to determine whether recent execution is helping or hurting the objective
 - If the account is younger than one of those lookback windows, mark that window explicitly as **N/A due to insufficient live history** rather than silently substituting inception or a shorter lookback
 - Fetch the latest live/reference price for the symbols you are likely to trade so your tactical thresholds are based on current prices rather than stale prior-cycle levels

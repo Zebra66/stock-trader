@@ -9,6 +9,12 @@
 - **Target gross-exposure band:** **58-66%**
 - **Why this band now:** the market is open and orderly, semis / Nasdaq remain the clear leadership group, but existing **QQQ** concentration is already above the default ETF cap, so new deployment should diversify into other leaders instead of adding more index beta.
 
+## Tactical Execution Summary — 2026-05-11
+- Alpaca CLI requests for account, positions, and per-symbol prices timed out, and a direct REST fallback also failed to return in time.
+- No orders were placed this cycle.
+- Last confirmed book remains the prior broker snapshot: **GOOG 1, QQQ 5, QTUM 2, SOXX 1**.
+- Current posture stays **hold / wait for a clean live refresh**.
+
 ## Current Macro Thesis
 The tape is still decisively risk-on for AI infrastructure, semiconductors, and large-cap growth. Multi-timeframe strength remains best in **SOXX, NVDA, AVGO, QTUM, QQQ, and GOOG**, while energy and financial ETF alternatives are lagging on the 1-week to 3-month windows. The best way to catch up is still to stay long leadership, but to do it with tighter concentration discipline than earlier in the week.
 
@@ -108,3 +114,8 @@ The portfolio is no longer severely underexposed, but it is still carrying enoug
 - [tactical] Authoritative holdings remain **QQQ 6, GOOG 1, QTUM 2, SOXX 1** with **$10,208.37 equity / $4,705.34 cash / 53.9% gross exposure**.
 - [tactical] SOXX stayed just under the 531.40 breakout trigger; AVGO and GOOG also remained below their buy thresholds.
 - [tactical] Next expected action: keep waiting for a valid SOXX reclaim/breakout or, failing that, the next clean AVGO/GOOG confirmation while staying inside the 58-66% exposure band.
+
+## [tactical] Execution Summary — 2026-05-11 later cycle
+- [tactical] Live broker data could not be refreshed again because both the Alpaca CLI and direct REST fallback timed out.
+- [tactical] The safest decision was to hold the current winners and avoid forcing a stale add.
+- [tactical] No trade executed; the next opportunity should wait for a clean confirmed refresh or a clear breakout in QQQ.
