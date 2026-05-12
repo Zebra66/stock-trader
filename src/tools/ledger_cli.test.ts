@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { appendLedgerEntry, buildLedgerEntry, formatLedgerTimestamp } from './ledger_cli';
+import { appendLedgerEntry, buildLedgerEntry, formatLedgerTimestamp, prependLedgerEntry } from './ledger_cli';
 
 async function runCli(args: string[]): Promise<{ stdout: string; stderr: string; exitCode: number }> {
   const proc = Bun.spawn(['bun', 'run', 'src/tools/ledger_cli.ts', ...args], {
@@ -51,10 +51,39 @@ describe('ledger_cli', () => {
     expect(content).toContain('- Quote was stale');
   });
 
+  test('prependLedgerEntry inserts entry after header', async () => {
+    const ledgerPath = `/tmp/ledger-prepend-test-${Date.now()}.md`;
+
+    await appendLedgerEntry({
+      mode: 'hourly',
+      tldr: 'Older entry',
+      details: ['Existing details'],
+      now: new Date('2026-05-11T14:35:00.000Z'),
+      ledgerPath,
+    });
+
+    await prependLedgerEntry({
+      mode: 'tactical',
+      tldr: 'Newest entry',
+      details: ['Fresh details'],
+      now: new Date('2026-05-11T14:40:00.000Z'),
+      ledgerPath,
+    });
+
+    const content = await Bun.file(ledgerPath).text();
+    const newestIndex = content.indexOf('2026-05-11 : 10:40 : [tactical] Newest entry');
+    const olderIndex = content.indexOf('2026-05-11 : 10:35 : [hourly] Older entry');
+
+    expect(content).toContain('# Trading Ledger');
+    expect(newestIndex).toBeGreaterThan(0);
+    expect(olderIndex).toBeGreaterThan(newestIndex);
+  });
+
   test('--help prints usage', async () => {
     const { stdout, exitCode } = await runCli(['--help']);
     expect(exitCode).toBe(0);
     expect(stdout).toContain('append');
+    expect(stdout).toContain('prepend');
     expect(stdout).toContain('--mode <hourly|tactical>');
   });
 
@@ -88,5 +117,39 @@ describe('ledger_cli', () => {
     expect(content).toContain('- Raised QQQ above GOOG');
     expect(content).toContain('- Kept SOXX as a hold');
     expect(content).toContain('- Ignored stale QTUM quote');
+  });
+
+  test('prepend writes newest entry before existing entries', async () => {
+    const ledgerPath = `/tmp/ledger-cli-prepend-test-${Date.now()}.md`;
+
+    await appendLedgerEntry({
+      mode: 'tactical',
+      tldr: 'Existing trade log',
+      details: ['Holding position'],
+      now: new Date('2026-05-11T14:40:00.000Z'),
+      ledgerPath,
+    });
+
+    const { stdout, exitCode } = await runCli([
+      'prepend',
+      '--mode',
+      'hourly',
+      '--tldr',
+      'Raised QQQ priority',
+      '--detail',
+      'Cash drag remains dominant',
+      '--path',
+      ledgerPath,
+    ]);
+
+    expect(exitCode).toBe(0);
+    expect(stdout).toContain('Prepended ledger entry');
+
+    const content = await Bun.file(ledgerPath).text();
+    const prependedIndex = content.indexOf('[hourly] Raised QQQ priority');
+    const existingIndex = content.indexOf('[tactical] Existing trade log');
+
+    expect(prependedIndex).toBeGreaterThan(0);
+    expect(existingIndex).toBeGreaterThan(prependedIndex);
   });
 });

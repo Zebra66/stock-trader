@@ -6,6 +6,8 @@ Usage: bun run src/tools/ledger_cli.ts <command> [options]
 Commands:
   append --mode <hourly|tactical> --tldr <TEXT> [--detail <TEXT> ...] [--details <TEXT>] [--path <PATH>]
       Append one ledger entry in New York time.
+  prepend --mode <hourly|tactical> --tldr <TEXT> [--detail <TEXT> ...] [--details <TEXT>] [--path <PATH>]
+      Prepend one ledger entry after the header in New York time.
 
 Options:
   --help   Show this help message.
@@ -13,6 +15,7 @@ Options:
 Examples:
   bun run src/tools/ledger_cli.ts append --mode hourly --tldr "Raised QQQ priority" --detail "Cash drag remains dominant"
   bun run src/tools/ledger_cli.ts append --mode tactical --tldr "No trade" --details "Quote was stale\nEdge did not clear friction threshold"
+  bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "Raised QQQ priority" --detail "Cash drag remains dominant"
 `.trim();
 
 interface ParsedArgs {
@@ -113,6 +116,29 @@ function buildLedgerHeader(): string {
   ].join('\n');
 }
 
+function splitLedgerContent(existing: string): { header: string; body: string } {
+  const defaultHeader = buildLedgerHeader();
+  if (existing.startsWith(defaultHeader)) {
+    return {
+      header: defaultHeader,
+      body: existing.slice(defaultHeader.length),
+    };
+  }
+
+  const headerEnd = existing.indexOf('\n\n');
+  if (headerEnd >= 0) {
+    return {
+      header: `${existing.slice(0, headerEnd)}\n\n`,
+      body: existing.slice(headerEnd + 2),
+    };
+  }
+
+  return {
+    header: defaultHeader,
+    body: existing,
+  };
+}
+
 export async function appendLedgerEntry(options: AppendLedgerOptions): Promise<string> {
   const ledgerPath = options.ledgerPath ?? LEDGER_PATH;
   const ledgerFile = Bun.file(ledgerPath);
@@ -123,6 +149,18 @@ export async function appendLedgerEntry(options: AppendLedgerOptions): Promise<s
 
   await Bun.write(ledgerPath, updated);
   return `Appended ledger entry to ${ledgerPath}`;
+}
+
+export async function prependLedgerEntry(options: AppendLedgerOptions): Promise<string> {
+  const ledgerPath = options.ledgerPath ?? LEDGER_PATH;
+  const ledgerFile = Bun.file(ledgerPath);
+  const exists = await ledgerFile.exists();
+  const existing = exists ? await ledgerFile.text() : buildLedgerHeader();
+  const { header, body } = splitLedgerContent(existing);
+  const updated = `${header}${buildLedgerEntry(options)}${body}`;
+
+  await Bun.write(ledgerPath, updated);
+  return `Prepended ledger entry to ${ledgerPath}`;
 }
 
 function getOptionalFlag(flags: Map<string, string[]>, key: string): string | undefined {
@@ -144,6 +182,15 @@ async function runCli(argv: string[]): Promise<void> {
       const details = normalizeDetails(flags);
       const ledgerPath = getOptionalFlag(flags, 'path');
       const output = await appendLedgerEntry({ mode, tldr, details, ledgerPath });
+      console.log(output);
+      return;
+    }
+    case 'prepend': {
+      const mode = getMode(flags);
+      const tldr = getRequiredFlag(flags, 'tldr');
+      const details = normalizeDetails(flags);
+      const ledgerPath = getOptionalFlag(flags, 'path');
+      const output = await prependLedgerEntry({ mode, tldr, details, ledgerPath });
       console.log(output);
       return;
     }
