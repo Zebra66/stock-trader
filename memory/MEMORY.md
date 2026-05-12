@@ -32,9 +32,10 @@ However, the **current** intraday regime is not a clean risk-on tape. At refresh
 ## Priority Actions For The Next Hour
 1. **Do not add on continued weakness.** Require live reclaim confirmation before any new tech buy.
 2. **First re-open deployment in SOXX**, then **NVDA**, then **AVGO** if the tape firms.
-3. **Keep QQQ hold-only** unless a future hourly run writes an explicit concentration override.
-4. **Keep QTUM hold-only** unless both liquidity and second-source quote confirmation improve.
-5. If the market closes before a reclaim trigger hits, convert all entries to **next regular-session only**.
+3. Use **QQQ > 700** as the benchmark gate before any fresh add in SOXX / NVDA / AVGO.
+4. **Keep QQQ hold-only** unless a future hourly run writes an explicit concentration override.
+5. **Keep QTUM hold-only** unless both liquidity and second-source quote confirmation improve.
+6. If the market closes before a reclaim trigger hits, convert all entries to **next regular-session only**.
 
 ## Ranked Deployment Queue
 1. **SOXX** — preferred ETF expression of semiconductor leadership; already owned and still strongest medium-term sleeve.
