@@ -101,12 +101,14 @@ describe('Alpaca module', () => {
     expect(Array.isArray(positions)).toBe(true);
   });
 
-  test('getLatestPrice: returns OHLCV data for a valid symbol', async () => {
+  test('getLatestPrice: returns live snapshot data for a valid symbol', async () => {
     const result = await alpacaTools.getLatestPrice('SPY');
     expect(() => JSON.parse(result)).not.toThrow();
-    const bar = JSON.parse(result);
-    // Alpaca returns ClosePrice, HighPrice, LowPrice etc.
-    expect(bar).toHaveProperty('ClosePrice');
+    const snapshot = JSON.parse(result);
+    expect(snapshot).toHaveProperty('CurrentPrice');
+    expect(snapshot).toHaveProperty('LatestTrade');
+    expect(snapshot).toHaveProperty('LatestQuote');
+    expect(snapshot).toHaveProperty('MinuteBar');
   });
 
   test('getLatestPrice: returns error string for invalid symbol', async () => {
