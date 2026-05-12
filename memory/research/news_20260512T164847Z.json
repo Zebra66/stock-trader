@@ -1,0 +1,47 @@
+{
+  "fetchedAt": "2026-05-12T16:48:47.460Z",
+  "queries": [
+    {
+      "query": "semiconductor stocks",
+      "fetchedAt": "2026-05-12T16:49:07.560Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=semiconductor%20stocks&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "query": "AI infrastructure stocks",
+      "fetchedAt": "2026-05-12T16:49:04.693Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=AI%20infrastructure%20stocks&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "query": "NVDA stock",
+      "fetchedAt": "2026-05-12T16:49:04.930Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=NVDA%20stock&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "query": "AVGO stock",
+      "fetchedAt": "2026-05-12T16:49:12.960Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=AVGO%20stock&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "query": "GOOG stock",
+      "fetchedAt": "2026-05-12T16:49:09.062Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=GOOG%20stock&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "query": "Nasdaq rally",
+      "fetchedAt": "2026-05-12T16:49:12.061Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503 for https://news.google.com/rss/search?q=Nasdaq%20rally&hl=en-US&gl=US&ceid=US:en"
+    }
+  ]
+}

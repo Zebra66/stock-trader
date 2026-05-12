@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-12 : 13:03 : [hourly] Restored live visibility, confirmed the book still trails SPY, and shifted to confirmation-only tech adds after a sharp intraday pullback.
+- Direct Alpaca REST succeeded after Alpaca CLI timeouts; live equity is $10,047.82 with 53.2% gross exposure and 47% cash.
+- Portfolio remains positive at +0.48% since inception but trails SPY at +1.60%, so cash drag is still the dominant failure mode.
+- Semis and AI remain the strongest medium-term sleeves, but live tape was risk-off with QQQ down about 2.2% and SOXX down about 6.7% at refresh time.
+- Reactivated the tactical queue as SOXX -> NVDA -> AVGO on reclaim confirmation while keeping QQQ and QTUM hold-only.
+
+2026-05-12 : 12:55 : [tactical] Fresh broker data returned, but the session was already closed, so I held QQQ/GOOG/QTUM/SOXX and kept the next-session queue intact.
+- Current book is QQQ 6, GOOG 1, QTUM 2, SOXX 1 with about $10,067.62 equity and 53.3% gross exposure.
+- No regular-session equity orders were authorized after the close.
+- SOXX remains the first re-entry candidate, followed by AVGO and GOOG, once the next open confirms a live window.
+- EIS looked stale on the trade print, so it was monitored only.
+
 2026-05-11 : 12:04 : [hourly] Reconciled the live book, stayed offensive catch-up, and redirected fresh deployment from QQQ to SOXX/AVGO because QQQ is already overweight.
 - Portfolio is +2.08% since inception but still trails SPY at +2.72%, so cash drag remains the dominant problem.
 - Live account is $10,207.68 equity with 53.9% gross exposure; target band is now 58-66%.
