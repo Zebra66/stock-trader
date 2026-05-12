@@ -38,8 +38,8 @@ You also have access to Google Search — use it to:
 ### Step 4 — Execute orders
 - For each condition met in todo.md, execute the corresponding order via the Alpaca CLI
 - If price gaps through a trigger or moves too far beyond the intended entry/exit level, re-evaluate the setup instead of blindly executing a stale condition
-- Do not average down
-- Add only to winners and only if the add is smaller than or equal to the prior add
+- Do not average down — **unless** the hourly agent has explicitly authorized a "DIP BUY" for a core ETF or high-conviction name with a defined support level. In that case, you may execute the dip buy when the price hits the authorized level and shows a reclaim / bounce.
+- Add only to winners and only if the add is smaller than or equal to the prior add. For dip deployments, the add size must be **smaller than or equal to** the prior breakout-add size for that symbol.
 - Keep to **one trade per tactical cycle** unless `memory/todo.md` explicitly authorizes more.
 - Log each decision: why you acted, or why you held because the edge was too small after costs
 - If no condition is met or evidence quality is weak, do nothing and log why staying inactive was the correct decision

@@ -90,7 +90,8 @@ These are **inactive until fresh data returns**:
 ## Standing Learnings
 - Size from **account equity**, not buying power.
 - **Commission-free is not friction-free**; spreads, slippage, and sell-side fees still matter.
-- **Never average down.**
+- **Never average down by default.** The standard posture is momentum / breakout — buy strength, not weakness.
+- **Dip-deployment option (hourly discretion only):** When cash drag is the dominant problem and the macro thesis remains intact, the hourly agent may explicitly authorize a **dip buy** on a core ETF or high-conviction name at a defined support level. The tactical agent must only execute a dip buy when the hourly todo.md contains an exact "DIP BUY <TICKER>" directive with a concrete price and confirmation condition.
 - When the live book is below target in a strong tape, assume **cash drag** until proven otherwise.
 - For low-trade-count names like **QTUM**, require second-source confirmation before authorizing a fresh order.
 - If the portfolio is already inside the target band, switch from catch-up to management discipline; if it is below band in a strong tape, define an explicit same-day deployment plan.

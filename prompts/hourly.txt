@@ -59,6 +59,13 @@ First, decide which data and in which format you need to make a sound macro deci
 - Base deployment sizing on **account equity by default**, not raw margin buying power. Only use leverage if you explicitly state why the expected edge justifies it and the downside is acceptable
 - Before authorizing any add, calculate the **post-trade weight** of the affected symbol / ETF. If the new weight would exceed **40% for a diversified ETF** or **15% for a single stock**, either justify the concentration explicitly or move to the next candidate.
 - If a position already exceeds the default concentration cap before the contemplated trade, treat it as **hold-only by default** unless you write an explicit override rationale in `memory/MEMORY.md`.
+- **Dip-deployment option (hourly agent discretion):** The default posture is momentum / breakout — buy strength, not weakness. However, when cash drag is the dominant problem and the macro thesis remains strongly intact, you MAY consider authorizing a **dip deployment** (buying on a deep pullback) as an explicit alternative to a breakout add. This is optional and should be used selectively. When considering a dip deployment:
+  - The candidate must be either a **core ETF** (QQQ, SOXX, VOO) or a **high-conviction single stock** with no adverse symbol-specific news.
+  - Identify a concrete **support / reclaim level** from the recent intraday or daily price action — do not guess.
+  - The dip-deployment size must be **smaller than or equal to** the prior breakout-add size for that symbol.
+  - Authorize **at most one dip deployment per symbol per trading day**.
+  - If you choose to authorize a dip deployment, write it explicitly in `memory/todo.md` as: "DIP BUY <TICKER> if price drops to <X> and reclaims <Y> within <Z> minutes — rationale". The tactical agent must not execute a dip buy without this exact hourly authorization.
+  - If you do NOT authorize a dip deployment, the tactical agent continues to default to breakout-only triggers.
 - Perform a current gain/loss analysis overall and per stock. Are there underperformers to cut or winners to let run?
 - Which positions should be increased, reduced, or exited?
 - Review the tactical todo.md — did the tactical agent flag any issues? Are those still valid?
