@@ -9,3 +9,12 @@
 - Quote-quality warning: **QTUM** remained thin with only one trade in the latest minute and a last trade timestamp around **12:37 ET**, so it stays **hold-only** absent second-source confirmation.
 - News/search fallback coverage was **insufficient**: Google News RSS returned 503s and Bing News RSS fallback produced no usable items, so this run relied on price action and direct market data instead of forcing a headline thesis.
 - Decision: shift from the prior blackout posture back to **neutral**, keep **QQQ hold-only**, avoid chasing a falling semiconductor tape, and only re-open deployment on **reclaim confirmation** in **SOXX**, then **NVDA**, then **AVGO**.
+
+## 14:42 ET — Hourly strategist refresh
+- Direct broker visibility remained available through the **authenticated Alpaca REST fallback** after the Alpaca CLI and FMP CLI both timed out again.
+- Current account: **$10,098.41 equity / $4,705.34 cash / $5,393.07 long market value / 53.4% gross exposure**.
+- Current holdings reconfirmed: **QQQ 6, GOOG 1, QTUM 2, SOXX 1**.
+- Goal check: portfolio is still **positive in dollars** at about **+0.98% since inception**, but now trails **SPY +2.54%** using the fixed **2026-05-04 close** benchmark anchor.
+- Multi-timeframe leadership still favors **SOXX / SMH / NVDA / XLK / QQQ**, but the live tape remained a semiconductor pullback rather than a clean breakout: roughly **SPY -0.4%, QQQ -1.5%, SOXX -4.5%** at refresh time.
+- Quote-quality warning: **QTUM** remained thin/stale and **AVGO** showed an abnormally wide IEX spread, so both require extra confirmation before any order.
+- Decision: stay **neutral**, keep **QQQ and QTUM hold-only**, queue **SOXX first** and **NVDA second** on reclaim confirmation, and only allow **AVGO** if its spread normalizes.

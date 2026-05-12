@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-12 : 15:02 : [hourly] Confirmed the book still trails SPY, kept a neutral stance, and refreshed semis-first reclaim triggers with tighter spread safeguards.
+- Direct Alpaca REST fallback confirmed $10,098.41 equity, $4,705.34 cash, and 53.4% gross exposure after Alpaca CLI and FMP CLI timed out again.
+- Portfolio is +0.98% since inception versus SPY +2.54%, so cash drag remains the dominant failure mode.
+- Semiconductors remain the strongest 1m-6m sleeve, but live tape was still digesting a sharp intraday pullback rather than offering a clean breakout.
+- Refreshed the tactical queue to SOXX -> NVDA -> AVGO, with AVGO gated by abnormal-spread safeguards and QQQ remaining hold-only.
+
 2026-05-12 : 13:03 : [hourly] Restored live visibility, confirmed the book still trails SPY, and shifted to confirmation-only tech adds after a sharp intraday pullback.
 - Direct Alpaca REST succeeded after Alpaca CLI timeouts; live equity is $10,047.82 with 53.2% gross exposure and 47% cash.
 - Portfolio remains positive at +0.48% since inception but trails SPY at +1.60%, so cash drag is still the dominant failure mode.
