@@ -493,7 +493,7 @@ const app = new Elysia()
     document.getElementById('btn-nav-next').disabled=!canGoFwd;
 
     // Update note label
-    const fmtDate=ms=>new Date(ms).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    const fmtDate=ms=>new Date(ms).toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric'});
     document.getElementById('chart-note').innerText='· '+fmtDate(windowStart)+' — '+fmtDate(windowEnd);
   }
 
@@ -653,7 +653,7 @@ const app = new Elysia()
                 title:function(items){
                   const ts=items[0]?.parsed?.x;
                   if(!ts) return '';
-                  return new Date(ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+                  return new Date(ts).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
                 },
                 label:function(c){
                   const raw=c.raw;
@@ -677,7 +677,15 @@ const app = new Elysia()
               min:windowStart,
               max:windowEnd,
               time:{unit:timeUnit,displayFormats:{hour:'h:mm a',day:'MMM d',week:'MMM d'}},
-              ticks:{color:'#475569',maxRotation:0,autoSkip:true,maxTicksLimit:8},
+              ticks:{color:'#475569',maxRotation:0,autoSkip:true,maxTicksLimit:8,
+                callback:function(value){
+                  const d=new Date(value);
+                  if(timeUnit==='hour'){
+                    return d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
+                  }
+                  return d.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
+                }
+              },
               grid:{color:'rgba(0,212,255,0.05)'}
             },
             y:{
@@ -705,7 +713,7 @@ const app = new Elysia()
       if(!d.commits||d.commits.length===0){el.innerHTML='<em style="color:#475569">No agent commits found.</em>';return;}
       let h='<table class="ctable"><thead><tr><th>Hash</th><th>Date</th><th>Author</th><th>Message</th></tr></thead><tbody>';
       for(const c of d.commits){
-        const dt=new Date(c.date).toLocaleString();
+        const dt=new Date(c.date).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
         h+='<tr class="crow" data-hash="'+escH(c.hash)+'" data-msg="'+escH(c.message.substring(0,80))+'" onclick="viewCommit(this.dataset.hash,this.dataset.msg)">';
         h+='<td class="chash">'+escH(c.shortHash)+'</td>';
         h+='<td class="cdate">'+escH(dt)+'</td>';
@@ -751,7 +759,7 @@ const app = new Elysia()
         el.className='stat-val '+(pct>=0?'green':'red');
       }
       if(sub){
-        const startDate=d.startDate?new Date(d.startDate).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
+        const startDate=d.startDate?new Date(d.startDate).toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric'}):'';
         sub.innerText='SPY since '+startDate;
       }
     }catch(e){console.warn('sp500 fetch failed',e);}
@@ -814,7 +822,7 @@ const app = new Elysia()
       }else{
         html+='<table class="ptable"><thead><tr><th>Date</th><th>Symbol</th><th>Action</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>';
         for(const t of trades){
-          const dt=new Date(t.transaction_time).toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+          const dt=new Date(t.transaction_time).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
           const total=(parseFloat(t.price||0)*parseFloat(t.qty||0)).toFixed(2);
           const cls=t.side==='buy'?'p-buy':'p-sell';
           html+='<tr><td style="color:var(--t2);white-space:nowrap">'+escH(dt)+'</td>';
@@ -918,7 +926,7 @@ const app = new Elysia()
     if(!iso) return '';
     try{
       const d=new Date(iso);
-      return d.toLocaleString('en-US',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+      return d.toLocaleString('en-US',{timeZone:'America/New_York',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
     }catch{return iso;}
   }
 
