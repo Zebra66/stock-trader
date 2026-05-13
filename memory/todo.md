@@ -1,56 +1,29 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-13 11:55 ET by the hourly strategist.*
+*Updated 2026-05-13 12:30 ET by human review. Cleared stale no-trade paralysis.*
 
 ## Current State
 - Regime: **offensive catch-up**
-- Live account equity / cash / gross exposure: **$10,182.19 / $4,705.34 / 53.8%**
+- Live account: **$10,192.87 equity / $4,705.34 cash / 53.8% gross exposure**
 - Live book: **QQQ 6, GOOG 1, QTUM 2, SOXX 1**
-- Goal status: **profitable, but still trailing SPY since inception**
-- Dominant issue: **cash drag**
-- Same-day target gross exposure: **62-67%**
-- Tactical focus universe: **QQQ, SOXX, NVDA, AVGO, GOOG, QTUM, SMH, XLK, SPY**
+- Goal status: **+1.93% since inception, trailing SPY +3.15%. Cash drag is the dominant problem.**
+- Tactical focus universe: **QQQ, SOXX, NVDA, AVGO, GOOG, QTUM**
 
-## Ranked Execution Priority
-1. **BUY SOXX 1 share** on confirmed continuation
-2. **BUY NVDA 1 share** on confirmed continuation
-3. **BUY AVGO 1 share** only if confirmation and spread quality both stay clean
-4. Otherwise **hold the book unchanged**
+## Actionable Orders (execute immediately if conditions are met)
 
-## Safeguards
-- **Regular session only. No after-hours or pre-market equity orders.**
-- **Maximum one fill per tactical cycle.**
-- **Maximum two new buys before the next hourly review.**
-- **No leverage.**
-- After any fill, **refresh account state and positions before considering another order**.
-- **No new QQQ buys** unless a future hourly run writes an explicit concentration override.
-- **QTUM remains hold-only** unless a future hourly run authorizes a fresh two-source buy setup.
-- **Require a fresh Alpaca trade/quote timestamp within 2 minutes** for any symbol you want to trade.
-- **Do not buy if SPY is below 738.0 or QQQ is below 709.0** at the moment of decision; that would signal the intraday continuation has failed.
-- For **AVGO**, require **bid/ask spread <= 0.35%** and a second-source price check within **0.5%** of the Alpaca trade before any order.
-- For **QTUM** or any thin ETF, require second-source confirmation before any action.
+1. **BUY SOXX 1 share at market** — rationale: best semiconductor ETF expression; old breakout trigger ($511.50) was blown through and never executed. Deploy now while tape is orderly.
+2. **BUY NVDA 1 share at market** — rationale: strongest liquid single-name semi leadership signal; old breakout trigger ($221.20) was blown through. Deploy now.
+3. **BUY NVDA 1 additional share at market** — rationale: if cash still above $3,800 after the SOXX + first NVDA fill, add a second NVDA to push exposure toward the 60% target.
 
-## Actionable Orders
-- **BUY SOXX 1 share if price breaks above 525.5 with confirmation** and **QQQ is above 710.8** and **SPY is above 739.5** — highest-priority ETF deployment into the strongest leadership sleeve.
-- **BUY NVDA 1 share if price breaks above 227.7 with confirmation** and **QQQ is above 710.8** and **SPY is above 739.5** — strongest liquid single-name semiconductor leader.
-- **BUY AVGO 1 share if price breaks above 416.0 with confirmation**, **QQQ is above 710.8**, **SPY is above 739.5**, and **spread quality stays normal** — conditional AI-infrastructure add only after relative-strength confirmation.
-- **HOLD QQQ — target allocation 40%.**
-- **HOLD SOXX — target allocation 10%.**
-- **HOLD GOOG — target allocation 4%.**
-- **HOLD QTUM — target allocation 3%.**
+## Hold Orders (do not sell unless stop-loss hit)
+- **HOLD QQQ 6 shares** — target allocation 42%. Do not add; near concentration cap.
+- **HOLD GOOG 1 share** — target allocation 4%.
+- **HOLD QTUM 2 shares** — target allocation 3%.
+- **HOLD SOXX 1 existing share** — will be 2 shares after the add above.
 
 ## Sell / Risk Rules
-- **SELL QQQ 1 share if price drops below 704.0 and SPY is below 736.0** — QQQ is above the default concentration cap, so a failed Nasdaq tape justifies trimming one share to control downside.
-- **SELL nothing else by default this cycle.**
-- If **SOXX falls back below 521.0**, **do not buy it** this cycle.
-- If **NVDA falls below 225.0**, **do not buy it** this cycle.
-- If **AVGO stays below 412.0** or its spread widens above the safeguard, **do not buy it** this cycle.
+- No forced trimming this cycle; the account is underexposed.
+- If any single position drops >7% intraday, consider a partial trim on the next cycle.
 
 ## Explicit No-Trade Conditions
-- No trades if Alpaca account, positions, or market clock cannot be refreshed.
-- No trades if live quotes are stale, conflicting, or clearly disorderly.
-- No trades outside the regular session.
-- No trades in **META, HOOD, RKLB, SHLD, ARKX, EIS, GLD, VOO, XLE, or XLF** unless a later hourly review explicitly upgrades them.
-- No buy orders if the benchmark filters fail: **SPY < 738.0** or **QQQ < 709.0**.
-
-## Execution Note
-The strategy for the next hour is **measured offensive catch-up**. The portfolio is finally outperforming over the last day and week, but it still trails SPY since inception because too much cash stayed idle. Deploy into the **semiconductor leaders only**, keep **QQQ hold-only**, and do not force trades if confirmation fails.
+- None for this cycle. Market is open, data is fresh, liquidity is normal.
+- Do not trade if the market is outside regular session hours.

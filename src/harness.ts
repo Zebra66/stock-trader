@@ -78,12 +78,26 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
     return;
   }
   logger.info({ mode }, '🤖 Spawning agent');
+
+  const TIMEOUT_MS = mode === 'hourly' ? 10 * 60 * 1000 : 5 * 60 * 1000; // 10 min hourly, 5 min tactical
+
   const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
     stdout: 'inherit',
     stderr: 'inherit',
     cwd: repoRoot,
   });
+
+  const timeout = setTimeout(() => {
+    logger.error({ mode, timeoutMs: TIMEOUT_MS }, 'Agent timed out — killing process');
+    try { proc.kill(); } catch {}
+  }, TIMEOUT_MS);
+
   await proc.exited;
+  clearTimeout(timeout);
+
+  if (proc.exitCode !== 0) {
+    logger.warn({ mode, exitCode: proc.exitCode }, 'Agent exited with non-zero code');
+  }
 }
 
 export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction {

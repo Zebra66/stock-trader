@@ -182,12 +182,12 @@ describe('Agent prompts: memory management', () => {
     const hourlyPrompt = await Bun.file(new URL('../prompts/hourly.txt', import.meta.url)).text();
     const tacticalPrompt = await Bun.file(new URL('../prompts/tactical.txt', import.meta.url)).text();
 
-    expect(hourlyPrompt).toContain('replace the entire `memory/MEMORY.md`');
-    expect(hourlyPrompt).toContain('replace the entire `memory/todo.md`');
+    expect(hourlyPrompt).toContain('Replace the entire `memory/MEMORY.md`');
+    expect(hourlyPrompt).toContain('Replace the entire `memory/todo.md`');
     expect(hourlyPrompt).not.toContain('ALL the learnings that we created so far');
 
-    expect(tacticalPrompt).toContain('replace the entire `memory/MEMORY.md`');
-    expect(tacticalPrompt).toContain('replace the entire `memory/todo.md`');
+    expect(tacticalPrompt).toContain('update `memory/MEMORY.md`');
+    expect(tacticalPrompt).toContain('Update `memory/todo.md`');
     expect(tacticalPrompt).not.toContain('Prefix all your updates');
   });
 
@@ -195,9 +195,9 @@ describe('Agent prompts: memory management', () => {
     const hourlyPrompt = await Bun.file(new URL('../prompts/hourly.txt', import.meta.url)).text();
     const tacticalPrompt = await Bun.file(new URL('../prompts/tactical.txt', import.meta.url)).text();
 
-    expect(hourlyPrompt).toContain('Executable instructions older than one trading day must not remain in `memory/MEMORY.md`');
-    expect(hourlyPrompt).toContain('Long-term learnings may remain only when they are dated and explicitly labeled as learnings, not current trade instructions');
-    expect(tacticalPrompt).toContain('Executable instructions older than one trading day must not remain in `memory/MEMORY.md`');
+    expect(hourlyPrompt).toContain('Executable instructions older than one trading day must be removed from `memory/MEMORY.md`');
+    expect(hourlyPrompt).toContain('Remove stale closed-market summaries, duplicate learnings, and conflicting account snapshots');
+    expect(tacticalPrompt).toContain('remove completed conditions, keep only conditions that are still pending');
   });
 });
 

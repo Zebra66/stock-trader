@@ -13,9 +13,9 @@ describe('prompt loader', () => {
     expect(prompt).not.toContain('bit S&P 500');
     expect(prompt).not.toContain('chganges');
     expect(prompt).toContain('bun run src/tools/alpaca_cli.ts get-account');
-    expect(prompt).toContain('design your own safeguards for the next hour');
+    expect(prompt).toContain('Set SIMPLE buy/sell conditions');
     expect(prompt).toContain('Step 4 — Dreaming memory maintenance');
-    expect(prompt).toContain('Distill accumulated memories into the smallest useful current state');
+    expect(prompt).toContain('Remove stale closed-market summaries, duplicate learnings, and conflicting account snapshots');
     expect(prompt).not.toContain('invoke via executeBash');
     expect(prompt).not.toContain('{{UNIVERSE}}');
     expect(prompt).not.toContain('{{CLI_TOOLS_INTRO}}');
@@ -26,7 +26,8 @@ describe('prompt loader', () => {
 
     expect(prompt).toContain('10-Minute Tactical Executor Agent');
     expect(prompt).toContain('Available Repo CLI Tools');
-    expect(prompt).toContain('The hourly job is the trading expert! it will define the investment universe and set buy/sell conditions for you to execute.');
+    expect(prompt).toContain('The hourly job is the strategist');
+    expect(prompt).toContain('Your only job is to read those conditions, check live prices, and execute');
     expect(prompt).not.toContain('ARKX, META');
     expect(prompt).toContain('beat the S&P 500');
     expect(prompt).not.toContain('bit S&P 500');
