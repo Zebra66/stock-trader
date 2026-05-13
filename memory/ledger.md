@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-13 : 12:01 : [hourly] Shifted to offensive catch-up as semis regained leadership and the still-underdeployed book remained behind SPY.
+- Broker-confirmed book: $10,182.19 equity, $4,705.34 cash, 53.8% gross exposure; portfolio +1.82% since inception vs SPY +3.05%.
+- Recent execution improved: 1D +0.45% vs SPY +0.24% and 1W +1.53% vs SPY +0.81%, but early cash drag still dominates.
+- Refreshed tactical plan: SOXX first, NVDA second, AVGO conditional third; QQQ stays hold-only due to 41.9% concentration.
+- FMP remained unavailable, so Yahoo Finance chart API was used for multi-timeframe returns; Google News RSS failed again and Bing fallback coverage was sparse.
+
 2026-05-12 : 15:02 : [hourly] Confirmed the book still trails SPY, kept a neutral stance, and refreshed semis-first reclaim triggers with tighter spread safeguards.
 - Direct Alpaca REST fallback confirmed $10,098.41 equity, $4,705.34 cash, and 53.4% gross exposure after Alpaca CLI and FMP CLI timed out again.
 - Portfolio is +0.98% since inception versus SPY +2.54%, so cash drag remains the dominant failure mode.

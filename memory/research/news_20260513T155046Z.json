@@ -1,0 +1,78 @@
+{
+  "fetchedAt": "2026-05-13T15:51:01.315Z",
+  "queries": [
+    {
+      "query": "semiconductor stocks",
+      "fetchedAt": "2026-05-13T15:50:46.074Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    },
+    {
+      "query": "AI infrastructure stocks",
+      "fetchedAt": "2026-05-13T15:50:46.075Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    },
+    {
+      "query": "NVDA stock",
+      "fetchedAt": "2026-05-13T15:50:46.075Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    },
+    {
+      "query": "AVGO stock",
+      "fetchedAt": "2026-05-13T15:50:46.075Z",
+      "items": [
+        {
+          "title": "Citi Raises Broadcom Price Target to $500: AI Demand Sets Up Another Big April Quarter",
+          "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a049dde4d3348e6a553518e3a0fd247&url=https%3a%2f%2f247wallst.com%2finvesting%2f2026%2f05%2f12%2fciti-raises-broadcom-price-target-to-500-ai-demand-sets-up-another-big-april-quarter%2f&c=1252469125901040448&mkt=en-us",
+          "pubDate": "2026-05-12T13:14:00.000Z",
+          "source": null
+        },
+        {
+          "title": "Why Broadcom (AVGO) Is Becoming a Bigger Force in Custom AI Silicon",
+          "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a049dde4d3348e6a553518e3a0fd247&url=https%3a%2f%2fwww.insidermonkey.com%2fblog%2fwhy-broadcom-avgo-is-becoming-a-bigger-force-in-custom-ai-silicon-1760685%2f&c=8226850920973712825&mkt=en-us",
+          "pubDate": "2026-05-13T03:57:00.000Z",
+          "source": null
+        },
+        {
+          "title": "Broadcom: 4 Reasons To Load Up On The Buys",
+          "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a049dde4d3348e6a553518e3a0fd247&url=https%3a%2f%2fseekingalpha.com%2farticle%2f4901919-broadcom-4-reasons-to-load-up-on-the-buys&c=8362468953054675030&mkt=en-us",
+          "pubDate": "2026-05-09T03:03:00.000Z",
+          "source": null
+        },
+        {
+          "title": "Here is what to know beyond why Broadcom Inc. (AVGO) is a trending stock",
+          "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a049dde4d3348e6a553518e3a0fd247&url=https%3a%2f%2fwww.msn.com%2fen-us%2fmoney%2fgeneral%2fhere-is-what-to-know-beyond-why-broadcom-inc-avgo-is-a-trending-stock%2far-AA22wJUe&c=7847707879729406857&mkt=en-us",
+          "pubDate": "2026-05-06T06:00:05.000Z",
+          "source": null
+        },
+        {
+          "title": "Broadcom Inc.",
+          "link": "http://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6a049dde4d3348e6a553518e3a0fd247&url=https%3a%2f%2fwww.cnn.com%2fmarkets%2fstocks%2fAVGO&c=14045751839676454300&mkt=en-us",
+          "pubDate": "2025-07-19T16:33:00.000Z",
+          "source": null
+        }
+      ],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    },
+    {
+      "query": "GOOG stock",
+      "fetchedAt": "2026-05-13T15:50:46.075Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    },
+    {
+      "query": "Nasdaq rally",
+      "fetchedAt": "2026-05-13T15:50:46.075Z",
+      "items": [],
+      "rawSource": "Bing News RSS",
+      "note": "Google News RSS failed; used Bing News RSS fallback. HTTP 503"
+    }
+  ]
+}
