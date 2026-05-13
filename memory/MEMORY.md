@@ -99,19 +99,19 @@ Today’s tape, however, is a **live stress test inside leadership**, not a clea
 - `memory/intraday_execution_log_2026-05-12.md` — current intraday run notes.
 - Historical audit trail remains in prior files under `memory/research/` and `memory/ledger.md`.
 
-## Standing Learnings
-- Size from **account equity**, not buying power.
-- **Commission-free is not friction-free**; spreads, slippage, CAT fees, and sell-side fees still matter.
-- **Never average down.**
-- When the live book is below target in a strong tape, assume **cash drag** until proven otherwise.
-- If a current position already exceeds the default concentration cap, treat it as **hold-only by default** unless a new explicit override is written.
-- For low-trade-count names like **QTUM** and **EIS**, require second-source confirmation before authorizing a fresh order.
-- If **AVGO** or another candidate shows an abnormally wide live spread, require spread normalization or second-source confirmation before any order.
-- When fallback news is noisy, stale, or empty, let **price leadership outrank headlines** rather than forcing a thesis from weak coverage.
-- If the Alpaca CLI hangs, use **direct authenticated Alpaca REST** as the first broker fallback and save the raw response artifact under `memory/research/`.
-- If **FMP** is unavailable, use **Yahoo Finance chart API** to rebuild multi-timeframe return snapshots and document the fallback in memory.
-- If both broker refresh and market-data refresh fail, classify the cycle as a **data blackout**, preserve the last confirmed state, and set tactical to **no-trade / hold-only** until visibility returns.
-- Keep the **since-inception benchmark anchor fixed across runs** so the SPY comparison does not drift.
+## Dated Long-Term Learnings — Not Current Trade Instructions
+- **2026-05-12:** Size from **account equity**, not buying power.
+- **2026-05-12:** **Commission-free is not friction-free**; spreads, slippage, CAT fees, and sell-side fees still matter.
+- **2026-05-12:** Avoid averaging down unless a fresh same-session hourly directive explicitly authorizes a defined dip-buy setup.
+- **2026-05-12:** When the live book is below target in a strong tape, assume **cash drag** until proven otherwise.
+- **2026-05-12:** If a current position already exceeds the default concentration cap, treat it as **hold-only by default** unless a fresh explicit override is written.
+- **2026-05-12:** For low-trade-count names like **QTUM** and **EIS**, require second-source confirmation before authorizing a fresh order.
+- **2026-05-12:** If **AVGO** or another candidate shows an abnormally wide live spread, require spread normalization or second-source confirmation before any order.
+- **2026-05-12:** When fallback news is noisy, stale, or empty, let **price leadership outrank headlines** rather than forcing a thesis from weak coverage.
+- **2026-05-12:** If the Alpaca CLI hangs, use **direct authenticated Alpaca REST** as the first broker fallback and save the raw response artifact under `memory/research/`.
+- **2026-05-12:** If **FMP** is unavailable, use **Yahoo Finance chart API** to rebuild multi-timeframe return snapshots and document the fallback in memory.
+- **2026-05-12:** If both broker refresh and market-data refresh fail, classify the cycle as a **data blackout**, preserve the last confirmed state, and set tactical to **no-trade / hold-only** only until visibility returns or the next regular-session hourly refresh supersedes it.
+- **2026-05-12:** Keep the **since-inception benchmark anchor fixed across runs** so the SPY comparison does not drift.
 
 ## Last Run Summary
 - Refreshed live account state through **direct Alpaca REST** after both Alpaca CLI and FMP CLI timed out again.

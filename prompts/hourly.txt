@@ -78,7 +78,10 @@ First, decide which data and in which format you need to make a sound macro deci
 ### Step 4 — Dreaming memory maintenance
 - Perform a "Dreaming" task every hourly run before updating directives: review `memory/MEMORY.md`, `memory/todo.md`, and any other relevant files under `memory/`.
 - Distill accumulated memories into the smallest useful current state. Merge duplicate or overlapping learnings, remove stale closed-market summaries that add no decision value, reconcile conflicting account snapshots against live Alpaca data, and keep only information that improves future trading decisions.
-- If `MEMORY.md` or `todo.md` contains conflicting holdings, conflicting exposure numbers, or contradictory tactical outcomes, replace the stale state with a single authoritative current state rather than appending another note.
+- Treat `memory/MEMORY.md` and `memory/todo.md` as replace-only current-state files: replace the entire `memory/MEMORY.md` with the single authoritative macro/current-state summary, and replace the entire `memory/todo.md` with only live tactical directives.
+- Executable instructions older than one trading day must not remain in `memory/MEMORY.md`; convert anything still useful into a dated learning, historical note, or linked research artifact.
+- Long-term learnings may remain only when they are dated and explicitly labeled as learnings, not current trade instructions.
+- If `MEMORY.md` or `todo.md` contains conflicting holdings, conflicting exposure numbers, contradictory tactical outcomes, stale blackout/no-trade language, or directives from a prior market session, remove the stale state instead of appending another note.
 - If a memory item is still useful but too detailed for `MEMORY.md`, move it to a focused markdown file under `memory/` and reference it from `MEMORY.md`.
 - Preserve auditability: do not delete material trade rationale, executed-order history, or important failures. Summarize them instead when they become historical rather than actionable.
 
@@ -92,7 +95,7 @@ First, decide which data and in which format you need to make a sound macro deci
   - Ranked deployment queue for fresh capital when applicable
   - Clear table: Symbol | Bias (Buy/Hold/Sell) | Rationale | Target %
   - Separate notes for: current holdings, near-term watchlist, and macro themes to monitor
-  - ALL the learnings that we created so far, in addition to the summary of the last run
+  - Only currently useful dated learnings; each older learning must include the date learned/refreshed and must not read like a live trade instruction
   - IMPORTANT: Keep `MEMORY.md` short (up to 500 lines). If it gets too long, create separate memory markdown files and reference them from `MEMORY.md` for specific learnings
 - Update `memory/todo.md` with specific, actionable buy/sell conditions for the tactical agent:
   - "BUY <TICKER> if price drops below <X> or breaks above <Y> with confirmation — rationale"

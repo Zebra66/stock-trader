@@ -138,6 +138,67 @@ describe('Harness: pause state', () => {
     setPaused(false);
     expect(getPaused()).toBe(false);
   });
+
+  test('scheduled runner serializes hourly and tactical runs together', async () => {
+    const { createSerializedScheduledRunner } = await import('./harness');
+    const events: string[] = [];
+
+    let releaseHourly: () => void = () => {};
+    let markHourlyStarted: () => void = () => {};
+    const hourlyStarted = new Promise<void>((resolve) => {
+      markHourlyStarted = resolve;
+    });
+    const hourlyRelease = new Promise<void>((resolve) => {
+      releaseHourly = resolve;
+    });
+
+    const runner = createSerializedScheduledRunner(async (mode) => {
+      events.push(`start:${mode}`);
+      if (mode === 'hourly') {
+        markHourlyStarted();
+        await hourlyRelease;
+      }
+      events.push(`end:${mode}`);
+    });
+
+    const hourlyRun = runner('hourly', { forceRun: true });
+    await hourlyStarted;
+    const tacticalRun = runner('tactical', { forceRun: true });
+    await Promise.resolve();
+
+    expect(events).toEqual(['start:hourly']);
+
+    releaseHourly();
+    await Promise.all([hourlyRun, tacticalRun]);
+
+    expect(events).toEqual(['start:hourly', 'end:hourly', 'start:tactical', 'end:tactical']);
+  });
+});
+
+// ── Prompt memory management ──────────────────────────────────────────────────
+
+describe('Agent prompts: memory management', () => {
+  test('current-state memory files are replaced instead of accumulated', async () => {
+    const hourlyPrompt = await Bun.file(new URL('../prompts/hourly.txt', import.meta.url)).text();
+    const tacticalPrompt = await Bun.file(new URL('../prompts/tactical.txt', import.meta.url)).text();
+
+    expect(hourlyPrompt).toContain('replace the entire `memory/MEMORY.md`');
+    expect(hourlyPrompt).toContain('replace the entire `memory/todo.md`');
+    expect(hourlyPrompt).not.toContain('ALL the learnings that we created so far');
+
+    expect(tacticalPrompt).toContain('replace the entire `memory/MEMORY.md`');
+    expect(tacticalPrompt).toContain('replace the entire `memory/todo.md`');
+    expect(tacticalPrompt).not.toContain('Prefix all your updates');
+  });
+
+  test('active instructions expire while dated long-term learnings can persist', async () => {
+    const hourlyPrompt = await Bun.file(new URL('../prompts/hourly.txt', import.meta.url)).text();
+    const tacticalPrompt = await Bun.file(new URL('../prompts/tactical.txt', import.meta.url)).text();
+
+    expect(hourlyPrompt).toContain('Executable instructions older than one trading day must not remain in `memory/MEMORY.md`');
+    expect(hourlyPrompt).toContain('Long-term learnings may remain only when they are dated and explicitly labeled as learnings, not current trade instructions');
+    expect(tacticalPrompt).toContain('Executable instructions older than one trading day must not remain in `memory/MEMORY.md`');
+  });
 });
 
 // ── Alpaca CLI ─────────────────────────────────────────────────────────────────

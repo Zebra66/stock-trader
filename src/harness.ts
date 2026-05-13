@@ -103,14 +103,11 @@ export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction 
 }
 
 export function createSerializedScheduledRunner(run: ScheduledRunFunction): ScheduledRunFunction {
-  const queues: Record<'hourly' | 'tactical', Promise<void>> = {
-    hourly: Promise.resolve(),
-    tactical: Promise.resolve(),
-  };
+  let queue: Promise<void> = Promise.resolve();
 
   return (mode, options) => {
-    const nextRun = queues[mode].then(() => run(mode, options));
-    queues[mode] = nextRun.catch((error: unknown) => {
+    const nextRun = queue.then(() => run(mode, options));
+    queue = nextRun.catch((error: unknown) => {
       logger.error({ mode, error: (error as Error).message }, 'Serialized scheduled run failed');
     });
 

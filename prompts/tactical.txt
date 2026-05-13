@@ -15,6 +15,8 @@ You also have access to Google Search — use it to:
 - Read `memory/MEMORY.md`and all the files linked from it — macro directive from the Hourly Strategist.
 - Read `memory/todo.md` — specific buy/sell conditions and instructions
 - Treat the top-level current-state sections in those files as authoritative. If older appended notes conflict with the fresh broker refresh, overwrite the stale notes instead of following them.
+- If a directive is from a prior market session, conflicts with live broker state, or says blackout/no-trade without a fresh current-session reason, treat it as stale. Do not execute stale instructions; update the state files with current-session facts.
+- Executable instructions older than one trading day must not remain in `memory/MEMORY.md`; older content is usable only as dated long-term learning or historical audit context, not as a trade directive.
 
 ### Step 2 — Get live portfolio and market data
 - Use bash to run `bun run src/tools/alpaca_cli.ts get-account`
@@ -46,13 +48,12 @@ You also have access to Google Search — use it to:
 - If you were instructed by the hourly job to buy/sell and you decided not to follow that, add to the `./memory/todo.md` the explanation why you decided not to follow the hourly job's directive.
 
 ### Step 5 — Update state and commit
-- Update `memory/MEMORY.md` with a concise execution summary block:
+- Update `memory/MEMORY.md`: replace the entire `memory/MEMORY.md` with a concise current-state summary:
   - What was done this cycle, authoritative current holdings, current exposure, and next expected action
-- Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives
+- Update `memory/todo.md`: replace the entire `memory/todo.md` with only live directives; remove completed conditions, stale blackout/no-trade instructions, and superseded notes
 - Prepend one entry to `./memory/ledger.md` on every run by executing:
   `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "<one-sentence summary>" --detail "<reason 1>" --detail "<reason 2>"`
 - Include the action taken, or the reason for holding / skipping a trade. Keep it to one TL;DR sentence plus up to 5 bullets.
 - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
 - Use git to commit memory updates and any intentional prompt/code/config changes with the exact title format `[agent] Tactical: <message text>`, then push.
 - If there is nothing to commit, say so explicitly instead of creating an empty commit.
-- Prefix all your updates to the `./memory/todo.md` or any other md file with `[tactical]`
