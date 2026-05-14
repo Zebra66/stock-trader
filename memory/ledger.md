@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 15:20 : [tactical] No tactical trades; SOXX and XLK stayed below their buy triggers and all sell stops remained unhit.
+- SOXX printed 531.45, just below the 531.50 breakout buy level.
+- XLK printed 179.69, below the 180.00 breakout buy level; QQQ, GOOG, AVGO, and NVDA all stayed above sell thresholds.
+
 2026-05-14 : 15:10 : [tactical] No trades executed; all tactical triggers remained unfilled.
 - SOXX printed 531.495, just below the 531.50 buy trigger.
 - XLK printed 179.81, below the 180.00 buy trigger, and no sell stops were hit.
