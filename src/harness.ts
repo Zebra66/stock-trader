@@ -79,7 +79,7 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   }
   logger.info({ mode }, '🤖 Spawning agent');
 
-  const TIMEOUT_MS = mode === 'hourly' ? 10 * 60 * 1000 : 5 * 60 * 1000; // 10 min hourly, 5 min tactical
+  const TIMEOUT_MS = mode === 'hourly' ? 20 * 60 * 1000 : 10 * 60 * 1000; // 20 min hourly, 10 min tactical (temporary increase while debugging Cloud Run hangs)
 
   const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
     stdout: 'inherit',
@@ -88,8 +88,16 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
   });
 
   const timeout = setTimeout(() => {
-    logger.error({ mode, timeoutMs: TIMEOUT_MS }, 'Agent timed out — killing process');
+    logger.error({ mode, timeoutMs: TIMEOUT_MS }, 'Agent timed out — sending SIGTERM');
     try { proc.kill(); } catch {}
+
+    // If SIGTERM doesn't work (process is truly hung), send SIGKILL after 5s
+    setTimeout(() => {
+      if (!proc.killed) {
+        logger.error({ mode }, 'Agent still alive after SIGTERM — sending SIGKILL');
+        try { proc.kill(9); } catch {}
+      }
+    }, 5000);
   }, TIMEOUT_MS);
 
   await proc.exited;

@@ -39,6 +39,7 @@ async function runAgent(): Promise<void> {
     }
 
     modeLogger.info('Agent completed');
+    process.exit(0); // Force clean exit — do not rely on event loop drain
   } catch (error: unknown) {
     modeLogger.error({ error: (error as Error).message }, 'Agent execution error');
     process.exit(1);
