@@ -1,5 +1,7 @@
 # Hourly Macro Memory
-*Updated 2026-05-14 14:37 ET from live Alpaca snapshots.*
+*Updated 2026-05-14 14:40 ET from live Alpaca snapshots.*
+
+*Tactical 2026-05-14 14:40 ET: AVGO hit its sell trigger, but Alpaca rejected the market sell with pattern-day-trading protection, so no portfolio change was made this cycle.*
 
 ## Current Regime
 - **Regime:** **offensive catch-up**

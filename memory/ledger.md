@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 14:41 : [tactical] AVGO sell trigger was hit, but Alpaca blocked the order with pattern-day-trading protection, so the portfolio was unchanged.
+- AVGO traded at 435.78, above the authorized $428.00 sell trigger.
+- Alpaca rejected the market sell with 40310100 pattern-day-trading protection, so no trade was executed.
+
 2026-05-14 : 14:39 : [hourly] Stayed offensive catch-up: the book is +2.34% vs SPY +4.13%, tactical fills lifted exposure to 73%, and fresh deployment now goes to SOXX then XLK.
 - Live broker data reconciled to AVGO 1, GOOG 3, NVDA 2, QQQ 6, SOXX 2, so stale lower share counts were removed from memory.
 - Cash drag remains the dominant issue, but QQQ and GOOG are now near concentration caps, so new buys were shifted to SOXX and XLK with cap-aware sizing.
