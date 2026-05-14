@@ -1,11 +1,12 @@
-BUY SOXX 1 shares at market if price >= $533.50
-SELL QQQ 2 shares at market if price <= $713.00
-SELL SOXX 1 shares at market if price <= $525.00
+BUY SOXX 1 shares at market if price >= $529.75
+BUY GOOG 1 shares at market if price >= $398.25
+SELL QQQ 2 shares at market if price <= $712.00
+SELL SOXX 1 shares at market if price <= $523.00
 SELL GOOG 2 shares at market if price <= $389.00
-SELL AVGO 1 shares at market if price <= $429.00
+SELL AVGO 1 shares at market if price <= $428.00
 SELL NVDA 2 shares at market if price <= $229.00
 HOLD QQQ — target allocation 42%
 HOLD SOXX — target allocation 10%
-HOLD GOOG — target allocation 8%
+HOLD GOOG — target allocation 12%
 HOLD AVGO — target allocation 4%
 HOLD NVDA — target allocation 5%
