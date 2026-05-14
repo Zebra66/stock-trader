@@ -49,3 +49,5 @@ The book improved after yesterday's tactical adds: gross exposure is now back in
 | SHLD | Avoid new adds | Weak benchmark-period relative performance | 0% |
 
 Tactical update: Submitted market sells for GOOG, NVDA, SOXX, and QTUM because all four were trading at or above their stated sell thresholds; QQQ remained held because it was still below its stop level.
+
+No conditions met — held all positions.
