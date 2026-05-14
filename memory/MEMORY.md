@@ -51,4 +51,4 @@ Live broker data shows the account at **$10,247.49 equity**, **$2,761.52 cash**,
 | SHLD | Avoid | Negative relative strength since the fixed anchor date | 0 |
 
 ## Tactical Update
-Bought 1 share of SOXX and 5 shares of XLK on strength to continue deploying cash into the leading semiconductor and tech groups. QQQ sell conditions were not met, so the position was left unchanged.
+No conditions met — held all positions.
