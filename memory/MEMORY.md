@@ -50,4 +50,4 @@ The book improved after yesterday's tactical adds: gross exposure is now back in
 
 Tactical update: Submitted market sells for GOOG, NVDA, SOXX, and QTUM because all four were trading at or above their stated sell thresholds; QQQ remained held because it was still below its stop level.
 
-No conditions met — held all positions.
+No conditions met — held all positions; QQQ remained above the $704.50 stop, so no tactical sell was triggered.
