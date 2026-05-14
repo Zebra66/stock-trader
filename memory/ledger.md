@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 13:50 : [tactical] Bought 1 SOXX share on breakout; all sell stops stayed untriggered.
+- SOXX traded at 530.315, clearing the authorized buy threshold of 529.75 and triggering a market order.
+- QQQ, GOOG, AVGO, and NVDA all remained above their tactical sell-stop levels, so no exits were taken.
+
 2026-05-14 : 13:40 : [tactical] Bought 1 GOOG share on breakout; all other tactical levels stayed untriggered.
 - GOOG traded at 398.25, meeting the authorized buy threshold and triggering a market order.
 - SOXX stayed below 529.75 and QQQ/AVGO/NVDA stayed above their sell stops, so no other trades were taken.

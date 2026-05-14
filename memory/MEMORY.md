@@ -7,7 +7,7 @@
 ## Macro Thesis
 The tape is still pro-growth and AI-led rather than defensive. Using the fixed **2026-05-04 close** anchor, leadership remains concentrated in the exact areas that can help us catch up: **SPY +4.06%**, **QQQ +6.90%**, **SOXX +14.42%**, **SMH +13.81%**, **XLK +10.47%**, **QTUM +8.40%**, and **NVDA +17.97%**. The laggards are still the same lower-priority buckets: **XLE -2.20%**, **XLF -0.62%**, and **SHLD -5.71%**. That keeps the strategic bias firmly tilted toward semiconductors and large-cap AI/software rather than energy, financials, or gold.
 
-Live broker data shows the book is **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 1** with **$10,230.92 equity**, **$3,689.92 cash**, and **63.9% gross exposure**. The market is open and liquid, and the book is not in a free-fall tape, so the right posture is still to press selective tech leadership rather than retreat. The blocker is concentration: **QQQ is already ~42.2% of equity**, so fresh capital should go into **SOXX first**, then **GOOG**, not additional QQQ.
+Live broker data shows the book is now **AVGO 1, GOOG 3, NVDA 2, QQQ 6, SOXX 2** with **$10,245.89 equity**, **$2,761.52 cash**, and **~73.0% gross exposure**. The market is open and liquid, and the book is not in a free-fall tape, so the right posture is still to press selective tech leadership rather than retreat. The blocker is concentration: **QQQ is already ~42% of equity**, so fresh capital should go into **SOXX first**, then **GOOG**, not additional QQQ.
 
 ## Goal Check
 - **Status:** **Off track — cash drag**
@@ -16,8 +16,8 @@ Live broker data shows the book is **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 1** wit
 - **Reason:** the strategy identified the right leadership group, but too much of the benchmark window was spent underexposed.
 
 ## Current Exposure / Blocker
-- **Equity / cash / long market value:** **$10,230.92 / $3,689.92 / $6,541.00**
-- **Current gross exposure:** **63.9%**
+- **Equity / cash / long market value:** **$10,245.89 / $2,761.52 / $7,484.37**
+- **Current gross exposure:** **~73.0%**
 - **Target gross-exposure band:** **70-75%**
 - **Blocker:** **QQQ is already ~42.2% of equity**, so new risk must be deployed into non-QQQ leaders.
 - **Authoritative holdings:** **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 1**
@@ -51,4 +51,4 @@ Live broker data shows the book is **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 1** wit
 | SHLD | Avoid | Negative relative strength since the fixed anchor date | 0% |
 
 ## Tactical Update
-GOOG’s breakout condition triggered and a 1-share market buy order was submitted while the rest of the book stayed unchanged; SOXX remained below its buy trigger and none of the sell stops were hit. This kept the posture offensive without adding to QQQ concentration, and the remaining pending conditions are SOXX above 529.75 plus the listed sell thresholds.
+SOXX’s breakout condition triggered and a 1-share market buy order was filled to add semiconductor exposure without increasing QQQ concentration; no sell stops were hit, so the rest of the book stayed unchanged. The remaining pending conditions are the listed sell thresholds.
