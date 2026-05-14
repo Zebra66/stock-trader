@@ -49,3 +49,6 @@ Live broker data shows the book is **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 1** wit
 | XLF | Avoid | Relative strength still trails tech leadership | 0-3% |
 | XLE | Avoid | Energy remains a laggard versus the benchmark leaders | 0-3% |
 | SHLD | Avoid | Negative relative strength since the fixed anchor date | 0% |
+
+## Tactical Update
+GOOG’s breakout condition triggered and a 1-share market buy order was submitted while the rest of the book stayed unchanged; SOXX remained below its buy trigger and none of the sell stops were hit. This kept the posture offensive without adding to QQQ concentration, and the remaining pending conditions are SOXX above 529.75 plus the listed sell thresholds.
