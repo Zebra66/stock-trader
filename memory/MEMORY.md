@@ -49,4 +49,4 @@ Live broker data confirms the book is now **AVGO 1, GOOG 2, NVDA 2, QQQ 6, SOXX 
 | RKLB | Avoid new adds | Strong momentum but too extended/speculative for catch-up capital | 0-2% |
 | SHLD | Avoid | Negative relative strength since the benchmark anchor | 0% |
 
-No conditions met — held all positions after checking live prices.
+No conditions met — held all positions. Live prices stayed below the SOXX breakout and above all sell triggers, so the book remained unchanged this cycle.
