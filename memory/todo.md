@@ -10,6 +10,9 @@
 - **Target gross-exposure band:** **55-70%**
 - **Default posture this cycle:** **hold overnight; next regular-session only for any new buy**
 
+## This Cycle
+- Market buy orders were submitted for **SOXX 1** and **NVDA 2 total** to deploy excess cash; do not resubmit them this cycle.
+
 ## Ranked Execution Priority
 1. **GOOG**
 2. **QQQ**

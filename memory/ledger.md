@@ -2,6 +2,11 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 09:33 : [tactical] Submitted market buys for SOXX and NVDA to reduce cash drag and lift exposure toward the 60-70% target.
+- Checked live account, positions, and prices during regular session; SOXX and NVDA conditions were met.
+- Placed SOXX 1 share, NVDA 1 share, and a second NVDA 1 share because cash remained above the deployment threshold.
+- No sells were made; QQQ, GOOG, and QTUM remain held.
+
 2026-05-13 : 20:45 : [tactical] No trades executed; market was outside regular session hours.
 - Live prices were checked for SOXX, NVDA, QQQ, GOOG, QTUM, and AVGO.
 - SOXX and NVDA buy conditions remain pending for the next regular-session cycle.

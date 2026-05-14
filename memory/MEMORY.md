@@ -19,6 +19,7 @@ The main tension is that the portfolio is finally outperforming SPY over the rec
 - **Why this band fits now:** the account is still behind SPY, recent execution is helping, and the macro tape remains growth-led; a modestly higher band is warranted, but market-close conditions block immediate deployment.
 - **Exact blocker preventing deployment right now:** the market is **closed** and available post-close Alpaca prints are **thin extended-hours quotes**, so new buys must wait for the **next regular session**.
 - **Market status:** **closed**; next open **2026-05-14 09:30 ET**
+- **Tactical execution note:** during the current regular-session cycle, market buy orders were submitted for **SOXX 1** and **NVDA 2 total** to reduce cash drag and push exposure toward target.
 - **Current holdings:** **GOOG 1, QQQ 6, QTUM 2, SOXX 1**
 
 ## Goal Check And Recent Performance Review
