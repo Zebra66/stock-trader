@@ -4,6 +4,8 @@
 ## Current Regime
 - **Regime:** **offensive catch-up**
 
+Tactical update 2026-05-14 10:40 ET: submitted market buys in **SOXX** and **AVGO** because both breakout levels were hit; **GOOG**, **NVDA**, and **QQQ** remain unchanged because their sell/buy thresholds were not met.
+
 ## Macro Thesis
 Nasdaq leadership remains intact and the tape is not in free-fall. **SPY is about 746 (+0.5% intraday, +3.9% since the fixed 2026-05-04 close baseline)** while **QQQ is near 719 (+0.6% intraday, +6.8% since baseline)**. Relative strength still sits with **semiconductors and AI infrastructure**: **NVDA +18.1%, SOXX +14.9%, SMH +14.2%, XLK +10.6%, QTUM +8.8%** since the benchmark anchor. By contrast, **XLE (-2.7%)**, **XLF (-0.6%)**, and weak single names like **SHLD (-6.0%)** are lagging. This remains a pro-growth regime, not a defensive or commodity-led tape.
 

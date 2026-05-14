@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 10:40 : [tactical] Bought SOXX and AVGO on breakout hits; held GOOG, NVDA, and QQQ because their thresholds were not met.
+- SOXX traded above 31.50 and AVGO above 35.00, so both authorized buys were executed immediately.
+- GOOG remained below 95.50, NVDA remained below 35.00, and QQQ stayed above the 10.00 sell trigger.
+
 2026-05-14 : 10:38 : [hourly] Stayed offensive catch-up, refreshed research, and rebuilt the deployment queue because the book is profitable but still badly underexposed.
 - Live broker data shows only GOOG 1, NVDA 1, and QQQ 6 with 48.3% gross exposure; portfolio is +2.35% since the fixed 2026-05-04 baseline versus SPY +3.90%, so cash drag remains the dominant failure mode.
 - Fresh capital is queued into SOXX, GOOG, AVGO, and NVDA on explicit breakout levels to lift gross exposure back toward 60-68% without breaching the QQQ or single-name concentration caps.
