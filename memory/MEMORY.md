@@ -1,54 +1,48 @@
 # Hourly Macro Memory
-*Updated 2026-05-14 10:37 ET from Alpaca CLI/direct REST and Yahoo chart snapshots.*
+*Updated 2026-05-14 11:36 ET from Alpaca CLI and Yahoo chart snapshots.*
 
 ## Current Regime
 - **Regime:** **offensive catch-up**
 
-Tactical update 2026-05-14 11:20 ET: no conditions met — held all positions. **GOOG** stayed below the buy trigger, while **QQQ** and **NVDA** stayed above their sell triggers, so the tactical book remained unchanged.
-
-Tactical update 2026-05-14 11:30 ET: No conditions met — held all positions.
-
 ## Macro Thesis
-Nasdaq leadership remains intact and the tape is not in free-fall. **SPY is about 746 (+0.5% intraday, +3.9% since the fixed 2026-05-04 close baseline)** while **QQQ is near 719 (+0.6% intraday, +6.8% since baseline)**. Relative strength still sits with **semiconductors and AI infrastructure**: **NVDA +18.1%, SOXX +14.9%, SMH +14.2%, XLK +10.6%, QTUM +8.8%** since the benchmark anchor. By contrast, **XLE (-2.7%)**, **XLF (-0.6%)**, and weak single names like **SHLD (-6.0%)** are lagging. This remains a pro-growth regime, not a defensive or commodity-led tape.
+US equities remain in a pro-growth regime rather than a defensive unwind. **SPY is 748.56 (+4.25% since the fixed 2026-05-04 close baseline of 718.01)** while **QQQ is 721.05 (+7.15%)**. Leadership is still concentrated in semiconductors and AI infrastructure: **NVDA +18.77%, SOXX +14.94%, SMH +14.39%, XLK +11.01%, QTUM +9.04%** since the benchmark anchor. By contrast, **XLE (-2.78%)**, **XLF (-0.38%)**, and **SHLD (-5.73%)** remain laggards. This is still a momentum-led tape, not a commodity or financial-led rotation.
 
-The book is profitable, but the tactical stack has slipped back into underexposure after trimming winners earlier in the session. Live broker data now shows only **GOOG 1, NVDA 1, QQQ 6** with cash back up above **$5.2k**. Because **QQQ is already ~42.1% of equity**, the catch-up plan for the next 1-2 hours is to deploy fresh risk into **SOXX first, then GOOG, then AVGO, then NVDA** on explicit breakout levels. If all four triggers fill, gross exposure rises from roughly **48.3%** to about **63-64%**, back inside the target band without breaching concentration limits.
+Live broker data shows the book has re-risked versus the stale memory snapshot: holdings are now **AVGO 1, GOOG 1, NVDA 2, QQQ 6, SOXX 1**. Equity is **$10,250.43**, cash is **$4,087.70**, and gross exposure is **60.1%**. We are still behind SPY because the account spent too much of the benchmark window underexposed, not because current tech leadership is failing. With **QQQ already ~42.2% of equity**, incremental deployment should avoid more QQQ and instead go to **SOXX first** and **GOOG second** on strength. If both triggers fill, gross exposure rises to roughly **69%**, inside the target band without breaching concentration limits.
 
 ## Goal Check
 - **Status:** **Off track — cash drag**
-- **Since fixed 2026-05-04 close baseline:** portfolio **+2.35%** vs **SPY +3.90%**
+- **Since fixed 2026-05-04 close baseline:** portfolio **+2.50%** vs **SPY +4.25%**
 - **Dominant failure mode:** **cash drag**
-- **Reason:** recent symbol selection is mostly correct, but the account keeps surrendering benchmark ground whenever exposure drops too far below the market's tech-led advance.
+- **Reason:** the market's leadership has been correctly identified, but the account captured too little of it for too much of the period.
 
 ## Current Exposure / Blocker
-- **Equity / cash / long market value:** **$10,235.22 / $5,292.75 / $4,942.47**
-- **Current gross exposure:** **48.3%**
-- **Target gross-exposure band:** **60-68%**
-- **Blocker:** **QQQ is already ~42.1% of equity**, so new deployment cannot come from more QQQ buying.
-- **Authoritative holdings:** **GOOG 1, NVDA 1, QQQ 6**
+- **Equity / cash / long market value:** **$10,250.43 / $4,087.70 / $6,162.73**
+- **Current gross exposure:** **60.1%**
+- **Target gross-exposure band:** **64-70%**
+- **Blocker:** **QQQ is already ~42.2% of equity**, so fresh risk must come from non-QQQ leaders.
+- **Authoritative holdings:** **AVGO 1, GOOG 1, NVDA 2, QQQ 6, SOXX 1**
 - **Research snapshots:**
-  - `memory/research/alpaca_hourly_20260514T143638Z.json`
-  - `memory/research/yahoo_market_20260514T143638Z.json`
+  - `memory/research/alpaca_hourly_20260514T153608Z.json`
+  - `memory/research/yahoo_market_20260514T153621Z.json`
 
 ## Ranked Deployment Queue
-1. **SOXX** — first add above **$531.50**; strongest ETF route to semiconductor leadership and fastest way to add size without violating single-name caps.
-2. **GOOG** — second add above **$395.50**; broad AI/cloud exposure with less concentration risk than adding more QQQ.
-3. **AVGO** — third add above **$435.00**; strong AI infrastructure participation and fills the remaining exposure gap efficiently.
-4. **NVDA** — fourth add above **$235.00**; still the strongest single-name winner, but queue it after SOXX/GOOG/AVGO to keep single-stock concentration balanced.
+1. **SOXX** — add 1 share above **$533.00**; best ETF route into semiconductor leadership while staying below the 20% ETF cap.
+2. **GOOG** — add 1 share above **$397.60**; broad AI/cloud beta without worsening QQQ concentration.
+3. **AVGO** — hold at current size unless fresh capital appears or one of the first two setups fails to trigger.
+4. **NVDA** — hold the winner; only add after more diversification room opens.
 
 ## Symbol Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | Hold | Core growth winner, but already near the 45% cap | 40% |
-| SOXX | Buy-on-breakout | Best ETF for semiconductor leadership and catch-up deployment | 10% |
-| GOOG | Buy-on-breakout / Hold | Adds AI/cloud beta without worsening QQQ concentration | 6% |
-| AVGO | Buy-on-breakout | High-quality AI infrastructure exposure after SOXX/GOOG | 5% |
-| NVDA | Buy-on-breakout / Hold | Strongest single-name momentum, but keep below 15% cap | 4% |
-| XLK | Watch | Strong diversified tech ETF, but behind SOXX in priority | 0-4% |
-| SMH | Watch | Strong peer to SOXX; use only if SOXX liquidity or trigger quality degrades | 0-4% |
-| QTUM | Avoid new adds | Good relative strength, but thinner and less necessary than SOXX/GOOG/AVGO | 0% |
-| META | Avoid new adds | Relative strength lags current AI/semi leaders | 0% |
+| QQQ | Hold | Core growth winner, but keep below the 45% cap | 42% |
+| SOXX | Buy-on-breakout | Preferred ETF add for semi leadership and catch-up deployment | 10% |
+| GOOG | Buy-on-breakout / Hold | Adds AI/cloud exposure without increasing QQQ concentration | 8% |
+| AVGO | Hold | Strong AI infrastructure winner already near intended size | 4% |
+| NVDA | Hold | Strongest single-name leader; keep below the 15% cap | 5% |
+| XLK | Watch | Diversified tech fallback if SOXX setup degrades | 0-4% |
+| SMH | Watch | Good semi peer, but behind SOXX in queue | 0-4% |
 | GLD | Avoid | No active risk-off regime | 0-3% |
-| XLF | Avoid | Financials are not leading this benchmark window | 0-3% |
-| XLE | Avoid | Energy is lagging badly versus tech leadership | 0-3% |
-| SHLD | Avoid | Negative benchmark-period relative strength | 0% |
-| RKLB | Avoid new adds | Too extended and speculative for catch-up capital | 0-2% |
+| XLF | Avoid | Financials still lag this benchmark window | 0-3% |
+| XLE | Avoid | Energy remains materially weaker than tech leadership | 0-3% |
+| RKLB | Avoid new adds | Explosive momentum but too extended/speculative for catch-up capital | 0-2% |
+| SHLD | Avoid | Negative relative strength since the benchmark anchor | 0% |
