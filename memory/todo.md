@@ -1,5 +1,4 @@
 BUY SOXX 1 shares at market if price >= $533.00
-BUY GOOG 1 shares at market if price >= $397.60
 SELL QQQ 2 shares at market if price <= $713.00
 SELL SOXX 1 shares at market if price <= $525.00
 SELL GOOG 1 shares at market if price <= $389.00
