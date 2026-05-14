@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 14:50 : [tactical] No conditions met; held all positions.
+- SOXX remained below its buy trigger at 530.19 vs 531.50.
+- XLK remained below its buy trigger at 179.565 vs 180.00, and all sell stops stayed unhit.
+
 2026-05-14 : 14:41 : [tactical] AVGO sell trigger was hit, but Alpaca blocked the order with pattern-day-trading protection, so the portfolio was unchanged.
 - AVGO traded at 435.78, above the authorized $428.00 sell trigger.
 - Alpaca rejected the market sell with 40310100 pattern-day-trading protection, so no trade was executed.
