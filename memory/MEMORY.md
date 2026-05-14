@@ -27,6 +27,8 @@ GOOG was bought 1 share at market after it traded through the $397.60 breakout l
   - `memory/research/alpaca_hourly_20260514T153608Z.json`
   - `memory/research/yahoo_market_20260514T153621Z.json`
 
+Tactical status: No conditions met — held all positions.
+
 ## Ranked Deployment Queue
 1. **SOXX** — add 1 share above **$533.00**; best ETF route into semiconductor leadership while staying below the 20% ETF cap.
 2. **GOOG** — add 1 share above **$397.60**; broad AI/cloud beta without worsening QQQ concentration.
