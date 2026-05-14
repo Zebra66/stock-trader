@@ -47,3 +47,5 @@ The book improved after yesterday's tactical adds: gross exposure is now back in
 | ARKX | Avoid new adds | Lower-quality thematic exposure than existing winners | 0% |
 | EIS | Avoid new adds | No edge versus current tech leadership | 0% |
 | SHLD | Avoid new adds | Weak benchmark-period relative performance | 0% |
+
+Tactical update: No conditions met — held all positions.
