@@ -51,4 +51,4 @@ Live broker data shows the book is now **AVGO 1, GOOG 3, NVDA 2, QQQ 6, SOXX 2**
 | SHLD | Avoid | Negative relative strength since the fixed anchor date | 0% |
 
 ## Tactical Update
-SOXX’s breakout condition triggered and a 1-share market buy order was filled to add semiconductor exposure without increasing QQQ concentration; no sell stops were hit, so the rest of the book stayed unchanged. The remaining pending conditions are the listed sell thresholds.
+No conditions met — held all positions.
