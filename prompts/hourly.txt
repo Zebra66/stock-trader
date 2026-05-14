@@ -32,6 +32,7 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
 - **Cash deployment:** If gross exposure is below 60% and the market is open with normal liquidity, you MUST explain how new capital will be deployed in the next 1–2 hours. Do not stop at "stay selective."
 - **Concentration limits:** QQQ max 45% of equity. Any single stock max 15% of equity. Any ETF (non-QQQ) max 20% of equity.
 - **Winners vs losers:** Trim losers that are down >5% with no near-term catalyst. Let winners run unless they exceed concentration caps.
+- **Do not auto-take-profit healthy core winners:** Only write `SELL <TICKER> <N> shares at market if price >= $X` for a winner when it is above a concentration cap, has a near-term adverse catalyst, or is clearly climactic/extended. Do not harvest small gains from leaders just because they are green.
 - **Set SIMPLE buy/sell conditions** in `memory/todo.md`. One line per condition:
   - `BUY <TICKER> <N> shares at market if price <= $X` (for dip buys)
   - `BUY <TICKER> <N> shares at market if price >= $Y` (for breakouts)

@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 10:38 : [hourly] Stayed offensive catch-up, refreshed research, and rebuilt the deployment queue because the book is profitable but still badly underexposed.
+- Live broker data shows only GOOG 1, NVDA 1, and QQQ 6 with 48.3% gross exposure; portfolio is +2.35% since the fixed 2026-05-04 baseline versus SPY +3.90%, so cash drag remains the dominant failure mode.
+- Fresh capital is queued into SOXX, GOOG, AVGO, and NVDA on explicit breakout levels to lift gross exposure back toward 60-68% without breaching the QQQ or single-name concentration caps.
+
 2026-05-14 : 10:30 : [tactical] Held positions; QQQ stayed above the 04.50 stop so no trade was triggered.
 - Live QQQ price was 718.26, which did not meet the sell condition.
 - Positions and account were checked; no authorized buy or sell levels were hit.
