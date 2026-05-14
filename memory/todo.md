@@ -1,5 +1,4 @@
 BUY GOOG 1 shares at market if price >= $395.50
-BUY NVDA 1 shares at market if price >= $235.00
 SELL QQQ 3 shares at market if price <= $710.00
 SELL GOOG 1 shares at market if price <= $389.00
 SELL NVDA 1 shares at market if price <= $229.50
