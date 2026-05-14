@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 11:40 : [tactical] No tactical trades; held all positions as no thresholds were hit.
+- SOXX stayed below the 33 buy trigger at 31.32.
+- GOOG stayed below the 97.60 buy trigger at 95.82; all sell stops remained untriggered.
+
 2026-05-14 : 11:37 : [hourly] Stayed offensive catch-up: live holdings are AVGO/GOOG/NVDA/QQQ/SOXX, portfolio is +2.50% vs SPY +4.25%, and new deployment is focused on SOXX then GOOG breakouts.
 - Broker data overruled stale memory: the book is now 60.1% gross exposed with AVGO 1, GOOG 1, NVDA 2, QQQ 6, SOXX 1 and cash at $4,087.70.
 - Cash drag remains the dominant failure mode, so fresh risk is queued into non-QQQ tech leaders while respecting the QQQ concentration cap.
