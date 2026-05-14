@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 09:39 : [hourly] Stayed offensive catch-up, kept winners, and redirected fresh deployment to GOOG/NVDA because QQQ is near its cap.
+- Portfolio is +2.33% since the fixed 2026-05-04 baseline versus SPY +3.76%, so the book remains off track because of earlier cash drag.
+- Gross exposure improved to 63.7%, which is back inside the target band; new risk should only go to GOOG or NVDA on clean breakouts, not QQQ.
+
 2026-05-14 : 09:33 : [tactical] Submitted market buys for SOXX and NVDA to reduce cash drag and lift exposure toward the 60-70% target.
 - Checked live account, positions, and prices during regular session; SOXX and NVDA conditions were met.
 - Placed SOXX 1 share, NVDA 1 share, and a second NVDA 1 share because cash remained above the deployment threshold.

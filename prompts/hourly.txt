@@ -24,7 +24,7 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
 - For ALL symbols in the Investment Universe or which you have a position in, fetch the latest price:
   `bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>`
 - Save raw market snapshots under `memory/research/` and add links to them in `memory/MEMORY.md`.
-- Compute the portfolio's total return since inception vs. SPY's return over the same period. Use the fixed 2026-05-04 close baseline. State: "On track" or "Off track — [reason]".
+- Compute the portfolio's total return since inception vs. SPY's return over the same period. Use the fixed 2026-05-04 close baseline. Do NOT revert to a funded-date baseline in `MEMORY.md`, `todo.md`, or the ledger once this fixed benchmark is in force. State: "On track" or "Off track — [reason]".
 
 ### Step 3 — Analyse and decide (3 minutes)
 - **Goal check:** Are we on track? If not, what is the dominant cause? Choose ONE: cash drag, bad symbol selection, late entries, excessive turnover, or macro regime mismatch.
@@ -54,7 +54,8 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
   - Current gross exposure, target band, and blocker (if any)
   - Ranked deployment queue for fresh capital
   - Table: Symbol | Bias | Rationale | Target %
-- Replace the entire `memory/todo.md` with ONLY live actionable buy/sell/hold conditions. No analysis paragraphs. No "safeguards" section. Just the orders.
+- Replace the entire `memory/todo.md` with ONLY live actionable buy/sell/hold conditions.
+- Every line in `memory/todo.md` must be a single standalone order in one of the allowed formats; do not include bullets, sub-bullets, analysis paragraphs, safeguards, or multi-condition prose.
 
 ### Step 6 — Prompt Review and Self-Improvement (1 minute)
 - Review this prompt (`prompts/hourly.txt`) for gaps.
