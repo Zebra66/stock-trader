@@ -51,4 +51,4 @@ Live broker data shows the book is now **AVGO 1, GOOG 3, NVDA 2, QQQ 6, SOXX 2**
 | SHLD | Avoid | Negative relative strength since the fixed anchor date | 0% |
 
 ## Tactical Update
-No conditions met — held all positions this cycle.
+No conditions met — held all positions.
