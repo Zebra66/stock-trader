@@ -32,6 +32,7 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
 - **Posture:** Classify as defensive, neutral, or offensive catch-up. Default to offensive catch-up if cash drag is the dominant issue AND the market is not in free-fall.
 - **Cash deployment:** If gross exposure is below 60% and the market is open with normal liquidity, you MUST explain how new capital will be deployed in the next 1–2 hours. Do not stop at "stay selective."
 - **Concentration limits:** QQQ max 45% of equity. Any single stock max 15% of equity. Any ETF (non-QQQ) max 20% of equity.
+- **Cap-aware sizing:** Before writing any `BUY` line, recompute the post-fill allocation from live broker equity and current holdings. If that buy would breach a concentration cap after execution, reduce the share count or remove the order.
 - **Winners vs losers:** Trim losers that are down >5% with no near-term catalyst. Let winners run unless they exceed concentration caps.
 - **Do not auto-take-profit healthy core winners:** Only write `SELL <TICKER> <N> shares at market if price >= $X` for a winner when it is above a concentration cap, has a near-term adverse catalyst, or is clearly climactic/extended. Do not harvest small gains from leaders just because they are green.
 - **Set SIMPLE buy/sell conditions** in `memory/todo.md`. One line per condition:

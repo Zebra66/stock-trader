@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 14:39 : [hourly] Stayed offensive catch-up: the book is +2.34% vs SPY +4.13%, tactical fills lifted exposure to 73%, and fresh deployment now goes to SOXX then XLK.
+- Live broker data reconciled to AVGO 1, GOOG 3, NVDA 2, QQQ 6, SOXX 2, so stale lower share counts were removed from memory.
+- Cash drag remains the dominant issue, but QQQ and GOOG are now near concentration caps, so new buys were shifted to SOXX and XLK with cap-aware sizing.
+
 2026-05-14 : 14:30 : [tactical] No tactical trades; all authorized levels remained untriggered.
 - QQQ 719.49, SOXX 529.70, GOOG 396.12, AVGO 436.06, and NVDA 235.47 all stayed above their sell thresholds.
 - No buy conditions were present in the current tactical todo, so no orders were submitted.
