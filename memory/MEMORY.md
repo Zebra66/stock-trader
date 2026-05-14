@@ -48,4 +48,4 @@ The book improved after yesterday's tactical adds: gross exposure is now back in
 | EIS | Avoid new adds | No edge versus current tech leadership | 0% |
 | SHLD | Avoid new adds | Weak benchmark-period relative performance | 0% |
 
-Tactical update: No conditions met — held all positions.
+Tactical update: Submitted market buys for GOOG and NVDA after both cleared their breakout triggers, adding AI and semiconductor exposure while avoiding any new QQQ concentration.
