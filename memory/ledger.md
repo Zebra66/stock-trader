@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 10:10 : [tactical] Sold GOOG, NVDA, SOXX, and QTUM as their sell thresholds were hit; held QQQ.
+- GOOG, NVDA, SOXX, and QTUM were all above their respective stop/trim levels at the time of execution.
+- QQQ remained above its 04.50 stop, so no QQQ order was placed.
+
 2026-05-14 : 09:50 : [tactical] Bought GOOG and NVDA on breakout signals.
 - GOOG traded above the hourly buy threshold, so a 1-share market buy was submitted.
 - NVDA traded above the hourly buy threshold, so a 1-share market buy was submitted.
