@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 15:40 : [tactical] Bought SOXX and XLK on breakout strength; QQQ sell trigger did not fire.
+- SOXX traded above the 31.25 trigger and a 1-share market buy was submitted.
+- XLK traded above the 79.70 trigger and a 5-share market buy was submitted; QQQ stayed above the 10 stop/trim level.
+
 2026-05-14 : 15:39 : [hourly] Stayed offensive catch-up: the book is +2.47% vs SPY +4.20%, gross exposure is 73.1%, and fresh deployment now targets SOXX then XLK while avoiding PDT-blocked same-day sells.
 - Market leadership remains in semis and broad tech, with SOXX/SMH/XLK/QQQ still leading the fixed 2026-05-04 benchmark window.
 - Removed stale same-day sell directives for today's buys after Alpaca PDT rejection and updated the hourly prompt to enforce PDT-aware sell planning.
