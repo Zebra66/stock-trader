@@ -1,0 +1,1397 @@
+{
+  "fetchedAt": "2026-05-14T16:37:31.851Z",
+  "account": {
+    "id": "2ee1fe50-9281-4349-b5fe-c5642dd5505f",
+    "admin_configurations": {},
+    "user_configurations": null,
+    "account_number": "PA3RX3LHZ1OX",
+    "status": "ACTIVE",
+    "crypto_status": "ACTIVE",
+    "options_approved_level": 3,
+    "options_trading_level": 3,
+    "currency": "USD",
+    "buying_power": "13926.87",
+    "regt_buying_power": "13926.87",
+    "daytrading_buying_power": "0",
+    "effective_buying_power": "13926.87",
+    "non_marginable_buying_power": "4963.43",
+    "options_buying_power": "6963.43",
+    "bod_dtbp": "0",
+    "cash": "3689.92",
+    "accrued_fees": "0",
+    "portfolio_value": "10236.95",
+    "pattern_day_trader": false,
+    "trading_blocked": false,
+    "transfers_blocked": false,
+    "account_blocked": false,
+    "created_at": "2026-05-03T09:26:34.386735Z",
+    "trade_suspended_by_user": false,
+    "multiplier": "2",
+    "shorting_enabled": true,
+    "equity": "10236.95",
+    "last_equity": "10214.51",
+    "long_market_value": "6547.03",
+    "short_market_value": "0",
+    "position_market_value": "6547.03",
+    "initial_margin": "3273.52",
+    "maintenance_margin": "1964.11",
+    "last_maintenance_margin": "1652.75",
+    "sma": "10136.55",
+    "daytrade_count": 3,
+    "balance_asof": "2026-05-13",
+    "crypto_tier": 1,
+    "intraday_adjustments": "0",
+    "pending_reg_taf_fees": "0"
+  },
+  "positions": [
+    {
+      "asset_id": "7a8b4fcf-0622-47ef-8541-de7f70ffc0c4",
+      "symbol": "AVGO",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "1",
+      "qty_available": "1",
+      "avg_entry_price": "437.11",
+      "side": "long",
+      "market_value": "432.29",
+      "cost_basis": "437.11",
+      "unrealized_pl": "-4.82",
+      "unrealized_plpc": "-0.01103",
+      "unrealized_intraday_pl": "-4.82",
+      "unrealized_intraday_plpc": "-0.01103",
+      "current_price": "432.29",
+      "lastday_price": "416.79",
+      "change_today": "0.03719"
+    },
+    {
+      "asset_id": "f30d734c-2806-4d0d-b145-f9fade61432b",
+      "symbol": "GOOG",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "2",
+      "qty_available": "2",
+      "avg_entry_price": "394.7525",
+      "side": "long",
+      "market_value": "791.74",
+      "cost_basis": "789.505",
+      "unrealized_pl": "2.235",
+      "unrealized_plpc": "0.00283",
+      "unrealized_intraday_pl": "-6.34",
+      "unrealized_intraday_plpc": "-0.00794",
+      "current_price": "395.87",
+      "lastday_price": "399.04",
+      "change_today": "-0.00794"
+    },
+    {
+      "asset_id": "4ce9353c-66d1-46c2-898f-fce867ab0247",
+      "symbol": "NVDA",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "2",
+      "qty_available": "2",
+      "avg_entry_price": "233.621667",
+      "side": "long",
+      "market_value": "470",
+      "cost_basis": "467.243334",
+      "unrealized_pl": "2.756666",
+      "unrealized_plpc": "0.0059",
+      "unrealized_intraday_pl": "2.756666",
+      "unrealized_intraday_plpc": "0.0059",
+      "current_price": "235",
+      "lastday_price": "225.83",
+      "change_today": "0.04061"
+    },
+    {
+      "asset_id": "2d9e926c-e17c-47c3-ad8c-26c7a594e48f",
+      "symbol": "QQQ",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "6",
+      "qty_available": "6",
+      "avg_entry_price": "693.343333",
+      "side": "long",
+      "market_value": "4322.22",
+      "cost_basis": "4160.059998",
+      "unrealized_pl": "162.160002",
+      "unrealized_plpc": "0.03898",
+      "unrealized_intraday_pl": "33.96",
+      "unrealized_intraday_plpc": "0.00792",
+      "current_price": "720.37",
+      "lastday_price": "714.71",
+      "change_today": "0.00792"
+    },
+    {
+      "asset_id": "4071ba99-0e64-4998-a7f8-07c114e00ef7",
+      "symbol": "SOXX",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "1",
+      "qty_available": "1",
+      "avg_entry_price": "532.49",
+      "side": "long",
+      "market_value": "530.8",
+      "cost_basis": "532.49",
+      "unrealized_pl": "-1.69",
+      "unrealized_plpc": "-0.00317",
+      "unrealized_intraday_pl": "-1.69",
+      "unrealized_intraday_plpc": "-0.00317",
+      "current_price": "530.8",
+      "lastday_price": "528.29",
+      "change_today": "0.00475"
+    }
+  ],
+  "clock": {
+    "is_open": true,
+    "next_close": "2026-05-14T16:00:00-04:00",
+    "next_open": "2026-05-15T09:30:00-04:00",
+    "timestamp": "2026-05-14T12:37:32.053376081-04:00"
+  },
+  "portfolioHistory": {
+    "timestamp": [
+      1776211200,
+      1776297600,
+      1776384000,
+      1776470400,
+      1776729600,
+      1776816000,
+      1776902400,
+      1776988800,
+      1777075200,
+      1777334400,
+      1777420800,
+      1777507200,
+      1777593600,
+      1777680000,
+      1777939200,
+      1778025600,
+      1778112000,
+      1778198400,
+      1778284800,
+      1778544000,
+      1778630400,
+      1778716800
+    ],
+    "equity": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10000,
+      10000,
+      10000,
+      10029.18,
+      10092.21,
+      10062.48,
+      10181.18,
+      10200.25,
+      10136.55,
+      10214.51
+    ],
+    "profit_loss": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      29.18,
+      63.03,
+      -29.73,
+      118.7,
+      19.07,
+      -63.7,
+      77.96
+    ],
+    "profit_loss_pct": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.0029,
+      0.0063,
+      -0.0029,
+      0.0118,
+      0.0019,
+      -0.0062,
+      0.0077
+    ],
+    "base_value": 10000,
+    "base_value_asof": "2026-04-30",
+    "timeframe": "1D"
+  },
+  "currentSnapshots": [
+    {
+      "symbol": "AVGO",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 432.32,
+          "HighPrice": 439.7,
+          "LowPrice": 416.22,
+          "TradeCount": 8583,
+          "OpenPrice": 416.63,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 335637,
+          "VWAP": 433.340678
+        },
+        "LatestQuote": {
+          "AskPrice": 438.9,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 431.96,
+          "BidSize": 40,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:28.160961056Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 8586,
+          "Price": 432.35,
+          "Size": 40,
+          "Timestamp": "2026-05-14T16:37:13.221267953Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 432.32,
+          "HighPrice": 432.38,
+          "LowPrice": 432.31,
+          "TradeCount": 14,
+          "OpenPrice": 432.38,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 440,
+          "VWAP": 432.336456
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 416.74,
+          "HighPrice": 418.61,
+          "LowPrice": 404.86,
+          "TradeCount": 17273,
+          "OpenPrice": 415.605,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 572724,
+          "VWAP": 414.056155
+        },
+        "symbol": "AVGO"
+      }
+    },
+    {
+      "symbol": "EIS",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 133.74,
+          "HighPrice": 133.74,
+          "LowPrice": 133.74,
+          "TradeCount": 41,
+          "OpenPrice": 133.74,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 413,
+          "VWAP": 133.74
+        },
+        "LatestQuote": {
+          "AskPrice": 134.79,
+          "AskSize": 600,
+          "AskExchange": "V",
+          "BidPrice": 132.49,
+          "BidSize": 200,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:26.012223496Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983660297279,
+          "Price": 133.74,
+          "Size": 100,
+          "Timestamp": "2026-05-14T15:28:16.213421954Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 133.74,
+          "HighPrice": 133.74,
+          "LowPrice": 133.74,
+          "TradeCount": 1,
+          "OpenPrice": 133.74,
+          "Timestamp": "2026-05-14T15:28:00Z",
+          "Volume": 100,
+          "VWAP": 133.74
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 133.52,
+          "HighPrice": 133.52,
+          "LowPrice": 132.72,
+          "TradeCount": 51,
+          "OpenPrice": 132.72,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 573,
+          "VWAP": 133.061667
+        },
+        "symbol": "EIS"
+      }
+    },
+    {
+      "symbol": "GLD",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 428.85,
+          "HighPrice": 431.515,
+          "LowPrice": 428.16,
+          "TradeCount": 976,
+          "OpenPrice": 430.32,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 57874,
+          "VWAP": 429.947828
+        },
+        "LatestQuote": {
+          "AskPrice": 429.08,
+          "AskSize": 80,
+          "AskExchange": "V",
+          "BidPrice": 428.69,
+          "BidSize": 80,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:31.207277486Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983726682455,
+          "Price": 428.85,
+          "Size": 75,
+          "Timestamp": "2026-05-14T16:36:00.55991369Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 428.85,
+          "HighPrice": 428.85,
+          "LowPrice": 428.85,
+          "TradeCount": 3,
+          "OpenPrice": 428.85,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 119,
+          "VWAP": 428.85
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 430.49,
+          "HighPrice": 432.47,
+          "LowPrice": 428.76,
+          "TradeCount": 2651,
+          "OpenPrice": 430.5,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 107880,
+          "VWAP": 430.53485
+        },
+        "symbol": "GLD"
+      }
+    },
+    {
+      "symbol": "GOOG",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 396.005,
+          "HighPrice": 398.83,
+          "LowPrice": 392.83,
+          "TradeCount": 4333,
+          "OpenPrice": 393.785,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 162385,
+          "VWAP": 395.220064
+        },
+        "LatestQuote": {
+          "AskPrice": 397,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 395.27,
+          "BidSize": 120,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.270898477Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 4336,
+          "Price": 396.04,
+          "Size": 40,
+          "Timestamp": "2026-05-14T16:37:22.462669852Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 396.005,
+          "HighPrice": 396.005,
+          "LowPrice": 395.925,
+          "TradeCount": 11,
+          "OpenPrice": 395.925,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 502,
+          "VWAP": 395.989543
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 399.08,
+          "HighPrice": 399.79,
+          "LowPrice": 381.72,
+          "TradeCount": 9891,
+          "OpenPrice": 381.9,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 321157,
+          "VWAP": 394.430825
+        },
+        "symbol": "GOOG"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 81.57,
+          "HighPrice": 81.71,
+          "LowPrice": 75.13,
+          "TradeCount": 5804,
+          "OpenPrice": 76.035,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 472093,
+          "VWAP": 78.917793
+        },
+        "LatestQuote": {
+          "AskPrice": 81.57,
+          "AskSize": 100,
+          "AskExchange": "V",
+          "BidPrice": 79,
+          "BidSize": 300,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.251055031Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 5812,
+          "Price": 81.64,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:24.494849464Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 81.57,
+          "HighPrice": 81.66,
+          "LowPrice": 81.45,
+          "TradeCount": 34,
+          "OpenPrice": 81.66,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 1856,
+          "VWAP": 81.56525
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 76.78,
+          "HighPrice": 77.61,
+          "LowPrice": 75.36,
+          "TradeCount": 6458,
+          "OpenPrice": 76.94,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 483018,
+          "VWAP": 76.819198
+        },
+        "symbol": "HOOD"
+      }
+    },
+    {
+      "symbol": "META",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 619.85,
+          "HighPrice": 623.71,
+          "LowPrice": 615.34,
+          "TradeCount": 4645,
+          "OpenPrice": 615.73,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 144233,
+          "VWAP": 620.454983
+        },
+        "LatestQuote": {
+          "AskPrice": 628,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 618.82,
+          "BidSize": 40,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.043940737Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 4643,
+          "Price": 619.85,
+          "Size": 40,
+          "Timestamp": "2026-05-14T16:36:23.863217652Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 619.85,
+          "HighPrice": 620,
+          "LowPrice": 619.85,
+          "TradeCount": 8,
+          "OpenPrice": 620,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 209,
+          "VWAP": 619.925
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 616.61,
+          "HighPrice": 619.83,
+          "LowPrice": 597.03,
+          "TradeCount": 17144,
+          "OpenPrice": 598.955,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 583605,
+          "VWAP": 610.822169
+        },
+        "symbol": "META"
+      }
+    },
+    {
+      "symbol": "NVDA",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 235.01,
+          "HighPrice": 236.45,
+          "LowPrice": 229.41,
+          "TradeCount": 29252,
+          "OpenPrice": 229.73,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 2891449,
+          "VWAP": 233.840884
+        },
+        "LatestQuote": {
+          "AskPrice": 234.99,
+          "AskSize": 300,
+          "AskExchange": "V",
+          "BidPrice": 234.96,
+          "BidSize": 300,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.370105157Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 29268,
+          "Price": 234.93,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:29.433051138Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 235.01,
+          "HighPrice": 235.1,
+          "LowPrice": 234.97,
+          "TradeCount": 85,
+          "OpenPrice": 234.97,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 10577,
+          "VWAP": 235.048588
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 225.91,
+          "HighPrice": 227.8,
+          "LowPrice": 221.62,
+          "TradeCount": 39307,
+          "OpenPrice": 224.96,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 3138586,
+          "VWAP": 225.827651
+        },
+        "symbol": "NVDA"
+      }
+    },
+    {
+      "symbol": "QQQ",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 720.61,
+          "HighPrice": 722.01,
+          "LowPrice": 714.24,
+          "TradeCount": 5519,
+          "OpenPrice": 714.64,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 311759,
+          "VWAP": 719.07608
+        },
+        "LatestQuote": {
+          "AskPrice": 720.42,
+          "AskSize": 120,
+          "AskExchange": "V",
+          "BidPrice": 720.37,
+          "BidSize": 120,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.375284886Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 5533,
+          "Price": 720.43,
+          "Size": 40,
+          "Timestamp": "2026-05-14T16:37:19.404661666Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 720.61,
+          "HighPrice": 720.61,
+          "LowPrice": 720.42,
+          "TradeCount": 9,
+          "OpenPrice": 720.42,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 805,
+          "VWAP": 720.56925
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 714.565,
+          "HighPrice": 716.595,
+          "LowPrice": 704.86,
+          "TradeCount": 11812,
+          "OpenPrice": 709.955,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 741442,
+          "VWAP": 712.547783
+        },
+        "symbol": "QQQ"
+      }
+    },
+    {
+      "symbol": "QTUM",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 147.95,
+          "HighPrice": 148.21,
+          "LowPrice": 146.51,
+          "TradeCount": 116,
+          "OpenPrice": 146.595,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 9473,
+          "VWAP": 147.464091
+        },
+        "LatestQuote": {
+          "AskPrice": 147.99,
+          "AskSize": 100,
+          "AskExchange": "V",
+          "BidPrice": 147.76,
+          "BidSize": 100,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.325990788Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 111,
+          "Price": 147.95,
+          "Size": 200,
+          "Timestamp": "2026-05-14T16:33:08.677460735Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 147.95,
+          "HighPrice": 147.95,
+          "LowPrice": 147.95,
+          "TradeCount": 2,
+          "OpenPrice": 147.95,
+          "Timestamp": "2026-05-14T16:33:00Z",
+          "Volume": 205,
+          "VWAP": 147.95
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 146.82,
+          "HighPrice": 147.41,
+          "LowPrice": 143.91,
+          "TradeCount": 351,
+          "OpenPrice": 145.15,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 27485,
+          "VWAP": 145.986001
+        },
+        "symbol": "QTUM"
+      }
+    },
+    {
+      "symbol": "RKLB",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 132.23,
+          "HighPrice": 132.26,
+          "LowPrice": 121.52,
+          "TradeCount": 5277,
+          "OpenPrice": 123.22,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 210570,
+          "VWAP": 126.27914
+        },
+        "LatestQuote": {
+          "AskPrice": 137.03,
+          "AskSize": 100,
+          "AskExchange": "V",
+          "BidPrice": 127,
+          "BidSize": 100,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:30.679061494Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 5282,
+          "Price": 132.23,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:20.156014417Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 132.23,
+          "HighPrice": 132.26,
+          "LowPrice": 131.935,
+          "TradeCount": 22,
+          "OpenPrice": 131.935,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 666,
+          "VWAP": 132.10375
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 124.155,
+          "HighPrice": 127.12,
+          "LowPrice": 116.93,
+          "TradeCount": 10242,
+          "OpenPrice": 123.84,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 467218,
+          "VWAP": 123.839291
+        },
+        "symbol": "RKLB"
+      }
+    },
+    {
+      "symbol": "SHLD",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 64.23,
+          "HighPrice": 64.31,
+          "LowPrice": 63.8,
+          "TradeCount": 270,
+          "OpenPrice": 63.9,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 18973,
+          "VWAP": 64.082755
+        },
+        "LatestQuote": {
+          "AskPrice": 64.38,
+          "AskSize": 400,
+          "AskExchange": "V",
+          "BidPrice": 64.27,
+          "BidSize": 200,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:30.936513439Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983714303593,
+          "Price": 64.23,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:33:51.636032022Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 64.23,
+          "HighPrice": 64.23,
+          "LowPrice": 64.23,
+          "TradeCount": 1,
+          "OpenPrice": 64.23,
+          "Timestamp": "2026-05-14T16:33:00Z",
+          "Volume": 100,
+          "VWAP": 64.23
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 63.79,
+          "HighPrice": 63.96,
+          "LowPrice": 63,
+          "TradeCount": 626,
+          "OpenPrice": 63.715,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 73819,
+          "VWAP": 63.646352
+        },
+        "symbol": "SHLD"
+      }
+    },
+    {
+      "symbol": "SOXX",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 531.15,
+          "HighPrice": 532.97,
+          "LowPrice": 522.37,
+          "TradeCount": 2637,
+          "OpenPrice": 526.495,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 69002,
+          "VWAP": 529.980729
+        },
+        "LatestQuote": {
+          "AskPrice": 530.98,
+          "AskSize": 80,
+          "AskExchange": "V",
+          "BidPrice": 530.73,
+          "BidSize": 280,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.532485651Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 2640,
+          "Price": 530.74,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:20.659211396Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 531.15,
+          "HighPrice": 531.15,
+          "LowPrice": 530.87,
+          "TradeCount": 11,
+          "OpenPrice": 530.87,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 639,
+          "VWAP": 531.082632
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 528.22,
+          "HighPrice": 532.14,
+          "LowPrice": 516.185,
+          "TradeCount": 6028,
+          "OpenPrice": 527.62,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 240358,
+          "VWAP": 525.567235
+        },
+        "symbol": "SOXX"
+      }
+    },
+    {
+      "symbol": "VOO",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 687.47,
+          "HighPrice": 688.93,
+          "LowPrice": 683.69,
+          "TradeCount": 596,
+          "OpenPrice": 683.74,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 16598,
+          "VWAP": 686.177812
+        },
+        "LatestQuote": {
+          "AskPrice": 687.73,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 687.47,
+          "BidSize": 40,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.35871511Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983726633264,
+          "Price": 687.47,
+          "Size": 98,
+          "Timestamp": "2026-05-14T16:35:57.359450772Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 687.47,
+          "HighPrice": 687.47,
+          "LowPrice": 687.47,
+          "TradeCount": 6,
+          "OpenPrice": 687.47,
+          "Timestamp": "2026-05-14T16:35:00Z",
+          "Volume": 206,
+          "VWAP": 687.47
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 682.52,
+          "HighPrice": 683.86,
+          "LowPrice": 676.25,
+          "TradeCount": 2113,
+          "OpenPrice": 678.9,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 65498,
+          "VWAP": 680.892778
+        },
+        "symbol": "VOO"
+      }
+    },
+    {
+      "symbol": "ARKX",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 35.25,
+          "HighPrice": 35.3,
+          "LowPrice": 34.49,
+          "TradeCount": 112,
+          "OpenPrice": 34.545,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 28707,
+          "VWAP": 34.921278
+        },
+        "LatestQuote": {
+          "AskPrice": 35.32,
+          "AskSize": 100,
+          "AskExchange": "V",
+          "BidPrice": 35.29,
+          "BidSize": 100,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:31.357170044Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983713321330,
+          "Price": 35.25,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:30:10.285075745Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 35.25,
+          "HighPrice": 35.25,
+          "LowPrice": 35.25,
+          "TradeCount": 3,
+          "OpenPrice": 35.25,
+          "Timestamp": "2026-05-14T16:30:00Z",
+          "Volume": 103,
+          "VWAP": 35.25
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 34.82,
+          "HighPrice": 35,
+          "LowPrice": 34.05,
+          "TradeCount": 435,
+          "OpenPrice": 34.78,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 73910,
+          "VWAP": 34.775944
+        },
+        "symbol": "ARKX"
+      }
+    },
+    {
+      "symbol": "SPY",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 747.88,
+          "HighPrice": 749.47,
+          "LowPrice": 743.6,
+          "TradeCount": 8776,
+          "OpenPrice": 743.655,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 444804,
+          "VWAP": 746.872711
+        },
+        "LatestQuote": {
+          "AskPrice": 748,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 747.72,
+          "BidSize": 40,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.281949826Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983727024242,
+          "Price": 747.75,
+          "Size": 200,
+          "Timestamp": "2026-05-14T16:37:29.022619548Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 747.88,
+          "HighPrice": 747.88,
+          "LowPrice": 747.755,
+          "TradeCount": 31,
+          "OpenPrice": 747.81,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 1270,
+          "VWAP": 747.844119
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 742.3,
+          "HighPrice": 743.9,
+          "LowPrice": 735.505,
+          "TradeCount": 17624,
+          "OpenPrice": 738.41,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 1094090,
+          "VWAP": 740.622335
+        },
+        "symbol": "SPY"
+      }
+    },
+    {
+      "symbol": "XLK",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 179.58,
+          "HighPrice": 180.18,
+          "LowPrice": 176.89,
+          "TradeCount": 6200,
+          "OpenPrice": 177.34,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 251914,
+          "VWAP": 179.133362
+        },
+        "LatestQuote": {
+          "AskPrice": 179.54,
+          "AskSize": 400,
+          "AskExchange": "V",
+          "BidPrice": 179.52,
+          "BidSize": 600,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.519989661Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983727026790,
+          "Price": 179.53,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:31.768776375Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 179.58,
+          "HighPrice": 179.58,
+          "LowPrice": 179.55,
+          "TradeCount": 17,
+          "OpenPrice": 179.55,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 679,
+          "VWAP": 179.56
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 176.875,
+          "HighPrice": 177.695,
+          "LowPrice": 174.26,
+          "TradeCount": 6003,
+          "OpenPrice": 177.145,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 568638,
+          "VWAP": 176.439175
+        },
+        "symbol": "XLK"
+      }
+    },
+    {
+      "symbol": "SMH",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 579.14,
+          "HighPrice": 581.115,
+          "LowPrice": 567.99,
+          "TradeCount": 3250,
+          "OpenPrice": 570.56,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 159327,
+          "VWAP": 577.77552
+        },
+        "LatestQuote": {
+          "AskPrice": 579.14,
+          "AskSize": 40,
+          "AskExchange": "V",
+          "BidPrice": 578.78,
+          "BidSize": 40,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.520100433Z",
+          "Tape": "C"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            "@"
+          ],
+          "ID": 3257,
+          "Price": 578.81,
+          "Size": 40,
+          "Timestamp": "2026-05-14T16:37:23.32407032Z",
+          "Exchange": "V",
+          "Tape": "C"
+        },
+        "MinuteBar": {
+          "ClosePrice": 579.14,
+          "HighPrice": 579.14,
+          "LowPrice": 579.025,
+          "TradeCount": 2,
+          "OpenPrice": 579.025,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 140,
+          "VWAP": 579.074286
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 572,
+          "HighPrice": 576.08,
+          "LowPrice": 560.21,
+          "TradeCount": 6130,
+          "OpenPrice": 571.795,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 301604,
+          "VWAP": 569.703099
+        },
+        "symbol": "SMH"
+      }
+    },
+    {
+      "symbol": "XLF",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 51.325,
+          "HighPrice": 51.49,
+          "LowPrice": 51.1,
+          "TradeCount": 4627,
+          "OpenPrice": 51.25,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 1259890,
+          "VWAP": 51.309381
+        },
+        "LatestQuote": {
+          "AskPrice": 51.33,
+          "AskSize": 9700,
+          "AskExchange": "V",
+          "BidPrice": 51.32,
+          "BidSize": 3500,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.709280818Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983727020152,
+          "Price": 51.32,
+          "Size": 200,
+          "Timestamp": "2026-05-14T16:37:25.128176919Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 51.325,
+          "HighPrice": 51.33,
+          "LowPrice": 51.32,
+          "TradeCount": 25,
+          "OpenPrice": 51.325,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 8513,
+          "VWAP": 51.324696
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 51,
+          "HighPrice": 51.32,
+          "LowPrice": 50.955,
+          "TradeCount": 7983,
+          "OpenPrice": 51.2,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 2231904,
+          "VWAP": 51.070248
+        },
+        "symbol": "XLF"
+      }
+    },
+    {
+      "symbol": "XLE",
+      "snapshot": {
+        "DailyBar": {
+          "ClosePrice": 58.015,
+          "HighPrice": 58.1,
+          "LowPrice": 57.515,
+          "TradeCount": 3519,
+          "OpenPrice": 57.6,
+          "Timestamp": "2026-05-14T04:00:00Z",
+          "Volume": 663072,
+          "VWAP": 57.780522
+        },
+        "LatestQuote": {
+          "AskPrice": 58.01,
+          "AskSize": 3300,
+          "AskExchange": "V",
+          "BidPrice": 58,
+          "BidSize": 4300,
+          "BidExchange": "V",
+          "Conditions": [
+            "R"
+          ],
+          "Timestamp": "2026-05-14T16:37:32.643418346Z",
+          "Tape": "B"
+        },
+        "LatestTrade": {
+          "Conditions": [
+            " "
+          ],
+          "ID": 52983726955571,
+          "Price": 58.01,
+          "Size": 100,
+          "Timestamp": "2026-05-14T16:37:09.059434177Z",
+          "Exchange": "V",
+          "Tape": "B"
+        },
+        "MinuteBar": {
+          "ClosePrice": 58.015,
+          "HighPrice": 58.015,
+          "LowPrice": 57.99,
+          "TradeCount": 20,
+          "OpenPrice": 57.99,
+          "Timestamp": "2026-05-14T16:36:00Z",
+          "Volume": 1832,
+          "VWAP": 57.997813
+        },
+        "PrevDailyBar": {
+          "ClosePrice": 57.64,
+          "HighPrice": 57.71,
+          "LowPrice": 56.965,
+          "TradeCount": 7007,
+          "OpenPrice": 57.48,
+          "Timestamp": "2026-05-13T04:00:00Z",
+          "Volume": 1355518,
+          "VWAP": 57.368584
+        },
+        "symbol": "XLE"
+      }
+    }
+  ]
+}

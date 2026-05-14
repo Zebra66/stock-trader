@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-14 : 12:39 : [hourly] Stayed offensive catch-up: broker data shows GOOG already at 2 shares, the book remains +2.37% vs SPY +4.16%, and the next add is a single SOXX breakout buy.
+- Cash drag remains the dominant failure mode even after gross exposure improved to 64.0%, so fresh risk is directed to SOXX instead of more QQQ because QQQ is already 42.2% of equity.
+- Updated hourly prompt to force post-fill share-count reconciliation so stale todo lines cannot double-count already-filled buys.
+
 2026-05-14 : 12:30 : [tactical] No tactical trades; all levels remained untriggered.
 - SOXX stayed below the $533.00 buy trigger at $530.61.
 - QQQ, GOOG, AVGO, and NVDA all remained above their sell/stop thresholds.

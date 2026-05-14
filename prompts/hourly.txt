@@ -16,6 +16,7 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
 - Read `memory/MEMORY.md` — last cycle's directive and execution summary.
 - Read `memory/todo.md` — tasks and buy/sell conditions set by previous tactical cycles.
 - If holdings in those files conflict with live broker data (Step 2), the broker data wins. Overwrite stale memory.
+- Explicitly reconcile share counts after any tactical fills and remove or resize stale entry lines so `memory/todo.md` cannot double-count exposure from already-filled buys.
 
 ### Step 2 — Gather market intelligence (3 minutes)
 - Run `bun run src/tools/alpaca_cli.ts get-account`
