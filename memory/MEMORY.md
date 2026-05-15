@@ -56,4 +56,4 @@ Broker data says the portfolio still owns the right complex, but the book is not
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace current leaders | 0 |
 
 ## Tactical Update
-No conditions met — held all positions; SOXX, XLK, and NVDA remained below breakout levels.
+XLK and NVDA breakouts were hit and market buy orders were submitted for 1 share each; SOXX remains pending below its $516.50 reclaim level. This adds incremental tech and AI exposure while keeping the book aligned with the hourly offensive catch-up plan.
