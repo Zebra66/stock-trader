@@ -1,0 +1,123 @@
+{
+  "fetchedAt": "2026-05-15T14:36:50.402Z",
+  "benchmarkBaseline": {
+    "portfolioEquity": 10000,
+    "spyClose": 718.09
+  },
+  "returns": {
+    "AVGO": {
+      "baseClose": 416.51,
+      "currentPrice": 427.41,
+      "returnPct": 2.6169839859787363,
+      "priceFetchedAt": "2026-05-15T14:35:13.061Z"
+    },
+    "EIS": {
+      "baseClose": 132.54,
+      "currentPrice": 130.015,
+      "returnPct": -1.9050852572808252,
+      "priceFetchedAt": "2026-05-15T14:35:13.354Z"
+    },
+    "GLD": {
+      "baseClose": 414.71,
+      "currentPrice": 418.39,
+      "returnPct": 0.8873670757879016,
+      "priceFetchedAt": "2026-05-15T14:35:13.667Z"
+    },
+    "GOOG": {
+      "baseClose": 379.5,
+      "currentPrice": 394.87,
+      "returnPct": 4.050065876152834,
+      "priceFetchedAt": "2026-05-15T14:35:13.970Z"
+    },
+    "HOOD": {
+      "baseClose": 76.56,
+      "currentPrice": 77.79,
+      "returnPct": 1.6065830721003187,
+      "priceFetchedAt": "2026-05-15T14:35:14.282Z"
+    },
+    "META": {
+      "baseClose": 610.3,
+      "currentPrice": 612.93,
+      "returnPct": 0.43093560543994686,
+      "priceFetchedAt": "2026-05-15T14:35:14.559Z"
+    },
+    "NVDA": {
+      "baseClose": 198.56,
+      "currentPrice": 227.55,
+      "returnPct": 14.60012087026592,
+      "priceFetchedAt": "2026-05-15T14:35:14.879Z"
+    },
+    "QQQ": {
+      "baseClose": 672.78,
+      "currentPrice": 711.59,
+      "returnPct": 5.768601920390033,
+      "priceFetchedAt": "2026-05-15T14:35:15.221Z"
+    },
+    "QTUM": {
+      "baseClose": 135.63,
+      "currentPrice": 143.665,
+      "returnPct": 5.924205559242053,
+      "priceFetchedAt": "2026-05-15T14:35:15.495Z"
+    },
+    "RKLB": {
+      "baseClose": 80.29,
+      "currentPrice": 126.33,
+      "returnPct": 57.34213476148958,
+      "priceFetchedAt": "2026-05-15T14:35:15.761Z"
+    },
+    "SHLD": {
+      "baseClose": 68.05,
+      "currentPrice": 62.83,
+      "returnPct": -7.670830271858926,
+      "priceFetchedAt": "2026-05-15T14:35:16.050Z"
+    },
+    "SOXX": {
+      "baseClose": 462.04,
+      "currentPrice": 513.82,
+      "returnPct": 11.206821920180076,
+      "priceFetchedAt": "2026-05-15T14:35:16.332Z"
+    },
+    "VOO": {
+      "baseClose": 660.1,
+      "currentPrice": 681.93,
+      "returnPct": 3.307074685653678,
+      "priceFetchedAt": "2026-05-15T14:35:16.613Z"
+    },
+    "ARKX": {
+      "baseClose": 32.55,
+      "currentPrice": 34.21,
+      "returnPct": 5.099846390168983,
+      "priceFetchedAt": "2026-05-15T14:35:16.893Z"
+    },
+    "SPY": {
+      "baseClose": 718.09,
+      "currentPrice": 742.095,
+      "returnPct": 3.3428957373031225,
+      "priceFetchedAt": "2026-05-15T14:35:18.336Z"
+    },
+    "XLK": {
+      "baseClose": 162.02,
+      "currentPrice": 176.88,
+      "returnPct": 9.17170719664238,
+      "priceFetchedAt": "2026-05-15T14:35:17.197Z"
+    },
+    "SMH": {
+      "baseClose": 506.74,
+      "currentPrice": 560.85,
+      "returnPct": 10.678059754509219,
+      "priceFetchedAt": "2026-05-15T14:35:17.476Z"
+    },
+    "XLE": {
+      "baseClose": 59.41,
+      "currentPrice": 58.92,
+      "returnPct": -0.8247769735734638,
+      "priceFetchedAt": "2026-05-15T14:35:17.752Z"
+    },
+    "XLF": {
+      "baseClose": 51.59,
+      "currentPrice": 51.4,
+      "returnPct": -0.36828842798992983,
+      "priceFetchedAt": "2026-05-15T14:35:18.058Z"
+    }
+  }
+}

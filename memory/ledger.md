@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-15 : 10:38 : [hourly] Stayed offensive catch-up: portfolio is +0.93% vs SPY +3.34%, gross exposure is 90.3%, and the next recovery buys are XLK, NVDA, and AVGO.
+- Cash drag remains the dominant failure mode despite holding the right tech leaders; current broker equity is $10,093.31 with $975.85 cash.
+- Queued buys were resized to XLK 1, NVDA 1, and AVGO 1 so full deployment reaches about 98.6% gross exposure without using margin and without breaching concentration caps.
+
 2026-05-15 : 10:30 : [tactical] No trades: NVDA and AVGO stayed below trigger levels.
 - NVDA latest trade was 226.75, below the 29.60 buy trigger.
 - AVGO latest trade was 427.30, below the 30.00 buy trigger.
