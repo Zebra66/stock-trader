@@ -54,3 +54,6 @@ Broker data says the portfolio still owns the right complex, but the book is not
 | XLF | Avoid | Financials still lag the tech leadership needed to beat SPY | 0-3 |
 | XLE | Avoid | Energy strength today does not offset its weaker benchmark-window relative performance | 0-3 |
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace current leaders | 0 |
+
+## Tactical Update
+No conditions met — held all positions.
