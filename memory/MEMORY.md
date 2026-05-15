@@ -55,4 +55,4 @@ Broker data confirms the book is now substantially deployed after the latest sem
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to justify capital | 0 |
 
 ## Tactical Update
-- 2026-05-15 14:40 ET: No conditions met — held all positions; NVDA stayed below the $229.60 buy trigger at $229.40.
+- 2026-05-15 14:50 ET: No conditions met — held all positions; NVDA remained below the $229.60 buy trigger at $228.51.
