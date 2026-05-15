@@ -56,4 +56,4 @@ Broker data says the portfolio still owns the right complex, but the book is not
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace current leaders | 0 |
 
 ## Tactical Update
-No conditions met — held all positions.
+No conditions met — held all positions; SOXX, XLK, and NVDA remained below breakout levels.
