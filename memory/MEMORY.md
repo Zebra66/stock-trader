@@ -19,6 +19,8 @@ Tactical fills have already added to the leadership stack: live broker holdings 
 ## Tactical Update
 Submitted a market buy for **1 share of SOXX** because it traded back above the hourly breakout trigger at **$516.80** and was the highest-conviction remaining deployment in the leadership stack. The order was placed during the regular session to keep pushing gross exposure toward the target band without adding a new symbol or exceeding the single-cycle authorization.
 
+No conditions met — held all positions.
+
 ## Current Exposure / Blocker
 - **Equity / cash / long market value:** **$10,124.89 / $652.45 / $9,472.44**
 - **Current gross exposure:** **93.6%**
