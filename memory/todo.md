@@ -1,6 +1,5 @@
 BUY XLK 1 shares at market if price >= $177.60
 BUY NVDA 1 shares at market if price >= $229.00
-BUY AVGO 1 shares at market if price >= $428.50
 HOLD QQQ — target allocation 42%
 HOLD SOXX — target allocation 15%
 HOLD GOOG — target allocation 12%
