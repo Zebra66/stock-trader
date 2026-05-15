@@ -1,7 +1,7 @@
 # Hourly Macro Memory
 *Updated 2026-05-15 10:40 ET from live Alpaca snapshots.*
 
-Tactical update: no buy triggers were hit on this cycle, so the book stayed unchanged while XLK, NVDA, and AVGO remained below their recovery thresholds.
+Tactical update: no conditions were met this cycle, so all positions were held while XLK, NVDA, and AVGO stayed below their recovery triggers.
 
 ## Current Regime
 - **Regime:** **offensive catch-up**
