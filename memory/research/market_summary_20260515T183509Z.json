@@ -1,0 +1,245 @@
+{
+  "fetchedAt": "2026-05-15T18:36:55.948Z",
+  "benchmarkBaseline": {
+    "portfolioEquity": 10000,
+    "spyClose": 718.09
+  },
+  "liveAccount": {
+    "equity": 10086.32,
+    "cash": 135.42,
+    "longMarketValue": 9950.9,
+    "daytradeCount": 3
+  },
+  "positions": [
+    {
+      "asset_id": "7a8b4fcf-0622-47ef-8541-de7f70ffc0c4",
+      "symbol": "AVGO",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "2",
+      "qty_available": "2",
+      "avg_entry_price": "433.165",
+      "side": "long",
+      "market_value": "853.45",
+      "cost_basis": "866.33",
+      "unrealized_pl": "-12.88",
+      "unrealized_plpc": "-0.01487",
+      "unrealized_intraday_pl": "-26.13",
+      "unrealized_intraday_plpc": "-0.02971",
+      "current_price": "426.725",
+      "lastday_price": "439.79",
+      "change_today": "-0.02971"
+    },
+    {
+      "asset_id": "f30d734c-2806-4d0d-b145-f9fade61432b",
+      "symbol": "GOOG",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "3",
+      "qty_available": "3",
+      "avg_entry_price": "397.58",
+      "side": "long",
+      "market_value": "1175.4",
+      "cost_basis": "1192.74",
+      "unrealized_pl": "-17.34",
+      "unrealized_plpc": "-0.01454",
+      "unrealized_intraday_pl": "-16.11",
+      "unrealized_intraday_plpc": "-0.01352",
+      "current_price": "391.8",
+      "lastday_price": "397.17",
+      "change_today": "-0.01352"
+    },
+    {
+      "asset_id": "4ce9353c-66d1-46c2-898f-fce867ab0247",
+      "symbol": "NVDA",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "3",
+      "qty_available": "3",
+      "avg_entry_price": "231.585",
+      "side": "long",
+      "market_value": "687.21",
+      "cost_basis": "694.755",
+      "unrealized_pl": "-7.545",
+      "unrealized_plpc": "-0.01086",
+      "unrealized_intraday_pl": "-20.01",
+      "unrealized_intraday_plpc": "-0.02829",
+      "current_price": "229.07",
+      "lastday_price": "235.74",
+      "change_today": "-0.02829"
+    },
+    {
+      "asset_id": "2d9e926c-e17c-47c3-ad8c-26c7a594e48f",
+      "symbol": "QQQ",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "6",
+      "qty_available": "6",
+      "avg_entry_price": "693.343333",
+      "side": "long",
+      "market_value": "4270.08",
+      "cost_basis": "4160.059998",
+      "unrealized_pl": "110.020002",
+      "unrealized_plpc": "0.02645",
+      "unrealized_intraday_pl": "-48.66",
+      "unrealized_intraday_plpc": "-0.01127",
+      "current_price": "711.68",
+      "lastday_price": "719.79",
+      "change_today": "-0.01127"
+    },
+    {
+      "asset_id": "4071ba99-0e64-4998-a7f8-07c114e00ef7",
+      "symbol": "SOXX",
+      "exchange": "NASDAQ",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "3",
+      "qty_available": "3",
+      "avg_entry_price": "525.506667",
+      "side": "long",
+      "market_value": "1544.55",
+      "cost_basis": "1576.520001",
+      "unrealized_pl": "-31.970001",
+      "unrealized_plpc": "-0.02028",
+      "unrealized_intraday_pl": "-45.54",
+      "unrealized_intraday_plpc": "-0.02864",
+      "current_price": "514.85",
+      "lastday_price": "530.03",
+      "change_today": "-0.02864"
+    },
+    {
+      "asset_id": "d704f4fd-c735-44f8-a7fa-7a50fef08fe4",
+      "symbol": "XLK",
+      "exchange": "ARCA",
+      "asset_class": "us_equity",
+      "asset_marginable": true,
+      "qty": "8",
+      "qty_available": "8",
+      "avg_entry_price": "178.92",
+      "side": "long",
+      "market_value": "1420.24",
+      "cost_basis": "1431.36",
+      "unrealized_pl": "-11.12",
+      "unrealized_plpc": "-0.00777",
+      "unrealized_intraday_pl": "-15.76",
+      "unrealized_intraday_plpc": "-0.01097",
+      "current_price": "177.53",
+      "lastday_price": "179.5",
+      "change_today": "-0.01097"
+    }
+  ],
+  "returns": {
+    "AVGO": {
+      "baseClose": 416.51,
+      "currentPrice": 426.725,
+      "returnPct": 2.452522148327779,
+      "priceFetchedAt": "2026-05-15T18:35:56.166Z"
+    },
+    "EIS": {
+      "baseClose": 132.54,
+      "currentPrice": 130.6,
+      "returnPct": -1.4637090689603123,
+      "priceFetchedAt": "2026-05-15T18:35:56.450Z"
+    },
+    "GLD": {
+      "baseClose": 414.71,
+      "currentPrice": 418.275,
+      "returnPct": 0.8596368546695276,
+      "priceFetchedAt": "2026-05-15T18:35:56.735Z"
+    },
+    "GOOG": {
+      "baseClose": 379.5,
+      "currentPrice": 391.8,
+      "returnPct": 3.2411067193675915,
+      "priceFetchedAt": "2026-05-15T18:35:57.032Z"
+    },
+    "HOOD": {
+      "baseClose": 76.56,
+      "currentPrice": 77.735,
+      "returnPct": 1.5347439916405397,
+      "priceFetchedAt": "2026-05-15T18:35:57.323Z"
+    },
+    "META": {
+      "baseClose": 610.3,
+      "currentPrice": 618.415,
+      "returnPct": 1.32967393085368,
+      "priceFetchedAt": "2026-05-15T18:35:57.595Z"
+    },
+    "NVDA": {
+      "baseClose": 198.56,
+      "currentPrice": 229.05,
+      "returnPct": 15.355560032232074,
+      "priceFetchedAt": "2026-05-15T18:35:57.864Z"
+    },
+    "QQQ": {
+      "baseClose": 672.78,
+      "currentPrice": 711.72,
+      "returnPct": 5.787924730223856,
+      "priceFetchedAt": "2026-05-15T18:35:58.174Z"
+    },
+    "QTUM": {
+      "baseClose": 135.63,
+      "currentPrice": 144.4,
+      "returnPct": 6.466121064661218,
+      "priceFetchedAt": "2026-05-15T18:35:58.480Z"
+    },
+    "RKLB": {
+      "baseClose": 80.29,
+      "currentPrice": 124.68,
+      "returnPct": 55.287084319342384,
+      "priceFetchedAt": "2026-05-15T18:35:58.771Z"
+    },
+    "SHLD": {
+      "baseClose": 68.05,
+      "currentPrice": 62.26,
+      "returnPct": -8.508449669360765,
+      "priceFetchedAt": "2026-05-15T18:35:59.050Z"
+    },
+    "SOXX": {
+      "baseClose": 462.04,
+      "currentPrice": 514.93,
+      "returnPct": 11.44706086053154,
+      "priceFetchedAt": "2026-05-15T18:35:59.367Z"
+    },
+    "VOO": {
+      "baseClose": 660.1,
+      "currentPrice": 681.22,
+      "returnPct": 3.1995152249659147,
+      "priceFetchedAt": "2026-05-15T18:35:59.660Z"
+    },
+    "ARKX": {
+      "baseClose": 32.55,
+      "currentPrice": 33.945,
+      "returnPct": 4.285714285714295,
+      "priceFetchedAt": "2026-05-15T18:35:59.956Z"
+    },
+    "XLK": {
+      "baseClose": 162.02,
+      "currentPrice": 177.52,
+      "returnPct": 9.566720158005184,
+      "priceFetchedAt": "2026-05-15T18:36:00.627Z"
+    },
+    "XLE": {
+      "baseClose": 59.41,
+      "currentPrice": 59.23,
+      "returnPct": -0.3029792964147445,
+      "priceFetchedAt": "2026-05-15T18:36:01.567Z"
+    },
+    "XLF": {
+      "baseClose": 51.59,
+      "currentPrice": 51.11,
+      "returnPct": -0.9304128707113859,
+      "priceFetchedAt": "2026-05-15T18:36:01.248Z"
+    },
+    "SPY": {
+      "baseClose": 718.09,
+      "currentPrice": 740.91,
+      "returnPct": 3.1778746396691133,
+      "priceFetchedAt": "2026-05-15T18:36:00.265Z"
+    }
+  }
+}
