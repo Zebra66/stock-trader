@@ -78,34 +78,12 @@ async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
     return;
   }
   logger.info({ mode }, '🤖 Spawning agent');
-
-  const TIMEOUT_MS = mode === 'hourly' ? 20 * 60 * 1000 : 10 * 60 * 1000; // 20 min hourly, 10 min tactical (temporary increase while debugging Cloud Run hangs)
-
   const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
     stdout: 'inherit',
     stderr: 'inherit',
     cwd: repoRoot,
   });
-
-  const timeout = setTimeout(() => {
-    logger.error({ mode, timeoutMs: TIMEOUT_MS }, 'Agent timed out — sending SIGTERM');
-    try { proc.kill(); } catch {}
-
-    // If SIGTERM doesn't work (process is truly hung), send SIGKILL after 5s
-    setTimeout(() => {
-      if (!proc.killed) {
-        logger.error({ mode }, 'Agent still alive after SIGTERM — sending SIGKILL');
-        try { proc.kill(9); } catch {}
-      }
-    }, 5000);
-  }, TIMEOUT_MS);
-
   await proc.exited;
-  clearTimeout(timeout);
-
-  if (proc.exitCode !== 0) {
-    logger.warn({ mode, exitCode: proc.exitCode }, 'Agent exited with non-zero code');
-  }
 }
 
 export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction {
@@ -125,11 +103,14 @@ export function createSerializedRunner(run: AgentRunFunction): AgentRunFunction 
 }
 
 export function createSerializedScheduledRunner(run: ScheduledRunFunction): ScheduledRunFunction {
-  let queue: Promise<void> = Promise.resolve();
+  const queues: Record<'hourly' | 'tactical', Promise<void>> = {
+    hourly: Promise.resolve(),
+    tactical: Promise.resolve(),
+  };
 
   return (mode, options) => {
-    const nextRun = queue.then(() => run(mode, options));
-    queue = nextRun.catch((error: unknown) => {
+    const nextRun = queues[mode].then(() => run(mode, options));
+    queues[mode] = nextRun.catch((error: unknown) => {
       logger.error({ mode, error: (error as Error).message }, 'Serialized scheduled run failed');
     });
 

@@ -6,9 +6,7 @@ import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
-import { AGENT_COMMITS_LIMIT, getAgentCommitsSince, summarizeRecentAgentCommits } from './commits';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
-import { deriveLogSeverity } from './log_severity';
 import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
 
 const logger = getLogger('web-server');
@@ -152,7 +150,6 @@ const app = new Elysia()
     .bottom-grid{display:grid;grid-template-columns:2fr 3fr;gap:1rem;margin-top:1rem}
     .sec-title{font-size:.875rem;font-weight:600;color:var(--t1);margin-bottom:.875rem;display:flex;align-items:center;gap:.4rem}
     pre.mem{font-family:var(--mono);font-size:.72rem;line-height:1.65;color:#a5b4fc;background:#020617;padding:.875rem;border-radius:8px;overflow-y:auto;max-height:380px;white-space:pre-wrap;word-break:break-word}
-    .commits-scroll{max-height:420px;overflow-y:auto}
     /* TABLE */
     .ctable{width:100%;border-collapse:collapse;font-size:.8rem}
     .ctable th{text-align:left;padding:.5rem .7rem;color:var(--t2);font-weight:500;text-transform:uppercase;font-size:.65rem;letter-spacing:.08em;border-bottom:1px solid #1e293b}
@@ -177,7 +174,6 @@ const app = new Elysia()
     .market-timer-bar.market-closed{background:linear-gradient(90deg,rgba(245,158,11,0.04),rgba(245,158,11,0.09),rgba(245,158,11,0.04));border-bottom-color:rgba(245,158,11,0.18)}
     .market-timer-bar.market-closed::before{background:radial-gradient(ellipse at center,rgba(245,158,11,0.06) 0%,transparent 70%);opacity:1}
     .mkt-status-pill{display:flex;align-items:center;gap:.5rem;padding:.28rem .8rem;border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border:1px solid;white-space:nowrap}
-    .mkt-ny-time{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
     .mkt-status-pill.open{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.5);color:#00ff88;box-shadow:0 0 12px rgba(0,255,136,0.15)}
     .mkt-status-pill.closed{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.4);color:#fbbf24}
     .mkt-pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
@@ -298,7 +294,6 @@ const app = new Elysia()
 <!-- ── MARKET TIMER BAR ── -->
 <div class="market-timer-bar" id="market-timer-bar">
   <div class="mkt-status-pill" id="mkt-pill">
-    <span id="mkt-ny-time" class="mkt-ny-time">--:-- ET</span>
     <span class="mkt-pill-dot"></span>
     <span id="mkt-pill-text">Loading</span>
   </div>
@@ -347,14 +342,12 @@ const app = new Elysia()
   </div>
   <div class="bottom-grid">
     <div class="card">
-      <div class="sec-title">📒 Ledger <button class="btn-refresh" onclick="fetchLedger()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh ledger">⟳</button></div>
-      <pre class="mem" id="ledger-content">Loading...</pre>
-      <div class="sec-title" style="margin-top:1rem">🧠 Agent Memory <button class="btn-refresh" onclick="fetchMemory()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh memory">⟳</button></div>
+      <div class="sec-title">🧠 Agent Memory <button class="btn-refresh" onclick="fetchMemory()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh memory">⟳</button></div>
       <pre class="mem" id="memory-content">Loading...</pre>
     </div>
     <div class="card">
       <div class="sec-title">📜 Agent Commits</div>
-      <div id="commits-list" class="commits-scroll"><em style="color:var(--t2)">Loading...</em></div>
+      <div id="commits-list"><em style="color:var(--t2)">Loading...</em></div>
       <div id="commit-diff-view" style="display:none">
         <div class="diff-hdr">
           <button class="btn-back" onclick="closeCommitDiff()">← Back</button>
@@ -493,7 +486,7 @@ const app = new Elysia()
     document.getElementById('btn-nav-next').disabled=!canGoFwd;
 
     // Update note label
-    const fmtDate=ms=>new Date(ms).toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric'});
+    const fmtDate=ms=>new Date(ms).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     document.getElementById('chart-note').innerText='· '+fmtDate(windowStart)+' — '+fmtDate(windowEnd);
   }
 
@@ -513,9 +506,6 @@ const app = new Elysia()
     }catch(e){}
   }
   async function togglePause(){await fetch('/api/toggle',{method:'POST'});fetchStatus();}
-  async function fetchLedger(){
-    try{const t=await(await fetch('/api/ledger')).text();document.getElementById('ledger-content').innerText=t;}catch(e){}
-  }
   async function fetchMemory(){
     try{const t=await(await fetch('/api/memory')).text();document.getElementById('memory-content').innerText=t;}catch(e){}
   }
@@ -653,7 +643,7 @@ const app = new Elysia()
                 title:function(items){
                   const ts=items[0]?.parsed?.x;
                   if(!ts) return '';
-                  return new Date(ts).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+                  return new Date(ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
                 },
                 label:function(c){
                   const raw=c.raw;
@@ -677,15 +667,7 @@ const app = new Elysia()
               min:windowStart,
               max:windowEnd,
               time:{unit:timeUnit,displayFormats:{hour:'h:mm a',day:'MMM d',week:'MMM d'}},
-              ticks:{color:'#475569',maxRotation:0,autoSkip:true,maxTicksLimit:8,
-                callback:function(value){
-                  const d=new Date(value);
-                  if(timeUnit==='hour'){
-                    return d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
-                  }
-                  return d.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
-                }
-              },
+              ticks:{color:'#475569',maxRotation:0,autoSkip:true,maxTicksLimit:8},
               grid:{color:'rgba(0,212,255,0.05)'}
             },
             y:{
@@ -713,7 +695,7 @@ const app = new Elysia()
       if(!d.commits||d.commits.length===0){el.innerHTML='<em style="color:#475569">No agent commits found.</em>';return;}
       let h='<table class="ctable"><thead><tr><th>Hash</th><th>Date</th><th>Author</th><th>Message</th></tr></thead><tbody>';
       for(const c of d.commits){
-        const dt=new Date(c.date).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+        const dt=new Date(c.date).toLocaleString();
         h+='<tr class="crow" data-hash="'+escH(c.hash)+'" data-msg="'+escH(c.message.substring(0,80))+'" onclick="viewCommit(this.dataset.hash,this.dataset.msg)">';
         h+='<td class="chash">'+escH(c.shortHash)+'</td>';
         h+='<td class="cdate">'+escH(dt)+'</td>';
@@ -759,7 +741,7 @@ const app = new Elysia()
         el.className='stat-val '+(pct>=0?'green':'red');
       }
       if(sub){
-        const startDate=d.startDate?new Date(d.startDate).toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric'}):'';
+        const startDate=d.startDate?new Date(d.startDate).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
         sub.innerText='SPY since '+startDate;
       }
     }catch(e){console.warn('sp500 fetch failed',e);}
@@ -822,7 +804,7 @@ const app = new Elysia()
       }else{
         html+='<table class="ptable"><thead><tr><th>Date</th><th>Symbol</th><th>Action</th><th>Qty</th><th>Price</th><th>Total</th></tr></thead><tbody>';
         for(const t of trades){
-          const dt=new Date(t.transaction_time).toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
+          const dt=new Date(t.transaction_time).toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:true});
           const total=(parseFloat(t.price||0)*parseFloat(t.qty||0)).toFixed(2);
           const cls=t.side==='buy'?'p-buy':'p-sell';
           html+='<tr><td style="color:var(--t2);white-space:nowrap">'+escH(dt)+'</td>';
@@ -904,16 +886,6 @@ const app = new Elysia()
 
   function escH(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-  function displaySeverity(severity,message){
-    const normalized=String(severity||'').toUpperCase();
-    if(normalized && normalized!=='DEFAULT') return normalized;
-    if(/\|\s*ERROR\s*\|/i.test(message)) return 'ERROR';
-    if(/\|\s*WARN\s*\|/i.test(message)) return 'WARNING';
-    if(/\|\s*INFO\s*\|/i.test(message)) return 'INFO';
-    if(/\|\s*DEBUG\s*\|/i.test(message)) return 'DEBUG';
-    return 'DEFAULT';
-  }
-
   function highlight(text,search){
     if(!search) return escH(text);
     const esc=escH(text);
@@ -926,7 +898,7 @@ const app = new Elysia()
     if(!iso) return '';
     try{
       const d=new Date(iso);
-      return d.toLocaleString('en-US',{timeZone:'America/New_York',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+      return d.toLocaleString('en-US',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
     }catch{return iso;}
   }
 
@@ -970,7 +942,7 @@ const app = new Elysia()
       } else {
         let h='<table class="logs-table"><thead><tr><th>Timestamp</th><th>Level</th><th>Message</th></tr></thead><tbody>';
         for(const e of entries){
-          const sev=displaySeverity(e.severity,e.message||'');
+          const sev=(e.severity||'DEFAULT').toUpperCase();
           h+='<tr class="log-row">';
           h+='<td class="log-ts">'+escH(fmtTs(e.timestamp))+'</td>';
           h+='<td class="log-sev '+escH(sev)+'">'+escH(sev)+'</td>';
@@ -997,7 +969,7 @@ const app = new Elysia()
     if(e.key==='Escape'){closeLogs();closePortfolio();}
   });
 
-  fetchStatus();fetchLedger();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
+  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
@@ -1014,9 +986,6 @@ const app = new Elysia()
 
     function fmtEtTime(ms){
       return new Date(ms).toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
-    }
-    function fmtCurrentEtTime(){
-      return new Date().toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false})+' ET';
     }
     function fmtEtDate(ms){
       const d=new Date(ms);
@@ -1041,14 +1010,11 @@ const app = new Elysia()
 
       const bar=document.getElementById('market-timer-bar');
       const pill=document.getElementById('mkt-pill');
-      const nyTimeEl=document.getElementById('mkt-ny-time');
       const pillTxt=document.getElementById('mkt-pill-text');
       const dirLabel=document.getElementById('mkt-direction-label');
       const hoursEl=document.getElementById('mkt-hours');
       const minsEl=document.getElementById('mkt-mins');
       const subEl=document.getElementById('mkt-sub');
-
-      nyTimeEl.textContent=fmtCurrentEtTime();
 
       if(marketIsOpen){
         bar.className='market-timer-bar market-open';
@@ -1090,10 +1056,7 @@ const app = new Elysia()
 </script>
 </body>
 </html>`, {
-      headers: {
-        'Content-Type': 'text/html',
-        'Cache-Control': 'no-store, max-age=0',
-      },
+      headers: { 'Content-Type': 'text/html' },
     });
   })
 
@@ -1139,17 +1102,9 @@ const app = new Elysia()
   .get('/api/memory', async () => {
     try {
       const memory = await fs.readFile('memory/MEMORY.md', 'utf8');
-      return memory.split('\n').slice(0, 100).join('\n');
+      return memory;
     } catch (e) {
       return "Memory file not found.";
-    }
-  })
-  .get('/api/ledger', async () => {
-    try {
-      const ledger = await fs.readFile('memory/ledger.md', 'utf8');
-      return ledger.split('\n').slice(0, 100).join('\n');
-    } catch (e) {
-      return "Ledger file not found.";
     }
   })
   .get('/api/chart-data', async ({ query }: { query: { mode?: string; period?: string } }) => {
@@ -1342,10 +1297,9 @@ const app = new Elysia()
     if (GITHUB_PAT) headers['Authorization'] = `Bearer ${GITHUB_PAT}`;
 
     try {
-      const since = getAgentCommitsSince();
-      // Fetch up to 50 commits from the last week.
+      // Fetch up to 100 recent commits
       const res = await fetch(
-        `https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=${AGENT_COMMITS_LIMIT}&since=${encodeURIComponent(since)}`,
+        `https://api.github.com/repos/${GITHUB_REPO}/commits?per_page=100`,
         { headers },
       );
       if (!res.ok) {
@@ -1353,8 +1307,26 @@ const app = new Elysia()
         logger.warn({ status: res.status, body: errText }, 'GitHub commits API error');
         return { error: `GitHub API ${res.status}: ${errText}`, commits: [] };
       }
-      const data = await res.json();
-      const commits = summarizeRecentAgentCommits(data as Parameters<typeof summarizeRecentAgentCommits>[0]);
+
+      interface GithubCommit {
+        sha: string;
+        commit: {
+          author: { name: string; date: string };
+          message: string;
+        };
+      }
+
+      const data = await res.json() as GithubCommit[];
+      // Filter to [agent] commits only
+      const commits = data
+        .filter((c) => c.commit.message.startsWith('[agent]'))
+        .map((c) => ({
+          hash: c.sha,
+          shortHash: c.sha.substring(0, 7),
+          author: c.commit.author.name,
+          date: c.commit.author.date,
+          message: c.commit.message.split('\n')[0] ?? c.commit.message,
+        }));
 
       return { commits };
     } catch (e: unknown) {
@@ -1517,7 +1489,7 @@ const app = new Elysia()
         }
         return {
           timestamp: e.timestamp ?? '',
-          severity: deriveLogSeverity(e.severity, message),
+          severity: e.severity ?? 'DEFAULT',
           message,
           insertId: e.insertId ?? '',
         };

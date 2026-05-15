@@ -4,8 +4,6 @@ globs: "*.ts, *.tsx, *.html, *.css, *.js, *.jsx, package.json"
 alwaysApply: false
 ---
 
-> **Note:** `CLAUDE.md` and `AGENTS.md` are the same file (`AGENTS.md` is a symlink to `CLAUDE.md`). Editing one edits the other.
-
 Default to using Bun instead of Node.js.
 
 - Use `bun <file>` instead of `node <file>` or `ts-node <file>`
@@ -142,12 +140,6 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - **Strong Typing:** ALL TypeScript code must be strongly typed. Do not use `any` unless absolutely necessary, and define strict interfaces for LLM function calls.
 - **Test Coverage:** Ensure you have a good coverage of unit tests before executing any `git commit`. Do not push broken code to the remote repository.
 - **Commit Prefix:** NEVER create commits with a prefix of `[agent]` in an interactive session with me!!! Commits with that prefix are only OK to be created by the autonomous code of this project (like the Pi.dev runtime) to distinguish them from ones that we do interactively during development!!
-- **Commit & Push Resilience:** At the end of every autonomous run, you MUST commit and push your changes. This is critical — memory updates are useless if they stay uncommitted in an ephemeral container.
-  - Before committing, run `git fetch origin` to check if the remote has moved ahead.
-  - If `origin/main` is ahead, run `git pull origin main` and resolve any merge conflicts.
-  - When resolving conflicts, if a section of a file cannot be merged cleanly, **keep the version already on GitHub** and discard your local changes for that section.
-  - If `git push` fails because new commits arrived while you were working, pull again, re-resolve, and retry.
-  - **Try up to 3 times.** Do not skip the commit/push step because the tree looks messy or because one attempt failed.
 
 ### Code Development Framework: Bun Only
 - **PRIMARY RUNTIME IS BUN.** If you need to write any new code, scripts, or utilities, write them in **TypeScript and execute with `bun run <file.ts>`**. Do NOT use Python, Node.js, or any other runtime.

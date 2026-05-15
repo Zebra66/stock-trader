@@ -1,59 +1,104 @@
 # Hourly Macro Memory
-*Updated 2026-05-15 15:36 ET from live Alpaca snapshots.*
+*Updated 2026-05-15 during regular hours using dashboard + Yahoo Finance fallbacks because direct Alpaca/FMP CLI refresh remained degraded.*
 
 ## Current Regime
-- **Regime:** **offensive catch-up**
+- **Regime:** **defensive**
+- **Why:** the secular AI/large-cap tech trend is still intact on multi-week windows, but today the live book is overextended for the current intraday tape and the tactical layer committed a fresh compliance breach by **adding 2 more XLK shares** despite a prior cleanup directive.
+- **Authoritative live book:** **QQQ 6, SOXX 3, GOOG 3, XLK 7, NVDA 2, AVGO 1**.
+- **Account equity / cash / buying power:** **$10,074.35 / $975.85 / $11,050.20**.
+- **Current gross exposure:** **$9,105.03 = 90.38%** of equity.
+- **Target gross-exposure band:** **75-85% after XLK cleanup**. That keeps the portfolio invested in core growth while forcing discipline and removing unauthorized exposure before any new risk is added.
 
-## Macro Thesis
-Benchmark-window leadership is still concentrated in semiconductors and core growth tech. Using the fixed **2026-05-04 close** anchor, the best relative performers in our working universe remain **NVDA +14.49%**, **SOXX +11.18%**, **XLK +9.30%**, **QTUM +6.10%**, and **QQQ +5.69%** versus **SPY +3.11%**. The lagging alternatives remain poor catch-up vehicles for this evaluation window: **XLE -0.29%**, **XLF -0.90%**, **EIS -1.67%**, and **SHLD -8.43%**. We still need leadership exposure, not diversification into weaker groups.
+## Current Macro Thesis
+The bigger picture has not changed: **AI infrastructure, semiconductors, and high-quality platform tech** still dominate the strongest 1M/3M trends in the universe. Even after today’s pullback, relative leaders over the last month remain **RKLB, SOXX, QTUM, GOOG, NVDA, AVGO, and QQQ**, while laggards such as **GLD, META, SHLD, and EIS** are not where fresh capital should go in a growth-led regime. Recent public fallback coverage still supports the durable theme of **AI capex durability** in cloud and semiconductor infrastructure, with constructive recent commentary around **GOOG, NVDA, AVGO, and SOXX**.
 
-Today’s tape is a pullback, not a free-fall. Intraday moves are roughly **SPY -1.03%**, **QQQ -1.21%**, **XLK -1.34%**, **SOXX -3.06%**, and **NVDA -3.58%**. That is enough to avoid chasing broad new size, but not enough to abandon the offensive stance. With the book already near full exposure, the right move is a single cap-compliant top-off in the strongest affordable leader rather than rotating into lagging sectors.
+What changed is the **execution context**. Today’s tape is weaker: semis are under pressure, QQQ is off its highs, and the portfolio is no longer suffering from underdeployment. The urgent problem is **process failure**. The tactical layer violated the prior hourly plan by adding more **XLK**, which is outside the approved universe. For the next hour, the correct posture is to **protect capital, restore compliance, and stop churn**.
 
 ## Goal Check
-- **Status:** **Off track — cash drag**
-- **Portfolio return since fixed 2026-05-04 baseline:** **+0.76%** (**$10,075.50 vs $10,000.00**)
-- **SPY return since fixed 2026-05-04 close baseline:** **+3.11%** (**740.41 vs 718.09**)
-- **Dominant failure mode:** **cash drag**
-- **Assessment:** the account is still profitable in absolute dollars, but it remains behind SPY because the portfolio spent too much of the benchmark window underinvested before the current tech-heavy stack was built.
+- **Portfolio since inception (2026-05-01 deposit):** **+0.74%**
+- **S&P 500 / SPY since inception:** **+2.89%**
+- **Status:** **Off track — positive absolute returns remain intact, but the portfolio is trailing SPY and today’s unauthorized churn worsened the gap.**
+- **Dominant failure mode:** **excessive turnover / friction**
 
-## Current Exposure / Blocker
-- **Equity / cash / long market value:** **$10,075.50 / $135.42 / $9,940.08**
-- **Current gross exposure:** **98.66%**
-- **Target gross-exposure band:** **100.0-101.0%**
-- **Blocker:** **PDT pressure (`daytrade_count = 3`) means any fresh add must be treated as overnight swing exposure; do not pair a same-day exit with a new afternoon buy.**
-- **Share-count reconciliation:** broker-confirmed holdings are **AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8**. Memory has been reconciled to live broker data so tactical cannot double-count already-filled buys.
-- **Research snapshots:**
-  - `memory/research/alpaca_account_20260515T193604Z.json`
-  - `memory/research/alpaca_positions_20260515T193604Z.json`
-  - `memory/research/alpaca_clock_20260515T193604Z.json`
-  - `memory/research/price_cli_20260515T193604Z.jsonl`
-  - `memory/research/market_summary_20260515T193604Z.json`
+## Start-of-Day Performance Review
+- **1D:** portfolio **-1.61%** vs **SPY -1.08%**
+- **1W:** portfolio **+0.36%** vs **SPY +0.33%**
+- **2W:** portfolio **+0.74%** vs **SPY +2.89%**
+- **What is working:** core large-cap growth exposure still keeps the book positive since inception, and the 1W relative result is roughly in line with the index.
+- **What is not working:** unauthorized adds, same-day churn, and too much concentration in a weakening semiconductor sleeve.
+- **What must change today:** no new discretionary buys, immediate XLK cleanup, and tighter tactical guardrails until compliance is restored.
+
+## Priority Actions For The Next Hour
+1. **Queue XLK for the next eligible regular-session exit.** It remains the top cleanup item, but a same-day sell was already rejected by broker **pattern day trading protection** after today’s tactical add.
+2. **Enforce cleanup-only mode** after the XLK breach: no fresh discretionary buys this hour.
+3. **Hold core approved names** unless stop levels break; **SOXX** is the first approved position to reduce if weakness continues.
+4. Reassess new adds only after XLK is gone and the tape stabilizes.
 
 ## Ranked Deployment Queue
-1. **NVDA** — active residual-cash top-off. A **1-share** add is the best use of remaining buying capacity because it targets the highest-relative-strength affordable leader. Post-fill gross exposure would be about **100.91%** and NVDA would still be only about **9.03%** of equity, well inside the **15%** single-stock cap. The breakout trigger in `todo.md` is intentionally already in-the-money at the current tape so the next tactical cycle can buy immediately if NVDA is still holding this zone.
-2. **XLK** — first alternate only if NVDA loses the level before tactical acts. A **1-share** add would lift gross exposure to about **100.41%** and keep XLK near **15.83%**, safely under the ETF cap.
-3. **QTUM** — second alternate for the next hourly review only. A **1-share** add would take gross exposure to about **100.08%** with minimal cap risk, but its benchmark value remains lower than NVDA or XLK.
+*Only valid after XLK is fully exited and the hourly lock is explicitly lifted.*
+1. **GOOG** — best combination of quality, relative strength, and less-stretched setup versus semis.
+2. **QQQ** — liquid core catch-up vehicle if broad tech leadership reasserts.
+3. **AVGO** — smaller single-name add only on renewed strength, not into weakness.
 
-**Cap / queue check:** only the single **NVDA** order is live this cycle. **QQQ** cannot be increased because one more share would lift it to about **49.40%** of equity, above the **45%** cap. **SOXX** cannot be increased because a fourth share would push it to about **20.40%**, above the **20%** ETF cap. **GOOG** cannot be increased because a fourth share would breach the **15%** single-stock cap.
-
-## Symbol Table
+## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | Hold | Core growth beta remains the anchor and is still within the 45% cap | 42 |
-| SOXX | Hold | Semiconductor leadership remains valid, but current size is already near the ETF cap | 15 |
-| XLK | Hold / alternate add | Diversified tech remains a strong benchmark-beating sleeve with room for one more share | 15 |
-| NVDA | Buy now / top-off | Highest-relative-strength affordable leader; best residual-cash deployment | 9 |
-| GOOG | Hold | Good AI/cloud exposure, but another share would breach the stock cap | 12 |
-| AVGO | Hold | Strong AI infrastructure exposure, but the next marginal dollar belongs in NVDA | 8 |
-| QTUM | Watch / alternate add | Positive AI-beta and affordable, but still below NVDA and XLK in priority | 0-2 |
-| META | Watch | Healthy megacap trend, but not a better marginal add than NVDA | 0-3 |
-| RKLB | Watch only | Very strong return profile, but too extended/speculative for this final cash tranche | 0-2 |
-| ARKX | Low-priority watch | Constructive trend, but lower benchmark utility than core tech leaders | 0-1 |
-| XLE | Avoid | Energy still lags the benchmark-window winners | 0-2 |
-| XLF | Avoid | Financials remain a relative laggard vs the tech leadership basket | 0-2 |
-| GLD | Avoid | No defensive regime signal requiring new gold exposure | 0-2 |
-| SHLD | Avoid | Weak relative strength and no catalyst strong enough to justify capital | 0 |
+| XLK | Sell | **Compliance breach**; outside approved universe and incorrectly added again today. | 0% |
+| QQQ | Hold | Core liquid growth exposure, but still the largest weight and above preferred size after a weak day. | 36-40% |
+| GOOG | Hold | High-quality AI/cloud exposure; preferred future add once lock is lifted. | 10-13% |
+| SOXX | Hold / Reduce on weakness | Strong longer-term theme, but elevated weight and weak today. | 10-12% |
+| NVDA | Hold | Secular winner, but no chasing and no same-day overtrading. | 4-5% |
+| AVGO | Hold | Valid AI/networking exposure; keep small and disciplined. | 4-5% |
+| QTUM | Watch | Good thematic ETF, but no re-entry while cleanup is pending. | 0-4% |
+| GLD | Watch only | Defensive diversifier only if macro turns decisively risk-off. | 0-5% |
 
-## Tactical Execution Note
-- At 15:40 ET, NVDA printed **227.48**, which met the tactical buy trigger, but Alpaca order submission returned **504 Gateway Timeout** twice; no fill was confirmed.
-- No conditions met — held all positions.
+## Current Holdings
+- **QQQ:** **42.35%** weight, about **+2.56%** on cost, **-1.21%** today.
+- **SOXX:** **15.27%** weight, about **-3.18%** on cost, **-3.23%** today.
+- **GOOG:** **11.71%** weight, about **-1.10%** on cost, **-1.00%** today.
+- **XLK:** **12.30%** weight, unauthorized holding, about **-1.10%** on cost, **-1.35%** today.
+- **NVDA:** **4.52%** weight, about **-2.20%** on cost, **-3.46%** today.
+- **AVGO:** **4.22%** weight, about **-2.74%** on cost, **-3.33%** today.
+
+## Near-Term Watchlist
+- **GOOG** — first valid redeployment target after compliance is restored.
+- **QQQ** — clean liquid re-add only if broad tech stabilizes.
+- **AVGO** — watch for renewed AI/networking strength after today’s pullback.
+- **QTUM** — thematic re-entry only after churn is under control.
+
+## Macro Themes To Monitor
+- **Actionable now:** AI capex durability, semiconductor pullback discipline, QQQ trend health.
+- **Worth monitoring:** rates / inflation pressure and whether today’s weakness broadens beyond semis.
+- **Interesting but not actionable yet:** space-theme enthusiasm (**RKLB / ARKX**) remains strong, but too momentum-driven for immediate deployment while the book is in cleanup mode.
+- **Investor-move coverage:** direct portfolio-move signal from public fallback search was insufficient today; do not force a thesis from weak headlines.
+
+## Data / Process Notes
+- **Alpaca CLI** account/positions/clock calls still timed out in this environment.
+- **Broker fallback used successfully:** deployed dashboard endpoints **`/api/portfolio`**, **`/api/chart-data`**, **`/api/sp500-comparison`**, and **`/api/market-clock`** via `bun -e`.
+- **Execution blocker:** the tactical layer attempted an **XLK** liquidation on **2026-05-15 11:38 ET** and received **403 / trade denied due to pattern day trading protection**. Do not keep resubmitting the same cleanup order today unless broker eligibility changes.
+- **FMP** remained unavailable because `FMP_API_KEY` is not configured, so multi-timeframe market snapshots were refreshed from **Yahoo Finance public chart endpoints** and saved under `temp_files/`.
+- **News fallback:** Google News RSS remained noisy / partially malformed on 2026-05-15; today’s direct coverage was insufficient, so only recent dated fallback headlines were used as background, not as standalone trade signals.
+
+## Standing Learnings
+- Size from **account equity**, not raw buying power.
+- **No leverage** unless a future hourly note explicitly justifies it.
+- Commission-free does **not** mean friction-free.
+- Never average down.
+- Require a second source if broker quotes are stale or abnormal.
+- If the book is already inside or above the exposure band, edge quality matters more than forced deployment.
+- **Do not trade outside the approved universe.**
+- **Do not churn the same symbol in and out intraday without a fresh explicit trigger.**
+- If the tactical layer violates an explicit no-trade or compliance instruction, default the next hour to **cleanup-only** until the breach is fully resolved.
+- Dashboard endpoint fallbacks are currently more reliable than direct CLI refreshes in this environment.
+
+## Tactical Execution Update — 2026-05-15
+- **Action this cycle:** no orders placed.
+- **Why:** all held names stayed above their tactical stop levels, and the XLK cleanup remains blocked by the earlier broker PDT rejection, so retrying it would add friction without improving edge.
+- **Authoritative live book:** **QQQ 6, SOXX 3, GOOG 3, XLK 7, NVDA 2, AVGO 1**.
+- **Current exposure:** still about **90% gross**, above the preferred post-cleanup band.
+- **Next expected action:** keep cleanup-only posture, wait for either broker eligibility to change for XLK or a later hourly unlock that explicitly permits fresh buys.
+
+## Last Run Summary
+- The portfolio is still positive in absolute dollars, but it remains **off track** versus SPY.
+- Multi-week market leadership still favors AI / semis / high-quality growth.
+- The urgent next-hour task is **compliance cleanup and execution discipline**, not adding new exposure.

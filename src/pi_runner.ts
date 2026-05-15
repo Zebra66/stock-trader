@@ -622,20 +622,9 @@ export class PiRunner implements AgentRunner {
       }
     }
 
-    // Run the prompt with a safety timeout so we don't hang forever inside the SDK
-    const PROMPT_TIMEOUT_MS = options.mode === 'hourly' ? 18 * 60 * 1000 : 8 * 60 * 1000;
-    const promptPromise = session.prompt(finalPrompt);
-    const timeoutPromise = new Promise<never>((_, reject) => {
-      setTimeout(() => reject(new Error(`Pi.dev session.prompt() timed out after ${PROMPT_TIMEOUT_MS}ms`)), PROMPT_TIMEOUT_MS);
-    });
-
-    try {
-      await Promise.race([promptPromise, timeoutPromise]);
-    } catch (timeoutErr) {
-      logAtLevel(log, 'error', { mode: options.mode, timeoutMs: PROMPT_TIMEOUT_MS }, `[PiRunner] ${(timeoutErr as Error).message}`);
-      throw timeoutErr;
-    }
-
+    // Run the prompt
+    await session.prompt(finalPrompt);
+    
     // Add a trailing newline after generation
     process.stdout.write('\n');
     logAtLevel(log, 'info', { mode: options.mode }, '[PiRunner] prompt execution completed');

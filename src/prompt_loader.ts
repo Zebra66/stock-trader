@@ -20,7 +20,6 @@ Run \`--help\` on any tool to see full usage:
   bun run src/tools/alpaca_cli.ts --help   # account, positions, prices, orders
   bun run src/tools/fmp_cli.ts --help      # analyst estimates, historical performance
   bun run src/tools/system_cli.ts --help   # read-file, write-file
-  bun run src/tools/ledger_cli.ts --help   # append or prepend per-cycle ledger entries
 
 Quick reference:
   bun run src/tools/alpaca_cli.ts get-account
@@ -29,7 +28,6 @@ Quick reference:
   bun run src/tools/alpaca_cli.ts submit-order --symbol <TICKER> --qty <n> --side <buy|sell> [--type limit --limit-price <n>]
   bun run src/tools/fmp_cli.ts get-analyst-estimates --symbol <TICKER>
   bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>
-  bun run src/tools/ledger_cli.ts prepend --mode <hourly|tactical> --tldr <TEXT> [--detail <TEXT> ...]
 `.trim();
 
 export async function buildPrompt(mode: AgentMode): Promise<string> {

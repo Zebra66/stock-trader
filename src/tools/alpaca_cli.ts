@@ -3,31 +3,6 @@ import { getDefaultAlpacaClient } from './alpaca_client_factory';
 
 export const alpaca = getDefaultAlpacaClient();
 
-interface AlpacaTradeSnapshot {
-  Symbol: string;
-  LatestTrade: {
-    Price: number;
-    Timestamp: string;
-  };
-  LatestQuote: {
-    BidPrice: number;
-    AskPrice: number;
-    Timestamp: string;
-  };
-  MinuteBar: {
-    ClosePrice: number;
-    Timestamp: string;
-  };
-  DailyBar: {
-    ClosePrice: number;
-    Timestamp: string;
-  };
-  PrevDailyBar: {
-    ClosePrice: number;
-    Timestamp: string;
-  };
-}
-
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
@@ -49,13 +24,8 @@ export const alpacaTools = {
 
   getLatestPrice: async (symbol: string): Promise<string> => {
     try {
-      const snapshot = await alpaca.getSnapshot(symbol) as AlpacaTradeSnapshot;
-      return JSON.stringify({
-        ...snapshot,
-        CurrentPrice: snapshot.LatestTrade.Price,
-        PriceSource: 'LatestTrade',
-        FetchedAt: new Date().toISOString(),
-      });
+      const bar = await alpaca.getLatestBar(symbol);
+      return JSON.stringify(bar);
     } catch (e: unknown) {
       return `Error getting latest price for ${symbol}: ${(e as Error).message}`;
     }
@@ -116,7 +86,7 @@ Commands:
       List all current holdings with qty, market value, and unrealised P&L.
 
   get-latest-price --symbol <TICKER>
-      Get the latest market snapshot for a symbol, including live trade, quote, and bar data.
+      Get the latest OHLCV bar for a symbol.
 
   get-clock
       Get market clock: whether the market is currently open, next open/close times.
