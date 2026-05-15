@@ -1,6 +1,9 @@
 # Hourly Macro Memory
 *Updated 2026-05-15 10:40 ET from live Alpaca snapshots.*
 
+## Tactical Update
+No conditions met — held all positions because XLK ($177.18), NVDA ($227.79), and AVGO ($425.89) remained below their authorized buy triggers.
+
 No conditions met — held all positions. XLK ($176.895), NVDA ($227.33), and AVGO ($424.695) all remained below their buy triggers, so the book stayed unchanged.
 
 ## Current Regime
