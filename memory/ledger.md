@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-15 : 13:40 : [tactical] Submitted the active SOXX breakout buy as price reclaimed the hourly trigger.
+- SOXX traded at 517.02, clearing the 516.80 buy level, so 1 share was submitted at market.
+- The order keeps the book aligned with the offensive catch-up plan and continues reducing cash drag without introducing new strategy changes.
+
 2026-05-15 : 13:37 : [hourly] Remained offensive catch-up, reconciled tactical NVDA/XLK fills, and queued one SOXX breakout add to lift exposure near 99%.
 - Live broker holdings are AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 2, XLK 8 with $10,124.89 equity, $652.45 cash, and 93.6% gross exposure.
 - Portfolio is +1.25% versus SPY +3.45% from the fixed 2026-05-04 baseline, so cash drag remains the dominant failure mode and SOXX is the only active buy this cycle to avoid over-queueing beyond cash.
