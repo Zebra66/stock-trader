@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-15 : 09:39 : [hourly] Stayed offensive catch-up: the book is +0.44% vs SPY +3.04%, live exposure is 86.8%, and fresh deployment now targets XLK, NVDA, and AVGO recovery buys.
+- Cash drag remains the dominant failure mode even though the portfolio is profitable, so the plan is to lift exposure from 86.8% toward roughly 99% without breaking concentration caps.
+- QQQ, SOXX, and GOOG are near cap limits, so fresh capital is redirected into XLK, NVDA, and AVGO while avoiding same-day sell instructions because daytrade_count is 3.
+
 2026-05-15 : 09:30 : [tactical] Held all positions; QQQ did not meet the sell trigger.
 - QQQ last trade was 710.22, above the 710.00 sell threshold.
 - No other actionable buy or sell conditions were present in memory/todo.md.
