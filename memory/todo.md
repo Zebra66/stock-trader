@@ -1,4 +1,4 @@
-BUY NVDA 1 shares at market if price >= $229.60
+BUY NVDA 1 shares at market if price >= $227.00
 HOLD QQQ — target allocation 42%
 HOLD SOXX — target allocation 15%
 HOLD XLK — target allocation 15%

@@ -1,61 +1,55 @@
 # Hourly Macro Memory
-*Updated 2026-05-15 14:35 ET from live Alpaca snapshots.*
+*Updated 2026-05-15 15:36 ET from live Alpaca snapshots.*
 
 ## Current Regime
 - **Regime:** **offensive catch-up**
 
 ## Macro Thesis
-Benchmark-window leadership is still the same: semiconductors and core growth tech remain the only groups clearly outrunning SPY since the fixed **2026-05-04 close** anchor. Live relative returns are **NVDA +15.36%**, **SOXX +11.45%**, **XLK +9.57%**, **QTUM +6.47%**, and **QQQ +5.79%** versus **SPY +3.18%**. By contrast, the lagging catch-up buckets remain poor capital deployment vehicles for this benchmark window: **XLE -0.30%**, **XLF -0.93%**, and **SHLD -8.51%**. Today is a normal pullback inside the winning regime, not a market free-fall: **SPY -0.96% intraday**, **QQQ -1.13%**, **XLK -1.10%**, **SOXX -2.86%**, and **NVDA -2.83%**.
+Benchmark-window leadership is still concentrated in semiconductors and core growth tech. Using the fixed **2026-05-04 close** anchor, the best relative performers in our working universe remain **NVDA +14.49%**, **SOXX +11.18%**, **XLK +9.30%**, **QTUM +6.10%**, and **QQQ +5.69%** versus **SPY +3.11%**. The lagging alternatives remain poor catch-up vehicles for this evaluation window: **XLE -0.29%**, **XLF -0.90%**, **EIS -1.67%**, and **SHLD -8.43%**. We still need leadership exposure, not diversification into weaker groups.
 
-Broker data confirms the book is now substantially deployed after the latest semiconductor add: **AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8**. The earlier memory snapshot understated **SOXX** by one share; live broker data wins and memory has been reconciled so tactical does not double-count already-filled exposure. With only **$135.42 cash** left, the correct posture is still offensive catch-up, but now through a single small top-off in a proven leader rather than broadening into lagging sectors.
+Today’s tape is a pullback, not a free-fall. Intraday moves are roughly **SPY -1.03%**, **QQQ -1.21%**, **XLK -1.34%**, **SOXX -3.06%**, and **NVDA -3.58%**. That is enough to avoid chasing broad new size, but not enough to abandon the offensive stance. With the book already near full exposure, the right move is a single cap-compliant top-off in the strongest affordable leader rather than rotating into lagging sectors.
 
 ## Goal Check
 - **Status:** **Off track — cash drag**
-- **Portfolio return since fixed 2026-05-04 baseline:** **+0.86%** (**$10,086.32 vs $10,000.00**)
-- **SPY return since fixed 2026-05-04 close baseline:** **+3.18%** (**740.91 vs 718.09**)
+- **Portfolio return since fixed 2026-05-04 baseline:** **+0.76%** (**$10,075.50 vs $10,000.00**)
+- **SPY return since fixed 2026-05-04 close baseline:** **+3.11%** (**740.41 vs 718.09**)
 - **Dominant failure mode:** **cash drag**
-- **Assessment:** profitable in absolute dollars, but still behind SPY because too much of the evaluation window was spent underinvested before the leadership stack was built.
+- **Assessment:** the account is still profitable in absolute dollars, but it remains behind SPY because the portfolio spent too much of the benchmark window underinvested before the current tech-heavy stack was built.
 
 ## Current Exposure / Blocker
-- **Equity / cash / long market value:** **$10,086.32 / $135.42 / $9,950.90**
+- **Equity / cash / long market value:** **$10,075.50 / $135.42 / $9,940.08**
 - **Current gross exposure:** **98.66%**
-- **Target gross-exposure band:** **100.0-101.5%**
-- **Blocker:** **PDT pressure (`daytrade_count = 3`) means any fresh buy must be treated as overnight swing exposure; do not pair a same-day exit with a new add opened this afternoon.**
-- **Share-count reconciliation:** broker-confirmed holdings are **AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8**.
+- **Target gross-exposure band:** **100.0-101.0%**
+- **Blocker:** **PDT pressure (`daytrade_count = 3`) means any fresh add must be treated as overnight swing exposure; do not pair a same-day exit with a new afternoon buy.**
+- **Share-count reconciliation:** broker-confirmed holdings are **AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8**. Memory has been reconciled to live broker data so tactical cannot double-count already-filled buys.
 - **Research snapshots:**
-  - `memory/research/alpaca_account_20260515T183509Z.json`
-  - `memory/research/alpaca_positions_20260515T183509Z.json`
-  - `memory/research/alpaca_clock_20260515T183509Z.json`
-  - `memory/research/price_cli_20260515T183509Z.jsonl`
-  - `memory/research/market_summary_20260515T183509Z.json`
+  - `memory/research/alpaca_account_20260515T193604Z.json`
+  - `memory/research/alpaca_positions_20260515T193604Z.json`
+  - `memory/research/alpaca_clock_20260515T193604Z.json`
+  - `memory/research/price_cli_20260515T193604Z.jsonl`
+  - `memory/research/market_summary_20260515T193604Z.json`
 
 ## Ranked Deployment Queue
-1. **NVDA** — active top-off buy: **1 share on strength through $229.60**. Post-fill gross exposure would rise to about **100.93%** and NVDA would still be only about **9.1%** of equity, well inside the single-stock cap.
-2. **XLK** — first alternate only if NVDA never reclaims but broad tech firms up. A **1-share** add around **$177.85** would lift gross exposure to about **100.42%** and keep XLK near **15.8%**.
-3. **QTUM** — secondary alternate only if broad AI/quantum beta strengthens late day. A **1-share** add around **$144.60** would take gross exposure to about **100.09%** with minimal cap risk.
+1. **NVDA** — active residual-cash top-off. A **1-share** add is the best use of remaining buying capacity because it targets the highest-relative-strength affordable leader. Post-fill gross exposure would be about **100.91%** and NVDA would still be only about **9.03%** of equity, well inside the **15%** single-stock cap. The breakout trigger in `todo.md` is intentionally already in-the-money at the current tape so the next tactical cycle can buy immediately if NVDA is still holding this zone.
+2. **XLK** — first alternate only if NVDA loses the level before tactical acts. A **1-share** add would lift gross exposure to about **100.41%** and keep XLK near **15.83%**, safely under the ETF cap.
+3. **QTUM** — second alternate for the next hourly review only. A **1-share** add would take gross exposure to about **100.08%** with minimal cap risk, but its benchmark value remains lower than NVDA or XLK.
 
-**Queued-buy check:** only the **NVDA** order is live this cycle. Alternates are documented for the next hourly review, not queued in `todo.md`, so combined open buys cannot overrun cash or target exposure.
+**Cap / queue check:** only the single **NVDA** order is live this cycle. **QQQ** cannot be increased because one more share would lift it to about **49.40%** of equity, above the **45%** cap. **SOXX** cannot be increased because a fourth share would push it to about **20.40%**, above the **20%** ETF cap. **GOOG** cannot be increased because a fourth share would breach the **15%** single-stock cap.
 
 ## Symbol Table
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | Hold | Core growth beta remains the anchor and stays under the 45% cap | 42 |
-| SOXX | Hold | Semiconductor leadership remains valid, but 3 shares already place it near the practical ETF target | 15 |
-| XLK | Hold / alternate add | Diversified tech exposure still outperforms SPY and remains a valid secondary add | 15 |
-| NVDA | Buy-on-strength | Best small-dollar top-off among true benchmark-window leaders; high relative strength and cap room remain | 9 |
-| GOOG | Hold | Quality AI/cloud exposure, but another share would breach the 15% single-stock cap | 12 |
-| AVGO | Hold | Strong AI infrastructure exposure, but not the best marginal add with only one small tranche left | 8 |
-| QTUM | Watch / alternate add | Positive AI/quantum beta and affordable for a small top-off if breadth improves | 0-2 |
-| META | Watch | Healthy megacap trend, but not a higher-priority add than NVDA or XLK this hour | 0-3 |
-| RKLB | Avoid new adds | Powerful relative strength but still too extended/speculative for this deployment slot | 0-2 |
-| ARKX | Low-priority watch | Positive relative trend, but weaker benchmark utility than core tech leaders | 0-1 |
-| XLE | Avoid | Energy is improving intraday, but still lags the benchmark window leadership basket | 0-2 |
-| XLF | Avoid | Financials remain a relative laggard versus the tech needed to beat SPY | 0-2 |
+| QQQ | Hold | Core growth beta remains the anchor and is still within the 45% cap | 42 |
+| SOXX | Hold | Semiconductor leadership remains valid, but current size is already near the ETF cap | 15 |
+| XLK | Hold / alternate add | Diversified tech remains a strong benchmark-beating sleeve with room for one more share | 15 |
+| NVDA | Buy now / top-off | Highest-relative-strength affordable leader; best residual-cash deployment | 9 |
+| GOOG | Hold | Good AI/cloud exposure, but another share would breach the stock cap | 12 |
+| AVGO | Hold | Strong AI infrastructure exposure, but the next marginal dollar belongs in NVDA | 8 |
+| QTUM | Watch / alternate add | Positive AI-beta and affordable, but still below NVDA and XLK in priority | 0-2 |
+| META | Watch | Healthy megacap trend, but not a better marginal add than NVDA | 0-3 |
+| RKLB | Watch only | Very strong return profile, but too extended/speculative for this final cash tranche | 0-2 |
+| ARKX | Low-priority watch | Constructive trend, but lower benchmark utility than core tech leaders | 0-1 |
+| XLE | Avoid | Energy still lags the benchmark-window winners | 0-2 |
+| XLF | Avoid | Financials remain a relative laggard vs the tech leadership basket | 0-2 |
 | GLD | Avoid | No defensive regime signal requiring new gold exposure | 0-2 |
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to justify capital | 0 |
-
-## Tactical Update
-- 2026-05-15 14:50 ET: No conditions met — held all positions; NVDA remained below the $229.60 buy trigger at $228.51.
-- 2026-05-15 15:10 ET: No conditions met — held all positions; NVDA stayed below the $229.60 buy trigger at $227.64.
-- 2026-05-15 15:20 ET: No conditions met — held all positions; NVDA traded at $227.44, still below the $229.60 buy trigger.
-- 2026-05-15 15:30 ET: No conditions met — held all positions; NVDA remained below the $229.60 buy trigger at $226.95.
