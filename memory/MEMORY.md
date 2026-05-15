@@ -1,7 +1,7 @@
 # Hourly Macro Memory
 *Updated 2026-05-15 10:40 ET from live Alpaca snapshots.*
 
-Tactical update: no conditions were met this cycle, so all positions were held while XLK, NVDA, and AVGO stayed below their recovery triggers.
+No conditions met — held all positions.
 
 ## Current Regime
 - **Regime:** **offensive catch-up**
