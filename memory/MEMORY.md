@@ -53,3 +53,6 @@ Broker data confirms the book is now substantially deployed after the latest sem
 | XLF | Avoid | Financials remain a relative laggard versus the tech needed to beat SPY | 0-2 |
 | GLD | Avoid | No defensive regime signal requiring new gold exposure | 0-2 |
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to justify capital | 0 |
+
+## Tactical Update
+- 2026-05-15 14:40 ET: No conditions met — held all positions; NVDA stayed below the $229.60 buy trigger at $229.40.
