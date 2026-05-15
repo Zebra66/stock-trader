@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-15 : 15:42 : [tactical] NVDA buy trigger hit, but Alpaca timed out and no fill was confirmed
+- NVDA traded at 227.48 versus the 227.00 trigger in regular session
+- Order submission returned 504 twice, so the buy remains pending
+
 2026-05-15 : 15:38 : [hourly] Stayed offensive catch-up: portfolio is +0.76% vs SPY +3.11%, gross exposure is 98.7%, and the residual-cash top-off remains a 1-share NVDA buy.
 - Cash drag remains the dominant failure mode even though the account is still profitable in dollars.
 - QQQ, SOXX, and GOOG cannot be increased without breaching concentration caps, so NVDA is the only active top-off order.

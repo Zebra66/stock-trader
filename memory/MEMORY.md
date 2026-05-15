@@ -53,3 +53,6 @@ Today’s tape is a pullback, not a free-fall. Intraday moves are roughly **SPY 
 | XLF | Avoid | Financials remain a relative laggard vs the tech leadership basket | 0-2 |
 | GLD | Avoid | No defensive regime signal requiring new gold exposure | 0-2 |
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to justify capital | 0 |
+
+## Tactical Execution Note
+- At 15:40 ET, NVDA printed **227.48**, which met the tactical buy trigger, but Alpaca order submission returned **504 Gateway Timeout** twice; no fill was confirmed.
