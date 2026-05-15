@@ -57,3 +57,4 @@ Broker data confirms the book is now substantially deployed after the latest sem
 ## Tactical Update
 - 2026-05-15 14:50 ET: No conditions met — held all positions; NVDA remained below the $229.60 buy trigger at $228.51.
 - 2026-05-15 15:10 ET: No conditions met — held all positions; NVDA stayed below the $229.60 buy trigger at $227.64.
+- 2026-05-15 15:20 ET: No conditions met — held all positions; NVDA traded at $227.44, still below the $229.60 buy trigger.
