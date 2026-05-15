@@ -57,4 +57,7 @@ No conditions met — held all positions.
 | GLD | Avoid | No defensive macro regime requiring new gold exposure | 0-2 |
 | XLF | Avoid | Financials continue to lag the tech leadership needed to beat SPY | 0-3 |
 | XLE | Avoid | Energy is firmer today, but its benchmark-window relative performance still trails tech | 0-3 |
-| SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace current leaders | 0 |
+| SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace current leaders | 0
+
+### Tactical Cycle Note
+- 2026-05-15 tactical cycle: No conditions met — held all positions. |
