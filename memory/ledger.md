@@ -2,6 +2,10 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-15 : 11:40 : [tactical] No tactical trades; XLK, NVDA, and AVGO all stayed below their breakout buy levels.
+- XLK last trade was 177.26, below the 177.60 trigger.
+- NVDA last trade was 228.39 vs 229.00 and AVGO was 426.895 vs 428.50.
+
 2026-05-15 : 11:39 : [hourly] Stayed offensive catch-up: portfolio is +1.06% vs SPY +3.27%, exposure is 90.3%, and fresh deployment remains XLK then NVDA then AVGO.
 - Cash drag remains the dominant failure mode even though the account is positive in dollars; live equity is $10,106.09 with $975.85 cash.
 - Refreshed breakout triggers to XLK 177.60, NVDA 229.00, and AVGO 428.50 so tactical only buys if strength is still live and full deployment reaches about 98.6% gross exposure without breaching caps.
