@@ -43,6 +43,7 @@ You are running inside the repository root as a full Pi.dev coding agent. Use th
   - `SELL <TICKER> <N> shares at market if price <= $X` (stop loss)
   - `SELL <TICKER> <N> shares at market if price >= $Y` (take profit)
   - `HOLD <TICKER> — target allocation Z%`
+- **Trigger freshness:** If a breakout `BUY ... if price >= $Y` line would already be in-the-money at the live price you are looking at, either raise the trigger modestly above the current price or explicitly state in `MEMORY.md` that it is an intentional immediate next-cycle buy. Do not leave stale breakout levels below the current price without explanation.
 - **No-trade conditions:** Only write these when the market is closed, a data blackout exists, or a specific symbol has a known blocker (e.g. earnings in 30 min). Do not write generic "no-trade" rules.
 
 ### Step 4 — Dreaming memory maintenance (1 minute)
