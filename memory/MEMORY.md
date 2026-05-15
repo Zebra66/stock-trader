@@ -56,4 +56,4 @@ Broker data confirms the account already owns the correct growth complex: **QQQ 
 | XLE | Avoid | Energy remains a laggard versus the benchmark window's winners | 0-3 |
 | SHLD | Avoid | Weak relative strength and no catalyst strong enough to displace tech leadership | 0 |
 
-No conditions met — held all positions.
+No conditions met this cycle — held all positions.
