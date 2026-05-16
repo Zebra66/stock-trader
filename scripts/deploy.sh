@@ -18,18 +18,23 @@ docker buildx build \
 
 # Deploy to Cloud Run
 # Note: You should configure environment variables securely via the Cloud Console or Secret Manager.
-gcloud run deploy stock-trader \
+DEPLOY_OUTPUT=$(gcloud run deploy stock-trader \
   --image $IMAGE_NAME \
   --platform managed \
   --allow-unauthenticated \
   --region us-central1 \
-  --port 3000
+  --port 3000 \
+  2>&1)
+echo "$DEPLOY_OUTPUT"
 
 # ─── Post-Deployment Smoke Test ─────────────────────────────────────────────
-SERVICE_URL=$(gcloud run services describe stock-trader \
-  --platform managed \
-  --region us-central1 \
-  --format 'value(status.url)')
+SERVICE_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'Service URL:\s+\K\S+' || true)
+if [ -z "$SERVICE_URL" ]; then
+  SERVICE_URL=$(gcloud run services describe stock-trader \
+    --platform managed \
+    --region us-central1 \
+    --format 'value(status.url)')
+fi
 
 echo ""
 echo "Service deployed at: $SERVICE_URL"
