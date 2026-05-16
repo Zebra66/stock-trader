@@ -54,7 +54,7 @@ function resolveDashboardMode(requestedMode?: string): AlpacaMode {
 const app = new Elysia()
   .onRequest(({ request, set }) => {
     const url = new URL(request.url);
-    if (url.pathname.startsWith('/auth') || url.pathname === '/favicon.svg') return;
+    if (url.pathname.startsWith('/auth') || url.pathname === '/favicon.svg' || url.pathname === '/api/health') return;
     
     const cookieHeader = request.headers.get('cookie') || '';
     const match = cookieHeader.match(/auth_session=([^;]+)/);
