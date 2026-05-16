@@ -647,6 +647,12 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
         provider: 'openai',
         modelID: parsedModel.modelID,
       };
+    case 'trader-zen':
+      return {
+        configuredProvider: parsedModel.providerID,
+        provider: 'opencode',
+        modelID: parsedModel.modelID,
+      };
     case 'google':
     case 'openai':
       return {
@@ -670,6 +676,12 @@ export function applyProviderEnv(provider: KnownProvider): void {
   if (provider === 'openai') {
     if (!process.env.OPENAI_API_KEY) {
       throw new Error('OPENAI_API_KEY is required for trader-openai models');
+    }
+  }
+
+  if (provider === 'opencode') {
+    if (process.env.ZEN_API_KEY && !process.env.OPENCODE_API_KEY) {
+      process.env.OPENCODE_API_KEY = process.env.ZEN_API_KEY;
     }
   }
 }
