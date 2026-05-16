@@ -52,8 +52,18 @@ You also have access to Google Search — use it to:
 - Distinguish clearly between **weak evidence, do nothing** and **confirmed setup, act now**. Do not let generic caution language override a valid, liquid, regular-hours confirmation.
 - When a bash step needs more than a very short inline script, avoid fragile shell quoting. Write a temporary TypeScript helper under `temp_files/` and run it with `bun run` instead of embedding a long `bun -e` or heavily quoted one-liner.
 
-### Step 4 — Execute orders
-- For each condition met in todo.md, execute the corresponding order via the Alpaca CLI
+### Step 4 — Pre-trade checklist (mandatory before every order)
+Before executing ANY order via the Alpaca CLI, verify ALL of the following. If any check fails, **abort the order** and log the blocker.
+1. **Universe check:** Is the symbol in the approved universe? (AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX). If not, abort.
+2. **Cooldown check:** Was this symbol sold within the last 24 hours? If yes and the hourly note did NOT explicitly authorize re-entry, abort.
+3. **Churn check:** Are you about to execute a same-day round trip (buying a symbol sold today, or selling a symbol bought today) without explicit hourly authorization? If yes, abort.
+4. **Market hours check:** Is the market open for regular session? If not, convert to a next-session trigger; do not submit.
+5. **PDT check:** Will this sell create a daytrade (position opened today) while daytrade_count >= 3? If yes, abort.
+6. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
+7. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
+
+### Step 5 — Execute orders
+- For each condition met in todo.md that passes the pre-trade checklist, execute the corresponding order via the Alpaca CLI
 - If price gaps through a trigger or moves too far beyond the intended entry/exit level, re-evaluate the setup instead of blindly executing a stale condition
 - Do not average down
 - Add only to winners and only if the add is smaller than or equal to the prior add
@@ -104,7 +114,7 @@ When the detector reports CRITICAL or MAJOR, stale todo conditions may be danger
 
 ---
 
-### Step 5 — Update state and commit (applies to both modes)
+### Step 6 — Update state and commit (applies to both modes)
 - Update `memory/MEMORY.md` with a concise execution summary block:
   - What was done this cycle, authoritative current holdings, current exposure, and next expected action
 - Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives

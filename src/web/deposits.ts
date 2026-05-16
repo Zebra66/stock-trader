@@ -3,7 +3,10 @@ import { getLogger } from '../logger';
 import { getDefaultAlpacaClient } from '../tools/alpaca_client_factory';
 
 const logger = getLogger('deposits');
-const DEPOSITS_FILE = 'data/investment_deposits.json';
+
+function getDepositsFile(): string {
+  return process.env.DEPOSITS_FILE ?? 'data/investment_deposits.json';
+}
 
 export interface DepositEntry {
   /** Delta amount in USD. Positive = deposit, negative = withdrawal from broker. */

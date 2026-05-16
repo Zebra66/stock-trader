@@ -1,5 +1,22 @@
 # Hourly Macro Memory
-*Updated 2026-05-16 (Saturday, market closed). Next regular session: Monday 2026-05-18 09:30 ET.*
+*Updated 2026-05-16 17:25 UTC+7 / 06:25 ET Saturday. Market closed. Next regular session: Monday 2026-05-18 09:30 ET. Alpaca state confirmed live.*
+
+## Tactical Execution Log
+
+### 2026-05-16 10:24Z — Saturday Tactical Run
+- **Status:** Market closed. No trades executed.
+- **Event classification:** NONE (detector ran, no anomalies).
+- **Portfolio unchanged:** AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8.
+- **Equity:** $10,030.93 | **Cash:** $135.41 | **Gross exposure:** $9,895.52 (98.65%).
+- **Daytrade count:** 3/4 (caution: one daytrade remaining before PDT trigger).
+- **Plan for Monday 2026-05-18 open:**
+  1. SELL XLK 8 shares — #1 priority, compliance cleanup.
+  2. Trim SOXX 1 share → 2 shares.
+  3. Trim NVDA 1 share → 2 shares.
+  4. Trim AVGO 1 share → 1 share.
+  5. HOLD QQQ 6, HOLD GOOG 3.
+- **No new discretionary buys until:** XLK fully exited, gross exposure inside 30–50% band, and hourly strategist explicitly lifts cleanup-only hard lock.
+- **Weekend news scan:** No adverse headlines. BofA reiterates NVDA/AMD as top chip picks; GOOG AI capex narrative intact. No material changes to Monday plan.
 
 ## Current Regime
 - **Regime:** **defensive** — cleanup mode until the unauthorized XLK position is fully exited.
@@ -106,7 +123,7 @@ The multi-week AI/semiconductor/growth trend remains intact (SOXX +26.5% 1M, GOO
 
 ---
 
-## Tactical Execution Summary — 2026-05-16 10:25 UTC
+## Tactical Execution Summary — 2026-05-16 10:26 UTC
 - **Market status:** CLOSED (Saturday). No regular-session orders possible.
 - **Event detector:** NONE — no market-moving events detected.
 - **Orders placed:** None.
