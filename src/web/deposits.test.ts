@@ -15,30 +15,24 @@ import { buildDashboardData } from './dashboard_data';
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 const TEST_DIR = 'data_test_tmp';
-const ORIG_FILE = 'data/investment_deposits.json';
 
-/** Override the module's file path for isolation — we patch via process env trick
- *  instead: just operate on a backup + restore pattern. */
+/** Run test code with an isolated deposits file. */
 async function withTempDeposits(entries: DepositEntry[], fn: () => Promise<void>) {
-  // Backup original
-  let originalContent: string | null = null;
-  try {
-    originalContent = await fs.readFile(ORIG_FILE, 'utf8');
-  } catch { /* no original */ }
+  const tmpFile = path.join(TEST_DIR, `deposits_${Date.now()}_${Math.random().toString(36).slice(2)}.json`);
+  await fs.mkdir(TEST_DIR, { recursive: true });
+  await fs.writeFile(tmpFile, JSON.stringify(entries, null, 2) + '\n', 'utf8');
 
-  // Write temp content
-  await fs.mkdir('data', { recursive: true });
-  await fs.writeFile(ORIG_FILE, JSON.stringify(entries, null, 2) + '\n', 'utf8');
-
+  const previous = process.env.DEPOSITS_FILE;
+  process.env.DEPOSITS_FILE = tmpFile;
   try {
     await fn();
   } finally {
-    // Restore original
-    if (originalContent !== null) {
-      await fs.writeFile(ORIG_FILE, originalContent, 'utf8');
+    if (previous !== undefined) {
+      process.env.DEPOSITS_FILE = previous;
     } else {
-      await fs.unlink(ORIG_FILE).catch(() => {});
+      delete process.env.DEPOSITS_FILE;
     }
+    await fs.unlink(tmpFile).catch(() => {});
   }
 }
 
@@ -226,10 +220,11 @@ describe('syncDepositsFromAlpaca', () => {
         ]
       };
 
-      const statBefore = await fs.stat(ORIG_FILE);
+      const file = process.env.DEPOSITS_FILE!;
+      const statBefore = await fs.stat(file);
       await new Promise(r => setTimeout(r, 10)); // Ensure mtime would change if written
       await syncDepositsFromAlpaca(mockClient);
-      const statAfter = await fs.stat(ORIG_FILE);
+      const statAfter = await fs.stat(file);
       
       expect(statAfter.mtimeMs).toBe(statBefore.mtimeMs);
     });

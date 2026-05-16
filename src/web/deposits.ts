@@ -20,7 +20,7 @@ export interface DepositEntry {
 /** Read all deposit entries from disk, sorted ascending by timestamp. */
 export async function readDeposits(): Promise<DepositEntry[]> {
   try {
-    const raw = await fs.readFile(DEPOSITS_FILE, 'utf8');
+    const raw = await fs.readFile(getDepositsFile(), 'utf8');
     const parsed = JSON.parse(raw) as DepositEntry[];
     if (!Array.isArray(parsed)) return [];
     // Always return sorted by time ascending
@@ -34,7 +34,7 @@ export async function readDeposits(): Promise<DepositEntry[]> {
 /** Persist the full deposits array to disk. */
 export async function writeDeposits(entries: DepositEntry[]): Promise<void> {
   await fs.mkdir('data', { recursive: true });
-  await fs.writeFile(DEPOSITS_FILE, JSON.stringify(entries, null, 2) + '\n', 'utf8');
+  await fs.writeFile(getDepositsFile(), JSON.stringify(entries, null, 2) + '\n', 'utf8');
 }
 
 /** Append a single new deposit entry and persist. */

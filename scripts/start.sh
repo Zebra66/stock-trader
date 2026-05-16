@@ -13,13 +13,12 @@ git config --global user.name "Auto Stock Agent" || true
 
     if [ ! -d ".git" ]; then
       # Cloud Build stripped .git/ — reconstruct git metadata without touching working tree.
-      # We init, fetch, then use reset --mixed so HEAD points at latest commit but
-      # working tree files (the already-deployed app code) are untouched.
+      # We init, fetch, then point HEAD at the latest commit without changing any files.
       echo "[start.sh] .git not found — initializing git metadata..."
       git init
       git remote add origin "$REMOTE_URL"
       git fetch origin main --depth=50 --quiet
-      git reset --mixed FETCH_HEAD
+      git update-ref HEAD FETCH_HEAD
       git branch -M main
       git branch --set-upstream-to=origin/main main
     else
