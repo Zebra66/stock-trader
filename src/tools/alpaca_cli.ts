@@ -3,6 +3,10 @@ import { getDefaultAlpacaClient } from './alpaca_client_factory';
 
 export const alpaca = getDefaultAlpacaClient();
 
+const UNIVERSE = new Set([
+  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
+]);
+
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
@@ -39,6 +43,9 @@ export const alpacaTools = {
     timeInForce: 'day' | 'gtc' = 'day',
     limitPrice?: number
   ): Promise<string> => {
+    if (side === 'buy' && !UNIVERSE.has(symbol.toUpperCase())) {
+      return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
+    }
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }

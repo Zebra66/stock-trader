@@ -181,6 +181,17 @@ describe('Alpaca CLI', () => {
     expect(stderr).toContain('--side must be');
   });
 
+  test('submit-order rejects out-of-universe buy', async () => {
+    const result = await alpacaTools.submitOrder('XLK', 1, 'buy');
+    expect(result).toContain('not in the approved investment universe');
+  });
+
+  test('submit-order allows out-of-universe sell for cleanup', async () => {
+    const result = await alpacaTools.submitOrder('XLK', 1, 'sell');
+    // Should not be blocked by universe check (will fail at broker if no position, but that's a different layer)
+    expect(result).not.toContain('not in the approved investment universe');
+  });
+
   test('get-clock returns market clock JSON', async () => {
     const { stdout, exitCode } = await runCli('src/tools/alpaca_cli.ts', ['get-clock']);
     expect(exitCode).toBe(0);

@@ -1,55 +1,57 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-16 Saturday from tactical cycle. Market closed; next regular session Monday 2026-05-18.*
+*Updated 2026-05-16 (Saturday). Next session: Monday 2026-05-18 regular hours.*
 
 ## Current State
-- **Regime:** **defensive** (cleanup-only until XLK removed and exposure reduced)
-- **Live book:** **AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8**
-- **Account equity / cash / buying power:** **$10,030.93 / $135.41 / $10,166.34**
-- **Gross exposure:** **98.65%** — above every target band. Immediate reduction required Monday.
-- **Daytrade count:** **3** — one daytrade away from PDT flag. No same-day reversals Monday.
-- **Pattern day trader:** false.
-- **Next market open:** Monday 2026-05-18 09:30 ET.
+- **Regime:** neutral
+- **Live book:** QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2
+- **Equity:** $10,030.93 | **Cash:** $135.41 | **Buying power:** $10,166.34
+- **Gross exposure:** 98.65% of equity
+- **Daytrade count:** 3 | **PDT flag:** false
+- Portfolio +0.31% since baseline vs SPY +2.95% — **off track, trailing by 2.64pp**
 
-## Monday Execution Priority
-1. **SELL XLK full position (8 shares)** at first eligible broker window after 09:30 ET. This is NOT a same-day reversal (last add was Friday), so PDT should not block it. If broker rejects for any other reason, log error and stop retrying.
-2. **After XLK exit, reduce gross exposure toward 75-85% band.** Evaluate trimming 1 share from the weakest sleeve:
-   - **SOXX** if it opens weak (below ~$508)
-   - **NVDA** if it breaks below ~$223.5
-   - **AVGO** if it breaks below ~$420
-3. **HOLD approved core positions** that are not at stop levels: QQQ, GOOG.
+## Monday Hard Rules
+1. **UNIVERSE CHECK — BEFORE ANY BUY ORDER:** verify the symbol is in the approved universe (AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX). If NOT in the universe, **REJECT the order immediately** and log the violation.
+2. **24-HOUR COOLDOWN:** Do NOT re-buy any symbol that was sold within the previous 24 hours unless a fresh hourly note explicitly authorizes re-entry.
+3. **ONE TRADE PER CYCLE** unless this todo explicitly authorizes more.
+4. **NO SAME-DAY ROUND TRIPS** in any symbol.
+5. **DO NOT average down.** Adds only to winners or on confirmed breakout.
+6. **NO discretionary buys Monday** except for the ranked deployment queue items below, and only after XLK is fully gone and cash is at least 10% of equity.
+7. If a broker quote differs from Yahoo Finance by >0.5%, **do nothing** and log stale-data conflict.
+8. If regular hours are not active, convert to **next-session** triggers; do NOT send pre-market/after-hours equity orders.
 
-## Hard Rules / No-Trade Conditions
-- **No new discretionary buys Monday** unless an hourly note explicitly lifts the lock.
-- **Do not trade outside the approved universe.**
-- **No same-day reversals** — daytrade count is at 3. Any buy on Monday must not be sold same day.
-- **One order only this cycle** unless XLK is gone and a protective sell stop is hit.
-- **Do not average down.**
-- If a symbol has breaking adverse news, abnormal spread, or stale quote vs confirmation, **do nothing**.
+## Ranked Execution Priority for Monday
+1. **SELL XLK 8 shares at market open** — compliance breach, outside universe. This is the ONLY mandatory order for the first tactical cycle Monday.
+2. **HOLD all approved names** unless a stop level below is breached.
+3. **Trim SOXX 1 share if SOXX breaks $500.00** on a 5-minute close — reduce semi concentration if weakness continues.
+4. **No other sells Monday** unless a hard stop is hit.
+5. **No buys Monday** except if an exceptional dip-buying opportunity appears in GOOG, QQQ, or GLD AFTER XLK is sold and cash is confirmed >$1,000.
 
-## Position Instructions
-- **XLK — SELL 8 shares Monday open.** Compliance breach; outside approved universe. This is the #1 priority.
-- **QQQ — HOLD.** Target allocation 36-40%. Current ref ~$708.93.
-  - **SELL 1 share if QQQ breaks below $706** on a 5-minute close.
-  - **Do not add until hourly lock is lifted.**
-- **GOOG — HOLD.** Target allocation 10-13%. Current ref ~$393.32.
-  - **SELL 1 share if GOOG loses $389.5** on a 5-minute close.
-  - **Do not buy until lock is lifted.**
-- **SOXX — HOLD / Reduce on weakness.** Target allocation 10-12%. Current ref ~$508.52.
-  - **SELL 1 share if SOXX loses $506** on a 5-minute close.
-  - **Do not add.**
-- **NVDA — HOLD.** Target allocation 4-5%. Current ref ~$225.32.
-  - **SELL 1 share if NVDA breaks below $223.5** on a 5-minute close.
-  - **No same-day re-entry.**
-- **AVGO — HOLD.** Target allocation 4-5%. Current ref ~$425.19.
-  - **SELL 1 share if AVGO breaks below $420** on a 5-minute close.
-  - **No add until lock is lifted.**
+## Stop-Loss / Protective Levels
+- **QQQ** — SELL 1 share if price breaks **$700.00** on a 5-minute close. Otherwise HOLD. Current ref ~$708.93.
+- **GOOG** — SELL 1 share if price breaks **$389.00** on a 5-minute close. Otherwise HOLD. Current ref ~$393.32.
+- **SOXX** — SELL 1 share if price breaks **$500.00** on a 5-minute close. Otherwise HOLD. Current ref ~$508.52.
+- **NVDA** — SELL 1 share if price breaks **$220.00** on a 5-minute close. Otherwise HOLD. Current ref ~$225.32.
+- **AVGO** — SELL 1 share if price breaks **$420.00** on a 5-minute close. Otherwise HOLD. Current ref ~$425.19.
 
-## Future Deployment Queue
-*Only valid after XLK is gone, exposure is under 90%, and the hourly lock is explicitly lifted.*
-1. **GOOG** — best quality/relative-strength balance.
-2. **QQQ** — liquid core catch-up vehicle.
-3. **AVGO** — smaller add only on renewed strength.
+## Post-Cleanup Deployment Queue
+*Only valid after XLK is fully exited, cash >$1,000, and this note is updated by a later hourly run.*
+1. **GOOG** — quality AI/cloud, best Friday relative strength. Add 1 share if it reclaims $395 with volume.
+2. **QQQ** — core liquid growth. Add 1 share on a clean dip to ~$695 with market stabilization.
+3. **GLD** — inflation/fear hedge. Add 1–2 shares if SPY drops below $730 and yields keep climbing.
 
-## Tactical Intent
-- Monday = cleanup day. Remove XLK, trim overexposure, hold core.
-- Do not redeploy cash until compliance is restored and a later hourly note allows fresh buying.
+## Explicit No-Trade Conditions
+- **Do NOT buy XLK, MSFT, AAPL, TSLA, or any symbol outside the universe.**
+- **Do NOT buy any symbol that was sold today or yesterday** unless hourly note explicitly overrides.
+- **Do NOT chase NVDA or SOXX into weakness** — they are already overweight and were the weakest sleeve Friday.
+- **Do NOT add to any position if gross exposure is >90%** after the XLK sale.
+- **Do NOT submit more than one order per tactical cycle** unless a protective stop is triggered in a separate symbol.
+- **Do NOT place orders if broker quote trade count is <10** for the target symbol — confirm with Yahoo Finance first.
+
+## Weekend State
+- Market closed (Saturday). No regular-session trading possible.
+- All directives above convert to **next regular-session triggers** for Monday 2026-05-18 open.
+- If the market opens with a large gap down (>2% on QQQ or SPY), suspend all new buy triggers and re-read `memory/MEMORY.md` for updated guidance before acting.
+
+## This Cycle — 2026-05-16
+- **No orders placed.** Market closed.
+- **Next expected action:** Monday 2026-05-18 market open — sell XLK 8 shares.
