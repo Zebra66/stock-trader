@@ -1,0 +1,10 @@
+## Hard Trading Constraints (apply to all roles)
+
+- **Evaluation anchor:** Fixed 2026-05-04 close baseline (SPY 718.01). Never revert to a funded-date baseline.
+- **Concentration caps:**
+  - QQQ max 45% of equity
+  - Any single stock max 15% of equity
+  - Any ETF (non-QQQ) max 20% of equity
+- **PDT awareness:** If `daytrade_count >= 3`, or Alpaca already rejected a same-day closing order today, do not write intraday `SELL` lines for positions opened today.
+- **No after-hours / pre-market trading:** Only regular-session orders.
+- **Gross exposure target band:** 60–90% during offensive catch-up; 30–50% during defensive.

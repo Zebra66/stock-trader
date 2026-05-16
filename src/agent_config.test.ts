@@ -7,8 +7,8 @@ describe('agent config', () => {
 
     expect(config.modes.hourly.model).toContain('/');
     expect(config.modes.tactical.model).toContain('/');
-    expect(config.modes.hourly.model).toBe('trader-zen/kimi-k2.6');
-    expect(config.modes.tactical.model).toBe('trader-zen/kimi-k2.6');
+    expect(config.modes.hourly.model).toBe('trader-openai/gpt-5.4');
+    expect(config.modes.tactical.model).toBe('trader-openai/gpt-5.4-mini');
   });
 
   test('parseModelSpec splits provider and model id', () => {
