@@ -28,7 +28,7 @@ DEPLOY_OUTPUT=$(gcloud run deploy stock-trader \
 echo "$DEPLOY_OUTPUT"
 
 # ─── Post-Deployment Smoke Test ─────────────────────────────────────────────
-SERVICE_URL=$(echo "$DEPLOY_OUTPUT" | grep -oP 'Service URL:\s+\K\S+' || true)
+SERVICE_URL=$(echo "$DEPLOY_OUTPUT" | sed -n 's/.*Service URL:[[:space:]]*\([^[:space:]]*\).*/\1/p' | head -n1)
 if [ -z "$SERVICE_URL" ]; then
   SERVICE_URL=$(gcloud run services describe stock-trader \
     --platform managed \

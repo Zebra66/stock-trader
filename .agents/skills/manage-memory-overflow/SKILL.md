@@ -1,3 +1,7 @@
+---
+description: Handle memory tool failures when a target reaches its ~5000 character limit by consolidating or redirecting entries.
+---
+
 # Manage Pi Memory Overflow
 
 When the `memory` tool fails because a target has reached its ~5000 character limit and you need to save new information.
