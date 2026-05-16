@@ -1,4 +1,4 @@
-import type { AgentMode } from './opencode_runner';
+import type { AgentMode } from './types';
 
 interface AgentModeConfig {
   model: string;

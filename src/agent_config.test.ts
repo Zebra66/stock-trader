@@ -7,14 +7,14 @@ describe('agent config', () => {
 
     expect(config.modes.hourly.model).toContain('/');
     expect(config.modes.tactical.model).toContain('/');
-    expect(config.modes.hourly.model).toBe('trader-openai/gpt-5.4');
-    expect(config.modes.tactical.model).toBe('trader-openai/gpt-5.4-mini');
+    expect(config.modes.hourly.model).toBe('trader-zen/kimi-k2.6');
+    expect(config.modes.tactical.model).toBe('trader-zen/kimi-k2.6');
   });
 
   test('parseModelSpec splits provider and model id', () => {
-    expect(parseModelSpec('trader-openai/gpt-5.4')).toEqual({
-      providerID: 'trader-openai',
-      modelID: 'gpt-5.4',
+    expect(parseModelSpec('trader-zen/kimi-k2.6')).toEqual({
+      providerID: 'trader-zen',
+      modelID: 'kimi-k2.6',
     });
   });
 });

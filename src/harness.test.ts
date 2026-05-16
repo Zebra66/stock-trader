@@ -17,6 +17,7 @@ describe('harness CLI args', () => {
     expect(parseHarnessArgs(['--force-run'])).toEqual({
       forceRun: true,
       help: false,
+      dryRun: false,
     });
   });
 
@@ -24,6 +25,7 @@ describe('harness CLI args', () => {
     expect(parseHarnessArgs(['--help'])).toEqual({
       forceRun: false,
       help: true,
+      dryRun: false,
     });
   });
 
@@ -31,6 +33,7 @@ describe('harness CLI args', () => {
     expect(parseHarnessArgs([])).toEqual({
       forceRun: false,
       help: false,
+      dryRun: false,
     });
   });
 });
@@ -182,11 +185,11 @@ describe('harness run serialization', () => {
       },
     }));
 
-    const hourlyRun = runSerialized('hourly', { forceRun: false });
+    const hourlyRun = runSerialized('hourly', { forceRun: false, dryRun: false });
     await hourlyStarted.promise;
 
     marketOpen = false;
-    const secondHourlyRun = runSerialized('hourly', { forceRun: false });
+    const secondHourlyRun = runSerialized('hourly', { forceRun: false, dryRun: false });
 
     releaseHourly?.();
     await Promise.all([hourlyRun, secondHourlyRun]);
@@ -201,7 +204,7 @@ describe('harness startup scheduling', () => {
     let releaseStartupCycle: (() => void) | undefined;
 
     const startPromise = startHarnessLoop(
-      { forceRun: false },
+      { forceRun: false, dryRun: false },
       {
         loadWebServer: async () => {
           events.push('load-web-server');

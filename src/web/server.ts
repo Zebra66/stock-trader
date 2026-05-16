@@ -8,6 +8,7 @@ import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
 import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
+import { createTestJob, getTestJob, cleanupOldJobs } from '../test_runner';
 
 const logger = getLogger('web-server');
 const PORT = process.env.PORT || 3000;
@@ -59,8 +60,13 @@ const app = new Elysia()
     const match = cookieHeader.match(/auth_session=([^;]+)/);
     const token = match ? match[1] : null;
 
-    /*
-    if (!token || !verifySession(token, { allowedEmail: process.env.ALLOWED_USER_EMAIL })) {
+    // Allow deploy-smoke requests via a secret header key
+    const deployKey = request.headers.get('x-deploy-key');
+    const deployKeyValid = process.env.DEPLOY_API_KEY && deployKey === process.env.DEPLOY_API_KEY;
+
+    const isAuthenticated = token && verifySession(token, { allowedEmail: process.env.ALLOWED_USER_EMAIL });
+
+    if (!isAuthenticated && !deployKeyValid) {
       if (url.pathname.startsWith('/api/')) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
           status: 401,
@@ -72,7 +78,6 @@ const app = new Elysia()
         headers: { Location: '/auth/google' }
       });
     }
-    */
   })
   .get('/favicon.svg', () => {
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0a0f1e"/><polyline points="4,24 10,16 16,20 22,10 28,14" stroke="#00d4ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="10" r="2.5" fill="#00ff88"/></svg>`;
@@ -1060,6 +1065,9 @@ const app = new Elysia()
     });
   })
 
+  .get('/api/health', () => {
+    return { status: 'ok', timestamp: Date.now() };
+  })
   .get('/api/status', () => {
     return { paused: getPaused() };
   })
@@ -1648,6 +1656,54 @@ const app = new Elysia()
       return `Error processing OAuth callback: ${e.message}`;
     }
   })
+
+  // ─── Test Agent Endpoints (dry-run only) ─────────────────────────────────
+  .post('/api/test/hourly', () => {
+    try {
+      const { jobId, alreadyRunning } = createTestJob('hourly');
+      return { jobId, alreadyRunning, mode: 'hourly', dryRun: true };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.warn({ err: msg }, 'Test hourly job failed to start');
+      return new Response(JSON.stringify({ error: msg }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+  })
+  .post('/api/test/tactical', () => {
+    try {
+      const { jobId, alreadyRunning } = createTestJob('tactical');
+      return { jobId, alreadyRunning, mode: 'tactical', dryRun: true };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      logger.warn({ err: msg }, 'Test tactical job failed to start');
+      return new Response(JSON.stringify({ error: msg }), {
+        status: 429,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+  })
+  .get('/api/test/jobs/:id', ({ params }: { params: { id: string } }) => {
+    const job = getTestJob(params.id);
+    if (!job) {
+      return new Response(JSON.stringify({ error: 'Job not found' }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    return {
+      id: job.id,
+      mode: job.mode,
+      status: job.status,
+      startedAt: job.startedAt,
+      completedAt: job.completedAt,
+      exitCode: job.exitCode,
+      stdout: job.stdout,
+      stderr: job.stderr,
+    };
+  })
+
   .listen(PORT);
 
 logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);
@@ -1656,3 +1712,6 @@ logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);
 import { syncDepositsFromAlpaca } from './deposits';
 setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
 syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
+
+// Clean up old test jobs every 10 minutes
+setInterval(() => cleanupOldJobs(), 10 * 60 * 1000);

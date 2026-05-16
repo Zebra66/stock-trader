@@ -39,6 +39,9 @@ export const alpacaTools = {
     timeInForce: 'day' | 'gtc' = 'day',
     limitPrice?: number
   ): Promise<string> => {
+    if (process.env.DRY_RUN === '1') {
+      return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
+    }
     try {
       const order = await alpaca.createOrder({
         symbol,

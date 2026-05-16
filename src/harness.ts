@@ -18,10 +18,12 @@ const repoRoot = new URL('..', import.meta.url).pathname;
 interface HarnessArgs {
   forceRun: boolean;
   help: boolean;
+  dryRun: boolean;
 }
 
 interface HarnessOptions {
   forceRun: boolean;
+  dryRun: boolean;
 }
 
 interface StartHarnessDeps {
@@ -34,7 +36,7 @@ interface StartHarnessDeps {
   ) => void;
 }
 
-type AgentRunFunction = (mode: 'hourly' | 'tactical') => Promise<void>;
+type AgentRunFunction = (mode: 'hourly' | 'tactical', dryRun?: boolean) => Promise<void>;
 type ScheduledRunFunction = (mode: 'hourly' | 'tactical', options: HarnessOptions) => Promise<void>;
 
 interface MarketGatedAgentDeps {
@@ -56,6 +58,7 @@ export function parseHarnessArgs(argv: string[]): HarnessArgs {
   return {
     forceRun: argv.includes('--force-run'),
     help: argv.includes('--help'),
+    dryRun: argv.includes('--dry-run'),
   };
 }
 
@@ -72,13 +75,15 @@ async function runGitPull(mode: 'hourly' | 'tactical'): Promise<void> {
   }
 }
 
-async function spawnAgent(mode: 'hourly' | 'tactical'): Promise<void> {
-  if (isPaused && mode === 'tactical') {
+async function spawnAgent(mode: 'hourly' | 'tactical', dryRun = false): Promise<void> {
+  if (isPaused && mode === 'tactical' && !dryRun) {
     logger.info({ mode }, 'Trading is paused. Skipping tactical agent');
     return;
   }
-  logger.info({ mode }, '🤖 Spawning agent');
-  const proc = Bun.spawn(['bun', 'run', 'src/agent.ts', mode], {
+  logger.info({ mode, dryRun }, '🤖 Spawning agent');
+  const args = ['bun', 'run', 'src/agent.ts', mode];
+  if (dryRun) args.push('--dry-run');
+  const proc = Bun.spawn(args, {
     stdout: 'inherit',
     stderr: 'inherit',
     cwd: repoRoot,
@@ -140,7 +145,7 @@ export async function runMarketGatedAgent(
   // picks up any code changes that arrived via git pull automatically.
   // The harness process itself (this file) does NOT auto-reload after a git pull —
   // it must be restarted manually if harness.ts itself changes.
-  await deps.spawnAgent(mode);
+  await deps.spawnAgent(mode, options.dryRun);
 }
 
 const runScheduledSerialized = createSerializedScheduledRunner(runMarketGatedAgent);
@@ -253,5 +258,5 @@ if (import.meta.main) {
     process.exit(0);
   }
 
-  startHarnessLoop({ forceRun: args.forceRun });
+  startHarnessLoop({ forceRun: args.forceRun, dryRun: args.dryRun });
 }
