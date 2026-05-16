@@ -71,8 +71,10 @@
 - Hold the approved core unless risk breaks.
 - Do **not** redeploy cash until compliance is restored and a later hourly note explicitly allows fresh buying.
 
-## This Cycle
+## This Cycle — 2026-05-16 (Saturday)
 - **No orders were placed.**
-- XLK cleanup was **not retried** because the prior PDT rejection still stands and there is no fresh authorization to keep resubmitting it.
-- All approved holdings remained above their listed 5-minute stop levels.
-- Stay in cleanup-only mode until a later hourly note lifts the lock or a stop level breaks.
+- **Market closed (Saturday).** No regular-session trading possible.
+- **Broker credentials not configured** in current runtime environment; even if market were open, execution would fail.
+- XLK cleanup carries forward to Monday open at first eligible broker window.
+- All approved holdings carry forward unchanged.
+- **Next session:** Monday 2026-05-18. Resume cleanup-only mode, prioritize XLK exit, hold approved names unless stop levels break.

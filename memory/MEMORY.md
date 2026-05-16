@@ -91,12 +91,18 @@ What changed is the **execution context**. Today’s tape is weaker: semis are u
 - If the tactical layer violates an explicit no-trade or compliance instruction, default the next hour to **cleanup-only** until the breach is fully resolved.
 - Dashboard endpoint fallbacks are currently more reliable than direct CLI refreshes in this environment.
 
-## Tactical Execution Update — 2026-05-15
+## Tactical Execution Update — 2026-05-15 (Friday close)
 - **Action this cycle:** no orders placed.
 - **Why:** all held names stayed above their tactical stop levels, and the XLK cleanup remains blocked by the earlier broker PDT rejection, so retrying it would add friction without improving edge.
-- **Authoritative live book:** **QQQ 6, SOXX 3, GOOG 3, XLK 7, NVDA 2, AVGO 1**.
+- **Authoritative live book:** **QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2** (from post-market event detector snapshot).
 - **Current exposure:** still about **90% gross**, above the preferred post-cleanup band.
 - **Next expected action:** keep cleanup-only posture, wait for either broker eligibility to change for XLK or a later hourly unlock that explicitly permits fresh buys.
+
+## Weekend State — 2026-05-16
+- **Market status:** CLOSED (Saturday). No regular-session trading possible.
+- **Broker connectivity:** Alpaca credentials not configured in current runtime environment.
+- **Holdings carry forward to Monday open:** QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2.
+- **Top priority for Monday:** Execute XLK liquidation at first eligible broker window; resume cleanup-only discipline.
 
 ## Last Run Summary
 - The portfolio is still positive in absolute dollars, but it remains **off track** versus SPY.
