@@ -184,8 +184,12 @@ gcloud run deploy "$SERVICE_NAME" \
   --set-env-vars="GITHUB_PAT=${GITHUB_PAT}" \
   --set-env-vars="GITHUB_REPO=${GITHUB_REPO}"
 
+# Force routing of 100% of traffic to the latest revision
+echo "Routing 100% of traffic to the latest revision..."
+gcloud run services update-traffic "$SERVICE_NAME" --region "$REGION" --to-latest
+
 SERVICE_URL=$(gcloud run services describe "$SERVICE_NAME" --region "$REGION" --format 'value(status.url)')
-echo -e "${GREEN}✓ Container deployed at: $SERVICE_URL${NC}"
+echo -e "${GREEN}✓ Container deployed and active at: $SERVICE_URL${NC}"
 
 # ─── Step 6: Post-Deployment Smoke Test ───────────────────────────────────────
 log_step "Running health check & post-deployment smoke tests..."
