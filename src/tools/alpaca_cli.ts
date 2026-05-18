@@ -44,6 +44,15 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     const symUpper = symbol.toUpperCase();
+    // HARD_LOCK check: if memory/todo.md contains HARD_LOCK, reject all orders
+    try {
+      const todo = await Bun.file('./memory/todo.md').text();
+      if (todo.includes('HARD_LOCK')) {
+        return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+      }
+    } catch {
+      // todo.md not readable — proceed cautiously
+    }
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols
       try {

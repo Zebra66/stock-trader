@@ -66,8 +66,14 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
 4. **Market hours check:** Is the market open for regular session? If not, convert to a next-session trigger; do not submit.
 5. **PDT check:** Will this sell create a daytrade (position opened today) while daytrade_count >= 3? If yes, abort.
 6. **Short-selling check:** If side is 'sell', does the account hold a long position of at least `qty` shares in this symbol? If not, abort — short selling is prohibited unless explicitly authorized by the hourly strategist.
-7. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
-8. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
+7. **Explicit authorization check — MANDATORY before any SELL of a held long position:**
+   - Quote the EXACT line from `memory/todo.md` that authorizes this specific sell, including the trigger price and your current price comparison.
+   - If the position is marked **HOLD** with NO active sell trigger, or the current price has NOT breached the trigger, **ABORT the order**.
+   - You may NOT sell a position because it "drifted from target allocation", "looks weak", "feels overextended", or for any other discretionary reason.
+   - The ONLY valid reasons to sell are: (a) a specific price trigger in the current `todo.md` was breached, (b) Event Response Mode was entered due to a CRITICAL/MAJOR event, or (c) the hourly strategist explicitly wrote a sell authorization in the current `todo.md`.
+8. **HARD_LOCK check:** If `memory/todo.md` contains the word `HARD_LOCK`, **abort ALL orders** regardless of conditions. The code-level guard in the CLI will also block the order, but you must catch it here first.
+9. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
+10. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
 
 ### Step 5 — Execute orders
 - For each condition met in todo.md that passes the pre-trade checklist, execute the corresponding order via the Alpaca CLI
@@ -75,6 +81,7 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
 - Do not average down
 - Add only to winners and only if the add is smaller than or equal to the prior add
 - Keep to **one trade per tactical cycle** unless `memory/todo.md` explicitly authorizes more.
+- **After placing any order, immediately re-read `memory/todo.md`** to verify it still authorizes your action. If the file changed during your execution and now shows HARD_LOCK or contradicts your trade, log a warning and do not place any further orders this cycle.
 - Log each decision: why you acted, or why you held because the edge was too small after costs
 - If no condition is met or evidence quality is weak, do nothing and log why staying inactive was the correct decision
 
