@@ -6,11 +6,11 @@
 - **Why:** Unauthorized short (XLK -3) remains open. Daytrade count is 3/3. Tactical agent is locked down until the breach is resolved Tuesday open. Gross long exposure is anemic at 46.8% because of unauthorized Monday-morning liquidations.
 
 ## Authoritative Live Book
-- **Long:** QQQ 4 ($2,803.48 / 28.2%), GOOG 3 ($1,184.10 / 11.9%), NVDA 3 ($660.21 / 6.7%)
-- **Short / unauthorized:** XLK -3 ($-517.95 / -5.2%)
-- **Cash:** $5,796.51 (58.4%)
-- **Account equity:** $9,926.23
-- **Gross long exposure:** 46.81% | **Net exposure:** 41.59%
+- **Long:** QQQ 4 ($2,799.80 / 28.23%), GOOG 3 ($1,182.33 / 11.92%), NVDA 3 ($657.48 / 6.63%)
+- **Short / unauthorized:** XLK -3 ($-516.87 / -5.21%)
+- **Cash:** $5,796.51 (58.44%)
+- **Account equity:** $9,919.13
+- **Gross long exposure:** 46.77% | **Net exposure:** 41.56%
 - **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today
 - **Open orders:** NONE
 - **No new unauthorized trades** since 11:37 AM ET hourly run. HARD_LOCK is working.
@@ -93,6 +93,14 @@ See prior commits for full historical logs. Unauthorized trades on 2026-05-18 do
 - NVDA earnings Wednesday May 20. No adds before event. Plan to trim 2 shares Tuesday.
 - Semis in worst 2-day decline since October. SOXX at 489.12.
 - Next expected action: Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares. Then execute Tuesday deployment plan after hourly lock lift.
+
+**Tactical cycle — 2026-05-18 18:40Z (Tactical 2:40 PM ET):**
+- Event detector: NONE (first-run baseline, no events detected).
+- Broker refresh: Equity $9,919.13 | Cash $5,796.51 | Long $4,639.49 | Short -$516.87 | Gross 46.77% | Net 41.56% | Daytrade 3/3.
+- Holdings confirmed: QQQ 4 ($2,799.80), GOOG 3 ($1,182.33), NVDA 3 ($657.48), XLK -3 (-$516.87).
+- Zero orders placed. HARD_LOCK active; code guard enforced.
+- Protective stops: NVDA $219.16 (>218.00), GOOG $394.11 (>394.00), QQQ $699.95. None breached.
+- Tuesday deployment refs: META 610.64, AVGO 417.77, VOO 675.18, SOXX 487.96.
 
 ## Near-Term Watchlist
 - **META** — first new add candidate for Tuesday open. Limit 611-613.
