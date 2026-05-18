@@ -34,3 +34,6 @@ temp_files/
 
 # Finder (MacOS) folder config
 .DS_Store
+
+.pi/todos/*
+.sysyphus

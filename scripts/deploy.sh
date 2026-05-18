@@ -24,6 +24,8 @@ DEPLOY_OUTPUT=$(gcloud run deploy stock-trader \
   --allow-unauthenticated \
   --region us-central1 \
   --port 3000 \
+  --memory 2Gi \
+  --cpu 2 \
   2>&1)
 echo "$DEPLOY_OUTPUT"
 

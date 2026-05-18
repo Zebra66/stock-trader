@@ -112,7 +112,7 @@ describe('addDeposit / readDeposits', () => {
   test('returns empty array when file does not exist', async () => {
     // Temporarily point at nonexistent file by writing empty state
     await withTempDeposits([], async () => {
-      await fs.unlink(ORIG_FILE).catch(() => {});
+      await fs.unlink(process.env.DEPOSITS_FILE!).catch(() => {});
       const entries = await readDeposits();
       expect(entries).toEqual([]);
     });
