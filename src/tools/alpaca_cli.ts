@@ -44,7 +44,16 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     if (side === 'buy' && !UNIVERSE.has(symbol.toUpperCase())) {
-      return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
+      // Allow closing an existing short position even for out-of-universe symbols
+      try {
+        const positions = await alpaca.getPositions();
+        const pos = positions.find((p: any) => p.symbol === symbol.toUpperCase());
+        if (!pos || parseFloat(pos.qty) >= 0) {
+          return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
+        }
+      } catch {
+        return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
+      }
     }
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
