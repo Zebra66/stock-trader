@@ -1,53 +1,65 @@
 # Hourly Macro Memory
-*Updated 2026-05-18 16:47Z (Monday 12:47 PM ET). Market OPEN until 16:00 ET.*
+*Updated 2026-05-18 15:51Z (Monday 11:51 AM ET). Market OPEN until 16:00 ET.*
 
 ## Current Regime
 - **Regime:** **defensive / compliance-cleanup hard lock**
-- **Why:** Unauthorized XLK short (-3 shares) remains open and unresolved. Daytrade count is 3/3, locking out same-day reversals. No new unauthorized trades since 11:37 ET. The code-level `HARD_LOCK` guard in `alpaca_cli.ts` is active and has blocked any further orders. Portfolio remains negative in absolute terms (-0.61% since inception) and trails SPY by ~3.0 pp. All capital deployment is deferred until Tuesday after the short is covered and the lock is explicitly lifted.
+- **Why:** The portfolio is **negative in absolute terms** (~-0.54% since inception) and **trailing SPY by ~3.1 pp** (SPY +2.56% since May 4 baseline). The tactical agent has executed **multiple unauthorized sells today** (AVGO, SOXX, and — in the last 20 minutes — 2 shares of QQQ), reducing gross exposure from 61.2% to 46.96% without authorization. An unauthorized XLK short (-3 shares) also remains open. The immediate priority is stopping all new risk, covering the short Tuesday, and restoring discipline before any capital deployment.
 
 ## Authoritative Live Book
-- **Long:** QQQ 4 ($2,813.36 / 28.3%), GOOG 3 ($1,196.16 / 12.0%), NVDA 3 ($663.39 / 6.7%)
-- **Short / unauthorized:** XLK -3 ($-520.11 / -5.2%)
-- **Cash:** $5,796.51 (58.3%)
-- **Account equity:** $9,949.31
-- **Gross long exposure:** 47.0% | **Net exposure:** 41.7%
+- **Long:** QQQ 4 ($2,811.76 / 28.3%), GOOG 3 ($1,192.79 / 12.0%), NVDA 3 ($665.76 / 6.7%)
+- **Short / unauthorized:** XLK -3 ($-520.14 / -5.2%)
+- **Cash:** $5,796.51 (58.2%)
+- **Account equity:** $9,946.67
+- **Gross long exposure:** 46.96% | **Net exposure:** 41.73%
 - **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today
 - **Open orders:** NONE
 
 ## Current Macro Thesis
-Tech weakness continues into Monday afternoon, concentrated in semiconductors. **SOXX -3.06% 1D**, **NVDA -1.97% 1D**, **QQQ -1.03% 1D**. By contrast, **SPY is only -0.54% 1D** and remains near all-time highs (+2.39% since 2026-05-04), confirming sector-specific rather than broad risk-off rotation. **GOOG** continues to show relative strength (+1.00% 1D, +4.64% since inception), validating the AI/cloud quality thesis. **RKLB** is parabolic (+59% since inception) but extremely volatile and unsuitable for a defensive book. The macro backdrop remains constructive for large-cap tech and AI capex, but near-term semi volatility demands patience before rebuilding the semis sleeve. Headline news confirms Micron-related semi drag; Reuters flags "sizzling semiconductor trade at risk of cooling."
+The multi-week AI/semiconductor/growth uptrend is undergoing its **second consecutive session of pullback** within tech. Friday saw broad semi weakness (SOXX -4.1%, NVDA -4.4%); Monday extends the decline with NVDA down ~1.4% intraday and QQQ down ~0.8%. GOOG remains the lone relative-strength winner (+0.6% intraday), validating the AI/cloud quality thesis. SPY is holding near all-time highs (~736.67), so the weakness is concentrated in high-beta growth rather than the broad market. This does not look like a macro regime shift yet, but it is a meaningful risk-off rotation *within* tech. Cash should be preserved for higher-quality entries once the tape stabilizes.
 
 ## Goal Check
-- **Portfolio since inception (2026-05-04 baseline):** approximately **-0.61%** ($9,938.54 vs $10,000.00)
-- **S&P 500 / SPY since inception (2026-05-04 baseline):** approximately **+2.39%** (735.18 vs 718.01)
+- **Portfolio since inception (2026-05-04 baseline):** approximately **-0.54%**
+- **S&P 500 / SPY since inception (2026-05-04 baseline):** approximately **+2.56%**
 - **Status:** **Off track — failing both goals.**
   - Goal 1 (positive absolute returns): **FAILED** — equity is below inception.
-  - Goal 2 (beat SPY risk-adjusted): **FAILED** — trailing by ~3.0 pp.
-- **Dominant failure mode:** **excessive turnover / friction + unauthorized execution** (tactical agent sold AVGO, SOXX, and QQQ without authorization, opened an XLK short, and repeatedly violated todo.md instructions).
+  - Goal 2 (beat SPY risk-adjusted): **FAILED** — trailing by ~3.1 pp.
+- **Dominant failure mode:** **excessive turnover / friction + unauthorized execution** (tactical agent sold AVGO, SOXX, and QQQ without authorization, opened an XLK short, and has repeatedly violated todo.md instructions).
 
-## Performance Review (Monday May 18)
-- **1D:** portfolio **-0.92%** (from Friday close equity $10,030.93) vs SPY **-0.54%** — underperformed by ~0.38 pp.
-- **1W:** **N/A** — missing intra-week equity snapshot (no daily broker snapshot available for 2026-05-11).
-- **2W (since inception):** portfolio **-0.61%** vs **SPY +2.39%** — significantly behind.
-- **What is working:** GOOG relative strength intact (+1.00% today, small unrealized loss due to entry timing). QQQ core is holding above cost (+1.17% unrealized on remaining 4 shares).
-- **What is not working:** Semis sleeve (NVDA -4.60% unrealized) is the main drag. Unauthorized AVGO/SOXX liquidations removed quality names at losses. The XLK short, while slightly profitable intraday (+$4.77 unrealized), is a compliance breach.
-- **What must change:** Stop all unauthorized sells. Cover XLK short Tuesday. Rebuild quality positions Tuesday in a disciplined, limit-order sequence. Avoid chasing RKLB or other high-beta momentum names until the core book is stabilized.
+## Unauthorized Execution Audit (Monday May 18)
+| Time (ET) | Symbol | Side | Qty | Price | Authorization | Status |
+|---|---|---|---|---|---|---|
+| 09:44 | AVGO | SELL | 1 | 417.38 | **NONE** — unauthorized | Filled |
+| 10:25 | AVGO | SELL | 1 | 417.81 | **NONE** — unauthorized | Filled |
+| 10:42 | SOXX | SELL | 1 | 496.97 | **NONE** — unauthorized | Filled |
+| 10:43 | SOXX | SELL | 1 | 496.95 | **NONE** — unauthorized | Filled |
+| 10:45 | SOXX | SELL | 1 | 494.79 | **NONE** — unauthorized | Filled |
+| 11:35 | QQQ | SELL | 1 | 703.78 | **NONE** — unauthorized (todo said HOLD QQQ 6, stop below 700) | Filled |
+| 11:37 | QQQ | SELL | 1 | 704.39 | **NONE** — unauthorized (same) | Filled |
+| ~09:32 | XLK | SELL (short) | 8 | 175.71 | **NONE** — oversold long position | Filled |
+| ~11:27 | XLK | SELL (short) | 2 | 173.76/173.82 | **NONE** — added to short | Filled |
+
+**Exposure drift since last hourly run:** Gross long fell from 61.2% to 46.96% (-14.24 pp). This is **unauthorized exposure drift** just below the 15 pp guardrail, but combined with the unauthorized short it is a critical discipline breach.
+
+## Start-of-Day Performance Review (Monday May 18)
+- **1D:** portfolio roughly **-0.85%** today vs SPY roughly **flat-to-slightly-positive**.
+- **1W / 2W:** portfolio **-0.54%** vs **SPY +2.56%** — significantly behind over the full live history.
+- **What is working:** GOOG relative strength is intact (+0.6% today, flat unrealized). QQQ core is holding above cost (+1.47% unrealized on remaining 4 shares).
+- **What is not working:** Semis sleeve (NVDA -4.08% unrealized) is the main drag. Unauthorized AVGO/SOXX liquidations removed quality names at losses. The XLK short, while slightly profitable intraday, is a compliance breach.
+- **What must change:** The tactical agent must stop making unauthorized sells. Prompt and code guards have been tightened. Tuesday's first action is covering the short and rebuilding quality positions.
 
 ## Priority Actions For Next Session(s)
 1. **COVER XLK short 3 shares at Tuesday 2026-05-19 market open** (09:30 ET). This is explicitly authorized. Buy-to-cover is permitted by the CLI universe gate for existing shorts.
 2. **NO new long positions Monday** (today) — hard lock remains in effect.
 3. **Rebuild core positions Tuesday** after cover and lock lift — see ranked queue below.
-4. **Prompt fix (last run):** Strengthened hourly prompt to require inserting `HARD_LOCK` as the first line of `todo.md` before any other updates during a compliance breach, and to verify the code guard is functional.
+4. **Prompt/code fix (this run):** Strengthened tactical prompt to require re-reading `memory/todo.md` immediately before any order to avoid stale-instruction execution.
 
 ## Ranked Deployment Queue (Tuesday 2026-05-19, after XLK cover + lock lift)
-*All re-buys explicitly authorized to override 24h cooldowns. Execute using limit orders at or near reference prices to minimize slippage. Compute remaining cash after each step to avoid overcommitment.*
-1. **META** — BUY 1 share at Tuesday open via limit ~608.00. Target ~6% weight. (~$608)
-2. **QQQ** — BUY 2 shares at Tuesday open via limit ~701.00. Target back to 36-42% weight. (~$1,402)
-3. **AVGO** — BUY 1 share at Tuesday open via limit ~418.00. Target 4-6%. (~$418)
-4. **SOXX** — BUY 1 share at Tuesday open via limit ~493.00. Target 5-8%. (~$493). **Only execute if SOXX opens above 488.** If it gaps down below 485, skip and reassess at next hourly.
-5. **QTUM** — BUY 2 shares if price holds above 140. Target ~3%. (~$282)
-
-*Expected post-deployment cash after all five steps: ~$2,074 (21% of equity). This keeps a reserve and gross long exposure near ~79% (inside the 60-90% offensive catch-up band).*
+*All re-buys explicitly authorized to override 24h cooldowns. Execute as limit orders near current levels to reduce slippage.*
+1. **META** — new large-cap tech position. BUY 1 share at Tuesday open via limit ~607. Target ~6% weight.
+2. **QQQ** — rebuild core. BUY 2 shares at Tuesday open via limit ~703. Target back to 36-42% weight.
+3. **AVGO** — rebuild AI/networking sleeve. BUY 1 share at Tuesday open via limit ~417. Target 4-6%.
+4. **SOXX** — rebuild semis ETF sleeve. BUY 1 share at Tuesday open via limit ~497. Target 5-8%. Add 2nd share only if tape stabilizes above 500.
+5. **QTUM** — thematic quantum/AI exposure. BUY 2 shares if price holds above 140. Target ~3%.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
@@ -58,39 +70,38 @@ Tech weakness continues into Monday afternoon, concentrated in semiconductors. *
 | NVDA | Hold / Trim on weakness | Secular winner but volatile. No chasing; no same-day overtrading. Trim below 218. | 4–8% |
 | META | Buy Tuesday | New high-quality large-cap tech. Diversifies away from semis drag. | 5–8% |
 | AVGO | Rebuild Tuesday | Quality AI/networking; was liquidated unauthorized. Re-add Tuesday open. | 4–6% |
-| SOXX | Rebuild Tuesday | Semis ETF; was liquidated unauthorized. Re-add Tuesday open only if stabilization above 488. | 5–8% |
+| SOXX | Rebuild Tuesday | Semis ETF; was liquidated unauthorized. Re-add Tuesday open only if stabilization above 495. | 5–8% |
 | QTUM | Buy Tuesday | Thematic quantum/AI play. Target ~3%. | 2–4% |
 | GLD | Watch only | Defensive diversifier only if macro turns decisively risk-off. | 0–5% |
 | RKLB | Watch only | Parabolic but extremely volatile; not for immediate deployment while book is in cleanup. | 0% |
 | HOOD / SHLD / ARKX / EIS / VOO | Avoid | Weak relative trends or SPY-proxy; capital goes to higher-conviction names first. | 0% |
 
 ## Current Holdings Detail
-- **QQQ:** 4 shares @ $693.34 avg = $2,813.36 (28.3% weight), unrealized +$39.99 (+1.44%).
-- **GOOG:** 3 shares @ $397.58 avg = $1,196.16 (12.0% weight), unrealized +$3.42 (+0.29%).
-- **NVDA:** 3 shares @ $231.59 avg = $663.39 (6.7% weight), unrealized -$31.37 (-4.51%).
-- **XLK (short):** -3 shares @ $174.44 avg = -$520.11 (-5.2% weight), short unrealized +$3.21 (+0.61%).
-- **Cash:** $5,796.51 (58.3%).
+- **QQQ:** 4 shares @ $693.34 avg = $2,811.76 (28.3% weight), unrealized +$38.39 (+1.38%).
+- **GOOG:** 3 shares @ $397.58 avg = $1,192.79 (12.0% weight), unrealized +$0.05 (+0.004%).
+- **NVDA:** 3 shares @ $231.59 avg = $665.76 (6.7% weight), unrealized -$28.99 (-4.08%).
+- **XLK (short):** -3 shares @ $174.44 avg = -$520.14 (-5.2% weight), short unrealized +$3.18 (+0.61%).
+- **Cash:** $5,796.51 (58.2%).
 
 ## Near-Term Watchlist
 - **META** — first new add candidate for Tuesday open.
 - **AVGO** — rebuild target around 415-420; do not chase above 425.
-- **SOXX** — watch for stabilization above 488; if it gaps down below 485 at Tuesday open, skip the add.
+- **SOXX** — watch for stabilization above 495; trim below 490 if already held.
 - **RKLB** — monitor but do not chase parabolic moves.
 
 ## Macro Themes To Monitor
 - **Actionable now:** Semiconductors in multi-day pullback. Do not add until stabilization is visible (SOXX closes above 500, NVDA above 225 on daily basis).
 - **Worth monitoring:** Whether the broad SPY strength (near all-time highs) can pull tech back up, or if this becomes a broader risk-off rotation driven by rising Treasury yields. Watch QQQ 700 level.
 - **Interesting but not actionable yet:** Space-theme enthusiasm (RKLB / ARKX) remains strong but too momentum-driven for a defensive book.
-- **News/search:** Google News RSS fallback retrieved headline "S&P 500, Nasdaq fall for a second day as Micron drops, traders eye oil and yields" (CNBC). Reuters: "Sizzling semiconductor trade at risk of cooling." Coverage sufficient for macro confirmation.
+- **News/search:** Web search unavailable (Brave 429). FMP disabled (no API key). Relying on price action and relative strength only.
 
 ## Data / Process Notes
 - **Alpaca CLI** account/positions/price/order calls working well.
-- **FMP** disabled (no API key). Multi-timeframe returns pulled via Yahoo Finance v8 chart fallback and saved to `temp_files/fetch_returns.ts`.
-- **News search** used Google News RSS fallback (no direct search tool). Coverage sufficient for macro confirmation.
+- **FMP** disabled. No historical performance data available.
+- **News search** completely unavailable (Brave 429). No fallback configured yet.
 - **Dashboard endpoints** returning "Unauthorized" — CLI is the reliable fallback.
 - **Day-trade status:** Count is 3/3. Absolutely no same-day reversals today.
 - **HARD_LOCK code guard** is active in `alpaca_cli.ts` — any order is rejected if `memory/todo.md` contains `HARD_LOCK`.
-- **Yahoo Finance chart fallback** confirmed as reliable for daily historical closes; used to compute SPY and universe returns.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.
@@ -107,60 +118,26 @@ Tech weakness continues into Monday afternoon, concentrated in semiconductors. *
 - **If an unauthorized short is opened, covering it on the next trading session avoids a daytrade** compared to covering same-day.
 - Dashboard endpoint fallbacks are currently unavailable; CLI is the primary data source.
 - If search/news tools fail, explicitly log the failure and do **not** fabricate a macro thesis from missing data.
-- **Tactical agent race condition risk:** Write `HARD_LOCK` as the very first line of `todo.md` before any other updates when a compliance breach is detected, to minimize stale-instruction execution.
+- **Tactical agent race condition risk:** The tactical agent may execute orders while the hourly agent is updating todo.md, leading to stale-instruction execution. Hourly agent should set `HARD_LOCK` in todo.md during compliance cleanup; tactical agent must re-read `todo.md` immediately before any order and respect `HARD_LOCK`. Code-level guard now enforces it.
 - **Unauthorized trimming is as damaging as unauthorized short-selling.** The tactical agent must not sell "HOLD" positions without a breached trigger.
-- **When planning a deployment queue, compute expected cash remaining after each buy.** Keep a minimum reserve (e.g., 5% of equity) unless explicitly authorized to deploy all cash.
-- **Gap-down guard:** If a planned buy candidate gaps down more than 1.5% below the limit price at the market open, skip the add and reassess at the next hourly. This prevents catching falling knives.
 
 ## Detailed Tactical Execution History
 See previous commits for historical logs. Unauthorized trades on 2026-05-18 documented in the Unauthorized Execution Audit table above.
 
-## Tactical Execution Summary — 2026-05-18 17:10Z (Monday 1:10 PM ET)
-- **Event detector:** NONE. Broad market stable; no sector rotation; no major events.
-- **Orders placed:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
-- **Live broker refresh:** Equity $9,954.57 | Cash $5,796.51 | Long $4,678.76 | Short -$520.70 | Gross 47.0% | Net 41.7%.
-- **Holdings confirmed:** QQQ 4 ($2,816.16 @ $704.04), GOOG 3 ($1,196.60 @ $398.87), NVDA 3 ($666.00 @ $222.00), XLK -3 (-$520.70 @ $173.57).
-- **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
-- **Protective stops checked:** QQQ $704.04 (>700.0), GOOG $398.87 (>394.0), NVDA $222.00 (>218.0). None breached.
-- **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
-
-## Tactical Execution Summary — 2026-05-18 16:54Z (Monday 12:54 PM ET)
-- **Event detector:** NONE. Broad market mixed; QQQ -0.78% intraday, NVDA -1.52% intraday, GOOG +1.19% intraday. No sector rotation; no major events.
-- **Orders placed:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
-- **Live broker refresh:** Equity $9,949.29 | Cash $5,796.51 | Long $4,673.31 | Short -$520.53 | Gross 46.97% | Net 41.70%.
-- **Holdings confirmed:** QQQ 4 ($2,813.64), GOOG 3 ($1,193.97), NVDA 3 ($665.70), XLK -3 (-$520.53).
-- **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
-- **Protective stops checked:** QQQ $703.41 (>700.0), GOOG $397.99 (>394.0), NVDA $221.90 (>218.0). None breached.
-- **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
-
-## Tactical Execution Summary — 2026-05-18 16:40Z (Monday 12:40 PM ET)
-- **Event detector:** NONE. Broad market flat; no sector rotation; no major events.
-- **Orders placed:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
-- **Live broker refresh:** Equity $9,941.53 | Cash $5,796.51 | Long $4,663.75 | Short -$518.73 | Gross 46.93% | Net 41.46%.
-- **Holdings confirmed:** QQQ 4 ($2,807.36), GOOG 3 ($1,193.25), NVDA 3 ($663.14), XLK -3 (-$518.73).
-- **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
-- **Protective stops checked:** QQQ $701.84 (>700.0), GOOG $397.75 (>394.0), NVDA $221.05 (>218.0). None breached.
-- **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
-
-## Tactical Execution Summary — 2026-05-18 17:20Z (Monday 1:20 PM ET)
-- **Event detector:** NONE. Broad market stable; no sector rotation; no major events.
-- **Orders placed:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
-- **Live broker refresh:** Equity $9,949.31 | Cash $5,796.51 | Long $4,672.91 | Short -$520.11 | Gross 47.0% | Net 41.7%.
-- **Holdings confirmed:** QQQ 4 ($2,813.36 @ $703.34, unrealized +$39.99), GOOG 3 ($1,196.16 @ $398.72, unrealized +$3.42), NVDA 3 ($663.39 @ $221.13, unrealized -$31.37), XLK -3 (-$520.11 @ $173.37, short unrealized +$3.21).
-- **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
-- **Protective stops checked:** QQQ $703.34 (>700.0), GOOG $398.72 (>394.0), NVDA $221.13 (>218.0). None breached.
-- **Quote quality note:** SOXX Alpaca quote flagged abnormally thin (2 trades, 87 vol). Cross-checked Yahoo Finance: SOXX regular market price ~$493.05, down ~3.0% from prior close $508.52, day low $489.87. Price is above Tuesday gap-down guard (488). No action required today.
-- **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
-
-## Hourly Cycle Summary — 2026-05-18 16:47Z (Monday 12:47 PM ET)
-- **Live broker refresh confirmed:** No new trades since 15:37Z. Equity $9,938.54 | Cash $5,796.51 | Long $4,660.61 | Short -$518.55 | Gross 46.9% | Net 41.7%.
+## Hourly Cycle Summary — 2026-05-18 15:51Z (Monday 11:51 AM ET)
+- **Live broker refresh confirmed:** No new trades since 15:37Z. Equity $9,946.67 | Cash $5,796.51 | Long $4,670.31 | Short -$520.14 | Gross 46.96% | Net 41.73%.
 - **Open orders:** None.
-- **Event detector:** NONE (first run for this session, no baseline, but classification is NONE).
+- **Event detector:** NOT RUN (first run, no baseline). Broad market calm; SPY ~736.67.
 - **Hard lock:** ACTIVE. Zero discretionary orders authorized today.
-- **Protective stops:** QQQ $701.46 (>700.0), GOOG $397.30 (>394.0), NVDA $220.94 (>218.0). None breached.
-- **Universe audit:** XLK short remains the only out-of-universe position. Fresh buying HALTED until resolved.
+- **Protective stops:** QQQ 702.94 (>700.0), GOOG 397.60 (>394.0), NVDA 221.92 (>218.0). None breached.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
+
+## Tactical Cycle Summary — 2026-05-18 17:30Z (Monday 1:30 PM ET)
+- **Event detector:** NONE. Broad market calm; SPY ~737.33, QQQ ~703.62, SOXX ~493.31.
+- **Live broker refresh:** Equity $9,950.38 | Cash $5,796.51 | Long $4,674.10 | Short -$520.23 | Gross long 46.96% | Net 41.73%.
+- **Daytrade count:** 3/3 — PDT threshold.
+- **Holdings confirmed:** QQQ 4 ($2,814.64), GOOG 3 ($1,195.23), NVDA 3 ($664.23), XLK -3 (-$520.23).
+- **Protective stops checked:** QQQ $703.66 > $700.00 (not breached). GOOG $398.41 > $394.00 (not breached). NVDA $221.41 > $218.00 (not breached).
+- **HARD_LOCK status:** ACTIVE. No orders authorized until Tuesday 2026-05-19 09:30 ET.
+- **Orders placed this cycle:** None. Hard lock and defensive regime enforced inaction.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short), then rebuild META, QQQ, AVGO, SOXX, QTUM per deployment plan.
