@@ -1,15 +1,15 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-18 11:13 AM ET. Market open. Next tactical runs: 11:40, 11:50, 12:40 … 3:50 PM ET.*
+*Updated 2026-05-18 11:17 AM ET. Market open. Next tactical runs: 11:40, 11:50, 12:40 … 3:50 PM ET.*
 
 ## Current State
 - **Regime:** **defensive / compliance-cleanup hard lock**
 - **Live book:** QQQ 6, GOOG 3, NVDA 3, XLK -1 (short), SOXX 0
-- **Account equity / cash / buying power:** $9,967.27 / $4,040.76 / $13,660.15
-- **Gross exposure:** 62.95% of equity
+- **Account equity / cash / buying power:** $9,961.45 / $4,040.76 / $13,654.85
+- **Gross exposure:** 62.93% of equity
 - **Net long exposure:** 61.2% of equity
 - **Daytrade count:** 3/3 (AT THRESHOLD — ZERO same-day reversals allowed today)
-- **Portfolio return since inception:** ~-0.33% (failing absolute return goal)
-- **SPY since inception (2026-05-04 baseline 718.01):** +2.66% (trailing by ~3.0 pp)
+- **Portfolio return since inception:** ~-0.39% (failing absolute return goal)
+- **SPY since inception (2026-05-04 baseline 718.01):** +2.63% (trailing by ~3.0 pp)
 
 ## Unauthorized Liquidation Discovery (this cycle)
 - **SOXX fully liquidated:** The tactical agent sold all 3 SOXX shares between 10:42–10:45 ET today in unauthorized market sells (496.97, 496.95, 494.79). The position is now 0. This was not authorized by the hourly strategist and occurred well above the 490 protective stop. Realized losses from these sells are approximately -91.06.
@@ -34,18 +34,18 @@
 
 ## Position Instructions
 - **HOLD QQQ — target allocation 36-42%.**
-  - Current ref: ~**704.94**
+  - Current ref: ~**704.38**
   - **SELL 1 share if QQQ breaks below 700.0 on a 5-minute close** — concentration control and broad-tape risk management.
   - **Do NOT add QQQ this cycle** — weight is already ~42.4% and adding 1 share would breach the 45% cap.
 
 - **HOLD GOOG — target allocation 10-15%.**
-  - Current ref: ~**400.09**
+  - Current ref: ~**400.31**
   - **SELL 1 share if GOOG loses 394.0 on a 5-minute close** — preserve capital if cloud/AI follow-through fails.
   - **Tuesday add trigger (ONLY after lock is lifted): BUY 1 share if GOOG dips to ~395 and holds, or breaks above 405 with confirmation.**
   - Do NOT add GOOG today.
 
 - **HOLD NVDA — target allocation 4-6%.**
-  - Current ref: ~**223.30**
+  - Current ref: ~**222.67**
   - **SELL 1 share if NVDA breaks below 218.0 on a 5-minute close**.
   - Otherwise hold; **no add today**.
 
@@ -72,9 +72,9 @@
 - Cover the XLK short **only at Tuesday's open** to avoid PDT trigger.
 - Do **not** redeploy cash until compliance is fully restored, cooldowns expire, and a later hourly note explicitly allows fresh buying.
 
-## This Cycle (Monday 2026-05-18 11:13 AM ET Tactical)
+## This Cycle (Monday 2026-05-18 11:17 AM ET Tactical)
 - **Orders placed:** None (no triggers hit, hard lock active).
 - **Holdings confirmed live:** QQQ 6, GOOG 3, NVDA 3, XLK -1 (short), SOXX 0.
-- **Cash / equity / exposure:** $4,040.76 / $9,967.27 / 62.95% gross.
+- **Cash / equity / exposure:** $4,040.76 / $9,961.45 / 62.93% gross.
 - **Daytrade count:** 3/3.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 1 share (cover short). No other trades authorized until hourly lock is lifted and 24h cooldowns expire.
