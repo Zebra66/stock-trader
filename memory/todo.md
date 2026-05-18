@@ -1,19 +1,19 @@
-# Tactical Todo — Updated 2026-05-18 15:26Z (Monday)
-*Live broker state differs from Saturday plan. See MEMORY.md for full context.*
+# Tactical Todo — Updated 2026-05-18 15:27Z (Monday 11:27 AM ET)
+*Live broker state: XLK short is -3 shares (not -2). See MEMORY.md for full context.*
 
 ## Current State
-- **Regime:** defensive / cleanup-only (stale; awaiting fresh hourly guidance)
-- **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -2 (SHORT)
-- **Account equity / cash:** $9,961.17 / $4,214.58
-- **Gross exposure:** $6,441.99 (64.7% of equity)
+- **Regime:** defensive / compliance-cleanup hard lock
+- **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (SHORT), SOXX 0, AVGO 0
+- **Account equity / cash / buying power:** $9,960.47 / $4,388.34 / $13,305.89
+- **Gross exposure:** $6,615.05 (66.4% of equity)
 - **Daytrade count:** 3 (threshold; next daytrade = PDT flag)
 - **Pattern day trader:** false
-- **Unauthorized position:** XLK -2 shares SHORT — must cover at next session open (Tuesday) to avoid PDT.
+- **Unauthorized positions:** XLK -3 shares SHORT — must cover all 3 at Tuesday 2026-05-19 open.
 
 ## Immediate Actions (Tuesday 2026-05-19 Open)
-1. **BUY TO COVER XLK 2 shares** — compliance cleanup of unauthorized short.
+1. **BUY TO COVER XLK 3 shares** — compliance cleanup of unauthorized short.
    - This MUST be done at Tuesday open, not Monday, to avoid daytrade #4 / PDT flag.
-   - Use market order or limit near prev close (~$173.85).
+   - Use market order or limit near prev close (~$173.82).
 
 2. **HOLD GOOG 3, NVDA 3, QQQ 6** — no action until fresh hourly guidance arrives.
 
@@ -24,12 +24,16 @@
 - **Do not open any new symbol** outside approved universe.
 - **One trade only** next cycle (XLK cover).
 
-## Stop Levels (Saturday values — STALE, use only as reference)
+## Stop Levels (STALE — use only as reference until hourly updates)
 - QQQ: watch 700 support
-- GOOG: watch 390 support
-- NVDA: watch 220 support
+- GOOG: watch 394 support
+- NVDA: watch 218 support
 
-## This Cycle — 2026-05-18 15:26Z
-- **No orders placed.**
+## This Cycle — 2026-05-18 15:27Z
 - **Event detector:** NONE.
-- **Reason for inaction:** Unexpected broker state (XLK short, missing SOXX/AVGO), stale guidance from Saturday, and PDT threshold. Acting on stale directives with an altered book would risk compounding errors.
+- **Live broker refresh:** Equity $9,960.47 | Cash $4,388.34 | Long $6,093.59 | Short -$521.46 | Gross exposure 66.4% | Daytrade 3/3.
+- **Holdings:** QQQ 6 ($4,225.50), GOOG 3 ($1,199.37), NVDA 3 ($668.72), XLK -3 (-$521.46).
+- **Critical discrepancy resolved:** Live broker confirms XLK short is **-3 shares**, not -2 or -1. Prior memory undercounted the unauthorized short.
+- **Protective stops:** QQQ $704.25 (>700.0), GOOG $399.79 (>394.0), NVDA $222.91 (>218.0). None breached.
+- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.

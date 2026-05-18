@@ -2,11 +2,11 @@
 - **Status:** Market OPEN. Event detector: NONE.
 - **Orders placed:** NONE this cycle.
 - **Critical discovery:** Live broker state does NOT match Saturday memory.
-  - **XLK is now SHORT -2 shares** (was +8 long on Saturday). This is an unauthorized position and a compliance breach.
+  - **XLK is now SHORT -3 shares** (was +8 long on Saturday). This is an unauthorized position and a compliance breach.
   - **SOXX and AVGO are GONE** from the book (was 3 SOXX, 2 AVGO on Saturday). No record of when/why they were sold.
-  - **Cash jumped to $4,214.58** from $135.41, confirming liquidations happened.
-- **Current holdings:** GOOG 3, NVDA 3, QQQ 6, XLK -2 (short)
-- **Equity:** $9,961.17 | **Cash:** $4,214.58 | **Gross exposure:** $6,441.99 (64.7%)
+  - **Cash jumped to $4,388.34** from $135.41, confirming liquidations happened.
+- **Current holdings:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (short)
+- **Equity:** $9,958.14 | **Cash:** $4,388.34 | **Gross exposure:** $6,612.24 (66.4%)
 - **Daytrade count:** 3 (at threshold; one more = PDT flag)
 - **Market context:** Broad market sinking to start week. 10Y Treasury yield at highest in a year. Tech lagging. NVDA earnings upcoming.
 - **Decision rationale:**
@@ -15,7 +15,7 @@
   3. **Did NOT re-buy SOXX/AVGO** — possible earlier-cycle liquidations; re-buying without hourly authorization and within 24h of apparent sales risks churn and violates defensive regime.
   4. **Did NOT add to any position** — cleanup/defensive lock still in effect until hourly strategist explicitly lifts it.
 - **Urgent next-session tasks (Tuesday open):**
-  1. **BUY TO COVER XLK 2 shares** — close unauthorized short immediately at market open.
+  1. **BUY TO COVER XLK 3 shares** — close unauthorized short immediately at market open.
   2. **Hourly strategist must review SOXX/AVGO liquidations** — determine if accidental or intentional and whether to re-enter.
   3. **Update all stop levels** based on Monday's price action.
 - **Root-cause suspicion:** The XLK short likely resulted from an oversell (e.g., sell order for >8 shares when only 8 long were held, or a sell submitted after the long position was already zero). **A code-level guardrail against selling more shares than held is urgently needed.**
