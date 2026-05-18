@@ -1,105 +1,77 @@
 # Hourly Macro Memory
-*Updated 2026-05-16 17:25 UTC+7 / 06:25 ET Saturday. Market closed. Next regular session: Monday 2026-05-18 09:30 ET. Alpaca state confirmed live.*
-
-## Tactical Execution Log
-
-### 2026-05-16 10:24Z — Saturday Tactical Run
-- **Status:** Market closed. No trades executed.
-- **Event classification:** NONE (detector ran, no anomalies).
-- **Portfolio unchanged:** AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8.
-- **Equity:** $10,030.93 | **Cash:** $135.41 | **Gross exposure:** $9,895.52 (98.65%).
-- **Daytrade count:** 3/4 (caution: one daytrade remaining before PDT trigger).
-- **Plan for Monday 2026-05-18 open:**
-  1. SELL XLK 8 shares — #1 priority, compliance cleanup.
-  2. Trim SOXX 1 share → 2 shares.
-  3. Trim NVDA 1 share → 2 shares.
-  4. Trim AVGO 1 share → 1 share.
-  5. HOLD QQQ 6, HOLD GOOG 3.
-- **No new discretionary buys until:** XLK fully exited, gross exposure inside 30–50% band, and hourly strategist explicitly lifts cleanup-only hard lock.
-- **Weekend news scan:** No adverse headlines. BofA reiterates NVDA/AMD as top chip picks; GOOG AI capex narrative intact. No material changes to Monday plan.
-
-## Current Regime
-- **Regime:** **defensive** — cleanup mode until the unauthorized XLK position is fully exited.
-- **Why:** The portfolio remains positive in absolute terms (+0.31% since inception) but is trailing SPY by ~2.6 percentage points. The tactical layer repeatedly violated the approved universe by adding XLK (5 shares on May 14, 3 more on May 15). Gross exposure is 98.6% because of this unauthorized position, leaving almost no cash buffer. No fresh risk can be added until XLK is gone and discipline is restored.
+*Updated 2026-05-18 09:35 ET. Market OPEN. All compliance issues resolved.*
 
 ## Authoritative Live Book
-- **QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2**
-- **Account equity / cash / buying power:** **$10,030.93 / $135.41 / $10,166.34**
-- **Current gross exposure:** **$9,895.50 = 98.6%** of equity.
-- **Target gross-exposure band:** **75–85% after XLK cleanup**.
+- **QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1**
+- **Account equity / cash / buying power:** **$9,995.47 / $1,958.50 / $11,953.97**
+- **Current gross exposure:** **$8,036.97 = 80.4%** of equity.
+- **Daytrade count:** **3** (unchanged; no daytrades today).
+- **Target gross-exposure band:** **75–85%** — current exposure sits squarely inside this band.
 
-## Current Macro Thesis
-The multi-week AI/semiconductor/growth trend remains intact (SOXX +26.5% 1M, GOOG +17.6% 1M, QQQ +11.2% 1M, NVDA +13.3% 1M). However, **Friday May 15 was a broad risk-off day for high-beta tech**: semis led the decline (SOXX -4.06%, NVDA -4.42%, AVGO -3.32%) while GOOG held up best (-0.97%) and QQQ was moderate (-1.51%). VOO was -1.21%, so the decline was not isolated to our universe. This looks like a normal pullback within an uptrend rather than a regime shift, but we must not add into weakness while the book is already overextended. Monday’s tape will be critical: if tech stabilizes and reclaims Friday’s losses, the uptrend continues. If the selloff extends, we will need to trim the most volatile sleeve (SOXX first) rather than average down.
+## Current Regime
+- **Regime:** **neutral / light offensive catch-up**
+- **Why:** The unauthorized XLK position has been fully liquidated and AVGO laggard trimmed. Gross exposure is now 80.4%, within the 75–85% target. The portfolio is still trailing SPY by ~2.6 percentage points since inception, so we cannot afford to sit fully defensive, but Friday's tech pullback and today's early mixed tape (GOOG +0.95%, NVDA flat, SOXX -0.75%, AVGO -1.85%) warrant selective, not aggressive, deployment.
 
 ## Goal Check
-- **Portfolio since inception (2026-05-04 baseline):** **+0.31%**
-- **S&P 500 / SPY since inception (2026-05-04 baseline):** **+2.94%**
-- **Status:** **Off track — positive absolute returns are intact but the portfolio is trailing SPY by roughly 2.6 percentage points.**
-- **Dominant failure mode:** **excessive turnover / friction** (repeated SOXX churn, unauthorized XLK adds, buying into Friday weakness, and paying friction on every round trip).
+- **Portfolio since inception (2026-05-04 baseline):** **~+0.0%** (equity ~$9,995 vs inferred ~$10,000 start).
+- **S&P 500 / SPY since inception (2026-05-04 baseline $718.01):** **+2.90%** (SPY $738.85).
+- **Status:** **Off track — trailing SPY by roughly 2.9 percentage points.**
+- **Dominant failure mode:** **excessive turnover / friction** (repeated SOXX churn, unauthorized XLK adds, buying into Friday weakness). These issues have been materially resolved this cycle by exiting XLK and trimming AVGO.
 
-## Start-of-Day Performance Review (Friday May 15)
-- **1D:** portfolio roughly **-1.6%** vs **SPY -1.1%** (prior cycle estimate; Friday close confirmed the drag).
-- **1W:** portfolio roughly **+0.3%** vs **SPY +0.3%** — in line, but not enough to close the 2W gap.
-- **2W:** portfolio **+0.31%** vs **SPY +2.94%** — significantly behind.
-- **What is working:** QQQ core position is still above cost (+2.25% unrealized) and GOOG is holding relative strength.
-- **What is not working:** Semis sleeve (SOXX, NVDA, AVGO) was bought into strength and then gave back gains on Friday. Unauthorized XLK adds wasted capital and compliance budget.
-- **What must change Monday:** exit XLK first thing, stop all churn, hold core names above their stops, and only redeploy cash into the highest-quality setup (GOOG) after the tape stabilizes.
+## Start-of-Day Performance Review (Monday May 18)
+- **1D (today so far):** portfolio roughly **-0.1%** vs **SPY -0.04%** — slight underperformance driven by AVGO weakness (-1.85%) and SOXX softness (-0.75%). GOOG (+0.95%) is the bright spot.
+- **1W:** Not explicitly calculable from live history, but price action shows SOXX -3.53% 1W, AVGO -1.84% 1W, while GOOG +2.53% 1W and NVDA +3.62% 1W.
+- **2W:** portfolio **~flat** vs **SPY +2.9%** — significantly behind.
+- **What is working:** QQQ core remains profitable (+2.05% unrealized) and GOOG is showing best relative strength today and over 1W/1M/3M/6M.
+- **What is not working:** AVGO is the weakest 1-week performer in the book (-1.84% 1W, +3.45% 1M vs SOXX +23.6%, NVDA +12.7%). We trimmed 1 share to bring weight to 4.2% (target 4–5%).
+- **What must change today:** Hold core, avoid churn, and redeploy the ~$1,959 cash into the highest-quality setup (GOOG) only on a confirmed dip or breakout that respects the 15% single-stock cap.
 
-## Priority Actions For Next Session (Monday)
-1. **SELL XLK 8 shares at market open.** This is the #1 compliance and risk-management task.
-2. **Do not place any new buy order on Monday morning** until XLK is confirmed gone and the tape shows stabilization.
-3. **Hold approved core positions** with updated stop levels below.
-4. **Trim SOXX** if it breaks 500 support — it is the weakest 1M performer that is also the most volatile.
-5. **Prepare GOOG as the first redeployment target** if Monday shows stabilization (hold above 390, break above 398).
+## Current Macro Thesis
+Tech is stabilizing after Friday's broad risk-off session (SOXX -4.06%, NVDA -4.42%, AVGO -3.32%). Monday's early tape shows GOOG and NVDA rebounding while AVGO continues to lag. The multi-week AI/semiconductor/growth trend remains intact (SOXX +23.6% 1M, GOOG +16.8% 1M, NVDA +12.7% 1M, QQQ +9.5% 1M). Headlines via Yahoo Finance RSS highlight oil moving on US-Iran tensions, but no direct tech-specific adverse news. The semis pullback looks like a normal consolidation within an uptrend rather than a regime shift. We will not add into weakness, but we will hold core positions above updated stop levels and deploy cash selectively into strength.
+
+## Priority Actions For Next Hour
+1. **XLK cleanup is DONE.** No further action required.
+2. **HOLD approved core positions** with updated stop levels below.
+3. **GOOG is the #1 redeployment candidate** if it pulls back to ~390 and holds, or breaks above 400 with volume. Adding 1 share would push GOOG to ~15.8% of equity (slightly above the 15% single-stock cap). Therefore, any GOOG add must be accompanied by a trim of another single-stock position (AVGO or NVDA) or executed only if GOOG price is lower such that 4 shares stays under 15%.
+4. **Monitor SOXX 500 support** — a confirmed break below 500 on a 5-minute close would trigger a protective trim of 1 share.
+5. **Monitor AVGO 415 level** — if it breaks below 415, consider exiting the remaining 1 share entirely.
 
 ## Ranked Deployment Queue
-*Only valid after XLK is fully exited and the hourly lock is explicitly lifted.*
-1. **GOOG** — best combination of quality, relative strength on Friday, and clean multi-week uptrend.
-2. **QQQ** — liquid core catch-up vehicle if broad tech reasserts; already at 42% so adds are low priority.
-3. **QTUM** — thematic quantum/AI play; re-entry only after churn is fully under control.
+1. **GOOG** — best combination of quality, relative strength, and clean multi-week uptrend. Re-entry/add only if cap-compliant (≤15% of equity).
+2. **QTUM** — thematic quantum/AI ETF with strong 1M (+12.6%) and 3M (+24.6%) momentum. A 1-share add (~$144 = 1.4%) would not stress concentration caps and would diversify AI exposure away from laggard AVGO.
+3. **QQQ** — already at 42.5%, near the 45% cap. Adds are low priority.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| XLK | **Sell** | **Compliance breach**; outside approved universe. Must be zero by Monday open. | 0% |
-| QQQ | Hold | Core liquid growth exposure; largest weight. Keep unless broad tape cracks. | 36–40% |
-| GOOG | Hold / Add on strength | Best relative strength Friday; preferred future add once lock is lifted. | 10–13% |
-| SOXX | Hold / Reduce on weakness | Strong 1M/3M theme but sharp Friday drop. Trim if support breaks. | 10–12% |
-| NVDA | Hold | Secular winner but volatile. No chasing; no same-day overtrading. | 4–5% |
-| AVGO | Hold | Valid AI/networking exposure; keep small and disciplined. | 4–5% |
-| QTUM | Watch | Good thematic ETF, but no re-entry while cleanup is pending. | 0–4% |
-| GLD | Watch only | Defensive diversifier only if macro turns decisively risk-off. | 0–5% |
-| RKLB | Watch only | Parabolic 1M (+69%) but extremely volatile; not for Monday. | 0% |
-| HOOD / META / SHLD | Avoid | Weak 1M trends; not where capital goes in a catch-up regime. | 0% |
+| QQQ | **Hold** | Core liquid growth exposure; largest weight, profitable. Keep unless broad tape cracks. | 36–42% |
+| GOOG | **Hold / Add on strength** | Best relative strength today and across 1W/1M/3M/6M. Preferred add once cap math works. | 10–13% |
+| SOXX | **Hold / Reduce on weakness** | Strong 1M/3M/6M theme but Friday drop and today softness. Trim if support breaks. | 10–15% |
+| NVDA | **Hold** | Secular winner but volatile. No chasing; no same-day overtrading. | 4–6% |
+| AVGO | **Hold / Tight stop** | Trimmed to 1 share. Valid AI/networking exposure but weakest 1W/1M trend in book. Exit if breaks 415. | 3–5% |
+| QTUM | **Watch / Small add** | Thematic ETF, good momentum, no concentration risk. Small starter possible. | 0–3% |
+| GLD | **Watch only** | Defensive diversifier only if macro turns decisively risk-off. | 0–3% |
+| RKLB | **Watch only** | Parabolic 1M (+60.6%) but extremely volatile; not for immediate deployment. | 0% |
+| META / HOOD / SHLD / ARKX / EIS / VOO | **Avoid** | Weak trends or redundant with QQQ/SPY exposure. | 0% |
 
-## Current Holdings
-- **QQQ:** **42.4%** weight, about **+2.25%** on cost, price **708.93**.
-- **SOXX:** **15.2%** weight, about **-3.23%** on cost, price **508.52**.
-- **XLK:** **14.1%** weight, unauthorized holding, about **-1.49%** on cost, price **176.26**.
-- **GOOG:** **11.8%** weight, about **-1.07%** on cost, price **393.32**.
-- **AVGO:** **8.5%** weight, about **-1.84%** on cost, price **425.19**.
-- **NVDA:** **6.7%** weight, about **-2.71%** on cost, price **225.32**.
+## Current Holdings Detail
+- **QQQ:** **42.5%** weight, unrealized **+2.05%**, price **$707.58**, cost **$693.34**.
+- **SOXX:** **15.2%** weight, unrealized **-3.96%**, price **$504.70**, cost **$525.51**.
+- **GOOG:** **11.9%** weight, unrealized **-0.13%**, price **$397.07**, cost **$397.58**.
+- **NVDA:** **6.8%** weight, unrealized **-2.88%**, price **$224.92**, cost **$231.59**.
+- **AVGO:** **4.2%** weight, unrealized **-3.66%**, price **$417.32**, cost **$433.17**.
 
 ## Near-Term Watchlist
-- **GOOG** — first valid redeployment target after compliance is restored.
-- **QQQ** — clean liquid re-add only if broad tech stabilizes and weight drops below 36%.
-- **AVGO** — watch for renewed AI/networking strength after Friday’s pullback.
-- **QTUM** — thematic re-entry only after churn is under control.
+- **GOOG** — first valid redeployment target after compliance is restored; cap math must be checked before any add.
+- **QTUM** — small thematic starter candidate if cash remains above target band after next tactical cycle.
+- **AVGO** — watch for 415 support breach; remaining 1 share is on a short leash.
 - **RKLB** — monitor but do not chase parabolic moves.
 
 ## Macro Themes To Monitor
-- **Actionable now:** AI capex durability, semiconductor pullback discipline, QQQ trend health.
-- **Worth monitoring:** whether Friday’s tech selloff is a one-day pullback or the start of a broader correction. Watch QQQ 700 level and SOXX 500 level.
-- **Interesting but not actionable yet:** space-theme enthusiasm (**RKLB / ARKX**) remains strong but too momentum-driven for immediate deployment while the book is in cleanup mode.
-- **Investor-move coverage:** news search failed (provider rate-limited 429). No actionable headlines were retrieved this cycle. Rely on price action and relative strength until search recovers.
-
-## Data / Process Notes
-- **Alpaca CLI** account/positions/clock calls still timed out in this local environment.
-- **Broker fallback used successfully:** deployed dashboard endpoints **`/api/portfolio`**, **`/api/chart-data`**, **`/api/sp500-comparison`**, and **`/api/market-clock`** via `bun -e`.
-- **FMP** remained unavailable because `FMP_API_KEY` is not configured. Multi-timeframe market snapshots were refreshed from **Yahoo Finance public chart endpoints** and saved under `temp_files/yahoo_snapshot.json`.
-- **News search:** Brave/Google Search returned 429 / rate-limited. No fresh headlines retrieved. Coverage was **insufficient**; do not force a thesis from stale or missing headlines.
-- **Code change:** Added hard universe validation to `alpacaTools.submitOrder` in `src/tools/alpaca_cli.ts`. **BUY orders for symbols not in the approved universe are now rejected at the CLI/API layer.** SELL orders are still allowed so out-of-universe positions can be cleaned up. This prevents future XLK-style breaches.
-- **Day-trade status:** No same-day round-trip fills were identified on May 14 or May 15. XLK liquidation on Monday should not trigger PDT protection because the last XLK buys were on Friday and the sale will be on a new session.
+- **Actionable now:** AI capex durability (GOOG, NVDA, SOXX trend health), AVGO relative weakness.
+- **Worth monitoring:** Whether Friday's tech selloff was a one-day pullback. Watch QQQ 700 level and SOXX 500 level. Oil/Iran headlines via Yahoo Finance RSS may broaden market volatility but are not directly impacting our tech/growth universe yet.
+- **Interesting but not actionable yet:** space-theme enthusiasm (**RKLB / ARKX**) remains strong but too momentum-driven for immediate deployment.
+- **News coverage:** Google Search returned anti-bot redirects. Yahoo Finance RSS provided macro headlines (oil/Iran, market mixed). Coverage is sufficient for macro context but insufficient for stock-specific catalysts. Do not force a thesis from weak evidence.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.
@@ -112,58 +84,16 @@ The multi-week AI/semiconductor/growth trend remains intact (SOXX +26.5% 1M, GOO
 - **Do not churn the same symbol in and out intraday without a fresh explicit trigger.**
 - If the tactical layer violates an explicit no-trade or compliance instruction, default the next hour to **cleanup-only** until the breach is fully resolved.
 - Dashboard endpoint fallbacks are currently more reliable than direct CLI refreshes in this environment.
+- **Check for stale open orders before placing new ones.** If `qty_available=0` but the position is still held, there is likely an open order blocking further action. Use `get-orders` and `cancel-order` to clean up.
 - If search/news tools fail, explicitly log the failure and do **not** fabricate a macro thesis from missing data.
+- **FMP API key is not configured.** Continue using Yahoo Finance public chart endpoints as fallback for multi-timeframe performance.
 
 ## Last Run Summary
-- The portfolio is still positive in absolute dollars, but it remains **off track** versus SPY by a wide margin.
-- Multi-week market leadership still favors AI / semis / high-quality growth.
-- The urgent next-session task is **compliance cleanup (XLK) and execution discipline**, not adding new exposure.
-- A broad tech selloff on Friday hurt the semi sleeve but did not break multi-week trends.
-- Monday’s plan: sell XLK, hold core, tighten stops, and wait for stabilization before any redeployment.
-
----
-
-## Tactical Execution Summary — 2026-05-18 13:32 UTC (Tactical Cycle)
-- **Status:** Market OPEN (Monday regular session). Event detector: NONE.
-- **Orders placed:** SELL XLK 8 shares limit @ $177.35 (compliance cleanup — unauthorized universe breach). Order working, qty_available=0.
-- **Holdings after XLK order working:** AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8 (pending exit).
-- **Live prices:** QQQ $711.09 (+0.30%), GOOG $392.35 (-0.25%), SOXX $516.23 (+1.52%), NVDA $228.87 (+1.58%), AVGO $418.14 (-1.66%), XLK $177.38 (+0.64%).
-- **Account:** Equity $10,072.20 | Cash $135.41 | Gross exposure $9,936.79 (98.6% pre-XLK-fill; will drop to ~84.6% once XLK fills).
-- **Daytrade count:** 3 (unchanged; XLK was not opened today, so sell does not increment).
-- **AVGO alert:** Opened at $418.14, below the 420.0 protective stop from todo.md. No 5-minute close confirmation available; market opened ~2 min ago. Held fire on AVGO trim because (a) insufficient time-bar confirmation, (b) one-order-per-cycle rule active until XLK is confirmed gone, (c) will reassess at next tactical cycle or hourly review.
-- **No other trades:** All other positions trade above their listed stop levels. Regime remains defensive/cleanup-only; no new buys authorized.
-- **Next expected action:** Confirm XLK fill, then if AVGO stays below $420 on a confirmed close, execute protective SELL 1 share AVGO.
-
----
-
-## Tactical Execution Summary — 2026-05-16 10:44 UTC (Tactical Cycle)
-- **Status:** Market CLOSED (Saturday). No regular-session orders possible.
-- **Event detector:** NONE — no market-moving events detected.
-- **Orders placed:** None.
-- **Holdings unchanged:** QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2.
-- **Cash / equity / exposure:** $135.41 / $10,030.93 / $9,895.52 (98.6%).
-- **Daytrade count:** 3 (at threshold; one remaining before PDT trigger).
-- **Next expected action:** Monday 2026-05-18 09:30 ET open — SELL XLK 8 shares (compliance cleanup). No other trades planned until XLK is confirmed gone and the hourly strategist lifts the cleanup-only lock.
-
----
-
-## Tactical Execution Summary — 2026-05-16 10:27 UTC
-- **Market status:** CLOSED (Saturday). No regular-session orders possible.
-- **Event detector:** NONE — no market-moving events detected.
-- **News search:** Failed (Brave 429, DuckDuckGo 403). No fresh weekend headlines retrieved.
-- **Orders placed:** None.
-- **Holdings unchanged:** QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2.
-- **Cash / equity / exposure:** $135.41 / $10,030.93 / 98.65%.
-- **Daytrade count:** 3 (at threshold).
-- **Next expected action:** Monday 2026-05-18 open — SELL XLK 8 shares (compliance cleanup), then hold core unless protective stops break.
-
----
-
-## Tactical Execution Summary — 2026-05-16 10:26 UTC
-- **Market status:** CLOSED (Saturday). No regular-session orders possible.
-- **Event detector:** NONE — no market-moving events detected.
-- **Orders placed:** None.
-- **Holdings unchanged:** QQQ 6, SOXX 3, GOOG 3, XLK 8, NVDA 3, AVGO 2.
-- **Cash / equity / exposure:** $135.41 / $10,030.93 / 98.65%.
-- **Daytrade count:** 3 (at threshold).
-- **Next expected action:** Monday 2026-05-18 open — SELL XLK 8 shares (compliance cleanup), then hold core unless protective stops break.
+- **XLK compliance breach RESOLVED:** Cancelled stale limit order at $177.35 and sold 8 shares at market. No open XLK orders remain.
+- **AVGO laggard trimmed:** Sold 1 share at market to reduce underperforming exposure from 8.4% to 4.2%.
+- **Portfolio is now fully compliant:** all holdings inside approved universe and within concentration caps (QQQ 42.5%, SOXX 15.2%, GOOG 11.9%).
+- **Gross exposure normalized:** 80.4%, inside the 75–85% target band.
+- **Cash increased to $1,959:** ready for selective redeployment into highest-conviction names.
+- **Daytrade count unchanged at 3:** XLK and AVGO sells were not daytrades (held overnight).
+- **Code improvement:** Added `get-orders` and `cancel-order` commands to `src/tools/alpaca_cli.ts` to prevent future stale-order blockages.
+- **Next tactical cycle priority:** HOLD core, monitor GOOG/QTUM add triggers, protect SOXX 500 and AVGO 415 stops.

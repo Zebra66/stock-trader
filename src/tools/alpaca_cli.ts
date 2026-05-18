@@ -72,6 +72,27 @@ export const alpacaTools = {
       return `Error fetching market clock: ${(e as Error).message}`;
     }
   },
+
+  getOrders: async (status?: string, symbols?: string[]): Promise<string> => {
+    try {
+      const opts: any = {};
+      if (status) opts.status = status;
+      if (symbols) opts.symbols = symbols;
+      const orders = await alpaca.getOrders(opts);
+      return JSON.stringify(orders);
+    } catch (e: unknown) {
+      return `Error fetching orders: ${(e as Error).message}`;
+    }
+  },
+
+  cancelOrder: async (orderId: string): Promise<string> => {
+    try {
+      const result = await alpaca.cancelOrder(orderId);
+      return JSON.stringify(result);
+    } catch (e: unknown) {
+      return `Error cancelling order: ${(e as Error).message}`;
+    }
+  },
 };
 
 export async function isMarketOpen(): Promise<boolean> {
@@ -100,6 +121,12 @@ Commands:
 
   get-clock
       Get market clock: whether the market is currently open, next open/close times.
+
+  get-orders [--status <open|closed|all>] [--symbols <TICKER,TICKER>]
+      List open (or closed/all) orders. Defaults to open orders.
+
+  cancel-order --id <ORDER_ID>
+      Cancel a specific open order by its ID.
 
   submit-order --symbol <TICKER> --qty <n> --side <buy|sell>
                [--type <market|limit>] [--time-in-force <day|gtc>]
@@ -153,6 +180,20 @@ if (import.meta.main) {
     case 'get-clock':
       task = alpacaTools.getMarketClock();
       break;
+
+    case 'get-orders': {
+      const statusFlag = flags.status || 'open';
+      const symbolsFlag = flags.symbols ? flags.symbols.split(',') : undefined;
+      task = alpacaTools.getOrders(statusFlag, symbolsFlag);
+      break;
+    }
+
+    case 'cancel-order': {
+      const orderId = flags.id;
+      if (!orderId) { console.error('Error: --id is required'); process.exit(1); }
+      task = alpacaTools.cancelOrder(orderId);
+      break;
+    }
 
     case 'get-latest-price': {
       if (!flags.symbol) { console.error('Error: --symbol is required'); process.exit(1); }

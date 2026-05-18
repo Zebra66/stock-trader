@@ -1,96 +1,85 @@
 # Tactical Todo For Next Execution
-*Updated 2026-05-16 (Saturday). Market closed. Next regular session: Monday 2026-05-18 09:30 ET.*
-
-<!-- Tactical run 2026-05-16 10:24Z confirmed: no events, no trades possible (market closed), plan unchanged for Monday open. -->
+*Updated 2026-05-18 09:35 ET. Market OPEN. Cleanup-only lock LIFTED. Normal operations resumed.*
 
 ## Current State
-- **Regime:** **defensive / cleanup-only**
-- **Live book:** **QQQ 6, SOXX 3, GOOG 3, XLK 8 (sell order working), NVDA 3, AVGO 2**
-- **Account equity / cash / buying power:** **$10,072.20 / $135.41 / $10,207.61**
-- **Gross exposure:** **98.6%** of equity (will drop to ~84.6% once XLK fill confirms).
-- **Target gross-exposure band:** **75–85% after XLK cleanup**
-- Portfolio is **positive** since inception but **trails SPY**.
-- The tactical layer **violated the approved universe** by adding XLK on May 14 and May 15. A code-level guard is active to block future out-of-universe BUY orders.
+- **Regime:** neutral / light offensive catch-up
+- **Live book:** **QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1**
+- **Account equity / cash / buying power:** **$9,995.47 / $1,958.50 / $11,953.97**
+- **Gross exposure:** **80.4%** of equity (inside 75–85% band)
+- **Daytrade count:** **3** (caution: prohibit same-day closing orders for any position opened today)
+- **All holdings universe-compliant.** No unauthorized positions.
 
-## Ranked Execution Priority (Monday Open)
-1. **SELL XLK full position (8 shares) at market open Monday 2026-05-18** - compliance breach cleanup. This is the #1 priority.
-2. **HOLD approved core positions** - QQQ, GOOG, SOXX, NVDA, AVGO.
-3. **Protective reduction only if weakness worsens** - SOXX first, then NVDA / AVGO / QQQ / GOOG at stop levels below.
-4. **No new buys Monday morning** unless the hourly strategist explicitly lifts the lock in a later note.
+## Ranked Execution Priority
+1. **HOLD approved core positions** — QQQ, GOOG, SOXX, NVDA, AVGO.
+2. **Protective reduction only if weakness worsens** — AVGO first (415 stop), then SOXX (500 stop).
+3. **Selective adds on quality setups only** — GOOG or QTUM, after confirming cap compliance and tape stabilization.
 
 ## Hard Rules / No-Trade Conditions
-- **Cleanup-only hard lock:** do **not** place any new buy order on Monday until XLK is confirmed gone and the tape stabilizes.
-- **Do not open or add any symbol outside the approved universe.** The CLI now blocks out-of-universe BUY orders at the API layer.
-- **Do not keep resubmitting the same rejected order.** If the XLK sell fails for any reason, log the error and wait for the next hourly directive.
-- **One order only this cycle** unless XLK is already gone and a protective sell stop is triggered in a current holding.
-- **No same-day reversal trades** in any symbol.
-- If a symbol has breaking adverse news, disorderly price action, or an abnormal spread, **do nothing**.
-- If regular hours are over, convert all entries into **next regular-session** triggers; do **not** send after-hours equity orders.
-
-## Immediate Cleanup Order
-- ✅ **SELL XLK 8 shares limit @ $177.35 — ORDER WORKING as of 2026-05-18 13:32 UTC.**
-  - Rationale: **XLK is outside the approved universe.**
-  - Do NOT place another XLK order this cycle; wait for fill confirmation.
+- **Do not open or add any symbol outside the approved universe.** The CLI blocks out-of-universe BUY orders at the API layer.
+- **Do not execute same-day round trips.** If a symbol was bought today, you may NOT sell it today. If a symbol was sold today, you may NOT buy it back today.
+- **Do not keep resubmitting rejected orders.** Log the error and wait for the next hourly directive.
+- **One order per tactical cycle unless an explicit stop is triggered in a current holding.**
+- **If a symbol has breaking adverse news, disorderly price action, or an abnormal spread, do nothing.**
+- **If regular hours are over, convert all entries into next regular-session triggers; do not send after-hours equity orders.**
 
 ## Position Instructions
-- **HOLD QQQ - target allocation 36-40%.**
-  - Current ref: ~**708.93**
-  - **SELL 1 share if QQQ breaks below 706.0 on a 5-minute close** - concentration control if the broad tape weakens further.
-  - **Do not add this hour.** Future re-add only after a later hourly note lifts the lock.
 
-- **HOLD GOOG - target allocation 10-13%.**
-  - Current ref: ~**393.32**
-  - **SELL 1 share if GOOG loses 389.5 on a 5-minute close** - preserve capital if cloud/AI follow-through fails.
-  - **Monday add trigger (only if lock is lifted): BUY 1 share if GOOG dips to ~390 and holds, or breaks above 398 with confirmation.**
+### QQQ — HOLD — target allocation 36–42%
+- Current ref: ~**$707.58**
+- **SELL 1 share if QQQ breaks below 700.0 on a 5-minute close** — concentration control if broad tape weakens further.
+- **Do not add this hour.** Already near 42.5% weight; 45% cap is close.
 
-- **HOLD SOXX - target allocation 10-12%.**
-  - Current ref: ~**508.52**
-  - **SELL 1 share if SOXX loses 500.0 on a 5-minute close** - semis are the weakest sleeve after Friday and already above preferred size.
-  - **Do not add this hour.**
+### GOOG — HOLD / ADD on strength — target allocation 10–13%
+- Current ref: ~**$397.07**
+- **BUY 1 share if GOOG dips to ~390 and holds with orderly tape** — high-conviction add on a controlled pullback.
+- **BUY 1 share if GOOG breaks above 400.0 with volume confirmation** — momentum add on breakout.
+- **CRITICAL CAP CHECK before executing:** Adding 1 share makes GOOG 4 shares × price / equity. If that exceeds **15.0% of equity**, the add is PROHIBITED unless another single-stock position is trimmed in the same cycle (e.g., SELL 1 NVDA or AVGO). Compute cap before placing any buy.
+- **SELL 1 share if GOOG loses 389.0 on a 5-minute close** — preserve capital if cloud/AI follow-through fails.
 
-- **HOLD NVDA - target allocation 4-5%.**
-  - Current ref: ~**225.32**
-  - **SELL 1 share if NVDA breaks below 220.0 on a 5-minute close**.
-  - Otherwise hold; **no same-day re-entry**.
+### SOXX — HOLD / Reduce on weakness — target allocation 10–15%
+- Current ref: ~**$504.70**
+- **SELL 1 share if SOXX loses 500.0 on a 5-minute close** — semis are the most volatile sleeve and already underwater.
+- **Do not add this hour.** Wait for stabilization above 510.
 
-- **HOLD AVGO — target allocation 4–5%.**
-  - Current ref: ~**418.14** (opened below 420.0 stop; needs 5-minute close confirmation)
-  - **SELL 1 share if AVGO breaks below 420.0 on a 5-minute close** — price is currently below trigger but market just opened; confirm before acting.
-  - Otherwise hold; **no add this hour**.
+### NVDA — HOLD — target allocation 4–6%
+- Current ref: ~**$224.92**
+- **SELL 1 share if NVDA breaks below 220.0 on a 5-minute close**.
+- Otherwise hold; **no same-day re-entry.**
+
+### AVGO — HOLD / Tight stop — target allocation 3–5%
+- Current ref: ~**$417.32**
+- **SELL remaining 1 share if AVGO breaks below 415.0 on a 5-minute close** — weakest 1W/1M trend in the book; no tolerance for further deterioration.
+- **Do not add this hour.** No fresh AVGO adds until relative strength improves vs NVDA/SOXX.
+
+### QTUM — WATCH / Small starter — target allocation 0–3%
+- Current ref: ~**$144.01**
+- **BUY 1 share if QTUM dips to ~140 and holds** — thematic quantum/AI starter. A 1-share add is only ~1.4% of equity and does not stress any concentration cap.
+- Only execute if no other orders were placed this cycle and cash remains above $1,500 after execution.
 
 ## Future Deployment Queue
-*Only relevant after XLK is gone, the hourly lock is lifted, and the tape stabilizes.*
-1. **GOOG**
-2. **QQQ**
-3. **AVGO**
+*Only relevant after tactical conditions trigger and cap math is verified.*
+1. **GOOG** (cap-dependent)
+2. **QTUM** (unconstrained by single-stock cap)
+3. **QQQ** (only if weight drops below 36%)
 
 ## Tactical Intent
-- Clean up the unauthorized **XLK** exposure at the first eligible broker window (Monday open).
-- Stop the churn.
-- Hold the approved core unless risk breaks.
-- Do **not** redeploy cash until compliance is restored and a later hourly note explicitly allows fresh buying.
+- Hold core positions and let winners run (QQQ, GOOG).
+- Protect against further weakness in AVGO (415 stop) and SOXX (500 stop).
+- Deploy cash selectively into the highest-conviction setups (GOOG on dip/breakout, QTUM small starter) only after verifying concentration caps.
+- Avoid all churn and same-day reversals.
 
-## This Cycle - 2026-05-18 13:32 UTC
-- **Orders placed:** SELL XLK 8 shares limit @ $177.35 (compliance cleanup). Order working.
-- **Event detector:** NONE.
-- **Holdings:** QQQ 6, SOXX 3, GOOG 3, XLK 8 (pending exit), NVDA 3, AVGO 2.
-- **Cash / equity / exposure:** $135.41 / $10,072.20 / 98.6% (pre-XLK-fill).
-- **Daytrade count:** 3 (unchanged; XLK not opened today).
-- **AVGO alert:** Opened at $418.14, below 420 stop. No 5-min confirmation yet; hold fire this cycle.
-- **Plan:** Hold all approved positions. No new buys until XLK fill confirms and hourly lock is lifted.
+## Explicit No-Trade Conditions This Hour
+- **No AVGO buys** — laggard, on a short leash.
+- **No META / HOOD / SHLD / ARKX / EIS / VOO / RKLB buys** — weak trends or too volatile.
+- **No QQQ adds** — near 45% cap.
+- **No same-day reversals** in any symbol.
 
-## This Cycle - 2026-05-16 10:27 UTC
-- **No orders were placed.** Market closed (Saturday). Regular session resumes Monday 2026-05-18 09:30 ET.
-- **Event detector:** NONE.
-- **News search:** Failed (Brave 429, DuckDuckGo 403). Rely on existing plan.
-- XLK cleanup remains queued for Monday open.
-- All approved holdings are above their listed 5-minute stop levels.
-- Stay in cleanup-only mode until the hourly note explicitly lifts the lock or a stop level breaks.
-
----
-
-## This Cycle - 2026-05-16 10:25 UTC
-- **No orders were placed.** Market closed (Saturday). Regular session resumes Monday 2026-05-18 09:30 ET.
-- XLK cleanup remains queued for Monday open.
-- All approved holdings are above their listed 5-minute stop levels.
-- Stay in cleanup-only mode until the hourly note explicitly lifts the lock or a stop level breaks.
+## This Cycle — 2026-05-18 09:35Z (Hourly Run)
+- **Orders placed by hourly strategist:**
+  1. Cancelled stale XLK limit order (id 84226833-d580-4d0c-9575-bf861118ebbb).
+  2. SELL XLK 8 shares at market — compliance cleanup, filled.
+  3. SELL AVGO 1 share at market — trim laggard, filled.
+- **Holdings after fills:** QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1.
+- **Cash / equity / exposure:** $1,958.50 / $9,995.47 / 80.4%.
+- **Daytrade count:** 3 (unchanged).
+- **Plan:** HOLD core, monitor stops, consider GOOG/QTUM adds on confirmed setups only.

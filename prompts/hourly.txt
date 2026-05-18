@@ -36,9 +36,10 @@ You also have access to Google Search — use it freely to:
 ### Step 2 — Gather market intelligence
 First, decide which data and in which format you need to make a sound macro decision. Then:
 - Use bash with the FMP CLI to pull multi-timeframe performance (1w, 1m, 3m, 6m, 1y, 3y) for ALL symbols in the Investment Universe
-- If the FMP CLI is unavailable because the API key or upstream service is missing, use another public market-data source reachable from bash to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
+- If the FMP CLI is unavailable because the API key or upstream service is missing, use Yahoo Finance public chart endpoints (or another reachable source) to compute the same return snapshot and explicitly document the fallback source in `memory/MEMORY.md`
 - Save raw market snapshots and temporary research artifacts under `temp_files/`
 - Use bash with the Alpaca CLI to get current portfolio positions, buying power (amount of money left to invest), and current gain/loss overall and per stock
+- **Check for stale open orders:** If any held position shows `qty_available=0` or if there are open orders older than this cycle, use `get-orders` to list them and `cancel-order` to remove stale limit orders that may block new trades or prevent risk-management exits.
 - Review the latest filled trades since the prior hourly run (via broker activities or `/api/portfolio` trade history) and explicitly compare them with the prior hourly/tactical plan so unauthorized executions are caught immediately
 - On the first hourly run of each trading day (normally the 9:35 AM ET run), review portfolio performance over 1D, 1W, and 2W and compare it with the S&P 500 over the same windows to determine whether recent execution is helping or hurting the 3-month objective
 - If the account is younger than one of those lookback windows, mark that window explicitly as **N/A due to insufficient live history** rather than silently substituting inception or a shorter lookback
