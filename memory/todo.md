@@ -4,8 +4,8 @@
 ## Current State
 - **Regime:** neutral / light offensive catch-up
 - **Live book:** **QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1**
-- **Account equity / cash / buying power:** **$9,995.47 / $1,958.50 / $11,953.97**
-- **Gross exposure:** **80.4%** of equity (inside 75–85% band)
+- **Account equity / cash / buying power:** **$10,032.25 / $1,958.50 / $11,990.75**
+- **Gross exposure:** **80.5%** of equity (inside 75–85% band)
 - **Daytrade count:** **3** (caution: prohibit same-day closing orders for any position opened today)
 - **All holdings universe-compliant.** No unauthorized positions.
 
@@ -25,34 +25,34 @@
 ## Position Instructions
 
 ### QQQ — HOLD — target allocation 36–42%
-- Current ref: ~**$707.58**
+- Current ref: ~**$709.40**
 - **SELL 1 share if QQQ breaks below 700.0 on a 5-minute close** — concentration control if broad tape weakens further.
 - **Do not add this hour.** Already near 42.5% weight; 45% cap is close.
 
 ### GOOG — HOLD / ADD on strength — target allocation 10–13%
-- Current ref: ~**$397.07**
+- Current ref: ~**$400.80**
 - **BUY 1 share if GOOG dips to ~390 and holds with orderly tape** — high-conviction add on a controlled pullback.
 - **BUY 1 share if GOOG breaks above 400.0 with volume confirmation** — momentum add on breakout.
 - **CRITICAL CAP CHECK before executing:** Adding 1 share makes GOOG 4 shares × price / equity. If that exceeds **15.0% of equity**, the add is PROHIBITED unless another single-stock position is trimmed in the same cycle (e.g., SELL 1 NVDA or AVGO). Compute cap before placing any buy.
 - **SELL 1 share if GOOG loses 389.0 on a 5-minute close** — preserve capital if cloud/AI follow-through fails.
 
 ### SOXX — HOLD / Reduce on weakness — target allocation 10–15%
-- Current ref: ~**$504.70**
+- Current ref: ~**$506.46**
 - **SELL 1 share if SOXX loses 500.0 on a 5-minute close** — semis are the most volatile sleeve and already underwater.
 - **Do not add this hour.** Wait for stabilization above 510.
 
 ### NVDA — HOLD — target allocation 4–6%
-- Current ref: ~**$224.92**
+- Current ref: ~**$225.47**
 - **SELL 1 share if NVDA breaks below 220.0 on a 5-minute close**.
 - Otherwise hold; **no same-day re-entry.**
 
 ### AVGO — HOLD / Tight stop — target allocation 3–5%
-- Current ref: ~**$417.32**
+- Current ref: ~**$419.18**
 - **SELL remaining 1 share if AVGO breaks below 415.0 on a 5-minute close** — weakest 1W/1M trend in the book; no tolerance for further deterioration.
 - **Do not add this hour.** No fresh AVGO adds until relative strength improves vs NVDA/SOXX.
 
 ### QTUM — WATCH / Small starter — target allocation 0–3%
-- Current ref: ~**$144.01**
+- Current ref: ~**$143.18**
 - **BUY 1 share if QTUM dips to ~140 and holds** — thematic quantum/AI starter. A 1-share add is only ~1.4% of equity and does not stress any concentration cap.
 - Only execute if no other orders were placed this cycle and cash remains above $1,500 after execution.
 
@@ -83,3 +83,14 @@
 - **Cash / equity / exposure:** $1,958.50 / $9,995.47 / 80.4%.
 - **Daytrade count:** 3 (unchanged).
 - **Plan:** HOLD core, monitor stops, consider GOOG/QTUM adds on confirmed setups only.
+
+## This Cycle — 2026-05-18 09:50Z (Tactical Run)
+- **Orders placed:** None.
+- **Event detector:** NONE.
+- **Holdings:** QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1.
+- **Cash / equity / exposure:** $1,958.50 / $10,032.25 / 80.5%.
+- **Daytrade count:** 3.
+- **GOOG alert:** Price broke above $400.0 ($400.72) with TradeCount=60, Volume=3297 — breakout condition triggered. **BUT cap check blocked the add:** 4 shares × $400.72 = $1,602.88 / $10,032.25 = **15.97%** > 15% single-stock cap. One-order rule prevents a paired discretionary trim to make room. **Add ABORTED.**
+- **All stops:** QQQ 709.37 (>700), SOXX 506.01 (>500), NVDA 225.39 (>220), AVGO 419.18 (>415), GOOG 400.72 (>389) — none triggered.
+- **QTUM:** $143.18, well above ~140 dip trigger — no action.
+- **Plan:** Hold core. Wait for next hourly update or a GOOG dip that keeps 4-share weight under 15%, or a protective stop to trigger to free up cap.

@@ -1,10 +1,25 @@
 # Hourly Macro Memory
 *Updated 2026-05-18 09:35 ET. Market OPEN. All compliance issues resolved.*
 
+---
+
+## Tactical Execution Summary — 2026-05-18 09:50Z
+- **Status:** Market OPEN. Event detector: NONE.
+- **Orders placed:** None.
+- **Holdings unchanged:** QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1.
+- **Cash / equity / exposure:** $1,958.50 / $10,032.25 / 80.5%.
+- **Daytrade count:** 3.
+- **GOOG breakout blocked by cap:** GOOG broke above $400.0 ($400.72, TradeCount=60, Volume=3297) — add condition triggered. Cap check: 4 shares × $400.72 = $1,602.88 / $10,032 = **15.97%**, exceeding the 15% single-stock cap. One-order rule prevents paired discretionary trim. **Add ABORTED.** Will revisit if GOOG dips (cheaper = lighter weight) or if another position breaks its stop to free up cap.
+- **All protective stops:** Intact. QQQ $709.37 (>700), SOXX $506.01 (>500), NVDA $225.39 (>220), AVGO $419.18 (>415), GOOG $400.72 (>389).
+- **Next expected action:** Hold core. Next possible triggers: GOOG dip to ~390 (cheaper add = cap-compliant), QTUM dip to ~140, or any protective stop breaking.
+- **Code fix:** Corrected syntax error in `src/tools/alpaca_cli.ts` (`cancel-order` case was malformed and leaked into `get-latest-price`).
+
+---
+
 ## Authoritative Live Book
 - **QQQ 6, SOXX 3, GOOG 3, NVDA 3, AVGO 1**
-- **Account equity / cash / buying power:** **$9,995.47 / $1,958.50 / $11,953.97**
-- **Current gross exposure:** **$8,036.97 = 80.4%** of equity.
+- **Account equity / cash / buying power:** **$10,032.25 / $1,958.50 / $11,990.75**
+- **Current gross exposure:** **$8,073.75 = 80.5%** of equity.
 - **Daytrade count:** **3** (unchanged; no daytrades today).
 - **Target gross-exposure band:** **75–85%** — current exposure sits squarely inside this band.
 
@@ -55,9 +70,9 @@ Tech is stabilizing after Friday's broad risk-off session (SOXX -4.06%, NVDA -4.
 | META / HOOD / SHLD / ARKX / EIS / VOO | **Avoid** | Weak trends or redundant with QQQ/SPY exposure. | 0% |
 
 ## Current Holdings Detail
-- **QQQ:** **42.5%** weight, unrealized **+2.05%**, price **$707.58**, cost **$693.34**.
-- **SOXX:** **15.2%** weight, unrealized **-3.96%**, price **$504.70**, cost **$525.51**.
-- **GOOG:** **11.9%** weight, unrealized **-0.13%**, price **$397.07**, cost **$397.58**.
+- **QQQ:** **42.4%** weight, unrealized **+2.31%**, price **$709.40**, cost **$693.34**.
+- **SOXX:** **15.1%** weight, unrealized **-3.68%**, price **$506.46**, cost **$525.51**.
+- **GOOG:** **12.0%** weight, unrealized **+0.81%**, price **$400.80**, cost **$397.58**.
 - **NVDA:** **6.8%** weight, unrealized **-2.88%**, price **$224.92**, cost **$231.59**.
 - **AVGO:** **4.2%** weight, unrealized **-3.66%**, price **$417.32**, cost **$433.17**.
 
