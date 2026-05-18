@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-05-18 18:05Z (Monday 2:05 PM ET)
+# Tactical Todo — Updated 2026-05-18 18:10Z (Monday 2:10 PM ET)
 *HARD_LOCK active. Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
@@ -54,11 +54,12 @@
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 - **No illiquid-symbol market orders.** EIS, QTUM, SHLD, ARKX have <5 trades/hour. If ever authorized, use limit orders only.
 
-## This Cycle — 2026-05-18 18:05Z (Monday 2:05 PM ET)
-- **Market status:** OPEN. Event detector: NOT RUN (hard lock, no need).
-- **Live broker refresh:** Equity $9,940.48 | Cash $5,796.51 | Long $4,663.42 | Short -$519.45 | Gross exposure 46.89% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 4 ($2,809.76), GOOG 3 ($1,191.44), NVDA 3 ($662.22), XLK -3 (-$519.45).
+## This Cycle — 2026-05-18 18:10Z (Monday 2:10 PM ET)
+- **Market status:** OPEN. Event detector: NONE (no events).
+- **Live broker refresh:** Equity $9,935.09 | Cash $5,796.51 | Long $4,657.28 | Short -$518.70 | Gross exposure 46.88% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 ($2,806.94), GOOG 3 ($1,189.71), NVDA 3 ($660.63), XLK -3 (-$518.70).
 - **Unauthorized trades detected:** None since 11:37 AM ET run. HARD_LOCK remains effective.
-- **Orders placed this cycle:** None. HARD_LOCK active.
+- **Orders placed this cycle:** None. HARD_LOCK active; code guard enforced.
+- **Protective stops check:** NVDA $220.21 (>218.00), QQQ $701.74 (>700.00), GOOG $396.57 (>394.00). None breached.
 - **NVDA earnings alert:** Wednesday May 20. No adds before event. Stop below 218.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO per Tuesday deployment plan after hourly lock lift.
