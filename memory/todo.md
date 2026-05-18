@@ -4,8 +4,8 @@
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
 - **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,946.67 / $5,796.51 / $14,702.9
-- **Gross long exposure:** 46.96% | **Net exposure:** 41.73% | **Cash:** 58.2%
+- **Account equity / cash / buying power:** $9,928.30 / $5,796.51 / $14,691.61
+- **Gross long exposure:** 46.8% | **Net exposure:** 41.6% | **Cash:** 58.4%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
 - **Unauthorized positions:** XLK -3 shares SHORT — cover deferred to Tuesday 2026-05-19 open to avoid daytrade #4
@@ -47,11 +47,11 @@
 - **NO ORDERS OF ANY KIND.**
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 
-## This Cycle — 2026-05-18 16:21Z (Monday 12:21 PM ET)
+## This Cycle — 2026-05-18 16:35Z (Monday 12:35 PM ET)
 - **Market status:** OPEN. Event detector: NONE — no protective action required.
-- **Live broker refresh:** Equity $9,954.85 | Cash $5,796.51 | Long $4,679.65 | Short -$521.31 | Gross long 47.0% | Net 41.7% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 4 @ $704.14, GOOG 3 @ $398.25, NVDA 3 @ $222.62, XLK -3 (short) @ $173.69.
-- **Protective stops:** QQQ $704.14 (>700.0), GOOG $398.25 (>394.0), NVDA $222.62 (>218.0). None breached.
+- **Live broker refresh:** Equity $9,928.30 | Cash $5,796.51 | Long $4,648.39 | Short -$516.60 | Gross long 46.8% | Net 41.6% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 @ $699.80, GOOG 3 @ $396.34, NVDA 3 @ $220.05, XLK -3 (short) @ $172.20.
+- **Protective stops:** QQQ $699.80 (>700.0), GOOG $396.34 (>394.0), NVDA $220.05 (>218.0). None breached.
 - **Orders placed this cycle:** None. HARD_LOCK active.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan.
 
