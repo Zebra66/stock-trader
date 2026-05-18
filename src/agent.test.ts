@@ -182,7 +182,7 @@ describe('Alpaca CLI', () => {
   });
 
   test('submit-order rejects out-of-universe buy', async () => {
-    const result = await alpacaTools.submitOrder('XLK', 1, 'buy');
+    const result = await alpacaTools.submitOrder('MSFT', 1, 'buy');
     expect(result).toContain('not in the approved investment universe');
   });
 

@@ -83,6 +83,10 @@ export function getAlpacaModeLabel(mode: AlpacaMode): string {
   return MODE_LABELS[mode];
 }
 
+const UNIVERSE = new Set([
+  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX',
+]);
+
 export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.env): Alpaca {
   const credentials = resolveAlpacaCredentials(mode, env);
 
@@ -90,7 +94,79 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
     throw new Error(`${MODE_LABELS[mode]} credentials are not configured.`);
   }
 
-  return new Alpaca(credentials);
+  const client = new Alpaca(credentials);
+  const originalCreateOrder = client.createOrder.bind(client);
+
+  // Universal order guards — intercept every createOrder call regardless of which
+  // file / temp script / direct SDK usage initiated it.
+  client.createOrder = async (params: any) => {
+    const symbol = String(params.symbol ?? '').toUpperCase();
+    const side = String(params.side ?? '').toLowerCase();
+    const qty =
+      typeof params.qty === 'string'
+        ? parseFloat(params.qty)
+        : typeof params.qty === 'number'
+        ? params.qty
+        : NaN;
+
+    if (!symbol || Number.isNaN(qty) || qty <= 0) {
+      throw new Error(
+        `Invalid order parameters: symbol=${params.symbol}, qty=${params.qty}`
+      );
+    }
+
+    // ── Universe gate (BUY) ───────────────────────────────────────────────
+    if (side === 'buy' && !UNIVERSE.has(symbol)) {
+      try {
+        const positions = await client.getPositions();
+        const pos = positions.find(
+          (p: any) => String(p.symbol ?? '').toUpperCase() === symbol
+        );
+        // Allow buy-to-cover only when an existing short position exists
+        if (!pos || parseFloat(pos.qty ?? 0) >= 0) {
+          throw new Error(
+            `Symbol ${params.symbol} is not in the approved investment universe.`
+          );
+        }
+      } catch (e) {
+        if (e instanceof Error && e.message.includes('investment universe')) {
+          throw e;
+        }
+        throw new Error(
+          `Symbol ${params.symbol} is not in the approved investment universe (position check failed).`
+        );
+      }
+    }
+
+    // ── Short-sale guard (SELL) ─────────────────────────────────────────────
+    if (side === 'sell') {
+      try {
+        const positions = await client.getPositions();
+        const pos = positions.find(
+          (p: any) =>
+            String(p.symbol ?? '').toUpperCase() === symbol &&
+            parseFloat(p.qty ?? 0) > 0
+        );
+        const longQty = pos ? parseFloat(pos.qty ?? 0) : 0;
+        if (longQty < qty) {
+          throw new Error(
+            `Sell of ${qty} shares of ${params.symbol} blocked — account only holds ${longQty} shares long. Short selling is prohibited.`
+          );
+        }
+      } catch (e) {
+        if (e instanceof Error && e.message.includes('Short selling is prohibited')) {
+          throw e;
+        }
+        throw new Error(
+          `Sell of ${params.symbol} blocked — unable to verify long position before sell: ${e instanceof Error ? e.message : String(e)}`
+        );
+      }
+    }
+
+    return originalCreateOrder(params);
+  };
+
+  return client;
 }
 
 export function getDefaultAlpacaClient(env: EnvSource = process.env): Alpaca {

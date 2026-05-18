@@ -77,7 +77,7 @@ upsert_secret "allowed-user-email"          "$(get_env_value ALLOWED_USER_EMAIL)
 
 echo ""
 echo -e "${GREEN}✓ All secrets uploaded to Secret Manager.${NC}"
-echo -e "${YELLOW}You can now safely deploy with: ./scripts/cloud_deploy.sh -p $PROJECT_ID${NC}"
+echo -e "${YELLOW}You can now safely deploy with: ./scripts/deploy.sh${NC}"
 echo ""
 echo -e "${BLUE}To rotate a secret later:${NC}"
 echo -e "  echo -n 'NEW_VALUE' | gcloud secrets versions add SECRET_NAME --data-file=-"

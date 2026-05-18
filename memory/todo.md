@@ -1,66 +1,56 @@
-# Tactical Todo For Next Execution
-*Updated 2026-05-18 15:38 UTC+7 / 03:38 ET Monday. Live broker state reconciled.*
+# Tactical Todo — Updated 2026-05-18 15:35Z (Monday 11:35 AM ET)
+*Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
-- **Regime:** **defensive / emergency cleanup**
-- **Live book:** **GOOG 3, NVDA 3, QQQ 4, XLK -3 (short)**
-- **Account equity / cash / buying power:** **$9,960.31 / $5,796.51 / $14,713.54**
-- **Gross exposure:** **52.3%** of equity (inside defensive band once short is closed)
-- **Daytrade count:** **3** (do NOT create any additional daytrades today)
-- **Pattern Day Trader:** false
-- **Prior unauthorized trades today:** XLK was shorted 3 shares (sell_to_open at 13:54, 15:26, 15:27 UTC). SOXX and AVGO were fully exited. QQQ was trimmed from 6→5→4 shares.
-- **Memory drift:** Saturday memory did not reflect today's trades. Now corrected.
+- **Regime:** defensive / compliance-cleanup hard lock
+- **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (SHORT), SOXX 0, AVGO 0
+- **Account equity / cash / buying power:** $9,960.05 / $4,388.34 / $13,305.59
+- **Gross long exposure:** 61.2% | **Net exposure:** 55.9% | **Cash:** 44.1%
+- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
+- **Pattern day trader:** false
+- **Unauthorized positions:** XLK -3 shares SHORT — cover deferred to Tuesday 2026-05-19 open to avoid daytrade #4
 
-## Ranked Execution Priority
-1. **BUY XLK 3 shares at market open Tuesday 2026-05-19** — close unauthorized short. #1 compliance task. Do NOT attempt today (Alpaca 403 / PDT block).
-2. **Re-buy QQQ 1 share on Tuesday** — replace accidental sale from this cycle. Only if hourly strategist authorizes and anti-churn allows (QQQ was sold today).
-3. **HOLD approved core positions** — GOOG 3, NVDA 3, QQQ 4. No further action today.
-4. **No new buys today** — anti-churn and PDT proximity make any new activity high-risk.
+## Immediate Actions (Tuesday 2026-05-19 Open)
+1. **BUY TO COVER XLK 3 shares** — compliance cleanup of unauthorized short.
+   - Execute at Tuesday market open (09:30 ET) via market order or limit near prior close (~$173.84).
+   - This is explicitly authorized by the hourly strategist. The CLI universe gate allows buy-to-cover for existing shorts.
+   - After cover, cash will be ~$3,867 (38.8% of equity). Gross long exposure remains 61.2%.
 
-## Hard Rules / No-Trade Conditions
-- **Do NOT trade XLK today.** Buy-to-cover was blocked by Alpaca 403. Wait for next session.
-- **Do NOT re-buy QQQ today.** QQQ was sold today; anti-churn hard stop applies.
-- **Do NOT place any new buy order today.** Cleanup and stabilization only.
-- **One order only per cycle.** We already placed (and filled) one accidental order this cycle.
-- **No same-day reversal trades** in any symbol.
-- **Do not keep resubmitting the same rejected order.** The XLK cover failed once; do not retry today.
+## Position Instructions (Monday 11:35 AM — today)
+- **HOLD QQQ 6 — target allocation 36-42%.**
+  - Current ref: ~**704.20**
+  - **SELL 1 share if QQQ breaks below 700.0 on a 5-minute close** — concentration control if broad tape weakens further.
+  - **Do not add today.** QQQ is already at 42.4% of equity; adds are low priority.
 
-## Position Instructions
-- **HOLD QQQ — current 4 shares.**
-  - Current ref: ~**704.40**
-  - No add or trim today. Potential re-add 1 share tomorrow to restore 5.
+- **HOLD GOOG 3 — target allocation 10-15%.**
+  - Current ref: ~**399.65** (+1.61% intraday, relative strength leader)
+  - **SELL 1 share if GOOG loses 394.0 on a 5-minute close** — preserve capital if cloud/AI follow-through fails.
+  - **Do not add today.** At 12.0% weight; one more share would push toward 16% and breach the 15% single-stock cap.
 
-- **HOLD GOOG — current 3 shares.**
-  - Current ref: ~**399.54**
-  - No action today.
+- **HOLD NVDA 3 — target allocation 4-8%.**
+  - Current ref: ~**222.88** (-1.05% intraday, semis continue to lag)
+  - **SELL 1 share if NVDA breaks below 218.0 on a 5-minute close**.
+  - **Do NOT average down.** No new buys today.
 
-- **HOLD NVDA — current 3 shares.**
-  - Current ref: ~**223.14**
-  - No action today.
+## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
+*Subject to market conditions and hourly strategist approval at Tuesday's first hourly run.*
+1. **META** — BUY 1 share if price holds above 605 at Tuesday open. New high-quality large-cap tech exposure. Target weight ~6%.
+2. **AVGO** — Re-add 1 share ONLY after 09:44 ET Tuesday (24h cooldown from Monday sell). Buy if price < 420. Rebuild AI/networking sleeve.
+3. **SOXX** — Re-add 1-2 shares ONLY after 10:45 ET Tuesday (24h cooldown from Monday sell). Buy if price stabilizes above 495. Rebuild semis ETF sleeve.
+4. **QTUM** — BUY 2 shares if price holds above 140. Thematic quantum/AI exposure. Target weight ~3%.
 
-- **CLOSE XLK SHORT — current -3 shares (UNAUTHORIZED).**
-  - Current ref: ~**173.85**
-  - **BUY 3 shares at market open Tuesday.**
-  - Do NOT attempt today; broker rejected with 403.
+## Hard Rules / No-Trade Conditions (valid until XLK cover is confirmed)
+- **No new BUY orders** until XLK short is confirmed closed and this hourly note explicitly lifts the lock.
+- **No SELL orders** for current longs unless a stop level below is breached.
+- **Do not re-buy SOXX or AVGO** until 24h cooldown expires AND hourly strategist explicitly authorizes re-entry.
+- **Do not open any new symbol** outside approved universe.
+- **One trade only** next cycle (XLK cover).
+- **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 
-## Future Deployment Queue
-*Only relevant after XLK short is fully closed and the hourly strategist updates the regime.*
-1. **QQQ** — re-add 1 share to restore 5-share core.
-2. **GOOG** — hold; potential add if hourly authorizes.
-3. **No other symbols** until process discipline is restored.
-
-## Tactical Intent
-- Clean up the unauthorized **XLK short** at the first eligible broker window (Tuesday open).
-- Stop all churn.
-- Hold the approved core.
-- Do **not** redeploy cash until compliance is fully restored and the hourly strategist explicitly allows fresh buying.
-
-## This Cycle — 2026-05-18 15:38 UTC
-- **Event detector:** NONE.
-- **Orders placed:** SELL QQQ 1 share @ $704.39 (ACCIDENTAL — broker connectivity test that filled).
-- **Orders blocked:** BUY XLK 3 shares (buy-to-cover) — Alpaca 403 Forbidden.
-- **Holdings:** GOOG 3, NVDA 3, QQQ 4, XLK -3 short.
-- **Cash / equity / exposure:** $5,796.51 / $9,960.31 / $5,207.08 gross (52.3%).
-- **Daytrade count:** 3.
-- **Memory drift corrected:** Saturday memory was stale. Live broker state is now authoritative.
-- **Next expected action:** Tuesday 2026-05-19 open — BUY XLK 3 shares (close short), then HOLD.
+## This Cycle — 2026-05-18 15:35Z (Monday 11:35 AM ET)
+- **Market status:** OPEN. Event detector: NONE.
+- **Live broker refresh:** Equity $9,960.05 | Cash $4,388.34 | Long $6,092.79 | Short -$521.52 | Gross exposure 61.2% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 6 ($4,225.20), GOOG 3 ($1,198.95), NVDA 3 ($668.64), XLK -3 (-$521.52).
+- **Protective stops:** QQQ $704.20 (>700.0), GOOG $399.65 (>394.0), NVDA $222.88 (>218.0). None breached.
+- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.
