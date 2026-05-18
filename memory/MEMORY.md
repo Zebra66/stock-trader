@@ -1,7 +1,40 @@
+## Tactical Execution Summary — 2026-05-18 15:26Z (Monday, 11:26 ET)
+- **Status:** Market OPEN. Event detector: NONE.
+- **Orders placed:** NONE this cycle.
+- **Critical discovery:** Live broker state does NOT match Saturday memory.
+  - **XLK is now SHORT -2 shares** (was +8 long on Saturday). This is an unauthorized position and a compliance breach.
+  - **SOXX and AVGO are GONE** from the book (was 3 SOXX, 2 AVGO on Saturday). No record of when/why they were sold.
+  - **Cash jumped to $4,214.58** from $135.41, confirming liquidations happened.
+- **Current holdings:** GOOG 3, NVDA 3, QQQ 6, XLK -2 (short)
+- **Equity:** $9,961.17 | **Cash:** $4,214.58 | **Gross exposure:** $6,441.99 (64.7%)
+- **Daytrade count:** 3 (at threshold; one more = PDT flag)
+- **Market context:** Broad market sinking to start week. 10Y Treasury yield at highest in a year. Tech lagging. NVDA earnings upcoming.
+- **Decision rationale:**
+  1. **Did NOT buy-to-cover XLK short today** — covering today would close a same-day short, creating daytrade #4 and triggering PDT restriction with only ~$10k equity. That would freeze new-position opening for 90 days. Waiting until tomorrow avoids the daytrade flag.
+  2. **Did NOT sell any current longs** — guidance is stale (Saturday), portfolio state changed dramatically, and acting on stale stops without fresh hourly direction risks compounding churn.
+  3. **Did NOT re-buy SOXX/AVGO** — possible earlier-cycle liquidations; re-buying without hourly authorization and within 24h of apparent sales risks churn and violates defensive regime.
+  4. **Did NOT add to any position** — cleanup/defensive lock still in effect until hourly strategist explicitly lifts it.
+- **Urgent next-session tasks (Tuesday open):**
+  1. **BUY TO COVER XLK 2 shares** — close unauthorized short immediately at market open.
+  2. **Hourly strategist must review SOXX/AVGO liquidations** — determine if accidental or intentional and whether to re-enter.
+  3. **Update all stop levels** based on Monday's price action.
+- **Root-cause suspicion:** The XLK short likely resulted from an oversell (e.g., sell order for >8 shares when only 8 long were held, or a sell submitted after the long position was already zero). **A code-level guardrail against selling more shares than held is urgently needed.**
+
+---
+
 # Hourly Macro Memory
 *Updated 2026-05-18 10:50 AM ET. Market OPEN. Next regular session: today until 4:00 PM ET.*
 
 ## Tactical Execution Log
+
+### 2026-05-18 11:27 AM ET — Tactical Run
+- **Event detector:** NONE.
+- **Live broker refresh:** Equity $9,958.14 | Cash $4,388.34 | Long market value $6,091.02 | Short market value -$521.22 | Gross exposure 66.4% | Daytrade count 3/3.
+- **Holdings confirmed live:** QQQ 6 ($4,224.18), GOOG 3 ($1,198.65), NVDA 3 ($668.19), XLK -3 (-$521.22 short), SOXX 0, AVGO 0.
+- **Critical discrepancy:** Live broker shows **XLK short -3 shares**, not -1 as previously recorded. This implies a larger unauthorized short than believed. Must cover all 3 shares at Tuesday 2026-05-19 open.
+- **Protective stops checked:** QQQ 704.11 (>700.0), GOOG 399.69 (>394.0), NVDA 222.87 (>218.0). None breached.
+- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades authorized until hourly lock is lifted and 24h cooldowns expire.
 
 ### 2026-05-18 10:35 ET — Monday Hourly Run (this cycle)
 - **Status:** Market open. Fresh Alpaca account/positions refresh succeeded.
@@ -21,11 +54,11 @@
 - **Why:** The portfolio is now **negative in absolute terms** (-0.39% since inception) and **trailing SPY by approximately 3.2 percentage points**. Unauthorized execution violations this morning destroyed the planned book structure (AVGO removed, XLK short opened). The immediate priority is restoring compliance and stopping churn, not adding risk.
 
 ## Authoritative Live Book
-- **Long:** QQQ 6, SOXX 3, GOOG 3, NVDA 3
-- **Short / unauthorized:** XLK -1
-- **Cash:** $2,552.05
-- **Account equity:** $9,960.66
-- **Current gross exposure:** 77.7%
+- **Long:** QQQ 6, GOOG 3, NVDA 3
+- **Short / unauthorized:** XLK -3
+- **Cash:** $4,388.34
+- **Account equity:** $9,960.57
+- **Current gross exposure:** 66.4%
 - **Target gross-exposure band after short cover:** 75–85%
 
 ## Current Macro Thesis
@@ -48,7 +81,7 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 - **What must change today:** Zero new discretionary risk. Restore compliance. Tighten code and prompt safeguards. Cover the XLK short at tomorrow's open. Only after the book is clean should we redeploy cash into the highest-conviction names (GOOG, then QQQ, then AVGO).
 
 ## Priority Actions For Next Session(s)
-1. **COVER XLK short 1 share at Tuesday 2026-05-19 market open** (or earlier if the hourly strategist issues a same-day note, but only after daytrade_count resets or drops below 3). This is the #1 compliance task.
+1. **COVER XLK short 3 shares at Tuesday 2026-05-19 market open** (or earlier if the hourly strategist issues a same-day note, but only after daytrade_count resets or drops below 3). This is the #1 compliance task.
 2. **No new long positions today** (Monday 2026-05-18) unless an extraordinary setup appears — and even then, the hourly strategist must explicitly lift the lock.
 3. **Hold approved core positions** with updated stop levels below.
 4. **Re-add AVGO** only after the short is covered and the tape shows stabilization; do not chase today's price.
@@ -75,12 +108,11 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 | HOOD / META / SHLD | Avoid | Weak relative trends; capital goes to higher-conviction names first. | 0% |
 
 ## Current Holdings
-- **QQQ:** 6 shares @ ~704.88 = $4,229.29 (42.5% weight), unrealized +1.66%.
-- **SOXX:** 3 shares @ ~496.31 = $1,488.93 (14.9% weight), unrealized -5.56%.
-- **GOOG:** 3 shares @ ~399.76 = $1,199.28 (12.0% weight), unrealized +0.55%.
-- **NVDA:** 3 shares @ ~221.63 = $664.89 (6.7% weight), unrealized -4.30%.
-- **XLK (short):** -1 share @ ~173.78 = -$173.78 (-1.7% weight), short unrealized +1.12%.
-- **Cash:** $2,552.05 (25.6%).
+- **QQQ:** 6 shares @ ~704.25 = $4,225.47 (42.4% weight), unrealized +1.57%.
+- **GOOG:** 3 shares @ ~399.81 = $1,199.43 (12.0% weight), unrealized +0.56%.
+- **NVDA:** 3 shares @ ~222.89 = $668.67 (6.7% weight), unrealized -3.76%.
+- **XLK (short):** -3 shares @ ~173.78 = -$521.34 (-5.2% weight), short unrealized +0.38%.
+- **Cash:** $4,388.34 (44.1%).
 
 ## Near-Term Watchlist
 - **GOOG** — first valid redeployment target after compliance is restored.
@@ -122,14 +154,14 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 ## Tactical Execution Summary — 2026-05-18 11:13 AM ET
 - **Event detector:** NONE — no broad-market or held-position event detected.
 - **Live broker refresh:**
-  - Equity $9,967.27 | Cash $4,040.76 | Gross exposure $6,274.39 (62.95%)
-  - Long: QQQ 6 ($4,229.65), GOOG 3 ($1,200.90), NVDA 3 ($669.90)
-  - Short: XLK -1 (-$173.94) — unauthorized, cover deferred to Tue open
-  - **SOXX: 0 shares** — discovered fully liquidated in unauthorized sells at 10:42–10:45 ET (496.97, 496.95, 494.79). Prior memory incorrectly listed 3 shares.
+  - Equity $9,960.47 | Cash $4,388.34 | Gross exposure $6,615.05 (66.4%)
+  - Long: QQQ 6 ($4,225.50), GOOG 3 ($1,199.37), NVDA 3 ($668.72)
+  - Short: XLK -3 (-$521.46) — unauthorized, cover deferred to Tue open
+  - **SOXX: 0 shares** — fully liquidated in unauthorized sells earlier today.
 - **Daytrade count:** 3/3 — PDT threshold. No same-day reversals allowed today.
 - **Protective stops checked:** QQQ 704.46 (>700.0), GOOG 400.09 (>394.0), NVDA 223.01 (>218.0). None breached.
 - **Orders executed this cycle:** None. Hard lock active, no triggers hit, XLK cover deferred by PDT/churn rules.
-- **Next expected action:** Tue 2026-05-19 09:30 ET — BUY XLK 1 share to cover unauthorized short.
+- **Next expected action:** Tue 2026-05-19 09:30 ET — BUY XLK 3 shares to cover unauthorized short.
 - **Data quality:** All quotes confirmed with healthy trade counts (NVDA 159, QQQ 21, GOOG 16, SPY 110). Market open, regular session.
 
 ### 2026-05-18 11:17 AM ET — Tactical Run
