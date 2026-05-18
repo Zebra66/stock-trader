@@ -81,6 +81,17 @@ See prior cycle (1:35 PM ET) for full table. Key takeaway unchanged:
 - **XLK (short):** -3 shares @ $174.44 avg = -$519.45 (-5.2% weight), short unrealized +$3.87 (+0.74%).
 - **Cash:** $5,796.51 (58.3%).
 
+## Tactical Cycle Summary — 2026-05-18 18:30Z (Monday 2:30 PM ET)
+- **Mode:** NORMAL (event detector classification: NONE).
+- **Action:** ZERO orders placed. HARD_LOCK active until Tuesday 2026-05-19 09:30 ET; code-level guard enforced.
+- **Broker refresh:** Equity $9,925.87 | Cash $5,796.51 | Long $4,646.80 | Short -$517.44 | Gross 46.81% | Net 41.67%.
+- **Daytrade count:** 3/3 — no same-day reversals possible.
+- **Event detector:** No events detected.
+- **Protective stops check:** NVDA $219.94 (>218.00), QQQ $700.74 (>700.00), GOOG $395.01 (>394.00). None breached.
+- **Tuesday deployment reference prices:** META 610.51, AVGO 417.41, VOO (not fetched), SOXX 489.02.
+- **News/search:** Google News blocked (CAPTCHA). No new headlines.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares. Then rebuild META, QQQ, AVGO per Tuesday deployment plan after hourly lock lift.
+
 ## Near-Term Watchlist
 - **META** — first new add candidate for Tuesday open. Limit 613-614.
 - **AVGO** — rebuild target around 418-419.
