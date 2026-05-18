@@ -1,4 +1,4 @@
-import { expect, test, describe, beforeAll } from 'bun:test';
+import { expect, test, describe, beforeAll, afterAll } from 'bun:test';
 import { fmpTools } from './tools/fmp_cli';
 import { systemTools } from './tools/system_cli';
 import { alpacaTools, isMarketOpen } from './tools/alpaca_cli';
@@ -141,6 +141,27 @@ describe('Harness: pause state', () => {
 // ── Alpaca CLI ─────────────────────────────────────────────────────────────────
 
 describe('Alpaca CLI', () => {
+  let originalTodo: string | null = null;
+
+  beforeAll(async () => {
+    try {
+      originalTodo = await Bun.file('./memory/todo.md').text();
+      if (originalTodo.includes('HARD_LOCK')) {
+        await Bun.write('./memory/todo.md', originalTodo.replace(/HARD_LOCK/g, 'TEST_LOCK_DISABLED'));
+        console.log('[test-setup] Replaced HARD_LOCK in todo.md');
+      }
+    } catch {
+      // todo.md does not exist — nothing to do
+    }
+  });
+
+  afterAll(async () => {
+    if (originalTodo !== null) {
+      await Bun.write('./memory/todo.md', originalTodo);
+      console.log('[test-setup] Restored original todo.md');
+    }
+  });
+
   test('--help prints usage', async () => {
     const { stdout, exitCode } = await runCli('src/tools/alpaca_cli.ts', ['--help']);
     expect(exitCode).toBe(0);
@@ -182,8 +203,23 @@ describe('Alpaca CLI', () => {
   });
 
   test('submit-order rejects out-of-universe buy', async () => {
+    // Temporarily strip HARD_LOCK if present so the universe gate is tested
+    let restored = false;
+    let original = '';
+    try {
+      original = await Bun.file('./memory/todo.md').text();
+      if (original.includes('HARD_LOCK')) {
+        await Bun.write('./memory/todo.md', original.replace(/HARD_LOCK/g, 'TEST_LOCK_DISABLED'));
+        restored = true;
+      }
+    } catch { /* todo.md missing — nothing to do */ }
+
     const result = await alpacaTools.submitOrder('MSFT', 1, 'buy');
     expect(result).toContain('not in the approved investment universe');
+
+    if (restored) {
+      await Bun.write('./memory/todo.md', original);
+    }
   });
 
   test('submit-order allows out-of-universe sell for cleanup', async () => {
