@@ -3,9 +3,9 @@
 
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
-- **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,960.05 / $4,388.34 / $13,305.59
-- **Gross long exposure:** 61.2% | **Net exposure:** 55.9% | **Cash:** 44.1%
+- **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
+- **Account equity / cash / buying power:** $9,950.18 / $5,796.51 / $14,705.45
+- **Gross long exposure:** 47.0% | **Net exposure:** 41.7% | **Cash:** 58.3%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
 - **Unauthorized positions:** XLK -3 shares SHORT — cover deferred to Tuesday 2026-05-19 open to avoid daytrade #4
@@ -17,18 +17,18 @@
    - After cover, cash will be ~$3,867 (38.8% of equity). Gross long exposure remains 61.2%.
 
 ## Position Instructions (Monday 11:35 AM — today)
-- **HOLD QQQ 6 — target allocation 36-42%.**
-  - Current ref: ~**704.20**
+- **HOLD QQQ 4 — target allocation 36-42%.**
+  - Current ref: ~**703.46**
   - **SELL 1 share if QQQ breaks below 700.0 on a 5-minute close** — concentration control if broad tape weakens further.
   - **Do not add today.** QQQ is already at 42.4% of equity; adds are low priority.
 
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**399.65** (+1.61% intraday, relative strength leader)
+  - Current ref: ~**398.01** (+1.19% intraday, relative strength leader)
   - **SELL 1 share if GOOG loses 394.0 on a 5-minute close** — preserve capital if cloud/AI follow-through fails.
   - **Do not add today.** At 12.0% weight; one more share would push toward 16% and breach the 15% single-stock cap.
 
 - **HOLD NVDA 3 — target allocation 4-8%.**
-  - Current ref: ~**222.88** (-1.05% intraday, semis continue to lag)
+  - Current ref: ~**222.14** (-1.41% intraday, semis continue to lag)
   - **SELL 1 share if NVDA breaks below 218.0 on a 5-minute close**.
   - **Do NOT average down.** No new buys today.
 

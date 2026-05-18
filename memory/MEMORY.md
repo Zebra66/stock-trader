@@ -6,11 +6,11 @@
 - **Why:** The portfolio is **negative in absolute terms** (~-0.4% since inception) and **trailing SPY by ~3.0 percentage points** (SPY +2.60% since May 4 baseline). An unauthorized XLK short position was opened this morning after the tactical agent oversold the long position. AVGO and SOXX were also liquidated without explicit hourly authorization. The immediate priority is restoring compliance and stopping churn, not adding new risk.
 
 ## Authoritative Live Book
-- **Long:** QQQ 6 ($4,225.20 / 42.4%), GOOG 3 ($1,198.95 / 12.0%), NVDA 3 ($668.64 / 6.7%)
-- **Short / unauthorized:** XLK -3 ($521.52 / -5.2%)
-- **Cash:** $4,388.34 (44.1%)
-- **Account equity:** $9,960.05
-- **Gross long exposure:** 61.2% | **Net exposure:** 55.9%
+- **Long:** QQQ 4 ($2,813.84 / 28.3%), GOOG 3 ($1,194.03 / 12.0%), NVDA 3 ($666.42 / 6.7%)
+- **Short / unauthorized:** XLK -3 ($520.62 / -5.2%)
+- **Cash:** $5,796.51 (58.3%)
+- **Account equity:** $9,950.18
+- **Gross long exposure:** 47.0% | **Net exposure:** 41.7%
 - **Target gross-exposure band after XLK cover:** 70–85% (offensive catch-up)
 
 ## Current Macro Thesis
@@ -59,10 +59,10 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 | HOOD / SHLD / ARKX / EIS / VOO | Avoid | Weak relative trends or SPY-proxy; capital goes to higher-conviction names first. | 0% |
 
 ## Current Holdings Detail
-- **QQQ:** 6 shares @ $704.20 = $4,225.20 (42.4% weight), unrealized +1.57%, intraday -0.66%.
-- **GOOG:** 3 shares @ $399.65 = $1,198.95 (12.0% weight), unrealized +0.52%, intraday +1.61%.
-- **NVDA:** 3 shares @ $222.88 = $668.64 (6.7% weight), unrealized -3.76%, intraday -1.05%.
-- **XLK (short):** -3 shares @ $173.84 = -$521.52 (-5.2% weight), short unrealized +0.34%.
+- **QQQ:** 4 shares @ $703.46 = $2,813.84 (28.3% weight), unrealized +1.46%, intraday -0.77%.
+- **GOOG:** 3 shares @ $398.01 = $1,194.03 (12.0% weight), unrealized +0.11%, intraday +1.19%.
+- **NVDA:** 3 shares @ $222.14 = $666.42 (6.7% weight), unrealized -4.08%, intraday -1.41%.
+- **XLK (short):** -3 shares @ $173.54 = -$520.62 (-5.2% weight), short unrealized +0.52%.
 - **Cash:** $4,388.34 (44.1%).
 
 ## Near-Term Watchlist
@@ -107,11 +107,22 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 ## Detailed Tactical Execution History (Monday May 18)
 See `memory/tactical_execution_log_2026-05-18.md` for full chronological order log of every tactical cycle today, including broker state snapshots and rationale.
 
+## Tactical Cycle Summary — 2026-05-18 15:51Z (Monday 11:51 AM ET)
+- **Event detector:** NONE. No protective overrides triggered.
+- **Hard lock:** Active from hourly strategist. Zero new buys authorized today.
+- **Stop checks:** QQQ $703.46 > $700.0 → HOLD. GOOG $398.01 > $394.0 → HOLD. NVDA $222.14 > $218.0 → HOLD.
+- **Position discrepancy discovered:** Broker shows **QQQ 4 shares**; memory/todo listed **QQQ 6 shares**. This likely reflects an unauthorized/unrecorded partial QQQ sale during earlier churn today. Updated both files to broker truth.
+- **No orders placed.** All protective stops intact; no compliance actions required this cycle.
+- **Cash:** $5,796.51 (58.3%) — much higher than the $4,388 listed at 11:35, consistent with fewer QQQ shares held.
+- **Daytrade count:** 3/3. No same-day reversals possible today.
+- **XLK short cover:** Still deferred to Tuesday 2026-05-19 09:30 ET per hourly authorization.
+- **Next expected action:** Tuesday market open — cover XLK -3, then await hourly strategist to lift hard lock and authorize META/AVGO/SOXX/QTUM deployment.
+
 ## Last Run Summary
 - The portfolio is **negative in absolute terms** and **trailing SPY by ~3.0 pp**.
 - The tactical agent created an **unauthorized short position in XLK (-3 shares)** and **liquidated AVGO and SOXX without authorization** this morning.
 - Code and prompt guards have been tightened to prevent future short-selling and out-of-universe execution.
 - The urgent task for Monday: **zero new risk, hold core, cover the XLK short Tuesday morning**.
-- Tuesday's plan after cover: **deploy cash into META (new), AVGO (rebuild), SOXX (rebuild if stable), and QTUM (thematic)** to raise gross exposure from 61% toward the 70–85% offensive catch-up band.
+- Tuesday's plan after cover: **deploy cash into META (new), AVGO (rebuild), SOXX (rebuild if stable), and QTUM (thematic)** to raise gross exposure from 47% toward the 70–85% offensive catch-up band.
 - GOOG is the lone relative-strength winner today (+1.6%) and validates the AI/cloud quality thesis.
 - NVDA and the semis complex remain under pressure; do not add into a falling knife.
