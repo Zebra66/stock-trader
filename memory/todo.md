@@ -4,7 +4,7 @@
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
 - **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,949.29 / $5,796.51 / $14,704.74
+- **Account equity / cash / buying power:** $9,949.31 / $5,796.51 / $14,705.60
 - **Gross long exposure:** 47.0% | **Net exposure:** 41.7% | **Cash:** 58.3%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
@@ -18,15 +18,15 @@
 
 ## Monday Position Instructions (HARD_LOCK active — no orders)
 - **HOLD QQQ 4 — target allocation 36-42% after rebuild Tuesday.**
-  - Current ref: ~**701.46**
+  - Current ref: ~**703.34**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**397.30**
+  - Current ref: ~**398.72**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD NVDA 3 — target allocation 4-8%.**
-  - Current ref: ~**220.94**
+  - Current ref: ~**221.13**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 ## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
@@ -62,6 +62,15 @@
 - **Live broker refresh:** Equity $9,954.57 | Cash $5,796.51 | Long $4,678.76 | Short -$520.70 | Gross exposure 47.0% | Daytrade 3/3.
 - **Holdings confirmed:** QQQ 4 ($2,816.16), GOOG 3 ($1,196.60), NVDA 3 ($666.00), XLK -3 (-$520.70).
 - **Protective stops checked:** QQQ $704.04 (>700.0), GOOG $398.87 (>394.0), NVDA $222.00 (>218.0). None breached.
+- **Orders placed this cycle:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
+
+## This Cycle — 2026-05-18 17:20Z (Monday 1:20 PM ET)
+- **Market status:** OPEN. Event detector: NONE.
+- **Live broker refresh:** Equity $9,949.31 | Cash $5,796.51 | Long $4,672.91 | Short -$520.11 | Gross exposure 47.0% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 ($2,813.36), GOOG 3 ($1,196.16), NVDA 3 ($663.39), XLK -3 (-$520.11).
+- **Protective stops checked:** QQQ $703.34 (>700.0), GOOG $398.72 (>394.0), NVDA $221.13 (>218.0). None breached.
+- **Quote quality note:** SOXX Alpaca quote abnormally thin (2 trades, 87 vol). Cross-checked Yahoo Finance: SOXX ~$493.05, down ~3.0% from prior close, day low $489.87. Price remains above Tuesday gap-down guard (488).
 - **Orders placed this cycle:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
 

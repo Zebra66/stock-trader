@@ -6,11 +6,11 @@
 - **Why:** Unauthorized XLK short (-3 shares) remains open and unresolved. Daytrade count is 3/3, locking out same-day reversals. No new unauthorized trades since 11:37 ET. The code-level `HARD_LOCK` guard in `alpaca_cli.ts` is active and has blocked any further orders. Portfolio remains negative in absolute terms (-0.61% since inception) and trails SPY by ~3.0 pp. All capital deployment is deferred until Tuesday after the short is covered and the lock is explicitly lifted.
 
 ## Authoritative Live Book
-- **Long:** QQQ 4 ($2,805.84 / 28.2%), GOOG 3 ($1,191.90 / 12.0%), NVDA 3 ($662.82 / 6.7%)
-- **Short / unauthorized:** XLK -3 ($-518.55 / -5.2%)
+- **Long:** QQQ 4 ($2,813.36 / 28.3%), GOOG 3 ($1,196.16 / 12.0%), NVDA 3 ($663.39 / 6.7%)
+- **Short / unauthorized:** XLK -3 ($-520.11 / -5.2%)
 - **Cash:** $5,796.51 (58.3%)
-- **Account equity:** $9,938.54
-- **Gross long exposure:** 46.9% | **Net exposure:** 41.7%
+- **Account equity:** $9,949.31
+- **Gross long exposure:** 47.0% | **Net exposure:** 41.7%
 - **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today
 - **Open orders:** NONE
 
@@ -65,10 +65,10 @@ Tech weakness continues into Monday afternoon, concentrated in semiconductors. *
 | HOOD / SHLD / ARKX / EIS / VOO | Avoid | Weak relative trends or SPY-proxy; capital goes to higher-conviction names first. | 0% |
 
 ## Current Holdings Detail
-- **QQQ:** 4 shares @ $693.34 avg = $2,805.84 (28.2% weight), unrealized +$32.47 (+1.17%).
-- **GOOG:** 3 shares @ $397.58 avg = $1,191.90 (12.0% weight), unrealized -$0.84 (-0.07%).
-- **NVDA:** 3 shares @ $231.59 avg = $662.82 (6.7% weight), unrealized -$31.94 (-4.60%).
-- **XLK (short):** -3 shares @ $174.44 avg = -$518.55 (-5.2% weight), short unrealized +$4.77 (+0.91%).
+- **QQQ:** 4 shares @ $693.34 avg = $2,813.36 (28.3% weight), unrealized +$39.99 (+1.44%).
+- **GOOG:** 3 shares @ $397.58 avg = $1,196.16 (12.0% weight), unrealized +$3.42 (+0.29%).
+- **NVDA:** 3 shares @ $231.59 avg = $663.39 (6.7% weight), unrealized -$31.37 (-4.51%).
+- **XLK (short):** -3 shares @ $174.44 avg = -$520.11 (-5.2% weight), short unrealized +$3.21 (+0.61%).
 - **Cash:** $5,796.51 (58.3%).
 
 ## Near-Term Watchlist
@@ -142,6 +142,17 @@ See previous commits for historical logs. Unauthorized trades on 2026-05-18 docu
 - **Holdings confirmed:** QQQ 4 ($2,807.36), GOOG 3 ($1,193.25), NVDA 3 ($663.14), XLK -3 (-$518.73).
 - **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
 - **Protective stops checked:** QQQ $701.84 (>700.0), GOOG $397.75 (>394.0), NVDA $221.05 (>218.0). None breached.
+- **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
+
+## Tactical Execution Summary — 2026-05-18 17:20Z (Monday 1:20 PM ET)
+- **Event detector:** NONE. Broad market stable; no sector rotation; no major events.
+- **Orders placed:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
+- **Live broker refresh:** Equity $9,949.31 | Cash $5,796.51 | Long $4,672.91 | Short -$520.11 | Gross 47.0% | Net 41.7%.
+- **Holdings confirmed:** QQQ 4 ($2,813.36 @ $703.34, unrealized +$39.99), GOOG 3 ($1,196.16 @ $398.72, unrealized +$3.42), NVDA 3 ($663.39 @ $221.13, unrealized -$31.37), XLK -3 (-$520.11 @ $173.37, short unrealized +$3.21).
+- **Daytrade count:** 3/3 — PDT threshold maintained; no same-day reversals attempted.
+- **Protective stops checked:** QQQ $703.34 (>700.0), GOOG $398.72 (>394.0), NVDA $221.13 (>218.0). None breached.
+- **Quote quality note:** SOXX Alpaca quote flagged abnormally thin (2 trades, 87 vol). Cross-checked Yahoo Finance: SOXX regular market price ~$493.05, down ~3.0% from prior close $508.52, day low $489.87. Price is above Tuesday gap-down guard (488). No action required today.
 - **Action:** None. Hard lock remains in effect until Tuesday 2026-05-19 09:30 ET.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
 
