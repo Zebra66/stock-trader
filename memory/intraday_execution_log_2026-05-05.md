@@ -1,0 +1,123 @@
+# Intraday Execution Log — 2026-05-05
+
+## 04:13 ET — Hourly strategist refresh
+- Market state: closed / pre-market.
+- Account: equity **$10,001.78**, cash **$7,618.05**, buying power **$17,619.83**.
+- Positions confirmed: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Decision: no trade; hold existing AI / semiconductor sleeve and require regular-hours confirmation for any new order.
+- Key note: FMP was unavailable because `FMP_API_KEY` was missing, so the run used Yahoo Finance chart data and Google News RSS fallback.
+
+## 04:40 ET — Tactical execution check
+- Market state: still effectively closed.
+- Account: equity **$10,002.93**, cash **$7,618.05**, buying power **$17,620.98**.
+- Prices refreshed: **AVGO 418.98, QQQ 676.53, QTUM 136.53, RKLB 81.37, SOXX 467.47, GOOG 379.03**.
+- Decision: no trade; GOOG remained below breakout and above pullback reclaim band, and no existing stop / trim was hit.
+
+## 04:50 ET — Tactical execution check
+- Market state: still effectively closed.
+- Account: equity **$10,002.79**, cash **$7,618.05**, buying power **$17,620.84**.
+- Prices refreshed: **AVGO 419.02, QQQ 676.45, QTUM 136.53, RKLB 81.35, SOXX 467.43, GOOG 379.03**.
+- Decision: no trade; continue waiting for regular-hours confirmation.
+
+## 05:03 ET — Current hourly refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,002.34**, cash **$7,618.05**, buying power **$17,620.39**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: Alpaca after-hours prints remained thin for **GOOG, META, NVDA, QQQ, QTUM, SOXX, EIS, GLD**; Yahoo chart meta was used as second-source confirmation for likely traded names.
+- Decision: keep high cash, hold current positions, and keep **GOOG** as the only active fresh-long candidate for the next regular session.
+
+## 06:05 ET — Hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,003.30**, cash **$7,618.05**, buying power **$17,621.35**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: Alpaca after-hours prints remained thin for **GOOG, EIS, GLD, META, NVDA, QQQ, QTUM, SOXX**; Yahoo Finance chart data was again used as second-source confirmation and for multi-timeframe returns because `FMP_API_KEY` is still missing.
+- External context: fallback Google News RSS stayed constructive for **GOOG**, negative for **HOOD**, mixed / mostly low-quality for **AVGO** and **NVDA**, and insufficient for fresh top-investor moves.
+- Decision: no trade while the market is closed; keep gross exposure capped near **30%**, keep at least **70% cash**, and leave **GOOG** as the only approved fresh long for the next regular session.
+
+## 07:00 ET — Hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,001.50**, cash **$7,618.05**, buying power **$17,619.55**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: Alpaca after-hours / pre-market bars remained thin for **GOOG, EIS, GLD, META, NVDA, QQQ, QTUM, SOXX**; regular-session Yahoo Finance chart data was again used for multi-timeframe returns and structure.
+- External context: FMP remained unavailable because `FMP_API_KEY` is missing. Reuters-dated fallback news from **2026-04-29 to 2026-04-30** supported **GOOG / Google Cloud / AI-capex leadership** and kept semis constructive but selective. **HOOD** and **top-investor** coverage remained insufficient for action.
+- Decision: no trade while the market is closed; hold the existing AI / semiconductor sleeve, keep gross exposure capped near **30%**, keep at least **70% cash**, and keep **GOOG** as the only approved fresh long once regular-hours confirmation appears.
+
+## 09:00 ET — Hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-05 09:30 ET**.
+- Account: equity **$10,011.19**, cash **$7,618.05**, buying power **$17,629.24**.
+- Positions unchanged: **AVGO 1, QQQ 1, QTUM 2, RKLB 1, SOXX 2**.
+- Quote quality: broker prints were still thin pre-market for several actionable names, including **GOOG**; Yahoo intraday confirmation showed **GOOG ~380.6** pre-market against a regular-session **5-day high of 384.18**.
+- External context: FMP remained unavailable because `FMP_API_KEY` is missing, so Yahoo Finance chart data was used again. Reuters / Google News RSS kept the macro backdrop constructive for **AI / cloud**, but flagged **oil / Middle East stress** as the main near-term macro risk.
+- Decision: no trade while the market is closed; continue holding the current AI / semiconductor sleeve, avoid trimming tiny winners too early, keep gross exposure capped near **30%**, keep at least **70% cash**, and keep **GOOG** as the only approved fresh long once regular-hours confirmation appears.
+
+## 10:35 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,019.16**, cash **$7,706.96**, buying power **$17,726.12**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
+- Goal check: the account remains **positive in dollars**, but is now **slightly behind SPY since inception** because cash drag is still high.
+- Market structure: multi-timeframe fallback data continues to favor **GOOG, SOXX, AVGO, QQQ, QTUM**; **META** and **HOOD** remain the clearest weak-relative-strength names.
+- External context: Reuters-prioritized fallback coverage remained constructive for **Alphabet / cloud / AI**, still negative for **HOOD** and burdened by legal / spending noise for **META**. Oil / Middle East headlines remain the main macro risk, but Reuters also showed a constructive open as oil eased.
+- Decision: no immediate portfolio change. Keep gross exposure near **30%**, authorize **one more GOOG share only above 389.2 with regular-hours confirmation**, and tighten discipline around **RKLB** as the weakest satellite holding.
+
+## 11:11 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,028.13**, cash **$8,180.20**, buying power **$18,208.33**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1**; **no SOXX position** remains in the broker.
+- Goal check: the account is still **positive in dollars**, but still **trails SPY since inception** because gross exposure is too low.
+- Market structure: fallback multi-timeframe data still favors **SOXX, GOOG, AVGO, QTUM, QQQ**, while **META** and **HOOD** remain weaker.
+- External context: Reuters-prioritized fallback coverage stayed constructive as **oil pulled back despite Middle East tension**; fresh **top-investor** and **analyst-action** coverage remained insufficient.
+- Decision: allow **one** selective add only this hour — **SOXX above 481.2** is preferred, **GOOG above 389.4** is secondary — and require a live positions refresh after any order before placing another one.
+
+## 13:01 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,031.49**, cash **$7,698.25**, buying power **$17,729.74**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, RKLB 1, SOXX 1**.
+- Goal check: the account is still **positive in dollars**, but remains **slightly behind SPY since inception** because gross exposure is still only about **23.3%**.
+- Market structure: fallback multi-timeframe data again favors **SOXX, GOOG, QTUM, AVGO, and QQQ**, while **META, HOOD, and RKLB** remain weaker or lower conviction.
+- External context: Reuters-prioritized fallback coverage turned incrementally softer for the broad tape because the **S&P 500 pulled back from a record high on Middle East worries**, but **Alphabet / Google Cloud / AI monetization** still have the cleanest positive news support.
+- Decision: keep the strategy **selectively constructive**, authorize **only one fresh GOOG add above 389.1 with regular-hours confirmation**, and keep **RKLB** as the first recycle candidate on either a rebound toward **79.2** or a breakdown below **76.6**.
+
+## 14:05 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,034.65**, cash **$7,774.88**, buying power **$17,809.53**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**; **RKLB remains fully exited**.
+- Goal check: the account is still **positive in dollars**, but still **trails SPY since inception** because the book remains only about **22.5% gross exposed**.
+- Market structure: fallback multi-timeframe data still favors **SOXX, AVGO, GOOG, QTUM, and QQQ**; the strongest incremental risk-adjusted idea is now a **liquid QQQ add**, not a GOOG add below cost basis.
+- External context: Reuters-prioritized Google News RSS fallback still shows **Middle East / oil** as the main macro risk, but intraday coverage also shows **Wall Street rebounding as oil eases**, so the tape does not justify a full defensive posture.
+- Decision: keep the strategy **constructively selective**, relax the reserve to **70% cash minimum / 30% gross max**, prohibit **averaging down GOOG**, and authorize **only one fresh QQQ add above 683.2 with SPY above 724.0 and regular-hours confirmation**.
+
+## 15:00 ET — Hourly strategist refresh
+- Market clock: `is_open = true`; next close **2026-05-05 16:00 ET**.
+- Account: equity **$10,034.35**, cash **$7,774.88**, buying power **$17,809.23**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account is still **positive in dollars**, but still **trails SPY since inception** because live exposure remains too low.
+- Market structure: fresh Yahoo fallback data again favors **SOXX, GOOG, QTUM, AVGO, and QQQ**; **META, HOOD, SHLD, and ARKX** remain weaker uses of capital.
+- External context: Reuters-focused fallback coverage stayed constructive for **Alphabet / cloud / AI** and the broad growth tape, while **oil / Middle East** tension remains the key macro threat.
+- Decision: keep the strategy **constructively selective**, keep **GOOG** as hold-only below cost basis, and authorize **only one fresh QQQ add above 682.85 with SPY above 724.3, regular-hours confirmation, and no new long after 15:50 ET**.
+
+## 16:01 ET — Post-close hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-06 09:30 ET**.
+- Account: equity **$10,029.20**, cash **$7,774.88**, buying power **$17,804.08**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account remains **positive in dollars**, but still **trails SPY since inception** because gross exposure is too low.
+- Market structure: fresh Yahoo fallback data still favors **GOOG, SOXX, QTUM, AVGO, and QQQ**; **META, HOOD, SHLD, GLD, and ARKX** remain lower-priority uses of capital.
+- External context: Reuters-focused fallback coverage still shows **oil / Middle East** as the main macro risk, while fresh Reuters coverage also showed **Nasdaq / AI-chip leadership** and continued constructive **Google Cloud / AI** momentum.
+- Decision: **no after-hours equity orders**. Carry the winners overnight, keep **GOOG** as hold-only below cost basis, and convert the next add plan into a **next-regular-session QQQ trigger above 683.1 with SPY above 724.8 and orderly tape**.
+
+## 19:05 ET — Post-close hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-06 09:30 ET**.
+- Account: equity **$10,059.17**, cash **$7,774.88**, buying power **$17,834.05**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account is now **positive in dollars and modestly ahead of SPY since inception**, but the lead is still thin because gross exposure remains only about **22.7%**.
+- Market structure: fresh Yahoo fallback data still favors **SOXX, GOOG, QTUM, AVGO, and QQQ**, while **META, HOOD, GLD, SHLD, and ARKX** remain lower-priority uses of capital.
+- External context: Reuters-focused fallback coverage still points to **Nasdaq / AI leadership** as the positive driver and **oil / Middle East** as the main macro threat; investor and analyst screens remained too noisy or thin to upgrade into action.
+- Decision: **no after-hours equity orders**. Keep the only fresh-add authorization on **QQQ above 683.1 with SPY above 725.1 during regular hours**, and stop the tactical agent from routine-trimming small winner positions unless support breaks or a truly climactic extension appears.
+
+## 20:00 ET — Night hourly strategist refresh
+- Market clock: `is_open = false`; next open **2026-05-06 09:30 ET**.
+- Account: equity **$10,044.48**, cash **$7,774.88**, buying power **$17,819.36**.
+- Live book confirmed: **AVGO 1, GOOG 1, QQQ 1, QTUM 2, SOXX 1**.
+- Goal check: the account remains **positive in dollars and fractionally ahead of SPY since inception** at roughly **+0.44%** vs **SPY +0.43%** from the **2026-05-01** benchmark close, but the lead is now razor-thin because gross exposure is still only about **22.6%**.
+- Market structure: fresh Yahoo fallback data still favors **SOXX, GOOG, QTUM, AVGO, and QQQ** over **META, HOOD, SHLD, GLD, and ARKX** on the 1-week to 3-month windows.
+- External context: Reuters-focused Google News RSS fallback stayed constructive on **Nasdaq / AI-chip leadership** and added a fresh positive **Anthropic / Google cloud-and-chip spending** item, while **oil / Middle East** remains the main macro threat. Investor and analyst-action screens were still too noisy or irrelevant to upgrade into action.
+- Decision: **no after-hours equity orders**. Keep the only fresh-add authorization on **QQQ above 683.1 with SPY above 725.1 during regular hours**, keep **GOOG / AVGO / QTUM / SOXX** hold-only, and require regular-hours confirmation plus a second source for any symbol showing thin broker trade counts.
