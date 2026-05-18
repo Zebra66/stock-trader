@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-05-18 15:35Z (Monday 11:35 AM ET)
+# Tactical Todo — Updated 2026-05-18 15:50Z (Monday 11:50 AM ET)
 *Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
@@ -47,10 +47,10 @@
 - **One trade only** next cycle (XLK cover).
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 
-## This Cycle — 2026-05-18 15:35Z (Monday 11:35 AM ET)
+## This Cycle — 2026-05-18 15:50Z (Monday 11:50 AM ET)
 - **Market status:** OPEN. Event detector: NONE.
-- **Live broker refresh:** Equity $9,960.05 | Cash $4,388.34 | Long $6,092.79 | Short -$521.52 | Gross exposure 61.2% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 6 ($4,225.20), GOOG 3 ($1,198.95), NVDA 3 ($668.64), XLK -3 (-$521.52).
-- **Protective stops:** QQQ $704.20 (>700.0), GOOG $399.65 (>394.0), NVDA $222.88 (>218.0). None breached.
+- **Live broker refresh:** Equity $9,948.63 | Cash $5,796.51 | Long $4,672.68 | Short -$520.56 | Gross long exposure 46.97% | Net exposure 41.74% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 ($2,813.04), GOOG 3 ($1,193.55), NVDA 3 ($666.09), XLK -3 (-$520.56).
+- **Protective stops:** QQQ $702.94 (>700.0), GOOG $397.76 (>394.0), NVDA $221.92 (>218.0). None breached.
 - **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.

@@ -107,6 +107,19 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 ## Detailed Tactical Execution History (Monday May 18)
 See `memory/tactical_execution_log_2026-05-18.md` for full chronological order log of every tactical cycle today, including broker state snapshots and rationale.
 
+## Tactical Execution Summary — 2026-05-18 15:50Z (Monday 11:50 AM ET)
+- **Orders placed:** NONE.
+- **Why:** Hard lock active (defensive / compliance-cleanup). No stop-losses breached: QQQ $702.94 (>700.0), GOOG $397.76 (>394.0), NVDA $221.92 (>218.0). XLK short cover explicitly deferred to Tuesday 09:30 ET to avoid 4th daytrade.
+- **Compliance note:** Broker state confirms QQQ position is **4 shares** (not 6 as in the 15:35Z hourly note). Two unauthorized SELL orders occurred at 15:35:23Z and 15:37:37Z, each selling 1 QQQ share at ~$703.78 and ~$704.39. This happened immediately after the hourly strategist wrote the updated todo, likely because the prior tactical cycle had not yet read the new lock instruction. QQQ weight is now 28.3% of equity.
+- **Authoritative live book (15:50Z):**
+  - **Long:** QQQ 4 ($2,813.04 / 28.3%), GOOG 3 ($1,193.55 / 12.0%), NVDA 3 ($666.09 / 6.7%)
+  - **Short:** XLK -3 (-$520.56 / -5.2%)
+  - **Cash:** $5,796.51 (58.3%)
+  - **Equity:** $9,948.63
+  - **Gross long exposure:** 46.97% | **Net exposure:** 41.74%
+- **Daytrade count:** 3/3 — no same-day reversals allowed.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (buy-to-cover). No other trades until hourly lock is lifted and 24h cooldowns expire.
+
 ## Tactical Cycle Summary — 2026-05-18 15:51Z (Monday 11:51 AM ET)
 - **Event detector:** NONE. No protective overrides triggered.
 - **Hard lock:** Active from hourly strategist. Zero new buys authorized today.
