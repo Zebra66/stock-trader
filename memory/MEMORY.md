@@ -6,11 +6,11 @@
 - **Why:** The portfolio is **negative in absolute terms** (~-0.55% since inception) and **trailing SPY by ~3.2 pp** (SPY +2.65% since May 4 baseline). The tactical agent executed **multiple unauthorized sells today** (AVGO, SOXX, QQQ, and opened an XLK short), reducing gross exposure from 61.2% to 46.95% without authorization. The immediate priority is stopping all new risk, covering the short Tuesday, and restoring discipline before capital deployment.
 
 ## Authoritative Live Book
-- **Long:** QQQ 4 ($2,811.92 / 28.27%), GOOG 3 ($1,192.53 / 11.99%), NVDA 3 ($663.92 / 6.68%)
-- **Short / unauthorized:** XLK -3 ($-519.90 / -5.23%)
-- **Cash:** $5,796.51 (58.29%)
-- **Account equity:** $9,944.98
-- **Gross long exposure:** 46.94% | **Net exposure:** 41.72%
+- **Long:** QQQ 4 ($2,809.08 / 28.26%), GOOG 3 ($1,190.78 / 11.98%), NVDA 3 ($661.43 / 6.65%)
+- **Short / unauthorized:** XLK -3 ($-519.02 / -5.22%)
+- **Cash:** $5,796.51 (58.32%)
+- **Account equity:** $9,938.78
+- **Gross long exposure:** 46.90% | **Net exposure:** 41.68%
 - **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today
 - **Open orders:** NONE
 - **No new unauthorized trades** since 11:51 AM ET hourly run.
@@ -155,6 +155,15 @@ See previous commits for historical logs. Unauthorized trades on 2026-05-18 docu
 - **HARD_LOCK status:** ACTIVE. Zero orders authorized today.
 - **Orders placed this cycle:** None. Hard lock enforced inaction.
 - **Universe prices refreshed:** META 612.91, AVGO 418.85, SOXX 492.26, VOO 677.01, GLD 417.66, HOOD 76.84, RKLB 127.95, QTUM 141.13, SHLD 63.34, ARKX 33.86, EIS 129.98.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then rebuild per deployment plan after lock lift.
+
+## Tactical Execution Summary — 2026-05-18 18:04Z (Monday 2:04 PM ET)
+- **Event detector:** NONE. No market events detected.
+- **Live broker refresh:** Equity $9,938.78 | Cash $5,796.51 | Long $4,661.28 | Short -$519.02 | Gross long 46.90% | Net 41.68% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 @ 702.27, GOOG 3 @ 396.925, NVDA 3 @ 220.475, XLK -3 @ 173.005.
+- **Protective stops checked:** QQQ 702.43 > 700.00 (not breached). GOOG 396.76 > 394.00 (not breached). NVDA 220.55 > 218.00 (not breached).
+- **HARD_LOCK status:** ACTIVE. No orders authorized until Tue 09:30 ET.
+- **Orders placed this cycle:** None. Hard lock enforced inaction.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then rebuild per deployment plan after lock lift.
 
 ## Tactical Execution Summary — 2026-05-18 17:50Z (Monday 1:50 PM ET)
