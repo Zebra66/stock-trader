@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-05-18 16:35Z (Monday 12:35 PM ET)
+# Tactical Todo — Updated 2026-05-18 16:47Z (Monday 12:47 PM ET)
 *HARD_LOCK active. Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
 - **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,954.95 / $5,796.51 / $14,709.02
-- **Gross long exposure:** 46.99% | **Net exposure:** 41.77% | **Cash:** 58.2%
+- **Account equity / cash / buying power:** $9,938.54 / $5,796.51 / $14,697.89
+- **Gross long exposure:** 46.9% | **Net exposure:** 41.7% | **Cash:** 58.3%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
 - **Unauthorized positions:** XLK -3 shares SHORT — cover deferred to Tuesday 2026-05-19 open to avoid daytrade #4
@@ -18,40 +18,41 @@
 
 ## Monday Position Instructions (HARD_LOCK active — no orders)
 - **HOLD QQQ 4 — target allocation 36-42% after rebuild Tuesday.**
-  - Current ref: ~**704.14**
+  - Current ref: ~**701.46**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**398.25**
+  - Current ref: ~**397.30**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD NVDA 3 — target allocation 4-8%.**
-  - Current ref: ~**222.62**
+  - Current ref: ~**220.94**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 ## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
 *All re-buys explicitly override 24h cooldowns. Execute using limit orders at or near reference prices to minimize slippage. Place orders at 09:30 ET or shortly after. Do NOT execute any of these on Monday.*
 
 1. **BUY TO COVER XLK 3 shares** — compliance cleanup of unauthorized short.
-   - Execute at Tuesday market open (09:30 ET) via market order or limit near prior close (~$173.74).
+   - Execute at Tuesday market open (09:30 ET) via limit near prior close (~$172.86).
    - This is explicitly authorized by the hourly strategist. The CLI universe gate allows buy-to-cover for existing shorts.
-   - After cover, cash will be ~$5,275 (53% of equity).
+   - After cover, cash will be ~$5,276 (53% of equity).
 
-2. **META** — BUY 1 share via limit order ~610.00. New high-quality large-cap tech exposure. Target weight ~6%.
-3. **QQQ** — BUY 2 shares via limit order ~704.00. Rebuild core liquid growth. Target back to 36-42%.
-4. **AVGO** — BUY 1 share via limit order ~419.00. Rebuild AI/networking sleeve. Target 4-6%.
-5. **SOXX** — BUY 1 share via limit order ~496.00. Rebuild semis ETF sleeve. Target 5-8%. Add 2nd share only if price stabilizes above 500 within first hour.
+2. **META** — BUY 1 share via limit order ~608.00. New high-quality large-cap tech exposure. Target weight ~6%.
+3. **QQQ** — BUY 2 shares via limit order ~701.00. Rebuild core liquid growth. Target back to 36-42%.
+4. **AVGO** — BUY 1 share via limit order ~418.00. Rebuild AI/networking sleeve. Target 4-6%.
+5. **SOXX** — BUY 1 share via limit order ~493.00. Rebuild semis ETF sleeve. Target 5-8%. **ONLY execute if SOXX opens above 488. If it gaps down below 485, skip and reassess at next hourly.**
 6. **QTUM** — BUY 2 shares if price holds above 140. Thematic quantum/AI exposure. Target weight ~3%.
 
 ## Hard Rules / No-Trade Conditions (valid until HARD_LOCK is lifted by hourly strategist)
 - **NO ORDERS OF ANY KIND on Monday 2026-05-18.**
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 - Do not execute any Tuesday deployment step before Tuesday 2026-05-19 09:30 ET.
+- **Gap-down guard:** If a planned buy candidate opens more than 1.5% below its limit price, skip the add and reassess at the next hourly run.
 
-## This Cycle — 2026-05-18 16:40Z (Monday 12:40 PM ET)
+## This Cycle — 2026-05-18 16:47Z (Monday 12:47 PM ET)
 - **Market status:** OPEN. Event detector: NONE.
-- **Live broker refresh:** Equity $9,941.53 | Cash $5,796.51 | Long $4,663.75 | Short -$518.73 | Gross exposure 46.93% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 4 ($2,807.36), GOOG 3 ($1,193.25), NVDA 3 ($663.14), XLK -3 (-$518.73).
-- **Protective stops checked:** QQQ $701.84 (>700.0), GOOG $397.75 (>394.0), NVDA $221.05 (>218.0). None breached.
+- **Live broker refresh:** Equity $9,938.54 | Cash $5,796.51 | Long $4,660.61 | Short -$518.55 | Gross exposure 46.9% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 ($2,805.84), GOOG 3 ($1,191.90), NVDA 3 ($662.82), XLK -3 (-$518.55).
+- **Protective stops checked:** QQQ $701.46 (>700.0), GOOG $397.30 (>394.0), NVDA $220.94 (>218.0). None breached.
 - **Orders placed this cycle:** ZERO. HARD_LOCK active in `todo.md` and enforced at code level.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan after hourly lock lift.
