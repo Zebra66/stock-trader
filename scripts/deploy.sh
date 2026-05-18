@@ -44,13 +44,14 @@ echo ""
 
 # 1) Health check — wait for container to be ready
 echo "⏳ Waiting for health check..."
-for i in $(seq 1 30); do
+for i in $(seq 1 60); do
   STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SERVICE_URL/api/health" || echo "000")
   if [ "$STATUS" = "200" ]; then
-    echo "✅ Health check passed"
+    echo "✅ Health check passed (attempt $i)"
     break
   fi
-  if [ "$i" = "30" ]; then
+  echo "   [Attempt $i/60] Status: $STATUS. Waiting..."
+  if [ "$i" = "60" ]; then
     echo "❌ Health check timed out — deployment may be unhealthy"
     exit 1
   fi
