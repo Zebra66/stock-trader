@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-05-18 16:00Z (Monday 12:00 PM ET)
+# Tactical Todo — Updated 2026-05-18 15:51Z (Monday 11:51 AM ET)
 *HARD_LOCK active. Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
 - **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,946.07 / $5,796.51 / $14,702.63
+- **Account equity / cash / buying power:** $9,946.67 / $5,796.51 / $14,702.9
 - **Gross long exposure:** 46.96% | **Net exposure:** 41.73% | **Cash:** 58.2%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
@@ -32,11 +32,11 @@
 
 ## Position Instructions (Monday 12:00 PM — today, HARD_LOCK active)
 - **HOLD QQQ 4 — target allocation 36-42% after rebuild Tuesday.**
-  - Current ref: ~**703.50**
+  - Current ref: ~**702.94**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**397.76**
+  - Current ref: ~**397.60**
   - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
 - **HOLD NVDA 3 — target allocation 4-8%.**
@@ -47,10 +47,10 @@
 - **NO ORDERS OF ANY KIND.**
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 
-## This Cycle — 2026-05-18 16:00Z (Monday 12:00 PM ET)
+## This Cycle — 2026-05-18 15:51Z (Monday 11:51 AM ET)
 - **Market status:** OPEN. Event detector: NOT RUN (hard lock, no need).
-- **Live broker refresh:** Equity $9,946.07 | Cash $5,796.51 | Long $4,669.53 | Short -$519.98 | Gross exposure 46.96% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 4 ($2,814), GOOG 3 ($1,193), NVDA 3 ($666), XLK -3 (-$520).
+- **Live broker refresh:** Equity $9,946.67 | Cash $5,796.51 | Long $4,670.31 | Short -$520.14 | Gross exposure 46.96% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 4 ($2,811.76), GOOG 3 ($1,192.79), NVDA 3 ($665.76), XLK -3 (-$520.14).
 - **Unauthorized trades detected:** QQQ 2 shares sold at 11:35/11:37 ET without authorization. HARD_LOCK activated.
 - **Orders placed this cycle:** None. HARD_LOCK active.
 - **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). Then rebuild META, QQQ, AVGO, SOXX, QTUM per Tuesday deployment plan.
