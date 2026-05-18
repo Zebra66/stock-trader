@@ -43,16 +43,29 @@ export const alpacaTools = {
     timeInForce: 'day' | 'gtc' = 'day',
     limitPrice?: number
   ): Promise<string> => {
-    if (side === 'buy' && !UNIVERSE.has(symbol.toUpperCase())) {
+    const symUpper = symbol.toUpperCase();
+    if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols
       try {
         const positions = await alpaca.getPositions();
-        const pos = positions.find((p: any) => p.symbol === symbol.toUpperCase());
+        const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
         if (!pos || parseFloat(pos.qty) >= 0) {
           return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
         }
       } catch {
         return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
+      }
+    }
+    if (side === 'sell') {
+      try {
+        const positions = await alpaca.getPositions();
+        const pos = positions.find((p: { symbol: string; qty: string }) => p.symbol.toUpperCase() === symUpper && parseFloat(p.qty) > 0);
+        const longQty = pos ? parseFloat(pos.qty) : 0;
+        if (longQty < qty) {
+          return `Error submitting order: Sell of ${qty} shares of ${symbol} blocked — account only holds ${longQty} shares long. Short selling is prohibited.`;
+        }
+      } catch (e: unknown) {
+        return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
       }
     }
     if (process.env.DRY_RUN === '1') {

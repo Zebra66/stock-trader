@@ -59,8 +59,9 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
 3. **Churn check:** Are you about to execute a same-day round trip (buying a symbol sold today, or selling a symbol bought today) without explicit hourly authorization? If yes, abort.
 4. **Market hours check:** Is the market open for regular session? If not, convert to a next-session trigger; do not submit.
 5. **PDT check:** Will this sell create a daytrade (position opened today) while daytrade_count >= 3? If yes, abort.
-6. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
-7. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
+6. **Short-selling check:** If side is 'sell', does the account hold a long position of at least `qty` shares in this symbol? If not, abort — short selling is prohibited unless explicitly authorized by the hourly strategist.
+7. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
+8. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
 
 ### Step 5 — Execute orders
 - For each condition met in todo.md that passes the pre-trade checklist, execute the corresponding order via the Alpaca CLI
