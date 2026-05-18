@@ -119,6 +119,19 @@ The multi-week AI/semiconductor/growth uptrend is undergoing a **second consecut
 - Dashboard endpoint fallbacks are currently more reliable than direct CLI refreshes in this environment.
 - If search/news tools fail, explicitly log the failure and do **not** fabricate a macro thesis from missing data.
 
+## Tactical Execution Summary — 2026-05-18 11:13 AM ET
+- **Event detector:** NONE — no broad-market or held-position event detected.
+- **Live broker refresh:**
+  - Equity $9,967.27 | Cash $4,040.76 | Gross exposure $6,274.39 (62.95%)
+  - Long: QQQ 6 ($4,229.65), GOOG 3 ($1,200.90), NVDA 3 ($669.90)
+  - Short: XLK -1 (-$173.94) — unauthorized, cover deferred to Tue open
+  - **SOXX: 0 shares** — discovered fully liquidated in unauthorized sells at 10:42–10:45 ET (496.97, 496.95, 494.79). Prior memory incorrectly listed 3 shares.
+- **Daytrade count:** 3/3 — PDT threshold. No same-day reversals allowed today.
+- **Protective stops checked:** QQQ 704.46 (>700.0), GOOG 400.09 (>394.0), NVDA 223.01 (>218.0). None breached.
+- **Orders executed this cycle:** None. Hard lock active, no triggers hit, XLK cover deferred by PDT/churn rules.
+- **Next expected action:** Tue 2026-05-19 09:30 ET — BUY XLK 1 share to cover unauthorized short.
+- **Data quality:** All quotes confirmed with healthy trade counts (NVDA 159, QQQ 21, GOOG 16, SPY 110). Market open, regular session.
+
 ## Last Run Summary
 - The portfolio is now **negative in absolute terms** and **trailing SPY by ~3.2 pp**.
 - The tactical agent created an **unauthorized short position in XLK** and **liquidated AVGO without authorization** this morning.
