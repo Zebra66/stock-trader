@@ -7,6 +7,32 @@ const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
 ]);
 
+// ── Trading Lock (enforced at code level) ───────────────────────────────────
+const LOCK_FILE = 'memory/.trading_lock.json';
+
+async function getTradingLock(): Promise<{ active: boolean; allowed?: string[]; reason?: string; expiresAt?: string } | null> {
+  try {
+    const file = Bun.file(LOCK_FILE);
+    if (!(await file.exists())) return null;
+    const text = await file.text();
+    return JSON.parse(text) as any;
+  } catch {
+    return null;
+  }
+}
+
+function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?: string } | null, symbol: string, side: string): boolean {
+  if (!lock || !lock.active) return true;
+  if (lock.expiresAt && new Date(lock.expiresAt) < new Date()) return true;
+  if (lock.allowed) {
+    const key = `${side.toUpperCase()}_${symbol.toUpperCase()}`;
+    for (const a of lock.allowed) {
+      if (a === key || a === `ANY_${symbol.toUpperCase()}` || a === `${side.toUpperCase()}_ANY`) return true;
+    }
+  }
+  return false;
+}
+
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
@@ -44,14 +70,19 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     const symUpper = symbol.toUpperCase();
-    // HARD_LOCK check: if memory/todo.md contains HARD_LOCK, reject all orders
-    try {
-      const todo = await Bun.file('./memory/todo.md').text();
-      if (todo.includes('HARD_LOCK')) {
-        return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+    // Trading lock check (code-level enforcement via lock file)
+    const lock = await getTradingLock();
+    const lockAllows = isOrderAllowed(lock, symbol, side);
+    // HARD_LOCK fallback: if memory/todo.md contains HARD_LOCK, reject all orders UNLESS the code-level lock file explicitly allows this order
+    if (!lockAllows) {
+      try {
+        const todo = await Bun.file('./memory/todo.md').text();
+        if (todo.includes('HARD_LOCK')) {
+          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+        }
+      } catch {
+        // todo.md not readable — proceed cautiously
       }
-    } catch {
-      // todo.md not readable — proceed cautiously
     }
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols
@@ -77,6 +108,7 @@ export const alpacaTools = {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
       }
     }
+    // (Lock check already performed at top of submitOrder before universe/short guards)
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }

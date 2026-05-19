@@ -1,19 +1,23 @@
-# Tactical Todo — Updated 2026-05-18 19:35Z (Monday 3:35 PM ET)
+# Tactical Todo — Updated 2026-05-19 04:53Z (Tuesday pre-market, 12:53 AM ET)
 
 ## Current State
-- **Regime:** defensive / compliance-cleanup hard lock
+- **Regime:** defensive / compliance-cleanup hard lock (partially lifted for staged XLK cover)
 - **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
 - **Account equity / cash / buying power:** $9,929.77 / $5,796.51 / $14,688.01
 - **Gross long exposure:** 46.85% | **Net exposure:** 41.63% | **Cash:** 58.37%
-- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
+- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today (Monday). Tuesday is a new day, but rolling 5-day count still = 3.
 - **Pattern day trader:** false
-- **Unauthorized positions:** XLK -3 shares SHORT — cover deferred to Tuesday 2026-05-19 open to avoid daytrade #4
+- **Unauthorized positions:** XLK -3 shares SHORT — cover staged for market open.
+
+## STAGED ORDER — DO NOT DUPLICATE
+- **BUY TO COVER XLK 3 shares** limit order already placed (order ID `385783a6-3549-4aa3-a471-e382bb615c7b`), limit $175.00, day TIF, expires at 20:00Z.
+- **DO NOT place another XLK buy.** The tactical agent must verify no duplicate orders exist before placing any trade.
 
 ## HARD_LOCK — VALID UNTIL TUESDAY 2026-05-19 09:30 ET
-**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK.**
-- `alpaca_cli.ts` enforces HARD_LOCK at the code level.
-- The ONLY exception is the authorized XLK cover on Tuesday open.
-- No sells, no buys, no cancels, no changes.
+**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK or updates `memory/.trading_lock.json`.**
+- `alpaca_cli.ts` enforces the lock via `memory/.trading_lock.json` at the code level.
+- The ONLY exception is the staged XLK cover above.
+- No sells, no buys, no cancels, no changes except as allowed by the lock file.
 
 ## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
 *All re-buys explicitly override 24h cooldowns as noted. Execute using limit orders at or near reference prices to minimize slippage. Stage deployment: cover first, then execute in priority order listed below.*

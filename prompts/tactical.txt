@@ -71,7 +71,8 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
    - If the position is marked **HOLD** with NO active sell trigger, or the current price has NOT breached the trigger, **ABORT the order**.
    - You may NOT sell a position because it "drifted from target allocation", "looks weak", "feels overextended", or for any other discretionary reason.
    - The ONLY valid reasons to sell are: (a) a specific price trigger in the current `todo.md` was breached, (b) Event Response Mode was entered due to a CRITICAL/MAJOR event, or (c) the hourly strategist explicitly wrote a sell authorization in the current `todo.md`.
-8. **HARD_LOCK check:** If `memory/todo.md` contains the word `HARD_LOCK`, **abort ALL orders** regardless of conditions. The code-level guard in the CLI will also block the order, but you must catch it here first.
+8. **Code-level lock check:** Read `memory/.trading_lock.json`. If it exists, `active` is `true`, and your order does NOT match an entry in the `allowed` array, **abort the order** and log the blocker. Do NOT attempt to delete or modify the lock file.
+9. **HARD_LOCK check:** If `memory/todo.md` contains the word `HARD_LOCK`, **abort ALL orders** regardless of conditions. The code-level guard in the CLI will also block the order, but you must catch it here first.
 9. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
 10. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
 

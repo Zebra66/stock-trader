@@ -1,5 +1,5 @@
 # Hourly Macro Memory
-*Updated 2026-05-18 19:35Z (Monday 3:35 PM ET). Market OPEN until 20:00Z / 16:00 ET.*
+*Updated 2026-05-19 04:53Z (Tuesday pre-market, 12:53 AM ET). Market CLOSED; opens 13:30Z / 9:30 AM ET.*
 
 ## Current Regime
 - **Regime:** **defensive / compliance-cleanup hard lock**
@@ -11,9 +11,9 @@
 - **Cash:** $5,796.51 (58.37%)
 - **Account equity:** $9,929.77
 - **Gross long exposure:** 46.85% | **Net exposure:** 41.63%
-- **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today
-- **Open orders:** NONE
-- **No new unauthorized trades** since 11:37 AM ET hourly run. HARD_LOCK working.
+- **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals Monday. Tuesday is a new day but rolling 5-day count still = 3.
+- **Open orders:** BUY XLK 3 limit @ $175 (day TIF, staged for market open) — order ID `385783a6-3549-4aa3-a471-e382bb615c7b`
+- **No new unauthorized trades** since 11:37 AM ET Monday hourly run. HARD_LOCK working.
 
 ## Current Macro Thesis
 The multi-week AI/semiconductor/growth uptrend is undergoing its **second consecutive session of pullback**. Monday extends Friday's semi weakness with NVDA down ~2.0% intraday and QQQ down ~0.95%. GOOG is relatively flat (-0.12% intraday). SPY is holding near all-time highs (~736.63), so the weakness is concentrated in high-beta growth rather than the broad market. **This is a rotation, not a macro regime shift.**
