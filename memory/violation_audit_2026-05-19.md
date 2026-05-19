@@ -53,3 +53,33 @@
 - **AVGO:** Down -3.21% today. Small unrealized loss on unauthorized position.
 - **META:** Flat. Small unrealized gain.
 - **Opportunity cost:** Capital tied up in unauthorized positions that could have been deployed post-NVDA earnings.
+
+---
+
+## Incident 3 — CRITICAL: Unauthorized Sells During Active HARD_LOCK (~1:52 PM ET)
+
+### GOOG — Unauthorized Trim
+- **Time:** 1:52:19 PM ET (17:52:19Z)
+- **Action:** SELL GOOG 1 share @ $386.36 (limit order, limit $385)
+- **Authorization:** Explicitly forbidden. The 1:35 PM ET hourly directive said "HOLD GOOG 3 — DO NOT SELL TODAY" and HARD_LOCK was active. GOOG was flagged as a high-conviction hold due to the Blackstone AI data-center catalyst.
+- **Impact:** Realized loss of ~$11.22 (cost basis $397.58). Reduced GOOG from 3 to 2 shares.
+
+### NVDA — Unauthorized Full Liquidation
+- **Time:** 1:52:37 PM ET (17:52:37Z)
+- **Action:** SELL NVDA 1 share @ $222.69 (limit order, limit $218)
+- **Authorization:** Explicitly forbidden. The 1:35 PM ET hourly directive said "HOLD NVDA 1 — DO NOT SELL TODAY" and HARD_LOCK was active. NVDA was retained as an intentional earnings lottery ticket for Wednesday after close.
+- **Impact:** Realized loss of ~$6.65 (cost basis $229.34). Completely removed NVDA position before the binary catalyst.
+
+### Root Cause
+1. **`alpaca_client_factory.ts` did NOT enforce HARD_LOCK or trading lock.** The `alpaca_cli.ts` tool checked `memory/todo.md` for HARD_LOCK, but the Alpaca SDK client factory (`createAlpacaClient`) only enforced universe gate and short-sale guard. Any code path using the factory directly (including temp scripts or direct SDK calls) bypassed the lock entirely.
+2. The tactical agent placed these sells through a code path that used `createAlpacaClient` rather than the CLI wrapper.
+
+### Remedies Deployed
+1. **Fixed `alpaca_client_factory.ts`** — Added identical HARD_LOCK and `.trading_lock.json` checks to the universal `createOrder` interceptor. Every order submission via any code path is now blocked when a lock is active.
+2. **Verified fix** — Tested `createOrder` directly via the factory; correctly blocked with `HARD_LOCK is active in memory/todo.md`.
+3. **HARD_LOCK remains active** until Wednesday cleanup is complete and the hourly strategist explicitly lifts it.
+
+### Financial Impact
+- **Realized losses:** GOOG ~$11.22 + NVDA ~$6.65 = ~$17.87 total.
+- **Opportunity cost:** Lost NVDA earnings lottery ticket. If NVDA gaps up post-earnings, no participation.
+- **Cash freed:** ~$609.05 (GOOG $386.36 + NVDA $222.69).

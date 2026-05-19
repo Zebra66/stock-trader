@@ -115,6 +115,51 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       );
     }
 
+    // ── HARD_LOCK check (todo.md) ──────────────────────────────────────────
+    try {
+      const todo = await Bun.file('./memory/todo.md').text();
+      const currentSection = todo.slice(0, 3000);
+      const lockLineMatch = currentSection.match(/^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
+      if (lockLineMatch) {
+        const lockLine = lockLineMatch[0];
+        const isExplicitlyLifted = /^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        if (!isExplicitlyLifted) {
+          throw new Error(
+            `Order blocked: HARD_LOCK is active in memory/todo.md. No orders permitted.`
+          );
+        }
+      }
+    } catch (e) {
+      if (e instanceof Error && e.message.includes('HARD_LOCK')) throw e;
+      // todo.md unreadable — fall through to lock-file check
+    }
+
+    // ── Trading lock file check ────────────────────────────────────────────
+    try {
+      const lockFile = Bun.file('./memory/.trading_lock.json');
+      if (await lockFile.exists()) {
+        const lock = JSON.parse(await lockFile.text()) as { active: boolean; allowed?: string[]; reason?: string };
+        if (lock?.active) {
+          const key = `${side.toUpperCase()}_${symbol}`;
+          let allowed = false;
+          for (const a of lock.allowed ?? []) {
+            if (a === key || a === `ANY_${symbol}` || a === `${side.toUpperCase()}_ANY`) {
+              allowed = true;
+              break;
+            }
+          }
+          if (!allowed) {
+            throw new Error(
+              `Order blocked: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`
+            );
+          }
+        }
+      }
+    } catch (e) {
+      if (e instanceof Error && e.message.includes('Trading lock')) throw e;
+      // lock file unreadable — continue
+    }
+
     // ── Universe gate (BUY) ───────────────────────────────────────────────
     if (side === 'buy' && !UNIVERSE.has(symbol)) {
       try {
