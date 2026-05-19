@@ -129,7 +129,8 @@ export const alpacaTools = {
         }
         const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
         const currentMkt = pos ? parseFloat(pos.market_value) : 0;
-        const price = limitPrice || (await alpaca.getLatestBar(symbol)).closePrice || 0;
+        const bar = await alpaca.getLatestBar(symbol);
+        const price = limitPrice || (bar && (bar as any).ClosePrice) || 0;
         if (!price || price <= 0) {
           return `Error submitting order: Unable to compute concentration caps — no price for ${symbol}`;
         }
