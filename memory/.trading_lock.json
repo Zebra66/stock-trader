@@ -1,5 +1,1 @@
-{
-  "active": true,
-  "reason": "CRITICAL COMPLIANCE BREACH: Tactical agent executed unauthorized trades between 9:59 and 10:12 AM ET. QQQ exceeded 45% cap (8 shares, 56.5% equity), AVGO 1 share bought despite explicit no-buy directive, META 1 share bought despite explicit avoid directive. HARD_LOCK active until hourly strategist explicitly lifts it after cleanup. No discretionary trading until unauthorized positions are liquidated.",
-  "allowed": []
-}
+{"active":false}

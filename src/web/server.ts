@@ -320,7 +320,7 @@ const app = new Elysia()
     </button>
     <button class="nav-btn" onclick="openPrompts()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 2.5h11v7h-11z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 5h7M3.5 7h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      Prompts
+      User Requests
     </button>
     <button class="nav-btn" onclick="openLogs()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
@@ -406,16 +406,16 @@ const app = new Elysia()
   <div class="prompts-modal" onclick="event.stopPropagation()">
     <div class="prompts-header">
       <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14v10H2z" stroke="#00d4ff" stroke-width="1.5" fill="none"/><path d="M5 8h8M5 11h5" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/></svg>
-      <span class="prompts-title">💬 Agent Prompts</span>
+      <span class="prompts-title">💬 User Requests</span>
       <button class="btn-refresh" onclick="loadPrompts()" style="font-size:.75rem;padding:.3rem .7rem" title="Refresh">⟳ Refresh</button>
       <button class="prompts-close" onclick="closePrompts()">✕ Close</button>
     </div>
     <div class="prompts-body" id="prompts-body">
-      <div class="portfolio-loading">Loading prompts…</div>
+      <div class="portfolio-loading">Loading requests…</div>
     </div>
     <div class="prompt-compose">
-      <textarea class="prompt-textarea" id="new-prompt-text" placeholder="Type a new prompt or instruction for the agent..."></textarea>
-      <button class="btn-send-prompt" onclick="sendPrompt()">Send Prompt</button>
+      <textarea class="prompt-textarea" id="new-prompt-text" placeholder="Type a new request or directive for the trading agent..."></textarea>
+      <button class="btn-send-prompt" onclick="sendPrompt()">Submit Request</button>
     </div>
   </div>
 </div>
@@ -1055,7 +1055,7 @@ const app = new Elysia()
       
       const prompts=d.prompts||[];
       if(prompts.length===0){
-        body.innerHTML='<div class="portfolio-empty">No prompts yet.</div>';
+        body.innerHTML='<div class="portfolio-empty">No requests yet.</div>';
         return;
       }
       
@@ -1096,7 +1096,7 @@ const app = new Elysia()
       html+='</div>';
       body.innerHTML=html;
     }catch(err){
-      body.innerHTML='<div class="portfolio-empty">Failed to load prompts: '+escH(String(err))+'</div>';
+      body.innerHTML='<div class="portfolio-empty">Failed to load requests: '+escH(String(err))+'</div>';
     }
   }
   
@@ -1116,10 +1116,10 @@ const app = new Elysia()
         textEl.value = '';
         loadPrompts();
       } else {
-        alert('Failed to send prompt: ' + (d.error || 'Unknown error'));
+        alert('Failed to submit request: ' + (d.error || 'Unknown error'));
       }
     } catch (e) {
-      alert('Failed to send prompt: ' + e);
+      alert('Failed to submit request: ' + e);
     }
   }
   
@@ -1149,15 +1149,15 @@ const app = new Elysia()
         editingPromptId = null;
         loadPrompts();
       } else {
-        alert('Failed to update prompt: ' + (d.error || 'Unknown error'));
+        alert('Failed to update request: ' + (d.error || 'Unknown error'));
       }
     } catch (e) {
-      alert('Failed to update prompt: ' + e);
+      alert('Failed to update request: ' + e);
     }
   }
   
   async function deletePrompt(id) {
-    if(!confirm('Are you sure you want to delete this prompt?')) return;
+    if(!confirm('Are you sure you want to delete this request?')) return;
     
     try {
       const res = await fetch('/api/prompts/'+id, {
@@ -1167,10 +1167,10 @@ const app = new Elysia()
       if(d.ok) {
         loadPrompts();
       } else {
-        alert('Failed to delete prompt: ' + (d.error || 'Unknown error'));
+        alert('Failed to delete request: ' + (d.error || 'Unknown error'));
       }
     } catch (e) {
-      alert('Failed to delete prompt: ' + e);
+      alert('Failed to delete request: ' + e);
     }
   }
 
