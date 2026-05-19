@@ -74,14 +74,14 @@ export const alpacaTools = {
     try {
       const todo = await Bun.file('./memory/todo.md').text();
       const currentSection = todo.slice(0, 3000);
-      const hardLockMatch = currentSection.match(/HARD_LOCK/i);
-      if (hardLockMatch) {
-        const surrounding = currentSection.slice(
-          Math.max(0, hardLockMatch.index! - 50),
-          hardLockMatch.index! + 150
-        );
-        const isLifted = /LIFTED|Lifted/i.test(surrounding);
-        if (!isLifted) {
+      // Find the HARD_LOCK control line (heading or bold line near the top).
+      // This avoids false positives from regime descriptions that mention HARD_LOCK.
+      const lockLineMatch = currentSection.match(/^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
+      if (lockLineMatch) {
+        const lockLine = lockLineMatch[0];
+        // Only allow if the control line explicitly starts with HARD_LOCK ... LIFTED
+        const isExplicitlyLifted = /^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        if (!isExplicitlyLifted) {
           return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
         }
       }

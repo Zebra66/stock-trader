@@ -272,6 +272,37 @@ const app = new Elysia()
     .p-buy{color:var(--green);font-weight:700}.p-sell{color:var(--red);font-weight:700}
     .portfolio-loading{text-align:center;padding:3rem;color:var(--cyan);font-size:.82rem;animation:fade-pulse 1.4s ease infinite}
     .portfolio-empty{text-align:center;padding:2rem;color:#475569;font-family:var(--mono);font-size:.82rem}
+
+    /* ── PROMPTS MODAL ── */
+    .prompts-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
+    .prompts-overlay.open{display:flex}
+    .prompts-modal{background:#0a0f1e;border:1px solid rgba(0,212,255,0.25);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:800px;margin:0 auto;max-height:100%;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,0.6)}
+    .prompts-header{display:flex;align-items:center;gap:.875rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(0,212,255,0.12);flex-shrink:0}
+    .prompts-title{font-size:1rem;font-weight:700;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-right:auto}
+    .prompts-close{background:none;border:1px solid #334155;color:#94a3b8;border-radius:8px;cursor:pointer;padding:.35rem .75rem;font-size:.8rem;font-family:var(--font);transition:all .2s}
+    .prompts-close:hover{border-color:var(--cyan);color:var(--cyan)}
+    .prompts-body{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
+    .prompt-list{display:flex;flex-direction:column;gap:.75rem}
+    .prompt-item{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:.875rem;display:flex;flex-direction:column;gap:.6rem;transition:all .2s}
+    .prompt-item:hover{border-color:rgba(0,212,255,0.25)}
+    .prompt-item.executed{opacity:0.65;border-color:rgba(255,255,255,0.05);background:#070b14}
+    .prompt-item-header{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:#475569;font-family:var(--mono)}
+    .prompt-status{font-weight:600;padding:.15rem .45rem;border-radius:4px;font-size:.65rem;text-transform:uppercase;letter-spacing:.04em}
+    .prompt-status.pending{background:rgba(245,158,11,0.1);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)}
+    .prompt-status.done{background:rgba(0,255,136,0.1);color:#00ff88;border:1px solid rgba(0,255,136,0.25)}
+    .prompt-text{font-size:.82rem;color:#cbd5e1;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+    .prompt-text-edit{width:100%;min-height:80px;background:#111827;border:1px solid rgba(0,212,255,0.3);border-radius:8px;padding:.6rem;color:#f1f5f9;font-family:var(--font);font-size:.82rem;outline:none;resize:vertical}
+    .prompt-actions{display:flex;justify-content:flex-end;gap:.5rem}
+    .btn-prompt-action{padding:.25rem .6rem;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#94a3b8;cursor:pointer;font-size:.72rem;font-family:var(--font);transition:all .2s}
+    .btn-prompt-action:hover{border-color:var(--cyan);color:var(--cyan)}
+    .btn-prompt-action.delete:hover{border-color:var(--red);color:var(--red)}
+    .btn-prompt-action.save{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.35);color:var(--cyan)}
+    .btn-prompt-action.save:hover{background:rgba(0,212,255,0.2)}
+    .prompt-compose{padding:1rem 1.25rem;border-top:1px solid rgba(0,212,255,0.08);background:#070b14;display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
+    .prompt-textarea{width:100%;height:70px;background:#111827;border:1px solid #1e293b;border-radius:8px;padding:.6rem .8rem;color:#f1f5f9;font-family:var(--font);font-size:.82rem;outline:none;resize:none;transition:border-color .2s}
+    .prompt-textarea:focus{border-color:rgba(0,212,255,0.45);box-shadow:0 0 0 3px rgba(0,212,255,0.08)}
+    .btn-send-prompt{align-self:flex-end;padding:.4rem 1.25rem;background:linear-gradient(135deg,var(--cyan),#0088ff);border:none;border-radius:8px;color:#0a0f1e;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .2s}
+    .btn-send-prompt:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,212,255,0.3)}
   </style>
 </head>
 <body>
@@ -286,6 +317,10 @@ const app = new Elysia()
     <button class="nav-btn" onclick="openPortfolio()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12V6L7 2l5 4v6h-3.5V9h-3v3H2z" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
       Portfolio
+    </button>
+    <button class="nav-btn" onclick="openPrompts()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 2.5h11v7h-11z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 5h7M3.5 7h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      Prompts
     </button>
     <button class="nav-btn" onclick="openLogs()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
