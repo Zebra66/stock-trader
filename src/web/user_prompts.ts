@@ -1,4 +1,3 @@
-import * as fs from 'fs/promises';
 import * as path from 'path';
 
 export interface UserPrompt {
@@ -12,20 +11,25 @@ export interface UserPrompt {
 const PROMPTS_FILE = path.join(process.cwd(), 'memory', 'user_prompts.json');
 
 export async function readPrompts(): Promise<UserPrompt[]> {
+  const file = Bun.file(PROMPTS_FILE);
+  if (!(await file.exists())) {
+    return [];
+  }
   try {
-    const data = await fs.readFile(PROMPTS_FILE, 'utf8');
+    const data = await file.text();
     return JSON.parse(data) as UserPrompt[];
   } catch (err: any) {
-    if (err.code === 'ENOENT') {
-      return [];
-    }
-    throw err;
+    return [];
   }
 }
 
 export async function writePrompts(prompts: UserPrompt[]): Promise<void> {
-  await fs.mkdir(path.dirname(PROMPTS_FILE), { recursive: true });
-  await fs.writeFile(PROMPTS_FILE, JSON.stringify(prompts, null, 2), 'utf8');
+  const dir = path.dirname(PROMPTS_FILE);
+  const dirFile = Bun.file(dir);
+  if (!(await dirFile.exists())) {
+    import('fs').then(fs => fs.mkdirSync(dir, { recursive: true }));
+  }
+  await Bun.write(PROMPTS_FILE, JSON.stringify(prompts, null, 2));
 }
 
 export async function addPrompt(text: string): Promise<UserPrompt> {

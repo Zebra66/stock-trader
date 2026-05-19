@@ -73,8 +73,8 @@ export const alpacaTools = {
     // Trading lock check (code-level enforcement via lock file)
     const lock = await getTradingLock();
     const lockAllows = isOrderAllowed(lock, symbol, side);
-    // HARD_LOCK fallback: if memory/todo.md contains HARD_LOCK, reject all orders UNLESS the code-level lock file explicitly allows this order
-    if (!lockAllows) {
+    // HARD_LOCK fallback: if memory/todo.md contains HARD_LOCK, reject all orders UNLESS the code-level lock file is active and explicitly allows this order
+    if (!lockAllows || !(lock && lock.active)) {
       try {
         const todo = await Bun.file('./memory/todo.md').text();
         if (todo.includes('HARD_LOCK')) {
