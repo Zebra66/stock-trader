@@ -3,6 +3,7 @@
     "id": "17791989930009jijy",
     "createdAt": "2026-05-19T13:56:33.000Z",
     "text": "This is a test prompt from the CLI.",
-    "executed": false
+    "executed": true,
+    "executedAt": "2026-05-19T14:10:33.600Z"
   }
 ]

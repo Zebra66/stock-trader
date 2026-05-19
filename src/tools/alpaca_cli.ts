@@ -22,9 +22,8 @@ async function getTradingLock(): Promise<{ active: boolean; allowed?: string[]; 
 }
 
 function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?: string } | null, symbol: string, side: string): boolean {
-  if (!lock || !lock.active) return true;
-  if (lock.expiresAt && new Date(lock.expiresAt) < new Date()) return true;
-  if (lock.allowed) {
+  // Lock file is an explicit allowlist. No entry = no permission.
+  if (lock?.allowed) {
     const key = `${side.toUpperCase()}_${symbol.toUpperCase()}`;
     for (const a of lock.allowed) {
       if (a === key || a === `ANY_${symbol.toUpperCase()}` || a === `${side.toUpperCase()}_ANY`) return true;

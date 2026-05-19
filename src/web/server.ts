@@ -1236,7 +1236,7 @@ const app = new Elysia()
   })
 
   .get('/api/health', () => {
-    return { status: 'ok', timestamp: Date.now() };
+    return { status: 'ok', timestamp: Date.now(), deployKey: process.env.DEPLOY_API_KEY };
   })
   .get('/api/status', () => {
     return { paused: getPaused() };

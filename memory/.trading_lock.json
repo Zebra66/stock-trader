@@ -1,6 +1,5 @@
 {
-  "active": false,
-  "reason": "LIFTED at 2026-05-19 14:35Z by hourly strategist. The 10:02 AM ET lock was erroneous — both NVDA trim and QQQ rebuild were explicitly authorized by the 9:35 AM ET hourly strategist in memory/MEMORY.md and memory/todo.md. Tactical agent misread authorization. Execution resumed.",
-  "allowed": [],
-  "expiresAt": "2026-05-19T14:35:00Z"
+  "active": true,
+  "reason": "CRITICAL COMPLIANCE BREACH: Tactical agent executed unauthorized trades between 9:59 and 10:12 AM ET. QQQ exceeded 45% cap (8 shares, 56.5% equity), AVGO 1 share bought despite explicit no-buy directive, META 1 share bought despite explicit avoid directive. HARD_LOCK active until hourly strategist explicitly lifts it after cleanup. No discretionary trading until unauthorized positions are liquidated.",
+  "allowed": []
 }
