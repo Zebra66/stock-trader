@@ -99,6 +99,16 @@ See prior commits for full historical logs. Unauthorized trades on 2026-05-18 do
 - Semis in 3-day decline. SOXX at 492.86.
 - Staged deployment: trim NVDA → add QQQ → add VOO.
 
+**Tactical cycle — 2026-05-19 13:51Z (Tactical 9:51 AM ET):**
+- Event detector: NONE. Normal execution mode.
+- NVDA: **SOLD 2 shares** via limit 220.50. Filled immediately at ~221.73 (better than limit). Position now 1 share (~2.2%). Reduced earnings binary risk as directed.
+- QQQ: **BUY 2 shares** limit order at 702.00 placed. Status: **working/new**. Market at 702.51 (above limit). Will fill if price dips.
+- VOO: **Skipped**. Price 676.025 above 675.00 limit. Deferred to next cycle.
+- Current holdings: GOOG 3 ($384.37, -3.3%), NVDA 1 ($221.73, -4.3%), QQQ 4 ($702.51, +0.6%). Working order: QQQ +2.
+- Cash ~$5,718 (post-NVDA sale). Gross exposure ~42.3% (below offensive band).
+- Daytrade count remains 3/3. No same-day reversals. NVDA sale was overnight position.
+- Next: Monitor QQQ fill; re-evaluate VOO at :50 tactical cycle.
+
 ## Near-Term Watchlist
 - **AVGO** — re-assess Thursday after NVDA earnings. Currently $412.
 - **SOXX** — watch for stabilization above 495; currently 492.86.
