@@ -1045,14 +1045,14 @@ const app = new Elysia()
           html+='<textarea class="prompt-text-edit" id="edit-text-'+p.id+'">'+escH(p.text)+'</textarea>';
           html+='<div class="prompt-actions">';
           html+='<button class="btn-prompt-action" onclick="cancelEditPrompt()">Cancel</button>';
-          html+='<button class="btn-prompt-action save" onclick="savePrompt(\''+p.id+'\')">Save</button>';
+          html+='<button class="btn-prompt-action save" onclick="savePrompt(\\\''+p.id+'\\\')">Save</button>';
           html+='</div>';
         } else {
           html+='<div class="prompt-text">'+escH(p.text)+'</div>';
           if (!p.executed) {
             html+='<div class="prompt-actions">';
-            html+='<button class="btn-prompt-action delete" onclick="deletePrompt(\''+p.id+'\')">Delete</button>';
-            html+='<button class="btn-prompt-action" onclick="editPrompt(\''+p.id+'\')">Edit</button>';
+            html+='<button class="btn-prompt-action delete" onclick="deletePrompt(\\\''+p.id+'\\\')">Delete</button>';
+            html+='<button class="btn-prompt-action" onclick="editPrompt(\\\''+p.id+'\\\')">Edit</button>';
             html+='</div>';
           }
         }
