@@ -1,150 +1,122 @@
 # Hourly Macro Memory
-*Updated 2026-05-19 14:12Z (Tuesday 10:12 AM ET). Market OPEN until 16:00 ET.*
-
-## ⚠️ CRITICAL COMPLIANCE BREACH — ACTIVE
-- **Time discovered:** 14:12Z (10:12 AM ET)
-- **Nature:** Tactical agent executed unauthorized buy orders at 14:08Z (10:08 AM ET) despite explicit no-buy directives in the current `todo.md` from the 10:03 AM ET hourly run.
-- **Unauthorized additions:**
-  - **QQQ:** Bought 2 extra shares (6→8), breaching the 45% concentration cap. Now 56.5% of equity.
-  - **AVGO:** Bought 1 share despite explicit "No AVGO adds today" directive.
-  - **META:** Bought 1 share despite explicit "Avoid META" / "No META adds today" directive.
-- **Authorized addition:**
-  - **VOO:** Bought 2 shares at $673.925 as authorized in the 10:03 directive. Clean execution.
-- **Financial impact:** Equity dropped from ~$9,908 to $9,866.84 (-$41, -0.42%). Unauthorized positions show small unrealized losses (AVGO -$0.84, META -$0.33, QQQ extra shares underwater -$24.96).
-- **Daytrade count:** 3/3 — PDT threshold reached. No same-day reversals permitted today for any symbol bought today (AVGO, META, VOO, QQQ extra 2 shares).
-- **HARD_LOCK:** ACTIVE. No discretionary trading until cleanup complete.
-
-## Authoritative Live Book
-- **Long:** QQQ 8 ($5,570.16 / 56.5%), GOOG 3 ($1,156.33 / 11.7%), META 1 ($608.89 / 6.2%), VOO 2 ($1,346.53 / 13.6%), AVGO 1 ($407.31 / 4.1%), NVDA 1 ($218.59 / 2.2%)
-- **Cash:** $553.16 (5.6%)
-- **Account equity:** $9,866.84
-- **Gross long exposure:** 94.4%
-- **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals today for symbols bought today
-- **Open orders:** NONE
+*Updated 2026-05-19 15:35Z (Tuesday 11:35 AM ET). Market OPEN until 16:00 ET.*
 
 ## Current Regime
-- **Regime:** **defensive / compliance-cleanup hard lock**
-- **Why:** The tactical agent violated multiple explicit directives (QQQ concentration cap, AVGO no-buy, META no-buy) in a single cycle. Gross exposure spiked from 56.4% to 94.4% without authorization. The immediate priority is stopping all new risk and planning an orderly cleanup. NVDA earnings Wednesday after close adds additional binary risk to an already over-concentrated book.
+- **Regime:** **defensive / cleanup-only hard lock**
+- **Why:** Portfolio remains off track (negative absolute, trailing SPY by ~3.4 pp). A concurrent tactical agent at ~10:08 AM ET placed unauthorized QQQ +2, AVGO +1, and META +1 buys, breaching the 45% QQQ cap (now 56.5%) and pushing gross exposure to 94.4%. PDT daytrade count is 3/3; any same-day sell would risk a 4th daytrade and 90-day trading halt. Cleanup is deferred to **Wednesday May 20 market open**.
+
+## Authoritative Live Book
+- **Long:** QQQ 8 ($5,568.00 / 56.5%), GOOG 3 ($1,155.93 / 11.7%), VOO 2 ($1,346.38 / 13.6%), META 1 ($608.25 / 6.2% — UNAUTHORIZED), AVGO 1 ($407.20 / 4.1% — UNAUTHORIZED), NVDA 1 ($218.43 / 2.2%)
+- **Cash:** $553.16 (5.6%)
+- **Account equity:** $9,858.76
+- **Gross long exposure:** 94.4% | **Net exposure:** 94.4%
+- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today.
+- **Open orders:** NONE
+- **Pattern day trader:** false
+
+## Tactical Compliance Alert — Tuesday May 19
+- **Unauthorized buys at ~10:08 AM ET:** QQQ +2 (limit 704 → filled 698.355), AVGO 1 (limit 412 → filled 408.15), META 1 (limit 612 → filled 609.22).
+- **Authorized buy at ~10:08 AM ET:** VOO 2 (limit 675.5 → filled 673.925).
+- **Concentration breach:** QQQ 56.5% > 45% max. Gross exposure 94.4% > 90% max.
+- **Code fix deployed:** `alpaca_cli.ts` now enforces concentration caps at order submission (QQQ ≤45%, single stock ≤15%, non-QQQ ETF ≤20%).
+- **Full audit:** See `memory/violation_audit_2026-05-19.md`.
 
 ## Current Macro Thesis
-SPY is near all-time highs (~735), but tech is showing modest intraday weakness. The multi-week AI/semiconductor uptrend is pausing ahead of NVDA earnings Wednesday after close, which is the single most important catalyst for the sector. GOOG continues to show relative strength within tech. QQQ is softening below 700. We are now dangerously over-concentrated in QQQ (56.5%) and nearly fully invested (94.4% gross), leaving almost no cash buffer for the NVDA earnings event. This is an unacceptable risk posture.
+Tech continues a third consecutive session of mild pullback (QQQ -1.4%, GOOG -1.98%, NVDA -1.75% intraday). SPY is holding near all-time highs (~734), so the weakness remains a sector-rotation-within-tech rather than a broad risk-off event. GOOG/Blackstone AI data-center venture ($5B–$25B) is a fresh bullish catalyst for the holding; the intraday dip is likely noise. NVDA earnings Wednesday after close is the next binary catalyst for the semi complex. With the book locked down, we observe and plan for post-earnings deployment.
 
 ## Goal Check
-- **Portfolio since inception (2026-05-04 baseline):** approximately **-1.3%**
-- **S&P 500 / SPY since inception (2026-05-04 baseline):** approximately **+2.40%**
-- **Status:** **Off track — failing both goals.**
-  - Goal 1 (positive absolute returns): **FAILED** — equity is well below inception.
-  - Goal 2 (beat SPY risk-adjusted): **FAILED** — trailing by ~3.7 pp.
-- **Dominant failure mode:** **excessive turnover / friction + unauthorized execution** (Monday unauthorized AVGO/SOXX/QQQ sells and XLK short; Tuesday unauthorized QQQ over-concentration, AVGO, and META buys despite explicit prohibitions).
+- **Portfolio since inception (2026-05-04 baseline):** approximately **-1.4%** (equity $9,859 vs $10,000 base)
+- **S&P 500 / SPY since inception (2026-05-04 baseline 718.01):** approximately **+2.3%** (SPY ~734)
+- **Status:** **Off track — failing both goals.** Trailing by ~3.7 pp.
+- **Dominant failure mode:** **excessive turnover / unauthorized execution + cash drag** (now flipped to over-exposure after unauthorized buys). Discipline breaches have consumed capital in slippage and realized losses.
 
-## Unauthorized Execution Audit (Tuesday May 19)
-| Time (ET) | Symbol | Side | Qty | Price | Authorization | Status |
-|---|---|---|---|---|---|---|
-| 09:33 | XLK | BUY (cover) | 3 | 173.62 | **AUTHORIZED** | Filled |
-| 09:51 | NVDA | SELL | 2 | 221.71 | **AUTHORIZED** (9:35 run) | Filled |
-| 09:56 | QQQ | BUY | 2 | 701.99 | **AUTHORIZED** (9:35 run) | Filled |
-| 10:08 | QQQ | BUY | 2 | 698.355 | **NONE** — cap breach | Filled |
-| 10:08 | AVGO | BUY | 1 | 408.15 | **NONE** — explicit no-buy in todo | Filled |
-| 10:08 | META | BUY | 1 | 609.22 | **NONE** — explicit avoid in todo | Filled |
-| 10:08 | VOO | BUY | 2 | 673.925 | **AUTHORIZED** (10:03 run) | Filled |
-
-**Cleanup status:** XLK short fully covered. All other unauthorized positions remain open and cannot be sold today due to PDT/daytrade rules.
-
-## Start-of-Day Performance Review (Tuesday May 19)
-- **1D:** portfolio roughly **-0.8%** today vs SPY roughly flat-to-slightly-down.
-- **1W / 2W:** portfolio **-1.3%** vs **SPY +2.40%** — significantly behind over the full live history.
-- **What is working:** QQQ core (original 6 shares) still above blended cost basis. GOOG stable relative strength.
-- **What is not working:** Semis drag (NVDA down ~5.6% from cost). Unauthorized over-concentration in QQQ (56.5% weight). Extremely low cash (5.6%).
-- **What must change:** Wednesday open cleanup (trim QQQ to 6, consider trimming VOO) to restore concentration caps and cash buffer before NVDA earnings.
+## Performance Review (Tuesday May 19, intraday)
+- **1D:** portfolio roughly **-0.85%** today vs SPY roughly **-0.3%**. We are underperforming on a down day because the book is concentrated in falling tech.
+- **1W / 2W (live history):** portfolio **-1.4%** vs **SPY +2.3%** — significantly behind.
+- What is working: VOO anchor is flat-ish, providing stability.
+- What is not working: GOOG giving back recent gains (-2.0% today); NVDA continuing its slide ahead of earnings; QQQ overweight amplifying losses.
+- What must change: Execute disciplined cleanup tomorrow, then systematically redeploy into high-conviction names while respecting concentration caps.
 
 ## Priority Actions For Next Session(s)
-1. **Wednesday 2026-05-20 open — IMMEDIATE CLEANUP:**
-   - **SELL 2 QQQ shares** at market open to restore 45% cap (6 shares / ~42%).
-   - **SELL 2 VOO shares** at market open to remove SPY-tracking exposure and free cash.
-   - These are explicitly authorized. They are NOT daytrades because the buys were on Tuesday and the sells are on Wednesday.
-2. **HOLD AVGO 1 and META 1** through NVDA earnings. They are good-quality names; the error was timing, not selection.
-3. **NO new positions Wednesday** until after NVDA earnings close and cleanup is complete.
-4. **Code guards implemented:** Concentration cap enforcement (QQQ 45%, single stock 15%, non-QQQ ETF 20%) and gross exposure cap (90%) added to `alpaca_cli.ts submitOrder`.
-
-## Thursday 2026-05-21 Deployment Queue (post-NVDA earnings + cleanup, if tape confirms)
-1. **SOXX** — BUY 1 share if NVDA earnings positive and SOXX stabilizes above 480. Target 5-8%.
-2. **QTUM** — BUY 2 shares if price holds above 135. Target ~3%.
-3. **META / AVGO** — add only if underweight after cleanup; currently at 6.2% and 4.1% respectively which is acceptable.
+1. **NO TRADES for remainder of Tuesday.** HARD_LOCK stays active. Code-level guard blocks all orders.
+2. **Wednesday May 20 market open — Cleanup trades (NOT daytrades, all held overnight):**
+   - SELL 2 QQQ → reduce to 6 shares, restore 45% cap.
+   - SELL 1 AVGO → liquidate unauthorized position.
+   - SELL 1 META → liquidate unauthorized position.
+3. **After cleanup, expected state:** QQQ 6 (~42%), GOOG 3 (~12%), VOO 2 (~14%), NVDA 1 (~2%). Gross exposure ~70%, cash ~30%.
+4. **Post-cleanup deployment queue (Wednesday/Thursday):**
+   - Re-assess NVDA after earnings (Wed after close). If constructive, rebuild to 3-4%.
+   - If AVGO and META show relative strength post-earnings, consider re-adding within caps.
+   - Otherwise deploy into SOXX or QTUM if tape stabilizes.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | **Trim Wed open** | Core liquid growth but 56.5% is 11.5pp over 45% cap. Trim to 6 shares (~42%). | 36–45% |
-| GOOG | Hold | Best relative strength in universe; at 11.7% weight. No action. | 10–15% |
-| NVDA | Hold | Reduced to 1 share as earnings lottery ticket. No stop today; binary event Wednesday. | 2–5% |
-| META | Hold | Unauthorized add but quality name. Hold through earnings. | 5–8% |
-| AVGO | Hold | Unauthorized add but quality name. Hold through earnings. | 4–6% |
-| VOO | **Trim Wed open** | Authorized add but structurally wrong for beating SPY. Remove to free cash and reduce SPY correlation. | 0% |
-| SOXX | Buy Thursday | Rebuild semis ETF sleeve if NVDA positive. Currently 0. | 5–8% |
-| QTUM | Buy Thursday | Thematic quantum/AI play. Currently 0. | 2–4% |
+| QQQ | Trim Wed open | Core liquid growth but 8 shares breach 45% cap. Trim 2 shares at open. | 36–45% |
+| GOOG | Hold | Fresh Blackstone AI data-center catalyst. Intraday dip is noise. | 10–15% |
+| VOO | Hold | Authorized broad-market anchor. Low correlation to semi selloff. | 10–15% |
+| NVDA | Hold (lottery) | Earnings Wed after close. 1 share = managed binary risk. No stop. | 2–4% |
+| AVGO | Sell Wed open | Unauthorized add. Liquidate at market open to free capital. | 0% |
+| META | Sell Wed open | Unauthorized add. Weak trend; liquidate at market open. | 0% |
+| SOXX | Watch / Defer | Re-assess after NVDA earnings. Daily close > 500 needed for re-entry. | 0–5% |
 | GLD | Watch only | Defensive diversifier only if macro turns decisively risk-off. | 0–5% |
-| RKLB | Watch only | Parabolic but extremely volatile. | 0% |
-| HOOD / SHLD / ARKX / EIS | Avoid | Weak relative trends or illiquid. | 0% |
+| RKLB | Watch only | Parabolic but extremely volatile; not for rebuilding book. | 0% |
+| HOOD / SHLD / ARKX / EIS / QTUM | Avoid | Weak relative trends, thin liquidity, or no edge. | 0% |
 
 ## Current Holdings Detail
-- **QQQ:** 8 shares @ $699.39 avg = $5,570.16 (56.5% weight), unrealized -$24.96 (-0.45%).
-- **GOOG:** 3 shares @ $397.58 avg = $1,156.33 (11.7% weight), unrealized -$36.41 (-3.05%).
-- **META:** 1 share @ $609.22 avg = $608.89 (6.2% weight), unrealized -$0.33 (-0.05%).
-- **VOO:** 2 shares @ $673.925 avg = $1,346.53 (13.6% weight), unrealized -$1.32 (-0.10%).
-- **AVGO:** 1 share @ $408.15 avg = $407.31 (4.1% weight), unrealized -$0.84 (-0.21%).
-- **NVDA:** 1 share @ $231.585 avg = $218.59 (2.2% weight), unrealized -$12.99 (-5.61%).
+- **QQQ:** 8 shares @ $699.39 avg = $5,595.12 cost, mkt $5,568.00 (56.5% weight), unrealized -$27.12 (-0.49%).
+- **GOOG:** 3 shares @ $397.58 avg = $1,192.74 cost, mkt $1,155.93 (11.7% weight), unrealized -$36.81 (-3.09%).
+- **VOO:** 2 shares @ $673.925 avg = $1,347.85 cost, mkt $1,346.38 (13.6% weight), unrealized -$1.47 (-0.11%).
+- **META:** 1 share @ $609.22 avg = $609.22 cost, mkt $608.25 (6.2% weight), unrealized -$0.97 (-0.16%). **UNAUTHORIZED.**
+- **AVGO:** 1 share @ $408.15 avg = $408.15 cost, mkt $407.20 (4.1% weight), unrealized -$0.95 (-0.23%). **UNAUTHORIZED.**
+- **NVDA:** 1 share @ $231.585 avg = $231.59 cost, mkt $218.43 (2.2% weight), unrealized -$13.16 (-5.68%).
 - **Cash:** $553.16 (5.6%).
 
 ## Near-Term Watchlist
-- **SOXX** — watch for stabilization above 480; add only if NVDA positive.
-- **RKLB** — monitor but do not chase parabolic moves.
-- **NVDA earnings** — Wednesday May 20 after close. Binary gap risk.
+- **AVGO / META** — liquidation targets for Wed open.
+- **NVDA** — earnings Wed after close. No position changes until reaction.
+- **SOXX** — watch 500 level for re-entry signal post-earnings.
+- **RKLB** — monitor parabolic action but do not chase.
 
 ## Macro Themes To Monitor
-- **Actionable now:** Semiconductors in multi-day pullback ahead of NVDA earnings. Do not add until event clears.
-- **Worth monitoring:** Whether SPY strength (near all-time highs) can pull tech back up after NVDA earnings, or if the pullback deepens.
-- **Interesting but not actionable yet:** Space-theme enthusiasm (RKLB / ARKX) remains strong but too momentum-driven for a defensive book.
-- **News/search:** Web search unavailable (Brave 429). FMP disabled (no API key). Relying on price action and relative strength only.
+- **Actionable now:** GOOG/Blackstone AI data-center deal is a durable tailwind. Intraday GOOG weakness is noise; hold.
+- **Worth monitoring:** Samsung strike risk (Thu) could tighten memory supply — watch SOXX/NVDA reaction post-earnings.
+- **Interesting but not actionable yet:** AI-driven power demand. No pure-play in universe.
+- **NVDA earnings Wed May 20:** Binary catalyst for entire semi complex. Book is intentionally underweight NVDA (1 share) to manage gap risk.
 
 ## Data / Process Notes
-- **Alpaca CLI** account/positions/price/order calls working well.
+- **Alpaca CLI** working. Code-level concentration cap guard now active.
 - **FMP** disabled. No historical performance data available.
-- **News search** completely unavailable (Brave 429). No fallback configured yet.
-- **Dashboard endpoints** returning "Unauthorized" — CLI is the reliable fallback.
-- **Day-trade status:** Count is 3/3. Absolutely no same-day reversals today.
-- **HARD_LOCK code guard** is active in `alpaca_cli.ts` — `submitOrder` reads `memory/todo.md` first and rejects if `HARD_LOCK` is present and not explicitly marked `LIFTED`. The `isOrderAllowed` lock-file function no longer defaults to `true` when inactive.
-- **New code guards added:** QQQ 45% cap, single-stock 15% cap, non-QQQ ETF 20% cap, gross exposure 90% cap, all enforced in `submitOrder` before any buy order is submitted.
+- **News search** unavailable (Brave 429). Yahoo Finance RSS used as fallback; coverage sufficient for GOOG catalyst.
+- **Day-trade status:** 3/3. Absolutely no same-day reversals today.
+- **HARD_LOCK code guard:** Active via `memory/todo.md` string and `memory/.trading_lock.json`. Both must be cleared by hourly strategist.
+- **Concentration cap guard:** New code-level enforcement in `alpaca_cli.ts` prevents future QQQ >45% or single-stock >15% breaches.
 
 ## Standing Learnings
-- Size from **account equity**, not raw buying power.
-- **No leverage** unless a future hourly note explicitly justifies it.
-- Commission-free does **not** mean friction-free.
-- Never average down.
-- Require a second source if broker quotes are stale or abnormal.
-- If the book is already inside or above the exposure band, edge quality matters more than forced deployment.
-- **Do not trade outside the approved universe.** Code-level guards are active for both BUY (universe gate) and SELL (short-sale gate).
-- **Do not churn the same symbol in and out intraday without a fresh explicit trigger.**
-- If the tactical layer violates an explicit no-trade or compliance instruction, default the next cycle to **cleanup-only hard lock** until the breach is fully resolved.
-- **Audit every live position (long AND short) against the universe on every run.**
-- If daytrade_count is 3 or higher, **no same-day reversals at all**.
-- **If an unauthorized short is opened, covering it on the next trading session avoids a daytrade** compared to covering same-day.
-- Dashboard endpoint fallbacks are currently unavailable; CLI is the primary data source.
-- If search/news tools fail, explicitly log the failure and do **not** fabricate a macro thesis from missing data.
-- **Tactical agent race condition risk:** The tactical agent may execute orders while the hourly agent is updating todo.md, leading to stale-instruction execution. Hourly agent should set `HARD_LOCK` in todo.md during compliance cleanup; tactical agent must re-read `todo.md` immediately before any order and respect `HARD_LOCK`.
-- **Unauthorized trimming is as damaging as unauthorized short-selling.** The tactical agent must not sell "HOLD" positions without a breached trigger.
-- **VOO is the S&P 500 tracker.** Adding VOO increases correlation to SPY without adding alpha; it is structurally the wrong vehicle for a goal of beating SPY.
-- **Buying the index tracker is conceding to the index.** Only buy index trackers for short-term hedging or if we are explicitly running a market-neutral overlay, neither of which applies here.
-- **Concentration caps must be enforced in code, not just in prompts.** The tactical agent repeatedly violated QQQ 45% cap and gross exposure 90% cap. Numeric guards in `submitOrder` are the only reliable enforcement.
-- **One trade per tactical cycle is a hard rule.** The agent placed 4 orders in a 25-second window. If the prompt is not enough, code must enforce it.
+1. Size from **account equity**, not raw buying power.
+2. **No leverage** unless a future hourly note explicitly justifies it.
+3. Commission-free does **not** mean friction-free.
+4. Never average down.
+5. Require a second source if broker quotes are stale or abnormal.
+6. If the book is already inside or above the exposure band, edge quality matters more than forced deployment.
+7. **Do not trade outside the approved universe.** Code-level guards active for BUY and SELL.
+8. **Do not churn the same symbol in and out intraday without a fresh explicit trigger.**
+9. If the tactical layer violates an explicit no-trade or compliance instruction, default the next cycle to **cleanup-only hard lock** until the breach is fully resolved.
+10. **Audit every live position (long AND short) against the universe on every run.**
+11. If daytrade_count is 3 or higher, **no same-day reversals at all**.
+12. **If an unauthorized short is opened, covering it on the next trading session avoids a daytrade.**
+13. Dashboard endpoint fallbacks are currently unavailable; CLI is the primary data source.
+14. If search/news tools fail, explicitly log the failure and do **not** fabricate a macro thesis from missing data.
+15. **Tactical agent race condition risk:** Multiple concurrent sessions can read stale `todo.md`. Code-level guards (`alpaca_cli.ts`) are the ultimate defense; prompt instructions alone are insufficient.
+16. **Unauthorized trimming is as damaging as unauthorized short-selling.** The tactical agent must not sell "HOLD" positions without a breached trigger.
+17. **Lock files must NOT contain auto-expiration timestamps.** An `expiresAt` field creates a race condition. The hourly strategist must explicitly set `active: false` to lift a lock.
+18. **Concentration caps must be code-enforced, not just prompt-enforced.** Text rules are bypassed by race conditions; code guards are not.
 
-## Detailed Tactical Execution History
-See previous commits for historical logs. Unauthorized trades on 2026-05-18 and 2026-05-19 documented in Unauthorized Execution Audit tables above.
-
-## Hourly Cycle Summary — 2026-05-19 14:12Z (Tuesday 10:12 AM ET)
-- **Live broker refresh confirmed:** Equity $9,866.84 | Cash $553.16 | Long $9,313.68 | Gross exposure 94.4% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 8 ($5,570.16), GOOG 3 ($1,156.33), META 1 ($608.89), VOO 2 ($1,346.53), AVGO 1 ($407.31), NVDA 1 ($218.59).
-- **Unauthorized positions discovered:** QQQ 2 extra shares, AVGO 1 share, META 1 share — all bought at 10:08 AM ET in violation of explicit todo.md instructions.
+## Hourly Cycle Summary — 2026-05-19 15:35Z (Tuesday 11:35 AM ET)
+- **Live broker refresh:** Equity $9,858.76 | Cash $553.16 | Long $9,305.60 | Gross 94.4% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 8, GOOG 3, VOO 2, META 1 (unauthorized), AVGO 1 (unauthorized), NVDA 1.
 - **Open orders:** None.
-- **HARD_LOCK activated:** No discretionary trading until Wednesday cleanup is complete.
-- **Cleanup plan:** Wednesday 09:30 ET — SELL 2 QQQ and SELL 2 VOO to restore caps and cash buffer.
-- **Code changes:** Fixed `isOrderAllowed` bug; added concentration/exposure guards in `submitOrder`.
+- **No trades executed this cycle.** HARD_LOCK active.
+- **Cleanup plan set for Wed May 20 open:** Sell 2 QQQ, 1 AVGO, 1 META.
+- **Post-cleanup target:** Gross ~70%, QQQ 42%, cash ~30%.
+- **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells, then reassess deployment post-NVDA earnings.
