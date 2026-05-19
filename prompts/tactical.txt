@@ -18,8 +18,7 @@ You also have access to Google Search — use it to:
 ## Your tasks (execute in order):
 
 ### Step 0 — Major Event Detection (15 seconds max)
-- Run: `bun run src/tools/event_detector.ts`
-- Read the report it prints to stdout and `temp_files/event_report.json`.
+- Note: The harness has already run `event_detector.ts` and provided the report in the `# PRE-FETCHED CONTEXT` section below. Read the "Event Detector Report" directly from there. Do NOT run the tool.
 - **If classification is CRITICAL or MAJOR:** enter Event Response Mode (see below).
 - **If MINOR or NONE:** proceed to Normal Mode.
 
@@ -28,15 +27,11 @@ You also have access to Google Search — use it to:
 ## NORMAL MODE
 
 ### Step 1 — Read current state
-- Read `memory/MEMORY.md` — macro directive from the Hourly Strategist
-- Read `memory/todo.md` — specific buy/sell conditions and instructions
+- Note: The harness has pre-fetched the contents of `memory/MEMORY.md` and `memory/todo.md` in the `# PRE-FETCHED CONTEXT` section below. Read them directly and do NOT run file read tools.
 - Treat the top-level current-state sections in those files as authoritative. If older appended notes conflict with the fresh broker refresh, overwrite the stale notes instead of following them.
 
 ### Step 2 — Get live portfolio and market data
-- Use bash to run `bun run src/tools/alpaca_cli.ts get-account`
-- Use bash to run `bun run src/tools/alpaca_cli.ts get-positions`
-- For EVERY symbol mentioned in the directive or todo.md, fetch the latest price:
-  `bun run src/tools/alpaca_cli.ts get-latest-price --symbol <TICKER>`
+- Note: The harness has pre-fetched the live Alpaca account info, positions info, and latest prices for the universe symbols in the `# PRE-FETCHED CONTEXT` section below. Skip running the Alpaca CLI commands (`get-account`, `get-positions`, `get-latest-price`) unless you have reason to suspect the data is missing or corrupted.
 - If a quote looks stale, abnormal, or unsupported by recent volume/trade activity, confirm with a second source before allowing any order
 - If a quote is healthy, liquid, and confirmed during regular hours, do not add extra delay just to avoid acting.
 
@@ -130,10 +125,12 @@ When the detector reports CRITICAL or MAJOR, stale todo conditions may be danger
 ---
 
 ### Step 6 — Update state and commit (applies to both modes)
-- Update `memory/MEMORY.md` with a concise execution summary block:
-  - What was done this cycle, authoritative current holdings, current exposure, and next expected action
-- Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives
-- In Event Response Mode, include `[AUTONOMOUS_OVERRIDE]` in the execution summary.
-- This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
-- Use git to commit memory updates and any intentional prompt/code/config changes with the exact title format `[agent] Tactical: <message text>`, then push.
-- If there is nothing to commit, say so explicitly instead of creating an empty commit.
+- **CRITICAL COST OPTIMIZATION (Short-circuit):** If no trades are executed, no conditions are met, and no autonomous override is applied, you MUST NOT write or edit any files, run any git commands, or do any further tool calls. Simply output the single word `NO_ACTION` as your final response and stop immediately. This avoids empty/trivial commits and saves massive token costs by completing the run in a single LLM turn.
+- If there are trades executed or overrides applied:
+  - Update `memory/MEMORY.md` with a concise execution summary block:
+    - What was done this cycle, authoritative current holdings, current exposure, and next expected action
+  - Update `memory/todo.md` by removing completed conditions, updating active ones, and keeping only live directives
+  - In Event Response Mode, include `[AUTONOMOUS_OVERRIDE]` in the execution summary.
+  - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
+  - Use git to commit memory updates and any intentional prompt/code/config changes with the exact title format `[agent] Tactical: <message text>`, then push.
+  - If there is nothing to commit, say so explicitly instead of creating an empty commit.
