@@ -1,23 +1,24 @@
 # Tactical Todo — Updated 2026-05-19 04:53Z (Tuesday pre-market, 12:53 AM ET)
 
 ## Current State
-- **Regime:** defensive / compliance-cleanup hard lock (partially lifted for staged XLK cover)
-- **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,929.77 / $5,796.51 / $14,688.01
-- **Gross long exposure:** 46.85% | **Net exposure:** 41.63% | **Cash:** 58.37%
-- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today (Monday). Tuesday is a new day, but rolling 5-day count still = 3.
+- **Regime:** defensive / compliance-cleanup hard lock (XLK cover completed; awaiting hourly lock lift for rebuild)
+- **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK 0 (COVERED), SOXX 0, AVGO 0
+- **Account equity / cash / buying power:** $9,921.73 / $5,275.65 / $15,197.38
+- **Gross long exposure:** 46.83% | **Net exposure:** 46.83% | **Cash:** 53.17%
+- **Daytrade count:** 3/3 — rolling 5-day count = 3. Tuesday XLK cover of Monday short is NOT a daytrade.
 - **Pattern day trader:** false
-- **Unauthorized positions:** XLK -3 shares SHORT — cover staged for market open.
+- **Unauthorized positions:** NONE. XLK short fully covered at market open.
 
-## STAGED ORDER — DO NOT DUPLICATE
-- **BUY TO COVER XLK 3 shares** limit order already placed (order ID `385783a6-3549-4aa3-a471-e382bb615c7b`), limit $175.00, day TIF, expires at 20:00Z.
-- **DO NOT place another XLK buy.** The tactical agent must verify no duplicate orders exist before placing any trade.
+## STAGED ORDER — COMPLETED
+- **BUY TO COVER XLK 3 shares** limit order FILLED (order ID `385783a6-3549-4aa3-a471-e382bb615c7b`), filled_avg_price $173.616667, day TIF.
+- All 3 shares covered at market open. Short position closed. No duplicate orders placed.
 
-## HARD_LOCK — VALID UNTIL TUESDAY 2026-05-19 09:30 ET
+## HARD_LOCK — ACTIVE UNTIL 2026-05-19 14:00Z (10:00 ET) per `memory/.trading_lock.json`
 **The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK or updates `memory/.trading_lock.json`.**
-- `alpaca_cli.ts` enforces the lock via `memory/.trading_lock.json` at the code level.
-- The ONLY exception is the staged XLK cover above.
+- `alpaca_cli.ts` enforces the lock at the code level.
+- The staged XLK cover was the ONLY allowed exception and is now COMPLETED.
 - No sells, no buys, no cancels, no changes except as allowed by the lock file.
+- Next expected action: after lock lift, execute Tuesday deployment plan (NVDA trim, META, VOO, QQQ, AVGO rebuild).
 
 ## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
 *All re-buys explicitly override 24h cooldowns as noted. Execute using limit orders at or near reference prices to minimize slippage. Stage deployment: cover first, then execute in priority order listed below.*

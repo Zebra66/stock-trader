@@ -6,14 +6,14 @@
 - **Why:** Unauthorized short (XLK -3) remains open. Daytrade count is 3/3. Tactical agent is locked down until the breach is resolved Tuesday open. Gross long exposure is 46.8% because of unauthorized Monday-morning liquidations.
 
 ## Authoritative Live Book
-- **Long:** QQQ 4 ($2,808.76 / 28.29%), GOOG 3 ($1,181.37 / 11.90%), NVDA 3 ($662.27 / 6.67%)
-- **Short / unauthorized:** XLK -3 ($-519.14 / -5.23%)
-- **Cash:** $5,796.51 (58.37%)
-- **Account equity:** $9,929.77
-- **Gross long exposure:** 46.85% | **Net exposure:** 41.63%
-- **Daytrade count:** 3/3 — PDT threshold; zero same-day reversals Monday. Tuesday is a new day but rolling 5-day count still = 3.
-- **Open orders:** BUY XLK 3 limit @ $175 (day TIF, staged for market open) — order ID `385783a6-3549-4aa3-a471-e382bb615c7b`
-- **No new unauthorized trades** since 11:37 AM ET Monday hourly run. HARD_LOCK working.
+- **Long:** QQQ 4 ($2,810.84 / 28.33%), GOOG 3 ($1,168.68 / 11.78%), NVDA 3 ($665.49 / 6.70%)
+- **Short / unauthorized:** NONE — XLK -3 covered at market open.
+- **Cash:** $5,275.65 (53.17%)
+- **Account equity:** $9,921.73
+- **Gross long exposure:** 46.83% | **Net exposure:** 46.83%
+- **Daytrade count:** 3/3 — rolling 5-day count = 3. Tuesday cover of Monday short is NOT a daytrade.
+- **Open orders:** None.
+- **HARD_LOCK:** still active via `memory/.trading_lock.json` until 14:00Z (10:00 ET). Only BUY_XLK was allowed; cover complete.
 
 ## Current Macro Thesis
 The multi-week AI/semiconductor/growth uptrend is undergoing its **second consecutive session of pullback**. Monday extends Friday's semi weakness with NVDA down ~2.0% intraday and QQQ down ~0.95%. GOOG is relatively flat (-0.12% intraday). SPY is holding near all-time highs (~736.63), so the weakness is concentrated in high-beta growth rather than the broad market. **This is a rotation, not a macro regime shift.**
@@ -93,6 +93,18 @@ See prior commits for full historical logs. Unauthorized trades on 2026-05-18 do
 - NVDA earnings Wednesday May 20. No adds before event. Plan to trim 2 shares Tuesday.
 - Semis in 2-day decline. SOXX at 490.17.
 - Next expected action: Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares. Then execute Tuesday deployment plan after hourly lock lift.
+
+## Tactical Cycle Summary — 2026-05-19 13:30Z (Tactical 9:30 AM ET)
+- **Market status:** OPEN. Event detector: NONE (classification NONE).
+- **Live broker refresh:** Equity $9,921.73 | Cash $5,275.65 | Long $4,646.08 | Short $0 | Gross 46.83% | Net 46.83% | Daytrade 3/3.
+- **Holdings confirmed:** GOOG 3 ($1,168.68 @ 389.56), NVDA 3 ($665.49 @ 221.83), QQQ 4 ($2,810.84 @ 702.71). XLK short COVERED.
+- **Staged XLK cover executed:** Order 385783a6-3549-4aa3-a471-e382bb615c7b FILLED 3 shares @ $173.62 avg. Unauthorized short fully closed. Not a daytrade (next-day cover).
+- **Unauthorized trades detected:** None since Monday 11:37 AM ET.
+- **Orders placed this cycle:** None. Staged order filled automatically at market open.
+- **Protective stops check:** NVDA $221.83 (>218.00), GOOG $389.56 (OPENED below 390.00 but no active sell trigger in todo.md), QQQ $702.71 (>700.00). No stop breaches; todo.md holds are authoritative.
+- **Lock status:** `memory/.trading_lock.json` active until 14:00Z. Only BUY_XLK allowed; cover complete. No other orders permitted.
+- **NVDA earnings alert:** Wednesday May 20. Trim 2 shares after lock lift.
+- **Next expected action:** After 14:00Z lock expiry or hourly strategist update — execute Tuesday deployment plan (NVDA trim, META, VOO, QQQ, AVGO rebuild).
 
 ## Tactical Cycle Summary — 2026-05-18 19:50Z (Tactical 3:50 PM ET)
 - **Market status:** OPEN until 16:00 ET. Event detector: NONE (classification NONE).
