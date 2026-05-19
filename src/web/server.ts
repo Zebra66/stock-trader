@@ -253,6 +253,8 @@ const app = new Elysia()
     nav.nav-bar{display:flex;align-items:center;gap:.25rem}
     .nav-btn{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;font-size:.8125rem;font-weight:600;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .2s;white-space:nowrap}
     .nav-btn:hover{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);color:var(--t1)}
+    .nav-btn-badge{background:var(--red);color:#0a0f1e;font-size:.65rem;font-weight:800;padding:.1rem .35rem;border-radius:10px;line-height:1;margin-left:.25rem;display:inline-block;animation:badge-pulse 2s infinite}
+    @keyframes badge-pulse{0%{box-shadow:0 0 0 0 rgba(255,71,87,0.7)}70%{box-shadow:0 0 0 6px rgba(255,71,87,0)}100%{box-shadow:0 0 0 0 rgba(255,71,87,0)}}
     /* ── PORTFOLIO MODAL ── */
     .portfolio-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
     .portfolio-overlay.open{display:flex}
@@ -320,7 +322,7 @@ const app = new Elysia()
     </button>
     <button class="nav-btn" onclick="openPrompts()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 2.5h11v7h-11z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 5h7M3.5 7h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-      User Requests
+      User Requests <span id="requests-badge" class="nav-btn-badge" style="display:none">0</span>
     </button>
     <button class="nav-btn" onclick="openLogs()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
@@ -1054,6 +1056,25 @@ const app = new Elysia()
       }
       
       const prompts=d.prompts||[];
+      
+      const pendingCount = prompts.filter(p => !p.executed).length;
+      const badge = document.getElementById('requests-badge');
+      if (badge) {
+        if (pendingCount > 0) {
+          badge.textContent = pendingCount;
+          badge.style.display = 'inline-block';
+          if (!requestsPollInterval) {
+            requestsPollInterval = setInterval(updateRequestsBadge, 20000);
+          }
+        } else {
+          badge.style.display = 'none';
+          if (requestsPollInterval) {
+            clearInterval(requestsPollInterval);
+            requestsPollInterval = null;
+          }
+        }
+      }
+
       if(prompts.length===0){
         body.innerHTML='<div class="portfolio-empty">No requests yet.</div>';
         return;
@@ -1174,12 +1195,43 @@ const app = new Elysia()
     }
   }
 
+  let requestsPollInterval = null;
+
+  async function updateRequestsBadge() {
+    try {
+      const res = await fetch('/api/prompts');
+      const d = await res.json();
+      if (!d.error) {
+        const prompts = d.prompts || [];
+        const pendingCount = prompts.filter(p => !p.executed).length;
+        const badge = document.getElementById('requests-badge');
+        if (badge) {
+          if (pendingCount > 0) {
+            badge.textContent = pendingCount;
+            badge.style.display = 'inline-block';
+            if (!requestsPollInterval) {
+              requestsPollInterval = setInterval(updateRequestsBadge, 20000);
+            }
+          } else {
+            badge.style.display = 'none';
+            if (requestsPollInterval) {
+              clearInterval(requestsPollInterval);
+              requestsPollInterval = null;
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Failed to update requests badge:', err);
+    }
+  }
+
   document.addEventListener('keydown',e=>{
     if(e.key==='Escape'){closeLogs();closePortfolio();closePrompts();}
   });
 
 
-  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
+  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();updateRequestsBadge();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
