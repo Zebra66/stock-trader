@@ -125,11 +125,16 @@ async function runAgent(): Promise<void> {
     } catch {}
 
     if (isHardLocked || isLockActive) {
-      const { detectEvents } = await import('./tools/event_detector');
-      const report = await detectEvents();
-      if (report.classification === 'NONE' || report.classification === 'MINOR') {
-        logger.info('🔒 Tactical run skipped: HARD_LOCK is active and no MAJOR/CRITICAL market events detected.');
-        process.exit(0);
+      const unexecuted = await getUnexecutedPrompts();
+      if (unexecuted.length === 0) {
+        const { detectEvents } = await import('./tools/event_detector');
+        const report = await detectEvents();
+        if (report.classification === 'NONE' || report.classification === 'MINOR') {
+          logger.info('🔒 Tactical run skipped: HARD_LOCK is active and no MAJOR/CRITICAL market events detected.');
+          process.exit(0);
+        }
+      } else {
+        logger.info('🔓 Tactical run proceeding despite HARD_LOCK because there are pending user requests.');
       }
     }
   }
