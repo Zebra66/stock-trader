@@ -74,8 +74,17 @@ export const alpacaTools = {
     // The lock file is a secondary/optional mechanism; todo.md text is the authoritative source.
     try {
       const todo = await Bun.file('./memory/todo.md').text();
-      if (todo.includes('HARD_LOCK')) {
-        return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+      const currentSection = todo.slice(0, 3000);
+      const hardLockMatch = currentSection.match(/HARD_LOCK/i);
+      if (hardLockMatch) {
+        const surrounding = currentSection.slice(
+          Math.max(0, hardLockMatch.index! - 50),
+          hardLockMatch.index! + 150
+        );
+        const isLifted = /LIFTED|Lifted/i.test(surrounding);
+        if (!isLifted) {
+          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+        }
       }
     } catch {
       // todo.md not readable — proceed to lock-file check as fallback

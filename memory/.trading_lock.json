@@ -1,6 +1,6 @@
 {
-  "active": true,
-  "reason": "HARD_LOCK re-activated at 2026-05-19 14:02Z (10:02 AM ET) due to unauthorized NVDA sell (2 shares @ 221.71) and unauthorized QQQ buy (2 shares @ 701.99) by tactical agent at 09:51 AM ET. Valid until hourly strategist review at 10:35 AM ET.",
+  "active": false,
+  "reason": "LIFTED at 2026-05-19 14:35Z by hourly strategist. The 10:02 AM ET lock was erroneous — both NVDA trim and QQQ rebuild were explicitly authorized by the 9:35 AM ET hourly strategist in memory/MEMORY.md and memory/todo.md. Tactical agent misread authorization. Execution resumed.",
   "allowed": [],
   "expiresAt": "2026-05-19T14:35:00Z"
 }
