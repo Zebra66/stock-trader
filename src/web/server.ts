@@ -6,6 +6,7 @@ import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
+import { readPrompts, addPrompt, updatePrompt, deletePrompt } from './user_prompts';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
 import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
 import { createTestJob, getTestJob, cleanupOldJobs } from '../test_runner';
@@ -360,6 +361,26 @@ const app = new Elysia()
         </div>
         <pre class="diff" id="diff-content"></pre>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PROMPTS MODAL ─────────────────────────────────────────────────────── -->
+<div class="prompts-overlay" id="prompts-overlay" onclick="handlePromptsOverlayClick(event)">
+  <div class="prompts-modal" onclick="event.stopPropagation()">
+    <div class="prompts-header">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14v10H2z" stroke="#00d4ff" stroke-width="1.5" fill="none"/><path d="M5 8h8M5 11h5" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="prompts-title">💬 Agent Prompts</span>
+      <button class="btn-refresh" onclick="loadPrompts()" style="font-size:.75rem;padding:.3rem .7rem" title="Refresh">⟳ Refresh</button>
+      <button class="prompts-close" onclick="closePrompts()">✕ Close</button>
+    </div>
+    <div class="prompts-body" id="prompts-body">
+      <div class="portfolio-loading">Loading prompts…</div>
+    </div>
+    <div class="prompt-compose">
+      <textarea class="prompt-textarea" id="new-prompt-text" placeholder="Type a new prompt or instruction for the agent..."></textarea>
+      <button class="btn-send-prompt" onclick="sendPrompt()">Send Prompt</button>
     </div>
   </div>
 </div>
@@ -970,9 +991,158 @@ const app = new Elysia()
   }
 
   // Keyboard shortcut: Escape closes open modals
+  
+  // ── PROMPTS ────────────────────────────────────────────────────────────────
+  let editingPromptId = null;
+
+  function openPrompts(){
+    document.getElementById('prompts-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+    loadPrompts();
+  }
+  function closePrompts(){
+    document.getElementById('prompts-overlay').classList.remove('open');
+    document.body.style.overflow='';
+    editingPromptId = null;
+  }
+  function handlePromptsOverlayClick(e){
+    if(e.target===document.getElementById('prompts-overlay')) closePrompts();
+  }
+  async function loadPrompts(){
+    const body=document.getElementById('prompts-body');
+    try{
+      const res=await fetch('/api/prompts');
+      const d=await res.json();
+      if(d.error){
+        body.innerHTML='<div class="portfolio-empty">⚠ '+escH(d.error)+'</div>';
+        return;
+      }
+      
+      const prompts=d.prompts||[];
+      if(prompts.length===0){
+        body.innerHTML='<div class="portfolio-empty">No prompts yet.</div>';
+        return;
+      }
+      
+      // Sort newest first
+      prompts.sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+      
+      let html='<div class="prompt-list">';
+      for(const p of prompts){
+        const isEditing = editingPromptId === p.id;
+        const dt=new Date(p.createdAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+        const statusClass=p.executed?'done':'pending';
+        const statusText=p.executed?'Executed':'Pending';
+        const execText=p.executedAt ? ' at '+new Date(p.executedAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+        
+        html+='<div class="prompt-item '+(p.executed?'executed':'')+'">';
+        html+='<div class="prompt-item-header">';
+        html+='<span>'+escH(dt)+'</span>';
+        html+='<span class="prompt-status '+statusClass+'" title="'+(p.executedAt?('Executed '+execText):'')+'">'+statusText+'</span>';
+        html+='</div>';
+        
+        if (isEditing) {
+          html+='<textarea class="prompt-text-edit" id="edit-text-'+p.id+'">'+escH(p.text)+'</textarea>';
+          html+='<div class="prompt-actions">';
+          html+='<button class="btn-prompt-action" onclick="cancelEditPrompt()">Cancel</button>';
+          html+='<button class="btn-prompt-action save" onclick="savePrompt(\''+p.id+'\')">Save</button>';
+          html+='</div>';
+        } else {
+          html+='<div class="prompt-text">'+escH(p.text)+'</div>';
+          if (!p.executed) {
+            html+='<div class="prompt-actions">';
+            html+='<button class="btn-prompt-action delete" onclick="deletePrompt(\''+p.id+'\')">Delete</button>';
+            html+='<button class="btn-prompt-action" onclick="editPrompt(\''+p.id+'\')">Edit</button>';
+            html+='</div>';
+          }
+        }
+        html+='</div>';
+      }
+      html+='</div>';
+      body.innerHTML=html;
+    }catch(err){
+      body.innerHTML='<div class="portfolio-empty">Failed to load prompts: '+escH(String(err))+'</div>';
+    }
+  }
+  
+  async function sendPrompt(){
+    const textEl = document.getElementById('new-prompt-text');
+    const text = textEl.value;
+    if(!text||!text.trim()) return;
+    
+    try {
+      const res = await fetch('/api/prompts', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text})
+      });
+      const d = await res.json();
+      if(d.ok) {
+        textEl.value = '';
+        loadPrompts();
+      } else {
+        alert('Failed to send prompt: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to send prompt: ' + e);
+    }
+  }
+  
+  function editPrompt(id) {
+    editingPromptId = id;
+    loadPrompts();
+  }
+  
+  function cancelEditPrompt() {
+    editingPromptId = null;
+    loadPrompts();
+  }
+  
+  async function savePrompt(id) {
+    const textEl = document.getElementById('edit-text-'+id);
+    const text = textEl.value;
+    if(!text||!text.trim()) return cancelEditPrompt();
+    
+    try {
+      const res = await fetch('/api/prompts/'+id, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text})
+      });
+      const d = await res.json();
+      if(d.ok) {
+        editingPromptId = null;
+        loadPrompts();
+      } else {
+        alert('Failed to update prompt: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to update prompt: ' + e);
+    }
+  }
+  
+  async function deletePrompt(id) {
+    if(!confirm('Are you sure you want to delete this prompt?')) return;
+    
+    try {
+      const res = await fetch('/api/prompts/'+id, {
+        method: 'DELETE'
+      });
+      const d = await res.json();
+      if(d.ok) {
+        loadPrompts();
+      } else {
+        alert('Failed to delete prompt: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to delete prompt: ' + e);
+    }
+  }
+
   document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){closeLogs();closePortfolio();}
+    if(e.key==='Escape'){closeLogs();closePortfolio();closePrompts();}
   });
+
 
   fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
@@ -1153,6 +1323,51 @@ const app = new Elysia()
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
       };
+    }
+  })
+
+  
+  // ─── User Prompts ────────────────────────────────────────────────────────────
+  .get('/api/prompts', async () => {
+    try {
+      const prompts = await readPrompts();
+      return { prompts };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg, prompts: [] };
+    }
+  })
+  .post('/api/prompts', async ({ body }: { body: unknown }) => {
+    try {
+      const b = body as { text: string };
+      if (!b.text || !b.text.trim()) return { error: 'Text is required' };
+      const newPrompt = await addPrompt(b.text.trim());
+      return { ok: true, prompt: newPrompt };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
+    }
+  })
+  .put('/api/prompts/:id', async ({ params, body }: { params: { id: string }, body: unknown }) => {
+    try {
+      const b = body as { text: string };
+      if (!b.text || !b.text.trim()) return { error: 'Text is required' };
+      const updated = await updatePrompt(params.id, b.text.trim());
+      if (!updated) return { error: 'Prompt not found or already executed' };
+      return { ok: true, prompt: updated };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
+    }
+  })
+  .delete('/api/prompts/:id', async ({ params }: { params: { id: string } }) => {
+    try {
+      const deleted = await deletePrompt(params.id);
+      if (!deleted) return { error: 'Prompt not found or already executed' };
+      return { ok: true };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
     }
   })
 

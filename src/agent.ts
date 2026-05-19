@@ -4,6 +4,7 @@ import { getLogger } from './logger';
 import type { AgentMode } from './types';
 import { PiRunner } from './pi_runner';
 import { buildPrompt } from './prompt_loader';
+import { getUnexecutedPrompts, markPromptsExecuted } from './web/user_prompts';
 
 const logger = getLogger('agent');
 
@@ -25,6 +26,16 @@ async function runAgent(): Promise<void> {
   process.chdir(repoRoot);
 
   const prompt = await buildPrompt(mode);
+  
+  const unexecuted = await getUnexecutedPrompts();
+  let finalPrompt = prompt;
+  if (unexecuted.length > 0) {
+    const textPrompts = unexecuted.map(p => p.text).join('\n\n---\n\n');
+    finalPrompt += '\n\n# User Instructions (Account Manager Requests)\n\n' +
+      'The account manager added the following requests. Please address them:\n\n' +
+      textPrompts;
+  }
+
   const config = await loadAgentConfig();
   const model = config.modes[mode].model;
   const runner = new PiRunner();
@@ -33,7 +44,13 @@ async function runAgent(): Promise<void> {
   modeLogger.info({ model, repoRoot }, 'Starting Pi agent run');
 
   try {
-    await runner.runPrompt({ mode, prompt, model, logger: modeLogger });
+    await runner.runPrompt({ mode, prompt: finalPrompt, model, logger: modeLogger });
+    
+    if (unexecuted.length > 0) {
+      const ids = unexecuted.map(p => p.id);
+      await markPromptsExecuted(ids);
+      modeLogger.info({ count: ids.length }, 'Marked user prompts as executed');
+    }
     
     // Auto-stage all changes (including new memory files) so they are captured.
     // .gitignore ensures temp_files/ and other sensitive files are not staged.
