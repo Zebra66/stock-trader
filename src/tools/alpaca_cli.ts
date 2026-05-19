@@ -70,19 +70,21 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     const symUpper = symbol.toUpperCase();
+    // HARD_LOCK primary check: always read memory/todo.md first and reject if HARD_LOCK is present.
+    // The lock file is a secondary/optional mechanism; todo.md text is the authoritative source.
+    try {
+      const todo = await Bun.file('./memory/todo.md').text();
+      if (todo.includes('HARD_LOCK')) {
+        return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+      }
+    } catch {
+      // todo.md not readable — proceed to lock-file check as fallback
+    }
     // Trading lock check (code-level enforcement via lock file)
     const lock = await getTradingLock();
     const lockAllows = isOrderAllowed(lock, symbol, side);
-    // HARD_LOCK fallback: if memory/todo.md contains HARD_LOCK, reject all orders UNLESS the code-level lock file is active and explicitly allows this order
     if (lock && lock.active && !lockAllows) {
-      try {
-        const todo = await Bun.file('./memory/todo.md').text();
-        if (todo.includes('HARD_LOCK')) {
-          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
-        }
-      } catch {
-        // todo.md not readable — proceed cautiously
-      }
+      return `Error submitting order: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`;
     }
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols

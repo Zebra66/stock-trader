@@ -1,6 +1,6 @@
 {
-  "active": false,
-  "reason": "Compliance breach resolved: XLK short covered at market open 2026-05-19. No unauthorized positions remain. Hard lock lifted by hourly strategist at 9:35 AM ET.",
+  "active": true,
+  "reason": "HARD_LOCK re-activated at 2026-05-19 14:02Z (10:02 AM ET) due to unauthorized NVDA sell (2 shares @ 221.71) and unauthorized QQQ buy (2 shares @ 701.99) by tactical agent at 09:51 AM ET. Valid until hourly strategist review at 10:35 AM ET.",
   "allowed": [],
-  "expiresAt": "2026-05-19T13:35:00Z"
+  "expiresAt": "2026-05-19T14:35:00Z"
 }
