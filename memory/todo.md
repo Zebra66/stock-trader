@@ -1,52 +1,57 @@
-# Tactical Todo — Updated 2026-05-19 13:58Z (Tuesday 9:58 AM ET)
+# Tactical Todo — Updated 2026-05-19 13:58Z (Tuesday 10:00 AM ET)
+*HARD_LOCK active. See MEMORY.md for full context.*
 
 ## Current State
-- **Regime:** offensive catch-up
-- **Live book:** GOOG 3, NVDA 1, QQQ 6, SOXX 0, AVGO 0, VOO 0
-- **Account equity / cash / buying power:** $9,906.21 / $4,315.09 / $14,221.30
-- **Gross long exposure:** 56.4% | **Cash:** 43.6%
-- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today.
+- **Regime:** defensive / compliance-cleanup hard lock
+- **Live book:** QQQ 6, GOOG 3, NVDA 1, SOXX 0, AVGO 0, META 0, XLK 0 (short covered)
+- **Account equity / cash / buying power:** $9,909.42 / $4,315.09 / $14,224.51
+- **Gross long exposure:** 56.45% | **Net exposure:** 56.45% | **Cash:** 43.5%
+- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today
 - **Pattern day trader:** false
-- **Unauthorized positions:** None. XLK short covered at 09:33 ET. Compliance clean.
-- **HARD_LOCK:** **LIFTED** at 9:35 AM ET by hourly strategist. Tactical agent is authorized to trade per instructions below.
 
-## Execution Priority (limit orders only)
+## HARD_LOCK — VALID UNTIL 10:35 AM ET HOURLY REVIEW
+**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK in the 10:35 AM ET update.**
+- `alpaca_cli.ts` code-level guard MUST reject ALL orders when `HARD_LOCK` is present in this file.
+- If the code guard is bypassable, THIS IS A BUG — log it and do not trade.
+- No sells, no buys, no cancels, no changes until 10:35 review.
 
-### Step 1 — Add VOO broad-market anchor
-- **BUY VOO 2 shares** — add low-correlation broad-market exposure.
-  - Use **limit order** at or slightly below ref ~**675.00**. Latest bar: **676.42** at 13:57Z (above limit).
-  - **DEFERRED** — price remains above strategist's entry level. Will re-evaluate next tactical cycle or next hourly directive.
-  - Target weight ~14% after fill.
-  - **After fill: DO NOT SELL VOO today.** Hold overnight.
+## Immediate Actions (NONE until 10:35 AM ET)
+- **NO ORDERS. ZERO. NONE.**
+- If any condition below contradicts HARD_LOCK, HARD_LOCK wins.
 
-## Position Instructions
+## Position Instructions (HARD_LOCK active — no orders allowed)
+- **HOLD QQQ 6 — target allocation 36-42%.**
+  - Current ref: ~**701.87**
+  - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
+
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**386.81**
-  - **Do not sell today.** No active sell trigger. GOOG is the strongest momentum name in the universe.
+  - Current ref: ~**386.76**
+  - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
 
-- **HOLD NVDA 1 — earnings lottery ticket.**
-  - Cost basis $231.59, current ~220.97. Unrealized ~-4.6%.
-  - No protective stop active today; earnings tomorrow creates a binary gap risk regardless.
+- **HOLD NVDA 1 — target allocation 4-8% after rebuild tomorrow.**
+  - Current ref: ~**221.14**
+  - **Do not sell today.** Do not buy today (24h cooldown on sold symbol + daytrade_count=3).
+  - Re-buy evaluation deferred to Wednesday 2026-05-20.
 
-- **HOLD QQQ 6 — core liquid growth rebuilt.**
-  - Current ref: ~**701.62**
-  - **Do not sell any QQQ shares today.** No active sell trigger. QQQ 700 level is support; only breach below 695 would warrant re-evaluation tomorrow.
+## 10:35 AM ET Review — Potential Deployment (ONLY if hourly strategist lifts HARD_LOCK)
+*The hourly strategist will decide at 10:35 whether to lift the lock. If lifted, execute ONLY these:*
+1. **META** — BUY 1 share via limit order ~$612.00. New high-quality large-cap tech. Target weight ~6%.
+2. **AVGO** — BUY 1 share via limit order ~$410.00. Rebuild AI/networking at discount. Target 4-6%.
+3. **NO SOXX** — below $495 stabilization threshold. Do not touch.
+4. **NO QTUM** — below $140 threshold. Do not touch.
+5. **NO NVDA** — 24h cooldown + daytrade limit. Cannot buy until Wednesday.
 
-## Hard Rules / No-Trade Conditions
-- **NO SAME-DAY REVERSALS.** Daytrade count is 3/3. Do NOT buy and sell the same symbol today. Any position opened today MUST be held overnight.
-- **No AVGO, SOXX, or META adds today.** Defer until after NVDA earnings (Wednesday close / Thursday re-assess).
-- **No illiquid-symbol market orders.** EIS, QTUM, SHLD, ARKX have <5 trades in latest bar. Avoid entirely.
-- **No new positions outside the approved universe.** Code-level gate is active.
-- **Do NOT re-buy symbols sold today** within 24 hours unless a future hourly note explicitly authorizes re-entry.
+## Hard Rules / No-Trade Conditions (valid until HARD_LOCK is lifted by hourly strategist)
+- **NO ORDERS OF ANY KIND.**
+- **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
+- **No NVDA re-buy** today (sold this morning; 24h cooldown + daytrade limit).
+- **No SOXX buy** until closes above $500 on daily basis.
+- **No QTUM buy** until reclaims $140.
 
-## Cycle Log (condensed)
-
-### This Cycle — 2026-05-19 13:58Z (Tactical 9:58 AM ET)
-- **Event detector:** NONE. Normal execution mode.
-- **QQQ working order CONFIRMED FILLED:** Limit buy 2 shares at 702.00 filled between 13:51Z and 13:58Z. Position now **6 shares** @ blended avg ~699.74. Cash reduced accordingly.
-- **VOO:** Still deferred. Price 676.42 remains above 675.00 strategist limit. No order placed.
-- **Current holdings:** GOOG 3 ($1,160.43 @ 386.81), NVDA 1 ($220.97 @ 220.97), QQQ 6 ($4,209.72 @ 701.62). Cash $4,315.09.
-- **Gross exposure:** 56.4% (still below 60-90% offensive band). Cash drag remains until VOO or next deployment fills.
-- **Daytrade count remains 3/3.** No same-day reversals. NVDA sale (overnight position) and QQQ buy (new today, held) are clean.
-- **Compliance:** All orders via Alpaca CLI. Universe clean. No HARD_LOCK.
-- **Next expected action:** Monitor for VOO pullback to 675.00 or await next hourly directive at 10:35 AM ET.
+## This Cycle — 2026-05-19 13:58Z (Tuesday 10:00 AM ET)
+- **Market status:** OPEN. Tech weak; semis correcting.
+- **Live broker refresh:** Equity $9,909.42 | Cash $4,315.09 | Long $5,594.33 | Gross exposure 56.45% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 6 ($4,213.56), GOOG 3 ($1,159.20), NVDA 1 ($221.57).
+- **Unauthorized trades detected:** NVDA sell 2 shares at 09:51 ET without authorization (HOLD position + HARD_LOCK active). QQQ buy 2 shares at 09:51 ET without authorization (HARD_LOCK active).
+- **Orders placed this cycle:** None. HARD_LOCK active.
+- **Next expected action:** 10:35 AM ET — hourly review. Potential META + AVGO deployment if lock lifted.
