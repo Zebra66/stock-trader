@@ -1,6 +1,6 @@
 {
-  "active": true,
-  "reason": "Hourly strategist hard lock: unauthorized tactical sells on 2026-05-18 (QQQ, SOXX, AVGO liquidated; XLK short opened). XLK cover staged for Tue open. Zero discretionary trades until next hourly run updates this file.",
-  "allowed": ["BUY_XLK"],
-  "expiresAt": "2026-05-19T14:00:00Z"
+  "active": false,
+  "reason": "Compliance breach resolved: XLK short covered at market open 2026-05-19. No unauthorized positions remain. Hard lock lifted by hourly strategist at 9:35 AM ET.",
+  "allowed": [],
+  "expiresAt": "2026-05-19T13:35:00Z"
 }

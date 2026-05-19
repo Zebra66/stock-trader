@@ -1,108 +1,68 @@
-# Tactical Todo — Updated 2026-05-19 04:53Z (Tuesday pre-market, 12:53 AM ET)
+# Tactical Todo — Updated 2026-05-19 13:35Z (Tuesday 9:35 AM ET)
 
 ## Current State
-- **Regime:** defensive / compliance-cleanup hard lock (XLK cover completed; awaiting hourly lock lift for rebuild)
-- **Live book:** GOOG 3, NVDA 3, QQQ 4, XLK 0 (COVERED), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,921.73 / $5,275.65 / $15,197.38
-- **Gross long exposure:** 46.83% | **Net exposure:** 46.83% | **Cash:** 53.17%
-- **Daytrade count:** 3/3 — rolling 5-day count = 3. Tuesday XLK cover of Monday short is NOT a daytrade.
+- **Regime:** offensive catch-up
+- **Live book:** GOOG 3, NVDA 3, QQQ 4, SOXX 0, AVGO 0
+- **Account equity / cash / buying power:** $9,914.52 / $5,275.65 / $15,190.17
+- **Gross long exposure:** 46.79% | **Cash:** 53.2%
+- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today.
 - **Pattern day trader:** false
-- **Unauthorized positions:** NONE. XLK short fully covered at market open.
+- **Unauthorized positions:** None. XLK short covered at 09:33 ET. Compliance clean.
+- **HARD_LOCK:** **LIFTED** at 9:35 AM ET by hourly strategist. Tactical agent is authorized to trade per instructions below.
 
-## STAGED ORDER — COMPLETED
-- **BUY TO COVER XLK 3 shares** limit order FILLED (order ID `385783a6-3549-4aa3-a471-e382bb615c7b`), filled_avg_price $173.616667, day TIF.
-- All 3 shares covered at market open. Short position closed. No duplicate orders placed.
+## Execution Priority (execute in order, limit orders only)
 
-## HARD_LOCK — ACTIVE UNTIL 2026-05-19 14:00Z (10:00 ET) per `memory/.trading_lock.json`
-**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK or updates `memory/.trading_lock.json`.**
-- `alpaca_cli.ts` enforces the lock at the code level.
-- The staged XLK cover was the ONLY allowed exception and is now COMPLETED.
-- No sells, no buys, no cancels, no changes except as allowed by the lock file.
-- Next expected action: after lock lift, execute Tuesday deployment plan (NVDA trim, META, VOO, QQQ, AVGO rebuild).
-
-## Tuesday 2026-05-19 Deployment Plan (after XLK cover, hourly lock lifted)
-*All re-buys explicitly override 24h cooldowns as noted. Execute using limit orders at or near reference prices to minimize slippage. Stage deployment: cover first, then execute in priority order listed below.*
-
-### Step 1 — Cover XLK (compliance cleanup)
-- **BUY TO COVER XLK 3 shares** — compliance cleanup of unauthorized short.
-  - Execute at Tuesday market open (09:30 ET) via limit order near prior close (~$173.00).
-  - This is explicitly authorized by the hourly strategist. The CLI universe gate allows buy-to-cover for existing shorts.
-  - After cover, cash will be ~$5,277.
-
-### Step 2 — Reduce NVDA earnings binary risk (priority: do before Wednesday close)
+### Step 1 — Trim NVDA earnings binary risk
 - **SELL NVDA 2 shares** — reduce exposure ahead of Wednesday May 20 earnings.
-  - Current ref: ~**220.78**. Use limit order ~219.50–221.00.
+  - Use **limit order** at ~**220.50**. Current ref ~221.20.
   - Leave 1 share (~2.2% weight) as a reduced "lottery ticket" through earnings.
-  - Rationale: No directional edge on earnings; 3-share position (~6.7%) is too large for a binary event while book is already underwater.
+  - Rationale: No directional edge on earnings; 3-share position (~6.7%) is too large for a binary event while book is underwater and in catch-up mode.
+  - **This is NOT a daytrade** — NVDA held overnight. Proceed immediately.
 
-### Step 3 — Rebuild core positions (execute after XLK cover, in listed order)
-1. **META** — BUY 1 share via limit order ~610.00–613.00. New high-quality large-cap tech exposure. Target weight ~6%.
-2. **VOO** — BUY 2 shares via limit order ~675.00–677.00. Broad-market anchor with low semi-correlation. Target ~14%.
-3. **QQQ** — BUY 2 shares via limit order ~700.00–703.00. Rebuild core liquid growth. Target back to 36-42%. **24h cooldown explicitly overridden** (sold Monday 15:35–15:37).
-4. **AVGO** — BUY 1 share via limit order ~417.00–419.00. Rebuild AI/networking sleeve. Target 4-6%. **24h cooldown explicitly overridden** (sold Monday 14:25). Defer to after NVDA earnings if semi volatility spikes >2% on Tuesday open.
+### Step 2 — Rebuild QQQ core
+- **BUY QQQ 2 shares** — rebuild core liquid growth exposure.
+  - Use **limit order** at or slightly below current ref ~**702.00**. Current ref ~702.39.
+  - Target weight back to 36-42% after fill.
+  - **24h cooldown explicitly overridden** by hourly strategist (sold Monday 15:35–15:37).
+  - **After fill: DO NOT SELL QQQ today.** Buying and selling same-day would create a daytrade (count would hit 4). Hold overnight.
 
-**Conditional / deferred:**
-- **SOXX** — DO NOT buy Tuesday. Wait for daily close above 500 to confirm stabilization (currently 490.17, broken below 495).
-- **QTUM** — DO NOT buy Tuesday. Liquidity is extremely thin (<5 trades/hour). Avoid market orders entirely.
-- **NVDA** — NO ADDS before or through earnings Wednesday May 20.
+### Step 3 — Add VOO broad-market anchor
+- **BUY VOO 2 shares** — add low-correlation broad-market exposure.
+  - Use **limit order** at or slightly below current ref ~**675.00**. Current ref ~675.38.
+  - Target weight ~14% after fill.
+  - **After fill: DO NOT SELL VOO today.** Hold overnight.
 
-## Position Instructions (Monday 3:35 PM — today, HARD_LOCK active)
-- **HOLD QQQ 4 — target allocation 36-42% after rebuild Tuesday.**
-  - Current ref: ~**702.19**
-  - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
-
+## Position Instructions
 - **HOLD GOOG 3 — target allocation 10-15%.**
-  - Current ref: ~**393.72**
-  - **Do not sell today.** No trigger active. HARD_LOCK prevents all orders.
+  - Current ref: ~**389.00**
+  - **Do not sell today.** No active sell trigger. GOOG is the strongest momentum name in the universe.
 
-- **HOLD NVDA 3 — REDUCE to 1 share Tuesday before earnings.**
-  - Current ref: ~**220.78**
-  - **Earnings Wednesday May 20** — binary event.
-  - **Stop level:** If NVDA drops below **218.00** Tuesday, trim/sell 2 shares immediately after lock lift.
-  - **Do not sell today.** HARD_LOCK prevents all orders.
+- **HOLD NVDA 1 — AFTER Step 1 SELL fills.**
+  - Keep 1 share (~2.2%) as earnings lottery ticket.
+  - No protective stop active today; earnings tomorrow creates a binary gap risk regardless.
 
-## Hard Rules / No-Trade Conditions (valid until HARD_LOCK is lifted by hourly strategist)
-- **NO ORDERS OF ANY KIND.**
-- **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
-- **No illiquid-symbol market orders.** EIS, QTUM, SHLD, ARKX, VOO (thin prints late day) have <5 trades in latest bar. If ever authorized, use limit orders only.
+- **HOLD QQQ 4 — BEFORE Step 2 BUY fills, then HOLD 6 shares after fill.**
+  - Current ref: ~**702.39**
+  - **Do not sell any QQQ shares today.** No active sell trigger. QQQ 700 level is support; only breach below 695 would warrant re-evaluation tomorrow.
+
+## Hard Rules / No-Trade Conditions
+- **NO SAME-DAY REVERSALS.** Daytrade count is 3/3. Do NOT buy and sell the same symbol today. Any position opened today MUST be held overnight.
+- **No AVGO, SOXX, or META adds today.** Defer until after NVDA earnings (Wednesday close / Thursday re-assess).
+- **No illiquid-symbol market orders.** EIS, QTUM, SHLD, ARKX have <5 trades in latest bar. Avoid entirely.
+- **No new positions outside the approved universe.** Code-level gate is active.
+- **Do NOT re-buy symbols sold today** within 24 hours unless a future hourly note explicitly authorizes re-entry.
 
 ## Cycle Log (condensed)
 
-### This Cycle — 2026-05-18 19:50Z (Tactical 3:50 PM ET)
-- **Market status:** OPEN until 16:00 ET. Event detector: NONE (classification NONE).
-- **Live broker refresh:** Equity $9,939.48 | Cash $5,796.51 | Long $4,665.15 | Short -$522.18 | Gross 46.93% | Net 41.70% | Daytrade 3/3.
-- **Holdings confirmed:** GOOG 3 ($1,180.80 @ 393.60), NVDA 3 ($665.31 @ 221.77), QQQ 4 ($2,819.04 @ 704.76), XLK -3 (-$522.18 @ 174.06).
-- **Prices checked:** META 611.38 (30 trades), VOO 678.27 (4 trades, thin), AVGO 421.23 (61 trades), SOXX 495.63 (36 trades).
-- **Unauthorized trades detected:** None. HARD_LOCK remains effective.
-- **Orders placed this cycle:** None. HARD_LOCK active; code guard enforced.
-- **Protective stops check:** NVDA $221.77 (>218.00), GOOG $393.60 (>390.00), QQQ $704.76 (>700.00). None breached.
-- **NVDA earnings alert:** Wednesday May 20. Trim 2 shares Tuesday after lock lift.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then execute Tuesday deployment plan after hourly lock lift.
-
-### This Cycle — 2026-05-18 19:40Z (Tactical 3:40 PM ET)
-- **Market status:** OPEN until 16:00 ET. Event detector: NONE (classification NONE).
-- **Live broker refresh:** Equity $9,937.63 | Cash $5,796.51 | Long $4,662.34 | Short -$521.22 | Gross 46.91% | Net 41.76% | Daytrade 3/3.
-- **Holdings confirmed:** GOOG 3 ($1,181.97 @ 393.99), NVDA 3 ($664.68 @ 221.56), QQQ 4 ($2,815.69 @ 703.92), XLK -3 (-$521.22 @ 173.74).
-- **Unauthorized trades detected:** None since 11:37 AM ET run. HARD_LOCK remains effective.
-- **Orders placed this cycle:** None. HARD_LOCK active; code guard enforced.
-- **Protective stops check:** NVDA $221.56 (>218.00), GOOG $393.99 (below 394.00 ref but no active sell trigger), QQQ $703.92. None breached.
-- **NVDA earnings alert:** Wednesday May 20. Trim 2 shares Tuesday after lock lift.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then execute Tuesday deployment plan after hourly lock lift.
-
-### This Cycle — 2026-05-18 19:35Z (Hourly 3:35 PM ET)
+### This Cycle — 2026-05-19 13:35Z (Hourly 9:35 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $9,929.77 | Cash $5,796.51 | Long $4,652.40 | Short -$519.14 | Gross 46.85% | Net 41.63% | Daytrade 3/3.
-- **Holdings confirmed:** GOOG 3 ($1,181.37 @ 393.79), NVDA 3 ($662.27 @ 220.76), QQQ 4 ($2,808.76 @ 702.19), XLK -3 (-$519.14 @ 173.05).
-- **Unauthorized trades detected:** None since 11:37 AM ET run. HARD_LOCK remains effective.
-- **Orders placed this cycle:** None. HARD_LOCK active; code guard enforced.
-- **Protective stops check:** NVDA $220.76 (>218.00), GOOG $393.79 (>390.00), QQQ $702.19 (>700.00). None breached.
-- **NVDA earnings alert:** Wednesday May 20. Trim 2 shares Tuesday after lock lift.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then execute Tuesday deployment plan after hourly lock lift.
-
-### This Cycle — 2026-05-18 19:30Z (Tactical 3:30 PM ET)
-- Market status: OPEN until 16:00 ET. Event detector: NONE.
-- Broker refresh: Equity $9,925.86 | Cash $5,796.51 | Long $4,647.78 | Short -$518.43 | Gross 46.83% | Net 41.60% | Daytrade 3/3.
-- Holdings confirmed: GOOG 3 ($1,180.65 @ 393.55), NVDA 3 ($660.81 @ 220.27), QQQ 4 ($2,806.32 @ 701.58), XLK -3 (-$518.43 @ 172.81).
-- Zero orders placed. HARD_LOCK active; code guard enforced.
-- Protective stops: NVDA $220.27 (>218.00), GOOG $393.55 (>390.00), QQQ $701.58 (>700.00). None breached.
-- Next expected action: Tuesday 2026-05-19 09:30 ET — cover XLK short 3 shares, then execute Tuesday deployment plan after hourly lock lift.
+- **Live broker refresh:** Equity $9,914.52 | Cash $5,275.65 | Long $4,638.87 | Gross 46.79% | Daytrade 3/3.
+- **Holdings confirmed:** GOOG 3 ($1,166.40 @ 388.80), NVDA 3 ($662.19 @ 220.73), QQQ 4 ($2,810.28 @ 702.57).
+- **Unauthorized positions / orders:** None. XLK short covered at 09:33 ET. Hard lock lifted.
+- **Universe compliance audit:** All holdings in approved universe. PASS.
+- **Prices checked (latest bar):** AVGO 412.02 (129 trades), META 609.17 (31 trades), VOO 675.38 (8 trades), SOXX 492.86 (92 trades), RKLB 122.76 (135 trades), HOOD 75.26 (42 trades).
+- **Illiquid flags:** EIS 2 trades (stale), QTUM 2 trades, SHLD 1 trade, ARKX 3 trades — avoid market orders.
+- **Staged orders:** None currently open.
+- **Protective stops check:** No active stop triggers today. Hold all existing positions except NVDA trim.
+- **NVDA earnings alert:** Wednesday May 20 after close. Trim 2 shares today.
+- **Next expected action:** Tactical :40 and :50 cycles should execute Step 1 (NVDA trim) and begin Steps 2-3 (QQQ/VOO adds) using limit orders.
