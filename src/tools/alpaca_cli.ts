@@ -118,7 +118,38 @@ export const alpacaTools = {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
       }
     }
-    // (Lock check already performed at top of submitOrder before universe/short guards)
+    // Concentration cap guard (BUY orders only)
+    if (side === 'buy') {
+      try {
+        const account = await alpaca.getAccount();
+        const positions = await alpaca.getPositions();
+        const equity = parseFloat(account.equity);
+        if (!equity || equity <= 0) {
+          return `Error submitting order: Unable to compute concentration caps — invalid equity ${account.equity}`;
+        }
+        const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
+        const currentMkt = pos ? parseFloat(pos.market_value) : 0;
+        const price = limitPrice || (await alpaca.getLatestBar(symbol)).closePrice || 0;
+        if (!price || price <= 0) {
+          return `Error submitting order: Unable to compute concentration caps — no price for ${symbol}`;
+        }
+        const orderValue = qty * price;
+        const newMkt = currentMkt + orderValue;
+        const pct = (newMkt / equity) * 100;
+        const isETF = ['QQQ','VOO','SOXX','GLD','EIS','ARKX'].includes(symUpper);
+        if (symUpper === 'QQQ' && pct > 45) {
+          return `Error submitting order: QQQ concentration cap breached. Post-order QQQ would be ${pct.toFixed(2)}% of equity (max 45%).`;
+        }
+        if (isETF && symUpper !== 'QQQ' && pct > 20) {
+          return `Error submitting order: ETF concentration cap breached. Post-order ${symbol} would be ${pct.toFixed(2)}% of equity (max 20%).`;
+        }
+        if (!isETF && pct > 15) {
+          return `Error submitting order: Single-stock concentration cap breached. Post-order ${symbol} would be ${pct.toFixed(2)}% of equity (max 15%).`;
+        }
+      } catch (e: unknown) {
+        return `Error submitting order: Concentration cap check failed: ${(e as Error).message}`;
+      }
+    }
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }
