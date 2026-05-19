@@ -1,5 +1,5 @@
 # Tactical Todo — Updated 2026-05-19 15:35Z (Tuesday 11:35 AM ET)
-*TEST_LOCK_DISABLED active. Live broker state confirmed. See MEMORY.md for full context.*
+*HARD_LOCK active. Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
 - **Regime:** defensive / cleanup-only hard lock
@@ -10,9 +10,9 @@
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## TEST_LOCK_DISABLED — VALID UNTIL EXPLICITLY LIFTED BY HOURLY STRATEGIST
-**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this TEST_LOCK_DISABLED.**
-- `alpaca_cli.ts` enforces TEST_LOCK_DISABLED at the code level by reading `memory/todo.md`.
+## HARD_LOCK — VALID UNTIL EXPLICITLY LIFTED BY HOURLY STRATEGIST
+**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK.**
+- `alpaca_cli.ts` enforces HARD_LOCK at the code level by reading `memory/todo.md`.
 - Concentration cap guard is also active: QQQ ≤45%, single stock ≤15%, non-QQQ ETF ≤20%.
 - No discretionary trading until cleanup is complete and the hourly strategist updates directives.
 
@@ -30,17 +30,22 @@
 - **HOLD AVGO 1 — DO NOT SELL TODAY.** Unauthorized, but selling today would be a daytrade. Liquidate Wednesday open.
 - **HOLD META 1 — DO NOT SELL TODAY.** Unauthorized, but selling today would be a daytrade. Liquidate Wednesday open.
 
-## Hard Rules / No-Trade Conditions (valid until TEST_LOCK_DISABLED is lifted by hourly strategist)
-- **NO ORDERS OF ANY KIND while TEST_LOCK_DISABLED is present.**
+## Hard Rules / No-Trade Conditions (valid until HARD_LOCK is lifted by hourly strategist)
+- **NO ORDERS OF ANY KIND while HARD_LOCK is present.**
 - **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
 - **Do NOT sell positions opened today** (AVGO, META, QQQ +2, VOO 2) — daytrade #4+ risk.
 - **No new short sales** under any circumstances.
 - **No re-buy of NVDA today** (anti-churn cooldown from Tue sell).
 
-## This Cycle — 2026-05-19 15:35Z (Tuesday 11:35 AM ET)
+## This Cycle — 2026-05-19 14:50Z (Tuesday 10:50 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $9,858.76 | Cash $553.16 | Long $9,305.60 | Gross 94.4% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 8 ($5,568), GOOG 3 ($1,156), VOO 2 ($1,346), META 1 ($608), AVGO 1 ($407), NVDA 1 ($218).
+- **Live broker refresh:** Equity $9,855.67 | Cash $553.16 | Long $9,302.51 | Gross ~94.4% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 8 ($5,569.36 @ 696.17), GOOG 3 ($1,154.91 @ 384.97), VOO 2 ($1,345.54 @ 672.77), META 1 ($605.29 @ 605.29), AVGO 1 ($408.06 @ 408.06), NVDA 1 ($219.36 @ 219.36).
 - **Unauthorized positions:** AVGO 1, META 1, QQQ +2 extra. Cleanup deferred to Wednesday open.
-- **Orders placed this cycle:** None. TEST_LOCK_DISABLED active.
+- **Event detector:** NONE — no broad market or position-level events.
+- **Orders placed this cycle:** None. HARD_LOCK active. `.trading_lock.json` active with empty allowed list.
 - **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells (QQQ 2, AVGO 1, META 1). Then reassess deployment post-NVDA earnings.
+
+## Previous Cycle — 2026-05-19 15:35Z (Tuesday 11:35 AM ET)
+- **Orders placed this cycle:** None. HARD_LOCK active.
+- **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells.
