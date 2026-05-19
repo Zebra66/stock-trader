@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-05-19 16:35Z (Tuesday 12:35 PM ET)
+# Tactical Todo — Updated 2026-05-19 17:35Z (Tuesday 1:35 PM ET)
 *HARD_LOCK active. Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
 - **Regime:** defensive / cleanup-only hard lock
 - **Live book:** QQQ 8, GOOG 3, VOO 2, META 1 (UNAUTHORIZED), AVGO 1 (UNAUTHORIZED), NVDA 1
-- **Account equity / cash / buying power:** $9,914.55 / $553.16 / $10,467.71
-- **Gross long exposure:** 94.4% | **Net exposure:** 94.4% | **Cash:** 5.58%
+- **Account equity / cash / buying power:** $9,952.52 / $553.16 / $10,505.68
+- **Gross long exposure:** 94.44% | **Net exposure:** 94.44% | **Cash:** 5.56%
 - **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today.
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -40,23 +40,23 @@
 ## Illiquidity Warnings (Universe Watchlist)
 The following symbols showed anomalously low trade count/volume in the latest Alpaca bar and are classified as **illiquid**. Do not place market orders for these; use limit orders only, or defer.
 - **EIS:** TradeCount 1, Volume 100
-- **SHLD:** TradeCount 1, Volume 100
+- **SHLD:** TradeCount 2, Volume 319
 - **QTUM:** TradeCount 1, Volume 150
-- **ARKX:** TradeCount 3, Volume 1950
-- **GLD:** TradeCount 9, Volume 461
-- **VOO:** TradeCount 3, Volume 45 (broad ETF, acceptable for limit orders at known prices)
+- **ARKX:** TradeCount 1, Volume 100
+- **GLD:** TradeCount 2, Volume 54
+- **VOO:** TradeCount 2, Volume 106 (broad ETF, acceptable for limit orders at known prices)
 
-## This Cycle — 2026-05-19 16:35Z (Tuesday 12:35 PM ET)
+## This Cycle — 2026-05-19 17:35Z (Tuesday 1:35 PM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $9,914.55 | Cash $553.16 | Long $9,361.39 | Gross ~94.4% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 8 ($5,616.96 @ 702.12), GOOG 3 ($1,155.06 @ 385.02), VOO 2 ($1,351.28 @ 675.64), META 1 ($602.10 @ 602.10), AVGO 1 ($413.22 @ 413.22), NVDA 1 ($222.69 @ 222.69).
-- **Portfolio delta since 11:35 ET:** +$39.85 (+0.40%). QQQ and AVGO bounced modestly.
+- **Live broker refresh:** Equity $9,952.52 | Cash $553.16 | Long $9,399.36 | Gross ~94.44% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 8 ($5,643.44 @ 705.43), GOOG 3 ($1,160.85 @ 386.95), VOO 2 ($1,354.76 @ 677.38), META 1 ($602.75 @ 602.75), AVGO 1 ($413.98 @ 413.98), NVDA 1 ($223.58 @ 223.58).
+- **Portfolio delta since 16:35Z run:** +$37.97 (+0.38%). QQQ and VOO modestly higher.
 - **Unauthorized positions:** AVGO 1, META 1, QQQ +2 extra. Cleanup deferred to Wednesday open.
 - **Event detector:** NONE — no broad market or position-level events.
-- **Fresh intel:** No material new headlines since 11:35 ET. GOOG/Blackstone AI deal remains fresh catalyst. NVDA earnings Wed after close still dominant. U.S.-China summit lack of semi breakthrough continues to weigh on semis.
+- **Fresh intel:** No material new headlines since 12:35Z run. Market quiet in afternoon session.
 - **Orders placed this cycle:** None. HARD_LOCK active. `.trading_lock.json` active with empty allowed list.
 - **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells (QQQ 2, AVGO 1, META 1). Then reassess deployment post-NVDA earnings.
 
-## Previous Cycle — 2026-05-19 15:35Z (Tuesday 11:35 AM ET)
+## Previous Cycle — 2026-05-19 16:35Z (Tuesday 12:35 PM ET)
 - **Orders placed this cycle:** None. HARD_LOCK active.
 - **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells.
