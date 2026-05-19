@@ -15,14 +15,14 @@ describe('Prompts Template Escaping', () => {
   test('keeps the onclick prompt arguments properly escaped in server.ts template', async () => {
     const serverCode = await Bun.file('src/web/server.ts').text();
 
-    // Verify it contains the triple backslash escaped version (which compiles to single backslash + quote in the client)
-    expect(serverCode).toContain("savePrompt(\\\\\\\x27");
-    expect(serverCode).toContain("deletePrompt(\\\\\\\x27");
-    expect(serverCode).toContain("editPrompt(\\\\\\\x27");
+    // Verify it contains the escaped version (one backslash + quote)
+    expect(serverCode).toContain("savePrompt(\\\x27");
+    expect(serverCode).toContain("deletePrompt(\\\x27");
+    expect(serverCode).toContain("editPrompt(\\\x27");
 
     // Verify it does not contain the broken, unescaped version that was parsed as double single quotes ('')
-    expect(serverCode).not.toContain("savePrompt(\\\x27");
-    expect(serverCode).not.toContain("deletePrompt(\\\x27");
-    expect(serverCode).not.toContain("editPrompt(\\\x27");
+    expect(serverCode).not.toContain("savePrompt(\x27\x27");
+    expect(serverCode).not.toContain("deletePrompt(\x27\x27");
+    expect(serverCode).not.toContain("editPrompt(\x27\x27");
   });
 });

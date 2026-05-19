@@ -142,6 +142,7 @@ describe('Harness: pause state', () => {
 
 describe('Alpaca CLI', () => {
   let originalTodo: string | null = null;
+  let originalLock: string | null = null;
 
   beforeAll(async () => {
     try {
@@ -153,12 +154,27 @@ describe('Alpaca CLI', () => {
     } catch {
       // todo.md does not exist — nothing to do
     }
+
+    try {
+      const lockFile = Bun.file('memory/.trading_lock.json');
+      if (await lockFile.exists()) {
+        originalLock = await lockFile.text();
+        await Bun.write('memory/.trading_lock.json', JSON.stringify({ active: false }));
+        console.log('[test-setup] Deactivated memory/.trading_lock.json');
+      }
+    } catch {
+      // Lock file not readable/writable — nothing to do
+    }
   });
 
   afterAll(async () => {
     if (originalTodo !== null) {
       await Bun.write('./memory/todo.md', originalTodo);
       console.log('[test-setup] Restored original todo.md');
+    }
+    if (originalLock !== null) {
+      await Bun.write('memory/.trading_lock.json', originalLock);
+      console.log('[test-setup] Restored original memory/.trading_lock.json');
     }
   });
 
