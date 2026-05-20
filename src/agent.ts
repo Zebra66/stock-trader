@@ -113,7 +113,13 @@ async function runAgent(): Promise<void> {
   if (mode === 'tactical') {
     const todoFile = Bun.file('memory/todo.md');
     const todoContent = await todoFile.exists() ? await todoFile.text() : '';
-    const isHardLocked = todoContent.includes('HARD_LOCK');
+    // Use the same regex logic as alpaca_cli.ts / alpaca_client_factory.ts to avoid
+    // false positives when the todo says "HARD_LOCK LIFTED".
+    const currentSection = todoContent.split('---')[0] || todoContent;
+    const lockLineMatch = currentSection.match(/^##?\s*[*_]{0,2}HARD_LOCK[*_]{0,2}\s*[:—-].*$/im);
+    const isHardLocked = lockLineMatch
+      ? !/^##?\s*[*_]{0,2}HARD_LOCK[*_]{0,2}\s*[:—-]\s*[*_]{0,2}LIFTED\b/i.test(lockLineMatch[0])
+      : false;
 
     const lockFile = Bun.file('memory/.trading_lock.json');
     let isLockActive = false;
