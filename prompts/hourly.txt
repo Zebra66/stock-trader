@@ -31,6 +31,7 @@ You also have access to Google Search — use it freely to:
 
 ### Step 1 — Read current state
 - Note: The harness has pre-fetched the contents of `memory/MEMORY.md` and `memory/todo.md` in the `# PRE-FETCHED CONTEXT` section below. Read them directly and do NOT run file read tools.
+- **Verify pre-fetch freshness:** If the pre-fetched `memory/MEMORY.md` or `memory/todo.md` timestamp is older than 6 hours, from a prior trading day, or contradicts the current date/time, immediately run live file reads to confirm state before acting. Do not trust stale pre-fetched memory.
 - **Repo integrity check:** Run `git status` and verify tracked source files have not been deleted by the tactical agent. If the repository index is missing tracked files (e.g., only `memory/` files remain), classify this as a **critical process breach**. Restore `.gitignore` from the last good commit if missing, then run `git add -A` and commit the restoration before proceeding with any market analysis.
 
 ### Step 2 — Gather market intelligence

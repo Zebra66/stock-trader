@@ -1,68 +1,63 @@
-# Tactical Todo — Updated 2026-05-19 18:36Z (Tuesday 2:36 PM ET)
-*HARD_LOCK active. Universal factory guard now blocks ALL orders. See MEMORY.md for full context.*
+# Tactical Todo — Updated 2026-05-20 16:35Z (Wednesday 12:35 PM ET)
+*HARD_LOCK LIFTED. Cleanup complete. Portfolio now clean. Execute authorized orders only.*
 
 ## Current State
-- **Regime:** defensive / cleanup-only hard lock
-- **Live book:** QQQ 8, GOOG 2, VOO 2, META 1 (UNAUTHORIZED), AVGO 1 (UNAUTHORIZED)
-- **Account equity / cash / buying power:** $9,940.70 / $1,162.21 / $11,102.91
-- **Gross long exposure:** 88.31% | **Net exposure:** 88.31% | **Cash:** 11.69%
-- **Daytrade count:** 3/3 — PDT threshold; absolutely zero same-day reversals today.
+- **Regime:** offensive catch-up
+- **Live book:** QQQ 6, GOOG 2, VOO 2
+- **Account equity / cash / buying power:** $9,978.63 / $3,602.44 / $11,147.88
+- **Gross long exposure:** 63.90% | **Net exposure:** 63.90% | **Cash:** 36.10%
+- **Daytrade count:** 3/3 (all legacy from Tuesday; no Wednesday daytrades yet)
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## CRITICAL — Universal Factory Guard Deployed
-- `alpaca_cli.ts` AND `alpaca_client_factory.ts` now both enforce HARD_LOCK and trading lock.
-- ANY order submission via ANY code path is blocked while HARD_LOCK is active.
-- If you see a "BLOCKED" message, do NOT retry. The lock is intentional.
+## CRITICAL — Cleanup Completed at 12:33 PM ET
+The overdue Wednesday cleanup sells have been executed by the hourly strategist:
+- QQQ 2 shares → SOLD (market order, filled).
+- AVGO 1 share → SOLD (market order, filled).
+- META 1 share → SOLD (market order, filled).
 
-## HARD_LOCK — VALID UNTIL EXPLICITLY LIFTED BY HOURLY STRATEGIST
-**The tactical agent is PROHIBITED from placing ANY orders until the hourly strategist explicitly removes this HARD_LOCK.**
-- `memory/todo.md` string check + `memory/.trading_lock.json` + universal factory interceptor all enforce the lock.
-- Concentration cap guard is also active: QQQ ≤45%, single stock ≤15%, non-QQQ ETF ≤20%.
-- No discretionary trading until cleanup is complete and the hourly strategist updates directives.
+## Position Instructions — Valid for :40 and :50 Tactical Runs (12:40 PM, 12:50 PM ET)
+- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight 42.6%, within 45% cap. No add until cap headroom allows ≥1 share without breaching 45%.
+- **HOLD GOOG 2 — DO NOT SELL.** Weight 7.65%. **DO NOT BUY YET.** 24-hour anti-churn cooldown from unauthorized Tuesday sell expires at ~13:52 ET (1:52 PM ET). Wait for 1:35 PM hourly update before any GOOG add.
+- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight 13.61%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.4%). Hold.
+- **NO NVDA — DO NOT BUY BEFORE EARNINGS.** Earnings after close tonight. Hourly strategist will set Thursday-open triggers at 1:35 PM ET.
+- **NO SOXX — DO NOT BUY BEFORE EARNINGS.** Wait for NVDA reaction Thursday.
+- **NO AVGO / NO META — DO NOT BUY.** Just liquidated today. 24h cooldown applies. Weak trends; no re-entry planned.
+- **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
 
-## Wednesday 2026-05-20 Cleanup Plan (Execute at Market Open)
-*All positions being sold were bought on Tuesday 2026-05-19. Selling them on Wednesday avoids daytrade counting.*
-1. **SELL QQQ 2 shares** via market order at open. Reduce total from 8 to 6, restoring the 45% concentration cap.
-2. **SELL AVGO 1 share** via market order at open. Liquidate unauthorized position.
-3. **SELL META 1 share** via market order at open. Liquidate unauthorized position.
-
-## Position Instructions (Remainder of Tuesday 2026-05-19)
-- **HOLD QQQ 8 — DO NOT SELL TODAY.** Selling any QQQ today would be a daytrade (2 shares bought today at 10:08 ET). Wait until Wednesday open.
-- **HOLD GOOG 2 — DO NOT SELL TODAY.** No trigger active. Rebuild to 3+ shares post-cleanup if dip persists Wednesday.
-- **HOLD VOO 2 — DO NOT SELL TODAY.** Authorized anchor. Hold through cleanup.
-- **HOLD AVGO 1 — DO NOT SELL TODAY.** Unauthorized, but selling today would be a daytrade. Liquidate Wednesday open.
-- **HOLD META 1 — DO NOT SELL TODAY.** Unauthorized, but selling today would be a daytrade. Liquidate Wednesday open.
-- **DO NOT REBUY NVDA TODAY.** Anti-churn cooldown applies (sold today at ~1:52 PM ET).
-
-## Hard Rules / No-Trade Conditions (valid until HARD_LOCK is lifted by hourly strategist)
-- **NO ORDERS OF ANY KIND while HARD_LOCK is present.**
-- **No same-day reversals** in ANY symbol today (daytrade_count = 3/3).
-- **Do NOT sell positions opened today** (AVGO, META, QQQ +2, VOO 2) — daytrade #4+ risk.
+## Hard Rules / No-Trade Conditions (Valid until next hourly update at 1:35 PM ET)
+- **NO discretionary buys** without explicit hourly authorization.
+- **No same-day reversals** in any symbol opened today. (No positions opened today; all sells were overnight positions.)
 - **No new short sales** under any circumstances.
-- **Do NOT buy back NVDA today** (anti-churn cooldown from unauthorized sell).
+- **Do NOT re-buy AVGO, META, or GOOG** without fresh hourly note explicitly authorizing re-entry (anti-churn cooldown).
+- **Do NOT add QQQ** unless hourly note explicitly calculates cap headroom and authorizes sizing.
+- **Do NOT chase NVDA pre-earnings.**
+
+## Concentration Cap Guard (Code-Enforced)
+- QQQ ≤ 45% of equity
+- Any single stock ≤ 15% of equity
+- Any non-QQQ ETF ≤ 20% of equity
+- If an order would breach any cap, it is REJECTED by `alpaca_cli.ts` and `alpaca_client_factory.ts`.
 
 ## Illiquidity Warnings (Universe Watchlist)
-The following symbols showed anomalously low trade count/volume in the latest Alpaca bar and are classified as **illiquid**. Do not place market orders for these; use limit orders only, or defer.
-- **EIS:** TradeCount 1, Volume 100
-- **SHLD:** TradeCount 2, Volume 115
-- **QTUM:** TradeCount 1, Volume 150
-- **ARKX:** TradeCount 1, Volume 173
-- **GLD:** TradeCount 1, Volume 40
-- **VOO:** TradeCount 10, Volume 230 (broad ETF, acceptable for limit orders at known prices)
+Do not place market orders for these; use limit orders only, or defer.
+- **EIS:** TradeCount 2, Volume 156
+- **SHLD:** TradeCount 2, Volume 400
+- **QTUM:** TradeCount 1, Volume 100
+- **ARKX:** TradeCount 4, Volume 2,347
+- **GLD:** TradeCount 9, Volume 303
+- **VOO:** Broad ETF, acceptable for limit orders at known prices.
 
-## This Cycle — 2026-05-19 18:36Z (Tuesday 2:36 PM ET)
+## This Cycle — 2026-05-20 16:35Z (Wednesday 12:35 PM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $9,940.70 | Cash $1,162.21 | Long $8,778.49 | Gross ~88.31% | Daytrade 3/3.
-- **Holdings confirmed:** QQQ 8 ($5,636.08 @ 704.51), GOOG 2 ($773.49 @ 386.745), VOO 2 ($1,353.38 @ 676.69), META 1 ($602.94 @ 602.94), AVGO 1 ($412.60 @ 412.60).
-- **CRITICAL BREACH:** GOOG 1 share and NVDA 1 share were sold at ~1:52 PM ET despite active HARD_LOCK. Root cause: factory guard missing. Now fixed in `alpaca_client_factory.ts`.
-- **Realized losses from breach:** GOOG ~$11.22 + NVDA ~$6.65 = ~$17.87.
-- **Unauthorized positions still live:** AVGO 1, META 1, QQQ +2 extra. Cleanup deferred to Wednesday open.
+- **Live broker refresh:** Equity $9,978.63 | Cash $3,602.44 | Long $6,376.19 | Gross ~63.90% | Daytrade 3/3.
+- **Holdings confirmed:** QQQ 6 ($4,254.30 @ 709.05), GOOG 2 ($763.50 @ 381.75), VOO 2 ($1,358.39 @ 679.195).
+- **Cleanup executed:** QQQ 2, AVGO 1, META 1 sold via market orders at 12:33 PM ET. All filled.
 - **Event detector:** NONE — no broad market or position-level events.
-- **Fresh intel:** GOOG/Blackstone AI data-center deal remains confirmed. NVDA earnings anticipation building for Wed after close.
-- **Orders placed this cycle:** None. HARD_LOCK active. `.trading_lock.json` active with empty allowed list.
-- **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells (QQQ 2, AVGO 1, META 1). Then reassess deployment post-NVDA earnings.
+- **Fresh intel:** UBS note on GOOG AI monetization beyond Search/Cloud. AMD +8% pre-NVDA earnings. Some semi laggards (MACOM, AMAT, Photronics) falling.
+- **Orders placed this cycle:** SELL QQQ 2, SELL AVGO 1, SELL META 1 (cleanup by hourly strategist).
+- **Next expected action:** 1:35 PM ET hourly — may authorize GOOG +1 share (cooldown expires ~1:52 PM ET) and set Thursday NVDA/SOXX triggers.
 
-## Previous Cycle — 2026-05-19 17:35Z (Tuesday 1:35 PM ET)
-- **Orders placed this cycle:** None. HARD_LOCK active.
-- **Next expected action:** Wednesday 2026-05-20 09:30 ET — execute cleanup sells.
+## Previous Cycle — 2026-05-19 18:36Z (Tuesday 2:36 PM ET)
+- **HARD_LOCK active.** No orders placed by tactical agent.
+- **Next expected action:** Wednesday cleanup (now completed).

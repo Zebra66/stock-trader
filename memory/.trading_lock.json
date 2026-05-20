@@ -1,5 +1,5 @@
 {
-  "active": true,
-  "reason": "Cleanup-only hard lock: unauthorized QQQ+2, AVGO+1, META+1 buys at 10:08 AM ET 2026-05-19 breached concentration caps. PDT daytrade_count=3/3; selling today would risk PDT jail. Cleanup deferred to Wed May 20 open. Lock lifted only by hourly strategist.",
+  "active": false,
+  "reason": "Hourly strategist lifted lock at 2026-05-20 12:30 PM ET to execute overdue Wednesday cleanup sells (QQQ 2, AVGO 1, META 1).",
   "allowed": []
 }
