@@ -81,6 +81,7 @@ GOOGLE_OAUTH_CLIENT_SECRET=$(fetch_secret "google-oauth-client-secret")
 ALLOWED_USER_EMAIL=$(fetch_secret "allowed-user-email")
 GITHUB_PAT=$(fetch_secret "github-pat")
 GITHUB_REPO="Zebra66/stock-trader"
+DEPLOY_API_KEY=$(fetch_secret "deploy-api-key")
 
 # Validate required secrets
 MISSING=()
@@ -214,7 +215,6 @@ done
 # 2) Pi.dev smoke test — trigger a dry-run tactical agent
 echo ""
 echo -e "${BLUE}🧪 Triggering Pi.dev dry-run smoke test (tactical)...${NC}"
-DEPLOY_API_KEY=$(fetch_secret "deploy-api-key")
 
 if [ -z "${DEPLOY_API_KEY}" ]; then
   echo -e "${YELLOW}⚠️  deploy-api-key not found in Secret Manager — skipping automated smoke test.${NC}"
