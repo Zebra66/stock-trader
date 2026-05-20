@@ -169,6 +169,7 @@ gcloud run deploy "$SERVICE_NAME" \
   --max-instances 3 \
   --set-env-vars="GEMINI_API_KEY=${GEMINI_API_KEY}" \
   --set-env-vars="OPENAI_API_KEY=${OPENAI_API_KEY}" \
+  --set-env-vars="DEPLOY_API_KEY=${DEPLOY_API_KEY}" \
   --set-env-vars="ALPACA_PAPER_API_KEY=${ALPACA_PAPER_API_KEY}" \
   --set-env-vars="ALPACA_PAPER_API_SECRET=${ALPACA_PAPER_API_SECRET}" \
   --set-env-vars="ALPACA_LIVE_API_KEY=${ALPACA_LIVE_API_KEY}" \

@@ -2055,8 +2055,10 @@ logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);
 
 // Start background task to sync deposits hourly
 import { syncDepositsFromAlpaca } from './deposits';
-setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
-syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
+if (process.env.NODE_ENV !== 'test') {
+  setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
+  syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
 
-// Clean up old test jobs every 10 minutes
-setInterval(() => cleanupOldJobs(), 10 * 60 * 1000);
+  // Clean up old test jobs every 10 minutes
+  setInterval(() => cleanupOldJobs(), 10 * 60 * 1000);
+}
