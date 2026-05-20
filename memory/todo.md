@@ -1,25 +1,29 @@
-# Tactical Todo — Updated 2026-05-20 18:35Z (Wednesday 2:35 PM ET)
+# Tactical Todo — Updated 2026-05-20 19:35Z (Wednesday 3:35 PM ET)
 *Execute authorized orders only. Daytrade count is 3 — no same-day reversals. GOOG was bought today; DO NOT SELL GOOG today.*
 
 ## Current State
 - **Regime:** offensive catch-up
 - **Live book:** QQQ 6, GOOG 3, VOO 2
-- **Account equity / cash / buying power:** $9,998.94 / $3,218.84 / ~$13,218
-- **Gross long exposure:** ~67.81% | **Net exposure:** ~67.81% | **Cash:** ~32.19%
+- **Account equity / cash / buying power:** $10,004.65 / $3,218.84 / ~$13,224
+- **Gross long exposure:** ~67.8% | **Net exposure:** ~67.8% | **Cash:** ~32.2%
 - **Daytrade count:** 3/3 (all legacy from Tuesday; no Wednesday daytrades yet)
 - **Pattern day trader:** false
 - **Open orders:** NONE
+- **Market closes in:** ~25 minutes (4:00 PM ET)
 
-## Position Instructions — Valid until next hourly update at 3:35 PM ET
-### Immediate Actions (2:35 PM ET — already executed)
-- **GOOG +1 share FILLED** at ~$383.57 via limit $384.00. New position: 3 shares / 11.5% weight.
-  - **CRITICAL: DO NOT SELL GOOG TODAY.** This is a position opened today. Selling it today would create a 4th daytrade.
+## Position Instructions — Valid until next hourly update at 9:35 AM ET Thursday
+
+### Immediate Actions (3:35 PM ET)
+- **NO TRADES for remainder of session.** Hold all positions through close.
+  - QQQ 6 shares — HOLD. Do not sell or add.
+  - GOOG 3 shares — HOLD. Do not sell (bought today; daytrade restriction).
+  - VOO 2 shares — HOLD. Do not sell or add.
 
 ### Holds (no action until next hourly)
-- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~42.7%, within 45% cap. No add until cap headroom allows ≥1 share without breaching 45%.
-- **HOLD GOOG 3 — DO NOT SELL.** Weight ~11.5%, within 15% cap. Add 4th share only if hourly authorizes dip-buy below $380 with target ≤15%.
-- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.4%). Hold.
-- **NO NVDA — DO NOT BUY BEFORE EARNINGS.** Earnings after close tonight. Hourly strategist will set Thursday-open triggers at next run.
+- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~42.7%, within 45% cap. Adding 1 share would breach 45% cap (~49.8%).
+- **HOLD GOOG 3 — DO NOT SELL.** Weight ~11.5%, within 15% cap. Adding 1 share would breach 15% cap (~15.4%). Bought today; selling today = 4th daytrade.
+- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.4%).
+- **NO NVDA — DO NOT BUY BEFORE EARNINGS.** Earnings after close tonight. Hourly strategist will set Thursday-open triggers at 9:35 AM ET.
 - **NO SOXX — DO NOT BUY BEFORE EARNINGS.** Wait for NVDA reaction Thursday.
 - **NO AVGO / NO META — DO NOT BUY.** Liquidated Wed 12:33 PM ET. 24h anti-churn cooldown applies until Thu ~12:33 PM ET. Weak trends; no re-entry planned.
 - **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
@@ -27,9 +31,9 @@
 ## Thursday Triggers (Pending NVDA Earnings Reaction — wait for 9:35 AM ET hourly)
 These are PRELIMINARY. Hourly strategist will refine at 9:35 AM ET Thursday.
 - **NVDA:**
-  - If NVDA opens > $231 (up >3% from $224.16 on strong guidance): BUY 1 share limit $233. Rationale: Constructive earnings, AI momentum intact.
-  - If NVDA opens < $215 (down >4% on weak guidance): WAIT. Do not catch falling knife. Reassess at 10:00 AM ET.
-  - If NVDA opens flat ($220–$228): WAIT first 30 minutes for direction.
+  - If NVDA opens > $231 (up >3.6% from $222.90 on strong guidance): BUY 1 share limit $233. Rationale: Constructive earnings, AI momentum intact.
+  - If NVDA opens < $213 (down >4.4% on weak guidance): WAIT. Do not catch falling knife. Reassess at 10:00 AM ET.
+  - If NVDA opens flat ($218–$228): WAIT first 30 minutes for direction.
 - **SOXX:**
   - If SOXX > $525 and NVDA > $230: BUY 1 share limit $528. Rationale: Semi complex confirmation post-earnings.
   - If SOXX drops below $500: WAIT.
@@ -39,8 +43,8 @@ These are PRELIMINARY. Hourly strategist will refine at 9:35 AM ET Thursday.
 - **No same-day reversals** in any symbol opened today. **GOOG was opened today — DO NOT SELL GOOG today.**
 - **No new short sales** under any circumstances.
 - **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry (anti-churn cooldown + weak trends).
-- **Do NOT add QQQ** unless hourly note explicitly calculates cap headroom and authorizes sizing.
-- **Do NOT chase NVDA pre-earnings.**
+- **Do NOT add QQQ / GOOG / VOO** — concentration caps would be breached.
+- **Do NOT chase NVDA pre-earnings or in after-hours.** Wait for regular session Thursday.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -57,9 +61,11 @@ Do not place market orders for these; use limit orders only, or defer.
 - **GLD:** Low trade count / volume
 - **VOO:** Broad ETF, acceptable for limit orders at known prices.
 
-## This Cycle — 2026-05-20 18:35Z (Wednesday 2:35 PM ET)
-- **Market status:** OPEN until 16:00 ET.
-- **Holdings confirmed:** QQQ 6 ($4,267.98 @ ~711.33), GOOG 3 ($1,150.71 @ ~383.57), VOO 2 ($1,361.26 @ ~680.63).
+## This Cycle — 2026-05-20 19:35Z (Wednesday 3:35 PM ET)
+- **Market status:** OPEN until 16:00 ET. ~25 minutes remaining.
+- **Holdings confirmed:** QQQ 6 ($4,271.04 @ ~711.84), GOOG 3 ($1,152.45 @ ~384.15), VOO 2 ($1,362.32 @ ~681.16).
 - **Event detector:** NONE — no broad market or position-level events.
-- **Order executed:** BUY GOOG +1 share limit $384.00 filled.
-- **Expected action next cycle:** Hold all current positions. No new orders authorized until next hourly update (3:35 PM ET) unless NVDA-related emergency.
+- **Order executed this cycle:** NONE.
+- **Expected action:** Hold all current positions. No new orders authorized until next hourly update (9:35 AM ET Thursday) unless NVDA-related emergency.
+
+HARD_LOCK LIFTED
