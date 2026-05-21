@@ -88,6 +88,24 @@ export const alpacaTools = {
     } catch {
       // todo.md not readable — proceed to lock-file check as fallback
     }
+    // Symbol-specific no-buy directive parser (todo.md)
+    try {
+      const noBuySymbols = new Set<string>();
+      const todo = await Bun.file('./memory/todo.md').text();
+      for (const line of todo.split('\n')) {
+        const upper = line.toUpperCase();
+        if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY')) continue;
+        if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+        for (const sym of UNIVERSE) {
+          if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) noBuySymbols.add(sym);
+        }
+      }
+      if (side === 'buy' && noBuySymbols.has(symUpper)) {
+        return `Error submitting order: Symbol ${symbol} is on the active no-buy list derived from memory/todo.md.`;
+      }
+    } catch {
+      // todo.md not readable — proceed
+    }
     // Trading lock check (code-level enforcement via lock file)
     const lock = await getTradingLock();
     const lockAllows = isOrderAllowed(lock, symbol, side);
