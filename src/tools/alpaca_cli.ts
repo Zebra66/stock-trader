@@ -94,6 +94,25 @@ export const alpacaTools = {
     if (lock && lock.active && !lockAllows) {
       return `Error submitting order: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`;
     }
+    // Symbol ban check (enforced regardless of lock active state)
+    if (side === 'buy') {
+      try {
+        const lockFile = Bun.file(LOCK_FILE);
+        if (await lockFile.exists()) {
+          const lockJson = JSON.parse(await lockFile.text()) as { bannedSymbols?: string[]; allowed?: string[]; reason?: string };
+          const banned = (lockJson.bannedSymbols ?? []).map((s: string) => s.toUpperCase());
+          if (banned.includes(symUpper)) {
+            const key = `${side.toUpperCase()}_${symUpper}`;
+            const isExcepted = (lockJson.allowed ?? []).some((a: string) => a === key || a === `ANY_${symUpper}` || a === `${side.toUpperCase()}_ANY`);
+            if (!isExcepted) {
+              return `Error submitting order: Symbol ${symbol} is currently banned. Reason: ${lockJson.reason || 'No reason provided'}.`;
+            }
+          }
+        }
+      } catch (e: unknown) {
+        if (e instanceof Error && e.message.includes('currently banned')) return e.message;
+      }
+    }
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols
       try {

@@ -138,7 +138,7 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
     try {
       const lockFile = Bun.file('./memory/.trading_lock.json');
       if (await lockFile.exists()) {
-        const lock = JSON.parse(await lockFile.text()) as { active: boolean; allowed?: string[]; reason?: string };
+        const lock = JSON.parse(await lockFile.text()) as { active: boolean; allowed?: string[]; reason?: string; bannedSymbols?: string[] };
         if (lock?.active) {
           const key = `${side.toUpperCase()}_${symbol}`;
           let allowed = false;
@@ -154,9 +154,23 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
             );
           }
         }
+        // Symbol ban check (enforced regardless of lock active state)
+        if (side === 'buy') {
+          const banned = (lock.bannedSymbols ?? []).map((s: string) => s.toUpperCase());
+          if (banned.includes(symbol)) {
+            const key = `${side.toUpperCase()}_${symbol}`;
+            const isExcepted = (lock.allowed ?? []).some((a: string) => a === key || a === `ANY_${symbol}` || a === `${side.toUpperCase()}_ANY`);
+            if (!isExcepted) {
+              throw new Error(
+                `Order blocked: Symbol ${params.symbol} is currently banned. Reason: ${lock.reason || 'No reason provided'}.`
+              );
+            }
+          }
+        }
       }
     } catch (e) {
       if (e instanceof Error && e.message.includes('Trading lock')) throw e;
+      if (e instanceof Error && e.message.includes('currently banned')) throw e;
       // lock file unreadable — continue
     }
 

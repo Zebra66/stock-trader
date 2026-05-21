@@ -263,6 +263,39 @@ describe('Alpaca CLI', () => {
     expect(() => JSON.parse(stdout)).not.toThrow();
     expect(Array.isArray(JSON.parse(stdout))).toBe(true);
   });
+
+  test('submit-order rejects buy for banned symbol', async () => {
+    const lockFile = Bun.file('memory/.trading_lock.json');
+    const originalLockText = await lockFile.exists() ? await lockFile.text() : JSON.stringify({ active: false });
+    await Bun.write('memory/.trading_lock.json', JSON.stringify({ active: false, bannedSymbols: ['META', 'AVGO'], reason: 'Test ban' }));
+
+    const result = await alpacaTools.submitOrder('META', 1, 'buy');
+    expect(result).toContain('currently banned');
+
+    await Bun.write('memory/.trading_lock.json', originalLockText);
+  });
+
+  test('submit-order allows sell for banned symbol', async () => {
+    const lockFile = Bun.file('memory/.trading_lock.json');
+    const originalLockText = await lockFile.exists() ? await lockFile.text() : JSON.stringify({ active: false });
+    await Bun.write('memory/.trading_lock.json', JSON.stringify({ active: false, bannedSymbols: ['META'], reason: 'Test ban' }));
+
+    const result = await alpacaTools.submitOrder('META', 1, 'sell');
+    expect(result).not.toContain('currently banned');
+
+    await Bun.write('memory/.trading_lock.json', originalLockText);
+  });
+
+  test('submit-order allows banned symbol if explicitly allowed', async () => {
+    const lockFile = Bun.file('memory/.trading_lock.json');
+    const originalLockText = await lockFile.exists() ? await lockFile.text() : JSON.stringify({ active: false });
+    await Bun.write('memory/.trading_lock.json', JSON.stringify({ active: false, bannedSymbols: ['META'], allowed: ['BUY_META'], reason: 'Test ban with exception' }));
+
+    const result = await alpacaTools.submitOrder('META', 1, 'buy');
+    expect(result).not.toContain('currently banned');
+
+    await Bun.write('memory/.trading_lock.json', originalLockText);
+  });
 });
 
 // ── FMP CLI ────────────────────────────────────────────────────────────────────

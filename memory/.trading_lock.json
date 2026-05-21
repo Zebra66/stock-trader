@@ -1,5 +1,6 @@
 {
   "active": false,
-  "reason": "Hourly strategist lifted lock at 2026-05-20 12:30 PM ET to execute overdue Wednesday cleanup sells (QQQ 2, AVGO 1, META 1).",
-  "allowed": []
+  "reason": "Hourly strategist lifted lock at 2026-05-20 12:30 PM ET to execute overdue Wednesday cleanup sells (QQQ 2, AVGO 1, META 1). Symbol bans active for AVGO and META due to weak trends and no re-entry planned without explicit hourly authorization.",
+  "allowed": [],
+  "bannedSymbols": ["AVGO", "META"]
 }
