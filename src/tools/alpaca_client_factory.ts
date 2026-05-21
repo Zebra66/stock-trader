@@ -87,6 +87,24 @@ const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX',
 ]);
 
+async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
+  const blocked = new Set<string>();
+  try {
+    const todo = await Bun.file('./memory/todo.md').text();
+    for (const line of todo.split('\n')) {
+      const upper = line.toUpperCase();
+      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY')) continue;
+      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+      for (const sym of UNIVERSE) {
+        if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
+      }
+    }
+  } catch {
+    // ignore read errors
+  }
+  return blocked;
+}
+
 export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.env): Alpaca {
   const credentials = resolveAlpacaCredentials(mode, env);
 
@@ -172,6 +190,19 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       if (e instanceof Error && e.message.includes('Trading lock')) throw e;
       if (e instanceof Error && e.message.includes('currently banned')) throw e;
       // lock file unreadable — continue
+    }
+
+    // ── No-buy directive parser (todo.md) ────────────────────────────────
+    try {
+      const noBuySymbols = await getNoBuySymbolsFromTodo();
+      if (side === 'buy' && noBuySymbols.has(symbol)) {
+        throw new Error(
+          `Order blocked: Symbol ${params.symbol} is on the active no-buy list derived from memory/todo.md.`
+        );
+      }
+    } catch (e) {
+      if (e instanceof Error && e.message.includes('active no-buy list')) throw e;
+      // todo.md unreadable — fall through
     }
 
     // ── Universe gate (BUY) ───────────────────────────────────────────────

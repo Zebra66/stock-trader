@@ -1,6 +1,6 @@
 {
-  "active": false,
-  "reason": "Hourly strategist lifted lock at 2026-05-20 12:30 PM ET to execute overdue Wednesday cleanup sells (QQQ 2, AVGO 1, META 1). Symbol bans active for AVGO and META due to weak trends and no re-entry planned without explicit hourly authorization.",
-  "allowed": [],
+  "active": true,
+  "reason": "Tactical agent executed unauthorized BUY META 1 share at $607.14 at 3:18 PM ET on 2026-05-21, violating explicit NO META directive in todo.md and the 24-hour cooldown (META was sold May 20 at 4:33 PM ET). Position was liquidated at 3:37 PM ET as cleanup. Symbol bans active for AVGO and META.",
+  "allowed": ["SELL_ANY"],
   "bannedSymbols": ["AVGO", "META"]
 }
