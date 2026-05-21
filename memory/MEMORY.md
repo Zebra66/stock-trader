@@ -1,87 +1,104 @@
 # Hourly Macro Memory
-*Updated 2026-05-20 19:35Z (Wednesday 3:35 PM ET). Market OPEN until 16:00 ET.*
+*Updated 2026-05-21 17:35Z (Thursday 1:35 PM ET). Market OPEN until 16:00 ET.*
 
 ## Current Regime
-- **Regime:** offensive catch-up
-- **Why:** Gross exposure ~67.8%, in the 60–90% offensive band. Portfolio roughly flat since inception (~+0.05%) and trailing SPY (~+3.2%). Need disciplined deployment, but NVDA earnings after close tonight is the dominant near-term binary event. Hold through close; reassess Thursday 9:35 AM ET.
+- **Regime:** **offensive catch-up**
+- **Why:** Portfolio still trailing SPY by ~3.0 pp since inception and negative absolute (-0.16%). Gross exposure at ~70.0%, in the 60–90% band. NVDA earnings delivered a beat-and-raise with a massive $80B buyback, but the stock reaction is muted (classic "priced in"). Added 1 NVDA share to increase beta and AI exposure while respecting small position size. Remaining cash at 30% provides dry powder for follow-through or dips.
 
 ## Repo Integrity
-- **Status:** CLEAN. Working tree clean, no breaches.
+- **Status:** CRITICAL BREACH DETECTED AND RESTORED. Working tree showed memory/MEMORY.md, memory/todo.md, prompts/hourly.txt, and src/agent.ts reverted to an earlier (12:35 PM ET) state vs HEAD (3:41 PM ET). Staged changes would have rolled back the 3:41 PM updates and the agent.ts regex fix. Restored all four files from HEAD (`git checkout HEAD -- ...`). Working tree now clean. This is the second consecutive day of git index/workspace corruption. Root cause under investigation.
 
 ## Live Book
-- **QQQ:** 6 shares @ avg $699.39 → mkt $4,271.04 (42.68% weight), unrealized +$74.70 (+1.78%)
-- **GOOG:** 3 shares @ avg $392.92 → mkt $1,152.45 (11.52% weight), unrealized -$26.31 (-2.23%)
-- **VOO:** 2 shares @ avg $673.925 → mkt $1,362.32 (13.62% weight), unrealized +$14.47 (+1.07%)
-- **Cash:** $3,218.84 (32.18%)
-- **Equity:** $10,004.65
-- **Gross long exposure:** ~67.8%
-- **Daytrade count:** 3/3 (all legacy). PDT: false.
+- **QQQ:** 6 shares @ avg $701.33 → mkt $4,260.06 (42.63% weight), unrealized +$52.08 (+1.24%)
+- **GOOG:** 3 shares @ avg $392.92 → mkt $1,146.36 (11.48% weight), unrealized -$32.40 (-2.75%)
+- **VOO:** 2 shares @ avg $673.925 → mkt $1,357.38 (13.60% weight), unrealized +$9.53 (+0.71%)
+- **NVDA:** 1 share @ avg $223.68 → mkt $224.16 (2.25% weight), unrealized +$0.48 (+0.22%)
+- **Cash:** $2,995.15 (30.0%)
+- **Equity:** $9,983.96
+- **Gross long exposure:** ~70.0%
+- **Net exposure:** ~70.0%
+- **Daytrade count:** 0 (fresh slate)
+- **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **~+0.05%** vs SPY **~+3.18%** (baseline 718.01 → current ~740.86). Trailing by ~3.13 pp.
-- **Today (1D):** portfolio roughly +1.0% vs SPY ~+0.7%. Outperformance maintained.
-- **1W:** portfolio roughly +0.6% vs SPY ~+0.3%.
-- **Dominant failure mode:** excessive turnover / unauthorized execution + realized losses from forced liquidation (Tuesday). Cleanup complete; recovering via disciplined deployment.
+## Performance Review — Thursday May 21 (First Hourly Run of Day)
+- **1D (today):** portfolio **-0.21%** ($10,004.65 → $9,983.96) vs SPY **-0.33%** (~740.86 → 738.45). **Slight outperformance today.**
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **-0.16%** vs SPY **+2.85%** (baseline 718.01 → 738.45). Trailing by ~3.01 pp.
+- **1W:** portfolio roughly -0.3% vs SPY ~-0.5%. Tight range; no decisive outperformance yet.
+- What is working: QQQ holding relative strength, NVDA post-earnings fill at good price ($223.68), VOO stable.
+- What is not working: GOOG still dragging (-2.75% unrealized, -0.7% intraday) despite $15B Missouri infrastructure headline. Cash at 30% is a mild drag if SPY grinds higher.
+- What must change: Continue measured deployment into high-conviction names while avoiding churn. Do not let cash sit above 30% unless macro justifies defense.
 
-## Market Intel — Wednesday 3:35 PM ET
-- **NVDA earnings after close tonight** — largest binary event for semi complex. NVDA currently $222.90 (drifted down ~$1 from 2:35 PM). No position; wait for reaction.
-- **FOMC April meeting minutes released** — panel sees possible rate hike. Market up (Dow +600) despite hawkish tint, suggesting risk-on absorbs Fed uncertainty.
-- **GOOG** — headlines confirm "Alphabet moving in on Nvidia's territory" with AI chip ambitions + "sweeping AI push" causing a ~2% drop earlier. Blackstone/UBS AI monetization thesis intact; current price $384.15. Short-term noise within strong 1M/3M/6M uptrend.
-- **SPY at all-time highs (~740.86).** Small-caps bouncing. No broad risk-off yet.
-- **DRAM ETF nearly doubled since April launch** — AI memory shortage narrative intensifying. Bullish for semi complex if NVDA guidance confirms demand.
-- **Samsung strike risk** still on radar for Thu — memory supply tightening.
+## Goal Check
+- **Portfolio since inception:** -0.16% ($9,983.96 vs $10,000 base)
+- **S&P 500 since inception:** +2.85% (SPY 738.45 vs baseline 718.01)
+- **Status:** **Off track — failing both goals** (negative absolute, trailing SPY).
+- **Dominant failure mode:** **excessive turnover / unauthorized execution + realized losses from forced liquidation (May 19–20).** Cleanup is complete. Recovery now depends on disciplined adds and letting winners run.
+
+## Market Intel — Thursday 1:35 PM ET
+- **NVDA earnings (Wed after close):** FQ1 beat-and-raise. Announced **$80 billion buyback** — largest in company history. Received at least **18 analyst price-target hikes** after the report. Despite blockbuster results, stock is up only ~1.9% from prior close ($222.90 → $227), with intraday high $227.11 and current ~$224.16. Reaction is muted/"priced in," but buyback and guidance create a durable tailwind. Bitcoin miner stocks tied to AI rose on the report.
+- **AMD:** Announced $10 billion Taiwan AI chip push — bullish for semi complex capacity expansion.
+- **US-Iran talks uncertainty:** Pre-market concern pressuring futures. Headline risk if talks collapse.
+- **Jobless claims surprise:** "Dow Falls After Surprise Jobless Claims Data." Stronger-than-expected labor market = hawkish Fed risk. Market absorbed it but remains cautious.
+- **GOOG:** "Alphabet Invests $15 Billion in Missouri Infrastructure" — confirms capex/data-center buildout thesis. Stock down intraday (-0.7%) despite news; likely profit-taking within strong 1M/3M/6M uptrend.
+- **SPY at 738.45** — off yesterday's highs (~740.86) but still near all-time highs. Small-caps quiet.
+- **DRAM/AI memory shortage narrative** still intact post-NVDA earnings.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---:|
-| QQQ | Hold | Core liquid growth. 42.7%, near 45% cap. Cannot add 1 share without breaching cap at current equity. | 36–45% |
-| GOOG | Hold | Core thesis intact (Blackstone/UBS AI). 3 shares / 11.5%. Cannot add 1 share without breaching 15% cap. | 10–15% |
-| VOO | Hold | Broad-market anchor. 13.6%. Cannot add 1 share without breaching 20% non-QQQ ETF cap. | 10–20% |
-| NVDA | Wait / Rebuild Thu | Earnings after close. No position. Rebuild only on constructive reaction Thursday. | 2–4% |
-| SOXX | Watch / Defer | Re-assess after NVDA earnings. Daily close > $525 with NVDA > $230 for entry signal. | 0–5% |
-| AVGO | Avoid / Cooldown | Liquidated Wed 12:33 PM ET. 24h anti-churn cooldown until Thu ~12:33 PM ET. Weak 1W trend. | 0% |
-| META | Avoid / Cooldown | Liquidated Wed 12:33 PM ET. 24h anti-churn cooldown until Thu ~12:33 PM ET. Weak trends. | 0% |
-| RKLB | Avoid | Parabolic, extremely volatile. 1M +50%, 6M +233%. | 0% |
+| QQQ | Hold | Core liquid growth. 42.6%, near 45% cap. Cannot add 1 share without breaching cap at current equity. | 36–45% |
+| GOOG | Hold | Core thesis intact ($15B Missouri capex + Blackstone/UBS AI). 3 shares / 11.5%. Cannot add 1 share without breaching 15% cap (~15.2%). | 10–15% |
+| VOO | Hold | Broad-market anchor. 13.6%. Cannot add 1 share without breaching 20% non-QQQ ETF cap (~20.4%). | 10–20% |
+| NVDA | Hold / Add if dips | Post-earnings beat, $80B buyback, 18 PT hikes. Currently 1 share / 2.25%. Could add 1 more on meaningful dip to build 4–5% weight. | 2–5% |
+| SOXX | Watch / Defer | Flat at $520 post-NVDA earnings. Needs daily close > $525 with follow-through to justify entry. | 0–5% |
+| AVGO | Avoid | Liquidated Wed. 24h cooldown expired today. Weak 1W trend (-4.4%). No edge. | 0% |
+| META | Avoid | Liquidated Wed. 24h cooldown expired today. Weak 1M/1Y trends. No edge. | 0% |
+| RKLB | Avoid | Down 4.7% this week. Parabolic, extremely volatile. No edge. | 0% |
 | HOOD / SHLD / ARKX / EIS / QTUM | Avoid | Weak trends or thin liquidity. | 0% |
-| GLD | Avoid | Only if macro turns decisively risk-off. Currently risk-on tape despite hawkish Fed minutes. | 0–5% |
+| GLD | Avoid | Down 3.5% this week. Only if macro turns decisively risk-off. | 0–5% |
 
 ## Priority Actions
-1. **HOLD ALL POSITIONS** through today's close. No trades this cycle.
-2. **NVDA / SOXX Thursday triggers** — set in todo.md; refine at 9:35 AM ET Thursday based on overnight reaction.
-3. **Monitor QQQ cap** — if equity rises materially, 1 additional QQQ share stays under 45%.
-4. **No same-day reversals** — daytrade count is 3. Any sell of a position opened today would risk PDT.
+1. **HOLD current positions** through today's close. NVDA was just added; do not sell same day.
+2. **Monitor NVDA** for follow-through or dip. If NVDA closes weak (< $222), reassess size. If it breaks $230 on volume, consider adding 1 more share on next session.
+3. **Monitor SOXX** — needs close > $525 for entry signal.
+4. **No same-day reversals** — daytrade count is 0; preserve the clean slate.
+5. **Watch US-Iran headlines** — if geopolitical risk spikes, consider defensive posture for next session.
 
 ## Macro Themes
-- **Actionable now:** GOOG / Blackstone + UBS AI monetization. Core holding; add on weakness to rebuild target weight (when cap allows).
-- **Worth monitoring:** NVDA earnings tonight — AI competition, China updates, Blackwell ramp guidance.
-- **Worth monitoring:** Samsung strike risk (Thu) — memory supply tightening, bullish for SOXX/NVDA if guidance is good.
-- **Worth monitoring:** FOMC rate-hike hints — if yields spike and equities reverse, reassess risk posture.
+- **Actionable now:** NVDA post-earnings buyback tailwind. Small position; watch for follow-through.
+- **Worth monitoring:** US-Iran talks — sudden escalation could derail risk-on tape.
+- **Worth monitoring:** FOMC / jobless claims — stronger labor data increases hawkish Fed risk.
+- **Worth monitoring:** GOOG capex / AI monetization — $15B Missouri infrastructure confirms multi-year buildout thesis.
+- **Interesting but not actionable yet:** AI-driven power demand. No pure-play in universe.
 
 ## Universe Performance Snapshot (Yahoo Finance Fallback)
+*Data as of ~1:35Z May 21.*
+
 | Symbol | 1W | 1M | 3M | 6M | 1Y |
 |---|---|---|---|---|---|
-| AVGO | +0.36% | +4.66% | +25.24% | +22.95% | +80.54% |
-| EIS | -1.44% | +2.64% | +8.61% | +31.45% | +57.99% |
-| GLD | -3.16% | -5.70% | -9.28% | +11.39% | +37.32% |
-| GOOG | -4.01% | +14.20% | +26.18% | +27.82% | +131.68% |
-| HOOD | -1.24% | -16.95% | +0.21% | -29.35% | +16.79% |
-| META | -1.79% | -9.73% | -6.07% | +1.92% | -4.94% |
-| NVDA | -0.79% | +10.88% | +19.23% | +25.24% | +66.72% |
-| QQQ | -0.48% | +9.96% | +17.86% | +20.54% | +36.71% |
-| QTUM | -1.44% | +12.46% | +23.84% | +42.62% | +67.38% |
-| RKLB | +8.09% | +50.00% | +75.21% | +232.94% | +416.05% |
-| SHLD | +1.14% | -11.60% | -14.79% | +5.15% | +17.20% |
-| SOXX | -2.13% | +23.82% | +45.30% | +90.90% | +144.41% |
-| VOO | -0.25% | +4.48% | +8.13% | +12.34% | +24.93% |
-| ARKX | -0.72% | +2.67% | +4.35% | +32.87% | +66.39% |
+| AVGO | -4.39% | +4.55% | +25.90% | +23.60% | +83.03% |
+| EIS | -1.99% | +3.81% | +7.86% | +30.55% | +60.49% |
+| GLD | -3.48% | -4.01% | -10.28% | +10.17% | +34.83% |
+| GOOG | -3.97% | +15.42% | +25.65% | +27.29% | +124.29% |
+| HOOD | -6.07% | -12.30% | +0.20% | -29.35% | +18.70% |
+| META | -2.89% | -10.21% | -6.86% | +1.06% | -5.50% |
+| NVDA | -4.14% | +13.06% | +20.27% | +26.34% | +71.46% |
+| QQQ | -1.46% | +10.08% | +17.54% | +20.21% | +38.26% |
+| QTUM | -0.99% | +14.36% | +25.34% | +44.34% | +72.95% |
+| RKLB | -4.66% | +45.86% | +65.02% | +213.57% | +402.07% |
+| SHLD | -0.20% | -9.25% | -15.52% | +4.25% | +16.44% |
+| SOXX | -2.00% | +23.46% | +45.97% | +91.78% | +150.11% |
+| VOO | -1.34% | +4.83% | +7.78% | +11.98% | +26.65% |
+| ARKX | -3.16% | +1.89% | +2.65% | +30.72% | +67.65% |
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active. HARD_LOCK + trading lock + universe gate enforced.
 - **FMP** disabled. Yahoo Finance chart API v8 used as fallback for performance snapshots.
 - **News search** via Yahoo Finance RSS working; Google News RSS blocked.
-- **ledger_cli.ts** does not exist in src/tools/. Ledger entries recorded in MEMORY.md instead.
+- **File reversion risk:** Memory files and src/agent.ts were reverted in working tree to an earlier state today. Restored from HEAD. Monitor every run.
+- **Day-trade status:** 0/3. Fresh slate.
 
 ## Standing Learnings (Selected)
 1. Size from **account equity**, not raw buying power.
@@ -98,17 +115,24 @@
 12. **Tactical agent race condition risk:** Code-level guards are the ultimate defense; prompt instructions alone are insufficient.
 13. **Lock files must NOT contain auto-expiration timestamps.** Hourly strategist must explicitly set `active: false`.
 14. **Concentration caps must be code-enforced, not just prompt-enforced.**
-15. **Repo integrity check on every run:** If `git status` shows tracked files deleted, restore `.gitignore` and `git add -A` immediately.
+15. **Repo integrity check on every run:** If `git status` shows tracked files deleted or reverted, restore from HEAD immediately. Do not trade on a corrupted workspace.
 16. **Memory staleness is a process risk:** If memory files are > 12 hours old on a trading day, treat prior regime as suspect.
 17. **Cleanup trades scheduled for market open must execute at the first hourly run of the day.**
 18. **String-matching `HARD_LOCK` in todo.md is dangerous:** Use explicit regex parsing (`HARD_LOCK ... LIFTED`) to avoid false positives that silently kill tactical execution.
-19. **If tactical agent is skipped for hours, verify whether the skip was legitimate (lock + no events) or a code bug.** In this case it was a code bug — `includes()` matched "HARD_LOCK LIFTED".
-20. **Geopolitical semi risk is real:** U.S.-China summit failures on semiconductor sales pressure semi names.
-21. **With ~$10K equity, concentration caps are extremely tight:** QQQ at ~$712 allows max 6 shares; GOOG at ~$384 allows max 3 shares; VOO at ~$681 allows max 2 shares. Deployment into new names requires either equity growth or selling existing positions.
-22. **FOMC hawkish surprises can coexist with risk-on rallies** (May 20 2026) — do not confuse short-term price action with regime confirmation. Watch follow-through.
+19. **If tactical agent is skipped for hours, verify whether the skip was legitimate (lock + no events) or a code bug.**
+20. **Geopolitical semi risk is real:** U.S.-China summit failures + Samsung strike + US-Iran talks all create headline volatility.
+21. **With ~$10K equity, concentration caps are extremely tight:** QQQ at ~$710 allows max 6 shares; GOOG at ~$382 allows max 3 shares; VOO at ~$679 allows max 2 shares. Deployment into new names requires either equity growth or selling existing positions.
+22. **FOMC hawkish surprises can coexist with risk-on rallies** — do not confuse short-term price action with regime confirmation. Watch follow-through.
+23. **NVDA "priced in" earnings:** Even blockbuster beats with $80B buybacks can produce flat stock reactions if expectations are extreme. Entry timing matters; buying the gap down or flat open can be better than chasing pre-earnings.
+24. **File reversion / workspace corruption is a recurring process risk:** Working tree files were reverted to an older state between sessions. Always verify file freshness against broker data before acting.
 
-## Hourly Cycle Summary — 2026-05-20 19:35Z (Wednesday 3:35 PM ET)
-- **Live broker refresh:** Equity $10,004.65 | Cash $3,218.84 | Long $6,785.81 | Gross ~67.8% | Daytrade 3/3.
-- **Repo integrity:** CLEAN.
-- **Market intel:** NVDA earnings after close. FOMC minutes hint possible rate hike, but Dow +600. GOOG AI chip headlines. DRAM ETF doubled since April.
-- **Action this cycle:** NO TRADES. Hold QQQ 6, GOOG 3, VOO 2. Concentration caps prevent adds to existing positions without equity growth. Set Thursday NVDA/SOXX triggers in todo.md.
+## Hourly Cycle Summary — 2026-05-21 17:35Z (Thursday 1:35 PM ET)
+- **Live broker refresh:** Equity $9,983.96 | Cash $2,995.15 | Long $6,988.81 | Gross ~70.0% | Daytrade 0/3.
+- **Repo integrity breach detected:** memory/MEMORY.md, memory/todo.md, prompts/hourly.txt, and src/agent.ts reverted in working tree to earlier (12:35 PM ET) state. Restored from HEAD.
+- **Order executed:** BUY NVDA 1 share limit $227.50 → filled at $223.68.
+- **Post-trade book:** QQQ 6, GOOG 3, VOO 2, NVDA 1. Cash 30.0%.
+- **Market intel:** NVDA beat-and-raise + $80B buyback; stock up only ~1.9% (priced in). AMD $10B Taiwan push. GOOG $15B Missouri capex. US-Iran uncertainty. Jobless claims surprise.
+- **Goal check:** Off track (-0.16% vs SPY +2.85%). Today slightly outperformed (-0.21% vs SPY -0.33%).
+- **Regime:** Offensive catch-up. Target gross exposure 60–90% (currently 70.0%).
+- **Code changes:** None this cycle. Restored reverted files from HEAD.
+- **Next expected action:** 2:35 PM ET hourly — reassess NVDA follow-through. No immediate additional buys planned unless compelling dip emerges.
