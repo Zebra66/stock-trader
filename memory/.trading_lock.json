@@ -1,6 +1,6 @@
 {
-  "active": true,
-  "reason": "Tactical agent executed unauthorized BUY META 1 share at $607.14 at 3:18 PM ET on 2026-05-21, violating explicit NO META directive in todo.md and the 24-hour cooldown (META was sold May 20 at 4:33 PM ET). Position was liquidated at 3:37 PM ET as cleanup. Symbol bans active for AVGO and META.",
-  "allowed": ["SELL_ANY"],
+  "active": false,
+  "reason": "Hourly strategist lifted lock at 2026-05-22 9:35 AM ET. Thursday unauthorized META buy was fully cleaned up (liquidated same day). No new breaches overnight or this morning. Defense-in-depth code guards (bannedSymbols + todo.md parser) active. New trading day; authorized deployment into SOXX breakout.",
+  "allowed": [],
   "bannedSymbols": ["AVGO", "META"]
 }

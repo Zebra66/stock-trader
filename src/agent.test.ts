@@ -269,10 +269,25 @@ describe('Alpaca CLI', () => {
     const originalLockText = await lockFile.exists() ? await lockFile.text() : JSON.stringify({ active: false });
     await Bun.write('memory/.trading_lock.json', JSON.stringify({ active: false, bannedSymbols: ['META', 'AVGO'], reason: 'Test ban' }));
 
+    // Temporarily strip META references from todo.md so the bannedSymbols path is tested
+    let restoredTodo = false;
+    let originalTodo = '';
+    try {
+      originalTodo = await Bun.file('./memory/todo.md').text();
+      if (originalTodo.toUpperCase().includes('META')) {
+        const cleaned = originalTodo.replace(/META/g, 'TESTMETA');
+        await Bun.write('./memory/todo.md', cleaned);
+        restoredTodo = true;
+      }
+    } catch { /* todo.md missing — nothing to do */ }
+
     const result = await alpacaTools.submitOrder('META', 1, 'buy');
     expect(result).toContain('currently banned');
 
     await Bun.write('memory/.trading_lock.json', originalLockText);
+    if (restoredTodo) {
+      await Bun.write('./memory/todo.md', originalTodo);
+    }
   });
 
   test('submit-order allows sell for banned symbol', async () => {
