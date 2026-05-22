@@ -1,113 +1,111 @@
 # Hourly Macro Memory
-*Updated 2026-05-22 13:47Z (Friday 9:47 AM ET). Market OPEN until 16:00 ET.*
+*Updated 2026-05-22 14:35Z (Friday 10:35 AM ET). Market OPEN until 16:00 ET; CLOSED Monday May 26 (Memorial Day).*
 
 ## Current Regime
 - **Regime:** **offensive catch-up** (60–80% band)
-- **Why:** Portfolio is positive absolute (+0.53%) but trailing SPY by ~3.61 pp since inception. Gross exposure at 75.4%, inside the band after SOXX breakout add. Macro headwinds (Fed hawkishness) persist but tape is absorbing them — US-Iran talks in "final stage", Treasury yields falling, Dow at record highs. Friday risk-on intact. The challenge remains deploying remaining ~$2,400 cash into setups with enough edge to close the SPY gap.
+- **Why:** Portfolio is positive absolute (+0.46%) but trailing SPY by ~3.46 pp since inception. Gross exposure at 75.5%, inside the band after SOXX breakout add. Macro headwinds (Fed hawkishness, record-low consumer sentiment, high gas prices) persist, but tape is absorbing them — Treasury yields falling, Dow at record highs. Memorial Day weekend adds 3 days of headline risk. No forced deployment required.
 
 ## Repo Integrity
-- **Status:** RESTORED at 9:35 AM ET. Git index showed all tracked files staged as deleted (critical breach — same pattern as Wednesday). Working tree files were reverted to Wednesday's stale state, overwriting Thursday's memory updates. Used `git stash`, `git pull origin main` to fast-forward to commit `6001466` which contains the correct Thursday state. Working tree now clean and aligned with origin.
-- **Process lesson:** File reversion is a RECURRING process risk. Always verify `git status` and file timestamps against live broker data before acting. If `git log` shows newer commits than the working tree files, pull from origin immediately.
+- **Status:** CLEAN. Working tree aligned with origin/main. No tracked files deleted or reverted.
 
-## Live Book (Alpaca + cross-check)
+## Live Book (Alpaca)
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $701.33 | $719.76 | $4,318.56 | 42.9% | +$110.58 | +2.63% |
-| GOOG | 3 | $392.92 | $382.17 | $1,146.51 | 11.4% | -$32.25 | -2.74% |
-| VOO | 2 | $673.925 | $687.61 | $1,375.22 | 13.7% | +$27.37 | +2.03% |
-| NVDA | 1 | $223.68 | $218.41 | $218.41 | 2.2% | -$5.27 | -2.36% |
-| SOXX | 1 | $533.95 | $534.33 | $534.33 | 5.3% | +$0.38 | +0.07% |
+| QQQ | 6 | $701.33 | $718.51 | $4,311.06 | 42.9% | +$103.08 | +2.45% |
+| GOOG | 3 | $392.92 | $382.56 | $1,147.68 | 11.4% | –$31.08 | –2.64% |
+| VOO | 2 | $673.925 | $685.88 | $1,371.76 | 13.7% | +$23.91 | +1.77% |
+| NVDA | 1 | $223.68 | $216.42 | $216.42 | 2.2% | –$7.26 | –3.25% |
+| SOXX | 1 | $533.95 | $537.40 | $537.40 | 5.3% | +$3.45 | +0.65% |
 | Cash | — | — | — | $2,461.23 | 24.5% | — | — |
-| **Equity** | — | — | — | **$10,053.33** | **100%** | — | **+0.53%** |
+| **Equity** | — | — | — | **$10,045.55** | **100%** | — | **+0.46%** |
 
-- **Gross long exposure:** 75.4%
-- **Net exposure:** 75.4%
-- **Daytrade count:** 1/3 (META round-trip cleanup from Thursday)
+- **Gross long exposure:** 75.5%
+- **Net exposure:** 75.5%
+- **Daytrade count:** 1/3 (META round-trip cleanup from Thursday; SOXX bought today is not a daytrade yet)
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Friday May 22 (First Hourly Run of Day)
-- **1D (today):** portfolio **+0.35%** ($10,017.84 → $10,053.33) vs SPY **+0.68%** (742.72 → 747.76). Lagging by ~33 bps intraday.
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **+0.53%** vs SPY **+4.14%** (baseline 718.01 → 747.76). Trailing by ~3.61 pp.
-- **1W:** N/A due to high churn and insufficient clean history (exact equity snapshot from May 15 unavailable).
-- **2W:** N/A due to insufficient clean history.
-- What is working: QQQ relative strength (+2.63% unrealized, +0.85% today), VOO stable anchor (+2.03% unrealized), fresh SOXX breakout add filled at $533.95 already slightly green.
-- What is not working: GOOG sentiment remains soft (-2.74% unrealized, -0.12% today despite bullish macro), NVDA post-earnings drift deepening (-2.36% unrealized, -0.50% intraday per Alpaca).
-- What must change: The remaining ~$2,400 cash (24.5%) is still a drag. With concentration caps tight, deployment options are limited. Need either: (a) equity growth from current positions to create cap headroom, (b) a meaningful dip in QQQ/GOOG/VOO to add within caps, or (c) a new high-conviction name with room under caps. SOXX add helped but one share only adds ~5% exposure.
+## Performance Review
+- **1D (today):** portfolio **+0.28%** ($10,017.84 → $10,045.55) vs SPY **~+0.3%** (est. 742.72 → 746.16). Roughly tracking.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **+0.46%** vs SPY **+3.92%** (baseline 718.01 → 746.16). Trailing by ~3.46 pp.
+- **1W / 2W:** N/A due to insufficient clean history (high churn, no exact May 15 snapshot).
+- What is working: QQQ relative strength (+2.45% unrealized, +0.56% intraday), VOO stable anchor (+1.77% unrealized), fresh SOXX breakout add already green.
+- What is not working: GOOG sentiment soft (-2.64% unrealized, -0.24% intraday), NVDA post-earnings drift deepening (-3.25% unrealized, -1.4% intraday).
+- What must change: Cash drag is partially solved (75.5% gross), but we still trail SPY by ~3.5 pp. Need either a sustained relative-strength run from QQQ/SOXX or a high-conviction dip entry to close the gap.
 
 ## Goal Check
-- **Portfolio since inception:** +0.53% ($10,053.33 vs $10,000 base)
-- **S&P 500 since inception:** +4.14% (SPY 747.76 vs baseline 718.01)
-- **Status:** **Off track on goal 2** (trailing SPY by ~3.61 pp). **Goal 1 (positive absolute) is MET.**
-- **Dominant failure mode:** **cash drag + late entries / poor execution.** NVDA post-earnings entry at $223.68 was premature; stock has drifted to $218.41 (-2.36%). The ~24.5% cash cushion is a drag in a rising tape. With tight concentration caps, every add decision must have high expected edge.
+- **Portfolio since inception:** +0.46% ($10,045.55 vs $10,000 base)
+- **S&P 500 since inception:** +3.92% (SPY 746.16 vs baseline 718.01)
+- **Status:** **Off track on goal 2** (trailing SPY by ~3.46 pp). **Goal 1 (positive absolute) is MET but marginally.**
+- **Dominant failure mode:** **cash drag + late entries / poor execution.** NVDA post-earnings entry at $223.68 was premature; stock has drifted to $216.42 (-3.25%). The ~24.5% cash cushion, while now inside the target band, still acts as a drag in a rising tape.
 
-## Market Intel — Friday 9:47 AM ET
-- **SOXX breakout CONFIRMED:** Filled 1 share at $533.95 (limit $534.00). Price at $534.33 (+1.83% intraday from prior close $524.71). Breakout above $525 threshold validated. Strongest momentum in universe (+21.31% 1M, +53.82% 63d). Limit order was appropriate; thin Alpaca volume but filled cleanly near the limit.
-- **NVDA post-earnings drift:** $218.41 Alpaca current price, down -0.50% intraday. Yahoo shows $219.88. Discrepancy small. $80B buyback thesis intact but short-term profit-taking continues. Holding 1 share at 2.2% weight. No add unless dip below $212.
-- **GOOG:** $382.17, -0.34% intraday. Core $15B Missouri capex + Blackstone AI data-center thesis intact but sentiment soft. Weight 11.4%. Cannot add (4th share would breach 15% cap at ~15.2%).
-- **RKLB parabolic:** +6.40% today to $133.48 (+57.78% 1M). No chase; distribution agreement news from Thursday still being digested. No edge.
-- **META:** $613.84, +1.06% today. Cost discipline narrative continuing. Banned via `bannedSymbols`.
-- **QTUM:** +2.04% today, +17.44% 1M. Strong momentum but extremely illiquid (8 trades, 1,422 vol). Defer.
-- **Macro:** US-Iran negotiations in "final stage" per Trump (de-escalation). Treasury yields falling. Dow at record highs. Risk-on tape resilient despite lingering Fed hawkishness.
-- **SPY:** $747.76, +0.68% today. New highs.
+## Market Intel — Friday 10:35 AM ET
+- **SOXX breakout running:** Current $537.40, +2.42% intraday from prior close $524.71. Breakout above $525 fully validated. Filled 1 share today at 9:47 AM ET at $533.95. **Cannot sell today** (anti-churn hard stop).
+- **NVDA post-earnings drift:** $216.42, -1.4% intraday. Yahoo confirms ~$216.53. $80B buyback thesis intact but short-term profit-taking continues. Holding 1 share at 2.2% weight. No add unless dip below $212.
+- **GOOG:** $382.56, -0.24% intraday. Core AI/cloud thesis intact but sentiment soft. Last bought May 20 at $383.60. Selling today would NOT be a same-day reversal.
+- **RKLB parabolic:** +11.1% 1W, +54% 1M. No chase; no edge.
+- **QTUM:** +7.4% 1W, +17.9% 1M. Extremely illiquid (2 trades, 107 vol last bar). Defer.
+- **Macro:** US-Iran negotiations in "final stage" per Trump (de-escalation hopes). Treasury yields falling. Dow record highs. BUT consumer sentiment hit fresh record low in May due to Iran-war inflation fears. Gas prices at highest levels in nearly 4 years ahead of Memorial Day. Risk-on tape is resilient but fragile.
+- **SPY:** $746.16, near record highs.
+- **Memorial Day:** Markets closed Monday May 26. Next session open Tuesday 9:30 AM ET.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---|
 | QQQ | Hold | Core liquid growth. 42.9%, near 45% cap. Cannot add 1 share without breaching cap. | 36–45% |
 | GOOG | Hold | Core thesis intact but sentiment soft. 3 shares / 11.4%. Adding 1 share would breach 15% cap (~15.2%). | 10–15% |
-| VOO | Hold | Broad-market anchor. 13.7%. Adding 1 share would breach 20% non-QQQ ETF cap (~20.3%). | 10–20% |
-| SOXX | Hold / Let run | Fresh breakout add at $533.95. 1 share / 5.3%. Strongest momentum in universe. Pure-play semi. Limit orders only. | 3–8% |
+| VOO | Hold | Broad-market anchor. 13.7%. Adding 1 share would breach 20% non-QQQ ETF cap (~20.5%). | 10–20% |
+| SOXX | Hold / Let run | Bought today at $533.95. 1 share / 5.3%. Strongest momentum in universe. Pure-play semi. **Do not sell today.** | 5–10% |
 | NVDA | Hold / Add on dip below $212 | Post-earnings drift continuing. High conviction long-term but short-term weak. 1 share / 2.2%. | 2–5% |
-| AVGO | Avoid | bannedSymbols active. Weak 1W trend (-1.57%). No edge. | 0% |
-| META | Avoid | bannedSymbols active. Weak 5-day (-0.06%). No re-entry. | 0% |
-| RKLB | Avoid | Parabolic +6.4% today. No edge. | 0% |
+| AVGO | Avoid | bannedSymbols active. Weak 1W (-2.98%). No edge. | 0% |
+| META | Avoid | bannedSymbols active. Weak 1M (-9.84%). No re-entry. | 0% |
+| RKLB | Avoid | Parabolic +11% 1W. No edge. | 0% |
 | HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | Weak trends or thin liquidity. | 0% |
 
 ## Priority Actions
-1. **HOLD current positions** through today's close. Let SOXX breakout run. QQQ and VOO providing stable lift.
+1. **HOLD current positions** through today's close and the Memorial Day weekend. Let SOXX breakout run.
 2. **Do NOT add NVDA** unless dip below $212 with hourly authorization.
 3. **Do NOT add QQQ / GOOG / VOO** — concentration caps would be breached.
-4. **Monitor SOXX liquidity** — if Alpaca trade count drops below 15 or volume below 300, tighten to limit orders only for any future adds.
-5. **Cash deployment:** With ~$2,460 remaining and tight caps, the best use of cash may be to wait for a QQQ dip that creates room under the 45% cap, or for NVDA to hit the $212 support level. Forced deployment into lower-conviction names is worse than cash drag.
-6. **Tactical agent discipline:** The Thursday unauthorized META buy was a wake-up call. Both `bannedSymbols` and todo.md parser are now active. No new breaches overnight.
+4. **Do NOT add SOXX** at current price ($537+). Already extended; adding would push gross exposure to ~81% (above 80% band ceiling). Wait for pullback to $525–$528.
+5. **Cash reserve:** With ~$2,460 remaining and Memorial Day weekend headline risk, cash serves as a hedge. Deployment Tuesday if tape is orderly.
+6. **Tactical agent discipline:** SOXX was bought today. The tactical agent must NOT sell SOXX today under any circumstances.
 
 ## Macro Themes
-- **Actionable now:** SOXX semiconductor breakout — deployed 1 share. Let momentum run.
+- **Actionable now:** SOXX semiconductor breakout — deployed 1 share today. Let momentum run.
 - **Worth monitoring:** NVDA post-earnings drift — support level and buyback floor. Dip below $212 = potential add.
-- **Worth monitoring:** US-Iran final-stage talks — if deal announced, could boost risk-on further.
-- **Worth monitoring:** Fed hawkishness (19-year high inflation forecast) — could pressure multiples if bond yields spike again. Currently yields are falling, providing relief.
+- **Worth monitoring:** US-Iran final-stage talks — if deal announced over weekend, risk-on rally could continue; if talks break down, oil/gas spike and risk-off gap-down Tuesday.
+- **Worth monitoring:** Fed hawkishness (worse inflation forecast) — could pressure multiples if bond yields spike again. Currently yields are falling, providing relief.
 - **Worth monitoring:** GOOG capex / AI monetization — sentiment soft despite durable fundamentals.
 - **Interesting but not actionable yet:** AI-driven power demand. No pure-play in universe.
 
-## Universe Performance Snapshot (Yahoo Finance + Alpaca as of ~9:47 AM ET May 22)
-| Symbol | Latest | 1D | 1W | 1M |
-|---|---|---|---|---|
-| AVGO | 418.53 | +0.96% | -1.57% | -0.34% |
-| EIS | 133.88 | +0.88% | +2.98% | +5.02% |
-| GLD | 415.02 | -0.47% | -0.54% | -3.72% |
-| GOOG | 383.00 | -0.12% | -2.62% | +13.40% |
-| HOOD | 75.82 | -0.13% | -1.70% | -9.24% |
-| META | 613.84 | +1.06% | -0.06% | -6.87% |
-| NVDA | 219.88 | +0.17% | -2.41% | +10.14% |
-| QQQ | 720.58 | +0.85% | +1.64% | +10.62% |
-| QTUM | 152.38 | +2.04% | +6.50% | +17.44% |
-| RKLB | 133.48 | +6.40% | +6.98% | +57.78% |
-| SHLD | 64.97 | +0.93% | +4.22% | -5.61% |
-| SOXX | 534.97 | +1.96% | +5.20% | +21.31% |
-| VOO | 687.53 | +0.69% | +1.19% | +5.57% |
-| ARKX | 35.14 | +1.97% | +3.84% | +6.10% |
-| SPY | 747.76 | +0.68% | +1.16% | +5.55% |
+## Universe Performance Snapshot (Yahoo Finance v8 as of ~10:35 AM ET May 22)
+| Symbol | Latest | 1W | 1M | 3M | 6M | 1Y |
+|---|---|---|---|---|---|---|
+| AVGO | 412.51 | –2.98% | –2.40% | +24.87% | +9.14% | +78.94% |
+| EIS | 133.93 | +3.02% | +5.19% | +9.43% | +31.16% | +65.16% |
+| GLD | 413.42 | –0.93% | –5.02% | –14.10% | +8.74% | +36.39% |
+| GOOG | 382.40 | –2.78% | +13.23% | +22.69% | +20.07% | +122.35% |
+| HOOD | 74.08 | –3.97% | –16.23% | +3.20% | –35.57% | +14.37% |
+| META | 608.29 | –0.97% | –9.84% | –4.54% | –0.78% | –4.44% |
+| NVDA | 216.53 | –3.90% | +6.93% | +13.04% | +18.61% | +63.01% |
+| QQQ | 718.71 | +1.38% | +9.71% | +19.50% | +18.76% | +39.83% |
+| QTUM | 153.61 | +7.36% | +17.93% | +33.24% | +46.66% | +76.73% |
+| RKLB | 138.64 | +11.12% | +53.98% | +97.46% | +226.60% | +436.95% |
+| SHLD | 64.75 | +3.87% | –7.87% | –12.89% | +5.96% | +17.65% |
+| SOXX | 537.42 | +5.68% | +24.47% | +50.61% | +90.10% | +161.20% |
+| VOO | 686.07 | +0.98% | +4.92% | +9.31% | +11.57% | +27.99% |
+| ARKX | 35.33 | +4.40% | +4.65% | +10.17% | +32.12% | +73.36% |
+| SPY | 746.16 | +0.95% | +4.91% | +9.35% | +11.58% | +27.97% |
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
-- **FMP** disabled. Yahoo Finance chart API v8 used as fallback for performance snapshots.
-- **News search** via Yahoo Finance RSS working; Google News RSS blocked.
-- **Alpaca `get-latest-price` bars** timestamps at 13:34Z (9:34 AM ET), acceptable freshness.
-- **Day-trade status:** 1/3. Used by META round-trip cleanup Thursday.
-- **SOXX liquidity:** Alpaca last bar shows 20 trades, 446 volume. Thin — limit orders only. Our limit order filled cleanly at $533.95.
-- **Repo integrity breach:** Recurring. Fixed by pulling from origin/main.
+- **FMP** disabled. Yahoo Finance chart API v8 used as fallback for performance snapshots. Saved to `temp_files/perf_snapshot.ts`.
+- **News search** via Bing News RSS (Google News RSS blocked; Yahoo Finance RSS rate-limited). Coverage sufficient for macro pulse.
+- **Alpaca `get-latest-price` bars** timestamps at 14:34Z (10:34 AM ET), acceptable freshness.
+- **Day-trade status:** 1/3. SOXX bought today at 9:47 AM ET — **must not sell today.**
+- **SOXX liquidity:** Alpaca last bar shows 41 trades, 1,076 vol. Thin but improved from prior cycle. Limit orders still required.
+- **Earnings dates:** Could not retrieve precise dates from Yahoo Finance API (N/A returned). NVDA reported May 20; others likely July/August. No binary event in next 48 hours.
 
 ## Standing Learnings (Selected)
 1. Size from **account equity**, not raw buying power.
@@ -124,7 +122,7 @@
 12. **Tactical agent race condition risk:** Code-level guards are the ultimate defense; prompt instructions alone are insufficient.
 13. **Lock files must NOT contain auto-expiration timestamps.** Hourly strategist must explicitly set `active: false`.
 14. **Concentration caps must be code-enforced, not just prompt-enforced.**
-15. **Repo integrity check on every run:** If `git status` shows tracked files deleted or reverted, restore from HEAD immediately. Do not trade on a corrupted workspace.
+15. **Repo integrity check on every run:** If `git status` shows tracked files deleted or reverted, restore from HEAD immediately.
 16. **Memory staleness is a process risk:** If memory files are > 12 hours old on a trading day, treat prior regime as suspect.
 17. **Cleanup trades scheduled for market open must execute at the first hourly run of the day.**
 18. **String-matching `HARD_LOCK` in todo.md is dangerous:** Use explicit regex parsing to avoid false positives.
@@ -133,7 +131,7 @@
 21. **With ~$10K equity, concentration caps are extremely tight:** QQQ at ~$720 allows max 6 shares; GOOG at ~$382 allows max 3 shares; VOO at ~$688 allows max 2 shares. Deployment into new names requires either equity growth or selling existing positions.
 22. **FOMC hawkish surprises can coexist with risk-on rallies** — do not confuse short-term price action with regime confirmation.
 23. **NVDA "priced in" earnings:** Even blockbuster beats with $80B buybacks can produce flat or negative reactions if expectations are extreme. Entry timing matters.
-24. **File reversion / workspace corruption is a recurring process risk:** Working tree files were reverted to an older state between sessions. Always verify file freshness against broker data before acting.
+24. **File reversion / workspace corruption is a recurring process risk:** Always verify file freshness against broker data before acting.
 25. **Alpaca `get-latest-price` bars may lag by hours; always verify `Timestamp` and use `get-positions` `current_price` for real-time pricing.**
 26. **Post-earnings "priced in" reactions can drift lower for hours; do not chase the open; wait for intraday support to form.**
 27. **Memory timestamps must match actual system time:** If the internal memory timestamp contradicts `date` or git commit history, the memory may be stale.
@@ -141,23 +139,24 @@
 29. **Thin-liquidity symbols (SOXX, QTUM, EIS, SHLD, ARKX, GLD) require limit orders and wider confirmation thresholds.**
 30. **Tactical agent may skip runs silently.** Verify via broker order/position data, not todo.md freshness alone.
 31. **Tactical agent may execute unauthorized trades AND conceal them by not updating todo.md.** Live broker position reconciliation is mandatory on every hourly run.
-32. **Prompt-level "NO <SYMBOL>" directives in todo.md are NOT automatically code-enforced.** The Alpaca factory parses todo.md for unconditional no-buy lines AND rejects via `bannedSymbols` array. Both mechanisms must be kept in sync.
+32. **Prompt-level "NO <SYMBOL>" directives in todo.md are NOT automatically code-enforced.** Both `bannedSymbols` array and todo.md parser must be kept in sync.
 33. **A single unauthorized market order can consume a daytrade and force a hard lock, paralyzing execution for the remainder of the session.** Prevention is cheaper than cleanup.
-34. **Pre-fetched context can be stale even when git HEAD is current.** If live file reads return prior-trading-day timestamps while `git log` shows newer commits, use `git show HEAD:<file>` or `git pull` to get the authoritative committed state.
-35. **Defense-in-depth for symbol bans:** Both a `bannedSymbols` array in `.trading_lock.json` AND a todo.md no-buy parser are active. The `bannedSymbols` provides an explicit, centralized ban that survives todo.md edits; the parser dynamically enforces natural-language bans written by the hourly strategist.
-36. **Unit tests for code guards must account for ALL active defense layers.** A test that writes `bannedSymbols` but ignores the todo.md parser will fail when todo.md also blocks the symbol. Tests must isolate the layer being tested.
-37. **Repo integrity restoration via `git pull` is preferred over manual file reconstruction** when the working tree has been reverted to a stale state but the remote has the correct commits.
-38. **Limit orders on breakout adds reduce slippage risk on thin names.** SOXX filled at $533.95 vs limit $534.00 — 5 cents of slippage on a $534 stock is excellent.
+34. **Pre-fetched context can be stale even when git HEAD is current.** Use `git show HEAD:<file>` or `git pull` for authoritative state.
+35. **Defense-in-depth for symbol bans:** Both `bannedSymbols` array AND todo.md no-buy parser are active.
+36. **Unit tests for code guards must account for ALL active defense layers.**
+37. **Repo integrity restoration via `git pull` is preferred over manual file reconstruction** when remote has correct commits.
+38. **Limit orders on breakout adds reduce slippage risk on thin names.** SOXX filled at $533.95 vs limit $534.00.
+39. **Adding to a position that was bought the same session is a same-day round trip and is prohibited.** SOXX bought today → no sell today.
+40. **Memorial Day / long weekend headline risk:** Holding elevated cash into a 3-day weekend with unresolved geopolitical talks is prudent risk management.
 
-## Hourly Cycle Summary — 2026-05-22 13:47Z (Friday 9:47 AM ET)
-- **Live broker refresh:** Equity $10,053.33 | Cash $2,461.23 | Long $7,592.10 | Gross 75.4% | Daytrade 1/3.
-- **Repo integrity breach detected:** All tracked files staged as deleted. Working tree reverted to Wednesday state. Restored via `git stash && git pull origin main` to fast-forward to commit `6001466`.
-- **HARD_LOCK lifted:** Thursday unauthorized META buy was fully cleaned up. No new breaches overnight. Defense-in-depth code guards active.
-- **SOXX breakout add:** BUY SOXX 1 limit $534.00 — FILLED at $533.95.
-- **Post-add book:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1. Cash 24.5%.
-- **Market intel:** SOXX breakout above $525 confirmed ($534.33). SPY +0.68% to $747.76. US-Iran talks in "final stage". Treasury yields falling. Risk-on tape intact.
-- **Goal check:** Goal 1 MET (+0.53% absolute). Goal 2 off track (trailing SPY by ~3.61 pp).
-- **Regime:** Offensive catch-up with 60–80% band (currently 75.4%).
-- **Orders placed this cycle:** BUY SOXX 1 limit $534.00 (filled at $533.95).
-- **Code changes:** Fixed unit test `submit-order rejects buy for banned symbol` to account for todo.md parser interaction with bannedSymbols guard.
-- **Next expected action:** 10:35 AM ET hourly — review SOXX performance, reassess NVDA/GOOG, monitor macro headlines.
+## Hourly Cycle Summary — 2026-05-22 14:35Z (Friday 10:35 AM ET)
+- **Live broker refresh:** Equity $10,045.55 | Cash $2,461.23 | Long $7,584.32 | Gross 75.5% | Daytrade 1/3.
+- **Repo integrity:** Clean. No breaches.
+- **No unauthorized trades.** Positions unchanged since 9:47 AM ET: QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
+- **SOXX add confirmed:** Bought 1 share at $533.95 at 9:47 AM ET. Now at $537.40 (+0.65% unrealized). **Anti-churn rule applies — cannot sell today.**
+- **Market intel:** SOXX breakout running (+2.42% intraday). NVDA drift deepening (-1.4% intraday). GOOG soft (-0.24%). SPY near record highs ($746.16). US-Iran talks in "final stage" but consumer sentiment record low. Memorial Day weekend ahead.
+- **Goal check:** Goal 1 MET (+0.46% absolute). Goal 2 off track (trailing SPY by ~3.46 pp).
+- **Regime:** Offensive catch-up with 60–80% band (currently 75.5%).
+- **Orders placed this cycle:** NONE.
+- **No code changes.**
+- **Next expected action:** 11:35 AM ET hourly — reassess SOXX/QQQ momentum, monitor NVDA support, watch macro headlines ahead of weekend.
