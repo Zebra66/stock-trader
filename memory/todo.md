@@ -1,33 +1,34 @@
-# Tactical Todo — Updated 2026-05-22 18:35Z (Friday 2:35 PM ET)
+# Tactical Todo — Updated 2026-05-22 19:37Z (Friday 3:37 PM ET)
 *HARD_LOCK LIFTED. Fresh Friday afternoon directives active. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–80% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1
-- **Account equity / cash / buying power:** $10,050.52 / $2,461.23 / ~$12,511.75
-- **Gross long exposure:** ~75.4% | **Net exposure:** ~75.4% | **Cash:** ~24.5%
+- **Account equity / cash / buying power:** $10,032.48 / $2,461.23 / ~$12,493.71
+- **Gross long exposure:** ~75.5% | **Net exposure:** ~75.5% | **Cash:** ~24.5%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Memorial Day:** Markets closed Monday May 26. Next open Tuesday 9:30 AM ET.
+- **Memorial Day:** Markets closed Monday May 26. Next open Tuesday 9:30 AM ET. Next hourly update Tuesday 9:35 AM ET.
 
-## Position Instructions — Valid for :40 and :50 Tactical Runs (2:40 PM, 2:50 PM ET)
-- **HOLD SOXX 1 — DO NOT SELL.** Bought today at 9:47 AM ET at $533.95 (limit $534.00 filled). Weight ~5.4%, within 20% non-QQQ ETF cap. Breakout above $525 confirmed. Now at $539.22 (+2.70% intraday). Let momentum run. **Selling today = same-day round trip = VIOLATION.**
+## Position Instructions — Valid for :40 and :50 Tactical Runs Today (3:40 PM, 3:50 PM ET ONLY)
+- **HOLD SOXX 1 — DO NOT SELL.** Bought today at 9:47 AM ET at $533.95 (limit $534.00 filled). Weight ~5.4%, within 20% non-QQQ ETF cap. Breakout above $525 confirmed. Now at $537.31 (+2.40% intraday). Let momentum run. **Selling today = same-day round trip = VIOLATION.**
 - **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.0%, within 45% cap. Adding 1 share would breach 45% cap.
-- **HOLD GOOG 3 — DO NOT SELL OR ADD.** Weight ~11.4%, within 15% cap. DO NOT ADD — adding 1 share would breach 15% cap (~15.2%).
+- **HOLD GOOG 3 — DO NOT SELL OR ADD.** Weight ~11.3%, within 15% cap. DO NOT ADD — adding 1 share would breach 15% cap (~15.1%).
 - **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.7%, within 20% non-QQQ ETF cap. DO NOT ADD — adding 1 share would breach 20% cap (~20.6%).
-- **HOLD NVDA 1 — DO NOT SELL OR ADD.** Weight ~2.1%. Post-earnings drift persisting; now $215.63 (-1.71% intraday, worse than -1.03% at 1:35 PM). DO NOT ADD unless dip below $210 with hourly authorization. **DO NOT SELL today** — position is small (2.1%) and realizing the loss ahead of a 3-day weekend is not worth the friction/risk reduction.
+- **HOLD NVDA 1 — DO NOT SELL OR ADD.** Weight ~2.1%. Post-earnings drift persisting; now $215.63 (-1.77% intraday). DO NOT ADD unless dip below $210 with hourly authorization. **DO NOT SELL today** — position is small (2.1%) and realizing the loss ahead of a 3-day weekend is not worth the friction/risk reduction.
 - **NO AVGO / NO META — DO NOT BUY.** bannedSymbols active in `.trading_lock.json`. Weak trends; no re-entry planned.
 - **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
 
-## Hard Rules / No-Trade Conditions (Valid until next hourly update at 15:35 PM ET)
+## Hard Rules / No-Trade Conditions (Valid until next hourly update at 9:35 AM ET Tuesday)
 - **NO discretionary buys** without explicit hourly authorization.
 - **No same-day reversals.** SOXX was bought today; DO NOT SELL SOXX today.
 - **No new short sales** under any circumstances.
 - **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry (anti-churn cooldown + weak trends + bannedSymbols).
 - **Do NOT add QQQ / GOOG / VOO** — concentration caps would be breached.
 - **Do NOT chase NVDA or SOXX** with market orders. SOXX requires limit orders if any add is ever authorized.
-- **Do NOT place any orders after 15:55 ET** today — ensure all orders complete before close and avoid any settlement issues over the long weekend.
+- **Do NOT place any orders after 15:55 ET (3:55 PM ET) today** — ensure all orders complete before close and avoid any settlement issues over the long weekend.
+- **After market close today, NO ORDERS until next hourly update Tuesday 9:35 AM ET.** Tactical runs at 9:40 AM and 9:50 AM ET Tuesday must wait for fresh hourly directives before executing any orders.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless the event is an exchange halt or system outage, in which case hold). The exception: if a compliance breach is detected (unauthorized position), exit immediately.
 
 ## Concentration Cap Guard (Code-Enforced)
@@ -44,28 +45,28 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **SOXX:** Thin but improved (10 trades, 356 vol last bar at 18:35Z). Limit orders only.
-- **EIS:** Very low trade count / volume (2 trades, 200 vol last bar).
-- **SHLD:** Very low trade count / volume (1 trade, 100 vol last bar).
-- **QTUM:** Very low trade count / volume (5 trades, 206 vol last bar).
-- **ARKX:** Low trade count / volume (3 trades, 1314 vol last bar — volume concentrated, low trade count).
-- **GLD:** Very low trade count / volume (4 trades, 145 vol last bar).
+- **SOXX:** Thin (8 trades, 217 vol last bar at 19:34Z). Limit orders only.
+- **EIS:** Very low trade count / volume (2 trades, 200 vol last bar at 14:49Z — STALE).
+- **SHLD:** Very low trade count / volume (2 trades, 200 vol last bar at 19:34Z).
+- **QTUM:** Very low trade count / volume (3 trades, 200 vol last bar at 19:33Z).
+- **ARKX:** Low trade count / volume (3 trades, 123 vol last bar at 19:33Z).
+- **GLD:** Very low trade count / volume (2 trades, 120 vol last bar at 19:34Z).
 - **VOO:** Broad ETF, acceptable for limit orders at known prices.
 
-## This Cycle — 2026-05-22 18:35Z (Friday 2:35 PM ET)
-- **Market status:** OPEN until 16:00 ET. CLOSED Monday.
-- **Live broker refresh:** Equity $10,050.52 | Cash $2,461.23 | Long $7,589.29 | Gross 75.4% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,317.48 @ 719.58), GOOG 3 ($1,142.82 @ 380.94), VOO 2 ($1,374.20 @ 687.10), NVDA 1 ($215.63 @ 215.63), SOXX 1 ($539.22 @ 539.22).
+## This Cycle — 2026-05-22 19:37Z (Friday 3:37 PM ET)
+- **Market status:** OPEN until 16:00 ET. CLOSED Monday. Next session open Tuesday 9:30 AM ET.
+- **Live broker refresh:** Equity $10,032.48 | Cash $2,461.23 | Long $7,571.25 | Gross 75.5% | Daytrade 1/3.
+- **Holdings confirmed:** QQQ 6 ($4,308.48 @ 718.08), GOOG 3 ($1,138.05 @ 379.35), VOO 2 ($1,371.78 @ 685.89), NVDA 1 ($215.63 @ 215.63), SOXX 1 ($537.31 @ 537.31).
 - **No open orders.**
 - **Event detector:** NONE — no broad market or position-level events.
-- **Fresh intel:** Market flat last hour. SOXX breakout holding ($539.22, +2.70% intraday). NVDA drifting lower ($215.63, -1.71% intraday). SPY near highs ($747.12, +0.73% today). News access blocked in workspace; no new headlines since 1:35 PM.
-- **Goal check:** Portfolio +0.51% since inception vs SPY +4.05%. Trailing by ~3.54 pp. Goal 1 MET. Goal 2 off track.
-- **Regime:** Offensive catch-up. Target gross exposure 60–80% (currently 75.4%).
+- **Fresh intel:** Market slightly off highs in the last hour. SOXX breakout holding ($537.31, +2.40% intraday). NVDA drifting lower ($215.63, -1.77% intraday). GOOG weak ($379.35, -1.07% intraday). SPY near highs ($745.93, +0.43% today). S&P 500 on track for 8th straight winning week. Chip stocks hitting fresh records but NVDA isn't the driver (Yahoo Finance headline 3:07 PM ET). Google appeals search-monopoly ruling (known overhang). News access via Yahoo Finance RSS partially restored; other sources remain blocked.
+- **Goal check:** Portfolio +0.32% since inception vs SPY +3.89%. Trailing by ~3.56 pp. Goal 1 MET. Goal 2 off track.
+- **Regime:** Offensive catch-up. Target gross exposure 60–80% (currently 75.5%).
 - **Orders expected this cycle:** NONE.
-- **Next expected action:** 15:35 PM ET hourly — final pre-close assessment, confirm no last-minute drift.
+- **Next expected action:** 3:50 PM ET tactical run — NO ORDERS. Then market close. Next hourly Tuesday 9:35 AM ET.
 
-## Previous Cycle — 2026-05-22 17:35Z (Friday 1:35 PM ET)
+## Previous Cycle — 2026-05-22 18:35Z (Friday 2:35 PM ET)
 - **HOLD_LOCK lifted.** No unauthorized trades.
 - **Holdings:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
 - **No new orders.**
-- **Next expected action:** 14:35 PM ET hourly — reassess late-day price action, monitor for sell-off into weekend.
+- **Next expected action:** 15:35 PM ET hourly — final pre-close assessment.
