@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-05-22 18:35Z (Friday 2:35 PM ET)
-*HARD_LOCK LIFTED. Fresh Friday afternoon directives active. Execute authorized orders only.*
+# Tactical Todo — Updated 2026-05-22 20:09Z (Friday 4:09 PM ET — POST-CLOSE)
+*HARD_LOCK LIFTED. Memorial Day weekend — market closed. No trading until Tuesday 9:30 AM ET.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–80% band)
@@ -11,7 +11,7 @@
 - **Open orders:** NONE
 - **Memorial Day:** Markets closed Monday May 26. Next open Tuesday 9:30 AM ET.
 
-## Position Instructions — Valid for :40 and :50 Tactical Runs (2:40 PM, 2:50 PM ET)
+## Position Instructions — MARKET CLOSED. Valid for Tuesday 9:35 AM ET hourly.
 - **HOLD SOXX 1 — DO NOT SELL.** Bought today at 9:47 AM ET at $533.95 (limit $534.00 filled). Weight ~5.4%, within 20% non-QQQ ETF cap. Breakout above $525 confirmed. Now at $539.22 (+2.70% intraday). Let momentum run. **Selling today = same-day round trip = VIOLATION.**
 - **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.0%, within 45% cap. Adding 1 share would breach 45% cap.
 - **HOLD GOOG 3 — DO NOT SELL OR ADD.** Weight ~11.4%, within 15% cap. DO NOT ADD — adding 1 share would breach 15% cap (~15.2%).
@@ -20,14 +20,14 @@
 - **NO AVGO / NO META — DO NOT BUY.** bannedSymbols active in `.trading_lock.json`. Weak trends; no re-entry planned.
 - **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
 
-## Hard Rules / No-Trade Conditions (Valid until next hourly update at 15:35 PM ET)
+## Hard Rules / No-Trade Conditions (Valid until Tuesday 9:35 AM ET hourly)
 - **NO discretionary buys** without explicit hourly authorization.
-- **No same-day reversals.** SOXX was bought today; DO NOT SELL SOXX today.
+- **No same-day reversals.** SOXX was bought Friday; do not sell SOXX on Tuesday unless hourly note explicitly authorizes.
 - **No new short sales** under any circumstances.
 - **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry (anti-churn cooldown + weak trends + bannedSymbols).
 - **Do NOT add QQQ / GOOG / VOO** — concentration caps would be breached.
 - **Do NOT chase NVDA or SOXX** with market orders. SOXX requires limit orders if any add is ever authorized.
-- **Do NOT place any orders after 15:55 ET** today — ensure all orders complete before close and avoid any settlement issues over the long weekend.
+- **Code fix committed:** `HARD_LOCK` regex now matches bullet-formatted lines in `todo.md` (e.g., `- **HARD_LOCK** — ...`). This closes the bypass that allowed the unauthorized SOXX buy at 9:47 AM ET Friday.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless the event is an exchange halt or system outage, in which case hold). The exception: if a compliance breach is detected (unauthorized position), exit immediately.
 
 ## Concentration Cap Guard (Code-Enforced)

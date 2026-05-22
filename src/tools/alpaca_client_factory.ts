@@ -137,10 +137,10 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
     try {
       const todo = await Bun.file('./memory/todo.md').text();
       const currentSection = todo.slice(0, 3000);
-      const lockLineMatch = currentSection.match(/^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
+      const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
-        const isExplicitlyLifted = /^##?\s*[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
         if (!isExplicitlyLifted) {
           throw new Error(
             `Order blocked: HARD_LOCK is active in memory/todo.md. No orders permitted.`

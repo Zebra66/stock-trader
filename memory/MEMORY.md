@@ -105,6 +105,7 @@
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
+- **Code fix (this 3:35 PM ET cycle):** Fixed `HARD_LOCK` regex in `alpaca_cli.ts` and `alpaca_client_factory.ts` to correctly match bullet-formatted directive lines (e.g., `- **HARD_LOCK** — ...`) in `todo.md`. The prior regex only matched heading lines (`## HARD_LOCK`), which created a bypass path for the unauthorized SOXX buy at 9:47 AM ET. The `isExplicitlyLifted` regex was also loosened to accept `HARD_LOCK LIFTED` without requiring a colon/em-dash separator.
 - **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback for performance snapshots. PriorClose field in meta is unreliable; use time-series closes for returns.
 - **News search** via Yahoo Finance RSS, Bing News, Google News, MarketWatch, WSJ all blocked or stale in workspace. Coverage insufficient for real-time headline pulse. Rely on pre-session intel and price action.
 - **Alpaca `get-latest-price` bars** timestamps at 18:32–18:36Z (2:32–2:36 PM ET), acceptable freshness.
@@ -160,6 +161,17 @@
 45. **Market can rally on "bad news" if it believes the worst is priced in.** Dow charging higher despite Warsh, oil, and Iran risks. Do not fight the tape, but also do not chase highs into a holiday weekend.
 46. **SOXX liquidity can improve dramatically within an hour.** From 2 trades / 98 vol at 12:35 PM to 10 trades / 356 vol at 2:35 PM. Always check current bar before classifying illiquidity.
 47. **News access in workspace is severely limited.** Google News, Bing News, MarketWatch, and WSJ RSS are all blocked or return stale/captcha content. Yahoo Finance RSS returns mostly irrelevant/old headlines. For future runs, consider using a paid news API or Alpaca news stream if available.
+
+## Hourly Cycle Summary — 2026-05-22 20:09Z (Friday 4:09 PM ET — POST-CLOSE)
+- **Live broker refresh:** Equity $10,050.52 | Cash $2,461.23 | Long $7,589.29 | Gross 75.4% | Daytrade 1/3.
+- **Repo integrity:** Clean.
+- **No unauthorized trades.** Positions unchanged since 9:47 AM ET: QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
+- **Market closed at 16:00 ET.** No further trading until Tuesday 9:30 AM ET (Memorial Day Monday).
+- **Goal check:** Goal 1 MET (+0.51% absolute). Goal 2 off track (trailing SPY by ~3.54 pp).
+- **Regime:** Offensive catch-up with 60–80% band (currently 75.4%).
+- **Orders placed this cycle:** NONE.
+- **Code changes:** Fixed `HARD_LOCK` regex in `alpaca_cli.ts` and `alpaca_client_factory.ts` to match bullet-formatted directive lines and loosened `isExplicitlyLifted` separator requirement.
+- **Next expected action:** Tuesday 9:35 AM ET — reassess post-weekend macro, NVDA support, SOXX breakout follow-through.
 
 ## Hourly Cycle Summary — 2026-05-22 18:35Z (Friday 2:35 PM ET)
 - **Live broker refresh:** Equity $10,050.52 | Cash $2,461.23 | Long $7,589.29 | Gross 75.4% | Daytrade 1/3.
