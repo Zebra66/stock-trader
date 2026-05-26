@@ -4,7 +4,6 @@ Run `--help` on any tool to see full usage:
   bun run src/tools/alpaca_cli.ts --help   # account, positions, prices, orders
   bun run src/tools/fmp_cli.ts --help      # analyst estimates, historical performance
   bun run src/tools/system_cli.ts --help   # read-file, write-file
-  bun run src/tools/ledger_cli.ts --help   # append or prepend per-cycle ledger entries
   bun run src/tools/event_detector.ts --help  # detect major market events (tactical only)
 
 Quick reference:
@@ -14,5 +13,6 @@ Quick reference:
   bun run src/tools/alpaca_cli.ts submit-order --symbol <TICKER> --qty <n> --side <buy|sell> [--type limit --limit-price <n>]
   bun run src/tools/fmp_cli.ts get-analyst-estimates --symbol <TICKER>
   bun run src/tools/fmp_cli.ts get-historical-performance --symbol <TICKER>
-  bun run src/tools/ledger_cli.ts prepend --mode <hourly|tactical> --tldr <TEXT> [--detail <TEXT> ...]
   bun run src/tools/event_detector.ts                     # run event detector and read report
+
+**Todo.md parser guard:** The Alpaca CLI and SDK factory parse `memory/todo.md` for lines containing `DO NOT BUY`, `DO NOT RE-BUY`, or `DO NOT ADD` (case-insensitive) and reject BUY orders for symbols on those lines unless the line contains `UNLESS`, `IF`, or `CONDITION`. Use these exact phrases in todo.md when banning a symbol.

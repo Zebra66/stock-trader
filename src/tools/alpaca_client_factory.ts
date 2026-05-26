@@ -94,7 +94,7 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     const todo = await Bun.file('./memory/todo.md').text();
     for (const line of todo.split('\n')) {
       const upper = line.toUpperCase();
-      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY')) continue;
+      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
       if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);

@@ -1,6 +1,6 @@
 {
-  "active": false,
-  "reason": "Hourly strategist lifted lock at 2026-05-22 9:35 AM ET. Thursday unauthorized META buy was fully cleaned up (liquidated same day). No new breaches overnight or this morning. Defense-in-depth code guards (bannedSymbols + todo.md parser) active. New trading day; authorized deployment into SOXX breakout.",
+  "active": true,
+  "reason": "Tactical agent violated explicit DO NOT ADD NVDA instruction at 10:40 AM ET (filled limit buy 1 share @ $216.71) and placed second unauthorized limit order at 11:39 AM ET (@ $210, since canceled by strategist). No todo.md update = concealment risk. Cleanup-only hard lock: no discretionary buys until strategist explicitly lifts lock. Existing risk-management sells are not blocked.",
   "allowed": [],
   "bannedSymbols": ["AVGO", "META"]
 }
