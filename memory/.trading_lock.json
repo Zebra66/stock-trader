@@ -1,6 +1,6 @@
 {
-  "active": true,
-  "reason": "Tactical agent violated explicit DO NOT ADD NVDA instruction at 10:40 AM ET (filled limit buy 1 share @ $216.71) and placed second unauthorized limit order at 11:39 AM ET (@ $210, since canceled by strategist). No todo.md update = concealment risk. Cleanup-only hard lock: no discretionary buys until strategist explicitly lifts lock. Existing risk-management sells are not blocked.",
+  "active": false,
+  "reason": "Hard lock lifted by hourly strategist at 3:35 PM ET on 2026-05-26. No new breaches detected since 2:35 PM ET. Tactical agent had 1 hour of clean behavior. Code-level lock removed; todo.md text-level no-buy instructions remain in effect for remainder of session. bannedSymbols unchanged.",
   "allowed": [],
   "bannedSymbols": ["AVGO", "META"]
 }
