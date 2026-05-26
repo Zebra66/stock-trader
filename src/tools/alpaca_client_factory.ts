@@ -1,4 +1,5 @@
 import Alpaca from '@alpacahq/alpaca-trade-api';
+import { checkConcentrationCap } from './concentration_guard';
 
 export type AlpacaMode = 'paper' | 'live';
 
@@ -249,6 +250,45 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
         }
         throw new Error(
           `Sell of ${params.symbol} blocked — unable to verify long position before sell: ${e instanceof Error ? e.message : String(e)}`
+        );
+      }
+    }
+
+    // ── Concentration cap guard (BUY only) ──────────────────────────────────
+    if (side === 'buy') {
+      try {
+        const account = await client.getAccount();
+        const positions = await client.getPositions();
+        const equity = parseFloat((account as any).equity ?? '0');
+        const pos = positions.find(
+          (p: any) => String(p.symbol ?? '').toUpperCase() === symbol
+        );
+        const currentMkt = pos ? parseFloat((pos as any).market_value ?? '0') : 0;
+        const limitPrice =
+          typeof params.limit_price === 'string'
+            ? parseFloat(params.limit_price)
+            : typeof params.limit_price === 'number'
+            ? params.limit_price
+            : undefined;
+        const bar = await client.getLatestBar(symbol);
+        const latestBarPrice = parseFloat((bar as any).ClosePrice ?? '0') || undefined;
+        const check = checkConcentrationCap({
+          symbol,
+          qty,
+          limitPrice,
+          latestBarPrice,
+          currentMktValue: currentMkt,
+          equity,
+        });
+        if (!check.ok) {
+          throw new Error(check.error);
+        }
+      } catch (e) {
+        if (e instanceof Error && e.message.includes('concentration cap breached')) {
+          throw e;
+        }
+        throw new Error(
+          `Concentration cap check failed: ${e instanceof Error ? e.message : String(e)}`
         );
       }
     }
