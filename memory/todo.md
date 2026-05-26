@@ -1,31 +1,31 @@
-# Tactical Todo — Updated 2026-05-26 13:37Z (Tuesday 9:37 AM ET)
+# Tactical Todo — Updated 2026-05-26 14:45Z (Tuesday 10:45 AM ET)
 *HARD_LOCK LIFTED. Market OPEN. Execute authorized orders only. No chasing gap-ups.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–80% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1
-- **Account equity / cash / buying power:** $10,097.52 / $2,461.23 / ~$12,558.75
-- **Gross long exposure:** 75.63% | **Net exposure:** 75.63% | **Cash:** 24.37%
+- **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 2, SOXX 1
+- **Account equity / cash / buying power:** $10,167.05 / $2,244.52 / ~$11,484.57
+- **Gross long exposure:** 77.92% | **Net exposure:** 77.92% | **Cash:** 22.08%
 - **Daytrade count:** 1/3 (META round-trip from Thursday)
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** 2 limit buys active — SOXX $555, GOOG $372
 
-## Position Instructions — Valid for :40 and :50 Tactical Runs (9:40 AM, 9:50 AM ET)
-- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.05%, near 45% cap. Adding 1 share would breach cap (~50.2%).
-- **HOLD GOOG 3 — DO NOT SELL.** Weight ~11.28%, within 15% cap. **DO NOT BUY at market.** If GOOG pulls back to ≤$375, BUY 1 share limit $375. Rebuild to 4 shares (~14.8% weight, under 15% cap). If GOOG stays above $375, hold.
-- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.66%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.5%).
-- **HOLD NVDA 1 — DO NOT SELL.** Weight ~2.14%. Post-earnings drift stabilizing. **DO NOT BUY above $220.** If NVDA drops to ≤$212, BUY 1 share limit $212 (2 shares total, ~4.2% weight). If NVDA stays above $212, hold.
-- **HOLD SOXX 1 — DO NOT SELL.** Weight ~5.51%. Breakout running hard (+3.60% intraday). **Do not sell today.** **DO NOT BUY at market.** If SOXX pulls back to ≤$545, BUY 1 share limit $545 (2 shares total, ~10.7% weight, under 20% ETF cap). If SOXX stays above $545, hold.
+## Position Instructions — Valid for :50 and subsequent Tactical Runs until next hourly at 11:35 AM ET
+- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.13%, near 45% cap. Adding 1 share would breach cap.
+- **HOLD GOOG 3 — DO NOT SELL.** Weight ~11.30%, within 15% cap. **GOOG limit buy $372 for 1 share is ACTIVE** (placed by hourly strategist). DO NOT place another GOOG buy. If the limit fills, position becomes 4 shares. The newly added share is a same-day buy — DO NOT SELL it today.
+- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.60%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap.
+- **HOLD NVDA 2 — DO NOT SELL TODAY.** Weight ~4.26%. NVDA 1 share was bought TODAY at 10:40 AM ET ($216.71). Selling it today would be a same-day reversal and is PROHIBITED. The other share was bought earlier. **DO NOT BUY additional NVDA today.**
+- **HOLD SOXX 1 — DO NOT SELL TODAY unless explicitly authorized by hourly note.** Weight ~5.62%. SOXX limit buy $555 for 1 share is ACTIVE (placed by hourly strategist). DO NOT place another SOXX buy. If the limit fills, position becomes 2 shares. The newly added share is a same-day buy — DO NOT SELL it today.
 - **NO AVGO / NO META — DO NOT BUY.** bannedSymbols active in `.trading_lock.json`. Weak trends; no re-entry planned.
 - **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
 
-## Hard Rules / No-Trade Conditions (Valid until next hourly update at 10:35 AM ET)
+## Hard Rules / No-Trade Conditions (Valid until next hourly update at 11:35 AM ET)
 - **NO discretionary buys** without explicit hourly authorization.
-- **NO market orders for new positions today.** Only limit orders at the specified pullback levels.
-- **No same-day reversals.** All current positions were opened prior to today (SOXX Friday, others earlier). Selling any position today and re-buying it today is prohibited.
+- **NO market orders for new positions today.** Only limit orders at specified pullback levels.
+- **No same-day reversals.** NVDA 1 share bought today — cannot sell today. If SOXX/GOOG limit fills, those shares bought today cannot be sold today.
 - **No new short sales** under any circumstances.
-- **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry (bannedSymbols + weak trends).
-- **Do NOT add QQQ / GOOG at market / VOO** — concentration caps would be breached.
+- **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry.
+- **Do NOT add QQQ / VOO** — concentration caps would be breached.
 - **Do NOT chase NVDA, SOXX, or GOOG** with market orders after gap-up.
 
 ## Concentration Cap Guard (Code-Enforced)
@@ -42,28 +42,30 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **SOXX:** Thin (21 trades, 721 vol last bar at 13:34Z). Limit orders only.
+- **SOXX:** Thin (26 trades, 709 vol last bar at 14:34Z). Limit orders only.
 - **EIS:** Very low trade count / volume (2 trades, 200 vol last bar at 14:49Z May 22 — STALE).
-- **SHLD:** Very low trade count / volume (1 trade, 100 vol last bar at 13:34Z).
-- **QTUM:** Low trade count / volume (45 trades, 1,285 vol last bar at 13:30Z).
-- **ARKX:** Low trade count / volume (6 trades, 600 vol last bar at 13:32Z).
-- **GLD:** Very low trade count / volume (4 trades, 220 vol last bar at 13:34Z).
+- **SHLD:** Very low trade count / volume (3 trades, 200 vol last bar at 14:34Z).
+- **QTUM:** Low trade count / volume (4 trades, 482 vol last bar at 14:34Z).
+- **ARKX:** Low trade count / volume (2 trades, 600 vol last bar at 14:33Z).
+- **GLD:** Very low trade count / volume (7 trades, 236 vol last bar at 14:33Z).
 - **VOO:** Broad ETF, acceptable for limit orders at known prices.
 
-## This Cycle — 2026-05-26 13:37Z (Tuesday 9:37 AM ET)
+## This Cycle — 2026-05-26 14:45Z (Tuesday 10:45 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $10,097.52 | Cash $2,461.23 | Long $7,636.29 | Gross 75.63% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,346.70 @ 724.45), GOOG 3 ($1,139.16 @ 379.72), VOO 2 ($1,377.66 @ 688.83), NVDA 1 ($216.11 @ 216.11), SOXX 1 ($556.66 @ 556.66).
-- **No open orders.**
+- **Live broker refresh:** Equity $10,167.05 | Cash $2,244.52 | Long $7,922.53 | Gross 77.92% | Daytrade 1/3.
+- **NVDA buy FILLED:** 1 share limit $216.75 at $216.71. Position now 2 shares avg $220.20.
+- **SOXX limit buy PENDING:** 1 share limit $555.
+- **GOOG limit buy PENDING:** 1 share limit $372.
+- **Holdings confirmed:** QQQ 6 ($4,385.22 @ 730.87), GOOG 3 ($1,149.39 @ 383.13), VOO 2 ($1,382.52 @ 691.26), NVDA 2 ($433.68 @ 216.84), SOXX 1 ($570.66 @ 570.66).
 - **Event detector:** NONE — no broad market or position-level events.
-- **Fresh intel:** Iran peace prospects driving market gap-up. Dow +250, oil tumbling. SOXX +3.60% intraday. Jensen Huang bullish NVDA headline.
-- **Goal check:** Portfolio +0.98% since inception vs SPY +4.36%. Trailing by ~3.38 pp.
+- **Fresh intel:** Iran peace prospects sustaining rally. Dow +300, oil tumbling. SOXX +6.20% intraday. Jensen Huang bullish NVDA headline. NVDA China restriction negative but market shrugging off.
+- **Goal check:** Portfolio +1.67% since inception vs SPY +4.65%. Trailing by ~2.98 pp (narrowed from 3.38 pp).
 - **Regime:** Offensive catch-up. Target gross exposure 60–80%.
-- **Orders placed this cycle:** NONE.
-- **Next expected action:** 10:35 AM ET hourly — reassess if gap-up holds or market sells off.
+- **Orders placed this cycle:** NVDA buy 1 limit $216.75 (FILLED), SOXX buy 1 limit $555 (PENDING), GOOG buy 1 limit $372 (PENDING).
+- **Next expected action:** 11:35 AM ET hourly — reassess if rally holds or fades.
 
-## Previous Cycle — 2026-05-22 20:09Z (Friday 4:09 PM ET — POST-CLOSE)
+## Previous Cycle — 2026-05-26 13:37Z (Tuesday 9:37 AM ET)
 - **HOLD_LOCK lifted.** No unauthorized trades.
 - **Holdings:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
-- **No new orders.**
-- **Next expected action:** Tuesday 9:35 AM ET hourly (now completed).
+- **No new orders.** Limit orders set for pullbacks: GOOG $375, SOXX $545, NVDA $212.
+- **Next expected action:** 10:35 AM ET hourly (now completed).
