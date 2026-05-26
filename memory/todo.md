@@ -1,49 +1,42 @@
-# Tactical Todo — Updated 2026-05-26 17:35Z (Tuesday 1:35 PM ET)
-*HARD_LOCK LIFTED. Market OPEN. Iran escalation ACTIVE — Iran threatening retaliation after US strikes. Stay alert for volatility. Execute authorized orders only. No chasing gap-ups.*
+# Tactical Todo — Updated 2026-05-26 14:05Z (Tuesday 10:05 AM ET)
+*HARD_LOCK LIFTED. Market open. Valid until next hourly update at 11:35 AM ET.*
 
 ## Current State
-- **Regime:** offensive catch-up with ACTIVE DEFENSIVE WATCH (60–80% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 2, SOXX 1
-- **Account equity / cash / buying power:** $10,129.32 / $2,244.52 / ~$11,608.84
-- **Gross long exposure:** 77.84% | **Net exposure:** 77.84% | **Cash:** 22.16%
-- **Daytrade count:** 1/3 (META round-trip from Thursday)
+- **Regime:** offensive catch-up (60–80% band)
+- **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1
+- **Account equity / cash / buying power:** $10,147.02 / $2,461.23 / ~$12,608.25
+- **Gross long exposure:** ~75.7% | **Net exposure:** ~75.7% | **Cash:** ~24.3%
+- **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
-- **Open orders:** 1 limit buy active — NVDA $210. SOXX $555 was **CANCELED** by hourly strategist at 1:35 PM ET due to Iran escalation risk.
+- **Open orders:** NONE
 
-## Position Instructions — Valid for :50 and subsequent Tactical Runs until next hourly at 2:35 PM ET
-- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.12%, near 45% cap. Adding 1 share would breach cap.
-- **HOLD GOOG 3 — DO NOT SELL.** Weight ~11.32%, within 15% cap. **GOOG limit buy was CANCELED at 12:35 PM** — adding 1 share would breach 15% single-stock cap (4 shares @ ~$382 = 15.1%). DO NOT place another GOOG buy without explicit hourly authorization.
-- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.60%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap.
-- **HOLD NVDA 2 — DO NOT SELL TODAY.** Weight ~4.22%. NVDA 1 share was bought TODAY at 10:40 AM ET ($216.71). Selling it today would be a same-day reversal and is PROHIBITED. The other share was bought earlier. **NVDA limit buy $210 for 1 share is ACTIVE** (placed by hourly strategist). DO NOT place another NVDA buy. If the limit fills, position becomes 3 shares. The newly added share is a same-day buy — DO NOT SELL it today.
-- **HOLD SOXX 1 — DEFENSIVE TRIM AUTHORIZED.** Weight ~5.59%. **SOXX limit buy $555 was CANCELED** — do NOT place a new SOXX buy. If defensive trigger conditions are met (see below), SELL 1 share SOXX immediately. This is NOT a same-day reversal (SOXX bought May 22).
-- **NO AVGO / NO META — DO NOT BUY.** bannedSymbols active in `.trading_lock.json`. Weak trends; no re-entry planned.
-- **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends.
+## Position Instructions
+- **HOLD SOXX 1 — DO NOT SELL.** Bought Friday at $533.95 (limit $534.00 filled). Weight ~5.6%, within 20% non-QQQ ETF cap. Breakout validated by UBS Micron upgrade. Now at $565.23 (+5.86% unrealized, +5.19% intraday). Let momentum run. **Do not sell SOXX unless hourly note explicitly authorizes.**
+  - **Add trigger:** If SOXX pulls back to $550.00 or below with orderly tape (SPY not down >1%), AUTHORIZE buy 1 share SOXX via limit order at $549.50. Rationale: add to winning theme on dip, not chase at gap highs.
+- **HOLD QQQ 6 — DO NOT SELL OR ADD.** Weight ~43.1%, within 45% cap. Adding 1 share would breach 45% cap (~50.8%).
+- **HOLD GOOG 3 — DO NOT SELL OR ADD.** Weight ~11.4%, within 15% cap. DO NOT ADD — adding 1 share would breach 15% cap (~15.2%).
+- **HOLD VOO 2 — DO NOT SELL OR ADD.** Weight ~13.6%, within 20% non-QQQ ETF cap. DO NOT ADD — adding 1 share would breach 20% cap (~20.5%).
+- **HOLD NVDA 1 — DO NOT ADD.** Weight ~2.1%. Underperforming broad chip rally. Now $216.03 (+0.65% intraday vs SOXX +6.23%).
+  - **Cut trigger:** If NVDA drops below $210.00, AUTHORIZE sell 1 share NVDA. Rationale: support break confirms continued post-earnings weakness.
+- **NO AVGO / NO META — DO NOT BUY.** bannedSymbols active in `.trading_lock.json`. AVGO up 4.97% today on chip rally but no edge; META down 0.31% intraday. No re-entry planned.
+- **NO RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY.** No edge or weak relative trends. RKLB is parabolic on SpaceX news; avoid.
 
-## Defensive Triggers (Execute Immediately if Conditions Met)
-- **SELL 1 SOXX immediately** if ANY of the following occur:
-  1. Credible news source (WaPo, Reuters, AP, Al Jazeera, BBC, major wire) confirms Iran has launched retaliation strikes.
-  2. SPY drops below 745 (~0.5% below current level of ~749).
-  3. SOXX drops below 540 (~4.6% below current ~566) on confirmed volume.
-- **Rationale:** SOXX is the most extended and volatile position (+13.97% weekly, +6.00% today). In a risk-off escalation, it will fall hardest. Preserve capital. This sell is of the May 22 share, not same-day.
-- **If defensive trigger fires:** Cancel the NVDA limit buy $210 immediately. Do NOT add new long exposure into a falling market.
-
-## Hard Rules / No-Trade Conditions (Valid until next hourly update at 2:35 PM ET)
+## Hard Rules / No-Trade Conditions (Valid until 11:35 AM ET hourly)
 - **NO discretionary buys** without explicit hourly authorization.
-- **NO market orders for new positions today.** Only limit orders at specified pullback levels.
-- **No same-day reversals.** NVDA 1 share bought today — cannot sell today. If NVDA limit fills, that new share cannot be sold today.
+- **No same-day reversals.** If any symbol is bought today, do NOT sell it today.
 - **No new short sales** under any circumstances.
-- **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry.
-- **Do NOT add QQQ / VOO / GOOG** — concentration caps would be breached.
-- **Do NOT chase NVDA or SOXX** with market orders after gap-up.
-- **GEOPOLITICAL HARD STOP:** If Iran retaliatory strikes are confirmed or SPY drops >1.5% from current level (~749 to <738), cancel all pending limit buys and default to HOLD-ONLY. Do NOT add new long exposure into an escalating conflict.
-- **IF NVDA LIMIT FILLS, gross exposure rises to ~79.9%.** In that case, DO NOT authorize any additional long exposure for the remainder of the session.
+- **Do NOT re-buy AVGO or META** without fresh hourly note explicitly authorizing re-entry (anti-churn cooldown + weak trends + bannedSymbols).
+- **Do NOT add QQQ / GOOG / VOO** — concentration caps would be breached.
+- **Do NOT chase SOXX** with a market order above $565. Only add on pullback to $550 or below via limit order.
+- **Do NOT chase NVDA** with a market order. No adds authorized.
+- **Code guard committed:** `HARD_LOCK` regex matches bullet-formatted lines in `todo.md`. Defense-in-depth active.
+- **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless the event is an exchange halt or system outage, in which case hold). The exception: if a compliance breach is detected (unauthorized position), exit immediately.
 
-## Concentration Cap Guard (Code-Enforced — Defense in Depth)
+## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
 - Any single stock ≤ 15% of equity
 - Any non-QQQ ETF ≤ 20% of equity
-- If an order would breach any cap, it is REJECTED by `alpaca_cli.ts`, `alpaca_client_factory.ts`, and `concentration_guard.ts`.
-- **GOOG cap note:** 4 shares @ current price ~$382 = $1,528 = 15.1% of equity. **Exceeds 15% cap.** Any new GOOG buy order will be rejected until equity rises or price drops materially.
+- If an order would breach any cap, it is REJECTED by `alpaca_cli.ts` and `alpaca_client_factory.ts`.
 
 ## Symbol Ban Guard (Code-Enforced — Defense in Depth)
 - `memory/.trading_lock.json` contains `bannedSymbols: ["AVGO", "META"]`.
@@ -53,31 +46,28 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **SOXX:** Thin (3 trades, 85 vol last bar at 17:34Z). Limit orders only.
-- **EIS:** Very low trade count / volume (1 trade, 100 vol last bar at 16:52Z).
-- **SHLD:** Very low trade count / volume (2 trades, 257 vol last bar at 17:33Z).
-- **QTUM:** Low trade count / volume (3 trades, 132 vol last bar at 17:30Z).
-- **ARKX:** Low trade count / volume (1 trade, 300 vol last bar at 17:33Z).
-- **GLD:** Very low trade count / volume (1 trade, 70 vol last bar at 17:34Z).
+- **SOXX:** Acceptable for limit orders (47 trades, 679 vol last bar at 14:00Z). Do NOT use market orders.
+- **EIS:** Very low trade count / volume (2 trades, 200 vol last bar at 14:49Z Friday — STALE).
+- **SHLD:** Low trade count / volume (7 trades, 1900 vol last bar at 14:00Z).
+- **QTUM:** Very low trade count / volume (3 trades, 114 vol last bar at 13:59Z).
+- **ARKX:** Low trade count / volume (2 trades, 101 vol last bar at 14:00Z).
+- **GLD:** Low trade count / volume (7 trades, 480 vol last bar at 13:59Z).
 - **VOO:** Broad ETF, acceptable for limit orders at known prices.
 
-## This Cycle — 2026-05-26 17:35Z (Tuesday 1:35 PM ET)
+## This Cycle — 2026-05-26 14:05Z (Tuesday 10:05 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $10,129.32 | Cash $2,244.52 | Long $7,884.80 | Gross 77.84% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,367.85 @ 727.98), GOOG 3 ($1,146.48 @ 382.16), VOO 2 ($1,377.20 @ 688.60), NVDA 2 ($427.30 @ 213.65), SOXX 1 ($566.00 @ 566.00).
-- **Open limit buys:** NVDA $210 (PENDING).
-- **Canceled limit buys:** SOXX $555 (canceled by hourly strategist at 1:35 PM due to Iran escalation risk). GOOG $372 (canceled at 12:35 PM).
-- **No sells.** No unauthorized trades.
-- **Event detector:** NONE — no broad market or position-level events.
-- **Fresh intel:** Iran situation has materially deteriorated since 12:35 PM. Iran threatening retaliation after US strikes. Ceasefire "hangs by a thread." Market orderly but vulnerable. SOXX pulled back from +6.2% to +5.36% intraday. NVDA still lagging (-0.78% today, -4.06% weekly).
-- **Goal check:** Portfolio +1.29% since inception vs SPY +4.33%. Trailing by ~3.04 pp (narrowed from ~3.08 pp at 12:35 PM).
-- **Regime:** Offensive catch-up with ACTIVE DEFENSIVE WATCH. Target gross exposure 60–80% (currently 77.84%).
-- **Orders placed this cycle:** Canceled SOXX buy 1 limit $555.
-- **Next expected action:** 2:35 PM ET hourly — reassess if Iran escalation accelerates or market stabilizes.
+- **Live broker refresh:** Equity $10,147.02 | Cash $2,461.23 | Long $7,685.79 | Gross 75.7% | Daytrade 1/3.
+- **Holdings confirmed:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
+- **No open orders.**
+- **Event detector:** NONE.
+- **Fresh intel:** UBS raised Micron target to $1,625 (Street-high), citing AI structurally changing memory market. Chip complex surging: MU +14%, AMD +5%, AVGO +4.97%, SOXX +5.19%. NVDA flat (+0.65%). SPY +0.86%. No new macro headlines on Warsh or Iran.
+- **Goal check:** Portfolio +1.47% since inception vs SPY +4.56%. Trailing by ~3.09 pp (improved from 3.56 pp Friday). Goal 1 MET. Goal 2 off track.
+- **Regime:** Offensive catch-up. Target gross exposure 60–80% (currently 75.7%).
+- **Orders placed this cycle:** NONE.
+- **Next expected action:** 11:35 AM ET hourly — reassess chip rally follow-through, NVDA relative strength, SOXX pullback opportunity.
 
-## Previous Cycle — 2026-05-26 16:35Z (Tuesday 12:35 PM ET)
-- **NVDA limit buy PENDING:** 1 share limit $210.
-- **SOXX limit buy PENDING:** 1 share limit $555 (later canceled at 1:35 PM).
-- **GOOG limit buy PENDING:** 1 share limit $372 (canceled at 12:35 PM).
-- **Regime:** Offensive catch-up.
-- **Next expected action:** 1:35 PM ET hourly (now completed).
+## Previous Cycle — 2026-05-22 20:09Z (Friday 4:09 PM ET — POST-CLOSE)
+- **HOLD_LOCK lifted.** No unauthorized trades.
+- **Holdings:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 1.
+- **No new orders.**
+- **Next expected action:** Tuesday 9:35 AM ET (this run).
