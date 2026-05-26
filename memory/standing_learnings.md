@@ -54,3 +54,5 @@
 51. **Post-long-weekend gap-up on geopolitical news (Iran deal) can produce significant portfolio gains without trading.** Cash served as a hedge over the weekend but also caused some drag vs SPY.
 52. **With $10K equity and rising prices, concentration caps are binding.** QQQ maxed at 6 shares; GOOG maxed at 3-4 shares depending on price; VOO maxed at 2 shares. Deployment options are extremely limited.
 53. **Gap-up opens on macro catalysts are poor entry points.** Limit orders on pullbacks preserve edge.
+54. **Geopolitical escalation during an extended sector rally demands immediate cancellation of breakout-limit-buy orders, not passive 'watch and wait.'** SOXX limit buy at $555 was canceled within minutes of Iran retaliation headlines to avoid buying into a falling knife.
+55. **The 'stable but tense' macro assessment can flip to 'active escalation' within one hourly cycle.** Tactical todo must include explicit defensive triggers (price levels + headline sources) that fire automatically without waiting for the next hourly update.
