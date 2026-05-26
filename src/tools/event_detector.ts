@@ -1,8 +1,16 @@
 import '../env';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
+import { withTimeout } from './with_timeout';
 import { AlpacaPosition } from '@alpacahq/alpaca-trade-api/dist/resources/datav2/entityv2';
+import type Alpaca from '@alpacahq/alpaca-trade-api';
 
-const alpaca = getDefaultAlpacaClient();
+let _alpaca: Alpaca | null = null;
+function getAlpaca(): Alpaca {
+  if (!_alpaca) _alpaca = getDefaultAlpacaClient();
+  return _alpaca;
+}
+
+const API_TIMEOUT_MS = 15_000;
 
 const SNAPSHOT_PATH = './temp_files/tactical_last_prices.json';
 
@@ -74,7 +82,7 @@ function saveSnapshot(prices: Record<string, number>) {
 
 async function fetchPrice(symbol: string): Promise<number | null> {
   try {
-    const snap = await alpaca.getSnapshot(symbol) as {
+    const snap = await withTimeout(getAlpaca().getSnapshot(symbol), API_TIMEOUT_MS, `Alpaca getSnapshot(${symbol})`) as {
       LatestTrade?: { Price?: number };
       MinuteBar?: { ClosePrice?: number };
     };
@@ -95,7 +103,7 @@ export async function detectEvents(): Promise<EventReport> {
   // Fetch positions
   let positions: AlpacaPosition[] = [];
   try {
-    positions = await alpaca.getPositions() as AlpacaPosition[];
+    positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions') as AlpacaPosition[];
   } catch {
     positions = [];
   }

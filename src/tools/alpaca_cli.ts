@@ -1,7 +1,17 @@
 import '../env';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
+import { withTimeout } from './with_timeout';
+import type Alpaca from '@alpacahq/alpaca-trade-api';
 
-export const alpaca = getDefaultAlpacaClient();
+let _alpaca: Alpaca | null = null;
+function getAlpaca(): Alpaca {
+  if (!_alpaca) {
+    _alpaca = getDefaultAlpacaClient();
+  }
+  return _alpaca;
+}
+
+const API_TIMEOUT_MS = 15_000;
 
 const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
@@ -10,7 +20,7 @@ const UNIVERSE = new Set([
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
-      const account = await alpaca.getAccount();
+      const account = await withTimeout(getAlpaca().getAccount(), API_TIMEOUT_MS, 'Alpaca getAccount');
       return JSON.stringify(account);
     } catch (e: unknown) {
       return `Error getting account: ${(e as Error).message}`;
@@ -19,7 +29,7 @@ export const alpacaTools = {
 
   getPositions: async (): Promise<string> => {
     try {
-      const positions = await alpaca.getPositions();
+      const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions');
       return JSON.stringify(positions);
     } catch (e: unknown) {
       return `Error getting positions: ${(e as Error).message}`;
@@ -28,7 +38,7 @@ export const alpacaTools = {
 
   getLatestPrice: async (symbol: string): Promise<string> => {
     try {
-      const bar = await alpaca.getLatestBar(symbol);
+      const bar = await withTimeout(getAlpaca().getLatestBar(symbol), API_TIMEOUT_MS, `Alpaca getLatestBar(${symbol})`);
       return JSON.stringify(bar);
     } catch (e: unknown) {
       return `Error getting latest price for ${symbol}: ${(e as Error).message}`;
@@ -47,7 +57,7 @@ export const alpacaTools = {
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
       // Allow closing an existing short position even for out-of-universe symbols
       try {
-        const positions = await alpaca.getPositions();
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (universe check)');
         const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
         if (!pos || parseFloat(pos.qty) >= 0) {
           return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
@@ -58,7 +68,7 @@ export const alpacaTools = {
     }
     if (side === 'sell') {
       try {
-        const positions = await alpaca.getPositions();
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (sell guard)');
         const pos = positions.find((p: { symbol: string; qty: string }) => p.symbol.toUpperCase() === symUpper && parseFloat(p.qty) > 0);
         const longQty = pos ? parseFloat(pos.qty) : 0;
         if (longQty < qty) {
@@ -72,14 +82,14 @@ export const alpacaTools = {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }
     try {
-      const order = await alpaca.createOrder({
+      const order = await withTimeout(getAlpaca().createOrder({
         symbol,
         qty,
         side,
         type,
         time_in_force: timeInForce,
         limit_price: limitPrice,
-      });
+      }), API_TIMEOUT_MS, 'Alpaca createOrder');
       return `Successfully placed order: ${JSON.stringify(order)}`;
     } catch (e: unknown) {
       return `Error submitting order: ${(e as Error).message}`;
@@ -88,7 +98,7 @@ export const alpacaTools = {
 
   getMarketClock: async (): Promise<string> => {
     try {
-      const clock = await alpaca.getClock();
+      const clock = await withTimeout(getAlpaca().getClock(), API_TIMEOUT_MS, 'Alpaca getClock');
       return JSON.stringify(clock);
     } catch (e: unknown) {
       return `Error fetching market clock: ${(e as Error).message}`;
@@ -100,7 +110,7 @@ export const alpacaTools = {
       const opts: any = {};
       if (status) opts.status = status;
       if (symbols) opts.symbols = symbols;
-      const orders = await alpaca.getOrders(opts);
+      const orders = await withTimeout(getAlpaca().getOrders(opts), API_TIMEOUT_MS, 'Alpaca getOrders');
       return JSON.stringify(orders);
     } catch (e: unknown) {
       return `Error fetching orders: ${(e as Error).message}`;
@@ -109,7 +119,7 @@ export const alpacaTools = {
 
   cancelOrder: async (orderId: string): Promise<string> => {
     try {
-      const result = await alpaca.cancelOrder(orderId);
+      const result = await withTimeout(getAlpaca().cancelOrder(orderId), API_TIMEOUT_MS, 'Alpaca cancelOrder');
       return JSON.stringify(result);
     } catch (e: unknown) {
       return `Error cancelling order: ${(e as Error).message}`;
@@ -119,7 +129,7 @@ export const alpacaTools = {
 
 export async function isMarketOpen(): Promise<boolean> {
   try {
-    const clock = await alpaca.getClock() as { is_open: boolean };
+    const clock = await withTimeout(getAlpaca().getClock(), API_TIMEOUT_MS, 'Alpaca getClock') as { is_open: boolean };
     return clock.is_open;
   } catch {
     return false;

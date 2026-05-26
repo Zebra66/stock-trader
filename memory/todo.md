@@ -1,11 +1,35 @@
-# Tactical Todo — Updated 2026-05-18 15:27Z (Monday 11:27 AM ET)
-*Live broker state: XLK short is -3 shares (not -2). See MEMORY.md for full context.*
+# Tactical Todo — Updated 2026-05-26 (Tuesday ~19:30 UTC)
+*AGENT RUNTIME OFFLINE — no outbound internet. All previous todo items are stale.*
+
+## Current State
+- **Date:** 2026-05-26
+- **Last live broker refresh:** 2026-05-18 (Monday) — 6 trading days stale.
+- **Network:** Down. Alpaca API, FMP, Google Search, git remote unreachable.
+- **Bun runtime:** Hangs on script execution.
+- **Trading capability:** NONE. Do NOT attempt to submit orders or fetch prices until network is restored.
+
+## Immediate Actions (When Network Returns)
+1. Run `bash scripts/check_network.sh` to confirm connectivity.
+2. Run `bun run src/tools/alpaca_cli.ts get-account` and `get-positions` to get authoritative broker state.
+3. Run `bun run src/tools/event_detector.ts` to check for any major market events.
+4. Read `memory/MEMORY.md` and discard all pre-May-26 guidance as stale.
+5. Wait for the next Hourly strategist run to reassess the entire portfolio before any tactical execution.
+
+## Standing Orders
+- **NO TRADES** until network connectivity and live broker data are confirmed.
+- **NO CODE EXECUTION** via `bun run` until Bun startup hang is resolved or bypassed.
+- **ALL PRIOR BUY/SELL CONDITIONS ARE VOID** due to 6-day data gap.
+
+---
+
+# Tactical Todo — Updated 2026-05-18 15:28Z (Monday 11:28 AM ET)
+*Live broker state confirmed. See MEMORY.md for full context.*
 
 ## Current State
 - **Regime:** defensive / compliance-cleanup hard lock
 - **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,960.47 / $4,388.34 / $13,305.89
-- **Gross exposure:** $6,615.05 (66.4% of equity)
+- **Account equity / cash / buying power:** $9,959.46 / $4,388.34 / $13,305.30
+- **Gross exposure:** $6,613.62 (66.4% of equity)
 - **Daytrade count:** 3 (threshold; next daytrade = PDT flag)
 - **Pattern day trader:** false
 - **Unauthorized positions:** XLK -3 shares SHORT — must cover all 3 at Tuesday 2026-05-19 open.
@@ -28,6 +52,22 @@
 - QQQ: watch 700 support
 - GOOG: watch 394 support
 - NVDA: watch 218 support
+
+## This Cycle — 2026-05-18 15:26Z (Monday 11:26 AM ET)
+- **Event detector:** NONE.
+- **Live broker refresh:** Equity $9,959.46 | Cash $4,388.34 | Long $6,092.37 | Short -$521.25 | Gross exposure 66.4% | Daytrade 3/3.
+- **Holdings:** QQQ 6 ($4,224.45), GOOG 3 ($1,199.25), NVDA 3 ($668.67), XLK -3 (-$521.25).
+- **Protective stops:** QQQ $704.08 (>700.0), GOOG $399.75 (>394.0), NVDA $222.89 (>218.0). None breached.
+- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.
+
+## This Cycle — 2026-05-18 15:28Z (Monday 11:28 AM ET)
+- **Event detector:** NONE.
+- **Live broker refresh:** Equity $9,960.67 | Cash $4,388.34 | Long $6,093.82 | Short -$521.49 | Gross exposure 66.4% | Daytrade 3/3.
+- **Holdings:** QQQ 6 ($4,225.78), GOOG 3 ($1,199.16), NVDA 3 ($668.88), XLK -3 (-$521.49).
+- **Protective stops:** QQQ $704.30 (>700.0), GOOG $399.72 (>394.0), NVDA $222.96 (>218.0). None breached.
+- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
+- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.
 
 ## This Cycle — 2026-05-18 15:27Z
 - **Event detector:** NONE.
