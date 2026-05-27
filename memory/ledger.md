@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-27 : 13:38 : [hourly] Hold all, AVGO recovers, no orders
+- Portfolio -0.44% today vs SPY -0.12%, trailing by 3.25pp since inception
+- Gross exposure 83.5% within 80-90% offensive band, cash 16.5%
+- No filled trades since 12:35; tactical agent held all positions
+- Concentration caps + integer shares block all fresh adds; no rotation today
+- SOXX stop 40, AVGO stop 00 remain active; no earnings within 48h
+
+2026-05-27 : 13:30 : [tactical] Hold all; no triggers hit
+- All 5 positions within normal ranges
+- SOXX 60.36 > 40 stop; AVGO 21.54 > 00 stop
+- Gross exposure 83.4%, within 80-90% band
+- No buys authorized; no sells triggered
+- Event detector: NONE
+
+2026-05-27 : 13:20 : [tactical] No action — holds stable
+- SOXX 58 > 40 stop, AVGO 20 > 00 stop
+- Gross exposure 83.5%, within 80–90% offensive band
+- Event detector: NONE; no buy/sell triggers met
+- Daytrade 1/3; no PDT concerns
+- HOLD all positions; no orders placed
+
+2026-05-27 : 13:10 : [tactical] Held all, no triggers breached
+- SOXX 56.96 vs 40 stop — no trigger
+- AVGO 18.70 vs 00 stop — no trigger
+- No buy conditions met; gross exposure ~83.5%
+- Event detector: NONE; market normal
+
+2026-05-27 : 12:50 : [tactical] No conditions met, hold all
+- Event detector: NONE, no events flagged
+- SOXX 62.75 > 40 stop, AVGO 21.87 > 00 stop
+- All defensive stops not triggered; no buy conditions met
+- Gross exposure 83.5% within 80-90% target band
+- Daytrade count 1/3, no PDT concerns
+
+2026-05-27 : 12:40 : [tactical] No action — all holds stable
+- Event detector: NONE
+- SOXX 60.90 > 40 stop, AVGO 19.52 > 00 stop
+- No price triggers breached; no orders placed
+- Gross exposure 83.5%, within 80-90% band
+- Daytrade count 1/3, no PDT concerns
+
 2026-05-27 : 12:37 : [hourly] Held all, SOXX recovers, no orders
 - Portfolio -0.37% today vs SPY -0.09%
 - Gross exposure 83.5% within 80-90% band
