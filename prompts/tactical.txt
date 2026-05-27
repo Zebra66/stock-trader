@@ -124,8 +124,16 @@ When the detector reports CRITICAL or MAJOR, stale todo conditions may be danger
 
 ---
 
-### Step 6 — Update state and commit (applies to both modes)
-- **CRITICAL COST OPTIMIZATION (Short-circuit):** If no trades are executed, no conditions are met, and no autonomous override is applied, you MUST NOT write or edit any files, run any git commands, or do any further tool calls. Simply output the single word `NO_ACTION` as your final response and stop immediately. This avoids empty/trivial commits and saves massive token costs by completing the run in a single LLM turn.
+### Step 6 — Log this cycle to the trading ledger (applies to both modes)
+- Prepend a one-line summary to `memory/ledger.md` using the ledger CLI:
+  `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "<TL;DR (60 chars max)>" --detail "<detail>" [--detail "<detail>" ...]`
+- The TL;DR must be under 60 characters and communicate the key outcome (trade, hold, or override)
+- Add up to 5 detail bullets: what happened, why, and any unresolved items
+- Example: `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "Bought 1 SOXX breakout" --detail "Trigger 196.50 cleared at 197.10" --detail "One order, no PDT concerns"`
+- **This step applies even in the NO_ACTION shortcut below** — the ledger entry is cheap and captures the "no decision" signal.
+
+### Step 7 — Update state and commit (applies to both modes)
+- **CRITICAL COST OPTIMIZATION (Short-circuit):** If no trades are executed, no conditions are met, and no autonomous override is applied — and you have already prepended the ledger entry in Step 6 — you MUST NOT write or edit any files, run any git commands, or do any further tool calls. Simply output the single word `NO_ACTION` as your final response and stop immediately. This avoids empty/trivial commits and saves massive token costs by completing the run in a single LLM turn.
 - If there are trades executed or overrides applied:
   - Update `memory/MEMORY.md` with a concise execution summary block:
     - What was done this cycle, authoritative current holdings, current exposure, and next expected action
