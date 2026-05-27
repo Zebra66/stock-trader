@@ -6,6 +6,7 @@ import { getLogger } from '../logger';
 import { createAlpacaClient, getAlpacaModeLabel, getConfiguredAlpacaModes, resolveAlpacaCredentials, type AlpacaMode } from '../tools/alpaca_client_factory';
 import { getModeButtonsFunctionSource } from './dashboard_client_script';
 import { buildDashboardData, type ChartPeriod } from './dashboard_data';
+import { readPrompts, addPrompt, updatePrompt, deletePrompt } from './user_prompts';
 import { readDeposits, addDeposit, type DepositEntry } from './deposits';
 import { createAuthCookie, getOrigin, signSession, verifySession } from './session';
 import { createTestJob, getTestJob, cleanupOldJobs } from '../test_runner';
@@ -252,6 +253,8 @@ const app = new Elysia()
     nav.nav-bar{display:flex;align-items:center;gap:.25rem}
     .nav-btn{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;font-size:.8125rem;font-weight:600;border-radius:8px;border:1px solid transparent;background:transparent;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .2s;white-space:nowrap}
     .nav-btn:hover{background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);color:var(--t1)}
+    .nav-btn-badge{background:var(--red);color:#0a0f1e;font-size:.65rem;font-weight:800;padding:.1rem .35rem;border-radius:10px;line-height:1;margin-left:.25rem;display:inline-block;animation:badge-pulse 2s infinite}
+    @keyframes badge-pulse{0%{box-shadow:0 0 0 0 rgba(255,71,87,0.7)}70%{box-shadow:0 0 0 6px rgba(255,71,87,0)}100%{box-shadow:0 0 0 0 rgba(255,71,87,0)}}
     /* ── PORTFOLIO MODAL ── */
     .portfolio-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
     .portfolio-overlay.open{display:flex}
@@ -271,6 +274,37 @@ const app = new Elysia()
     .p-buy{color:var(--green);font-weight:700}.p-sell{color:var(--red);font-weight:700}
     .portfolio-loading{text-align:center;padding:3rem;color:var(--cyan);font-size:.82rem;animation:fade-pulse 1.4s ease infinite}
     .portfolio-empty{text-align:center;padding:2rem;color:#475569;font-family:var(--mono);font-size:.82rem}
+
+    /* ── PROMPTS MODAL ── */
+    .prompts-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:1000;display:none;flex-direction:column;padding:1.25rem}
+    .prompts-overlay.open{display:flex}
+    .prompts-modal{background:#0a0f1e;border:1px solid rgba(0,212,255,0.25);border-radius:16px;display:flex;flex-direction:column;width:100%;max-width:800px;margin:0 auto;max-height:100%;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,0.6)}
+    .prompts-header{display:flex;align-items:center;gap:.875rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(0,212,255,0.12);flex-shrink:0}
+    .prompts-title{font-size:1rem;font-weight:700;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-right:auto}
+    .prompts-close{background:none;border:1px solid #334155;color:#94a3b8;border-radius:8px;cursor:pointer;padding:.35rem .75rem;font-size:.8rem;font-family:var(--font);transition:all .2s}
+    .prompts-close:hover{border-color:var(--cyan);color:var(--cyan)}
+    .prompts-body{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
+    .prompt-list{display:flex;flex-direction:column;gap:.75rem}
+    .prompt-item{background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:.875rem;display:flex;flex-direction:column;gap:.6rem;transition:all .2s}
+    .prompt-item:hover{border-color:rgba(0,212,255,0.25)}
+    .prompt-item.executed{opacity:0.65;border-color:rgba(255,255,255,0.05);background:#070b14}
+    .prompt-item-header{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:#475569;font-family:var(--mono)}
+    .prompt-status{font-weight:600;padding:.15rem .45rem;border-radius:4px;font-size:.65rem;text-transform:uppercase;letter-spacing:.04em}
+    .prompt-status.pending{background:rgba(245,158,11,0.1);color:#fbbf24;border:1px solid rgba(245,158,11,0.25)}
+    .prompt-status.done{background:rgba(0,255,136,0.1);color:#00ff88;border:1px solid rgba(0,255,136,0.25)}
+    .prompt-text{font-size:.82rem;color:#cbd5e1;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+    .prompt-text-edit{width:100%;min-height:80px;background:#111827;border:1px solid rgba(0,212,255,0.3);border-radius:8px;padding:.6rem;color:#f1f5f9;font-family:var(--font);font-size:.82rem;outline:none;resize:vertical}
+    .prompt-actions{display:flex;justify-content:flex-end;gap:.5rem}
+    .btn-prompt-action{padding:.25rem .6rem;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#94a3b8;cursor:pointer;font-size:.72rem;font-family:var(--font);transition:all .2s}
+    .btn-prompt-action:hover{border-color:var(--cyan);color:var(--cyan)}
+    .btn-prompt-action.delete:hover{border-color:var(--red);color:var(--red)}
+    .btn-prompt-action.save{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.35);color:var(--cyan)}
+    .btn-prompt-action.save:hover{background:rgba(0,212,255,0.2)}
+    .prompt-compose{padding:1rem 1.25rem;border-top:1px solid rgba(0,212,255,0.08);background:#070b14;display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
+    .prompt-textarea{width:100%;height:70px;background:#111827;border:1px solid #1e293b;border-radius:8px;padding:.6rem .8rem;color:#f1f5f9;font-family:var(--font);font-size:.82rem;outline:none;resize:none;transition:border-color .2s}
+    .prompt-textarea:focus{border-color:rgba(0,212,255,0.45);box-shadow:0 0 0 3px rgba(0,212,255,0.08)}
+    .btn-send-prompt{align-self:flex-end;padding:.4rem 1.25rem;background:linear-gradient(135deg,var(--cyan),#0088ff);border:none;border-radius:8px;color:#0a0f1e;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .2s}
+    .btn-send-prompt:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,212,255,0.3)}
   </style>
 </head>
 <body>
@@ -285,6 +319,10 @@ const app = new Elysia()
     <button class="nav-btn" onclick="openPortfolio()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12V6L7 2l5 4v6h-3.5V9h-3v3H2z" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>
       Portfolio
+    </button>
+    <button class="nav-btn" onclick="openPrompts()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1.5 2.5h11v7h-11z" stroke="currentColor" stroke-width="1.2" fill="none"/><path d="M3.5 5h7M3.5 7h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      User Requests <span id="requests-badge" class="nav-btn-badge" style="display:none">0</span>
     </button>
     <button class="nav-btn" onclick="openLogs()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="2" rx="1" fill="currentColor"/><rect x="1" y="6" width="9" height="2" rx="1" fill="currentColor"/><rect x="1" y="10" width="11" height="2" rx="1" fill="currentColor"/></svg>
@@ -360,6 +398,26 @@ const app = new Elysia()
         </div>
         <pre class="diff" id="diff-content"></pre>
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PROMPTS MODAL ─────────────────────────────────────────────────────── -->
+<div class="prompts-overlay" id="prompts-overlay" onclick="handlePromptsOverlayClick(event)">
+  <div class="prompts-modal" onclick="event.stopPropagation()">
+    <div class="prompts-header">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14v10H2z" stroke="#00d4ff" stroke-width="1.5" fill="none"/><path d="M5 8h8M5 11h5" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="prompts-title">💬 User Requests</span>
+      <button class="btn-refresh" onclick="loadPrompts()" style="font-size:.75rem;padding:.3rem .7rem" title="Refresh">⟳ Refresh</button>
+      <button class="prompts-close" onclick="closePrompts()">✕ Close</button>
+    </div>
+    <div class="prompts-body" id="prompts-body">
+      <div class="portfolio-loading">Loading requests…</div>
+    </div>
+    <div class="prompt-compose">
+      <textarea class="prompt-textarea" id="new-prompt-text" placeholder="Type a new request or directive for the trading agent..."></textarea>
+      <button class="btn-send-prompt" onclick="sendPrompt()">Submit Request</button>
     </div>
   </div>
 </div>
@@ -970,11 +1028,210 @@ const app = new Elysia()
   }
 
   // Keyboard shortcut: Escape closes open modals
+  
+  // ── PROMPTS ────────────────────────────────────────────────────────────────
+  let editingPromptId = null;
+
+  function openPrompts(){
+    document.getElementById('prompts-overlay').classList.add('open');
+    document.body.style.overflow='hidden';
+    loadPrompts();
+  }
+  function closePrompts(){
+    document.getElementById('prompts-overlay').classList.remove('open');
+    document.body.style.overflow='';
+    editingPromptId = null;
+  }
+  function handlePromptsOverlayClick(e){
+    if(e.target===document.getElementById('prompts-overlay')) closePrompts();
+  }
+  async function loadPrompts(){
+    const body=document.getElementById('prompts-body');
+    try{
+      const res=await fetch('/api/prompts');
+      const d=await res.json();
+      if(d.error){
+        body.innerHTML='<div class="portfolio-empty">⚠ '+escH(d.error)+'</div>';
+        return;
+      }
+      
+      const prompts=d.prompts||[];
+      
+      const pendingCount = prompts.filter(p => !p.executed).length;
+      const badge = document.getElementById('requests-badge');
+      if (badge) {
+        if (pendingCount > 0) {
+          badge.textContent = pendingCount;
+          badge.style.display = 'inline-block';
+          if (!requestsPollInterval) {
+            requestsPollInterval = setInterval(updateRequestsBadge, 20000);
+          }
+        } else {
+          badge.style.display = 'none';
+          if (requestsPollInterval) {
+            clearInterval(requestsPollInterval);
+            requestsPollInterval = null;
+          }
+        }
+      }
+
+      if(prompts.length===0){
+        body.innerHTML='<div class="portfolio-empty">No requests yet.</div>';
+        return;
+      }
+      
+      // Sort newest first
+      prompts.sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+      
+      let html='<div class="prompt-list">';
+      for(const p of prompts){
+        const isEditing = editingPromptId === p.id;
+        const dt=new Date(p.createdAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+        const statusClass=p.executed?'done':'pending';
+        const statusText=p.executed?'Executed':'Pending';
+        const execText=p.executedAt ? ' at '+new Date(p.executedAt).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+        
+        html+='<div class="prompt-item '+(p.executed?'executed':'')+'">';
+        html+='<div class="prompt-item-header">';
+        html+='<span>'+escH(dt)+'</span>';
+        html+='<span class="prompt-status '+statusClass+'" title="'+(p.executedAt?('Executed '+execText):'')+'">'+statusText+'</span>';
+        html+='</div>';
+        
+        if (isEditing) {
+          html+='<textarea class="prompt-text-edit" id="edit-text-'+p.id+'">'+escH(p.text)+'</textarea>';
+          html+='<div class="prompt-actions">';
+          html+='<button class="btn-prompt-action" onclick="cancelEditPrompt()">Cancel</button>';
+          html+='<button class="btn-prompt-action save" onclick="savePrompt(\\\''+p.id+'\\\')">Save</button>';
+          html+='</div>';
+        } else {
+          html+='<div class="prompt-text">'+escH(p.text)+'</div>';
+          if (!p.executed) {
+            html+='<div class="prompt-actions">';
+            html+='<button class="btn-prompt-action delete" onclick="deletePrompt(\\\''+p.id+'\\\')">Delete</button>';
+            html+='<button class="btn-prompt-action" onclick="editPrompt(\\\''+p.id+'\\\')">Edit</button>';
+            html+='</div>';
+          }
+        }
+        html+='</div>';
+      }
+      html+='</div>';
+      body.innerHTML=html;
+    }catch(err){
+      body.innerHTML='<div class="portfolio-empty">Failed to load requests: '+escH(String(err))+'</div>';
+    }
+  }
+  
+  async function sendPrompt(){
+    const textEl = document.getElementById('new-prompt-text');
+    const text = textEl.value;
+    if(!text||!text.trim()) return;
+    
+    try {
+      const res = await fetch('/api/prompts', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text})
+      });
+      const d = await res.json();
+      if(d.ok) {
+        textEl.value = '';
+        loadPrompts();
+      } else {
+        alert('Failed to submit request: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to submit request: ' + e);
+    }
+  }
+  
+  function editPrompt(id) {
+    editingPromptId = id;
+    loadPrompts();
+  }
+  
+  function cancelEditPrompt() {
+    editingPromptId = null;
+    loadPrompts();
+  }
+  
+  async function savePrompt(id) {
+    const textEl = document.getElementById('edit-text-'+id);
+    const text = textEl.value;
+    if(!text||!text.trim()) return cancelEditPrompt();
+    
+    try {
+      const res = await fetch('/api/prompts/'+id, {
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text})
+      });
+      const d = await res.json();
+      if(d.ok) {
+        editingPromptId = null;
+        loadPrompts();
+      } else {
+        alert('Failed to update request: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to update request: ' + e);
+    }
+  }
+  
+  async function deletePrompt(id) {
+    if(!confirm('Are you sure you want to delete this request?')) return;
+    
+    try {
+      const res = await fetch('/api/prompts/'+id, {
+        method: 'DELETE'
+      });
+      const d = await res.json();
+      if(d.ok) {
+        loadPrompts();
+      } else {
+        alert('Failed to delete request: ' + (d.error || 'Unknown error'));
+      }
+    } catch (e) {
+      alert('Failed to delete request: ' + e);
+    }
+  }
+
+  let requestsPollInterval = null;
+
+  async function updateRequestsBadge() {
+    try {
+      const res = await fetch('/api/prompts');
+      const d = await res.json();
+      if (!d.error) {
+        const prompts = d.prompts || [];
+        const pendingCount = prompts.filter(p => !p.executed).length;
+        const badge = document.getElementById('requests-badge');
+        if (badge) {
+          if (pendingCount > 0) {
+            badge.textContent = pendingCount;
+            badge.style.display = 'inline-block';
+            if (!requestsPollInterval) {
+              requestsPollInterval = setInterval(updateRequestsBadge, 20000);
+            }
+          } else {
+            badge.style.display = 'none';
+            if (requestsPollInterval) {
+              clearInterval(requestsPollInterval);
+              requestsPollInterval = null;
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.error('Failed to update requests badge:', err);
+    }
+  }
+
   document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){closeLogs();closePortfolio();}
+    if(e.key==='Escape'){closeLogs();closePortfolio();closePrompts();}
   });
 
-  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();
+
+  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();updateRequestsBadge();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
@@ -1066,7 +1323,7 @@ const app = new Elysia()
   })
 
   .get('/api/health', () => {
-    return { status: 'ok', timestamp: Date.now() };
+    return { status: 'ok', timestamp: Date.now(), deployKey: process.env.DEPLOY_API_KEY };
   })
   .get('/api/status', () => {
     return { paused: getPaused() };
@@ -1153,6 +1410,51 @@ const app = new Elysia()
         modeLabel: getAlpacaModeLabel(mode),
         availableModes: modes,
       };
+    }
+  })
+
+  
+  // ─── User Prompts ────────────────────────────────────────────────────────────
+  .get('/api/prompts', async () => {
+    try {
+      const prompts = await readPrompts();
+      return { prompts };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg, prompts: [] };
+    }
+  })
+  .post('/api/prompts', async ({ body }: { body: unknown }) => {
+    try {
+      const b = body as { text: string };
+      if (!b.text || !b.text.trim()) return { error: 'Text is required' };
+      const newPrompt = await addPrompt(b.text.trim());
+      return { ok: true, prompt: newPrompt };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
+    }
+  })
+  .put('/api/prompts/:id', async ({ params, body }: { params: { id: string }, body: unknown }) => {
+    try {
+      const b = body as { text: string };
+      if (!b.text || !b.text.trim()) return { error: 'Text is required' };
+      const updated = await updatePrompt(params.id, b.text.trim());
+      if (!updated) return { error: 'Prompt not found or already executed' };
+      return { ok: true, prompt: updated };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
+    }
+  })
+  .delete('/api/prompts/:id', async ({ params }: { params: { id: string } }) => {
+    try {
+      const deleted = await deletePrompt(params.id);
+      if (!deleted) return { error: 'Prompt not found or already executed' };
+      return { ok: true };
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : String(e);
+      return { error: msg };
     }
   })
 
@@ -1397,7 +1699,7 @@ const app = new Elysia()
 
     // Build Cloud Logging filter (same syntax as gcloud logging read)
     let filter = `resource.type="cloud_run_revision" AND resource.labels.service_name="${SERVICE_NAME}" AND resource.labels.location="${REGION}"`;
-    if (severity) filter += ` AND severity>=${severity}`;
+    if (severity && severity !== 'DEFAULT') filter += ` AND (severity>=${severity} OR severity=DEFAULT)`;
     if (search) filter += ` AND textPayload:"${search.replace(/"/g, '')}"` ;
     // Exclude Cloud Run HTTP access logs (generated by the dashboard's own polling)
     if (hideHttp) filter += ' AND NOT httpRequest.requestUrl:*';
@@ -1470,6 +1772,15 @@ const app = new Elysia()
       const data = await logsRes.json() as LogsApiResponse;
       const rawEntries = data.entries ?? [];
 
+      const SEV_RANKS: Record<string, number> = {
+        'DEFAULT': 0,
+        'DEBUG': 1,
+        'INFO': 2,
+        'WARNING': 3,
+        'ERROR': 4,
+        'CRITICAL': 5
+      };
+
       const entries = rawEntries.map((e) => {
         let message = '';
         if (e.textPayload) {
@@ -1495,18 +1806,52 @@ const app = new Elysia()
             ? `${methodName}${status ? ` [${JSON.stringify(status)}]` : ''}`
             : JSON.stringify(pp);
         }
+
+        // ── Resolve severity from payload ──
+        let resolvedSeverity = (e.severity ?? 'DEFAULT').toUpperCase();
+
+        // 1. Try to extract from jsonPayload pino level
+        if (e.jsonPayload && resolvedSeverity === 'DEFAULT') {
+          const level = e.jsonPayload['level'];
+          if (typeof level === 'number') {
+            if (level >= 60) resolvedSeverity = 'CRITICAL';
+            else if (level >= 50) resolvedSeverity = 'ERROR';
+            else if (level >= 40) resolvedSeverity = 'WARNING';
+            else if (level >= 30) resolvedSeverity = 'INFO';
+            else if (level >= 20) resolvedSeverity = 'DEBUG';
+          }
+        }
+
+        // 2. Try to extract from the raw text message pattern (e.g. " | INFO | " or " | ERROR | ")
+        if (resolvedSeverity === 'DEFAULT' || resolvedSeverity === '') {
+          const match = message.match(/\|\s*(DEBUG|INFO|WARN|WARNING|ERROR|FATAL|CRITICAL)\s*\|/i);
+          if (match) {
+            let matchedSev = match[1].toUpperCase();
+            if (matchedSev === 'WARN') matchedSev = 'WARNING';
+            if (matchedSev === 'FATAL') matchedSev = 'CRITICAL';
+            resolvedSeverity = matchedSev;
+          }
+        }
+
         return {
           timestamp: e.timestamp ?? '',
-          severity: e.severity ?? 'DEFAULT',
+          severity: resolvedSeverity,
           message,
           insertId: e.insertId ?? '',
         };
       });
 
+      // ── Filter server-side to guarantee correct classification bounds ──
+      const targetRank = severity ? (SEV_RANKS[severity] ?? 0) : 0;
+      const filteredEntries = entries.filter((e) => {
+        const rank = SEV_RANKS[e.severity] ?? 0;
+        return rank >= targetRank;
+      });
+
       return {
-        entries,
+        entries: filteredEntries,
         nextPageToken: data.nextPageToken ?? '',
-        total: entries.length,
+        total: filteredEntries.length,
       };
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
@@ -1710,8 +2055,10 @@ logger.info({ port: PORT }, `Dashboard running at http://localhost:${PORT}`);
 
 // Start background task to sync deposits hourly
 import { syncDepositsFromAlpaca } from './deposits';
-setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
-syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
+if (process.env.NODE_ENV !== 'test') {
+  setInterval(syncDepositsFromAlpaca, 60 * 60 * 1000);
+  syncDepositsFromAlpaca().catch(err => logger.warn({ err }, 'Initial deposit sync failed'));
 
-// Clean up old test jobs every 10 minutes
-setInterval(() => cleanupOldJobs(), 10 * 60 * 1000);
+  // Clean up old test jobs every 10 minutes
+  setInterval(() => cleanupOldJobs(), 10 * 60 * 1000);
+}

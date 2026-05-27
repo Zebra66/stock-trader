@@ -1,6 +1,7 @@
 import '../env';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
 import { withTimeout } from './with_timeout';
+import { checkConcentrationCap } from './concentration_guard';
 import type Alpaca from '@alpacahq/alpaca-trade-api';
 
 let _alpaca: Alpaca | null = null;
@@ -16,6 +17,30 @@ const API_TIMEOUT_MS = 15_000;
 const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
 ]);
+
+// ── Trading Lock (enforced at code level) ───────────────────────────────────
+const LOCK_FILE = 'memory/.trading_lock.json';
+
+async function getTradingLock(): Promise<{ active: boolean; allowed?: string[]; reason?: string; expiresAt?: string } | null> {
+  try {
+    const file = Bun.file(LOCK_FILE);
+    if (!(await file.exists())) return null;
+    const text = await file.text();
+    return JSON.parse(text) as any;
+  } catch {
+    return null;
+  }
+}
+
+function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?: string } | null, symbol: string, side: string): boolean {
+  if (lock?.allowed) {
+    const key = `${side.toUpperCase()}_${symbol.toUpperCase()}`;
+    for (const a of lock.allowed) {
+      if (a === key || a === `ANY_${symbol.toUpperCase()}` || a === `${side.toUpperCase()}_ANY`) return true;
+    }
+  }
+  return false;
+}
 
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
@@ -54,8 +79,65 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     const symUpper = symbol.toUpperCase();
+    // HARD_LOCK primary check
+    try {
+      const todo = await Bun.file('./memory/todo.md').text();
+      const currentSection = todo.slice(0, 3000);
+      const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
+      if (lockLineMatch) {
+        const lockLine = lockLineMatch[0];
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        if (!isExplicitlyLifted) {
+          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+        }
+      }
+    } catch {
+      // todo.md not readable — proceed to lock-file check as fallback
+    }
+    // Symbol-specific no-buy directive parser (todo.md)
+    try {
+      const noBuySymbols = new Set<string>();
+      const todo = await Bun.file('./memory/todo.md').text();
+      for (const line of todo.split('\n')) {
+        const upper = line.toUpperCase();
+        if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+        if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+        for (const sym of UNIVERSE) {
+          if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) noBuySymbols.add(sym);
+        }
+      }
+      if (side === 'buy' && noBuySymbols.has(symUpper)) {
+        return `Error submitting order: Symbol ${symbol} is on the active no-buy list derived from memory/todo.md.`;
+      }
+    } catch {
+      // todo.md not readable — proceed
+    }
+    // Trading lock check
+    const lock = await getTradingLock();
+    const lockAllows = isOrderAllowed(lock, symbol, side);
+    if (lock && lock.active && !lockAllows) {
+      return `Error submitting order: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`;
+    }
+    // Symbol ban check
+    if (side === 'buy') {
+      try {
+        const lockFile = Bun.file(LOCK_FILE);
+        if (await lockFile.exists()) {
+          const lockJson = JSON.parse(await lockFile.text()) as { bannedSymbols?: string[]; allowed?: string[]; reason?: string };
+          const banned = (lockJson.bannedSymbols ?? []).map((s: string) => s.toUpperCase());
+          if (banned.includes(symUpper)) {
+            const key = `${side.toUpperCase()}_${symUpper}`;
+            const isExcepted = (lockJson.allowed ?? []).some((a: string) => a === key || a === `ANY_${symUpper}` || a === `${side.toUpperCase()}_ANY`);
+            if (!isExcepted) {
+              return `Error submitting order: Symbol ${symbol} is currently banned. Reason: ${lockJson.reason || 'No reason provided'}.`;
+            }
+          }
+        }
+      } catch (e: unknown) {
+        if (e instanceof Error && e.message.includes('currently banned')) return e.message;
+      }
+    }
     if (side === 'buy' && !UNIVERSE.has(symUpper)) {
-      // Allow closing an existing short position even for out-of-universe symbols
       try {
         const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (universe check)');
         const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
@@ -76,6 +158,31 @@ export const alpacaTools = {
         }
       } catch (e: unknown) {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
+      }
+    }
+    // Concentration cap guard (BUY orders only)
+    if (side === 'buy') {
+      try {
+        const account = await withTimeout(getAlpaca().getAccount(), API_TIMEOUT_MS, 'Alpaca getAccount (concentration check)');
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (concentration check)');
+        const equity = parseFloat((account as any).equity);
+        const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
+        const currentMkt = pos ? parseFloat(pos.market_value) : 0;
+        const bar = await withTimeout(getAlpaca().getLatestBar(symbol), API_TIMEOUT_MS, `Alpaca getLatestBar(${symbol}) (concentration check)`);
+        const latestBarPrice = bar ? parseFloat((bar as any).ClosePrice ?? '0') : undefined;
+        const check = checkConcentrationCap({
+          symbol: symUpper,
+          qty,
+          limitPrice,
+          latestBarPrice,
+          currentMktValue: currentMkt,
+          equity,
+        });
+        if (!check.ok) {
+          return `Error submitting order: ${check.error}`;
+        }
+      } catch (e: unknown) {
+        return `Error submitting order: Concentration cap check failed: ${(e as Error).message}`;
       }
     }
     if (process.env.DRY_RUN === '1') {
