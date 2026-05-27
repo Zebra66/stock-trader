@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-27 : 11:39 : [hourly] Held all, no new orders, repo breach fixed
+- Portfolio +1.04% vs SPY +4.36% since inception
+- Gross exposure 83.5%, cash 16.5%, no add capacity due to caps
+- SOXX -2.58% today, AVGO -0.68%, both morning adds underwater
+- Critical git index breach detected and resolved
+- No open orders, tactical agent held positions through :40/:50
+
+2026-05-27 : 11:36 : [tactical] No action — all holds stable
+- No sell triggers breached (SOXX 57.82 > 40, AVGO 20.48 > 00)
+- No buy conditions met; all positions marked HOLD/DO NOT ADD
+- Gross exposure 83.5% within offensive 80-90% band
+- Event detector: NONE classification, no market events
+- Daytrade count 1/3, no PDT concerns
+
 2026-05-15 : 15:50 : [tactical] No trades: NVDA stayed below the 27.00 breakout trigger, so the book remained unchanged.
 - Live price checks showed NVDA at 226.60 while QQQ, SOXX, XLK, GOOG, and AVGO were all hold-only.
 - No order was submitted; held positions stayed AVGO 2, GOOG 3, NVDA 3, QQQ 6, SOXX 3, XLK 8.
