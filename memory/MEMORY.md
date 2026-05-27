@@ -144,3 +144,17 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Chasing a +14% weekly move in an ETF is not disciplined deployment.** Wait for pullbacks.
 - **Lock files must NOT contain auto-expiration timestamps.** Hourly strategist must explicitly set `active: false`.
 - **Defense-in-depth for symbol bans:** Both `bannedSymbols` array AND todo.md `DO NOT BUY` / `DO NOT ADD` parser must be kept in sync.
+
+---
+
+## Tactical Execution — 2026-05-27 13:53Z (Wednesday 9:53 AM ET)
+- **Trades executed this cycle:**
+  1. **SELL 1 NVDA** at market. Filled at ~$211.79. Trimmed unauthorized add back to intended 1-share allocation.
+  2. **BUY 1 AVGO** limit $429.50. Filled at ~$427.37. New position; weight ~4.2%.
+  3. **BUY 1 SOXX** limit $568.00. Filled at ~$567.54. Added to winner on pullback.
+- **Post-execution holdings:** QQQ 6, GOOG 3, VOO 2, SOXX 2, NVDA 1, AVGO 1
+- **Cash:** $1,460.40 (~14.4%)
+- **Gross exposure:** 85.6% (within 80–90% target band)
+- **Daytrade count:** 1/3 (unchanged — no daytrades this cycle)
+- **Open orders:** NONE
+- **Next expected action:** Monitor NVDA stop at $210.00, AVGO/SOXX momentum, next hourly at 10:35 AM ET.
