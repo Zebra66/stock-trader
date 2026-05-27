@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-27 : 15:36 : [hourly] Held all, flat into close
+- No new trades since 2:35 PM; exposure 83.5%
+- SOXX/AVGO stops active (40/00)
+- NVDA cooldown expires after 10:30 AM ET tomorrow
+- AVGO earnings June 3; holding through unless 00 breaks
+- Goal 2 off track by ~3.2 pp; need catch-up over next 2 months
+
+2026-05-27 : 15:30 : [tactical] No triggers; held all
+- SOXX 61.34 > 40 stop
+- AVGO 23.67 > 00 stop
+- No buy conditions active
+- Gross exposure 83.5% within band
+- Daytrade 1/3, no PDT risk
+
+2026-05-27 : 15:20 : [tactical] No action; all stops intact
+- SOXX 61.92 above 40 stop
+- AVGO 23.09 above 00 stop
+- Gross exposure 83.6% within 80-90% band
+- No buy conditions met in todo.md
+- Daytrade count 1/3, no PDT risk
+
+2026-05-27 : 15:10 : [tactical] Hold all; no triggers met
+- Event detector: NONE
+- Prices healthy; no sell stops breached
+- Exposure 83.5%, within offensive band
+- Zero orders placed
+
+2026-05-27 : 14:50 : [tactical] Hold all positions, no triggers
+- SOXX 61.93 above 40 stop
+- AVGO 20.60 above 00 stop
+- Event detector: NONE
+- Gross exposure 83.6%, within band
+- No action warranted
+
+2026-05-27 : 14:40 : [tactical] No action: all holds, no triggers
+- SOXX 61.85 > 40 stop
+- AVGO 20.13 > 00 stop
+- Daytrade 1/3, gross 83.5%
+- Event detector: NONE, all positions OK
+- No buy/sell conditions met
+
 2026-05-27 : 14:37 : [hourly] Hold all, no triggers, chips dip
 - No filled trades since 1:35 PM ET; tactical held all
 - AVGO 420.92 > 400 stop; SOXX 562.60 > 540 stop

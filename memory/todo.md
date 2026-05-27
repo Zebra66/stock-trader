@@ -1,24 +1,25 @@
-# Tactical Todo — Updated 2026-05-27 18:35Z (Wednesday 2:35 PM ET)
+# Tactical Todo — Updated 2026-05-27 19:35Z (Wednesday 3:35 PM ET)
 *HARD_LOCK LIFTED. Portfolio clean. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,139.51 / $1,670.51 / $11,810.02
+- **Account equity / cash / buying power:** $10,134.92 / $1,670.51 / $11,805.43
 - **Gross long exposure:** 83.5% | **Net exposure:** 83.5% | **Cash:** 16.5%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
 - **Open orders:** NONE
+- **Market closes in ~25 minutes.** No new aggressive positions this late in the session.
 
 ## Position Instructions — Wed May 27 (:40 and :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~43.2%, within 45% cap. Adding 1 share would breach cap.
-- Intraday dip –0.34% within normal range. Let core position run.
+- Intraday dip –0.11% within normal range. Let core position run into close.
 
 ### GOOG — HOLD 3 — DO NOT SELL OR ADD
-- Weight ~11.5%, within 15% cap. Adding 1 share would breach cap (~15.2%).
-- Fading intraday but still +0.49% on day. Thesis intact.
+- Weight ~11.4%, within 15% cap. Adding 1 share would breach cap (~15.2%).
+- Slight intraday fade but still +0.38% on day. Thesis intact.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
 - Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.4%).
@@ -31,8 +32,8 @@
 - Do NOT add on pullback today. Standing learning: never average down.
 
 ### AVGO — HOLD 1 — DO NOT ADD
-- Position opened at ~$427.37. Price now $420.92 (–1.51% from entry). Recovered from morning low of ~$419.
-- Quality catch-up play within chip rally. Earnings catalyst June 3 (6 days).
+- Position opened at ~$427.37. Price now $423.98 (–0.79% from entry). Recovered from morning low of $416.50; day high $432.80.
+- Quality catch-up play within chip rally. Earnings catalyst June 3 (5 trading days).
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $400.00. Rationale: pre-earnings technical breakdown.
 - Do NOT add on pullback today. Standing learning: never average down.
 
@@ -46,7 +47,7 @@
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - No edge, weak relative trends, parabolic chase risk, or thin liquidity.
-- Exception: HOOD launched AI agent trading product today (2:26 PM ET). This is a short-term catalyst, but the stock is –10% 1M and no clear edge. Hourly explicitly does NOT authorize a buy.
+- Exception: HOOD launched AI agent trading product today (2:26 PM ET). This is a short-term catalyst, but the stock is –6.66% 1M and no clear edge. Hourly explicitly does NOT authorize a buy.
 
 ## Hard Rules / No-Trade Conditions
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
@@ -77,9 +78,16 @@ Do not place market orders for these; use limit orders only, or defer.
 2. ~~NVDA trim: SELL 1 share at market~~ — FILLED at ~$211.79 (9:53 AM ET).
 3. ~~SOXX add: BUY 1 share if price drops to $568.00 or below~~ — FILLED at ~$567.54 (9:54 AM ET).
 4. ~~NVDA stop: SELL remaining 1 share if price breaks below $210.00~~ — FILLED at ~$210.11 (10:30 AM ET).
-5. **NO NEW ORDERS** authorized for remainder of 2:35 PM ET hourly cycle.
+5. **NO NEW ORDERS** authorized for remainder of 3:35 PM ET hourly cycle.
 
-## Expected Book
-- QQQ 6 (~43.2%), GOOG 3 (~11.5%), VOO 2 (~13.6%), SOXX 2 (~11.1%), AVGO 1 (~4.2%)
+## Expected Book Into Close
+- QQQ 6 (~43.2%), GOOG 3 (~11.4%), VOO 2 (~13.6%), SOXX 2 (~11.1%), AVGO 1 (~4.2%)
 - Cash: ~$1,671 (~16.5%)
 - Gross exposure: ~83.5%
+
+## Tomorrow Preview — Thursday May 28 (NOT AUTHORIZED YET)
+*The following are WATCHLIST items only. They require explicit 9:35 AM ET hourly authorization before execution.*
+- **NVDA re-entry watch:** 24-hour cooldown expires after 10:30 AM ET. Goldman AI tailwind note supportive. Re-entry only if 9:35 AM ET hourly explicitly authorizes AND price confirms support above $210.
+- **GOOG:** If it pulls back toward $380 on macro weakness, consider adding 1 share IF equity and concentration caps permit.
+- **AVGO:** Hold 1 share through earnings (June 3) unless technicals deteriorate below $400.
+- **Cash deployment:** If equity rises above ~$10,360, add capacity opens for 1 GOOG share or 1 VOO share under concentration caps.
