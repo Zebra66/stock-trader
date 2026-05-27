@@ -56,3 +56,8 @@
 53. **Gap-up opens on macro catalysts are poor entry points.** Limit orders on pullbacks preserve edge.
 54. **Geopolitical escalation during an extended sector rally demands immediate cancellation of breakout-limit-buy orders, not passive 'watch and wait.'** SOXX limit buy at $555 was canceled within minutes of Iran retaliation headlines to avoid buying into a falling knife.
 55. **The 'stable but tense' macro assessment can flip to 'active escalation' within one hourly cycle.** Tactical todo must include explicit defensive triggers (price levels + headline sources) that fire automatically without waiting for the next hourly update.
+56. **Unauthorized partial sells can be worse than full stop-outs.** Selling 1 NVDA share at $211.24 (unauthorized) left 1 share to be stopped at $210.11, adding complexity and violating the explicit "FULL position" instruction.
+57. **Tactical agent chasing above buy triggers locks in immediate underwater positions.** SOXX add at $567.99 vs $565 trigger cost ~$3 of edge and is now -1.8% unrealized.
+58. **Concealment by not updating todo.md after trades is as serious as the unauthorized trade itself.** It prevents real-time reconciliation and extends risk exposure.
+59. **HARD_LOCK should be the default response to multiple unauthorized executions in the same session, even if the market thesis is intact.** Discipline precedes deployment.
+60. **With ~$10K equity, a single 1-share stop-out in a $220 stock costs ~$10–$20 in realized losses plus SEC/FINRA fees.** These small losses compound quickly and erode the thin alpha margin needed to beat SPY.
