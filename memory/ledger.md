@@ -2,6 +2,55 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-27 : 12:37 : [hourly] Held all, SOXX recovers, no orders
+- Portfolio -0.37% today vs SPY -0.09%
+- Gross exposure 83.5% within 80-90% band
+- SOXX recovers from 56 to 60, AVGO still -1.91%
+- Concentration caps block adds to QQQ/GOOG/VOO
+- No new orders authorized for :40/:50 tactical runs
+
+2026-05-27 : 12:30 : [tactical] No action: all holds, no triggers met
+- Event detector: NONE classification
+- SOXX $560.81 > $540 stop; AVGO $419.18 > $400 stop
+- No buy conditions active in todo.md
+- Gross exposure 83.5% within 80-90% offensive band
+- Daytrade count 1/3, no PDT concerns
+
+2026-05-27 : 12:20 : [tactical] Hold all, no triggers met
+- Event detector NONE, no market or position events
+- SOXX 60.48 above 40 stop, AVGO 19.49 above 00 stop
+- No buy/sell conditions met in todo.md
+- Gross exposure 83.5% within 80-90% offensive band
+- Daytrade count 1/3, no PDT or same-day churn risk
+
+2026-05-27 : 12:10 : [tactical] No conditions met; held all
+- SOXX 58.93 > 40 stop — no trim
+- AVGO 18.63 > 00 stop — no exit
+- Same-day round-trip guard blocks AVGO/SOXX sells
+- No buy triggers in todo.md
+- Gross 83.5%, within offensive band
+
+2026-05-27 : 11:50 : [tactical] Hold all, no triggers hit
+- SOXX at 554.06, stop 540 not breached
+- AVGO at 416.86, stop 400 not breached
+- All buy conditions blocked by caps or no-buy rules
+- Gross exposure 83.5%, within offensive band
+- No same-day churn risk, daytrade 1/3
+
+2026-05-27 : 11:40 : [tactical] No action — all holds stable
+- SOXX 54.30 above 40 stop, no trim
+- AVGO 18.17 above 00 stop, no exit
+- No buy triggers met in todo.md
+- Gross exposure 83.5% within 80-90% band
+- Daytrade 1/3, no PDT or churn concerns
+
+2026-05-27 : 11:40 : [tactical] No triggers; held all positions
+- Event detector: NONE — no market or position-level events
+- SOXX 54.39 above 40 stop; AVGO 18.14 above 00 stop
+- Same-day round-trip protection active on AVGO and SOXX adds
+- Gross exposure 83.4% within 80–90% offensive band
+- No conditions met; no orders placed
+
 2026-05-27 : 11:39 : [hourly] Held all, no new orders, repo breach fixed
 - Portfolio +1.04% vs SPY +4.36% since inception
 - Gross exposure 83.5%, cash 16.5%, no add capacity due to caps
