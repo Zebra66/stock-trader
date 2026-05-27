@@ -158,3 +158,16 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Daytrade count:** 1/3 (unchanged — no daytrades this cycle)
 - **Open orders:** NONE
 - **Next expected action:** Monitor NVDA stop at $210.00, AVGO/SOXX momentum, next hourly at 10:35 AM ET.
+
+---
+
+## Tactical Execution — 2026-05-27 14:31Z (Wednesday 10:31 AM ET)
+- **Trades executed this cycle:**
+  1. **SELL 1 NVDA** limit $209.90. Filled at ~$210.00. Stop-loss triggered on remaining 1 share after NVDA broke below $210.00 during regular session (latest bar close $209.96 at 14:29Z).
+- **Post-execution holdings:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
+- **Cash:** $1,670.51 (~16.5%)
+- **Gross exposure:** 83.4% (within 80–90% target band, slightly lower due to defensive exit)
+- **Daytrade count:** 1/3 (unchanged — NVDA was not opened today; remaining share held overnight)
+- **Open orders:** NONE
+- **Rationale:** NVDA has been the laggard within a surging chip sector (SOXX +14.18% 1W vs NVDA –3.74% 1W). The $210.00 stop was the authorized defensive line from the hourly strategist. With no broad market event and no adverse news catalyst, this was a disciplined technical stop execution. Loss on final share: ~$10.15 unrealized (–4.61% on the position, based on $220.195 avg entry).
+- **Next expected action:** 11:35 AM ET hourly — monitor AVGO/SOXX momentum, consider redeploying NVDA exit cash if hourly authorizes new setup. Do NOT re-buy NVDA within 24 hours without explicit hourly authorization.

@@ -3,9 +3,9 @@
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, NVDA 1, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,142.45 / $1,460.40 / $11,602.85
-- **Gross long exposure:** 85.6% | **Net exposure:** 85.6% | **Cash:** 14.4%
+- **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
+- **Account equity / cash / buying power:** $10,103.58 / $1,670.51 / $11,774.09
+- **Gross long exposure:** 83.4% | **Net exposure:** 83.4% | **Cash:** 16.5%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -29,10 +29,9 @@
 - Add filled: bought 1 share at ~$567.54 on pullback to $568 limit.
 - Rationale: added to winner on healthy pullback after +14% weekly run.
 
-### NVDA — HOLD 1 — DO NOT ADD
-- Trim executed: sold 1 share at ~$211.79 to remove unauthorized add.
-- **Stop on remaining 1 share:** SELL remaining 1 share NVDA if price breaks below $210.00. Rationale: stop-loss on post-earnings / relative underperformance.
-- **DO NOT ADD NVDA.** No new buys under any circumstances.
+### NVDA — SOLD OUT
+- ~~Stop on remaining 1 share: SELL if price breaks below $210.00~~ — EXECUTED at ~$210.00 (limit $209.90, filled).
+- **DO NOT ADD NVDA.** No new buys under any circumstances. 24-hour cooldown applies if hourly ever authorizes re-entry.
 
 ### AVGO — HOLD 1 — DO NOT SELL
 - Position opened at ~$427.37. Quality catch-up play within chip rally. Earnings catalyst June 3.
@@ -72,21 +71,19 @@ Do not place market orders for these; use limit orders only, or defer.
 1. ~~AVGO add: BUY 1 share at limit $429.50~~ — FILLED at ~$427.37.
 2. ~~NVDA trim: SELL 1 share at limit $212.50 or market~~ — FILLED at ~$211.79.
 3. ~~SOXX add: BUY 1 share if price drops to $568.00 or below~~ — FILLED at ~$567.54.
-4. **NVDA stop:** SELL remaining 1 share if price breaks below $210.00. Defensive priority.
+4. ~~**NVDA stop:** SELL remaining 1 share if price breaks below $210.00~~ — EXECUTED at ~$210.00.
 
 ## Expected Post-Execution Book (Actual)
-- QQQ 6 (~43.2%), GOOG 3 (~11.4%), VOO 2 (~13.6%), SOXX 2 (~11.2%), NVDA 1 (~2.1%), AVGO 1 (~4.2%)
-- Cash: ~$1,460 (~14.4%)
-- Gross exposure: ~85.6%
+- QQQ 6 (~43.2%), GOOG 3 (~11.5%), VOO 2 (~13.7%), SOXX 2 (~11.0%), AVGO 1 (~4.1%)
+- Cash: ~$1,671 (~16.5%)
+- Gross exposure: ~83.4%
 
-## This Cycle — 2026-05-27 13:53Z (Wednesday 9:53 AM ET)
+## This Cycle — 2026-05-27 14:31Z (Wednesday 10:31 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $10,142.45 | Cash $1,460.40 | Long $8,682.05 | Gross 85.6% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,377.36 @ 729.56), GOOG 3 ($1,155.27 @ 385.09), VOO 2 ($1,379.41 @ 689.705), SOXX 2 ($1,135.08 @ 567.54), NVDA 1 ($211.29 @ 211.29), AVGO 1 ($427.57 @ 427.57).
+- **Live broker refresh:** Equity $10,103.58 | Cash $1,670.51 | Long $8,433.07 | Gross 83.4% | Daytrade 1/3.
+- **Holdings confirmed:** QQQ 6 ($4,361.76 @ 726.96), GOOG 3 ($1,164.75 @ 388.25), VOO 2 ($1,379.92 @ 689.96), SOXX 2 ($1,109.56 @ 554.78), AVGO 1 ($417.64 @ 417.64).
 - **Open orders:** NONE.
 - **Event detector:** NONE — no broad market or position-level events.
 - **Orders placed this cycle:**
-  - SOLD 1 NVDA at market (~$211.79)
-  - BOUGHT 1 AVGO limit $429.50, filled ~$427.37
-  - BOUGHT 1 SOXX limit $568.00, filled ~$567.54
-- **Next expected action:** 10:35 AM ET hourly — monitor NVDA stop at $210, SOXX/AVGO momentum.
+  - SOLD 1 NVDA limit $209.90, filled ~$210.00 — stop-loss on remaining share after breach of $210.00 trigger.
+- **Next expected action:** 11:35 AM ET hourly — monitor AVGO/SOXX momentum, deploy cash if hourly authorizes new setup.
