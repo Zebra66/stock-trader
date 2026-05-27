@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-05-27 13:53Z (Wednesday 9:53 AM ET)
+# Tactical Todo — Updated 2026-05-27 14:36Z (Wednesday 10:36 AM ET)
 *HARD_LOCK LIFTED. Portfolio clean. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,103.58 / $1,670.51 / $11,774.09
-- **Gross long exposure:** 83.4% | **Net exposure:** 83.4% | **Cash:** 16.5%
+- **Account equity / cash / buying power:** $10,106.08 / $1,670.51 / $11,776.59
+- **Gross long exposure:** 83.5% | **Net exposure:** 83.5% | **Cash:** 16.5%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -14,39 +14,42 @@
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~43.2%, within 45% cap. Adding 1 share would breach cap.
-- Let momentum run. No action required.
+- Intraday dip –0.42% within normal range. Let core position run.
 
 ### GOOG — HOLD 3 — DO NOT SELL OR ADD
-- Weight ~11.4%, within 15% cap. Adding 1 share would breach cap (~15.1%).
-- Thesis intact (orbital data-center headline). No action required.
+- Weight ~11.5%, within 15% cap. Adding 1 share would breach cap (~15.3%).
+- Up +0.80% today. Thesis intact (orbital data center + AI infrastructure).
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
-- Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.3%).
+- Weight ~13.7%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.5%).
 - Broad-market anchor. No action required.
 
-### SOXX — HOLD 2 — DO NOT SELL
-- Weight ~11.2%, within 20% non-QQQ ETF cap. Breakout validated; let momentum run.
-- Add filled: bought 1 share at ~$567.54 on pullback to $568 limit.
-- Rationale: added to winner on healthy pullback after +14% weekly run.
+### SOXX — HOLD 2 — DO NOT ADD
+- Weight ~11.0%, within 20% non-QQQ ETF cap.
+- Added 2nd share this morning at $567.99; price now $555.53 (–2.19% from entry).
+- **Defensive trim:** SELL 1 share if price drops below $540.00. Rationale: protect capital on deeper pullback after parabolic weekly run. If triggered, hold remaining 1 share as core.
+- Do NOT add on pullback today. Standing learning: never average down.
 
-### NVDA — SOLD OUT
-- ~~Stop on remaining 1 share: SELL if price breaks below $210.00~~ — EXECUTED at ~$210.00 (limit $209.90, filled).
-- **DO NOT ADD NVDA.** No new buys under any circumstances. 24-hour cooldown applies if hourly ever authorizes re-entry.
+### AVGO — HOLD 1 — DO NOT ADD
+- Position opened at ~$427.37. Price now $418.15 (–2.14% from entry).
+- Quality catch-up play within chip rally. Earnings catalyst June 3.
+- **Defensive stop:** SELL 1 share if price drops below $400.00. Rationale: earnings catalyst failed, technical breakdown.
+- Do NOT add on pullback today. Standing learning: never average down.
 
-### AVGO — HOLD 1 — DO NOT SELL
-- Position opened at ~$427.37. Quality catch-up play within chip rally. Earnings catalyst June 3.
-- Weight ~4.2% (well within 15% single-stock cap).
-- Rationale: redeployed NVDA trim proceeds + cash into relative laggard with defined catalyst.
+### NVDA — DO NOT BUY — DO NOT RE-BUY
+- Fully exited. 24-hour cooldown applies unless hourly explicitly authorizes re-entry.
+- Underperforming within chip sector. No edge.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
-- Supreme Court rejection + weak 1M trend. No re-entry.
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
-- No edge, weak relative trends, or parabolic chase risk. RKLB 1M +72.81% is too extended.
+- No edge, weak relative trends, parabolic chase risk, or thin liquidity.
 
 ## Hard Rules / No-Trade Conditions
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
+  - AVGO bought today at ~$427.37 — DO NOT SELL today unless hourly explicitly authorizes.
+  - SOXX 2nd share bought today at ~$567.99 — DO NOT SELL today unless hourly explicitly authorizes.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
@@ -67,23 +70,23 @@ Do not place market orders for these; use limit orders only, or defer.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
-## Today's Deployment Queue (Execution Completed)
-1. ~~AVGO add: BUY 1 share at limit $429.50~~ — FILLED at ~$427.37.
-2. ~~NVDA trim: SELL 1 share at limit $212.50 or market~~ — FILLED at ~$211.79.
-3. ~~SOXX add: BUY 1 share if price drops to $568.00 or below~~ — FILLED at ~$567.54.
-4. ~~**NVDA stop:** SELL remaining 1 share if price breaks below $210.00~~ — EXECUTED at ~$210.00.
+## Today's Deployment Queue
+1. ~~AVGO add: BUY 1 share at limit $429.50~~ — FILLED at ~$427.37 (9:53 AM ET).
+2. ~~NVDA trim: SELL 1 share at market~~ — FILLED at ~$211.79 (9:53 AM ET).
+3. ~~SOXX add: BUY 1 share if price drops to $568.00 or below~~ — FILLED at ~$567.54 (9:54 AM ET).
+4. ~~NVDA stop: SELL remaining 1 share if price breaks below $210.00~~ — FILLED at ~$210.11 (10:30 AM ET).
+5. **NO NEW ORDERS** authorized for remainder of 10:35 AM ET hourly cycle.
 
-## Expected Post-Execution Book (Actual)
+## Expected Book
 - QQQ 6 (~43.2%), GOOG 3 (~11.5%), VOO 2 (~13.7%), SOXX 2 (~11.0%), AVGO 1 (~4.1%)
 - Cash: ~$1,671 (~16.5%)
-- Gross exposure: ~83.4%
+- Gross exposure: ~83.5%
 
-## This Cycle — 2026-05-27 14:31Z (Wednesday 10:31 AM ET)
+## This Cycle — 2026-05-27 14:36Z (Wednesday 10:36 AM ET)
 - **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $10,103.58 | Cash $1,670.51 | Long $8,433.07 | Gross 83.4% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,361.76 @ 726.96), GOOG 3 ($1,164.75 @ 388.25), VOO 2 ($1,379.92 @ 689.96), SOXX 2 ($1,109.56 @ 554.78), AVGO 1 ($417.64 @ 417.64).
+- **Live broker refresh:** Equity $10,106.08 | Cash $1,670.51 | Long $8,435.57 | Gross 83.5% | Daytrade 1/3.
+- **Holdings confirmed:** QQQ 6 ($4,362.51 @ 727.085), GOOG 3 ($1,164.21 @ 388.07), VOO 2 ($1,379.64 @ 689.82), SOXX 2 ($1,111.06 @ 555.53), AVGO 1 ($418.15 @ 418.15).
 - **Open orders:** NONE.
 - **Event detector:** NONE — no broad market or position-level events.
-- **Orders placed this cycle:**
-  - SOLD 1 NVDA limit $209.90, filled ~$210.00 — stop-loss on remaining share after breach of $210.00 trigger.
-- **Next expected action:** 11:35 AM ET hourly — monitor AVGO/SOXX momentum, deploy cash if hourly authorizes new setup.
+- **Orders placed this cycle:** NONE. Hold-only directive.
+- **Next expected action:** 11:35 AM ET hourly — monitor SOXX/AVGO pullback, reassess deployment.
