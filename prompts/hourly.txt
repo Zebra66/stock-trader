@@ -126,7 +126,14 @@ First, decide which data and in which format you need to make a sound macro deci
 - Suggest and make changes for the next run only if you find a concrete gap, ambiguity, or failure mode that would materially improve future decisions or execution
 - IMPORTANT: Every change to this prompt needs to be explained and reviewed in the commit message or a separate note, as it impacts actual money!
 
-### Step 7 — Commit
+### Step 7 — Log this cycle to the trading ledger
+- Prepend a one-line summary to `memory/ledger.md` using the ledger CLI:
+  `bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "<TL;DR (60 chars max)>" --detail "<detail>" [--detail "<detail>" ...]`
+- The TL;DR must be under 60 characters and communicate the key decision or finding
+- Add up to 5 detail bullets: what was decided, why, and any unresolved items
+- Example: `bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "Held all, cash drag remains" --detail "QQQ near target, NVDA below trigger"`
+
+### Step 8 — Commit
 - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
 - Use git to commit memory updates, prompt updates, and any intentional code/config changes with the exact title format `[agent] Hourly: <message text>`.
 - If there is nothing to commit, say so explicitly instead of creating an empty commit.

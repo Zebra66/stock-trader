@@ -385,6 +385,10 @@ const app = new Elysia()
   </div>
   <div class="bottom-grid">
     <div class="card">
+      <div class="sec-title">📋 Trading Ledger <button class="btn-refresh" onclick="fetchLedger()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh ledger">⟳</button></div>
+      <pre class="mem" id="ledger-content" style="max-height:400px;overflow-y:auto">Loading...</pre>
+    </div>
+    <div class="card">
       <div class="sec-title">🧠 Agent Memory <button class="btn-refresh" onclick="fetchMemory()" style="margin-left:.5rem;font-size:.7rem;padding:.25rem .6rem" title="Refresh memory">⟳</button></div>
       <pre class="mem" id="memory-content">Loading...</pre>
     </div>
@@ -571,6 +575,9 @@ const app = new Elysia()
   async function togglePause(){await fetch('/api/toggle',{method:'POST'});fetchStatus();}
   async function fetchMemory(){
     try{const t=await(await fetch('/api/memory')).text();document.getElementById('memory-content').innerText=t;}catch(e){}
+  }
+  async function fetchLedger(){
+    try{const t=await(await fetch('/api/ledger')).text();document.getElementById('ledger-content').innerText=t;}catch(e){}
   }
 
   async function renderChart(forceReload){
@@ -1231,7 +1238,7 @@ const app = new Elysia()
   });
 
 
-  fetchStatus();fetchMemory();renderChart(true);fetchCommits();fetchSP500();updateRequestsBadge();
+  fetchStatus();fetchMemory();fetchLedger();renderChart(true);fetchCommits();fetchSP500();updateRequestsBadge();
   // Only poll status (paused/active badge) — everything else is on-demand via refresh buttons.
   setInterval(fetchStatus, 20000);
 
@@ -1370,6 +1377,34 @@ const app = new Elysia()
       return memory;
     } catch (e) {
       return "Memory file not found.";
+    }
+  })
+  .get('/api/ledger', async () => {
+    try {
+      const file = Bun.file('memory/ledger.md');
+      const reader = file.stream().getReader();
+      const decoder = new TextDecoder();
+      let text = '';
+      let lineCount = 0;
+      const TARGET_LINES = 60;
+
+      while (lineCount < TARGET_LINES) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        text += decoder.decode(value, { stream: !done });
+        lineCount = text.split('\n').length - 1;
+      }
+      reader.releaseLock();
+
+      const allLines = text.split('\n');
+      const enough = allLines.length >= 4 && allLines[3].startsWith('Format');
+      const bodyStart = enough ? 4 : 0;
+      const header = allLines.slice(0, bodyStart);
+      const body = allLines.slice(bodyStart).filter(l => l.trim());
+      const lines = [...header, '', ...body.slice(0, 50)];
+      return lines.join('\n');
+    } catch (e) {
+      return "Ledger file not found.";
     }
   })
   .get('/api/chart-data', async ({ query }: { query: { mode?: string; period?: string } }) => {

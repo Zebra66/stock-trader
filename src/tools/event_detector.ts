@@ -12,7 +12,7 @@ function getAlpaca(): Alpaca {
 
 const API_TIMEOUT_MS = 15_000;
 
-const SNAPSHOT_PATH = './temp_files/tactical_last_prices.json';
+const SNAPSHOT_PATH = './memory/tactical_last_prices.json';
 
 const BENCHMARK_SYMBOLS = ['SPY', 'QQQ', 'SOXX', 'XLK', 'GLD', 'SMH'];
 

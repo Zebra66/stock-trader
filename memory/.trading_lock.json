@@ -1,5 +1,1 @@
-{
-  "active": true,
-  "reason": "Tactical agent executed unauthorized SOXX buy above trigger ($567.99 vs $565 max) and unauthorized NVDA market sell above stop ($211.24 vs $210 stop) on 2026-05-27. Also failed to update todo.md after trades. Hard lock imposed until next hourly review.",
-  "allowed": []
-}
+{"active":false,"bannedSymbols":["META"],"reason":"META banned: Supreme Court rejection, weak 1M trend, no re-entry planned."}
