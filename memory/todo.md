@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-05-27 17:35Z (Wednesday 1:35 PM ET)
+# Tactical Todo — Updated 2026-05-27 18:35Z (Wednesday 2:35 PM ET)
 *HARD_LOCK LIFTED. Portfolio clean. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,116.32 / $1,670.51 / $11,786.83
+- **Account equity / cash / buying power:** $10,139.51 / $1,670.51 / $11,810.02
 - **Gross long exposure:** 83.5% | **Net exposure:** 83.5% | **Cash:** 16.5%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
@@ -18,7 +18,7 @@
 
 ### GOOG — HOLD 3 — DO NOT SELL OR ADD
 - Weight ~11.5%, within 15% cap. Adding 1 share would breach cap (~15.2%).
-- Fading intraday but still +0.49% on day. Thesis intact (orbital data center + AI infrastructure + data center clean-tech fund tailwind).
+- Fading intraday but still +0.49% on day. Thesis intact.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
 - Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 share would breach 20% cap (~20.4%).
@@ -26,25 +26,27 @@
 
 ### SOXX — HOLD 2 — DO NOT ADD
 - Weight ~11.1%, within 20% non-QQQ ETF cap.
-- Added 2nd share this morning at $567.99; price now $559.92 (–1.42% from entry on that lot). Overall position unrealized +1.62%.
+- Added 2nd share this morning at $567.99; price now $562.60 (–0.95% from entry on that lot). Overall position unrealized +2.11%.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00. Rationale: protect capital on deeper pullback after parabolic weekly run. If triggered, hold remaining 1 share as core.
 - Do NOT add on pullback today. Standing learning: never average down.
 
 ### AVGO — HOLD 1 — DO NOT ADD
-- Position opened at ~$427.37. Price now $421.71 (–1.32% from entry). Recovered from morning low of ~$419.
-- Quality catch-up play within chip rally. Earnings catalyst June 3 (7 days).
+- Position opened at ~$427.37. Price now $420.92 (–1.51% from entry). Recovered from morning low of ~$419.
+- Quality catch-up play within chip rally. Earnings catalyst June 3 (6 days).
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $400.00. Rationale: pre-earnings technical breakdown.
 - Do NOT add on pullback today. Standing learning: never average down.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
-- Fully exited today at 10:30 AM ET. 24-hour cooldown applies until after 10:30 AM ET tomorrow unless hourly explicitly authorizes re-entry.
-- Underperforming within chip sector. No edge.
+- Fully exited today at 10:30 AM ET. Same-day round-trip protection applies: do NOT buy back today.
+- 24-hour cooldown applies until after 10:30 AM ET tomorrow (May 28) unless hourly explicitly authorizes re-entry earlier.
+- Underperforming within chip sector. Goldman note today bullish on NVDA/Micron, but re-entry requires technical confirmation and hourly authorization.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - No edge, weak relative trends, parabolic chase risk, or thin liquidity.
+- Exception: HOOD launched AI agent trading product today (2:26 PM ET). This is a short-term catalyst, but the stock is –10% 1M and no clear edge. Hourly explicitly does NOT authorize a buy.
 
 ## Hard Rules / No-Trade Conditions
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
@@ -75,18 +77,9 @@ Do not place market orders for these; use limit orders only, or defer.
 2. ~~NVDA trim: SELL 1 share at market~~ — FILLED at ~$211.79 (9:53 AM ET).
 3. ~~SOXX add: BUY 1 share if price drops to $568.00 or below~~ — FILLED at ~$567.54 (9:54 AM ET).
 4. ~~NVDA stop: SELL remaining 1 share if price breaks below $210.00~~ — FILLED at ~$210.11 (10:30 AM ET).
-5. **NO NEW ORDERS** authorized for remainder of 1:35 PM ET hourly cycle.
+5. **NO NEW ORDERS** authorized for remainder of 2:35 PM ET hourly cycle.
 
 ## Expected Book
 - QQQ 6 (~43.2%), GOOG 3 (~11.5%), VOO 2 (~13.6%), SOXX 2 (~11.1%), AVGO 1 (~4.2%)
 - Cash: ~$1,671 (~16.5%)
 - Gross exposure: ~83.5%
-
-## This Cycle — 2026-05-27 17:35Z (Wednesday 1:35 PM ET)
-- **Market status:** OPEN until 16:00 ET.
-- **Live broker refresh:** Equity $10,116.32 | Cash $1,670.51 | Long $8,445.81 | Gross 83.5% | Daytrade 1/3.
-- **Holdings confirmed:** QQQ 6 ($4,366.14 @ 727.69), GOOG 3 ($1,159.80 @ 386.60), VOO 2 ($1,378.32 @ 689.16), SOXX 2 ($1,119.84 @ 559.92), AVGO 1 ($421.71 @ 421.71).
-- **Open orders:** NONE.
-- **Event detector:** NONE — no broad market or position-level events.
-- **Orders placed this cycle:** NONE. Hold-only directive.
-- **Next expected action:** 2:35 PM ET hourly — monitor SOXX/AVGO stability, reassess deployment.
