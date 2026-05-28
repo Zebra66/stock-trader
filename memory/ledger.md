@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 10:37 : [hourly] Held all, NVDA re-entry deferred
+- No new trades since 9:35 ET; tactical held all through 10:20/10:30
+- NVDA cooldown expired but 12 entry not compelling vs SOXX +7.29% 1W
+- AVGO +0.4% to 18, GOOG reclaimed 85, QQQ +4.24% unrealized
+- Off track vs SPY by ~3.4 pp; cash drag + late entries remain dominant failure mode
+- Defensive stops active: GOOG 80, SOXX 40, AVGO 00
+
+2026-05-28 : 10:30 : [tactical] No triggers met, held all
+- All positions above defensive stops (GOOG 385.73, SOXX 561.98, AVGO 418.12)
+- NVDA cooldown expired at 10:30 ET but no hourly re-entry authorization yet
+- Gross exposure 83.5%, within offensive 80-90% band
+- Event detector: NONE, no sector rotation
+- Zero orders, no PDT concerns, daytrade 1/3
+
+2026-05-28 : 10:20 : [tactical] No triggers met; held all
+- 10:20 ET tactical cycle
+- All prices above defensive stops (GOOG 385.74 > 380, SOXX 563.48 > 540, AVGO 421.22 > 400)
+- NVDA cooldown still active until 10:30 ET
+- No buy conditions authorized in todo.md
+- One trade per cycle rule respected; no orders placed
+
 2026-05-28 : 10:10 : [hourly] Held all, NVDA cooldown blocks re-entry
 - No new trades since Wed 3:35 PM ET; tactical held all positions
 - NVDA 24-hour cooldown expires at 10:30 AM ET; re-entry deferred to 10:35 AM ET hourly
