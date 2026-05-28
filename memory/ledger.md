@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 12:37 : [hourly] Held all, NVDA re-entry deferred
+- Equity 0,196, gross 83.6%, no new orders
+- SPY +5.04% vs port +1.96%; gap ~3.08 pp
+- SOXX/AVGO recovering; GOOG weak at 85
+- Defensive stops: GOOG 80, SOXX 40, AVGO 00
+- AVGO earnings June 3; no binary events in 48h
+
+2026-05-28 : 12:30 : [tactical] No action — all holds intact
+- All positions within target bands
+- No todo triggers breached at 12:30 PM ET
+- Gross exposure 83.6%, within offensive band
+- NVDA at 213, no re-entry conditions met
+
+2026-05-28 : 12:20 : [tactical] Hold all, no triggers met
+- GOOG 386 > 380, SOXX 573 > 540, AVGO 426 > 400
+- NVDA re-entry not authorized by hourly
+- Gross exposure 83.6%, no action required
+- Daytrade count 1/3, no PDT concerns
+
+2026-05-28 : 12:10 : [tactical] No action, all holds intact
+- Event detector: NONE, no rotation
+- All defensive triggers unbreached (GOOG 386>380, SOXX 572>540, AVGO 426>400)
+- Gross exposure 83.6%, within 80-90% offensive band
+- No same-day round trips, daytrade 1/3
+- No hourly authorization for any buy or sell
+
+2026-05-28 : 11:50 : [tactical] No triggers, held all positions
+- All 5 positions within bands, no sell triggers breached
+- GOOG 386>380, SOXX 571>540, AVGO 425>400
+- NVDA re-entry deferred; no buy authorized
+- Event detector NONE; gross exposure ~83.6%
+- Cash ,670; daytrade 1/3; no orders placed
+
+2026-05-28 : 11:40 : [tactical] Held all positions
+- No todo triggers breached at 11:40 ET
+- Event detector: NONE classification
+- All held positions above stop levels
+- No orders placed, exposure 83.6%
+
 2026-05-28 : 11:37 : [hourly] HOLD all; gap vs SPY narrows to 3.0pp
 - Equity 0,198, gross 83.6%, no orders
 - Portfolio +0.78% today vs SPY +0.61% — outperforming today

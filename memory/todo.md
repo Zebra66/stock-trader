@@ -1,25 +1,25 @@
-# Tactical Todo — Updated 2026-05-28 15:35Z (Thursday 11:35 AM ET)
+# Tactical Todo — Updated 2026-05-28 16:35Z (Thursday 12:35 PM ET)
 *HARD_LOCK LIFTED. Portfolio clean. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,197.78 / $1,670.50 / $11,868.28
+- **Account equity / cash / buying power:** $10,195.91 / $1,670.50 / $11,866.41
 - **Gross long exposure:** 83.6% | **Net exposure:** 83.6% | **Cash:** 16.4%
 - **Daytrade count:** 1/3 (META round-trip cleanup from Thursday May 21)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market open until 16:00 ET.** No late-session aggressive adds after 15:30 ET unless explicitly authorized.
+- **Market open until 20:00Z (16:00 ET).** No late-session aggressive adds after 19:30Z (15:30 ET) unless explicitly authorized.
 
 ## Position Instructions — Thu May 28 (:40, :50, and subsequent Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~43.3%, within 45% cap. Adding 1 share would breach cap.
-- Intraday action positive (+0.77% today). Let core position run.
+- Intraday action positive (+0.80% today). Let core position run.
 
 ### GOOG — HOLD 3 — DO NOT SELL OR ADD UNLESS HOURLY EXPLICITLY AUTHORIZES
 - Weight ~11.3%, within 15% cap. Adding 1 share would breach cap (~15.2%).
-- Price $386.21, below avg entry $392.92. Reclaimed $385 but still weak.
+- Price $385.05, below avg entry $392.92. Reclaimed $385 but still weak.
 - **Trim watch (HOUR AUTHORIZATION REQUIRED):** SELL 1 share if price drops below $380.00. Rationale: cut underperformer if support fails. This is an overnight position; sale does NOT consume a daytrade.
 - Do NOT add on dip. Standing learning: never average down.
 
@@ -28,23 +28,23 @@
 - Broad-market anchor. No action required.
 
 ### SOXX — HOLD 2 — DO NOT ADD
-- Weight ~11.3%, within 20% non-QQQ ETF cap.
-- 2nd share bought May 27 at $567.99; price now $573.73 (+1.04% from entry on that lot). Overall position unrealized +4.13%.
+- Weight ~11.2%, within 20% non-QQQ ETF cap.
+- 2nd share bought May 27 at $567.99; price now $573.13 (+0.90% from entry on that lot). Overall position unrealized +4.02%.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00. Rationale: protect capital on deeper pullback after parabolic weekly run. If triggered, hold remaining 1 share as core.
 - Do NOT add on pullback today. Standing learning: never average down.
 
 ### AVGO — HOLD 1 — DO NOT ADD
-- Position opened May 27 at ~$427.37. Price now $424.35 (–0.71% from entry, recovering from –2.14% earlier).
-- Quality catch-up play within chip rally. Earnings catalyst June 3 (3 trading days). AI revenue projected at $10.7B.
+- Position opened May 27 at ~$427.37. Price now $425.08 (–0.54% from entry, recovering from –2.14% earlier).
+- Quality catch-up play within chip rally. Earnings catalyst June 3 (2.5 trading days). AI revenue projected at $10.7B.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $400.00. Rationale: pre-earnings technical breakdown.
 - Do NOT add on pullback today. Standing learning: never average down.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
 - Fully exited May 27 at 10:30 AM ET. 24-hour cooldown expired at 10:30 AM ET today.
-- **Re-entry is NOT authorized in this todo.** The 11:35 AM ET hourly explicitly DEFERRED NVDA re-entry.
-- Price $212.93 is not a compelling entry. Weak 1W (–4.80%) vs SOXX (+10.24%). $150B capex plan announced but stock has not reacted positively.
+- **Re-entry is NOT authorized in this todo.** The 12:35 PM ET hourly explicitly DEFERRED NVDA re-entry.
+- Price $212.60 is not a compelling entry. Weak 1W (–3.10%) vs SOXX (+9.18%). $150B capex plan announced but stock has not reacted positively.
 - Tactical agent must NOT place a NVDA buy order at any tactical run. Any attempt is unauthorized.
-- If the 12:35 PM ET hourly authorizes re-entry, it will provide explicit price and confirmation conditions.
+- If the 1:35 PM ET hourly authorizes re-entry, it will provide explicit price and confirmation conditions.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
@@ -77,14 +77,14 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **NO ORDERS AUTHORIZED** for the 11:35 AM ET hourly cycle.
-2. **Next potential action (12:35 PM ET hourly):** NVDA re-entry evaluation IF price reclaims $215 with volume OR pulls back to ~$208 with a bounce. Otherwise continue hold-all posture.
+1. **NO ORDERS AUTHORIZED** for the 12:35 PM ET hourly cycle.
+2. **Next potential action (1:35 PM ET hourly):** NVDA re-entry evaluation IF price reclaims $215 with volume OR pulls back to ~$208 with a bounce. Otherwise continue hold-all posture.
 3. **GOOG trim:** Only if hourly explicitly authorizes a sell below $380.
 4. **SOXX trim:** Only if hourly explicitly authorizes a sell below $540.
 5. **AVGO stop:** Only if hourly explicitly authorizes a sell below $400.
 
 ## Expected Book Now
-- QQQ 6 (~43.3%), GOOG 3 (~11.3%), VOO 2 (~13.6%), SOXX 2 (~11.3%), AVGO 1 (~4.2%)
+- QQQ 6 (~43.3%), GOOG 3 (~11.3%), VOO 2 (~13.6%), SOXX 2 (~11.2%), AVGO 1 (~4.2%)
 - Cash: ~$1,671 (~16.4%)
 - Gross exposure: ~83.6%
 
