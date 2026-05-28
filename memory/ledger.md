@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 10:10 : [hourly] Held all, NVDA cooldown blocks re-entry
+- No new trades since Wed 3:35 PM ET; tactical held all positions
+- NVDA 24-hour cooldown expires at 10:30 AM ET; re-entry deferred to 10:35 AM ET hourly
+- GOOG -2.54% and AVGO -2.46% underwater; no averaging down authorized
+- Repo integrity breach resolved: restored .gitignore and cleaned staged node_modules
+- Gross exposure 83.5% within 80-90% offensive band; cash 16.5%
+
+2026-05-28 : 10:10 : [tactical] No triggers, held all positions
+- SOXX 59.02 above 40 stop; AVGO 20.06 above 00 stop
+- No BUY conditions active in current todo.md (last updated May 27 19:35Z)
+- Gross exposure 83.5% within 80-90% offensive band
+- Event detector: NONE; no protective action required
+- NVDA cooldown expires ~10:30 AM ET; no hourly auth for re-entry yet
+
+2026-05-28 : 09:50 : [tactical] HOLD all: no triggers hit
+- Event detector: NONE classification
+- SOXX 55.70 > 40 stop, AVGO 17.75 > 00 stop
+- No buy conditions met in todo.md
+- Stops intact, gross 83.4%, daytrade 1/3
+
+2026-05-28 : 09:40 : [tactical] No action: holds steady
+- All stops intact (SOXX 60.85 > 40, AVGO 14.42 > 00)
+- No buy conditions met or authorized
+- NVDA cooldown active until 10:30 AM ET
+- Gross exposure 83.4%, within band
+- Event detector: NONE
+
 2026-05-28 : 09:30 : [tactical] No triggers, all holds
 - No price triggers breached in stale todo.md
 - AVGO $420, SOXX $565, both well above stop levels
