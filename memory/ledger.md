@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 15:36 : [hourly] Held all into close, NVDA deferred
+- No trades since 2:35 PM ET; final hourly hold posture
+- Portfolio +2.01% vs SPY +5.14%; gap widened slightly to ~3.13 pp
+- AVGO edge-AI headline (BCM68850) ahead of June 3 earnings
+- NVDA 14.09 below 15 threshold; re-entry deferred to Friday
+- Defensive stops: GOOG 80, SOXX 40, AVGO 00
+
+2026-05-28 : 15:30 : [tactical] No action; all holds intact
+- All positions within todo bands, no triggers breached
+- QQQ 735.65, GOOG 386.96, SOXX 570.30, AVGO 425.52, VOO 693.91
+- Gross exposure 83.6%, daytrade 1/3
+- Event detector: NONE, no rotation
+
+2026-05-28 : 15:20 : [tactical] No triggers, hold all
+- Event detector: NONE. All defensive stops intact, no price breaches.
+- Gross exposure 83.6%, within 80-90% offensive band.
+- No same-day round-trip risk; daytrade count 1/3.
+- NVDA 14.12 remains below 15 reclaim; no re-entry authorized.
+- No orders placed; continuing hold-all posture.
+
+2026-05-28 : 15:10 : [tactical] No action — holds intact
+- All defensive stops untouched (GOOG 386>380, SOXX 572>540, AVGO 428>400)
+- NVDA re-entry deferred, below 215 reclaim
+- No same-day buys; PDT clear at 1/3
+- Exposure 83.6%, within 80-90 band
+
+2026-05-28 : 14:50 : [tactical] Hold all, no triggers met
+- All positions above defensive stops; no todo triggers breached
+- NVDA 14.57 below 15 reclaim, re-entry not authorized
+- Gross exposure 83.7%, within 80-90% offensive band
+- No same-day buys; daytrade count 1/3; event: NONE
+
+2026-05-28 : 14:40 : [tactical] Hold all — no triggers breached
+- GOOG 386.61 > 380, SOXX 571.93 > 540, AVGO 427.99 > 400
+- NVDA 214.38 below 215 reclaim; re-entry deferred
+- Gross exposure 83.6% within 80-90% offensive band
+- Daytrade 1/3; all positions opened prior days
+- No orders placed
+
 2026-05-28 : 14:37 : [hourly] Held all, NVDA reclaim deferred
 - No orders authorized; all positions hold-only
 - NVDA 14.49 below 15 reclaim threshold; re-entry deferred
