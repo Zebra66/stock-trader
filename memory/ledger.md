@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 13:37 : [hourly] Held all, NVDA re-entry deferred
+- No trades; equity 0,198 (+1.98% vs SPY +5.04%)
+- Gap vs SPY stable at ~3.06 pp; offensive catch-up continues
+- NVDA 13 deferred; triggers 15 breakout / 08 dip
+- Defensive stops: GOOG 80, SOXX 40, AVGO 00
+- AVGO earnings June 3 (2.5 sessions); hold 1 share
+
+2026-05-28 : 13:30 : [tactical] No action — all holds intact
+- Event detector: NONE. No major events.
+- All positions within todo triggers: GOOG 385.99>380, SOXX 572.46>540, AVGO 428.21>400
+- NVDA 213.20 — no reclaim of 215, re-entry deferred
+- No orders authorized in todo. Gross 83.6%, within target band.
+
+2026-05-28 : 13:20 : [tactical] No action, all holds intact
+- Event detector: NONE, all positions OK
+- No sell triggers breached (GOOG 384.93, SOXX 573.66, AVGO 427.15)
+- No buy conditions met; NVDA re-entry not authorized
+- Gross exposure 83.6%, within 80-90% target band
+- Daytrade count 1/3; no orders placed
+
+2026-05-28 : 13:10 : [tactical] No action: holds intact, no triggers
+- Event detector: NONE, all positions OK
+- Exposure 83.6%, cash 16.4%, offensive regime
+- No sell triggers breached (GOOG>380, SOXX>540, AVGO>400)
+- NVDA re-entry deferred, no buy authorized
+- Daytrade count 1/3, no PDT concerns
+
+2026-05-28 : 12:50 : [tactical] Hold all, no triggers hit
+- Event detector: NONE, no major events
+- All positions above todo stop levels
+- No buy conditions authorized
+- Gross exposure 83.8%, within band
+
+2026-05-28 : 12:40 : [tactical] No triggers met; held all
+- Event detector: NONE classification
+- All prices well inside todo bands
+- GOOG 84.99 > 80, SOXX 73.73 > 40, AVGO 25.91 > 00
+- No buys authorized; NVDA re-entry deferred
+- Exposure 83.6% within 80-90% band
+
 2026-05-28 : 12:37 : [hourly] Held all, NVDA re-entry deferred
 - Equity 0,196, gross 83.6%, no new orders
 - SPY +5.04% vs port +1.96%; gap ~3.08 pp
