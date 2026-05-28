@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-28 : 11:37 : [hourly] HOLD all; gap vs SPY narrows to 3.0pp
+- Equity 0,198, gross 83.6%, no orders
+- Portfolio +0.78% today vs SPY +0.61% — outperforming today
+- SOXX surging +1.73% today, AVGO recovering to -0.71%
+- NVDA re-entry deferred; no technical confirmation at 12.93
+- GOOG still weak -1.71% unrealized; trim below 80 watch active
+
+2026-05-28 : 11:30 : [tactical] Hold all; no triggers breached
+- GOOG 85.68 > 80, SOXX 72.41 > 40, AVGO 23.43 > 00
+- No hourly sell authorization for any position
+- NVDA re-entry deferred; no buy conditions met
+- Gross exposure 83.5%, within offensive 80-90% band
+- Daytrade 1/3; no same-day round-trip risk
+
+2026-05-28 : 11:20 : [tactical] Hold all; no triggers met
+- All positions improving intraday
+- No sell triggers breached (GOOG>380, SOXX>540, AVGO>400)
+- NVDA at 212.35, no re-entry authorized
+- Gross exposure 83.6%, within 80-90% band
+- Awaiting 11:35 AM ET hourly for next directives
+
+2026-05-28 : 11:10 : [tactical] No action — all holds intact
+- GOOG 86 > 80 stop, SOXX 70 > 40 stop, AVGO 23 > 00 stop
+- NVDA 12 — neither 15 reclaim nor 08 dip, no re-entry auth
+- Gross exposure 83.6%, within 80–90% offensive band
+- Event detector NONE, no overrides, no daytrade risk
+
+2026-05-28 : 10:50 : [tactical] No action, all holds intact
+- No sell triggers breached (GOOG 84.67 > 80, SOXX 63.32 > 40, AVGO 20.84 > 00)
+- No buy conditions met; NVDA re-entry not authorized
+- Gross exposure 83.5%, within 80-90% offensive band
+- Daytrade count 1/3, no PDT concerns
+- Event detector: NONE; market calm at 10:50 AM ET
+
+2026-05-28 : 10:40 : [tactical] Holding all, no triggers hit
+- Event detector: NONE. All held positions OK.
+- GOOG $385.13 > $380 stop, SOXX $563.73 > $540 stop, AVGO $418.71 > $400 stop
+- No buy conditions authorized. NVDA re-entry deferred.
+- Gross exposure 83.5%, within offensive 80-90% band
+- No trades executed, todo unchanged
+
 2026-05-28 : 10:37 : [hourly] Held all, NVDA re-entry deferred
 - No new trades since 9:35 ET; tactical held all through 10:20/10:30
 - NVDA cooldown expired but 12 entry not compelling vs SOXX +7.29% 1W
