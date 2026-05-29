@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-05-29 13:45Z (Friday 9:45 AM ET)
-*HARD_LOCK LIFTED. Portfolio clean. Execute authorized orders only.*
+# Tactical Todo — Updated 2026-05-29 13:56Z (Friday 9:56 AM ET)
+*HARD_LOCK LIFTED. AVGO add filled. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 1
-- **Account equity / cash / buying power:** $10,228.39 / $1,670.50 / $11,898.89
-- **Gross long exposure:** 83.7% | **Net exposure:** 83.7% | **Cash:** 16.3%
+- **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 2
+- **Account equity / cash / buying power:** ~$10,254 / ~$1,226 / ~$11,480
+- **Gross long exposure:** ~88.0% | **Net exposure:** ~88.0% | **Cash:** ~12.0%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -32,12 +32,12 @@
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00. Rationale: protect capital on deeper pullback after parabolic weekly run. If triggered, hold remaining 1 share as core.
 - Do NOT add on rally today. Standing learning: do not chase +28% 1M ETF.
 
-### AVGO — HOLD 1 — AUTHORIZED ADD
-- Position opened at $427.37. Price now $439.76 (unrealized +2.90%). Today +3.09% on $36B Anthropic AI chip debt deal.
+### AVGO — HOLD 2 — DO NOT ADD
+- Position opened at $427.37; 2nd share filled at $444.47. Blended avg $435.92. Current price ~$445.00 (unrealized +2.08% blended). Today +4.32% on $36B Anthropic AI chip debt deal.
 - Pre-earnings catalyst (earnings June 3, next Wednesday). Strong fundamental momentum.
-- **BUY 1 share at limit $444.50 or better.** Rationale: deploy cash into highest-conviction chip name with fresh mega-deal catalyst. If not filled by 10:30 AM ET, cancel and reassess at next hourly (10:35 AM ET).
+- **FILLED at 9:56 AM ET:** Bought 1 share @ $444.47 (limit $444.50). Deployed cash into highest-conviction chip name.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all AVGO shares if price drops below $400.00. Rationale: pre-earnings technical breakdown.
-- Do NOT sell AVGO today if the add fills. Anti-churn: no same-day round trips.
+- Do NOT sell AVGO today. Anti-churn: no same-day round trips.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
 - Fully exited May 27. 24-hour cooldown expired, but hourly explicitly does NOT authorize re-entry today.
@@ -74,7 +74,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **AVGO add:** BUY 1 share at limit $444.50 — deploy cash into highest-conviction catalyst.
+1. **AVGO add: FILLED** at 9:56 AM ET @ $444.47.
 2. **No other buys** authorized for this cycle.
 
 ## Expected Book After Fill

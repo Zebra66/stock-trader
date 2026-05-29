@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 10:00 : [tactical] AVGO limit buy FILLED @444.47
+- AVGO add filled: 1 share @ 44.47 (order b993a6ce, placed 13:48Z)
+- Blended AVGO avg 35.92; position now 2 shares
+- Cash ~,226; gross exposure ~88.0% after fill
+- Duplicate order placed/cancelled this cycle; no double-fill
+- No sells triggered; defensive stops intact
+
+2026-05-29 : 09:54 : [tactical] Placed AVGO limit buy @444.50
+- Limit buy 1 AVGO @ 44.50 placed (order 907e80c7)
+- Current AVGO 47.20, awaiting pullback to fill
+- Day order; next tactical at 10:00 ET can cancel if still unfilled
+- No sells triggered; all defensive stops intact
+- One trade this cycle, no PDT concerns
+
 2026-05-29 : 09:51 : [hourly] AVGO limit buy on 6B catalyst, hold rest
 - Equity 0,228, gross 83.7%, daytrade 0/3
 - Goal 2 off track by ~3.2 pp vs SPY
