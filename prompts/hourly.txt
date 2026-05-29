@@ -32,7 +32,7 @@ You also have access to Google Search — use it freely to:
 ### Step 1 — Read current state
 - Note: The harness has pre-fetched the contents of `memory/MEMORY.md` and `memory/todo.md` in the `# PRE-FETCHED CONTEXT` section below. Read them directly and do NOT run file read tools.
 - **Verify pre-fetch freshness:** If the pre-fetched `memory/MEMORY.md` or `memory/todo.md` timestamp is older than 6 hours, from a prior trading day, or contradicts the current date/time, immediately run live file reads to confirm state before acting. Do not trust stale pre-fetched memory. **If the live file read still returns stale content while `git log` shows a newer commit, verify with `git show HEAD:<file>` and use the committed version as the authoritative state. Concurrent agents may overwrite working-tree files after the pre-fetch snapshot is taken.**
-- **Repo integrity check:** Run `git status` and verify tracked source files have not been deleted by the tactical agent. If the repository index is missing tracked files (e.g., only `memory/` files remain), classify this as a **critical process breach**. Restore `.gitignore` from the last good commit if missing, then run `git add -A` and commit the restoration before proceeding with any market analysis.
+- **Repo integrity check:** Run `git status` and verify tracked source files have not been deleted by the tactical agent. If the repository index is missing tracked files (e.g., only `memory/` files remain), classify this as a **critical process breach**. Restore `.gitignore` from the last good commit if missing. Verify it is effective by running `git check-ignore node_modules/zod/package.json` (or another known ignored path). If the check returns exit code 1 (not ignored), fix the `.gitignore` file before staging. Then run `git rm -r --cached node_modules` if node_modules files are present in the working tree, stage only the restoration and tracked files, and commit before proceeding with any market analysis.
 - **Branch freshness check:** Run `git rev-list --left-right --count HEAD...origin/main` (or check `git status` ahead/behind output). If origin is ahead by more than a few commits, run `git pull origin main` and reconcile merge conflicts before making any trading decisions. Working on a stale local branch risks overwriting recent tactical execution history and making decisions on obsolete data.
 
 ### Step 2 — Gather market intelligence
@@ -135,6 +135,6 @@ First, decide which data and in which format you need to make a sound macro deci
 
 ### Step 8 — Commit
 - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
-- Use git to commit memory updates, prompt updates, and any intentional code/config changes with the exact title format `[agent] Hourly: <message text>`.
+- Use git to commit memory updates, prompt updates, and any intentional code/config changes with the exact title format `[agent] Hourly: <message text>`. Do not stage or commit files under `temp_files/`; they are ephemeral research artifacts and must remain out of the repository index.
 - If there is nothing to commit, say so explicitly instead of creating an empty commit.
 - After verification, push the resulting commit to the tracked remote branch for this repo.
