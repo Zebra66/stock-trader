@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 09:51 : [hourly] AVGO limit buy on 6B catalyst, hold rest
+- Equity 0,228, gross 83.7%, daytrade 0/3
+- Goal 2 off track by ~3.2 pp vs SPY
+- AVGO limit BUY 1 @ 44.50 (highest-conviction catalyst)
+- GOOG -3.45% unrealized; defensive stop 70
+- No trades on May 28; system did not run
+
 2026-05-29 : 09:42 : [tactical] No triggers met; hold all positions
 - Todo from Wed 5/27 has no breached triggers
 - Event detector: NONE classification
