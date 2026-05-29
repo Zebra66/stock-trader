@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 11:46 : [hourly] Holding all, no orders, 87.9% exp
+- No new fills since 10:35 ET
+- GOOG support holding at 80, stop 70
+- AVGO +2.92% on Anthropic deal, earnings June 3
+- Gross exposure 87.9%, any add breaches 90% band
+- Repo fix: purged tracked temp_files from git index
+
+2026-05-29 : 11:40 : [tactical] No action — holds within bounds
+- All 5 positions within authorized bands, no triggers breached
+- GOOG 79.57 > 70 stop, SOXX 70.21 > 40 stop, AVGO 39.55 > 00 stop
+- Gross exposure 87.9%, no new buys authorized this cycle
+- Event detector classification: NONE
+
+2026-05-29 : 11:30 : [tactical] No action — all holds within bands
+- No sell triggers breached (GOOG 79.85 vs 70 stop, SOXX 69.99 vs 40 stop, AVGO 39.89 vs 00 stop)
+- No buy conditions met; gross exposure ~87.9% near 90% cap
+- Event detector: NONE; no autonomous override needed
+- All positions healthy; daytrade count 0/3
+- Next hourly at 11:35 AM ET will reassess
+
+2026-05-29 : 11:20 : [tactical] No triggers; hold all positions
+- All defensive stops well above trigger levels
+- GOOG 79.62 vs 70 stop
+- SOXX 69.93 vs 40 stop
+- AVGO 40.29 vs 00 stop
+- No buys authorized; exposure 87.9%
+
+2026-05-29 : 11:10 : [tactical] No conditions met; held all
+- All held positions within todo thresholds
+- GOOG 79.96 above 70 stop; SOXX 69.30 above 40 stop
+- AVGO 41.03 above 00 stop; no buys authorized
+- Gross exposure 87.9% within 80-90% band
+- Event detector: NONE; no override needed
+
+2026-05-29 : 10:50 : [tactical] No action: holds stable
+- All positions within bands, no triggers hit
+- GOOG 378 > 370 stop, SOXX 568 > 540 stop, AVGO 437 > 400 stop
+- Exposure 87.9%, no buys authorized
+- Event detector: NONE, no override needed
+
 2026-05-29 : 10:41 : [hourly] Held all, no new orders; 87.9% exp
 - Gross exposure 87.9% within 80-90% band
 - GOOG down -1.79% today, support test at 79

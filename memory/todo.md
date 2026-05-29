@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-05-29 14:35Z (Friday 10:35 AM ET)
+# Tactical Todo — Updated 2026-05-29 15:35Z (Friday 11:35 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 2
-- **Account equity / cash / buying power:** ~$10,205 / ~$1,226 / ~$11,431
+- **Account equity / cash / buying power:** ~$10,210 / ~$1,226 / ~$11,436
 - **Gross long exposure:** ~87.9% | **Net exposure:** ~87.9% | **Cash:** ~12.0%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
@@ -15,11 +15,11 @@
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~43.4%, within 45% cap. Adding 1 share would breach cap.
-- Intraday +0.38%. Core liquid growth. Let run.
+- Intraday +0.43%. Core liquid growth. Let run.
 
 ### GOOG — HOLD 3 — DO NOT ADD
-- Weight ~11.1%, within 15% cap.
-- Unrealized –3.47% from avg $392.92. Today –1.79%. India ad ruling is minor headline risk; core thesis intact.
+- Weight ~11.2%, within 15% cap.
+- Unrealized –3.24% from avg $392.92. Today –1.56%. India ad ruling is minor headline risk; core thesis intact. Support $375–$380 holding at $380.19.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $370.00 with limit $369.50. Rationale: protect capital on breakdown below support.
 - Do NOT sell GOOG for any other reason today.
 
@@ -29,15 +29,16 @@
 
 ### SOXX — HOLD 2 — DO NOT ADD
 - Weight ~11.2%, within 20% non-QQQ ETF cap.
-- Unrealized +3.79% from avg $550.97. Today +0.46%.
+- Unrealized +3.57% from avg $550.97. Today +0.23%.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00 with limit $539.50. Rationale: protect capital on deeper pullback after parabolic run. If triggered, hold remaining 1 share as core.
 - Do NOT add SOXX today. Hourly does NOT authorize new SOXX buys this cycle.
 
-### AVGO — HOLD 2 — DO NOT ADD
-- Position opened at $427.37; 2nd share filled at $444.47. Blended avg $435.92. Current price ~$437.93 (unrealized +0.46% blended). Today +2.55% on $36B Anthropic AI chip debt deal.
+### AVGO — HOLD 2 — DO NOT ADD — DO NOT SELL TODAY
+- Position opened at $427.37; 2nd share filled at $444.47. Blended avg $435.92. Current price ~$438.65 (unrealized +0.63% blended). Today +2.92% on $36B Anthropic AI chip debt deal.
 - Pre-earnings catalyst (earnings June 3, next Wednesday). Strong fundamental momentum.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: pre-earnings technical breakdown.
-- Do NOT sell AVGO today. Anti-churn: no same-day round trips.
+- **ANTI-CHURN CRITICAL:** AVGO 2nd share was bought TODAY at 9:56 AM ET. DO NOT SELL AVGO TODAY under any circumstances. Same-day round trip is prohibited.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: pre-earnings technical breakdown. This stop is for FUTURE sessions only, not today.
+- Do NOT add AVGO today.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
 - Fully exited May 27. 24-hour cooldown expired, but hourly explicitly does NOT authorize re-entry today.
@@ -48,7 +49,7 @@
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - No edge, weak relative trends, parabolic chase risk, or thin liquidity.
-- Exception: HOOD has momentum (+17.33% 1W) but no clear edge and high churn risk. Hourly explicitly does NOT authorize a buy.
+- Exception: HOOD has momentum (+21.25% 1W) but no clear edge and high churn risk. Hourly explicitly does NOT authorize a buy.
 
 ## Hard Rules / No-Trade Conditions
 - **No discretionary buys this cycle.** Gross exposure is 87.9%; adding any share pushes above 90% upper bound.
@@ -82,11 +83,11 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $385 with volume — but DO NOT average down.
 
 ## Expected Book
-- QQQ 6 (~43.4%), GOOG 3 (~11.1%), VOO 2 (~13.6%), SOXX 2 (~11.2%), AVGO 2 (~8.6%)
+- QQQ 6 (~43.4%), GOOG 3 (~11.2%), VOO 2 (~13.6%), SOXX 2 (~11.2%), AVGO 2 (~8.6%)
 - Cash: ~$1,226 (~12.0%)
 - Gross exposure: ~87.9%
 
-## Next Hourly Preview — 11:35 AM ET (NOT AUTHORIZED YET)
+## Next Hourly Preview — 12:35 PM ET (NOT AUTHORIZED YET)
 - Reassess GOOG support ($375–$380) and chip momentum.
 - If GOOG breaks $370 and stop triggers, evaluate rotation of freed cash into SOXX/AVGO on pullback.
 - AVGO earnings June 3 watch continues.
