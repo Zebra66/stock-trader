@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-05-29T13:35:02.579Z",
+  "priorTimestamp": null,
+  "broadMarket": [
+    {
+      "symbol": "SPY",
+      "priorPrice": null,
+      "currentPrice": 756.07,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "QQQ",
+      "priorPrice": null,
+      "currentPrice": 737.78,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "SOXX",
+      "priorPrice": null,
+      "currentPrice": 574.07,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "XLK",
+      "priorPrice": null,
+      "currentPrice": 189.625,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "GLD",
+      "priorPrice": null,
+      "currentPrice": 415.34,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "SMH",
+      "priorPrice": null,
+      "currentPrice": 604.61,
+      "pctChange": 0,
+      "severity": "OK"
+    }
+  ],
+  "heldPositions": [
+    {
+      "symbol": "AVGO",
+      "qty": 1,
+      "priorPrice": null,
+      "currentPrice": 436.405,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "GOOG",
+      "qty": 3,
+      "priorPrice": null,
+      "currentPrice": 376.77,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "QQQ",
+      "qty": 6,
+      "priorPrice": null,
+      "currentPrice": 737.78,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "SOXX",
+      "qty": 2,
+      "priorPrice": null,
+      "currentPrice": 574.07,
+      "pctChange": 0,
+      "severity": "OK"
+    },
+    {
+      "symbol": "VOO",
+      "qty": 2,
+      "priorPrice": null,
+      "currentPrice": 695.14,
+      "pctChange": 0,
+      "severity": "OK"
+    }
+  ],
+  "sectorRotation": {
+    "signal": "NONE",
+    "details": "No significant rotation detected."
+  },
+  "classification": "NONE",
+  "recommendedResponse": [
+    "No events. Proceed with normal todo execution."
+  ]
+}
