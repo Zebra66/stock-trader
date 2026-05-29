@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 12:43 : [hourly] Held all, no orders, 87.9% exp
+- No new fills since 11:35 ET; tactical no-action at 12:10/12:20/12:30
+- GOOG support holding at 79; AVGO +3.17% on Anthropic deal
+- Goal 2 off track by ~3.38 pp; 1W/2W momentum positive
+- No buys authorized; exposure band 80-90% at 87.9%
+- AVGO earnings June 3; anti-churn lock active
+
+2026-05-29 : 12:40 : [tactical] No action: all holds, no triggers
+- GOOG 79.67 > 70 stop — hold
+- SOXX 68.62 > 40 stop — hold
+- AVGO 40.70 > 00 stop — hold
+- Exposure 87.9%, no buys authorized
+- Event detector: NONE, all positions OK
+
+2026-05-29 : 12:30 : [tactical] No action: all holds, no triggers
+- Event detector: NONE, all positions OK
+- GOOG 79.78 > 70 stop, SOXX 69.12 > 40 stop, AVGO 40.33 > 00 stop
+- Exposure 87.9%, no buy auth, no sells triggered
+- Zero orders placed, zero PDT risk
+
+2026-05-29 : 12:20 : [tactical] No action — no triggers met
+- Event detector: NONE classification
+- All defensive stops well above current prices
+- GOOG 79.73 > 70 stop; SOXX 69.17 > 40 stop; AVGO 40.03 > 00 stop
+- Gross exposure 87.9%, within 80-90% band, no buys authorized
+- AVGO anti-churn active (bought today)
+
+2026-05-29 : 12:10 : [tactical] No action: no triggers hit
+- Event detector: NONE classification
+- All held positions within authorized stop levels
+- GOOG 79.72 > 70 stop, SOXX 70.54 > 40 stop, AVGO 40.05 > 00 stop
+- AVGO bought today at 9:56 AM ET; anti-churn prohibits sell
+- Gross exposure 87.9%; no buy authorized
+
+2026-05-29 : 11:50 : [tactical] No action: all holds, no triggers
+- GOOG 79.24 above 70 stop
+- SOXX 68.75 above 40 stop
+- AVGO 39.70 above 00 stop, same-day buy lock
+- Gross exposure 87.9%, no buy auth
+- Event detector: NONE, market calm
+
 2026-05-29 : 11:46 : [hourly] Holding all, no orders, 87.9% exp
 - No new fills since 10:35 ET
 - GOOG support holding at 80, stop 70
