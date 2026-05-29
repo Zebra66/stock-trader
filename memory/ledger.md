@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 13:44 : [hourly] Held all, tightened GOOG stop to 75
+- Equity 0,189 (+1.89% inception) vs SPY +5.34%
+- GOOG stop tightened from 70 to 75 on support test
+- AVGO anti-churn: DO NOT SELL today (bought this AM)
+- No new buys: exposure 87.9% at 80-90% upper bound
+- Iran headline risk: Trump wants 'couple days to think'
+
+2026-05-29 : 13:40 : [tactical] No action: holds safe, no triggers
+- GOOG 379.37 > 370 stop, SOXX 567.79 > 540 stop
+- AVGO 435.27 > 400 stop, anti-churn active
+- Exposure 88%, no buy conditions met
+- Event detector: NONE, all symbols OK
+
+2026-05-29 : 13:30 : [tactical] No action — all holds
+- No sell triggers hit (GOOG 379>370, SOXX 568>540, AVGO 438>400)
+- Gross exposure 87.9%, no buys authorized
+- AVGO anti-churn active (bought today)
+- Event detector: NONE
+
+2026-05-29 : 13:20 : [tactical] No action: no triggers met
+- GOOG 78.90, above 70 stop
+- SOXX 68.47, above 40 stop
+- AVGO 39.04, above 00 stop + anti-churn
+- Exposure 87.9%, no buys authorized
+- Daytrades 0/3, no open orders
+
+2026-05-29 : 13:10 : [tactical] No action: no triggers hit
+- Exposure 88%, no sell triggers breached
+- GOOG 379.04 > 370 stop
+- SOXX 569.02 > 540 stop
+- AVGO same-day buy protection active
+- No buy authorization, band full
+
+2026-05-29 : 12:50 : [tactical] No action: stops intact
+- GOOG 79.32 above 70 stop
+- SOXX 69.22 above 40 stop
+- AVGO 41.29 above 00 stop
+- Gross exposure 87.9%, no adds authorized
+- No event detector flags
+
 2026-05-29 : 12:43 : [hourly] Held all, no orders, 87.9% exp
 - No new fills since 11:35 ET; tactical no-action at 12:10/12:20/12:30
 - GOOG support holding at 79; AVGO +3.17% on Anthropic deal
