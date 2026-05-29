@@ -1,46 +1,46 @@
 {
-  "timestamp": "2026-05-29T13:35:02.579Z",
+  "timestamp": "2026-05-29T13:40:02.204Z",
   "priorTimestamp": null,
   "broadMarket": [
     {
       "symbol": "SPY",
       "priorPrice": null,
-      "currentPrice": 756.07,
+      "currentPrice": 756.72,
       "pctChange": 0,
       "severity": "OK"
     },
     {
       "symbol": "QQQ",
       "priorPrice": null,
-      "currentPrice": 737.78,
+      "currentPrice": 738.8,
       "pctChange": 0,
       "severity": "OK"
     },
     {
       "symbol": "SOXX",
       "priorPrice": null,
-      "currentPrice": 574.07,
+      "currentPrice": 577.22,
       "pctChange": 0,
       "severity": "OK"
     },
     {
       "symbol": "XLK",
       "priorPrice": null,
-      "currentPrice": 189.625,
+      "currentPrice": 190.14,
       "pctChange": 0,
       "severity": "OK"
     },
     {
       "symbol": "GLD",
       "priorPrice": null,
-      "currentPrice": 415.34,
+      "currentPrice": 415.97,
       "pctChange": 0,
       "severity": "OK"
     },
     {
       "symbol": "SMH",
       "priorPrice": null,
-      "currentPrice": 604.61,
+      "currentPrice": 607.47,
       "pctChange": 0,
       "severity": "OK"
     }
@@ -50,7 +50,7 @@
       "symbol": "AVGO",
       "qty": 1,
       "priorPrice": null,
-      "currentPrice": 436.405,
+      "currentPrice": 440.61,
       "pctChange": 0,
       "severity": "OK"
     },
@@ -58,7 +58,7 @@
       "symbol": "GOOG",
       "qty": 3,
       "priorPrice": null,
-      "currentPrice": 376.77,
+      "currentPrice": 378.81,
       "pctChange": 0,
       "severity": "OK"
     },
@@ -66,7 +66,7 @@
       "symbol": "QQQ",
       "qty": 6,
       "priorPrice": null,
-      "currentPrice": 737.78,
+      "currentPrice": 738.8,
       "pctChange": 0,
       "severity": "OK"
     },
@@ -74,7 +74,7 @@
       "symbol": "SOXX",
       "qty": 2,
       "priorPrice": null,
-      "currentPrice": 574.07,
+      "currentPrice": 577.22,
       "pctChange": 0,
       "severity": "OK"
     },
@@ -82,7 +82,7 @@
       "symbol": "VOO",
       "qty": 2,
       "priorPrice": null,
-      "currentPrice": 695.14,
+      "currentPrice": 695.495,
       "pctChange": 0,
       "severity": "OK"
     }
