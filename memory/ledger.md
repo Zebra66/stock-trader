@@ -2,6 +2,40 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 10:41 : [hourly] Held all, no new orders; 87.9% exp
+- Gross exposure 87.9% within 80-90% band
+- GOOG down -1.79% today, support test at 79
+- AVGO +2.55% on 6B Anthropic deal; hold through earnings June 3
+- No open orders; daytrade count 0/3
+- Trailing SPY by ~3.36 pp since inception; 1W outperformance continues
+
+2026-05-29 : 10:40 : [tactical] No action — all holds stable
+- Event detector: NONE, no MAJOR/CRITICAL events
+- All stop-losses intact: GOOG 78.53>70, SOXX 69.96>40, AVGO 36.55>00
+- No buy triggers met; no open orders
+- Gross exposure ~87.9%, within offensive 80-90% band
+- Daytrade 0/3; awaiting next hourly at 10:35 AM ET
+
+2026-05-29 : 10:30 : [tactical] No action; all holds stable
+- Event detector: NONE
+- No sell triggers breached (GOOG 379.96, SOXX 572.82, AVGO 439.44)
+- Gross exposure 87.9%, within 80-90% band
+- No open orders, daytrades 0/3
+- AVGO filled earlier at 444.47; no same-day churn risk
+
+2026-05-29 : 10:20 : [tactical] No action: stops not triggered
+- Event detector: NONE
+- GOOG 80 vs stop 70 — no breach
+- SOXX 76 vs stop 40 — no breach
+- AVGO 40 vs stop 00 — no breach
+- No authorized buys; cash ,226
+
+2026-05-29 : 10:10 : [tactical] No triggers met, held all positions
+- All defensive stops well above triggers
+- AVGO filled earlier at 9:56 ET, no new orders
+- Gross exposure ~88%, within offensive band
+- Daytrade count 0/3, no PDT concerns
+
 2026-05-29 : 10:00 : [tactical] AVGO limit buy FILLED @444.47
 - AVGO add filled: 1 share @ 44.47 (order b993a6ce, placed 13:48Z)
 - Blended AVGO avg 35.92; position now 2 shares
