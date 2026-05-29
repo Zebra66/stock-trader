@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-05-29 : 14:38 : [hourly] Held all, no orders, exposure 87.9%
+- No new trades since 1:37 PM ET run
+- GOOG testing support at 79.51, stop 75 active
+- AVGO anti-churn: DO NOT SELL today (bought this morning)
+- SOXX flat, stop 40 active
+- Off track on Goal 2 by 3.41 pp; AVGO earnings June 3 catalyst
+
+2026-05-29 : 14:30 : [tactical] No action — all holds above stops
+- GOOG 79.47 > 75 stop — no sell
+- SOXX 67.94 > 40 stop — no sell
+- AVGO 36.15 > 00 stop — no sell
+- Exposure 87.9%; no buys authorized
+- Event detector: NONE
+
+2026-05-29 : 14:20 : [tactical] No action; all holds stable
+- GOOG 79.10 above 75 stop
+- SOXX 67.26 above 40 stop
+- AVGO 36.12 above 00 stop
+- Exposure 87.9%, no buys authorized
+- Event detector: NONE
+
+2026-05-29 : 14:10 : [tactical] No action: all holds, no triggers
+- Event detector: NONE classification
+- GOOG 79.53 above 75 stop
+- SOXX 67.38 above 40 stop
+- AVGO 36.01 above 00 stop, anti-churn active
+- Gross exposure 88.0%, within 80-90% band
+
+2026-05-29 : 13:50 : [tactical] No action — all holds, no triggers
+- Prices stable, no defensive stops breached
+- GOOG 379.63 > 375 stop, SOXX 566.10 > 540 stop, AVGO 434.67 > 400 stop
+- Gross exposure 87.9%, no buys authorized
+- Event detector: NONE, no override needed
+- Daytrade count 0/3, clean slate
+
 2026-05-29 : 13:44 : [hourly] Held all, tightened GOOG stop to 75
 - Equity 0,189 (+1.89% inception) vs SPY +5.34%
 - GOOG stop tightened from 70 to 75 on support test
