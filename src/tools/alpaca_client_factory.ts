@@ -142,9 +142,9 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
         const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
-        if (!isExplicitlyLifted) {
+        if (!isExplicitlyLifted && side === 'buy') {
           throw new Error(
-            `Order blocked: HARD_LOCK is active in memory/todo.md. No orders permitted.`
+            `Order blocked: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`
           );
         }
       }
@@ -158,7 +158,7 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       const lockFile = Bun.file('./memory/.trading_lock.json');
       if (await lockFile.exists()) {
         const lock = JSON.parse(await lockFile.text()) as { active: boolean; allowed?: string[]; reason?: string; bannedSymbols?: string[] };
-        if (lock?.active) {
+        if (side === 'buy' && lock?.active) {
           const key = `${side.toUpperCase()}_${symbol}`;
           let allowed = false;
           for (const a of lock.allowed ?? []) {

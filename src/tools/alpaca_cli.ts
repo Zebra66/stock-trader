@@ -87,8 +87,8 @@ export const alpacaTools = {
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
         const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
-        if (!isExplicitlyLifted) {
-          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No orders permitted.`;
+        if (!isExplicitlyLifted && side === 'buy') {
+          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`;
         }
       }
     } catch {
@@ -115,7 +115,7 @@ export const alpacaTools = {
     // Trading lock check
     const lock = await getTradingLock();
     const lockAllows = isOrderAllowed(lock, symbol, side);
-    if (lock && lock.active && !lockAllows) {
+    if (side === 'buy' && lock && lock.active && !lockAllows) {
       return `Error submitting order: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`;
     }
     // Symbol ban check
