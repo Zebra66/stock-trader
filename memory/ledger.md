@@ -2,6 +2,23 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 17:39 : [hourly] Held all, no trades, AVGO earnings 22h
+- Equity 0,259, gross 82.7%, daytrade 0/3.
+- No trades since 18:35Z; tactical held all positions.
+- AVGO earnings June 3-4; hold 2 shares through.
+- All positions green but faded mildly into close.
+- GOOG 24h cooldown active until Tue 9:52 AM ET.
+
+2026-06-01 : 16:32 : [tactical] No action; market closed, holds firm
+- Event detector: NONE. All stops well above trigger levels.
+- Market closed at 20:00Z; no regular-session orders possible.
+- Exposure 82.6% within 80-90% band. Daytrades 0/3.
+- No buy/sell conditions met in todo.md. AVGO earnings watch continues.
+
+2026-06-01 : 15:50 : [tactical] No triggers met, held all
+- Event detector: NONE
+- All stops intact, no orders placed
+
 2026-06-01 : 14:41 : [hourly] Held all, no trades, gap widened 0.08pp
 - Portfolio +0.80% today vs SPY +0.44%
 - Gross exposure 82.73% within 80-90% band
