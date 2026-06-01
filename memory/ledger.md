@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 09:34 : [tactical] Sold 1 GOOG stop-loss 71
+- GOOG broke 75 support, triggered defensive stop
+- Limit sell 1 share at 71.00 (market gapped through original 74.50)
+- Holding reduced to 2 GOOG; cash rises to ~,597
+- No other trades; exposure drops to ~84%
+- Pending next hourly for reallocation guidance
+
+2026-05-30 : 23:26 : [tactical] No action - market closed
+- Market closed (Sunday). No conditions met.
+- GOOG 76.43 above 75 stop
+- SOXX 69.08 above 40 stop
+- AVGO 46.77 above 00 stop
+- Gross exposure 87.99%, within band
+
 2026-05-29 : 15:40 : [hourly] Held all, flat into weekend close
 - No trades; AVGO recovered to +2.96% today (+0.76% blended)
 - GOOG -1.81% today, support 75-380 holding

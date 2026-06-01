@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-05-29 19:35Z (Friday 3:35 PM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~25 mins).*
+# Tactical Todo — Updated 2026-06-01 13:33Z (Monday 9:33 AM ET)
+*HARD_LOCK LIFTED. GOOG stop executed. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 2
-- **Account equity / cash / buying power:** ~$10,202 / ~$1,226 / ~$11,428
-- **Gross long exposure:** ~87.98% | **Net exposure:** ~87.98% | **Cash:** ~12.0%
+- **Live book:** QQQ 6, GOOG 2, VOO 2, SOXX 2, AVGO 2
+- **Account equity / cash / buying power:** ~$10,177 / ~$1,598 / ~$11,775
+- **Gross long exposure:** ~84.3% (est. post-GOOG fill) | **Net exposure:** ~84.3% | **Cash:** ~15.7%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. Next open Monday June 1, 09:30 ET.
+- **Open orders:** 1 GOOG sell limit $371.00 (pending)
+- **Market:** OPEN. Next hourly ~9:35 AM ET.
 
 ## Position Instructions — Fri May 29 (:40, :50 Tactical Runs)
 
@@ -17,11 +17,12 @@
 - Weight ~43.4%, within 45% cap. Adding 1 share would breach cap.
 - Intraday +0.39% (Alpaca). Core liquid growth. Let run into close.
 
-### GOOG — HOLD 3 — DO NOT ADD
-- Weight ~11.2%, within 15% cap.
-- Unrealized –3.51% from avg $392.92. Today –1.81%. Support $375–$380 holding at $379.12.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES for Monday):** SELL 1 share if price drops below $375.00 with limit $374.50. Rationale: protect capital on breakdown below intraday support.
-- Do NOT sell GOOG for any other reason today.
+### GOOG — HOLD 2 — DO NOT ADD
+- Weight ~7.3% (est. post-fill), within 15% cap.
+- Unrealized –5.41% from avg $392.92. Current price ~$371.68. Support $375 broken.
+- **STOP EXECUTED 13:33Z:** SELL 1 share limit $371.00 placed. Defensive stop triggered below $375.
+- Do NOT sell remaining 2 shares unless hourly explicitly authorizes.
+- Do NOT add GOOG. Re-entry only if reclaims $385 with volume (requires hourly auth).
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
 - Weight ~13.7%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.4% cap.
@@ -83,10 +84,10 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $385 with volume — but DO NOT average down.
    - NVDA if it reclaims $220 with volume and chip rotation broadens.
 
-## Expected Book Into Close
-- QQQ 6 (~43.4%), GOOG 3 (~11.2%), VOO 2 (~13.7%), SOXX 2 (~11.1%), AVGO 2 (~8.6%)
-- Cash: ~$1,226 (~12.0%)
-- Gross exposure: ~87.98%
+## Expected Book (Post-GOOG Fill)
+- QQQ 6 (~43.5%), GOOG 2 (~7.3%), VOO 2 (~13.7%), SOXX 2 (~11.1%), AVGO 2 (~8.8%)
+- Cash: ~$1,598 (~15.7%)
+- Gross exposure: ~84.3%
 
 ## Next Hourly Preview — Monday June 1, 9:35 AM ET (NOT AUTHORIZED YET)
 - Reassess GOOG support ($375–$380) after weekend Iran-deal headlines.
