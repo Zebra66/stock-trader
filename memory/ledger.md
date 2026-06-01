@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 10:40 : [hourly] Held all, no new orders
+- AVGO/SOXX rally narrowed SPY gap to -3.04pp
+- Gross 82.6% within 80-90% band
+- AVGO earnings June 3: hold 2 shares, no add
+- NVDA +4.6% on Computex: do not chase, wait 15
+- GOOG 24hr cooldown active until Tue 9:52 ET
+
+2026-06-01 : 10:30 : [tactical] No action: all holds, no triggers
+- SOXX defensive stop at 40 not triggered (price 66.37)
+- AVGO defensive stop at 00 not triggered (price 51.08)
+- Event detector: MINOR classification, no autonomous action required
+- Gross exposure 82.6%, within 80-90% target band
+- Daytrade count 0/3, no PDT concerns
+
+2026-06-01 : 10:20 : [tactical] No triggers; held all
+- SOXX 563 above 540 stop
+- AVGO 450 above 400 stop
+- Gross 82.5% within band
+- No new orders placed
+
+2026-06-01 : 10:10 : [tactical] No trade — SOXX add filled, stops intact
+- SOXX 3-shares confirmed, avg ~54.51, current 61.76
+- No sell triggers breached (SOXX >540, AVGO >400)
+- No buy conditions met (NVDA 20, AVGO 50, GOOG cooldown)
+- Gross exposure 82.5%, within 80-90% offensive band
+- HOLD all positions, wait for next hourly at 10:35 ET
+
 2026-06-01 : 09:57 : [hourly] Exited GOOG, added SOXX, fixed bugs
 - Sold all GOOG (3 shares) to cut laggard and stop bleed.
 - Bought 1 SOXX @ 61.59 to deploy freed cash into highest-alpha chip exposure.
