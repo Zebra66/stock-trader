@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 09:57 : [hourly] Exited GOOG, added SOXX, fixed bugs
+- Sold all GOOG (3 shares) to cut laggard and stop bleed.
+- Bought 1 SOXX @ 61.59 to deploy freed cash into highest-alpha chip exposure.
+- Fixed event detector priorTimestamp null bug in event_detector.ts.
+- Added anti-churn same-day round-trip guard to alpaca CLI and factory.
+- Gross exposure 82.5%, cash ,777; awaiting next hourly for further deployment.
+
+2026-06-01 : 09:52 : [tactical] GOOG stop filled; no action
+- GOOG sell 1 share filled at 72.02 at 13:35Z
+- No open orders remaining
+- All held positions within exposure band (84.3%)
+- No buy/sell triggers met at 13:50Z
+- Event detector: MINOR (SOXX -0.8% 10m), no response needed
+
+2026-06-01 : 09:41 : [tactical] No action; GOOG stop filled prior
+- GOOG defensive stop already executed 13:33Z (3->2 shares)
+- All positions within authorized stops; no new triggers
+- Gross exposure ~84%, within 80-90% band
+- Event detector: NONE; no override applied
+- Daytrade count 0/3; no orders placed this cycle
+
 2026-06-01 : 09:34 : [tactical] Sold 1 GOOG stop-loss 71
 - GOOG broke 75 support, triggered defensive stop
 - Limit sell 1 share at 71.00 (market gapped through original 74.50)

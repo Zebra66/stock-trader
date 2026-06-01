@@ -42,6 +42,17 @@ function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?:
   return false;
 }
 
+async function hasSameDayFill(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const after = `${today}T00:00:00Z`;
+    const orders = await withTimeout(getAlpaca().getOrders({ status: 'closed', after }), API_TIMEOUT_MS, 'Alpaca getOrders (anti-churn)');
+    return orders.some((o: any) => o.symbol.toUpperCase() === symbol.toUpperCase() && o.side === side && o.filled_qty && parseFloat(o.filled_qty) > 0);
+  } catch {
+    return false;
+  }
+}
+
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
@@ -158,6 +169,35 @@ export const alpacaTools = {
         }
       } catch (e: unknown) {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
+      }
+    }
+    // Anti-churn guard
+    if (side === 'sell') {
+      const boughtToday = await hasSameDayFill(symUpper, 'buy');
+      if (boughtToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY SELL ${symUpper}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
+          }
+        } catch {
+          return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
+        }
+      }
+    }
+    if (side === 'buy') {
+      const soldToday = await hasSameDayFill(symUpper, 'sell');
+      if (soldToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY BUY ${symUpper}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
+          }
+        } catch {
+          return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
+        }
       }
     }
     // Concentration cap guard (BUY orders only)

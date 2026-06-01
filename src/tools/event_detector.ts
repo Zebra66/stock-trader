@@ -63,21 +63,21 @@ function classifyPosition(pctChange: number): EventReport['heldPositions'][0]['s
   return 'OK';
 }
 
-function loadLastSnapshot(): LastSnapshot | null {
+async function loadLastSnapshot(): Promise<LastSnapshot | null> {
   try {
-    const raw = Bun.file(SNAPSHOT_PATH);
+    const raw = await Bun.file(SNAPSHOT_PATH).text();
     return JSON.parse(raw) as LastSnapshot;
   } catch {
     return null;
   }
 }
 
-function saveSnapshot(prices: Record<string, number>) {
+async function saveSnapshot(prices: Record<string, number>) {
   const snapshot: LastSnapshot = {
     timestamp: new Date().toISOString(),
     prices,
   };
-  Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
+  await Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
 }
 
 async function fetchPrice(symbol: string): Promise<number | null> {
@@ -98,7 +98,7 @@ function pctChange(oldPrice: number, newPrice: number): number {
 
 export async function detectEvents(): Promise<EventReport> {
   const now = new Date().toISOString();
-  const prior = loadLastSnapshot();
+  const prior = await loadLastSnapshot();
 
   // Fetch positions
   let positions: AlpacaPosition[] = [];
@@ -201,7 +201,7 @@ export async function detectEvents(): Promise<EventReport> {
   };
 
   // Save snapshot for next run
-  saveSnapshot(currentPrices);
+  await saveSnapshot(currentPrices);
 
   return report;
 }

@@ -106,6 +106,17 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
   return blocked;
 }
 
+async function hasSameDayFill(client: Alpaca, symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const after = `${today}T00:00:00Z`;
+    const orders = await client.getOrders({ status: 'closed', after });
+    return orders.some((o: any) => String(o.symbol ?? '').toUpperCase() === symbol.toUpperCase() && o.side === side && o.filled_qty && parseFloat(o.filled_qty) > 0);
+  } catch {
+    return false;
+  }
+}
+
 export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.env): Alpaca {
   const credentials = resolveAlpacaCredentials(mode, env);
 
@@ -251,6 +262,46 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
         throw new Error(
           `Sell of ${params.symbol} blocked — unable to verify long position before sell: ${e instanceof Error ? e.message : String(e)}`
         );
+      }
+    }
+
+    // ── Anti-churn guard ────────────────────────────────────────────────────
+    if (side === 'sell') {
+      const boughtToday = await hasSameDayFill(client, symbol, 'buy');
+      if (boughtToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY SELL ${symbol}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            throw new Error(
+              `Order blocked: Anti-churn rule — ${params.symbol} was bought today and same-day sell is not authorized in todo.md.`
+            );
+          }
+        } catch (e) {
+          if (e instanceof Error && e.message.includes('Anti-churn')) throw e;
+          throw new Error(
+            `Order blocked: Anti-churn rule — ${params.symbol} was bought today and same-day sell is not authorized in todo.md.`
+          );
+        }
+      }
+    }
+    if (side === 'buy') {
+      const soldToday = await hasSameDayFill(client, symbol, 'sell');
+      if (soldToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY BUY ${symbol}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            throw new Error(
+              `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is not authorized in todo.md.`
+            );
+          }
+        } catch (e) {
+          if (e instanceof Error && e.message.includes('Anti-churn')) throw e;
+          throw new Error(
+            `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is not authorized in todo.md.`
+          );
+        }
       }
     }
 
