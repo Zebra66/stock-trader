@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 12:39 : [hourly] Held all, no new orders
+- Equity 0,258, gross 82.7% within 80-90% band
+- All 4 holdings green; AVGO +3.3% into earnings
+- Gap vs SPY narrowed to -2.87pp from -2.90pp
+- No deployment candidates; cash stays in reserve
+- AVGO earnings June 3; NVDA re-entry deferred
+
+2026-06-01 : 12:30 : [tactical] Hold all, no triggers hit
+- SOXX 72.14 vs 40 stop — not triggered
+- AVGO 62.10 vs 00 stop — not triggered
+- NVDA 21.96 vs 15 buy — not triggered
+- Gross exposure 82.6% within 80-90% band
+- No orders placed, daytrade count 0/3
+
+2026-06-01 : 12:20 : [tactical] No action: holds steady
+- Event detector: NONE
+- All positions HOLD, no triggers breached
+- Exposure 82.7% in 80-90% band
+- Daytrade count 0/3, no PDT risk
+- AVGO earnings watch continues
+
+2026-06-01 : 12:10 : [tactical] HOLD all, no triggers met
+- Event detector: NONE, all positions OK
+- SOXX 71.72 > stop 40, no sell
+- AVGO 61.81 > stop 00, no sell
+- No buy conditions met, exposure 82.7%
+- Zero orders, zero daytrades
+
+2026-06-01 : 11:50 : [tactical] No triggers; held all positions
+- No sell triggers breached (SOXX >540, AVGO >400)
+- No buy conditions met (NVDA 220.10 > 215 limit)
+- Gross exposure 82.7% within 80-90% band
+- Daytrade count 0/3, no PDT concerns
+- Event detector: NONE, all positions OK
+
 2026-06-01 : 11:47 : [hourly] Held all, AVGO earnings block adds
 - No new orders; gross exposure 82.7% within 80-90% band
 - AVGO earnings June 3: no adds, hold 2 shares through unless 00 breaks
