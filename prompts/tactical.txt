@@ -29,6 +29,7 @@ You also have access to Google Search — use it to:
 ### Step 1 — Read current state
 - Note: The harness has pre-fetched the contents of `memory/MEMORY.md` and `memory/todo.md` in the `# PRE-FETCHED CONTEXT` section below. Read them directly and do NOT run file read tools.
 - Treat the top-level current-state sections in those files as authoritative. If older appended notes conflict with the fresh broker refresh, overwrite the stale notes instead of following them.
+- **Stale-memory guard:** If the most recent timestamp in `memory/MEMORY.md` or `memory/todo.md` is older than 24 hours, default to **hold-only**. Do NOT execute discretionary new buys or sells. Only act on pre-existing todo triggers that are still valid based on live prices, and log the stale-memory condition prominently in `memory/MEMORY.md`.
 
 ### Step 2 — Get live portfolio and market data
 - Note: The harness has pre-fetched the live Alpaca account info, positions info, and latest prices for the universe symbols in the `# PRE-FETCHED CONTEXT` section below. Skip running the Alpaca CLI commands (`get-account`, `get-positions`, `get-latest-price`) unless you have reason to suspect the data is missing or corrupted.
