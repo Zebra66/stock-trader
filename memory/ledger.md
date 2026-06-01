@@ -2,6 +2,52 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 11:47 : [hourly] Held all, AVGO earnings block adds
+- No new orders; gross exposure 82.7% within 80-90% band
+- AVGO earnings June 3: no adds, hold 2 shares through unless 00 breaks
+- NVDA +4.3% today; re-entry deferred to 15 pullback
+- GOOG 24-hour cooldown active until Tue 9:52 AM ET
+- Goal 2 gap narrowed to ~2.90 pp vs SPY
+
+2026-06-01 : 11:40 : [tactical] No action; all holds stable
+- Event detector: NONE, all held positions OK
+- SOXX 73.59 > 40 stop; AVGO 58.30 > 00 stop
+- No buy triggers met; cash 17.4% reserved
+- Exposure 82.6% within 80-90% band
+
+2026-06-01 : 11:30 : [tactical] No conditions met, held all
+- SOXX 72.62 > trim 40, AVGO 56.29 > stop 00
+- NVDA 19.41 above 15 add trigger
+- Gross 82.6% within band, daytrades 0/3
+- Event detector: NONE, all held positions OK
+
+2026-06-01 : 11:20 : [tactical] No action: all holds stable
+- Event detector: NONE. All held positions OK.
+- No price triggers breached (SOXX 71 > 40; AVGO 56 > 00).
+- No buy conditions met (NVDA 19.60 > 15).
+- Gross exposure 82.6% within 80-90% band.
+- Todo unchanged; no orders placed.
+
+2026-06-01 : 11:10 : [tactical] No action: no triggers met
+- Event detector: NONE
+- All holds above stops (SOXX 69>540, AVGO 56>400)
+- No buy conditions met (NVDA 19>215)
+- GOOG on 24h cooldown
+- Exposure 82.6% within 80-90% band
+
+2026-06-01 : 10:50 : [tactical] No conditions met, hold all
+- Event detector: NONE, all positions OK
+- No sell triggers breached (SOXX >540, AVGO >400)
+- No buy conditions met (NVDA 220.5, no pullback to 215)
+- Gross exposure 82.6% within 80-90% band
+- Cash 17.4%, daytrades 0/3, no open orders
+
+2026-06-01 : 10:40 : [tactical] No action — all holds valid
+- Event detector: NONE. All held positions within normal ranges.
+- SOXX add already filled (3 shares). No triggers breached.
+- Gross exposure 82.6% within 80-90% offensive band.
+- No sell stops triggered (SOXX $567.68 > $540; AVGO $456.25 > $400).
+
 2026-06-01 : 10:40 : [hourly] Held all, no new orders
 - AVGO/SOXX rally narrowed SPY gap to -3.04pp
 - Gross 82.6% within 80-90% band
