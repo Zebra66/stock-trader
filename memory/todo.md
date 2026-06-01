@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-06-01 17:35Z (Monday 1:35 PM ET)
+# Tactical Todo — Updated 2026-06-01 18:35Z (Monday 2:35 PM ET)
 *HARD_LOCK LIFTED. Execute authorized orders only. Market OPEN until 20:00Z/16:00 ET.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, SOXX 3, VOO 2, AVGO 2
-- **Account equity / cash / buying power:** ~$10,273 / ~$1,777 / ~$12,051
-- **Gross long exposure:** ~82.7% | **Net exposure:** ~82.7% | **Cash:** ~17.3%
+- **Account equity / cash / buying power:** ~$10,290 / ~$1,777 / ~$12,067
+- **Gross long exposure:** ~82.7% | **Net exposure:** ~82.7% | **Cash:** ~17.2%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -14,12 +14,12 @@
 ## Position Instructions — Mon June 1 (:50 / :10 / :20 / :30 / :40 / :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~43.4%, within 45% cap. Adding 1 share would breach cap.
+- Weight ~43.3%, within 45% cap. Adding 1 share would breach cap.
 - Core liquid growth. No action required.
 
 ### SOXX — HOLD 3 — DO NOT ADD
 - Weight ~16.8%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~22.4% cap.
-- Unrealized +3.58% from avg $554.51. Today +0.93% after prior run.
+- Unrealized +3.75% from avg $554.51. Today +1.10% after prior run.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00 with limit $539.50. Rationale: protect capital on deeper pullback after parabolic run. If triggered, hold remaining 2 shares as core.
 - Do NOT add SOXX today. At cap.
 
@@ -28,11 +28,11 @@
 - Broad-market anchor. No action required.
 
 ### AVGO — HOLD 2 — DO NOT ADD — DO NOT SELL TODAY
-- Position blended avg $435.92. Current price ~$460.97 (unrealized +5.75%). Today +3.18%.
-- Pre-earnings catalyst (earnings June 3, Tuesday/Wednesday — binary event in ~24 hours). Strong fundamental momentum.
+- Position blended avg $435.92. Current price ~$460.87 (unrealized +5.72%). Today +3.16%.
+- Pre-earnings catalyst (earnings June 3–4, Tue/Wed after close — binary event in ~24–30 hours). Strong fundamental momentum.
 - **ANTI-CHURN CRITICAL:** AVGO shares were NOT bought today. However, DO NOT SELL AVGO today under any circumstances unless hourly note explicitly authorizes. Same-day round trip is prohibited.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES for future sessions):** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: catastrophic pre-earnings technical breakdown.
-- Do NOT add AVGO today. Earnings risk in ~24 hours. Binary event — no adds ahead of print.
+- Do NOT add AVGO today. Earnings risk in ~24–30 hours. Binary event — no adds ahead of print.
 
 ### GOOG — FULLY EXITED — DO NOT RE-BUY — DO NOT ADD
 - All 3 shares sold today: 1 share @ $372.02 (stop), 2 shares @ $370.50 (limit).
@@ -41,7 +41,7 @@
 - Re-entry only if it reclaims $385 with volume and hourly authorizes.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
-- Fully exited May 27. Re-entry deferred. NVDA rallied +5.01% today on Computex news to ~$221.72.
+- Fully exited May 27. Re-entry deferred. NVDA rallied further today on Computex news to ~$224.46.
 - **DO NOT CHASE NVDA.** Re-entry only on pullback to $218 or below AND hourly explicitly authorizes.
 - Focus on AVGO/SOXX chip exposure.
 
@@ -78,15 +78,15 @@ Do not place market orders for these; use limit orders only, or defer.
 2. **HOLD cash** for defensive flexibility or next hourly authorization.
 3. **Conditional add queue (requires explicit hourly authorization):**
    - NVDA if pullback to $218 or below.
-   - AVGO only post-earnings (after June 3) AND if pullback to $425 or below AND hourly authorizes.
+   - AVGO only post-earnings (after June 3–4) AND if pullback to $425 or below AND hourly authorizes.
    - GOOG re-entry only after 24-hour cooldown AND reclaims $385 with volume.
 
 ## Expected Book (Current)
-- QQQ 6 (~43.4%), SOXX 3 (~16.8%), VOO 2 (~13.6%), AVGO 2 (~9.0%)
-- Cash: ~$1,777 (~17.3%)
+- QQQ 6 (~43.3%), SOXX 3 (~16.8%), VOO 2 (~13.6%), AVGO 2 (~9.0%)
+- Cash: ~$1,777 (~17.2%)
 - Gross exposure: ~82.7%
 
-## Next Hourly Preview — 14:35 PM ET (NOT AUTHORIZED YET)
-- Monitor AVGO momentum into earnings (June 3).
+## Next Hourly Preview — 15:35 PM ET (NOT AUTHORIZED YET)
+- Monitor AVGO momentum into earnings (June 3–4).
 - Evaluate NVDA pullback for potential re-entry.
-- Reassess cash deployment if gross exposure remains below 80%.
+- Reassess cash deployment if gross exposure remains below 85%.

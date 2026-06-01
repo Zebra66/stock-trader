@@ -2,6 +2,52 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 14:41 : [hourly] Held all, no trades, gap widened 0.08pp
+- Portfolio +0.80% today vs SPY +0.44%
+- Gross exposure 82.73% within 80-90% band
+- AVGO earnings ~24-30h out; no adds authorized
+- NVDA rallied to 24.46; chase prohibited
+- No open orders, daytrade 0/3, no compliance issues
+
+2026-06-01 : 14:40 : [tactical] Held all, no triggers hit
+- SOXX $574.46 > stop $540, AVGO $461.18 > stop $400
+- NVDA $224.24 above $218 pullback target, no chase
+- Gross 82.7% within 80-90% band, 0 daytrades
+- Event detector: NONE, all held positions OK
+
+2026-06-01 : 14:30 : [tactical] No action: all holds stable
+- Event detector: NONE classification
+- All 4 positions green, no triggers breached
+- AVGO 61.21, SOXX 74.61, QQQ 44.53, VOO 98.61
+- Gross exposure 82.7%, within 80-90% band
+- Daytrade 0/3, no open orders
+
+2026-06-01 : 14:20 : [tactical] HOLD: no triggers met
+- All positions green, exposure 82.7% in band
+- Event detector: NONE, no action required
+- SOXX 574.79 > 540 stop, AVGO 460.42 > 400 stop
+- NVDA 224.30, no chase; GOOG 372.75, cooldown active
+- Next hourly 18:35Z; awaiting fresh directives
+
+2026-06-01 : 14:10 : [tactical] No action: all holds, no triggers
+- Market orderly, no event flags
+- All positions green, no stop or add conditions met
+- Cash 17.3%, exposure 82.7% within band
+- AVGO earnings ~24h out; no adds authorized
+
+2026-06-01 : 13:50 : [tactical] Held all positions, no triggers
+- QQQ/SOXX/VOO/AVGO all green, no sell stops breached
+- No buy conditions met in todo.md
+- Exposure 82.7% within 80-90% band
+- Event detector: NONE, all positions OK
+
+2026-06-01 : 13:40 : [tactical] HOLD: no triggers breached
+- Event detector: NONE, all positions OK
+- SOXX 75.32 > 40 stop, AVGO 62.17 > 00 stop
+- NVDA 22.70 above 18 re-entry; no chase
+- Gross exposure 82.7% within 80-90% band
+- Zero orders, zero daytrades used
+
 2026-06-01 : 13:39 : [hourly] Held all, stable green book, AVGO earnings watch
 - No trades since 12:35 ET. Gross exposure 82.7% within band.
 - All 4 holdings green; QQQ +5.9%, SOXX +3.6%, VOO +3.4%, AVGO +5.8%
