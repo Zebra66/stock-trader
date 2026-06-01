@@ -2,6 +2,48 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 13:39 : [hourly] Held all, stable green book, AVGO earnings watch
+- No trades since 12:35 ET. Gross exposure 82.7% within band.
+- All 4 holdings green; QQQ +5.9%, SOXX +3.6%, VOO +3.4%, AVGO +5.8%
+- AVGO earnings ~24h away; no adds. Defensive stops at SOXX 40, AVGO 00.
+- Trailing SPY by ~2.83 pp; gap narrowing slowly. Cash 17.3% reserved.
+- Daytrade count 0/3. No open orders. Universe compliant.
+
+2026-06-01 : 13:30 : [tactical] No action: all holds, no triggers
+- Event detector: NONE. All held positions stable.
+- SOXX 74.91 > 40 stop — no trim.
+- AVGO 60.68 > 00 stop — no exit.
+- NVDA 21.98 > 18 target — no buy.
+- Gross exposure 82.7% within 80–90% band. Holding.
+
+2026-06-01 : 13:21 : [tactical] HOLD all positions, no triggers met
+- No sell triggers breached (SOXX $573.75 > $540, AVGO $461.72 > $400)
+- No buy conditions met (NVDA $221.61 above $218 pullback limit)
+- Gross exposure 82.7% within 80-90% offensive band
+- Event detector: NONE. All held positions and broad market OK.
+- Daytrade count 0/3. No orders placed.
+
+2026-06-01 : 13:10 : [tactical] No action; all holds above triggers
+- SOXX 73.31 >> 40 stop
+- AVGO 61.17 >> 00 stop
+- NVDA 21.61, no 18 pullback
+- Gross 82.7% within 80-90% band
+- Event detector: NONE
+
+2026-06-01 : 12:50 : [tactical] No action: all holds, no triggers
+- SOXX 72.37 > 40 stop — no trim
+- AVGO 61.96 > 00 stop — no exit
+- Gross exposure 82.7% within 80-90% band
+- Daytrade 0/3, no open orders
+- Event detector: NONE; proceeding with normal mode
+
+2026-06-01 : 12:40 : [tactical] No action: all holds, no triggers
+- Event detector: NONE. All held positions OK.
+- SOXX 72.90 > 40 stop; AVGO 61.70 > 00 stop.
+- Gross exposure 82.7% within 80-90% band.
+- Daytrade 0/3. No open orders.
+- All positions green; best trade is no trade.
+
 2026-06-01 : 12:39 : [hourly] Held all, no new orders
 - Equity 0,258, gross 82.7% within 80-90% band
 - All 4 holdings green; AVGO +3.3% into earnings
