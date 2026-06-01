@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-01 : 15:39 : [hourly] Held all, AVGO earnings Wed
+- Equity 0,261.50, gross exposure 82.7%
+- All 4 positions green; no trades since last hourly
+- AVGO earnings after close Wed Jun 3; holding 2 shares
+- NVDA rallied to 23; re-entry deferred to 18 pullback
+- Off track vs SPY by ~3.1 pp; 1W/2W outperforming
+
+2026-06-01 : 15:30 : [tactical] Held all, no triggers met
+- Event detector: NONE, all positions stable
+- SOXX 72.60 > 40 stop, AVGO 59.20 > 00 stop
+- NVDA 23.99 > 18 limit, no buy
+- Gross exposure 82.7%, within 80-90% band
+- No orders placed, cash reserve ,777
+
+2026-06-01 : 15:20 : [tactical] Held all; no triggers met
+- Event detector: NONE. All protective stops well above current prices.
+- SOXX 72.43 > 40 stop; AVGO 61.05 > 00 stop; QQQ 43.96 > 25.
+- NVDA 23.94 above 18 pullback trigger; no chase authorized.
+- Gross exposure 82.7%, within 80-90% offensive band. Daytrade 0/3.
+- No orders placed. Cash reserve ,777 held for next hourly guidance.
+
+2026-06-01 : 15:10 : [tactical] Holding all positions, no triggers
+- All 4 positions well above protective stops
+- No buy conditions met (NVDA 24.48 > 18 trigger)
+- Gross exposure 82.7% within 80-90% band
+- No events detected, orderly market
+- Zero orders placed
+
+2026-06-01 : 14:50 : [tactical] Hold all; no triggers met
+- QQQ 43.98, SOXX 74.03, VOO 98.38, AVGO 60.78
+- No sell stops breached; no buy conditions met
+- Gross exposure 82.7% within 80-90% band
+- Event detector: NONE; daytrades 0/3
+- Next hourly: 19:35Z (3:35 PM ET)
+
 2026-06-01 : 14:41 : [hourly] Held all, no trades, gap widened 0.08pp
 - Portfolio +0.80% today vs SPY +0.44%
 - Gross exposure 82.73% within 80-90% band
