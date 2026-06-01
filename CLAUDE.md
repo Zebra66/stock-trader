@@ -131,6 +131,7 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 
 ### Execution & Testing Commands
 - **Live Deployment:** The application is deployed on Google Cloud Run and is live at [https://auto-stock-trader-pxeqygrzga-uc.a.run.app](https://auto-stock-trader-pxeqygrzga-uc.a.run.app)
+- **Deploy to Production:** Execute `./scripts/deploy.sh` to build via Cloud Build and deploy to production.
 - **Run Local:** Execute `./scripts/run_local.sh` to start the Harness and the Agent loops locally.
 - **Run Tests:** Execute `bun test` to run all unit tests in the project.
 - **Temporary Files:** All temp files, debug artifacts, and captured logs must be created under `./temp_files/`. Artifacts in this directory MUST NOT be saved to git.

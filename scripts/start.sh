@@ -4,6 +4,7 @@ set -e
 # ── Git setup ────────────────────────────────────────────────────────────────
 git config --global user.email "agent@auto-stock-trader" || true
 git config --global user.name "Auto Stock Agent" || true
+git config --global init.defaultBranch main || true
 
 # Wrap all git setup in a non-fatal subshell — a git failure (expired PAT,
 # network blip, etc.) must NOT prevent the web server from starting.

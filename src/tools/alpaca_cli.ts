@@ -1,16 +1,62 @@
 import '../env';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
+import { withTimeout } from './with_timeout';
+import { checkConcentrationCap } from './concentration_guard';
+import type Alpaca from '@alpacahq/alpaca-trade-api';
 
-export const alpaca = getDefaultAlpacaClient();
+let _alpaca: Alpaca | null = null;
+function getAlpaca(): Alpaca {
+  if (!_alpaca) {
+    _alpaca = getDefaultAlpacaClient();
+  }
+  return _alpaca;
+}
+
+const API_TIMEOUT_MS = 15_000;
 
 const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
 ]);
 
+// ── Trading Lock (enforced at code level) ───────────────────────────────────
+const LOCK_FILE = 'memory/.trading_lock.json';
+
+async function getTradingLock(): Promise<{ active: boolean; allowed?: string[]; reason?: string; expiresAt?: string } | null> {
+  try {
+    const file = Bun.file(LOCK_FILE);
+    if (!(await file.exists())) return null;
+    const text = await file.text();
+    return JSON.parse(text) as any;
+  } catch {
+    return null;
+  }
+}
+
+function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?: string } | null, symbol: string, side: string): boolean {
+  if (lock?.allowed) {
+    const key = `${side.toUpperCase()}_${symbol.toUpperCase()}`;
+    for (const a of lock.allowed) {
+      if (a === key || a === `ANY_${symbol.toUpperCase()}` || a === `${side.toUpperCase()}_ANY`) return true;
+    }
+  }
+  return false;
+}
+
+async function hasSameDayFill(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  try {
+    const today = new Date().toISOString().slice(0, 10);
+    const after = `${today}T00:00:00Z`;
+    const orders = await withTimeout(getAlpaca().getOrders({ status: 'closed', after }), API_TIMEOUT_MS, 'Alpaca getOrders (anti-churn)');
+    return orders.some((o: any) => o.symbol.toUpperCase() === symbol.toUpperCase() && o.side === side && o.filled_qty && parseFloat(o.filled_qty) > 0);
+  } catch {
+    return false;
+  }
+}
+
 export const alpacaTools = {
   getAccount: async (): Promise<string> => {
     try {
-      const account = await alpaca.getAccount();
+      const account = await withTimeout(getAlpaca().getAccount(), API_TIMEOUT_MS, 'Alpaca getAccount');
       return JSON.stringify(account);
     } catch (e: unknown) {
       return `Error getting account: ${(e as Error).message}`;
@@ -19,7 +65,7 @@ export const alpacaTools = {
 
   getPositions: async (): Promise<string> => {
     try {
-      const positions = await alpaca.getPositions();
+      const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions');
       return JSON.stringify(positions);
     } catch (e: unknown) {
       return `Error getting positions: ${(e as Error).message}`;
@@ -28,7 +74,7 @@ export const alpacaTools = {
 
   getLatestPrice: async (symbol: string): Promise<string> => {
     try {
-      const bar = await alpaca.getLatestBar(symbol);
+      const bar = await withTimeout(getAlpaca().getLatestBar(symbol), API_TIMEOUT_MS, `Alpaca getLatestBar(${symbol})`);
       return JSON.stringify(bar);
     } catch (e: unknown) {
       return `Error getting latest price for ${symbol}: ${(e as Error).message}`;
@@ -44,10 +90,67 @@ export const alpacaTools = {
     limitPrice?: number
   ): Promise<string> => {
     const symUpper = symbol.toUpperCase();
-    if (side === 'buy' && !UNIVERSE.has(symUpper)) {
-      // Allow closing an existing short position even for out-of-universe symbols
+    // HARD_LOCK primary check
+    try {
+      const todo = await Bun.file('./memory/todo.md').text();
+      const currentSection = todo.slice(0, 3000);
+      const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
+      if (lockLineMatch) {
+        const lockLine = lockLineMatch[0];
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        if (!isExplicitlyLifted && side === 'buy') {
+          return `Error submitting order: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`;
+        }
+      }
+    } catch {
+      // todo.md not readable — proceed to lock-file check as fallback
+    }
+    // Symbol-specific no-buy directive parser (todo.md)
+    try {
+      const noBuySymbols = new Set<string>();
+      const todo = await Bun.file('./memory/todo.md').text();
+      for (const line of todo.split('\n')) {
+        const upper = line.toUpperCase();
+        if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+        if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+        for (const sym of UNIVERSE) {
+          if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) noBuySymbols.add(sym);
+        }
+      }
+      if (side === 'buy' && noBuySymbols.has(symUpper)) {
+        return `Error submitting order: Symbol ${symbol} is on the active no-buy list derived from memory/todo.md.`;
+      }
+    } catch {
+      // todo.md not readable — proceed
+    }
+    // Trading lock check
+    const lock = await getTradingLock();
+    const lockAllows = isOrderAllowed(lock, symbol, side);
+    if (side === 'buy' && lock && lock.active && !lockAllows) {
+      return `Error submitting order: Trading lock is active for ${symbol} ${side}. Reason: ${lock.reason || 'No reason provided'}.`;
+    }
+    // Symbol ban check
+    if (side === 'buy') {
       try {
-        const positions = await alpaca.getPositions();
+        const lockFile = Bun.file(LOCK_FILE);
+        if (await lockFile.exists()) {
+          const lockJson = JSON.parse(await lockFile.text()) as { bannedSymbols?: string[]; allowed?: string[]; reason?: string };
+          const banned = (lockJson.bannedSymbols ?? []).map((s: string) => s.toUpperCase());
+          if (banned.includes(symUpper)) {
+            const key = `${side.toUpperCase()}_${symUpper}`;
+            const isExcepted = (lockJson.allowed ?? []).some((a: string) => a === key || a === `ANY_${symUpper}` || a === `${side.toUpperCase()}_ANY`);
+            if (!isExcepted) {
+              return `Error submitting order: Symbol ${symbol} is currently banned. Reason: ${lockJson.reason || 'No reason provided'}.`;
+            }
+          }
+        }
+      } catch (e: unknown) {
+        if (e instanceof Error && e.message.includes('currently banned')) return e.message;
+      }
+    }
+    if (side === 'buy' && !UNIVERSE.has(symUpper)) {
+      try {
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (universe check)');
         const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
         if (!pos || parseFloat(pos.qty) >= 0) {
           return `Error submitting order: Symbol ${symbol} is not in the approved investment universe.`;
@@ -58,7 +161,7 @@ export const alpacaTools = {
     }
     if (side === 'sell') {
       try {
-        const positions = await alpaca.getPositions();
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (sell guard)');
         const pos = positions.find((p: { symbol: string; qty: string }) => p.symbol.toUpperCase() === symUpper && parseFloat(p.qty) > 0);
         const longQty = pos ? parseFloat(pos.qty) : 0;
         if (longQty < qty) {
@@ -68,18 +171,72 @@ export const alpacaTools = {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
       }
     }
+    // Anti-churn guard
+    if (side === 'sell') {
+      const boughtToday = await hasSameDayFill(symUpper, 'buy');
+      if (boughtToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY SELL ${symUpper}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
+          }
+        } catch {
+          return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
+        }
+      }
+    }
+    if (side === 'buy') {
+      const soldToday = await hasSameDayFill(symUpper, 'sell');
+      if (soldToday) {
+        try {
+          const todo = await Bun.file('./memory/todo.md').text();
+          const authPattern = new RegExp(`AUTHORIZE SAME-DAY BUY ${symUpper}\\b`, 'i');
+          if (!authPattern.test(todo)) {
+            return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
+          }
+        } catch {
+          return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
+        }
+      }
+    }
+    // Concentration cap guard (BUY orders only)
+    if (side === 'buy') {
+      try {
+        const account = await withTimeout(getAlpaca().getAccount(), API_TIMEOUT_MS, 'Alpaca getAccount (concentration check)');
+        const positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions (concentration check)');
+        const equity = parseFloat((account as any).equity);
+        const pos = positions.find((p: any) => p.symbol.toUpperCase() === symUpper);
+        const currentMkt = pos ? parseFloat(pos.market_value) : 0;
+        const bar = await withTimeout(getAlpaca().getLatestBar(symbol), API_TIMEOUT_MS, `Alpaca getLatestBar(${symbol}) (concentration check)`);
+        const latestBarPrice = bar ? parseFloat((bar as any).ClosePrice ?? '0') : undefined;
+        const check = checkConcentrationCap({
+          symbol: symUpper,
+          qty,
+          limitPrice,
+          latestBarPrice,
+          currentMktValue: currentMkt,
+          equity,
+        });
+        if (!check.ok) {
+          return `Error submitting order: ${check.error}`;
+        }
+      } catch (e: unknown) {
+        return `Error submitting order: Concentration cap check failed: ${(e as Error).message}`;
+      }
+    }
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }
     try {
-      const order = await alpaca.createOrder({
+      const order = await withTimeout(getAlpaca().createOrder({
         symbol,
         qty,
         side,
         type,
         time_in_force: timeInForce,
         limit_price: limitPrice,
-      });
+      }), API_TIMEOUT_MS, 'Alpaca createOrder');
       return `Successfully placed order: ${JSON.stringify(order)}`;
     } catch (e: unknown) {
       return `Error submitting order: ${(e as Error).message}`;
@@ -88,7 +245,7 @@ export const alpacaTools = {
 
   getMarketClock: async (): Promise<string> => {
     try {
-      const clock = await alpaca.getClock();
+      const clock = await withTimeout(getAlpaca().getClock(), API_TIMEOUT_MS, 'Alpaca getClock');
       return JSON.stringify(clock);
     } catch (e: unknown) {
       return `Error fetching market clock: ${(e as Error).message}`;
@@ -100,7 +257,7 @@ export const alpacaTools = {
       const opts: any = {};
       if (status) opts.status = status;
       if (symbols) opts.symbols = symbols;
-      const orders = await alpaca.getOrders(opts);
+      const orders = await withTimeout(getAlpaca().getOrders(opts), API_TIMEOUT_MS, 'Alpaca getOrders');
       return JSON.stringify(orders);
     } catch (e: unknown) {
       return `Error fetching orders: ${(e as Error).message}`;
@@ -109,7 +266,7 @@ export const alpacaTools = {
 
   cancelOrder: async (orderId: string): Promise<string> => {
     try {
-      const result = await alpaca.cancelOrder(orderId);
+      const result = await withTimeout(getAlpaca().cancelOrder(orderId), API_TIMEOUT_MS, 'Alpaca cancelOrder');
       return JSON.stringify(result);
     } catch (e: unknown) {
       return `Error cancelling order: ${(e as Error).message}`;
@@ -119,7 +276,7 @@ export const alpacaTools = {
 
 export async function isMarketOpen(): Promise<boolean> {
   try {
-    const clock = await alpaca.getClock() as { is_open: boolean };
+    const clock = await withTimeout(getAlpaca().getClock(), API_TIMEOUT_MS, 'Alpaca getClock') as { is_open: boolean };
     return clock.is_open;
   } catch {
     return false;
