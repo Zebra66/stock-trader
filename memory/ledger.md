@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 13:52 : [hourly] Held all, chip rally narrows SPY gap
+- No trades; AVGO +9.44% unrealized, SOXX +7.44% unrealized
+- Gap to SPY narrowed to ~1.92 pp from 3.44 pp Friday
+- GOOG exit ratified; all 4 holdings green; cash 17.1%
+- AVGO earnings June 3 after close; no add ahead of print
+- Repo code breach restored: tactical agent removed anti-churn guards
+
+2026-06-02 : 13:50 : [tactical] Hold all, no triggers
+- No protective stops breached; all positions healthy
+- SOXX 596.87>540, AVGO 477.02>400, QQQ 744.67
+- Event detector: NONE. Gross exposure ~82.9% within band.
+- No orders placed. Awaiting hourly guidance or stop breach.
+
 2026-06-02 : 12:40 : [hourly] Held all, chip rally continues
 - AVGO +4.8% on GOOG AI spend news; SOXX +4.4%; trailing SPY by 1.7pp but gap narrowing
 - No add capacity due to concentration caps + AVGO earnings risk
