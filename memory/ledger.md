@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 11:43 : [hourly] Held all, gap narrows to 1.77pp
+- No trades; all positions green
+- AVGO +10.3% unrealized, earnings ~26h
+- Fed Hammack hawkish on rates — new risk
+- SOXX +8.0% unrealized, chips surging
+- Cash 17% reserved for post-earnings/NVDA pullback
+
+2026-06-02 : 11:40 : [tactical] Held all, no triggers breached
+- SOXX 99.20 > 40 stop, AVGO 81.14 > 00 stop
+- No buy conditions: NVDA 26.52 above 18, GOOG 64.29 below 85
+- Gross exposure 82.9% within 80-90% target band
+- Event detector NONE; all positions OK
+
+2026-06-02 : 11:30 : [tactical] HOLD all — no triggers met
+- Event detector: NONE at 15:30Z
+- All 4 positions green, well above stops
+- QQQ 745.04, SOXX 598.64, AVGO 480.62, VOO 698.69
+- Gross exposure ~82.9%, within 80-90% band
+- No orders placed
+
+2026-06-02 : 11:20 : [tactical] Held all, no triggers breached
+- Event detector NONE at 15:20Z
+- All positions green, stops not breached
+- Exposure 82.9% within 80-90% band
+- No orders placed this cycle
+
+2026-06-02 : 11:10 : [tactical] Holding all, no triggers
+- Event detector: NONE at 15:10Z
+- All 4 positions green, no protective stops breached
+- Cash 17.2%, gross 82.9%, within 80-90% band
+- No buy/sell triggers active in todo.md
+- AVGO earnings ~24hrs; no adds authorized
+
+2026-06-02 : 10:50 : [tactical] HOLD all, no triggers met
+- Event detector: NONE at 14:50Z
+- All 4 positions green, no stops breached
+- SOXX 594.57 > 540, AVGO 480.03 > 400, QQQ 743.95 > 725, VOO 697.93 > 685
+- No buys authorized, no adds, no sells triggered
+- Gross exposure 82.8%, within 80-90% offensive band
+
 2026-06-02 : 10:44 : [hourly] Held all, gap narrows to 1.97pp
 - Portfolio +3.68% vs SPY +5.65%, gap improved from 2.02pp
 - All positions green: AVGO +10%, SOXX +6.8%, QQQ +6%, VOO +3.5%
