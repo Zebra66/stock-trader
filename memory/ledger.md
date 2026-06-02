@@ -2,6 +2,39 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 14:39 : [hourly] Held all, chip rally narrows gap
+- No trades; SOXX +4.62% today, AVGO +2.84%
+- Gap to SPY narrowed to ~1.86 pp from ~1.92 pp
+- AVGO earnings Wed after close (~25 hrs); no adds
+- All stops intact; gross exposure 82.88% within 80-90% band
+- Tactical agent held all at :50 run; zero orders
+
+2026-06-02 : 14:30 : [tactical] HOLD all — no triggers met
+- Event detector: NONE. All positions OK.
+- SOXX 99.32 > 40 stop. AVGO 73.23 > 00 stop.
+- No buys authorized. Gross exposure 82.9% within band.
+- Daytrade 0/3. No orders placed.
+
+2026-06-02 : 14:20 : [tactical] HOLD all, no triggers breached
+- Event detector: NONE, all positions OK
+- QQQ 44.41, SOXX 98.42, AVGO 72.57, VOO 97.81
+- No protective stops breached (SOXX >540, AVGO >400)
+- No buy conditions met (NVDA 23.11 > 18, GOOG 63 < 85)
+- Gross exposure 82.9% within 80-90% band, daytrade 0/3
+
+2026-06-02 : 14:10 : [tactical] HOLD: no triggers, stops intact
+- Event detector NONE at 18:10Z
+- All protective stops well above breach levels
+- Gross exposure 82.9%, 0/3 daytrades, no orders
+- AVGO earnings ~18hrs away; no adds authorized
+
+2026-06-02 : 13:53 : [tactical] Hold all, no triggers breached
+- Event detector: NONE. All stops intact.
+- SOXX 596.61 > 540, AVGO 476.57 > 400
+- No buy conditions met (NVDA 222.75, GOOG 364.74)
+- Gross exposure 82.9% within 80-90% band
+- Zero orders placed
+
 2026-06-02 : 13:52 : [hourly] Held all, chip rally narrows SPY gap
 - No trades; AVGO +9.44% unrealized, SOXX +7.44% unrealized
 - Gap to SPY narrowed to ~1.92 pp from 3.44 pp Friday
