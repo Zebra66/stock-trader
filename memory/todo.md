@@ -1,13 +1,15 @@
-# Tactical Todo — Updated 2026-06-01 19:35Z (Monday 3:35 PM ET)
-*HARD_LOCK LIFTED. Execute authorized orders only. Market OPEN until 20:00Z/16:00 ET. Next hourly: Tue 13:35Z (9:35 AM ET).*
+# Tactical Todo — Updated 2026-06-02 13:30Z (Tuesday 9:30 AM ET)
+*HARD_LOCK LIFTED. Execute authorized orders only.*
+*<!-- Autonomous override applied at 2026-06-02 13:30Z due to CRITICAL event (semiconductor surge: SOXX +2.84%, SMH +2.23%; AVGO held +6.64%) -->*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, SOXX 3, VOO 2, AVGO 2
-- **Account equity / cash / buying power:** ~$10,261.50 / ~$1,777.46 / ~$12,038.96
-- **Gross long exposure:** ~82.7% | **Net exposure:** ~82.7% | **Cash:** ~17.3%
+- **Account equity / cash / buying power:** ~$10,358.47 / ~$1,777.45 / ~$12,135.92
+- **Gross long exposure:** ~82.8% | **Net exposure:** ~82.8% | **Cash:** ~17.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
+- **Event detector:** CRITICAL (broad market) / MAJOR (AVGO held). No protective stops breached. No trades executed.
 - **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET. Final tactical runs today at :40 and :50.
 

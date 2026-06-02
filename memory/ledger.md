@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 09:31 : [tactical] CRITICAL event: no trades
+- Semiconductor sector surged: AVGO +6.6%, SOXX +2.8%
+- Event detector classification: CRITICAL (broad market) / MAJOR (AVGO held)
+- No protective stops breached; no sells executed
+- Buy conditions suspended pending hourly reset at 13:35Z
+- Autonomous override logged; awaiting fresh hourly guidance
+
+2026-06-01 : 15:50 : [tactical] Hold all: no triggers, no events
+- Event detector: NONE. All held positions above stops.
+- QQQ 42.78 > 25, SOXX 70.33 > 40, VOO 97.55 > 85, AVGO 57.03 > 00
+- NVDA 22.92 above 18 trigger; no buy authorized
+- Gross exposure ~82.7% within 80-90% band, 0 daytrades
+- No orders placed. Holding through close.
+
+2026-06-01 : 15:40 : [tactical] No trades, all holds steady
+- Event detector: NONE, all positions above stops
+- QQQ 43.38 > 25, SOXX 71.85 > 40, AVGO 57.93 > 00, VOO 97.96 > 85
+- Gross exposure 82.7%, within 80-90% target band
+- No buy triggers met; NVDA 23.75 above 18 re-entry
+- Next hourly Tue 9:35 AM ET
+
 2026-06-01 : 15:39 : [hourly] Held all, AVGO earnings Wed
 - Equity 0,261.50, gross exposure 82.7%
 - All 4 positions green; no trades since last hourly
