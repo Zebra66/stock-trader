@@ -1,102 +1,101 @@
 # Hourly Macro Memory
-*Updated 2026-06-01 19:35Z (Monday 3:35 PM ET). Market OPEN until 20:00Z/16:00 ET.*
+*Updated 2026-06-02 13:35Z (Tuesday 9:35 AM ET). Market OPEN until 20:00Z/16:00 ET.*
 
-## Hourly Cycle Summary — 2026-06-01 19:35Z (Monday 3:35 PM ET)
-- **Status:** Market OPEN. Final hourly of the day. Closes in ~25 minutes.
+## Hourly Cycle Summary — 2026-06-02 13:35Z (Tuesday 9:35 AM ET)
+- **Status:** Market OPEN. Early session.
 - **Repo integrity:** Clean. Branch up to date with origin/main.
-- **Live broker refresh:** Equity $10,259.14 | Cash $1,777.46 | Long $8,481.68 | Gross 82.67% | Daytrade 0/3.
+- **Live broker refresh:** Equity $10,345.73 | Cash $1,777.45 | Long $8,568.28 | Gross 82.8% | Daytrade 0/3.
 - **Holdings confirmed:** QQQ 6, SOXX 3, VOO 2, AVGO 2. GOOG fully exited.
 - **Open orders:** NONE.
-- **Filled trades this cycle:** NONE since 18:35Z. Tactical agent held all across :40/:50/:10/:20/:30/:40/:50 runs.
-- **Goal check:** Portfolio +2.59% since inception vs SPY +5.79% (est. 759.57 vs 718.01 baseline). Goal 1 (positive absolute) MET. Goal 2 (beat SPY) **off track by ~3.20 pp**.
-- **Regime:** Offensive catch-up. Target gross exposure 80–90%. Current 82.67% — within band.
-- **Dominant failure mode:** bad symbol selection (GOOG, resolved) and late entries / poor execution. GOOG cut stopped the bleed. Portfolio recovering but intraday fade pulled equity back ~$30 from prior hourly high.
+- **Filled trades this cycle (since yesterday 19:35Z):** NONE. Tactical agent held all at :30Z event response.
+- **Goal check:** Portfolio +3.46% since inception vs SPY +5.48% (757.38 vs 718.01 baseline). Goal 1 (positive absolute) MET. Goal 2 (beat SPY) **off track by ~2.02 pp** (improved from ~3.20 pp yesterday).
+- **Regime:** Offensive catch-up. Target gross exposure 80–90%. Current 82.8% — within band.
+- **Dominant failure mode:** bad symbol selection (GOOG, resolved) and late entries / poor execution. GOOG cut stopped the bleed. Portfolio gaining ground; 1D outperformance vs SPY is ~+0.95 pp.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $701.33 | $742.40 | $4,454.40 | 43.42% | +$246.42 | +5.86% |
-| SOXX | 3 | $554.51 | $571.17 | $1,713.50 | 16.71% | +$49.97 | +3.00% |
-| VOO | 2 | $673.925 | $697.19 | $1,394.38 | 13.59% | +$46.53 | +3.45% |
-| AVGO | 2 | $435.92 | $459.66 | $919.32 | 8.96% | +$47.48 | +5.45% |
-| Cash | — | — | — | $1,777.46 | 17.32% | — | — |
-| **Equity** | — | — | — | **$10,259.14** | **100%** | — | **+2.59%** |
+| QQQ | 6 | $701.33 | $740.58 | $4,443.48 | 42.95% | +$235.50 | +5.60% |
+| SOXX | 3 | $554.51 | $587.32 | $1,761.96 | 17.03% | +$98.43 | +5.92% |
+| VOO | 2 | $673.925 | $696.44 | $1,392.88 | 13.46% | +$45.03 | +3.34% |
+| AVGO | 2 | $435.92 | $484.98 | $969.96 | 9.38% | +$98.12 | +11.25% |
+| Cash | — | — | — | $1,777.45 | 17.18% | — | — |
+| **Equity** | — | — | — | **$10,345.73** | **100%** | — | **+3.46%** |
 
-- **Gross long exposure:** 82.67%
-- **Net exposure:** 82.67%
+- **Gross long exposure:** 82.8%
+- **Net exposure:** 82.8%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Mon June 1 (3:35 PM ET)
-- **1D (today):** portfolio **+0.50%** ($10,207.86 → $10,259.14) vs SPY **~+0.4%** (est. 756.43 → ~759.57). **Outperforming SPY by ~0.1 pp today.** (Fade in last hour narrowed intraday lead.)
-- **1W (May 22 → Jun 1):** portfolio **~+2.8%** (est. $9,990 → $10,259.14) vs SPY **~+1.9%** (est. $745.63 → 759.57). **Outperforming SPY over 1W by ~0.9 pp.**
-- **2W (May 15 → Jun 1):** portfolio **~+5.9%** (est. $9,690 → $10,259.14) vs SPY **~+2.8%** (est. $739.13 → 759.57). **Outperforming SPY over 2W by ~3.1 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **+2.59%** vs SPY **+5.79%**. Trailing by ~3.20 pp. Gap widened slightly due to intraday fade but 2W trend remains positive.
-- What is working: QQQ core growth (+5.86% unrealized). SOXX chip exposure (+3.00%). AVGO pre-earnings momentum (+5.45%). VOO anchor steady (+3.45%).
-- What is not working: GOOG fully exited today with realized loss of ~$64.50. No remaining laggards.
-- What must change: To close the ~3.20 pp gap, chip exposure (SOXX + AVGO) and QQQ must outperform SPY. Cash is 17.32%; reserve for exceptional pullback add or post-AVGO-earnings opportunity. Do NOT chase spikes.
+## Performance Review — Tue June 2 (9:35 AM ET)
+- **1D (today):** portfolio **+0.80%** ($10,264.22 → $10,345.73) vs SPY **-0.15%** ($758.54 → $757.38). **Outperforming SPY by ~0.95 pp today.**
+- **1W (May 26 → Jun 2):** portfolio **~+3.9%** (est. $9,955 → $10,345.73) vs SPY **~+0.92%** (est. $750.46 → $757.38). **Outperforming SPY over 1W by ~3.0 pp.**
+- **2W (May 19 → Jun 2):** portfolio **~+6.8%** (est. $9,690 → $10,345.73) vs SPY **~+3.1%** (est. $734.83 → $757.38). **Outperforming SPY over 2W by ~3.7 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **+3.46%** vs SPY **+5.48%**. Trailing by ~2.02 pp. Gap narrowing.
+- What is working: AVGO pre-earnings surge (+11.25% unrealized, +5.22% today on GOOG $80B AI raise news). SOXX chip exposure (+5.92% unrealized). QQQ core growth (+5.60%). VOO anchor steady (+3.34%).
+- What is not working: GOOG fully exited with realized loss of ~$64.50. No remaining laggards.
+- What must change: To close the ~2.02 pp gap, chip exposure (SOXX + AVGO) and QQQ must keep outperforming SPY. Cash is 17.18%; reserve for exceptional pullback add or post-AVGO-earnings opportunity. Do NOT chase spikes.
 
 ## Goal Check
-- **Portfolio since inception:** +2.59% ($10,259.14 vs $10,000 base)
-- **S&P 500 since inception:** +5.79% (SPY ~759.57 vs baseline 718.01)
-- **Status:** **Off track on goal 2** (trailing SPY by ~3.20 pp). **Goal 1 (positive absolute) is MET.**
+- **Portfolio since inception:** +3.46% ($10,345.73 vs $10,000 base)
+- **S&P 500 since inception:** +5.48% (SPY 757.38 vs baseline 718.01)
+- **Status:** **Off track on goal 2** (trailing SPY by ~2.02 pp). **Goal 1 (positive absolute) is MET.**
 - **Dominant failure mode:** **bad symbol selection** (GOOG) compounded by **late entries / poor execution.**
 
-## Market Intel — Monday 3:35 PM ET
-- **Broad market:** S&P 500 ~flat to slightly positive after midday strength faded into close. Nasdaq still outperforming on chip strength but giving back some gains. Risk tone neutral.
-- **Semiconductor sector:** AI chip demand remains structural. SOXX +0.37% today; AVGO +2.88% pre-earnings. NVDA rallied early on Computex but faded to $223.39, still above prior close. NVDA re-entry deferred.
-- **AVGO / Broadcom:** Earnings expected June 3–4 (Tuesday/Wednesday after close — ~22–28 hours away). Hold 2 shares through. Current ~$459.66 (faded from $462 highs). Position is small (8.96%), so risk is contained. Do NOT add ahead of print.
-- **NVIDIA / NVDA:** Up on Computex announcements but faded to $223.39. Re-entry deferred; limit $218 if pullback continues. Chasing here is poor risk/reward.
-- **Alphabet / GOOG:** Exited all positions. Down slightly today (~$373.85). 24-hour cooldown on re-entry until after Tue 9:52 AM ET.
-- **META / HOOD / RKLB / others:** Avoid. META banned. HOOD rallied to ~$90.64 but remains in avoid list. RKLB crashed further to $124.61. Avoid.
-- **Fed / Macro:** No new Fed headlines. Iran ceasefire halt pushed oil higher but equities holding up.
-- **News access:** Yahoo Finance symbol-specific RSS feeds are working. Direct web search blocked. FMP disabled.
-- **Earnings dates:** AVGO expected June 3–4 (Tue/Wed after close — ~22–28 hours). GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No other binary events in next 48 hours.
+## Market Intel — Tuesday 9:35 AM ET
+- **Broad market:** S&P 500 slightly lower (-0.15%) as Dow falls on U.S.-Iran tension. Nasdaq mixed — AI/semis surging while broader market is weak. Risk tone: bifurcated (risk-on in chips, risk-off elsewhere).
+- **Semiconductor sector:** Extremely strong. Marvell +19% on Jensen Huang $1T endorsement. AVGO +6% on Alphabet $80B AI capital raise. SOXX +2.7% intraday. Chip demand remains structural.
+- **AVGO / Broadcom:** Earnings tomorrow (Wednesday, June 3, after close — confirmed by headline "Buy, Sell or Hold Broadcom Before Earnings Tomorrow?"). Hold 2 shares through. Current ~$484.98. Position is small (9.38%), risk contained. Unrealized gain +$98.12. Do NOT add ahead of print.
+- **NVIDIA / NVDA:** Up to $225.60 after Computex. No pullback to $218 yet. Re-entry deferred; chasing here is poor risk/reward.
+- **Alphabet / GOOG:** Exited all positions. Down ~0.5% today to ~$357.96. Broke support. 24-hour cooldown from last sell (13:54Z Jun 1) expires ~13:54Z today. No re-entry unless $385 reclaim.
+- **META / HOOD / RKLB / others:** Avoid. META banned. HOOD volatile at ~$88.68 (+16% this week). RKLB crashed further to $123.74 (-17.6% this week). Avoid.
+- **Fed / Macro:** No new Fed headlines. U.S.-Iran talks "continuing" but market watching for signs of Middle East peace deal. Gold fell off two-week high as oil rises. Equities holding up on chip strength.
+- **News access:** Yahoo Finance RSS feeds are working. Direct web search limited. FMP disabled.
+- **Earnings dates:** AVGO confirmed June 3 (Wed after close — ~28 hours). GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No other binary events in next 48 hours.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---:|---:|
-| QQQ | Hold | Core liquid growth. 43.42%, near 45% cap. No add capacity. | 36–45% |
-| SOXX | Hold / Trim on deeper pullback | Highest-alpha chip exposure. +3.00% unrealized. 3 shares. Trim 1 share if breaks $540. | 10–20% |
-| VOO | Hold | Broad-market anchor. 13.59%, within 20% cap. No add capacity. | 10–20% |
-| AVGO | Hold through earnings | Pre-earnings momentum. Earnings June 3–4. 2 shares. Cut all if breaks $400. Do NOT add. | 6–12% |
-| GOOG | Avoid / Exited | Fully exited. 24-hour cooldown until Tue 9:52 AM ET. No re-entry unless $385 reclaim. | 0% |
+| QQQ | Hold | Core liquid growth. 42.95%, near 45% cap. No add capacity. | 36–45% |
+| SOXX | Hold / Trim on deeper pullback | Highest-alpha chip exposure. +5.92% unrealized. 3 shares. Trim 1 share if breaks $540. | 10–20% |
+| VOO | Hold | Broad-market anchor. 13.46%, within 20% cap. No add capacity. | 10–20% |
+| AVGO | Hold through earnings | Pre-earnings momentum. GOOG $80B AI raise directly benefits AVGO. Earnings June 3 after close. 2 shares. Cut all if breaks $400. Do NOT add. | 6–12% |
+| GOOG | Avoid / Exited | Fully exited. Broke support. 24-hour cooldown expires ~13:54Z today. No re-entry unless $385 reclaim. | 0% |
 | NVDA | Watch / Pullback add | Re-entry deferred. Limit $218 if pullback. Do NOT chase. | 0–4% |
 | META | Avoid | bannedSymbols active. | 0% |
 | RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | Weak trends, thin liquidity, no edge, legal overhang, or parabolic chase risk. | 0% |
 
 ## Priority Actions
-1. **HOLD all positions into close.** No new orders this cycle. Gross exposure 82.67% is within 80–90% band.
+1. **HOLD all positions.** No new orders this cycle. Gross exposure 82.8% is within 80–90% band.
 2. **SOXX defensive stop:** SELL 1 share if price drops below $540.00 with limit $539.50. Rationale: protect capital on deeper pullback.
-3. **AVGO defensive stop:** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: catastrophic pre-earnings technical breakdown.
-4. **Cash reserve:** ~$1,777 (~17.3%). Reserve for defensive flexibility, exceptional pullback add (NVDA < $218), or post-AVGO-earnings opportunity. Cash deployment requires hourly authorization.
-5. **AVGO earnings watch:** June 3–4 (Tue/Wed after close). Hold 2 shares through unless $400 breaks. No add ahead of print.
-6. **GOOG 24-hour cooldown:** DO NOT RE-BUY until after 2026-06-02 13:52Z (Tuesday 9:52 AM ET).
-7. **No chase rule:** DO NOT BUY NVDA at current $223.39. Wait for pullback to $218 or below with hourly authorization.
+3. **AVGO defensive stop:** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: catastrophic pre-earnings/earnings technical breakdown.
+4. **Cash reserve:** ~$1,777 (~17.2%). Reserve for defensive flexibility, exceptional pullback add (NVDA < $218), or post-AVGO-earnings opportunity. Cash deployment requires hourly authorization.
+5. **AVGO earnings watch:** June 3 (Wed after close — ~28 hours). Hold 2 shares through unless $400 breaks. No add ahead of print.
+6. **GOOG cooldown expires ~13:54Z today.** Do NOT RE-BUY even after cooldown unless it reclaims $385 with volume and hourly authorizes.
+7. **No chase rule:** DO NOT BUY NVDA at current $225.60. Wait for pullback to $218 or below with hourly authorization.
 
 ## Macro Themes
-- **Actionable now:** AI chip demand is structural. SOXX + AVGO are the primary beneficiaries. We are positioned correctly.
-- **Worth monitoring:** AVGO earnings June 3–4 = binary event for chip sentiment. Hold existing exposure; do not add ahead of the print.
-- **Worth monitoring:** NVDA regaining momentum on Computex but fading into close. Potential re-entry on pullback to $218. Chasing here is poor risk/reward.
-- **Worth monitoring:** Iran geopolitical risk (halted ceasefire talks). Oil +3%. If risk-off escalates, consider trimming SOXX or raising cash.
-- **Interesting but not actionable yet:** QTUM quantum computing ETF extended (+13.41% 20D). No entry; illiquid.
-- **Interesting but not actionable yet:** Space sector remains damaged (RKLB –16.35% in 5 days). Avoid.
-- **Worth monitoring:** Yahoo headline "Profitless Tech Surges 57% As Wall Street Signals Caution" suggests froth in speculative tech. Our QQQ/SOXX holdings are quality names, but watch for broad risk-off if speculative unwind accelerates.
+- **Actionable now:** AI chip demand is structural. AVGO + SOXX are primary beneficiaries. We are positioned correctly. AVGO getting a double boost from GOOG $80B AI raise + Marvell endorsement.
+- **Worth monitoring:** AVGO earnings June 3 after close = binary event for chip sentiment. Hold existing exposure; do not add ahead of the print.
+- **Worth monitoring:** NVDA regaining momentum on Computex but no pullback yet. Potential re-entry on pullback to $218. Chasing here is poor risk/reward.
+- **Worth monitoring:** U.S.-Iran geopolitical risk. Dow falling on tension. If risk-off escalates broadly, consider trimming SOXX or raising cash. So far chips are decoupling.
+- **Interesting but not actionable yet:** QTUM quantum computing ETF extended (+22.31% 1M). No entry; illiquid.
+- **Interesting but not actionable yet:** Space sector remains damaged (RKLB –17.64% 1W). Avoid.
+- **Worth monitoring:** Market bifurcation — AI/semis surging while broader market is weak on Iran risk. If broad risk-off accelerates, high-beta chips may eventually follow.
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, todo.md no-buy parser, and anti-churn guard.
-- **Event detector** working correctly. No events flagged this cycle.
-- **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
-- **News access:** Yahoo Finance RSS is the primary actionable source. Direct web search blocked in workspace.
+- **Event detector** working correctly. Classification: NONE at 13:35Z (broad market and held positions all OK).
+- **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback for historical performance.
+- **News access:** Yahoo Finance RSS is the primary actionable source. Direct web search limited in workspace.
 - **Day-trade status:** 0/3. Clean slate.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 - **Integer-share constraint:** With ~$10.3K equity, QQQ capped at 6 shares; SOXX at 3 shares; VOO at 2 shares; AVGO at 3 shares (but blocked by earnings). Only AVGO has theoretical add capacity (1 share), but earnings risk blocks it.
-- **Repo hygiene:** Clean. Staged changes from prior cycle (ledger, tactical_last_prices) will be committed this cycle.
-- **Alpaca get-orders --status closed timed out** this cycle (15s timeout). Positions unchanged, so no trades are inferred.
+- **Repo hygiene:** Clean.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.
@@ -125,17 +124,6 @@
 - **Cutting a laggard quickly is better than hoping it recovers.** GOOG realized loss was small (~0.63% of equity) because we acted before it became a larger drag.
 - **Earnings within 48 hours = binary event.** Do not add to the position ahead of the print unless explicitly justified. Holding a small existing position is acceptable.
 - **When all positions are green and market is orderly, the best trade is often no trade.** Let winners run. Cash in reserve is not a drag if gross exposure is within target band.
-- **Trailing SPY by ~3.20 pp requires sustained outperformance, not one big bet.** QQQ + SOXX + AVGO chip basket must keep beating SPY. VOO anchor prevents further underperformance.
+- **Trailing SPY requires sustained outperformance, not one big bet.** QQQ + SOXX + AVGO chip basket must keep beating SPY. VOO anchor prevents further underperformance.
 - **Intraday fade in the final hour is normal.** Do not panic-trim green positions into the close unless a stop is breached or an event is flagged.
 - **Compute 1D portfolio return from `last_equity` (prior day close proxy), not from prior hourly equity.** Intraday equity drifts on normal price action; 1D performance must be anchored to the prior day close.
-
----
-
-## [AUTONOMOUS_OVERRIDE] Tactical Execution Summary — 2026-06-02 13:30Z (Tue 9:30 AM ET)
-- **Status:** Event Response Mode activated. Detector classification: **CRITICAL** (broad market: SOXX +2.84%, SMH +2.23%) / **MAJOR** (held position: AVGO +6.64%).
-- **Action taken:** NO trades executed. All protective stops remain well above trigger levels. No stops breached.
-- **Rationale:** The CRITICAL/MAJOR events were driven by upward semiconductor-sector surges, not a crash. Protective sells apply to downward breaches, not upward momentum. Held positions (QQQ, SOXX, VOO, AVGO) are all profitable and above their defensive stops. Selling into a +6.6% AVGO gap-up ahead of earnings would contradict the hourly hold-through-earnings thesis and lock in profits prematurely while capping upside.
-- **Buy suspension:** All conditional buy adds (NVDA pullback add, GOOG re-entry, AVGO post-earnings add) remain deferred per existing todo blocks. No active BUY lines required suspension.
-- **PDT / churn:** Daytrade count 0/3. No same-day round-trip risk.
-- **Current exposure:** Gross long ~82.8% (QQQ $4,455, SOXX $1,760, VOO $1,392, AVGO $974, Cash ~$1,777). Within 80–90% offensive band.
-- **Next expected action:** Await hourly cycle at 13:35Z (9:35 AM ET) for fresh guidance. If hourly confirms the semiconductor surge is durable, no action needed. If hourly flags overextension, may authorize partial AVGO trim.
