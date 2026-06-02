@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 18:42 : [hourly] Hold all close, gap narrows to -1.42pp
+- No trades today; all positions green and outperforming SPY
+- AVGO +4.70%, SOXX +5.79%, QQQ +0.46%, VOO +0.14%
+- GOOG 0B equity offering validates Monday exit
+- AVGO earnings Wed after close; hold 2 shares through
+- Regime: offensive catch-up; 82.97% gross exposure
+
 2026-06-02 : 15:39 : [hourly] Held all, AVGO earnings tomorrow
 - No orders placed; gross exposure 82.9% within band
 - All positions green; portfolio +1.38% today vs SPY ~+0.07%
