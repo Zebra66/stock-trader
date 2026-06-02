@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 12:33 : [hourly] Held all; chip rally narrows SPY gap
+- Portfolio +3.76% vs SPY +5.65%; gap narrowed from 3.20pp to 1.89pp
+- All 4 holdings green; AVGO +10.2% unrealized pre-earnings
+- No trades; gross exposure 82.9% within 80-90% band
+- AVGO earnings June 3 after close; no adds ahead of print
+- GOOG cooldown expired but avoid; NVDA trigger missed, do not chase
+
+2026-06-02 : 12:13 : [tactical] HOLD all — stops intact, green day
+- No todo triggers met — all prices above defensive stops
+- AVGO +5.1% pre-earnings, SOXX +5.1%, QQQ +0.4%
+- Cash 17.1%, gross 82.9%, within offensive band
+- AVGO earnings ~24h away; no adds authorized
+- No action required; holding until next hourly
+
+2026-06-02 : 11:25 : [tactical] Held all, no triggers met
+- Event detector: MINOR, no action required
+- All 4 positions green, within caps
+- No protective stop or add trigger breached
+- Gross exposure 82.9%, within 80-90% band
+- AVGO earnings tomorrow, holding 2 shares
+
+2026-06-02 : 10:29 : [tactical] CRITICAL event detected; no action
+- Event detector: CRITICAL (SOXX +3.58%, AVGO +4.74%, SMH +2.93%)
+- All held positions rallying; no protective stops breached
+- AVGO stop 00, SOXX stop 40 — both far above current
+- No autonomous sell authority for winning positions
+- Next: hold through AVGO earnings per hourly directive
+
 2026-06-01 : 17:39 : [hourly] Held all, no trades, AVGO earnings 22h
 - Equity 0,259, gross 82.7%, daytrade 0/3.
 - No trades since 18:35Z; tactical held all positions.
