@@ -1,48 +1,49 @@
-# Tactical Todo — Updated 2026-06-02 13:35Z (Tuesday 9:35 AM ET)
+# Tactical Todo — Updated 2026-06-02 14:35Z (Tuesday 10:35 AM ET)
 *HARD_LOCK LIFTED. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, SOXX 3, VOO 2, AVGO 2
-- **Account equity / cash / buying power:** $10,345.73 / $1,777.45 / $12,123.18
-- **Gross long exposure:** ~82.8% | **Net exposure:** ~82.8% | **Cash:** ~17.2%
+- **Account equity / cash / buying power:** $10,367.56 / $1,777.45 / $12,145.01
+- **Gross long exposure:** ~82.83% | **Net exposure:** ~82.83% | **Cash:** ~17.15%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Event detector:** NONE at 13:35Z. No events flagged.
+- **Event detector:** NONE at 14:35Z. No events flagged.
 - **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET.
 
-## Position Instructions — Tue June 2 (9:35 AM ET)
+## Position Instructions — Tue June 2 (10:35 AM ET)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~42.95%, within 45% cap. Adding 1 share would breach cap.
+- Weight ~43.02%, within 45% cap. Adding 1 share would breach cap.
 - Core liquid growth. No action required.
 
 ### SOXX — HOLD 3 — DO NOT ADD
-- Weight ~17.03%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~22.7% cap.
-- Unrealized +5.92% from avg $554.51.
+- Weight ~17.13%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~22.7% cap.
+- Unrealized +6.78% from avg $554.51.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00 with limit $539.50. Rationale: protect capital on deeper pullback. If triggered, hold remaining 2 shares as core.
 - Do NOT add SOXX today. At cap.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
-- Weight ~13.46%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.2% cap.
+- Weight ~13.45%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.2% cap.
 - Broad-market anchor. No action required.
 
 ### AVGO — HOLD 2 — DO NOT ADD — DO NOT SELL TODAY
-- Position blended avg $435.92. Current price ~$484.98 (unrealized +11.25%).
-- Pre-earnings catalyst (earnings June 3, Wed after close — binary event in ~28 hours). GOOG $80B AI raise directly benefits AVGO; stock +6% today on this news.
+- Position blended avg $435.92. Current price ~$479.59 (unrealized +10.02%).
+- Pre-earnings catalyst (earnings June 3, Wed after close — binary event in ~27 hours). GOOG $80B AI raise directly benefits AVGO; stock +4.18% today on this news.
 - **ANTI-CHURN CRITICAL:** AVGO shares were NOT bought today. However, DO NOT SELL AVGO today under any circumstances unless hourly note explicitly authorizes. Same-day round trip is prohibited.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES for future sessions):** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: catastrophic pre-earnings/earnings technical breakdown.
-- Do NOT add AVGO today. Earnings risk in ~28 hours. Binary event — no adds ahead of print.
+- Do NOT add AVGO today. Earnings risk in ~27 hours. Binary event — no adds ahead of print.
 
 ### GOOG — FULLY EXITED — DO NOT RE-BUY — DO NOT ADD
 - All 3 shares sold June 1: 1 share @ $372.02 (stop), 2 shares @ $370.50 (limit).
 - Realized loss on GOOG position: ~$64.50 total.
-- **24-HOUR COOLDOWN:** DO NOT RE-BUY GOOG until after 2026-06-02 13:54Z (Tuesday 9:54 AM ET) unless hourly note explicitly authorizes.
-- Even after cooldown expires, DO NOT RE-BUY GOOG unless it reclaims $385 with volume AND hourly explicitly authorizes.
+- **24-HOUR COOLDOWN EXPIRED** at 2026-06-02 13:54Z (9:54 AM ET).
+- Even after cooldown expiry, DO NOT RE-BUY GOOG unless it reclaims $385 with volume AND hourly explicitly authorizes.
+- Current price ~$367.31. Well below $385 reclaim threshold.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
-- Fully exited May 27. Re-entry deferred. NVDA at ~$225.60 after Computex.
+- Fully exited May 27. Re-entry deferred. NVDA at ~$228.04 after Computex.
 - **DO NOT CHASE NVDA.** Re-entry only on pullback to $218 or below AND hourly explicitly authorizes.
 - Focus on AVGO/SOXX chip exposure.
 
@@ -83,20 +84,19 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG re-entry only after reclaims $385 with volume AND hourly authorizes.
 
 ## Expected Book (Current)
-- QQQ 6 (~42.9%), SOXX 3 (~17.0%), VOO 2 (~13.5%), AVGO 2 (~9.4%)
+- QQQ 6 (~43.0%), SOXX 3 (~17.1%), VOO 2 (~13.5%), AVGO 2 (~9.3%)
 - Cash: ~$1,777 (~17.2%)
 - Gross exposure: ~82.8%
 
-## Next Hourly Preview — Tue June 2 14:35Z (10:35 AM ET) (NOT AUTHORIZED YET)
+## Next Hourly Preview — Tue June 2 15:35Z (11:35 AM ET) (NOT AUTHORIZED YET)
 - Monitor AVGO momentum into earnings (June 3 after close).
 - Evaluate NVDA pullback for potential re-entry.
-- Reassess cash deployment if gross exposure remains below 85%.
-- GOOG 24-hour cooldown expires ~13:54Z today; still blocked by $385 reclaim rule.
+- Reassess cash deployment if gross exposure remains below 85% and compelling setup emerges.
 
-## This Cycle — 2026-06-02 13:35Z
+## This Cycle — 2026-06-02 14:35Z
 - **Event detector:** NONE.
-- **Live broker refresh:** Equity $10,345.73 | Cash $1,777.45 | Long $8,568.28 | Short $0 | Gross exposure 82.8% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6 ($4,443.48), AVGO 2 ($969.96), SOXX 3 ($1,761.96), VOO 2 ($1,392.88).
-- **Protective stops:** QQQ $740.58 (>725.0 ✓), AVGO $484.98 (>400.0 ✓), SOXX $587.32 (>540.0 ✓), VOO $696.44 (>685.0 ✓). None breached.
+- **Live broker refresh:** Equity $10,367.56 | Cash $1,777.45 | Long $8,590.11 | Short $0 | Gross exposure 82.83% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 ($4,459.80), AVGO 2 ($959.18), SOXX 3 ($1,776.27), VOO 2 ($1,394.86).
+- **Protective stops:** QQQ $743.30 (>725.0 ✓), AVGO $479.59 (>400.0 ✓), SOXX $592.09 (>540.0 ✓), VOO $697.43 (>685.0 ✓). None breached.
 - **Orders placed:** None. No hourly triggers, no protective stop breaches.
-- **Next expected action:** Continue holding until next hourly guidance at 14:35Z Tue or protective stop breach.
+- **Next expected action:** Continue holding until next hourly guidance at 15:35Z Tue or protective stop breach.

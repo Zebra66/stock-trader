@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-02 : 10:44 : [hourly] Held all, gap narrows to 1.97pp
+- Portfolio +3.68% vs SPY +5.65%, gap improved from 2.02pp
+- All positions green: AVGO +10%, SOXX +6.8%, QQQ +6%, VOO +3.5%
+- AVGO earnings tomorrow ~27h, hold 2 shares through
+- No orders placed, gross exposure 82.8% in 80-90% band
+- Cash 17.2% reserved for post-earnings or NVDA pullback
+
+2026-06-02 : 10:40 : [tactical] No triggers; held all positions
+- SOXX $592.80 > stop $540, AVGO $478.26 > stop $400
+- Gross exposure ~82.8% in 80-90% band
+- Event detector: NONE, market orderly
+- Awaiting 14:35Z hourly guidance
+
+2026-06-02 : 10:30 : [tactical] Hold all, no triggers breached
+- Event detector: NONE at 14:30Z
+- All protective stops intact: SOXX 590>540, AVGO 479>400
+- No buy conditions met, no sells authorized
+- Gross exposure 82.8%, within 80-90% band
+- Next: continue holding until next hourly or stop breach
+
+2026-06-02 : 10:20 : [tactical] Hold all, no triggers breached
+- Event detector: NONE at 14:20Z
+- All protective stops intact (SOXX 591>540, AVGO 481>400, VOO 697>685)
+- No buy triggers met (NVDA 229>218, GOOG 366<385)
+- Gross exposure ~82.9%, within 80-90% band
+- No action required
+
+2026-06-02 : 10:10 : [tactical] Held all positions, no triggers met
+- Event detector: NONE at 14:10Z
+- All positions green: AVGO +10.3%, QQQ +6.1%, SOXX +7.1%, VOO +3.4%
+- No stop breaches: SOXX 94 > 40, AVGO 81 > 00
+- No buy triggers: NVDA 29 > 18, GOOG 65 < 85
+- Gross exposure 82.9%, within 80-90% band
+
+2026-06-02 : 09:50 : [tactical] Holding all positions, no triggers
+- Event detector: NONE, all positions OK
+- SOXX 91.38 > 40 stop, AVGO 81.19 > 00 stop
+- No buy triggers met (NVDA 29.89, GOOG 58.30)
+- Gross exposure 82.8%, within 80-90% band
+- Zero daytrades used, no PDT concern
+
 2026-06-02 : 09:45 : [hourly] Held all, AVGO earnings Wed, gap narrowing
 - Portfolio +3.46% vs SPY +5.48%, gap ~2.02 pp
 - AVGO +11.25% unrealized, earnings Jun 3 after close
