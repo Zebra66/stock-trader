@@ -2,33 +2,156 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
-2026-06-02 : 12:33 : [hourly] Held all; chip rally narrows SPY gap
-- Portfolio +3.76% vs SPY +5.65%; gap narrowed from 3.20pp to 1.89pp
-- All 4 holdings green; AVGO +10.2% unrealized pre-earnings
-- No trades; gross exposure 82.9% within 80-90% band
-- AVGO earnings June 3 after close; no adds ahead of print
-- GOOG cooldown expired but avoid; NVDA trigger missed, do not chase
+2026-06-02 : 13:16 : [tactical] Held all positions, no triggers met
+- All four positions green, above defensive stops
+- SOXX 98.59 > 40; AVGO 82.07 > 00
+- Gross exposure 82.9% within 80-90% target band
+- Event detector: MINOR only, no held position flags
+- No buy conditions met, cash held for post-AVGO earnings
 
-2026-06-02 : 12:13 : [tactical] HOLD all — stops intact, green day
-- No todo triggers met — all prices above defensive stops
-- AVGO +5.1% pre-earnings, SOXX +5.1%, QQQ +0.4%
-- Cash 17.1%, gross 82.9%, within offensive band
-- AVGO earnings ~24h away; no adds authorized
-- No action required; holding until next hourly
 
-2026-06-02 : 11:25 : [tactical] Held all, no triggers met
-- Event detector: MINOR, no action required
-- All 4 positions green, within caps
-- No protective stop or add trigger breached
+2026-06-02 : 12:40 : [hourly] Held all, chip rally continues
+- AVGO +4.8% on GOOG AI spend news; SOXX +4.4%; trailing SPY by 1.7pp but gap narrowing
+- No add capacity due to concentration caps + AVGO earnings risk
+- All positions green; defensive stops intact; daytrade 0/3
+- Fed hawkishness (Hammack) is new risk; monitor afternoon rotation
+
+2026-06-02 : 12:40 : [tactical] Held all, no triggers
+- Event detector: NONE at 16:40Z
+- All 4 positions above defensive stops
+- No buy/sell conditions met in todo.md
+- Cash 17.1%, gross 82.9% within 80-90% band
+- No orders placed, daytrade count 0/3
+
+2026-06-02 : 12:30 : [tactical] Held all, no triggers met
+- QQQ/SOXX/VOO/AVGO all within ranges
+- No protective stop breached
+- No buy conditions met (NVDA 224.86>218, GOOG 363.9<385)
 - Gross exposure 82.9%, within 80-90% band
-- AVGO earnings tomorrow, holding 2 shares
+- Event detector: NONE
 
-2026-06-02 : 10:29 : [tactical] CRITICAL event detected; no action
-- Event detector: CRITICAL (SOXX +3.58%, AVGO +4.74%, SMH +2.93%)
-- All held positions rallying; no protective stops breached
-- AVGO stop 00, SOXX stop 40 — both far above current
-- No autonomous sell authority for winning positions
-- Next: hold through AVGO earnings per hourly directive
+2026-06-02 : 12:20 : [tactical] No triggers, all positions green, held
+- Event detector: NONE at 16:20Z
+- All protective stops intact (AVGO >400, SOXX >540)
+- No todo buy/sell conditions met
+- Gross exposure 82.9% within 80-90% band
+- Next hourly at 16:35Z
+
+2026-06-02 : 12:10 : [tactical] Holding, no triggers breached
+- All 4 positions green, no protective stops breached
+- Event detector: NONE at 16:10Z
+- Gross exposure 82.94%, within 80-90% band
+- Daytrades 0/3, no orders placed
+
+2026-06-02 : 11:50 : [tactical] Hold all, no triggers
+- Event detector: NONE at 15:50Z
+- All protective stops intact (AVGO 482.74>400, SOXX 599.06>540)
+- No buy/sell conditions met in todo.md
+- Gross exposure 82.9% within 80-90% band
+- AVGO earnings ~25 hours away; no adds authorized
+
+2026-06-02 : 11:43 : [hourly] Held all, gap narrows to 1.77pp
+- No trades; all positions green
+- AVGO +10.3% unrealized, earnings ~26h
+- Fed Hammack hawkish on rates — new risk
+- SOXX +8.0% unrealized, chips surging
+- Cash 17% reserved for post-earnings/NVDA pullback
+
+2026-06-02 : 11:40 : [tactical] Held all, no triggers breached
+- SOXX 99.20 > 40 stop, AVGO 81.14 > 00 stop
+- No buy conditions: NVDA 26.52 above 18, GOOG 64.29 below 85
+- Gross exposure 82.9% within 80-90% target band
+- Event detector NONE; all positions OK
+
+2026-06-02 : 11:30 : [tactical] HOLD all — no triggers met
+- Event detector: NONE at 15:30Z
+- All 4 positions green, well above stops
+- QQQ 745.04, SOXX 598.64, AVGO 480.62, VOO 698.69
+- Gross exposure ~82.9%, within 80-90% band
+- No orders placed
+
+2026-06-02 : 11:20 : [tactical] Held all, no triggers breached
+- Event detector NONE at 15:20Z
+- All positions green, stops not breached
+- Exposure 82.9% within 80-90% band
+- No orders placed this cycle
+
+2026-06-02 : 11:10 : [tactical] Holding all, no triggers
+- Event detector: NONE at 15:10Z
+- All 4 positions green, no protective stops breached
+- Cash 17.2%, gross 82.9%, within 80-90% band
+- No buy/sell triggers active in todo.md
+- AVGO earnings ~24hrs; no adds authorized
+
+2026-06-02 : 10:50 : [tactical] HOLD all, no triggers met
+- Event detector: NONE at 14:50Z
+- All 4 positions green, no stops breached
+- SOXX 594.57 > 540, AVGO 480.03 > 400, QQQ 743.95 > 725, VOO 697.93 > 685
+- No buys authorized, no adds, no sells triggered
+- Gross exposure 82.8%, within 80-90% offensive band
+
+2026-06-02 : 10:44 : [hourly] Held all, gap narrows to 1.97pp
+- Portfolio +3.68% vs SPY +5.65%, gap improved from 2.02pp
+- All positions green: AVGO +10%, SOXX +6.8%, QQQ +6%, VOO +3.5%
+- AVGO earnings tomorrow ~27h, hold 2 shares through
+- No orders placed, gross exposure 82.8% in 80-90% band
+- Cash 17.2% reserved for post-earnings or NVDA pullback
+
+2026-06-02 : 10:40 : [tactical] No triggers; held all positions
+- SOXX $592.80 > stop $540, AVGO $478.26 > stop $400
+- Gross exposure ~82.8% in 80-90% band
+- Event detector: NONE, market orderly
+- Awaiting 14:35Z hourly guidance
+
+2026-06-02 : 10:30 : [tactical] Hold all, no triggers breached
+- Event detector: NONE at 14:30Z
+- All protective stops intact: SOXX 590>540, AVGO 479>400
+- No buy conditions met, no sells authorized
+- Gross exposure 82.8%, within 80-90% band
+- Next: continue holding until next hourly or stop breach
+
+2026-06-02 : 10:20 : [tactical] Hold all, no triggers breached
+- Event detector: NONE at 14:20Z
+- All protective stops intact (SOXX 591>540, AVGO 481>400, VOO 697>685)
+- No buy triggers met (NVDA 229>218, GOOG 366<385)
+- Gross exposure ~82.9%, within 80-90% band
+- No action required
+
+2026-06-02 : 10:10 : [tactical] Held all positions, no triggers met
+- Event detector: NONE at 14:10Z
+- All positions green: AVGO +10.3%, QQQ +6.1%, SOXX +7.1%, VOO +3.4%
+- No stop breaches: SOXX 94 > 40, AVGO 81 > 00
+- No buy triggers: NVDA 29 > 18, GOOG 65 < 85
+- Gross exposure 82.9%, within 80-90% band
+
+2026-06-02 : 09:50 : [tactical] Holding all positions, no triggers
+- Event detector: NONE, all positions OK
+- SOXX 91.38 > 40 stop, AVGO 81.19 > 00 stop
+- No buy triggers met (NVDA 29.89, GOOG 58.30)
+- Gross exposure 82.8%, within 80-90% band
+- Zero daytrades used, no PDT concern
+
+2026-06-02 : 09:45 : [hourly] Held all, AVGO earnings Wed, gap narrowing
+- Portfolio +3.46% vs SPY +5.48%, gap ~2.02 pp
+- AVGO +11.25% unrealized, earnings Jun 3 after close
+- No new orders, all positions near caps or blocked by earnings
+- Cash ,777 (~17%) reserved for post-earnings or NVDA pullback
+- Event detector NONE, tactical agent held all at :30Z
+
+2026-06-02 : 09:41 : [tactical] Held all positions, no triggers
+- Event detector: MINOR only (SOXX +0.52%)
+- All 4 positions green, no protective stops breached
+- No buy conditions met (NVDA 226>218, GOOG 357<385)
+- Gross exposure 82.8%, cash 17.2%
+- Next hourly: 13:35Z
+
+2026-06-02 : 09:31 : [tactical] CRITICAL event: no trades
+- Semiconductor sector surged: AVGO +6.6%, SOXX +2.8%
+- Event detector classification: CRITICAL (broad market) / MAJOR (AVGO held)
+- No protective stops breached; no sells executed
+- Buy conditions suspended pending hourly reset at 13:35Z
+- Autonomous override logged; awaiting fresh hourly guidance
+
 
 2026-06-01 : 17:39 : [hourly] Held all, no trades, AVGO earnings 22h
 - Equity 0,259, gross 82.7%, daytrade 0/3.
