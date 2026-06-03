@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 18:20 : [hourly] Post-close: AVGO drops -5% AH on earnings beat
+- Equity 0,213 (-0.50% today) vs SPY -0.70%
+- AVGO beat-and-raise but outlook disappoints; AH 54.60
+- Gap to SPY widened to ~2.9 pp from ~0.6 pp pre-close
+- Hold AVGO unless gaps below 20 tomorrow; SOXX stop 80
+- No new chip adds until sentiment stabilizes
+
 2026-06-03 : 15:43 : [hourly] Hold all into AVGO earnings, no trades
 - Equity 0,449.69, gross 82.99%, daytrade 0/3
 - All stops intact, no orders authorized into close
