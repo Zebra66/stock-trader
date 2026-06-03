@@ -137,6 +137,7 @@ First, decide which data and in which format you need to make a sound macro deci
 
 ### Step 8 — Commit
 - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
+- **Re-verify branch freshness immediately before committing.** Other agents may have pushed to origin/main during your analysis window. Run `git rev-list --left-right --count HEAD...origin/main` again. If origin is ahead, `git stash` your changes, `git pull origin main`, reconcile any merge conflicts in `memory/` files by preferring the most recent authoritative state, then commit.
 - Use git to commit memory updates, prompt updates, and any intentional code/config changes with the exact title format `[agent] Hourly: <message text>`. Do not stage or commit files under `temp_files/`; they are ephemeral research artifacts and must remain out of the repository index.
 - If there is nothing to commit, say so explicitly instead of creating an empty commit.
 - After verification, push the resulting commit to the tracked remote branch for this repo.
