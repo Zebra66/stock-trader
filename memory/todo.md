@@ -1,5 +1,7 @@
-# Tactical Todo — Updated 2026-06-02 19:35Z (Tuesday 3:35 PM ET)
-*HARD_LOCK LIFTED. Execute authorized orders only. Market closes at 16:00 ET (~25 min).*
+<!-- Autonomous override applied at 2026-06-03 13:30Z due to CRITICAL event (SOXX/SMH surge) — buy conditions suspended until hourly reset -->
+
+# Tactical Todo — Updated 2026-06-03 13:30Z (Wednesday 9:30 AM ET)
+*HARD_LOCK LIFTED. Execute authorized orders only. Market closes at 16:00 ET (~6.5 hr). CRITICAL event detected at open — see Event Response Mode block below.*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
@@ -80,10 +82,11 @@ Do not place market orders for these; use limit orders only, or defer.
 ## Today's Deployment Queue
 1. **HOLD all positions into the close.** No new orders authorized this cycle.
 2. **HOLD cash** for defensive flexibility or next hourly authorization.
-3. **Conditional add queue (requires explicit hourly authorization):**
-   - NVDA if pullback to $218 or below.
-   - AVGO only post-earnings (after June 3 close) AND if pullback to $425 or below AND hourly authorizes.
-   - GOOG re-entry only after reclaims $385 with volume AND hourly authorizes.
+3. **SUSPENDED — CRITICAL event detected at 2026-06-03 13:30Z**
+   - ~~NVDA if pullback to $218 or below.~~
+   - ~~AVGO only post-earnings (after June 3 close) AND if pullback to $425 or below AND hourly authorizes.~~
+   - ~~GOOG re-entry only after reclaims $385 with volume AND hourly authorizes.~~
+   - *Hourly strategist must unsuspend after reviewing semiconductor volatility.*
 
 ## Expected Book Into Close
 - QQQ 6 (~43.0%), SOXX 3 (~17.3%), VOO 2 (~13.4%), AVGO 2 (~9.2%)
@@ -97,10 +100,11 @@ Do not place market orders for these; use limit orders only, or defer.
 - Watch for pre-market chip sentiment and any overnight news on AVGO.
 - This will be the final hourly before AVGO earnings.
 
-## This Cycle — 2026-06-02 19:35Z
-- **Event detector:** NONE.
-- **Live broker refresh:** Equity $10,405.74 | Cash $1,777.45 | Long $8,628.29 | Short $0 | Gross exposure 82.92% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6 ($4,472.16), AVGO 2 ($955.94), SOXX 3 ($1,803.63), VOO 2 ($1,396.50).
-- **Protective stops:** QQQ $745.36 (>725.0 ✓), AVGO $477.97 (>400.0 ✓), SOXX $601.21 (>540.0 ✓), VOO $698.25 (>685.0 ✓). None breached.
-- **Orders placed:** None. No hourly triggers, no protective stop breaches.
-- **Next expected action:** Continue holding into the close. Next hourly guidance at 13:35Z Wed.
+## This Cycle — 2026-06-03 13:30Z (Tactical — Event Response Mode)
+- **Event detector:** CRITICAL (broad market SOXX +2.59%, SMH +1.87% surge at open).
+- **Held positions severity:** AVGO OK (+2.12%), QQQ OK (+0.29%), SOXX OK (+2.59%), VOO OK (-0.17%).
+- **Live broker refresh:** Equity $10,491.05 | Cash $1,777.45 | Long $8,713.60 | Short $0 | Gross exposure ~83.1% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 ($4,488.90), AVGO 2 ($978.28), SOXX 3 ($1,852.24), VOO 2 ($1,394.00).
+- **Protective stops:** QQQ $748.15 (>725.0 ✓), AVGO $489.14 (>400.0 ✓), SOXX $617.41 (>540.0 ✓), VOO $697.00 (>685.0 ✓). None breached.
+- **Orders placed:** None. Event Response Mode — no sells triggered, no buys authorized.
+- **Next expected action:** Hold all positions. Next hourly guidance at 13:35Z Wed.

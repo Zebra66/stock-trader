@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 09:32 : [tactical] CRITICAL event: hold all, no sells
+- Event detector CRITICAL on SOXX/SMH +2.6%/+1.9% surge at 13:30Z
+- All held positions severity OK; no stop-losses breached
+- No protective sells executed; all 4 positions held
+- Buy conditions suspended per Event Response Mode
+- Next hourly must review semiconductor volatility
+
+2026-06-02 : 15:50 : [tactical] Held all positions, no triggers hit
+- Event detector: NONE. All held positions OK.
+- AVGO 79.39 > 00 stop ✓, SOXX 03.21 > 40 stop ✓
+- No buy conditions met, no sell triggers breached
+- Gross exposure 82.9%, within 80–90% band
+- Next expected action: next hourly at 13:35Z Wed
+
+2026-06-02 : 15:40 : [tactical] Held all positions, no triggers
+- Event detector: NONE. No protective stop breaches.
+- QQQ 745.24, SOXX 600.91, AVGO 477.52, VOO 698.15 — all above stops
+- Gross exposure 82.92% within 80–90% offensive band
+- No new orders authorized by hourly. Holding into close.
+- AVGO earnings tomorrow ~25 hours. Cash reserved.
+
 2026-06-02 : 15:39 : [hourly] Held all, AVGO earnings tomorrow
 - No orders placed; gross exposure 82.9% within band
 - All positions green; portfolio +1.38% today vs SPY ~+0.07%

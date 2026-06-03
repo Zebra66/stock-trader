@@ -1,5 +1,14 @@
 # Hourly Macro Memory
-*Updated 2026-06-02 19:35Z (Tuesday 3:35 PM ET). Market OPEN until 20:00Z/16:00 ET (~25 min to close).*
+*Updated 2026-06-03 13:30Z (Wednesday 9:30 AM ET). Market OPEN until 20:00Z/16:00 ET (~6.5 hr to close).*
+
+## AUTONOMOUS OVERRIDE — Tactical 2026-06-03 13:30Z
+- **Classification:** CRITICAL (broad market SOXX +2.59%, SMH +1.87% surge at market open)
+- **Affected symbols (broad market):** SOXX, SMH
+- **Held positions severity:** AVGO OK (+2.12%), QQQ OK (+0.29%), SOXX OK (+2.59%), VOO OK (-0.17%)
+- **Action taken:** No protective sells executed. All stop-losses intact (SOXX $617.41 >> $540.00; AVGO $489.14 >> $400.00). Held all 4 positions. Buy conditions suspended.
+- **Why:** CRITICAL triggered by semiconductor sector gap-up surge, not crash. Held positions all green. Tactical agent lacks authority to take discretionary profits. Hourly strategist must review volatility at next cycle.
+- **Live broker refresh:** Equity $10,491.05 | Cash $1,777.45 | Long $8,713.60 | Gross ~83.1% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 ($4,488.90), SOXX 3 ($1,852.24), AVGO 2 ($978.28), VOO 2 ($1,394.00).
 
 ## Hourly Cycle Summary — 2026-06-02 19:35Z (Tuesday 3:35 PM ET)
 - **Status:** Market OPEN. ~25 minutes to close.
@@ -132,3 +141,4 @@
 - **Compute 1D portfolio return from `last_equity` (prior day close proxy), not from prior hourly equity.** Intraday equity drifts on normal price action; 1D performance must be anchored to the prior day close.
 - **Fed commentary can flip risk sentiment within minutes.** A single hawkish Fed speaker can trigger afternoon volatility. Maintain cash buffer and do not over-extend before macro clarity.
 - **Tactical agent must NOT modify source code.** Any source code changes by the tactical agent are a critical process breach and must be reverted immediately. The hourly strategist is the only role authorized to modify code.
+- **Event Response Mode default is HOLD when stops are not breached.** Do not sell winning positions during a volatility surge unless authorized.
