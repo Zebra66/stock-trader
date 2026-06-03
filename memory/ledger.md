@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 09:44 : [hourly] Hold all into AVGO earnings, gap narrows
+- Portfolio +4.56% vs SPY +5.61%, gap down to ~1.05 pp
+- All positions green; no trades today; tactical held at open CRITICAL
+- AVGO earnings after close today; NVDA re-entry deferred post-earnings
+- Stops intact: SOXX 40, AVGO 00; no new buys authorized
+- Macro: ADP jobs strong, inflation warning, Iran oil climbing
+
+2026-06-03 : 09:40 : [tactical] No action: holds intact, no triggers
+- Event detector: NONE (resolved from earlier CRITICAL)
+- All stops intact: SOXX 612.84>>540, AVGO 478.14>>400, QQQ 746.72>>725, VOO 696.73>>685
+- Buy conditions suspended since 13:30Z; hourly must unsuspend
+- NVDA at 219.44 (above 218 threshold); no re-entry authorized
+- Gross exposure 83.0%, within 80-90% offensive band; cash 1777.45
+
 2026-06-03 : 09:32 : [tactical] CRITICAL event: hold all, no sells
 - Event detector CRITICAL on SOXX/SMH +2.6%/+1.9% surge at 13:30Z
 - All held positions severity OK; no stop-losses breached
