@@ -2,6 +2,53 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 13:50 : [hourly] Hold all, AVGO earnings ~2hr
+- Held QQQ/SOXX/VOO/AVGO into AVGO earnings after close
+- No stops breached; no trades executed
+- Raised VOO stop to 80 from 85 to avoid whipsaw
+- Lowered NVDA re-entry target to 10 post-AVGO
+- Cash ,777 reserved for post-earnings deployment
+
+2026-06-03 : 13:50 : [tactical] No action, all stops intact
+- Event detector: NONE, all symbols OK
+- QQQ 743.98 (>725), SOXX 615.14 (>540), AVGO 485.76 (>400), VOO 694.25 (>685)
+- All positions green, no conditions met
+- AVGO earnings ~2 hours, hold-only regime
+- Daytrade 0/3, gross 82.9%
+
+2026-06-03 : 13:40 : [tactical] Hold all, no stops breached
+- QQQ 43.32, SOXX 13.27, AVGO 84.20, VOO 94.16 — all stops intact
+- Event detector: NONE, no rotation or volatility spike
+- Gross exposure ~82.95%, within 80-90% offensive band
+- AVGO earnings after close today, holding 2 shares through binary event
+- No daytrades used (0/3), no orders placed
+
+2026-06-03 : 13:30 : [tactical] Hold-all, no stops breached
+- Event detector: NONE, all positions green
+- QQQ 742.81 > 725 stop, SOXX 613.20 > 540 stop
+- AVGO 484.64 > 400 stop, VOO 693.82 > 685 stop
+- AVGO earnings ~2.5 hr away, hold-only per todo
+
+2026-06-03 : 13:20 : [tactical] No action: all stops intact
+- QQQ AVGO SOXX VOO all above defensive stops
+- No buy conditions authorized
+- AVGO earnings ~3.5 hr away, hold-only regime
+- Gross exposure ~83%, within 80-90% band
+- Daytrade count 0/3, clean slate
+
+2026-06-03 : 13:10 : [tactical] HOLD all, no stops breached
+- QQQ 743.01 > 725.0 stop
+- SOXX 611.91 > 540.0 stop
+- VOO 694.15 > 685.0 stop
+- AVGO 484.84 > 400.0 stop
+- No buys authorized, event detector NONE
+
+2026-06-03 : 12:50 : [tactical] All stops safe, no action
+- Event detector: NONE
+- QQQ 42.93 > 25 stop, SOXX 12.19 > 40 stop, VOO 93.82 > 85 stop, AVGO 84.80 > 00 stop
+- AVGO earnings ~2.5 hr away; hold-only authorized
+- Daytrade 0/3, gross ~83%, no trades executed
+
 2026-06-03 : 12:44 : [hourly] Held all into AVGO earnings, no stops breached
 - Equity 0,423.24 (+1.55% today) vs SPY -0.74%
 - AVGO earnings after close; options imply ~9% swing
