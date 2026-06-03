@@ -9,6 +9,13 @@ Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
 - Buy conditions suspended per Event Response Mode
 - Next hourly must review semiconductor volatility
 
+2026-06-02 : 18:42 : [hourly] Hold all close, gap narrows to -1.42pp
+- No trades today; all positions green and outperforming SPY
+- AVGO +4.70%, SOXX +5.79%, QQQ +0.46%, VOO +0.14%
+- GOOG 0B equity offering validates Monday exit
+- AVGO earnings Wed after close; hold 2 shares through
+- Regime: offensive catch-up; 82.97% gross exposure
+
 2026-06-02 : 15:50 : [tactical] Held all positions, no triggers hit
 - Event detector: NONE. All held positions OK.
 - AVGO 79.39 > 00 stop ✓, SOXX 03.21 > 40 stop ✓
