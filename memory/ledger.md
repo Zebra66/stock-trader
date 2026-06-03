@@ -2,6 +2,40 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 11:40 : [hourly] Hold all into AVGO earnings
+- Equity 0,451 (+1.82% today) vs SPY -0.05%
+- Gross exposure 83%, cash 17%, no stops breached
+- AVGO earnings after close (~4.5 hr); analysts expect highest rev growth in 9 yrs
+- No new orders authorized; hold-only regime continues
+- Goal 2 gap: trailing SPY by ~0.73 pp, narrowing
+
+2026-06-03 : 11:30 : [tactical] Hold all, no stops breached
+- QQQ 745 > 725 stop ✓
+- SOXX 614 > 540 stop ✓
+- AVGO 488 > 400 stop ✓
+- VOO 695 > 685 stop ✓
+- No orders placed, regime HOLD
+
+2026-06-03 : 11:20 : [tactical] Hold all, stops intact, no events
+- No stop-loss triggers breached (QQQ 745.48, SOXX 615.17, AVGO 488.92, VOO 695.14)
+- Event detector: NONE. No protective action required.
+- Hourly blocks all buys; hold into AVGO earnings (~4.5 hr to close)
+- Daytrade count 0/3, gross exposure ~83%, no PDT concerns
+- No orders placed this cycle
+
+2026-06-03 : 11:11 : [tactical] No action — holds intact
+- Event detector: NONE. All stops well above triggers.
+- QQQ 745.56 (>725 ✓), SOXX 614.88 (>540 ✓), AVGO 487.12 (>400 ✓), VOO 695.17 (>685 ✓)
+- No buys authorized today. AVGO earnings after close. Hold-only regime.
+- Daytrade 0/3. Gross exposure ~83%. No orders placed.
+
+2026-06-03 : 10:50 : [tactical] Hold all, no stops breached
+- QQQ 745.50 > 725 stop
+- SOXX 615.57 > 540 stop
+- AVGO 486.69 > 400 stop
+- VOO 695.10 > 685 stop
+- No orders, event detector NONE
+
 2026-06-03 : 10:44 : [hourly] Held all, chip rally narrows SPY gap
 - Portfolio +1.96% today vs SPY ~-0.2%
 - Gap to SPY narrowed to ~0.72 pp
