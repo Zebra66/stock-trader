@@ -2,6 +2,32 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 10:44 : [hourly] Held all, chip rally narrows SPY gap
+- Portfolio +1.96% today vs SPY ~-0.2%
+- Gap to SPY narrowed to ~0.72 pp
+- No trades; all stops intact
+- AVGO earnings after close (~5.5 hr)
+- Cash reserve ,777 for post-earnings ops
+
+2026-06-03 : 10:40 : [tactical] Hold all positions, no triggers
+- Event detector: NONE — market orderly
+- All stops intact: SOXX 616>540, AVGO 486>400
+- No same-day trades; 0/3 daytrades
+- Cash 17%, exposure 83% within band
+
+2026-06-03 : 10:30 : [tactical] Hold all, no stops breached
+- Event: MINOR (SOXX +0.72%). No action required.
+- All stops intact: SOXX 17 > 40, AVGO 86 > 00
+- Gross exposure ~83%, within 80-90% band. No orders.
+- AVGO earnings ~3.5 hours. Hold through.
+- No same-day round trip risk. Daytrade 0/3.
+
+2026-06-03 : 10:20 : [tactical] HOLD all, no stops breached
+- MINOR event, no action required
+- All held positions green, above stops
+- AVGO 83 > 00 stop, SOXX 13 > 40 stop
+- No buys authorized, gross exposure 83%
+
 2026-06-03 : 10:11 : [tactical] CRITICAL event: HOLD all, no action
 - Detector CRITICAL: SOXX +1.51%, SMH +1.21% in 20 min
 - Semiconductor surge UP, not crash — no stops breached
