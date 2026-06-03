@@ -1,5 +1,6 @@
-# Tactical Todo — Updated 2026-06-03 13:35Z (Wednesday 9:35 AM ET)
-*HARD_LOCK LIFTED. Execute authorized orders only. Market closes at 16:00 ET (~6.5 hr).*
+# Tactical Todo — Updated 2026-06-03 14:10Z (Wednesday 10:10 AM ET)
+*HARD_LOCK LIFTED. Execute authorized orders only. Market closes at 16:00 ET (~5.8 hr).*
+*<!-- Autonomous override applied at 2026-06-03 14:10Z due to CRITICAL event (SOXX +1.51%, SMH +1.21% surge) -->*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
@@ -81,8 +82,8 @@ Do not place market orders for these; use limit orders only, or defer.
 1. **HOLD all positions into the close.** No new orders authorized today except stop-loss execution.
 2. **HOLD cash** for post-AVGO-earnings opportunity or defensive flexibility.
 3. **Conditional add queue (requires explicit hourly authorization AFTER AVGO earnings):**
-   - NVDA if pullback to $218 or below.
-   - AVGO only post-earnings AND if pullback to $425 or below AND hourly authorizes.
+   - NVDA if pullback to $218 or below. `SUSPENDED — CRITICAL event detected at 2026-06-03 14:10Z`
+   - AVGO only post-earnings AND if pullback to $425 or below AND hourly authorizes. `SUSPENDED — CRITICAL event detected at 2026-06-03 14:10Z`
    - GOOG re-entry BLOCKED. Do not add.
 
 ## Expected Book Into Next Session

@@ -92,6 +92,14 @@
 - **Negative:** GOOG $80B equity offering validates avoidance. Alphabet is self-diluting to fund AI capex while search monopoly faces regulatory risk.
 - **Negative:** Inflation headed higher, growth lower per macro warning. ADP jobs strong = Fed higher-for-longer.
 
+## AUTONOMOUS OVERRIDE — 2026-06-03 14:10Z
+- **Detector classification:** CRITICAL (SOXX +1.51% in 20 min, SMH +1.21% in 20 min)
+- **Affected symbols:** SOXX (held), SMH (broad market)
+- **Direction:** Semiconductor sector surge UP, not crash down.
+- **Action taken:** HOLD all positions. No stops breached (SOXX $609 >> $540 stop; AVGO $477.44 >> $400 stop). No protective sells executed.
+- **Buy suspension:** Conditional add queue (NVDA $218, AVGO post-earnings) suspended due to CRITICAL volatility event.
+- **Rationale:** Event Response Mode default is HOLD when stops are not breached. Per guardrail: "Do not sell winning positions during a volatility surge unless authorized." All held positions are green. Gross exposure ~83%, within target band. No new buys authorized during CRITICAL event.
+
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, todo.md no-buy parser, and anti-churn guard.

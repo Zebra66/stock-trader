@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 10:11 : [tactical] CRITICAL event: HOLD all, no action
+- Detector CRITICAL: SOXX +1.51%, SMH +1.21% in 20 min
+- Semiconductor surge UP, not crash — no stops breached
+- All positions green; Event Response Mode default = HOLD
+- Conditional buys suspended until hourly reset
+
+2026-06-03 : 09:50 : [tactical] CRITICAL event: HOLD, no stops hit
+- SOXX -2.1% in 10min triggered CRITICAL classification
+- Held SOXX stop 40 NOT breached at 99.67
+- AVGO stop 00 NOT breached at 74.48
+- No sells, no buys, no override applied
+- Next hourly at 14:35Z will reassess
+
 2026-06-03 : 09:44 : [hourly] Hold all into AVGO earnings, gap narrows
 - Portfolio +4.56% vs SPY +5.61%, gap down to ~1.05 pp
 - All positions green; no trades today; tactical held at open CRITICAL
