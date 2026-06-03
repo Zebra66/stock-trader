@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-03 : 14:38 : [hourly] Hold all, AVGO earn ~1hr
+- Equity 0,464.96, gross 82.99%, daytrade 0/3
+- AVGO at 88.62 near 52w high; hold 2 shares through earnings
+- No stops breached, no trades today, no open orders
+- Off track SPY by 0.60pp; gap narrowing, book outperforming 1D/1W/2W
+- Cash reserve ,777 for post-AVGO deploy or defensive flex
+
+2026-06-03 : 14:30 : [tactical] Hold all; no stops breached
+- Event detector: NONE
+- QQQ 45.36 > 25 stop ✓
+- SOXX 18.29 > 40 stop ✓
+- VOO 95.03 > 80 stop ✓
+- AVGO 88.66 > 00 stop ✓
+
+2026-06-03 : 14:20 : [tactical] HOLD: No stops breached
+- Event detector: NONE
+- All stops well above trigger levels
+- AVGO earnings ~40 min; no adds authorized
+- Gross exposure 83%, within 80-90% band
+- No action taken
+
+2026-06-03 : 14:10 : [tactical] Hold all, stops intact
+- Event detector: NONE
+- QQQ 44.65 > 25 ✓
+- SOXX 16.35 > 40 ✓
+- VOO 94.48 > 80 ✓
+- AVGO 86.27 > 00 ✓
+
 2026-06-03 : 13:50 : [hourly] Hold all, AVGO earnings ~2hr
 - Held QQQ/SOXX/VOO/AVGO into AVGO earnings after close
 - No stops breached; no trades executed
