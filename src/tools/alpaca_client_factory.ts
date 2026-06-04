@@ -145,6 +145,22 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       );
     }
 
+    // ── Audit trail (append-only) ─────────────────────────────────────────
+    try {
+      const auditEntry = {
+        t: new Date().toISOString(),
+        symbol,
+        side,
+        qty,
+        type: String(params.type ?? 'market'),
+        limit_price: params.limit_price ?? null,
+        time_in_force: String(params.time_in_force ?? 'day'),
+      };
+      await Bun.write('./temp_files/order_audit.jsonl', JSON.stringify(auditEntry) + '\n', { append: true });
+    } catch {
+      // ignore audit write failures — do not block trading
+    }
+
     // ── HARD_LOCK check (todo.md) ──────────────────────────────────────────
     try {
       const todo = await Bun.file('./memory/todo.md').text();
