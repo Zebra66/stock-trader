@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 13:41 : [hourly] Hold all, no chase; NVDA add on dip
+- Regime neutral, gross exposure 61.5% within 60-70% band
+- No new buys; chasing NVDA at 19+ is poor R:R
+- Conditional NVDA add: buy 2@limit 16.50 if price <16
+- SOXX anti-churn active until tomorrow; evaluate re-entry then
+- All stops intact: QQQ 25, VOO 85, NVDA 10
+
+2026-06-04 : 13:40 : [tactical] No action: holds green, no triggers
+- QQQ 41.45, VOO 96.10, NVDA 18.98 — all above stops
+- Event detector: NONE. No stops breached.
+- NVDA buy already filled at 16:41Z; no new orders needed
+- Gross exposure 61.5%, within 60-75% target band
+- Daytrade 0/3, no PDT concerns
+
+2026-06-04 : 13:30 : [tactical] No action: NVDA filled, stops intact
+- NVDA 2-share buy already filled at 16:41Z
+- All stops well above breach levels
+- Gross exposure 61.5% within 60-75% target
+- Market orderly, no events detected
+- Holding QQQ 6, VOO 2, NVDA 2
+
+2026-06-04 : 13:20 : [tactical] No action — stops intact, NVDA filled
+- QQQ 40.71 above 25 stop
+- VOO 95.84 above 85 stop
+- NVDA 18.97 above 10 stop; 2-share fill confirmed
+- No buy triggers active; all other symbols banned/anti-churn
+- Event detector NONE; gross exposure 61.4% within target
+
+2026-06-04 : 13:10 : [tactical] No action — holds stable
+- NVDA already filled earlier; no triggers breached
+- QQQ 740.92 > stop 725, VOO 695.93 > stop 685
+- No same-day round trip risk
+- Event detector: NONE
+
+2026-06-04 : 12:52 : [tactical] NVDA filled prior, all holds stable
+- NVDA 2-share buy already filled at 18.11 avg
+- No stops breached; QQQ 40.48, VOO 95.82, NVDA 18.42
+- Event detector NONE; gross exposure 61.4%
+- No trades executed this cycle
+
 2026-06-04 : 12:44 : [hourly] Lifted lock, added NVDA 2@218
 - HARD_LOCK lifted after 1-hr review; no recurrence of unauthorized trades
 - Bought 2 NVDA @ 18.11 limit 18.50; relative strength in chip rout
