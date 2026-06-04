@@ -27,20 +27,28 @@
 
 ---
 
-## Live Book (Alpaca) — TRUE STATE (Post-AVGO Sale)
+## Live Book (Alpaca) — TRUE STATE (Post-AVGO Sale, Pre-SOXX Trim Fill)
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $701.33 | $734.79 | $4,408.74 | 43.5% | +$200.76 | +4.77% |
-| SOXX | 3 | $554.51 | $585.19 | $1,755.57 | 17.3% | +$92.04 | +5.53% |
-| VOO | 2 | $673.925 | $691.71 | $1,383.41 | 13.7% | +$35.56 | +2.64% |
-| Cash | — | — | — | $2,587.77 | 25.5% | — | — |
-| **Equity** | — | — | — | **$10,134.06** | **100%** | — | **+1.34%** |
+| QQQ | 6 | $701.33 | $733.48 | $4,400.88 | 43.5% | +$192.90 | +4.58% |
+| SOXX | 3 | $554.51 | $579.29 | $1,737.86 | 17.2% | +$74.33 | +4.47% |
+| VOO | 2 | $673.925 | $692.05 | $1,384.10 | 13.7% | +$36.25 | +2.69% |
+| Cash | — | — | — | $2,587.77 | 25.6% | — | — |
+| **Equity** | — | — | — | **$10,110.67** | **100%** | — | **+1.11%** |
 
-- **Gross long exposure:** 74.5%
-- **Net exposure:** 74.5%
+- **Gross long exposure:** 74.4%
+- **Net exposure:** 74.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** SELL 1 SOXX @ limit $579.50 (day order, placed 14:12Z)
+
+## AUTONOMOUS OVERRIDE — 2026-06-04 14:12Z
+- **Detector classification:** MAJOR
+- **Affected symbols:** SOXX (-1.0% in 10-min window, $585.23 → $579.34)
+- **Action taken:** Placed protective SELL 1 SOXX @ limit $579.50 after price breached authorized stop at $580.00 (live price $579.11). Holding remaining 2 shares as core chip exposure.
+- **Rationale:** AVGO contagion deepening chip-sector rout. Event detector flagged MAJOR severity on SOXX. Authorized stop ($580) was breached. Protective trim preserves ~$49 unrealized profit on remaining 2 shares and raises cash buffer.
+- **Guardrails respected:** No PDT impact (position opened June 1). No short sale. No concentration cap breach. No same-day round trip. No code modifications.
+- **Post-trim estimated book (if fill at $579.50):** QQQ 6 (~43.5%), SOXX 2 (~11.5%), VOO 2 (~13.7%), Cash ~$3,167 (~31.3%), Gross exposure ~68.7%.
 
 ## Performance Review — Thu June 4 (9:48 AM ET)
 - **1D (today):** portfolio **−0.77%** ($10,213.15 → $10,134.06) vs SPY **−0.21%** ($754.24 → $752.67). **Underperforming SPY by ~0.56 pp today.** AVGO earnings aftershock is the primary drag.

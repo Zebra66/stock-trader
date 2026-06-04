@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 10:13 : [tactical] Trimmed 1 SOXX on MAJOR event
+- SOXX breached 80 stop at 79.11, placed sell 1 @ limit 79.50
+- Event detector flagged MAJOR on SOXX -1.0% in 10-min window
+- Holding 2 SOXX core, QQQ 6, VOO 2; daytrade 0/3
+- AVGO contagion deepening chip-sector rout; protective trim per authorized stop
+
+2026-06-04 : 09:53 : [tactical] No action — all holds, stops safe
+- QQQ 35.56 > stop 25, no trigger
+- SOXX 85.45 > stop 80, no trigger
+- VOO 91.86 > stop 85, no trigger
+- Event detector: NONE. No orders.
+- Gross exposure 74.5%, regime neutral-defensive
+
 2026-06-04 : 09:52 : [hourly] Sold AVGO stop, breached code restored
 - AVGO sold 2@405.16 after stop 420 breached
 - Critical code breach reverted: anti-churn guards restored
