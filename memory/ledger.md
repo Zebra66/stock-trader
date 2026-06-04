@@ -2,6 +2,50 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 14:51 : [hourly] Held all, no chase, NVDA add deferred
+- Equity 0,225.95, gross 61.5%, daytrade 0/3
+- No new fills since 17:35Z; tactical ran with no trades
+- Portfolio -2.0% today vs SPY +0.5%; AVGO drag persists
+- NVDA +2.7% but R:R <2:1 vs 10 stop; no add authorized
+- SOXX anti-churn until tomorrow; evaluate re-entry then
+
+2026-06-04 : 14:50 : [tactical] No action; all stops intact
+- Event detector: NONE, market orderly
+- QQQ 43, VOO 97, NVDA 21 — all above stops
+- No buy triggers met; NVDA above 16 pullback level
+- HOLD all positions, conserve daytrades
+
+2026-06-04 : 14:40 : [tactical] HOLD all, no triggers hit
+- QQQ 42.78 > stop 25, VOO 96.73 > stop 85
+- NVDA 20.23 > stop 10, no pullback to 16
+- No events, no orders, exposure 61.5%
+
+2026-06-04 : 14:30 : [tactical] HOLD: No triggers breached
+- QQQ 43.09 > stop 25
+- VOO 96.78 > stop 85
+- NVDA 20.74 > stop 10; pullback buy 16 not met
+- Exposure 61.5% within 60-70% target
+- No events, no action required
+
+2026-06-04 : 14:20 : [tactical] Hold all, no triggers met
+- QQQ 43.25 > stop 25, VOO 96.77 > stop 85, NVDA 20.53 > stop 10
+- Event detector NONE, all positions green
+- NVDA pullback to 16 not triggered, no adds
+- Daytrade 0/3, exposure 61.5%, no action required
+
+2026-06-04 : 14:10 : [tactical] No triggers met, held positions
+- QQQ 43.17 above stop 25; VOO 96.68 above stop 85; NVDA 20.29 above stop 10
+- NVDA pullback buy below 16 not triggered
+- Event detector MINOR: no autonomous action required
+- Exposure ~61.5%, daytrade 0/3, no open orders
+- All stops intact; no sells or buys authorized
+
+2026-06-04 : 13:50 : [tactical] No triggers; held all positions
+- QQQ 42.10, VOO 96.39, NVDA 19.35
+- No stop breaches, no pullback entries
+- Exposure 61.5%, daytrades 0/3
+- Event detector: NONE
+
 2026-06-04 : 13:41 : [hourly] Hold all, no chase; NVDA add on dip
 - Regime neutral, gross exposure 61.5% within 60-70% band
 - No new buys; chasing NVDA at 19+ is poor R:R

@@ -1,36 +1,36 @@
-# Tactical Todo — Updated 2026-06-04 17:35Z (Thursday 1:35 PM ET)
+# Tactical Todo — Updated 2026-06-04 18:35Z (Thursday 2:35 PM ET)
 **HARD_LOCK LIFTED** — Hourly strategist explicitly lifted at 16:38Z. Process discipline restored. Market OPEN.
 
 ## Current State
 - **Regime:** neutral (exposure target 60–70%)
 - **Live book:** QQQ 6, VOO 2, NVDA 2. SOXX FULLY EXITED (0 shares). AVGO FULLY EXITED.
-- **Account equity / cash / buying power:** $10,216.95 / $3,936.19 / $28,306.28
+- **Account equity / cash / buying power:** $10,225.95 / $3,936.19 / $28,324.28
 - **Gross long exposure:** ~61.5% | **Net exposure:** ~61.5% | **Cash:** ~38.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN. Next hourly at 18:35Z (2:35 PM ET).
+- **Market:** OPEN. Next hourly at 19:35Z (3:35 PM ET).
 - **Code integrity:** VERIFIED. No unauthorized source modifications. Branch up to date.
 
 ## Position Instructions — Thu June 4 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT ADD
 - Weight ~43.6%, within 45% cap. Adding 1 share would breach cap.
-- Intraday −0.31% ($744.21 → $741.90). Core liquid growth. Let run.
+- Intraday −0.21% ($744.21 → $742.66). Core liquid growth. Let run.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $725.00 with limit $724.50. Rationale: protect core on broad-market risk-off.
 - Do NOT add QQQ today. At cap.
 
 ### VOO — HOLD 2 — DO NOT ADD
 - Weight ~13.6%, within 20% non-QQQ ETF cap.
-- Broad-market anchor. Up +0.41% today. Stable.
+- Broad-market anchor. Up +0.49% today. Stable.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $685.00 with limit $684.50. Rationale: trim anchor on severe broad-market breakdown.
 - Do NOT add VOO today. 3 shares would exceed 20% cap.
 
-### NVDA — HOLD 2 — DO NOT ADD AT CURRENT LEVELS
-- Filled 2 shares @ $218.11. Current ~$219.26. Unrealized +0.53% (+$2.30).
+### NVDA — HOLD 2 — DO NOT ADD TODAY
+- Filled 2 shares @ $218.11. Current ~$220.58. Unrealized +1.1% (+$4.94).
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 2 shares if price drops below $210.00 with limit $209.50. Rationale: cut risk if chip weakness spreads to NVDA.
 - **Do NOT sell NVDA today unless stop $210 is breached.**
-- **Do NOT add NVDA today unless price pulls back below $216.00.** Current $219+ is a chase; wait for pullback to improve reward:risk. If pullback to $215.50–$216.00 occurs, HOUR AUTHORIZES BUY 2 shares with limit $216.50.
+- **Do NOT add NVDA today at any price.** Current $220+ is a chase; reward:risk with $210 stop is <1.2:1, violating the ≥2:1 minimum. Wait for pullback below $216 or tomorrow's hourly authorization.
 - Max position under 15% cap is 7 shares total. Keep risk small.
 
 ### SOXX — FULLY EXITED — DO NOT RE-BUY TODAY — DO NOT ADD
@@ -85,28 +85,28 @@ Do not place market orders for these; use limit orders only, or defer.
 
 ## Today's Deployment Queue
 1. **HOLD QQQ 6, VOO 2, NVDA 2.** Monitor stops. No action required.
-2. **Conditional: BUY NVDA 2 shares @ limit $216.50 IF price drops below $216.00.** Rationale: pullback entry after +2% intraday rally improves R:R.
-3. **No other adds today.**
+2. **No new adds today.**
+3. **Conditional none.**
 
 ## Expected Book (Current)
 - QQQ 6 (~43.6%), VOO 2 (~13.6%), NVDA 2 (~4.3%)
 - Cash: ~$3,936 (~38.5%)
 - Gross exposure: ~61.5%
 
-## Next Hourly Preview — Thu June 4 18:35Z (2:35 PM ET)
-- Evaluate NVDA price action. If still near $219+ and no pullback, maintain hold.
+## Next Hourly Preview — Thu June 4 19:35Z (3:35 PM ET)
+- Evaluate NVDA price action. If still near $220+ and no pullback, maintain hold.
 - If SOXX holds above $590 through close, prepare re-entry authorization for tomorrow.
 - Monitor chip-sector sentiment after AVGO/CRWD/CIEN earnings washout.
 - Re-verify code integrity (`git diff --stat`) before any new directives.
-- Review all filled orders since 17:35Z for unauthorized activity.
+- Review all filled orders since 18:35Z for unauthorized activity.
 
-## This Cycle — 2026-06-04 17:35Z (Hourly Update)
+## This Cycle — 2026-06-04 18:35Z (Hourly Update)
 - **Repo integrity:** VERIFIED. No unauthorized source modifications. Branch up to date with origin/main.
-- **Live broker refresh:** Equity $10,216.95 | Cash $3,936.19 | Long $6,280.76 | Gross exposure ~61.5% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6 ($4,451.40), VOO 2 ($1,392.42), NVDA 2 ($438.52).
-- **No new unauthorized trades since 16:35Z.** All fills match prior known state.
-- **Portfolio today:** ~−2.09% vs SPY ~+0.4%. AVGO wipeout remains the drag.
+- **Live broker refresh:** Equity $10,225.95 | Cash $3,936.19 | Long $6,289.76 | Gross exposure ~61.5% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 ($4,455.96), VOO 2 ($1,393.50), NVDA 2 ($441.16).
+- **No new unauthorized trades since 17:35Z.** All fills match prior known state.
+- **Portfolio today:** ~−2.00% vs SPY ~+0.53%. AVGO wipeout remains the drag.
 - **Gap to SPY:** ~3.3 pp since inception.
 - **No hard lock.** Process discipline restored.
 - **Stops active:** QQQ $725, VOO $685, NVDA $210.
-- **Decision:** HOLD all positions. No new buys at current levels. Conditional NVDA add on pullback to $215.50–$216.00 only.
+- **Decision:** HOLD all positions. No new buys at current levels. NVDA add deferred to pullback with ≥2:1 R:R.
