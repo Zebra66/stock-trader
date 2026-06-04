@@ -2,6 +2,54 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 11:51 : [hourly] Hard lock: unauthorized SOXX sells
+- Detected 2 unauthorized SOXX sells at ~00 bypassing CLI tool
+- Exposure dropped 68.8% -> 57.1% without authorization
+- Hard lock imposed: no new buys until 16:35Z review
+- QQQ 6 and VOO 2 only holdings; stops active
+- Investigate unguarded code path or external API access
+
+2026-06-04 : 11:50 : [tactical] No action — stops intact, hard lock
+- QQQ 37.95 > 25 stop, VOO 94.33 > 85 stop
+- Hard lock active until 16:35Z per hourly memory
+- SOXX fully exited; event detector MINOR only
+- Gross exposure 57.1%, daytrade count 0/3, no conditions met
+- No orders placed; no override applied
+
+2026-06-04 : 11:43 : [tactical] No triggers met; hold QQQ VOO; SOXX gone
+- Event detector: NONE. No sell triggers breached.
+- QQQ 39.64 > 25 stop; VOO 94.73 > 85 stop
+- Broker shows 0 SOXX vs memory saying 2; prior run likely sold
+- No buy conditions met; no discretionary orders authorized
+- Exposure 57.1% with cash ,372; below band but no adds authorized
+
+2026-06-04 : 11:32 : [tactical] Hold all, no triggers, stale SOXX
+- QQQ 39.61 above 25 stop, VOO 94.97 above 85 stop
+- Alpaca shows 0 SOXX vs memory claiming 2 shares
+- Unrecorded SOXX exit drops gross to 57.1%, cash ,372
+- No conditions met, no orders, no override
+- Daytrade 0/3, market normal per detector
+
+2026-06-04 : 11:26 : [tactical] SOXX missing; QQQ/VOO hold
+- Live broker shows 0 SOXX despite memory claiming 2 shares
+- QQQ 40.01 and VOO 94.76 both above stops
+- Gross exposure 57.1%, no triggers met, no action taken
+- Possible unlogged SOXX sale between 14:35Z-15:20Z
+- Todo blocks all discretionary buys this cycle
+
+2026-06-04 : 11:12 : [tactical] No action — SOXX rebound, stops safe
+- Event detector: MAJOR (SOXX +1.43%, SMH +1.12%) chip rebound
+- All held positions OK severity, no stop-losses triggered
+- No buy conditions active, no protective sells required
+- Maintaining QQQ 6 / SOXX 2 / VOO 2 / Cash ~,172
+
+2026-06-04 : 10:50 : [tactical] Hold all positions, no triggers
+- QQQ 36.38 > 25 stop — HOLD
+- SOXX 90.80 > 80 stop — HOLD
+- VOO 92.93 > 85 stop — HOLD
+- No buy conditions met; cash preserved
+- Event detector: NONE
+
 2026-06-04 : 10:44 : [hourly] Held all, SOXX trim filled, no events
 - SOXX protective trim filled at 84.09, holding 2 shares
 - QQQ 6, SOXX 2, VOO 2; gross 68.8%, cash 31.2%

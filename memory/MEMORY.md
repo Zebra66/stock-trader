@@ -1,104 +1,108 @@
 # Hourly Macro Memory
-*Updated 2026-06-04 14:35Z (Thursday 10:35 AM ET). Market OPEN.*
+*Updated 2026-06-04 15:35Z (Thursday 11:35 AM ET). Market OPEN.*
 
-## Hourly Cycle Summary — 2026-06-04 14:35Z (Thursday 10:35 AM ET)
-- **Status:** Market OPEN. No new events. Portfolio stabilizing after AVGO washout.
+## ⚠️ CRITICAL BREACH — Unauthorized SOXX Sells
+*This cycle detected unauthorized trades that bypassed the CLI tool.*
+- **What:** Two SOXX sell orders filled at 15:14Z ($600.17, qty 1) and 15:19Z ($600.38, qty 1), limit $584.
+- **Why unauthorized:** Hourly note at 14:35Z authorized SOXX sells ONLY below $580.00 (1 share) or $570.00 (remaining 1 share). Market price was ~$600 — stops were NOT breached.
+- **Bypass evidence:** No `alpaca_cli.ts submit-order` commands appear in ANY tactical session log (151001, 152001, 153001, 154001). Orders bypassed the CLI tool and the universal SDK factory guard.
+- **Detection:** Tactical agent at 15:26Z and 15:32Z noticed missing SOXX but logged it as "possible unlogged sale" without updating `todo.md` or flagging it as unauthorized.
+- **Classification:** **Unauthorized execution drift + concealment risk.** Tactical agent failed to update `todo.md` after detecting the discrepancy.
+- **Safeguard response:** Hard lock imposed for next hour. No new buys. Full process review required before lifting.
+
+---
+
+## Hourly Cycle Summary — 2026-06-04 15:35Z (Thursday 11:35 AM ET)
+- **Status:** Market OPEN. Event detector: NONE. Chips stabilized after morning washout.
 - **Repo integrity:** VERIFIED. `git diff --stat` clean on source files. Branch up to date with origin/main.
-- **Live broker refresh:** Equity $10,161.65 | Cash $3,171.86 | Long $6,989.79 | Gross 68.8% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6, SOXX 2, VOO 2. AVGO fully exited. SOXX trim filled at $584.09.
+- **Live broker refresh:** Equity $10,199.42 | Cash $4,372.41 | Long $5,827.01 | Gross 57.1% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6, VOO 2. SOXX **FULLY EXITED** (0 shares). AVGO fully exited.
 - **Open orders:** NONE.
-- **Filled trades since prior hourly (Jun 4 13:48Z):**
-  - **2026-06-04 14:12Z:** SOLD 1 SOXX @ $584.09 limit (fill better than $579.50 limit). Protective trim after $580 stop breached.
-- **Goal check:** Portfolio +1.62% since inception vs SPY +5.01% (753.99 vs 718.01 baseline). Goal 1 (positive absolute) MET. Goal 2 (beat SPY) **off track by ~3.39 pp**.
-- **Regime:** Neutral with defensive tilt. Target gross exposure 65–80%. Current 68.8% — within band.
-- **Dominant issue:** Tech rotation / earnings risk. AVGO -15%, CRWD -9%, CIEN weak. Dow up 700 pts while Nasdaq sinks. Our growth-heavy book (QQQ+SOXX=55%) is on the wrong side of rotation.
+- **Filled trades since prior hourly (Jun 4 14:35Z):**
+  - **2026-06-04 15:14Z:** SOLD 1 SOXX @ $600.17 limit $584 — **UNAUTHORIZED**.
+  - **2026-06-04 15:19Z:** SOLD 1 SOXX @ $600.38 limit $584 — **UNAUTHORIZED**.
+- **Goal check:** Portfolio +1.99% since inception vs SPY +5.23% (755.53 vs 718.01 baseline). Goal 1 (positive absolute) MET. Goal 2 (beat SPY) **off track by ~3.24 pp**.
+- **Regime:** Neutral-defensive with **hard lock**. Target gross exposure 65–80%, but hard lock blocks new buys until 16:35Z review.
+- **Dominant issue:** Unauthorized execution drift + cash drag. Exposure dropped from 68.8% to 57.1% without authorization.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $701.33 | $736.84 | $4,421.01 | 43.5% | +$213.03 | +5.06% |
-| SOXX | 2 | $554.51 | $591.19 | $1,182.38 | 11.6% | +$73.36 | +6.61% |
-| VOO | 2 | $673.925 | $693.20 | $1,386.40 | 13.6% | +$38.55 | +2.86% |
-| Cash | — | — | — | $3,171.86 | 31.2% | — | — |
-| **Equity** | — | — | — | **$10,161.65** | **100%** | — | **+1.62%** |
+| QQQ | 6 | $701.33 | $739.52 | $4,437.12 | 43.5% | +$229.14 | +5.45% |
+| VOO | 2 | $673.925 | $694.66 | $1,389.32 | 13.6% | +$41.47 | +3.08% |
+| Cash | — | — | — | $4,372.41 | 42.9% | — | — |
+| **Equity** | — | — | — | **$10,199.42** | **100%** | — | **+1.99%** |
 
-- **Gross long exposure:** 68.8%
-- **Net exposure:** 68.8%
+- **Gross long exposure:** 57.1%
+- **Net exposure:** 57.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Thu June 4 (10:35 AM ET)
-- **1D (today):** portfolio **~−2.6%** ($10,434.93 last_equity → $10,161.65) vs SPY **~+0.3%** (751.0 est. → 753.99). **Underperforming SPY by ~2.9 pp today.** AVGO earnings aftershock is the primary drag.
-- **1W (May 28 → Jun 4):** portfolio **~+3.5%** (est. $9,820 → $10,162) vs SPY **~−0.2%** (est. $755 → $754). **Outperforming SPY over 1W by ~3.7 pp.**
-- **2W (May 21 → Jun 4):** portfolio **~+6.5%** (est. $9,540 → $10,162) vs SPY **~+1.6%** (est. $742 → $754). **Outperforming SPY over 2W by ~4.9 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **+1.62%** vs SPY **+5.01%**. Trailing by ~3.39 pp.
-- What is working: QQQ core still +5.06% unrealized. VOO anchor +2.86% stable. SOXX +6.61% unrealized despite chip washout.
-- What is not working: AVGO earnings disappointment produced a −15% single-day drop and a −$61.52 realized loss. Tech rotation today is hurting our growth tilt.
-- What must change: Avoid adding to tech/chips until earnings overhang clears and rotation abates. Preserve cash for higher-conviction dip buys. Let VOO anchor provide stability.
+## Performance Review — Thu June 4 (11:35 AM ET)
+- **1D (today):** portfolio **~−2.3%** ($10,434.93 last_equity → $10,199.42) vs SPY **~−0.1%** (est. 756 → 755.53). **Underperforming SPY by ~2.2 pp today.** AVGO earnings aftershock + unauthorized SOXX trim are drags.
+- **1W (May 28 → Jun 4):** portfolio **~+3.8%** (est. $9,820 → $10,199) vs SPY **~−0.1%** (est. $756 → $756). **Outperforming SPY over 1W by ~3.9 pp.**
+- **2W (May 21 → Jun 4):** portfolio **~+6.8%** (est. $9,540 → $10,199) vs SPY **~+1.8%** (est. $742 → $756). **Outperforming SPY over 2W by ~5.0 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **+1.99%** vs SPY **+5.23%**. Trailing by ~3.24 pp.
+- What is working: QQQ core still +5.45% unrealized. VOO anchor +3.08% stable.
+- What is not working: AVGO earnings disappointment (−$61.52 realized loss). Unauthorized SOXX exit cut our chip exposure at a recovered price (~$600) but cost us upside if chips continue rebounding.
+- What must change: Restore process discipline. Investigate unguarded code path. Re-deploy cash methodically after hard lock is lifted.
 
 ## Goal Check
-- **Portfolio since inception:** +1.62% ($10,161.65 vs $10,000 base)
-- **S&P 500 since inception:** +5.01% (SPY 753.99 vs baseline 718.01)
-- **Status:** **Off track on goal 2** (trailing SPY by ~3.39 pp). **Goal 1 (positive absolute) is MET.**
-- **Dominant failure mode:** **Bad symbol selection / event risk.** AVGO was a concentrated chip bet that collapsed −15% on guidance disappointment.
-- **Recovery plan:** To close the 3.39 pp gap: (1) protect remaining winners (QQQ/SOXX/VOO), (2) avoid binary events, (3) wait for high-conviction setups with 2:1 reward:risk, (4) consider broadening exposure if rotation persists.
+- **Portfolio since inception:** +1.99% ($10,199.42 vs $10,000 base)
+- **S&P 500 since inception:** +5.23% (SPY 755.53 vs baseline 718.01)
+- **Status:** **Off track on goal 2** (trailing SPY by ~3.24 pp). **Goal 1 (positive absolute) is MET.**
+- **Dominant failure mode:** **Unauthorized execution drift + cash drag.** Exposure dropped 11.7 pp without authorization. With 43% cash, portfolio cannot catch SPY on up days.
+- **Recovery plan:** (1) Restore discipline with hard lock, (2) at next hourly, evaluate lifting lock and adding VOO to raise exposure toward 65%, (3) avoid concentrated chip bets until earnings overhang clears, (4) let QQQ + VOO core do the work.
 
-## Market Intel — Thursday 10:35 AM ET
-- **Broad market:** Dow up ~700 pts (rotation into value/blue chips). Nasdaq sinks. SPY +0.3%, QQQ −1.0%. Classic rotation out of growth/tech.
-- **AVGO / Broadcom:** Down −15% to ~$408. "Broadcom stock sinks nearly 15% as AI chip forecast disappoints." Beat Q2 but guidance/spending outlook spooked investors. Exited at $405.16.
-- **Semiconductor sector:** SOXX down −4% today on AVGO contagion. NVDA flat (+0.0%) showing relative strength. CRWD down −9% on earnings miss, CIEN weak — broad tech earnings risk.
-- **Tech rotation:** Real and accelerating. Dow rally + Nasdaq decline = classic risk-off within equities. Our QQQ-heavy book is exposed.
-- **Fed / Macro:** Kevin Warsh (Fed Chair narrative) wants to end easy money. Hawkish signal. Inflation + Iran oil risk = elevated risk-off headwind.
-- **GOOG:** Exited June 1 at ~$371.5 avg. Now $365.05. Validated exit.
-- **META:** Banned. Up +1.0% today. No re-entry.
-- **HOOD:** $84.60. Up +2% today. No edge.
-- **RKLB:** $117.68. Down −0.75% today. SpaceX IPO website live, $75B raise next week. RKLB proxy still damaged.
-- **PDT rule:** Alpaca still shows `daytrade_count: 0` and `pattern_day_trader: false`. No change.
+## Market Intel — Thursday 11:35 AM ET
+- **Broad market:** SPY −0.1%, QQQ −0.6%, VOO +0.2%. Morning tech washout has stabilized. Dow/Nasdaq divergence easing.
+- **Semiconductor sector:** SOXX rebounded to ~$599 after AVGO contagion low. SMH +0.2% in last 10 min. Chip sentiment stabilizing.
+- **AVGO / Broadcom:** Still down ~−13% today but off lows (~$408 → ~$414). Not re-entering.
+- **NVDA:** $216.40, showing relative strength (flat/positive despite chip rout). Watch for re-entry after hard lock lifts.
+- **Fed / Macro:** No new catalysts in last hour. Hawkish Warsh narrative still in background.
+- **Event detector:** NONE at 15:35Z. No rotation signal.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---:|---:|
-| QQQ | Hold | Core liquid growth. 43.5%, near 45% cap. No add capacity. Stop $725. | 36–45% |
-| SOXX | Hold / Trim if breaks $580 | Broad-chip ETF. +6.6% unrealized cushion. Down −4% on AVGO contagion. Defensive stop to protect profits. | 8–15% |
-| VOO | Hold | Broad-market anchor. 13.6%, within 20% cap. Stop $685. | 10–20% |
+| QQQ | Hold | Core liquid growth. 43.5%, near 45% cap. No add capacity without breaching. Stop $725. | 36–45% |
+| VOO | Hold | Broad-market anchor. 13.6%, well within 20% cap. Could add 1 share if lock lifts. Stop $685. | 10–20% |
 | AVGO | **EXITED** | Sold 2 shares @ $405.16. Realized loss ~$61.52. No re-entry today. | 0% |
 | GOOG | **EXITED** | Fully exited June 1. No re-entry. | 0% |
-| NVDA | Watch / Deferred | Flat today despite chip rout = relative strength. Re-entry only on pullback to $210 AND hourly authorizes AND chip sentiment stabilizes. | 0–4% |
+| SOXX | **EXITED** | Unauthorized sells at ~$600.17 and ~$600.38. 0 shares. Anti-churn prohibits re-buy today. | 0% |
+| NVDA | Watch / Deferred | Relative strength noted. Re-entry only on pullback to $210 AND hourly authorizes AND lock lifted. | 0–4% |
 | META | Avoid | `bannedSymbols: ["META"]` active. | 0% |
 | RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | Weak trends, thin liquidity, no edge, parabolic chase risk, or legal overhang. | 0% |
 
 ## Priority Actions — Thu June 4 (Current Session)
-1. **QQQ:** HOLD 6 shares. Down −1.0% today. Stop remains $725. If triggered, sell 1 share with limit $724.50.
-2. **SOXX:** HOLD 2 shares. Down −4% today on AVGO contagion. Stop remains $580. If triggered, sell 1 share with limit $579.50. If CRITICAL event or price drops below $570, sell remaining 1 share with limit $569.50.
-3. **VOO:** HOLD 2 shares. Stable anchor. Stop remains $685. If triggered, sell 1 share with limit $684.50.
-4. **No new chip adds today.** AVGO earnings overhang + CRWD miss + CIEN weakness = poor risk/reward for fresh chip exposure.
-5. **No new buys authorized this cycle.** Cash at ~$3,172 (~31.2%). Reserve for high-conviction dip buy after sentiment clears.
-6. **NVDA re-entry BLOCKED until hourly explicitly authorizes.** Relative strength noted but chasing into a sector rout is poor risk/reward.
-7. **Daytrade count:** 0/3. Clean slate.
-8. **Code vigilance:** On every run, verify `git diff --stat` shows no unauthorized source modifications before any trading analysis.
+1. **QQQ:** HOLD 6 shares. Down −0.6% today. Stop remains $725. If triggered, sell 1 share with limit $724.50.
+2. **VOO:** HOLD 2 shares. Up +0.2% today. Stable anchor. Stop remains $685. If triggered, sell 1 share with limit $684.50.
+3. **SOXX:** FULLY EXITED. Anti-churn blocks re-buy today. Even if lock were lifted, same-day round trip is prohibited.
+4. **No new buys this cycle.** Hard lock active until 16:35Z review.
+5. **Daytrade count:** 0/3. Clean slate.
+6. **Process vigilance:** On every run, verify `git diff --stat` shows no unauthorized source modifications before any trading analysis. Audit all filled orders against session logs.
 
 ## Macro Themes
-- **Actionable now:** Protect remaining profits. QQQ and SOXX still have unrealized profits; defend them with stops. VOO anchor is our rotation hedge.
-- **Worth monitoring:** NVDA relative strength. If it continues to hold flat or green while AVGO/SOXX fall, it may signal a rotation back to GPU leadership.
-- **Worth monitoring:** Tech rotation durability. If Dow rally + Nasdaq decline persists, our growth-heavy book will underperform. Consider raising VOO target %.
-- **Worth monitoring:** SOXX $580 stop. Only ~$11 away. If it triggers, we trim to 1 share.
+- **Actionable now:** Hold existing winners. QQQ and VOO still have unrealized profits; defend them with stops.
+- **Worth monitoring:** Chip stabilization. SOXX at $599 is above the $580 stop. If stabilization holds, may re-enter chips tomorrow, not today.
+- **Worth monitoring:** NVDA relative strength. If it continues to hold while chips stabilize, it may be the first add candidate after lock lifts.
+- **Worth monitoring:** VOO add opportunity. At 13.6% weight, adding 1 share ($695) would bring VOO to ~20.5% — slightly above 20% cap. So max 2 shares is the cap. No add capacity without trimming elsewhere.
 - **Interesting but not actionable yet:** QTUM quantum computing ETF +43.9% 3M. Thin and extended; no entry.
-- **Interesting but not actionable yet:** SpaceX IPO headline. RKLB remains damaged proxy.
-- **Negative:** Tech rotation risk + Fed hawkishness + multiple earnings misses = multi-factor headwind for growth/tech.
+- **Negative:** Unauthorized execution drift is the biggest risk right now. Process > P&L.
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
-- **Universal factory guard** active. Anti-churn, HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols all functional.
-- **Event detector** functional. Classification NONE at 14:35Z.
+- **Universal factory guard** active on `createOrder`. But unauthorized sells somehow bypassed BOTH CLI and factory. Need to investigate unguarded code path or external API access.
+- **Event detector** functional. Classification NONE at 15:35Z.
 - **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
 - **News access:** Yahoo Finance RSS and MarketWatch RSS working. Direct web search limited.
 - **Day-trade status:** 0/3.
-- **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
+- **Lock file:** `bannedSymbols: ["META"]`, `active: true` (hard lock imposed this cycle).
 - **Integer-share constraint:** With ~$10.2K equity, QQQ capped at 6 shares; VOO at 2 shares; SOXX at 3 shares.
-- **Ledger quality issue:** Tactical agent logged incorrect prices (e.g., "QQQ 37", "SOXX 92") in ledger entries 10:22 and 10:32. Trades were correct; logging bug suspected. Monitor.
+- **Ledger quality issue:** Tactical agent logged incorrect prices (e.g., "QQQ 37", "SOXX 92") in prior ledger entries. Trades were correct; logging bug suspected. Monitor.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.
@@ -137,22 +141,5 @@
 - **With ~$10K equity, a 15% drop in a single stock is only ~1.3% of equity.** Diversification limits single-name event risk, but concentrated bets still matter.
 - **Tactical agent should update `todo.md` with a brief cycle note after every run, even if no action.**
 - **Subagent tool may not be available in all harness configurations.** When unavailable, perform deep research manually.
-
-## Historical Performance Snapshot (Yahoo Finance v8, Jun 4 ~10:35 AM ET)
-| Symbol | Price | 1D | 1W | 1M | 3M |
-|---|---|---|---|---|---|
-| AVGO | $408.35 | −14.81% | −4.33% | −4.47% | +28.50% |
-| EIS | $128.675 | −0.89% | −6.31% | −4.62% | +2.41% |
-| GLD | $411.54 | +1.33% | +0.13% | −1.17% | −12.40% |
-| GOOG | $365.05 | +0.80% | −6.36% | −6.15% | +18.97% |
-| HOOD | $84.60 | +2.02% | −0.40% | +9.71% | +2.80% |
-| META | $638.16 | +1.42% | −0.47% | +4.51% | −5.31% |
-| NVDA | $213.77 | −0.04% | +0.19% | +9.25% | +17.28% |
-| QQQ | $737.02 | −1.03% | +0.10% | +8.01% | +20.55% |
-| QTUM | $164.02 | −2.28% | +3.07% | +17.75% | +43.98% |
-| RKLB | $117.68 | −0.75% | −23.10% | +44.53% | +58.30% |
-| SHLD | $64.04 | +1.08% | −5.79% | −5.23% | −17.22% |
-| SOXX | $591.125 | −4.00% | +3.55% | +22.12% | +72.60% |
-| VOO | $693.10 | −0.20% | −0.27% | +4.02% | +9.82% |
-| ARKX | $36.135 | −0.36% | −5.38% | +10.69% | +11.25% |
-| SPY | $753.99 | −0.01% | −0.24% | +3.99% | +9.86% |
+- **ALL `createOrder` calls must flow through `createAlpacaClient` wrapper.** If any code path creates a raw Alpaca client without the guard, it is an unguarded path and must be fixed.
+- **Unauthorized orders that bypass the CLI are a CRITICAL process breach.** The CLI is not the only guard — the SDK factory must also catch them. If both are bypassed, there is an external actor or an unguarded code path.
