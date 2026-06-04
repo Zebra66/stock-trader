@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 15:35 : [hourly] Hold all, no adds, final hour — NVDA/SOXX deferred
+- Equity $10,229, gross 61.5%, daytrade 0/3, no new fills since 18:35Z
+- Portfolio −1.97% today vs SPY +0.52%; AVGO earnings drag persists
+- NVDA add deferred: $220+ with $210 stop gives <1.2:1 R:R, violating ≥2:1 minimum
+- SOXX re-entry deferred to tomorrow if holds >$590 through close; anti-churn active today
+- Stops intact: QQQ $725, VOO $685, NVDA $210; no open orders
+
+2026-06-04 : 15:30 : [tactical] Hold all, no triggers met
+- QQQ 743, stop 725 intact
+- VOO 697, stop 685 intact
+- NVDA 220, stop 210 intact
+- No buys authorized, no stops breached
+- Event: MINOR, no action required
+
+2026-06-04 : 15:20 : [tactical] No action: stops intact, holds
+- QQQ 41.90 vs stop 25 — no breach
+- VOO 96.64 vs stop 85 — no breach
+- NVDA 20.47 vs stop 10 — no breach
+- Event detector MINOR only; no override
+- Gross exposure 61.5%, regime neutral, no deploys
+
+2026-06-04 : 15:10 : [tactical] Hold all; no stops breached
+- QQQ 42.72 > 25 stop
+- VOO 96.87 > 85 stop
+- NVDA 21.20 > 10 stop
+- No buy conditions met
+- Exposure 61.5% within 60-70% target
+
 2026-06-04 : 14:51 : [hourly] Held all, no chase, NVDA add deferred
 - Equity 0,225.95, gross 61.5%, daytrade 0/3
 - No new fills since 17:35Z; tactical ran with no trades
