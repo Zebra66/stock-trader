@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-04 : 10:44 : [hourly] Held all, SOXX trim filled, no events
+- SOXX protective trim filled at 84.09, holding 2 shares
+- QQQ 6, SOXX 2, VOO 2; gross 68.8%, cash 31.2%
+- No new buys; tech rotation + earnings risk elevated
+- Stops: QQQ 25, SOXX 80, VOO 85
+- Repo integrity verified; branch up to date
+
+2026-06-04 : 10:40 : [tactical] No action; holds stable post-SOXX trim
+- SOXX trim filled: holding 2 shares, cash ,171
+- All stops intact: QQQ 25, SOXX 80, VOO 85
+- No breached triggers; event detector NONE
+- Gross exposure ~68.7%, within 65-80% band
+- Next hourly at 14:35Z
+
+2026-06-04 : 10:32 : [tactical] No action; SOXX recovery, all holds
+- Event detector MAJOR on SOXX +1.09% 10-min recovery
+- All held positions severity OK; no stops breached
+- QQQ 37, SOXX 92, VOO 93 — all above stops
+- No buy/sell conditions met; cash ,172
+- SOXX trim from prior cycle confirmed filled; holding 2 shares
+
+2026-06-04 : 10:22 : [tactical] Event: MAJOR SOXX bounce, no action
+- Event detector MAJOR on SOXX +1.11% 10-min bounce
+- Held positions all OK severity, stops intact
+- QQQ 35.47 > 25 stop, SOXX 85.78 > 80 stop, VOO 92.56 > 85 stop
+- No buy conditions met; all buys blocked by todo.md
+- Book: QQQ 6, SOXX 2, VOO 2, cash ,172, gross ~68.7%
+
 2026-06-04 : 10:13 : [tactical] Trimmed 1 SOXX on MAJOR event
 - SOXX breached 80 stop at 79.11, placed sell 1 @ limit 79.50
 - Event detector flagged MAJOR on SOXX -1.0% in 10-min window
