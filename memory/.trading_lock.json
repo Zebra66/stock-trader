@@ -1,1 +1,1 @@
-{"active":true,"bannedSymbols":["META"],"reason":"HARD_LOCK: Unauthorized SOXX sells bypassed CLI tool at 15:14Z and 15:19Z. No new buys until hourly explicitly lifts lock at 16:35Z review."}
+{"active":false,"bannedSymbols":["META"],"reason":"HARD_LOCK lifted at 16:35Z review. Unauthorized SOXX sells did not recur. Process discipline restored. META ban remains."}
