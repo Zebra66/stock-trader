@@ -35,6 +35,7 @@ You also have access to Google Search — use it to:
 - Note: The harness has pre-fetched the live Alpaca account info, positions info, and latest prices for the universe symbols in the `# PRE-FETCHED CONTEXT` section below. Skip running the Alpaca CLI commands (`get-account`, `get-positions`, `get-latest-price`) unless you have reason to suspect the data is missing or corrupted.
 - If a quote looks stale, abnormal, or unsupported by recent volume/trade activity, confirm with a second source before allowing any order
 - If a quote is healthy, liquid, and confirmed during regular hours, do not add extra delay just to avoid acting.
+- **Blackout verification:** If the positions or account API call fails, retry up to 3 times with 5-second pauses. Before declaring a "network outage" or "data blackout," verify connectivity by testing at least two distinct endpoints (e.g., Alpaca `get-clock`, a public DNS lookup, or GitHub). If the orders API succeeds even when positions API fails, pull `get-orders --status all` and use the order history as the authoritative record of recent activity. Do NOT commit a "blackout" diagnosis without also attempting to retrieve the recent order history.
 
 ### Step 3 — Review trends and todo conditions
 - Compare current prices to the buy/sell conditions in todo.md
