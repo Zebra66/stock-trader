@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 12:11 : [tactical] Sold 1 QQQ at stop 20
+- QQQ price 18.91 breached 20.00 stop at 16:11Z
+- Market order used; limit 19.50 was above market
+- Post-trade gross exposure ~49.5%; cash ~,071
+- One trade; no PDT concerns; daytrade 0/3
+
+2026-06-05 : 11:50 : [tactical] Hold QQQ/VOO, no triggers hit
+- QQQ 20.62 above 20.00 stop, VOO 86.16 above 80.00 stop
+- Event detector: NONE, no protective action needed
+- Gross exposure 56.7%, no buy conditions met
+- No orders placed, daytrade count 0/3
+
 2026-06-05 : 11:44 : [hourly] NVDA stopped out, unauthorized order blocked exit
 - Canceled stale 12.50 NVDA limit sell placed by tactical agent
 - Sold 2 NVDA @ 07.80 to execute authorized 10 stop

@@ -3,9 +3,9 @@
 
 ## Current State
 - **Regime:** neutral (60–70% band, currently at 56.7% due to NVDA stop-out)
-- **Live book:** QQQ 6, VOO 2. NVDA 0 (sold). SOXX 0, AVGO 0, GOOG 0.
-- **Account equity / cash / buying power:** ~$10,047 / ~$4,352 / ~$28,798
-- **Gross long exposure:** ~56.7% | **Net exposure:** ~56.7% | **Cash:** ~43.3%
+- **Live book:** QQQ 5, VOO 2. NVDA 0 (sold). SOXX 0, AVGO 0, GOOG 0.
+- **Account equity / cash / buying power:** ~$10,036 / ~$5,071 / ~$28,800
+- **Gross long exposure:** ~49.5% | **Net exposure:** ~49.5% | **Cash:** ~50.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -14,11 +14,10 @@
 
 ## Position Instructions — Fri Jun 5 (:40, :50, and :10/:20/:30 Tactical Runs)
 
-### QQQ — HOLD 6 — DO NOT ADD
-- Weight ~43.0%, within 45% cap. Adding 1 share would breach cap.
-- Intraday –2.70% (Alpaca current_price). Core liquid growth. Let run.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $720.00 with limit $719.50. Rationale: trim core on broad risk-off breakdown.
-- Do NOT add QQQ today. At cap.
+### QQQ — HOLD 5 — DO NOT ADD
+- Weight ~35.8%, within 45% cap.
+- Intraday –2.70%. Core liquid growth. Defensive stop $720.00 triggered and executed at 16:11Z.
+- Do NOT add QQQ today. Below target allocation; hourly must reassess Monday.
 
 ### VOO — HOLD 2 — DO NOT ADD
 - Weight ~13.7%, within 20% non-QQQ ETF cap.
@@ -90,13 +89,13 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $375 with volume.
 
 ## Expected Book Into Close
-- QQQ 6 (~43.0%), VOO 2 (~13.7%)
-- Cash: ~$4,352 (~43.3%)
-- Gross exposure: ~56.7%
+- QQQ 5 (~35.8%), VOO 2 (~13.7%)
+- Cash: ~$5,071 (~50.5%)
+- Gross exposure: ~49.5%
 
 ## Next Hourly Preview — 16:35Z (12:35 PM ET)
-- Monitor QQQ $720 stop. Price is $720.56 — very close to trigger.
-- Monitor VOO $680 stop. Price $686.58 — comfortable buffer.
+- QQQ $720 stop TRIGGERED at 16:11Z. Now HOLD 5. Reassess QQQ target allocation Monday.
+- Monitor VOO $680 stop. Price $685.13 — comfortable buffer.
 - Verify no tactical agent attempts unauthorized AVGO/SOXX/NVDA re-buys.
 - Evaluate whether semi-sector weakness is broadening to QQQ components.
-- Reassess gross exposure target if QQQ stop triggers (would drop to ~49.5%).
+- Reassess gross exposure target. Now at ~49.5% (below 60% offensive lower bound). Hourly must decide whether to deploy cash Monday or stay defensive.

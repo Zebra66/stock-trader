@@ -1,5 +1,14 @@
 # Hourly Macro Memory
-*Updated 2026-06-05 15:38Z (Friday 11:38 AM ET). Market OPEN.*
+*Updated 2026-06-05 16:11Z (Friday 12:11 PM ET). Market OPEN.*
+
+## Tactical Cycle Summary — 2026-06-05 16:11Z
+- **Action:** SELL 1 QQQ @ market (order `31c240bc-bbb5-4ad3-bade-703b55d0a851`). Defensive stop $720.00 breached at $718.91. Used market order because authorized limit ($719.50) was above current market, complying with stop-loss execution rule.
+- **Pre-trade checks:** All passed. Universe, cooldown, churn, PDT, short-sale, authorization, lock, open-order, HARD_LOCK, exposure, and data-quality checks verified.
+- **Post-sell estimated book:** QQQ 5 (~$3,595), VOO 2 (~$1,370), Cash ~$5,071. Gross exposure ~49.5%. Daytrade 0/3.
+- **Rationale:** QQQ core trimmed on broad risk-off breakdown below $720 stop. Preserves capital for Monday deployment if tape stabilizes. Gross exposure now below 60% defensive lower bound — hourly must reassess regime Monday.
+- **Next expected action:** HOLD QQQ 5, VOO 2. No further sells unless VOO $680 breaks. No buys authorized today.
+
+---
 
 ## Hourly Cycle Summary — 2026-06-05 15:38Z
 - **Status:** Market OPEN. ~2h 22m to close. Next open: Monday June 8, 09:30 ET.
