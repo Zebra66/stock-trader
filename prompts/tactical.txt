@@ -68,15 +68,17 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
    - You may NOT sell a position because it "drifted from target allocation", "looks weak", "feels overextended", or for any other discretionary reason.
    - The ONLY valid reasons to sell are: (a) a specific price trigger in the current `todo.md` was breached, (b) Event Response Mode was entered due to a CRITICAL/MAJOR event, or (c) the hourly strategist explicitly wrote a sell authorization in the current `todo.md`.
 8. **Code-level lock check:** Read `memory/.trading_lock.json`. If it exists, `active` is `true`, and your order does NOT match an entry in the `allowed` array, **abort the order** and log the blocker. Do NOT attempt to delete or modify the lock file.
+8a. **Open-order conflict check:** Run `get-orders --status open` and verify there are no existing open orders for the same symbol that would conflict with your intended action. If an unauthorized open order exists (e.g., a limit sell above the current market price on a position below its stop), cancel it immediately with `cancel-order` before proceeding. If you did not place the existing order and it conflicts with the current `todo.md`, log the conflict and abort.
 9. **HARD_LOCK check:** If `memory/todo.md` contains the word `HARD_LOCK`, **abort ALL orders** regardless of conditions. The code-level guard in the CLI will also block the order, but you must catch it here first.
-9. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
-10. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
+10. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
+11. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
 
 ### Step 5 — Execute orders
 - For each condition met in todo.md that passes the pre-trade checklist, execute the corresponding order via the Alpaca CLI
 - If price gaps through a trigger or moves too far beyond the intended entry/exit level, re-evaluate the setup instead of blindly executing a stale condition
 - Do not average down
 - Add only to winners and only if the add is smaller than or equal to the prior add
+- **Stop-loss execution rule:** When executing a stop-loss sell, you MUST use either (a) the EXACT limit price specified in the hourly note, or (b) a market order. You may NOT place a limit sell ABOVE the current market price on a stopped position. Doing so reserves shares (qty_available becomes 0) and blocks the exit, leaving the position exposed.
 - Keep to **one trade per tactical cycle** unless `memory/todo.md` explicitly authorizes more.
 - **After placing any order, immediately re-read `memory/todo.md`** to verify it still authorizes your action. If the file changed during your execution and now shows HARD_LOCK or contradicts your trade, log a warning and do not place any further orders this cycle.
 - Log each decision: why you acted, or why you held because the edge was too small after costs
