@@ -1,5 +1,5 @@
 # Standing Learnings Archive
-*Compiled from hourly cycles. Referenced by MEMORY.md. Updated 2026-05-27.*
+*Compiled from hourly cycles. Referenced by MEMORY.md. Updated 2026-06-05.*
 
 1. Size from **account equity**, not raw buying power.
 2. **No leverage** unless explicitly justified.
@@ -63,3 +63,4 @@
 60. **With ~$10K equity, a single 1-share stop-out in a $220 stock costs ~$10–$20 in realized losses plus SEC/FINRA fees.** These small losses compound quickly and erode the thin alpha margin needed to beat SPY.
 61. **Unauthorized limit sell orders placed ABOVE the current market price can block authorized stop-loss exits by reserving shares (qty_available: 0).** The tactical agent's $212.50 NVDA limit sell at 10:54 AM ET blocked the authorized $209.50 stop exit at 11:23 AM ET, leaving the position exposed below stop for ~50 minutes until the hourly strategist intervened.
 62. **Tactical agent must use ONLY the exact limit price authorized by the hourly note for stop exits, or a market order.** Placing a discretionary limit sell above market on a stopped position is a critical process failure that can prevent risk-management execution.
+63. **Do not deploy cash on a Friday afternoon into a falling tape without confirmation.** The jobs-report risk-off rotation on June 5 had no stabilization signal by 12:35 PM ET. Deploying then would have been catching a falling knife. Monday reassessment is safer.

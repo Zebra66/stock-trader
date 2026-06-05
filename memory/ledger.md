@@ -2,6 +2,31 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 12:41 : [hourly] Defensive hold, no buys, risk-off tape
+- Equity 0,026, gross 49.4%, 0/3 daytrades
+- QQQ 5 hold, VOO 2 hold, no new stops today
+- Jobs report fuels hawkish Fed fears; chips down 7%+
+- No unauthorized orders since 16:11Z QQQ stop
+- Monday deployment queue: VOO, QQQ, NVDA if stabilize
+
+2026-06-05 : 12:40 : [tactical] No action — all holds, no triggers
+- QQQ 5 at 16.88, VOO 2 at 84.31
+- VOO 80 stop not breached (84.31)
+- No buy conditions met; all DO NOT BUY/DONT ADD active
+- Gross exposure ~49.5%, daytrade 0/3
+- Event detector: NONE classification
+
+2026-06-05 : 12:30 : [tactical] Hold: no triggers met
+- VOO 84.86 > 80 stop; QQQ 5 hold
+- No events, no open orders, no buys auth
+- Gross 49.5%, cash 50.5%, 0/3 daytrades
+
+2026-06-05 : 12:20 : [tactical] No action; holds above stops
+- QQQ 5 hold, VOO 2 hold, no triggers breached
+- Gross exposure ~49.5%, no add candidates authorized
+- Event detector NONE, no overrides needed
+- Daytrade 0/3, no open orders
+
 2026-06-05 : 12:11 : [tactical] Sold 1 QQQ at stop 20
 - QQQ price 18.91 breached 20.00 stop at 16:11Z
 - Market order used; limit 19.50 was above market
