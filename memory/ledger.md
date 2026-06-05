@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 10:38 : [hourly] HOLD all; jobs report hawkish
+- No trades. May jobs +172K fuels hawkish Fed fears.
+- Tech/semis selling off; NVDA near 10 stop.
+- Gross exposure 61.0% within neutral 60-70% band.
+- AVGO cooldown expired but no re-buy authorized today.
+- SOXX cooldown expires 15:19Z; no re-buy today.
+
 2026-06-05 : 10:30 : [tactical] MAJOR semi event, no sells
 - SOXX/SMH MAJOR drop continued at 14:30Z
 - Held positions NVDA/QQQ/VOO all above stops, no protective sells
