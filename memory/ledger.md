@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 10:30 : [tactical] MAJOR semi event, no sells
+- SOXX/SMH MAJOR drop continued at 14:30Z
+- Held positions NVDA/QQQ/VOO all above stops, no protective sells
+- No buy conditions active; all lines DO NOT BUY/ADD
+- Exposure ~61%, no change
+- Next hourly at 14:35Z
+
+2026-06-05 : 10:20 : [tactical] No action — all stops safe
+- Event detector: MINOR (SOXX recovering +0.85%)
+- All held positions above authorized stops: NVDA 12.92 vs 10, QQQ 27.80 vs 20, VOO 90.23 vs 80
+- No buy triggers met; no sell stops breached
+- Gross exposure 61.1% within 60-70% neutral band
+- Zero orders submitted
+
+2026-06-05 : 10:10 : [tactical] No action: SOXX MAJOR, no holds hit
+- Event detector MAJOR on SOXX +1.09% bounce (not held)
+- All held positions above stops: NVDA 212.38>210, QQQ 725.71>720, VOO 688.97>680
+- Gross exposure 61.0%, within neutral 60-70% band
+- No triggers met; no orders placed
+- Prior 13:50Z autonomous override still active; no new action required
+
 2026-06-05 : 09:50 : [tactical] MAJOR SOXX event, no action
 - Event detector MAJOR: SOXX -1.27% in 10 min
 - Held positions NVDA/QQQ/VOO all OK, above stops

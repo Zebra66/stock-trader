@@ -1,3 +1,17 @@
+# Tactical Override — 2026-06-05 14:30Z (Friday 10:30 AM ET)
+**[AUTONOMOUS_OVERRIDE]** Event detector classification: **MAJOR** (SOXX –1.29% in 10 min, prior $577.42 → current $569.96; SMH –1.01%).
+- Held positions checked against authorized stops: **none breached.**
+  - NVDA $211.23 vs stop $210.00 — OK
+  - QQQ $724.86 vs stop $720.00 — OK
+  - VOO $688.79 vs stop $680.00 — OK
+- Protective sells: **NONE EXECUTED.** MAJOR event continued in semis (SOXX, SMH), which are **not held**. Held positions unaffected.
+- Buy conditions: All buy lines already marked DO NOT BUY / DO NOT ADD; no active buys to suspend.
+- Gross exposure ~61.0% (neutral band 60–70%).
+- No new positions opened. No exposure increased.
+- Next hourly reassessment at 14:35Z.
+
+---
+
 # Tactical Override — 2026-06-05 13:50Z (Friday 9:50 AM ET)
 **[AUTONOMOUS_OVERRIDE]** Event detector classification: **MAJOR** (SOXX –1.27% in 10 min, prior $573.67 → current $566.37).
 - Held positions checked against authorized stops: **none breached.**
