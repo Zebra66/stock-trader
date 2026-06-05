@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 09:44 : [hourly] Neutral hold, no adds, repo breach fixed
+- Regime neutral 60-70% due to semi risk-off (AVGO -10% 1W, SOXX -5% today)
+- No buys: AVGO/SOXX on 24h cooldown, GOOG broken support 75, NVDA anti-churn
+- CRITICAL repo breach resolved: .gitignore missing, node_modules tracked, safety code staged for removal
+- NVDA stop 10, QQQ stop 20, VOO stop 80 all authorized
+- Cash ,936 reserved for Monday deployment if sector stabilizes
+
+2026-06-05 : 09:40 : [tactical] HOLD all; no stops breached, no buys auth'd
+- QQQ 29.17 > 25 stop, VOO 91 > 85 stop, NVDA 13.80 > 10 stop
+- No stop breaches; no sell authorization triggered
+- No explicit buy authorization in current todo.md for today
+- Event detector: NONE; gross exposure ~61.1% within band
+- Daytrade count 0/3; no orders placed
+
 2026-06-04 : 15:35 : [hourly] Hold all, no adds, final hour — NVDA/SOXX deferred
 - Equity $10,229, gross 61.5%, daytrade 0/3, no new fills since 18:35Z
 - Portfolio −1.97% today vs SPY +0.52%; AVGO earnings drag persists
