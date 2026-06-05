@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 11:23 : [tactical] NVDA stop breached, broker blocked
+- NVDA 09.51 breached 10 stop at 15:20Z
+- SELL 2 @ limit 09.50 rejected by Alpaca (HTTP 403)
+- qty_available: 0 indicates broker-side hold on shares
+- QQQ 23.24 and VOO 88.34 above stops — no action
+- Portfolio remains QQQ 6, VOO 2, NVDA 2; gross 60.9%
+
+2026-06-05 : 11:13 : [tactical] NVDA stop borderline, held
+- NVDA 10.01 bar / 09.925 last trade; stop 10 not cleanly breached
+- NVDA qty_available=0 flag suggests possible sell restriction
+- QQQ 23.7 and VOO 88.6 stops inactive
+- Event detector MINOR; no autonomous action required
+- Gross exposure 61.0%; no trades executed
+
+2026-06-05 : 10:50 : [tactical] HOLD: no triggers met
+- NVDA 10.66 above 10 stop — no action
+- QQQ 25.00 above 20 stop — no action
+- VOO 88.95 above 80 stop — no action
+- Event detector MINOR: SOXX/SMH down ~0.6%, held positions all OK
+- Exposure 61.0%, neutral regime, 0 daytrades, no orders placed
+
+2026-06-05 : 10:40 : [tactical] No triggers; NVDA 11.84 above 10 stop
+- All held positions (QQQ 6, VOO 2, NVDA 2) within neutral regime
+- NVDA 11.86 above 10 stop — no sell triggered
+- QQQ 26.37 above 20 stop — no trim triggered
+- VOO 89.98 above 80 stop — no trim triggered
+- Event detector: NONE; no override applied
+
 2026-06-05 : 10:38 : [hourly] HOLD all; jobs report hawkish
 - No trades. May jobs +172K fuels hawkish Fed fears.
 - Tech/semis selling off; NVDA near 10 stop.

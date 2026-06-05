@@ -1,6 +1,18 @@
 # Hourly Macro Memory
 *Updated 2026-06-05 14:35Z (Friday 10:35 AM ET). Market OPEN.*
 
+## Tactical Execution — 2026-06-05 15:20Z (11:20 AM ET)
+- **Status:** Market OPEN. ~2h 40m to close.
+- **Event detector:** NONE. Normal mode.
+- **NVDA stop BREACHED:** Price $209.51 dropped below $210.00 defensive stop (hourly authorized).
+- **NVDA sell BLOCKED:** Alpaca rejected SELL 2 NVDA @ limit $209.50 with HTTP 403. Position shows `qty_available: 0` — broker-side hold on shares.
+- **Risk:** NVDA position remains exposed below authorized stop. Tactical cannot exit without broker cooperation or hourly directive.
+- **Live broker refresh:** Equity $10,071.58 | Cash $3,936.17 | Long $6,135.41 | Gross 60.9% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6, VOO 2, NVDA 2 (qty_available 0). SOXX 0, AVGO 0, GOOG 0.
+- **Open orders:** NONE.
+- **No other triggers:** QQQ $723.24 > $720; VOO $688.34 > $680.
+- **Action taken:** Stop triggered but execution blocked. Logged for hourly review.
+
 ## Hourly Cycle Summary — 2026-06-05 14:35Z
 - **Status:** Market OPEN. ~2h 25m to close. Next open: Monday June 8, 09:30 ET.
 - **Repo integrity:** Clean. No divergences. `tactical_last_prices.json` staged update is normal event-detector state save. Branch even with origin/main.

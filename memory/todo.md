@@ -3,13 +3,13 @@
 
 ## Current State
 - **Regime:** neutral (60–70% band)
-- **Live book:** QQQ 6, VOO 2, NVDA 2. SOXX 0, AVGO 0, GOOG 0.
-- **Account equity / cash / buying power:** ~$10,100 / ~$3,936 / ~$28,072
-- **Gross long exposure:** ~61.0% | **Net exposure:** ~61.0% | **Cash:** ~39.0%
+- **Live book:** QQQ 6, VOO 2, NVDA 2 (qty_available 0 — broker hold). SOXX 0, AVGO 0, GOOG 0.
+- **Account equity / cash / buying power:** ~$10,072 / ~$3,936 / ~$28,016
+- **Gross long exposure:** ~60.9% | **Net exposure:** ~60.9% | **Cash:** ~39.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. Next hourly: 15:35Z (11:35 AM ET).
+- **Market:** OPEN until 16:00 ET. ~2h 40m to close. Next hourly: 15:35Z (11:35 AM ET).
 - **Macro context:** May jobs report (+172K, unemployment 4.3%) came in strong at 8:30 AM ET. Headlines confirm hawkish Fed fears. Tech/growth selling off. Rotation session, not dip-buying opportunity.
 
 ## Position Instructions — Fri Jun 5 (:40, :50, and :10/:20/:30 Tactical Runs)
@@ -32,6 +32,7 @@
 - Best 1-week momentum among chip names (+0.51% 1W).
 - **ANTI-CHURN / NEVER AVERAGE DOWN:** DO NOT add to NVDA today. Current price $211.84 is below our avg entry $218.11. Adding would average down and violate standing learning.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all NVDA shares if price drops below $210.00 with limit $209.50. Rationale: protect capital on deeper semi-sector breakdown.
+- **⚠️ STOP BREACHED — BROKER BLOCKED:** At 15:20Z, NVDA traded at $209.51 (below $210 trigger). SELL 2 @ limit $209.50 was submitted and rejected by Alpaca with HTTP 403. Position shows `qty_available: 0`. Tactical cannot re-attempt without fresh hourly authorization.
 - Do NOT add NVDA today.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY TODAY
@@ -90,13 +91,13 @@ Do not place market orders for these; use limit orders only, or defer.
    - NVDA only if it pulls back to $208–$210 with strong volume support (NOT a blind dip buy).
    - GOOG only if it reclaims $375 with volume.
 
-## Expected Book Into Close (No Trades)
-- QQQ 6 (~43.2%), VOO 2 (~13.7%), NVDA 2 (~4.2%)
-- Cash: ~$3,936 (~39.0%)
-- Gross exposure: ~61.0%
+## Expected Book Into Close
+- QQQ 6 (~43.1%), VOO 2 (~13.7%), NVDA 2 (~4.2%) — NVDA exit blocked by broker
+- Cash: ~$3,936 (~39.1%)
+- Gross exposure: ~60.9%
 
 ## Next Hourly Preview — 15:35Z (11:35 AM ET)
-- Monitor NVDA $210 stop proximity.
+- **URGENT:** NVDA $210 stop breached but Alpaca blocked sale (403, qty_available 0). Hourly must decide: retry sell, adjust stop lower, or hold through broker hold.
 - Reassess QQQ/VOO stop levels if market accelerates lower on jobs-report follow-through.
 - Verify no tactical agent attempts unauthorized AVGO/SOXX re-buys after cooldown expiry.
 - Evaluate whether semi-sector weakness is broadening to QQQ components.
