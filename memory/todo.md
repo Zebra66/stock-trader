@@ -1,28 +1,28 @@
-# Tactical Todo — Updated 2026-06-05 16:35Z (Friday 12:35 PM ET)
+# Tactical Todo — Updated 2026-06-05 17:35Z (Friday 1:35 PM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** defensive (30–50% band, currently at 49.4%)
 - **Live book:** QQQ 5, VOO 2. NVDA 0 (sold). SOXX 0, AVGO 0, GOOG 0.
-- **Account equity / cash / buying power:** ~$10,026 / ~$5,071 / ~$30,193
+- **Account equity / cash / buying power:** ~$10,021 / ~$5,071 / ~$30,184
 - **Gross long exposure:** ~49.4% | **Net exposure:** ~49.4% | **Cash:** ~50.6%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. ~3h 25m to close. Next hourly: 17:35Z (1:35 PM ET).
-- **Macro context:** May jobs report (+172K, unemployment 4.3%) came in strong at 8:30 AM ET. Headlines confirm hawkish Fed fears. Tech/growth selling off. Rotation session, not dip-buying opportunity.
+- **Market:** OPEN until 16:00 ET. ~2h 25m to close. Next hourly: Monday June 8, 09:30 ET.
+- **Macro context:** May jobs report (+172K, unemployment 4.3%) came in strong at 8:30 AM ET. Headlines confirm hawkish Fed fears. Tech/growth selling off. GOOG cloud layoffs reported. NVDA "Cisco bubble warning" headline. Rotation session, not dip-buying opportunity.
 
-## Position Instructions — Fri Jun 5 (:40, :50, and :10/:20/:30 Tactical Runs)
+## Position Instructions — Fri Jun 5 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 5 — DO NOT ADD — DO NOT SELL TODAY
-- Weight ~35.8%, within 45% cap.
-- Intraday –3.23%. Core liquid growth. Prior defensive stop $720.00 triggered and executed at 16:11Z.
-- **NO new intraday stop today.** Hourly explicitly does NOT authorize a QQQ sell today. Rationale: avoid Friday afternoon whipsaw in a risk-off tape. Core position still profitable (+2.25% unrealized).
+- Weight ~35.7%, within 45% cap.
+- Intraday ~–3.3%. Core liquid growth. Prior defensive stop $720.00 triggered and executed at 16:11Z.
+- **NO new intraday stop today.** Hourly explicitly does NOT authorize a QQQ sell today. Rationale: avoid Friday afternoon whipsaw in a risk-off tape. Core position still profitable (+2.13% unrealized).
 - Do NOT add QQQ today. Below target allocation; hourly will reassess Monday.
 
 ### VOO — HOLD 2 — DO NOT ADD
-- Weight ~13.6%, within 20% non-QQQ ETF cap.
-- Broad-market anchor. Intraday –1.73%. Stable relative to tech.
+- Weight ~13.7%, within 20% non-QQQ ETF cap.
+- Broad-market anchor. Intraday ~–1.7%. Stable relative to tech.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $680.00 with limit $679.50. Rationale: trim anchor on severe broad-market breakdown.
 - Do NOT add VOO today. 3 shares would breach ~20.5% cap at current prices.
 
@@ -35,17 +35,17 @@
 ### AVGO — DO NOT BUY — DO NOT RE-BUY TODAY
 - Fully exited June 4 at $405.16. 24-hour cooldown EXPIRED at ~13:45Z today (June 5).
 - Even after cooldown expiry, hourly explicitly does NOT authorize re-entry today.
-- Post-earnings freefall to $393.72. Hawkish jobs report adds macro headwind. Too early to catch knife.
+- Post-earnings freefall to ~$395.64. Hawkish jobs report adds macro headwind. Too early to catch knife.
 - Defer re-entry evaluation to Monday June 8 hourly.
 
 ### SOXX — DO NOT BUY — DO NOT RE-BUY TODAY
 - Fully exited June 4 (last fill ~15:19Z). 24-hour cooldown EXPIRED at ~15:19Z today (June 5).
 - Even after cooldown expiry, hourly explicitly does NOT authorize re-entry today.
-- Sector down ~7.64% today. Wait for stabilization.
+- Sector down ~7.6%+ today. Wait for stabilization.
 - Defer re-entry evaluation to Monday June 8 hourly.
 
 ### GOOG — DO NOT BUY
-- Support $375–$380 broken. Price ~$367.47. Weak 1M/1W.
+- Support $375–$380 broken. Price ~$366.58. Cloud division layoffs reported (negative catalyst).
 - No re-entry until it reclaims $375 with volume and holds for at least 30 minutes.
 - Do NOT buy GOOG today.
 
@@ -78,7 +78,7 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **VOO:** TradeCount 16, Volume 226 at 16:34Z — thin. Use limit orders only.
+- **VOO:** TradeCount 9, Volume 301 at 17:30Z — thin. Use limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
@@ -93,13 +93,12 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $375 with volume.
 
 ## Expected Book Into Close
-- QQQ 5 (~35.8%), VOO 2 (~13.6%)
+- QQQ 5 (~35.7%), VOO 2 (~13.7%)
 - Cash: ~$5,071 (~50.6%)
 - Gross exposure: ~49.4%
 
-## Next Hourly Preview — 17:35Z (1:35 PM ET)
-- HOLD QQQ 5 and VOO 2. No new QQQ stop today.
-- Monitor VOO $680 stop. Price $684.11 — comfortable buffer.
-- Verify no tactical agent attempts unauthorized AVGO/SOXX/NVDA re-buys.
-- Evaluate whether semi-sector weakness is broadening to QQQ components.
-- Reassess gross exposure target. Currently at ~49.4% (within 30-50% defensive band).
+## Next Hourly Preview — Monday June 8, 09:35 ET
+- Reassess QQQ 5 and VOO 2 after weekend news.
+- Evaluate whether semi-sector weakness has stabilized.
+- Review NVDA 24h cooldown status (expires ~15:38Z Mon).
+- Deploy cash if tape stabilizes and high-probability setup emerges.
