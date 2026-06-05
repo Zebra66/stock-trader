@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 14:37 : [hourly] Goal 1 breached, hold all positions
+- Equity ,983.58 (-0.16% since inception)
+- SPY +3.15% since baseline; trailing by ~3.3 pp
+- HOLD QQQ 5 and VOO 2, no new adds authorized
+- VOO stop 80 active, QQQ no stop today
+- Reassess Monday after weekend news
+
+2026-06-05 : 14:30 : [tactical] No action; holds above stops
+- VOO 81.22 above 80 stop; no trigger
+- QQQ hold 5; no sell authorized
+- Defensive regime; no buys authorized
+- Event detector NONE; normal mode
+- Daytrade 0/3; no PDT concern
+
+2026-06-05 : 14:20 : [tactical] No triggers; hold QQQ VOO
+- VOO at ~81.65, above 80 stop — no sell
+- QQQ at ~11.55, hold authorized — no sell
+- No buy conditions met; all symbols DO NOT BUY/DO NOT ADD
+- Event detector: NONE
+- No orders placed
+
+2026-06-05 : 14:10 : [tactical] No action: all holds, no triggers
+- VOO 83.33 above 80 stop — no breach
+- QQQ hold 5, no stop active today
+- Defensive regime; no buy authorizations
+- Event detector: MINOR only
+
+2026-06-05 : 13:50 : [tactical] No action; holds steady, VOO above stop
+- Event detector MINOR — SOXX/SMH slight weakness only
+- VOO 84.19, well above 80 defensive stop
+- QQQ 15.32, no sell authorized today
+- Defensive regime; no buys authorized, exposure 49.4%
+- Zero orders, zero daytrades used
+
+2026-06-05 : 13:40 : [hourly] Defensive hold, no trades, reassess Mon
+- Equity 0,021, gross 49.4%, daytrade 0/3
+- HOLD QQQ 5 and VOO 2; no new stops or adds authorized
+- Jobs report hawkish rotation; GOOG cloud layoffs; NVDA bubble warning headline
+- No unauthorized trades; no open orders since 16:11Z QQQ stop
+- Monday deployment queue: QQQ, VOO, NVDA if tape stabilizes
+
 2026-06-05 : 13:40 : [tactical] No action; all holds valid
 - VOO 84.27 above 80 stop, no breach
 - QQQ HOLD 5, no sell authorized today
