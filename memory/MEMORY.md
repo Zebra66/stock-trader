@@ -1,5 +1,14 @@
 # Hourly Macro Memory
-*Updated 2026-06-05 18:35Z (Friday 2:35 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+*Updated 2026-06-05 18:50Z (Friday 2:50 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+
+## Tactical Execution Summary — 2026-06-05 18:50Z
+- **Action:** SOLD 1 VOO @ $679.66 (market order) — defensive stop triggered at $679.16 below $680.00 threshold.
+- **Why:** Hourly explicitly authorized trimming broad-market anchor on severe breakdown. Limit $679.50 was above market; market order used per stop-loss execution rule.
+- **Result:** Remaining book: QQQ 5, VOO 1. Cash ~$5,751. Gross exposure drops from ~49.2% to ~42.4%. VOO weight now ~6.8%.
+- **Daytrade impact:** 0/3 (position held overnight).
+- **Next expected action:** HOLD QQQ 5 and VOO 1 into close. No new orders. Reassess Monday.
+
+---
 
 ## Hourly Cycle Summary — 2026-06-05 18:35Z
 - **Status:** Market OPEN. ~1h 25m to close. Next open: Monday June 8, 09:30 ET.

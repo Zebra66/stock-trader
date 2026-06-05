@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 14:51 : [tactical] Sold 1 VOO stop 80
+- VOO breached 80.00 defensive stop; market order filled 79.66
+- Remaining: QQQ 5, VOO 1; gross exposure ~42.4%
+- No PDT impact; daytrade count 0/3
+- Risk-off rotation into close; no further orders
+
+2026-06-05 : 14:40 : [tactical] No action; holds above stops
+- VOO 80.88 above 80 stop; no sell triggered
+- QQQ hold authorized, no stop set today
+- Defensive regime, 49.2% gross, no adds authorized
+- Event detector NONE, all OK
+- Daytrade 0/3, no open orders, ~1h20m to close
+
 2026-06-05 : 14:37 : [hourly] Goal 1 breached, hold all positions
 - Equity ,983.58 (-0.16% since inception)
 - SPY +3.15% since baseline; trailing by ~3.3 pp

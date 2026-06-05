@@ -2,8 +2,9 @@
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
 
 ## Current State
-- **Regime:** defensive (30–50% band, currently at 49.2%)
-- **Live book:** QQQ 5, VOO 2. NVDA 0 (sold). SOXX 0, AVGO 0, GOOG 0.
+- **Regime:** defensive (30–50% band, currently at ~42.4%)
+- **Live book:** QQQ 5, VOO 1. NVDA 0 (sold). SOXX 0, AVGO 0, GOOG 0.
+- **VOO stop executed:** Sold 1 VOO @ $679.66 (market) at 18:50Z after price breached $680.00.
 - **Account equity / cash / buying power:** ~$9,984 / ~$5,071 / ~$30,109
 - **Gross long exposure:** ~49.2% | **Net exposure:** ~49.2% | **Cash:** ~50.8%
 - **Daytrade count:** 0/3
@@ -20,11 +21,10 @@
 - **NO new intraday stop today.** Hourly explicitly does NOT authorize a QQQ sell today. Rationale: avoid Friday afternoon whipsaw in a risk-off tape. Core position still profitable (+1.29% unrealized).
 - Do NOT add QQQ today. Below target allocation; hourly will reassess Monday.
 
-### VOO — HOLD 2 — DO NOT ADD
-- Weight ~13.6%, within 20% non-QQQ ETF cap.
-- Broad-market anchor. Intraday ~–2.17%. Stable relative to tech.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $680.00 with limit $679.50. Rationale: trim anchor on severe broad-market breakdown.
-- Do NOT add VOO today. 3 shares would breach ~20.5% cap at current prices.
+### VOO — HOLD 1 — DO NOT ADD
+- Weight ~6.8%, within 20% non-QQQ ETF cap.
+- Broad-market anchor trimmed on breakdown. Defensive stop executed at 18:50Z.
+- Do NOT add VOO today. 2 shares would breach ~20.5% cap at current prices.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY TODAY
 - STOPPED OUT at 15:38Z. Sold 2 @ $207.80 limit.
@@ -93,9 +93,9 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $375 with volume.
 
 ## Expected Book Into Close
-- QQQ 5 (~35.6%), VOO 2 (~13.6%)
-- Cash: ~$5,071 (~50.8%)
-- Gross exposure: ~49.2%
+- QQQ 5 (~35.6%), VOO 1 (~6.8%)
+- Cash: ~$5,751 (~57.7%)
+- Gross exposure: ~42.4%
 
 ## Next Hourly Preview — Monday June 8, 09:35 ET
 - Reassess QQQ 5 and VOO 2 after weekend news.
