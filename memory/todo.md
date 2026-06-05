@@ -1,4 +1,5 @@
 # Tactical Todo — Updated 2026-06-05 13:35Z (Friday 9:35 AM ET)
+<!-- Autonomous override applied at 2026-06-05 13:50Z due to MAJOR event (SOXX –1.27% in 10 min). Held positions above stops; no sells executed. -->
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
 
 ## Current State

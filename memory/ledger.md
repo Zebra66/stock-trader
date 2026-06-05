@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 09:50 : [tactical] MAJOR SOXX event, no action
+- Event detector MAJOR: SOXX -1.27% in 10 min
+- Held positions NVDA/QQQ/VOO all OK, above stops
+- No protective sells executed — SOXX not held
+- No buys active; all lines already DO NOT BUY
+
 2026-06-05 : 09:44 : [hourly] Neutral hold, no adds, repo breach fixed
 - Regime neutral 60-70% due to semi risk-off (AVGO -10% 1W, SOXX -5% today)
 - No buys: AVGO/SOXX on 24h cooldown, GOOG broken support 75, NVDA anti-churn
