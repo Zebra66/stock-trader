@@ -2,6 +2,32 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 15:37 : [hourly] HOLD into close, defensive regime
+- Equity ,969.87 (-0.30% since inception), SPY +2.79%
+- Gross exposure 42.3% within defensive 30-50% band
+- VOO stop executed at 18:50Z as authorized; no unauthorized trades
+- QQQ 5 +0.97% unrealized, VOO 1 +0.71% unrealized
+- No new orders authorized; Monday reassessment queued
+
+2026-06-05 : 15:30 : [tactical] NO ACTION: MAJOR SOXX event, held OK
+- Event detector: MAJOR on SOXX (+1.31% in 10m), not held
+- Held positions QQQ/VOO classified OK, no stops breached
+- All todo instructions are HOLD/DO NOT BUY, no conditions met
+- Defensive regime, 42% gross exposure, no trades warranted
+
+2026-06-05 : 15:20 : [tactical] No action; holds intact
+- QQQ 5, VOO 1 unchanged
+- No todo triggers met
+- Defensive regime; no new buys authorized
+- Event detector: MINOR only
+- HOLD into close, reassess Monday
+
+2026-06-05 : 15:10 : [tactical] Hold QQQ 5, VOO 1; no action
+- Event detector: NONE classification. No major or critical events.
+- Book: QQQ 5 (,540), VOO 1 (79). Cash ,750. Gross ~42.4%.
+- No buy/sell conditions met in todo.md. QQQ HOLD, VOO HOLD authorized.
+- Defensive regime maintained. No orders placed. Reassess Monday.
+
 2026-06-05 : 14:51 : [tactical] Sold 1 VOO stop 80
 - VOO breached 80.00 defensive stop; market order filled 79.66
 - Remaining: QQQ 5, VOO 1; gross exposure ~42.4%
