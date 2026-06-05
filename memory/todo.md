@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-06-05 14:35Z (Friday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-05 15:40Z (Friday 11:40 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** neutral (60–70% band)
-- **Live book:** QQQ 6, VOO 2, NVDA 2 (qty_available 0 — broker hold). SOXX 0, AVGO 0, GOOG 0.
-- **Account equity / cash / buying power:** ~$10,072 / ~$3,936 / ~$28,016
-- **Gross long exposure:** ~60.9% | **Net exposure:** ~60.9% | **Cash:** ~39.1%
+- **Live book:** QQQ 6, VOO 2. NVDA 0 (sold, stop filled). SOXX 0, AVGO 0, GOOG 0.
+- **Account equity / cash / buying power:** ~$10,048 / ~$4,352 / ~$28,016
+- **Gross long exposure:** ~56.6% | **Net exposure:** ~56.6% | **Cash:** ~43.3%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -26,14 +26,10 @@
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $680.00 with limit $679.50. Rationale: trim anchor on severe broad-market breakdown.
 - Do NOT add VOO today. 3 shares would breach ~20.5% cap.
 
-### NVDA — HOLD 2 — DO NOT ADD TODAY
-- Weight ~4.2%, within 15% single-stock cap.
-- Unrealized –2.88% from avg $218.11. Intraday –3.12% in sympathy with semi selloff + jobs report hawkish fears.
-- Best 1-week momentum among chip names (+0.51% 1W).
-- **ANTI-CHURN / NEVER AVERAGE DOWN:** DO NOT add to NVDA today. Current price $211.84 is below our avg entry $218.11. Adding would average down and violate standing learning.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all NVDA shares if price drops below $210.00 with limit $209.50. Rationale: protect capital on deeper semi-sector breakdown.
-- **⚠️ STOP BREACHED — BROKER BLOCKED:** At 15:20Z, NVDA traded at $209.51 (below $210 trigger). SELL 2 @ limit $209.50 was submitted and rejected by Alpaca with HTTP 403. Position shows `qty_available: 0`. Tactical cannot re-attempt without fresh hourly authorization.
-- Do NOT add NVDA today.
+### NVDA — SOLD — DO NOT RE-BUY TODAY
+- **STATUS: STOP FILLED.** 2 shares sold at ~$207.80. Position closed. Realized loss ~$20.60 from avg entry $218.11.
+- **Do NOT re-buy NVDA today.** 24-hour cooldown applies from ~15:20Z sell time.
+- Defer re-entry evaluation to Monday June 8 hourly.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY TODAY
 - Fully exited June 4 at $405.16. 24-hour cooldown EXPIRED at ~13:45Z today (June 5).
@@ -60,7 +56,7 @@
 - Exception: None. Hourly explicitly does NOT authorize buys for any of these today.
 
 ## Hard Rules / No-Trade Conditions
-- **No discretionary buys this cycle.** Gross exposure is 61.0%; adding any share pushes toward the 70% upper bound of neutral band, but no add candidate meets quality threshold today in a hawkish-jobs-report tape.
+- **No discretionary buys this cycle.** Gross exposure is 56.6%; below neutral band but no add candidate meets quality threshold today in a hawkish-jobs-report tape.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
@@ -92,12 +88,12 @@ Do not place market orders for these; use limit orders only, or defer.
    - GOOG only if it reclaims $375 with volume.
 
 ## Expected Book Into Close
-- QQQ 6 (~43.1%), VOO 2 (~13.7%), NVDA 2 (~4.2%) — NVDA exit blocked by broker
-- Cash: ~$3,936 (~39.1%)
-- Gross exposure: ~60.9%
+- QQQ 6 (~43.0%), VOO 2 (~13.7%). NVDA 0.
+- Cash: ~$4,352 (~43.3%)
+- Gross exposure: ~56.6%
 
 ## Next Hourly Preview — 15:35Z (11:35 AM ET)
-- **URGENT:** NVDA $210 stop breached but Alpaca blocked sale (403, qty_available 0). Hourly must decide: retry sell, adjust stop lower, or hold through broker hold.
+- NVDA stop filled. Book now QQQ + VOO only. Exposure 56.6% is below neutral band; hourly must decide whether to redeploy Monday or stay defensive.
 - Reassess QQQ/VOO stop levels if market accelerates lower on jobs-report follow-through.
 - Verify no tactical agent attempts unauthorized AVGO/SOXX re-buys after cooldown expiry.
 - Evaluate whether semi-sector weakness is broadening to QQQ components.

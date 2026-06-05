@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-05 : 11:40 : [tactical] NVDA stop filled, no new action
+- Prior NVDA stop order filled between cycles, position cleared
+- QQQ 20.55 above 20 stop, no action
+- VOO 86.60 above 80 stop, no action
+- Gross exposure 56.6%, below 60-70% neutral band
+- No buy triggers met, all adds explicitly prohibited
+
+2026-06-05 : 11:30 : [tactical] NVDA stop breached, blocked, hold
+- NVDA 08.74 < 10 stop triggered
+- Broker qty_available 0, prior 403 rejection at 15:20Z
+- Hourly note forbids re-attempt without fresh auth
+- QQQ 22.44, VOO 87.51 stable; no triggers
+- No orders placed this cycle
+
 2026-06-05 : 11:23 : [tactical] NVDA stop breached, broker blocked
 - NVDA 09.51 breached 10 stop at 15:20Z
 - SELL 2 @ limit 09.50 rejected by Alpaca (HTTP 403)
