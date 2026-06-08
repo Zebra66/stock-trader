@@ -4,28 +4,37 @@
 ## Hourly Cycle Summary — 2026-06-08 18:41Z (Monday 2:41 PM ET)
 - **Status:** Market OPEN. Sixth hourly run. ~75 minutes to close. Next tactical: 18:50Z, 19:10Z, 19:20Z, 19:30Z, 19:40Z, 19:50Z. Next hourly: 19:35Z (3:35 PM ET).
 - **Repo integrity:** CRITICAL BREACH DETECTED and RESOLVED. Working-tree `MEMORY.md`, `todo.md`, `ledger.md`, `src/tools/*`, and `prompts/*` were all reverted to May 29 state while HEAD contained correct June 8 commits. Restored all files from HEAD via `git checkout HEAD --`. `.gitignore` was also missing; restored. Root cause: concurrent agent or process overwrote working tree after tactical execution.
-- **Live broker refresh:** Equity **$10,022.27** | Cash $3,774.36 | Long $6,247.91 | Gross **62.3%** | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6, VOO 2, SOXX 1. NVDA 0, AVGO 0, GOOG 0, META 0.
-- **Open orders:** SOXX limit buy 1 @ $570.00 (Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64). Status: new, not filled.
-- **Filled trades since 17:35Z:** NONE. Tactical cycles at 17:40Z, 17:50Z, 18:10Z, 18:20Z, 18:30Z — no fills. No unauthorized orders detected.
-- **Goal check:** Portfolio **+0.22%** since inception ($10,022.27 vs $10,000). **Goal 1 MET.** SPY **+3.20%** since baseline ($740.98 vs $718.01). **Goal 2 FAILED by ~2.98 pp.**
+- **Live broker refresh:** Equity **$9,995.76** | Cash $3,204.42 | Long $6,791.34 | Gross **67.9%** | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6, VOO 2, SOXX 2. NVDA 0, AVGO 0, GOOG 0, META 0.
+- **Open orders:** NONE.
+- **Filled trades since 17:35Z:** SOXX limit buy 1 @ ~$570.00 (Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64). Tactical cycles at 17:40Z, 17:50Z, 18:10Z, 18:20Z, 18:30Z, 18:50Z, 19:10Z — no other fills. No unauthorized orders detected.
+- **Goal check:** Portfolio **-0.04%** since inception ($9,995.76 vs $10,000). **Goal 1 NOT MET.** SPY **+2.96%** since baseline ($739.29 vs $718.01). **Goal 2 FAILED by ~3.00 pp.**
 - **Regime:** **OFFENSIVE CATCH-UP** (60–90% gross target). Exposure 62.3% — in band but at low end. Cash drag remains the structural gap vs SPY.
 - **1D/1W/2W review:** Today +0.69% vs SPY +0.49% → outperf +0.20 pp. 1W –1.76% vs SPY –2.15% → outperf +0.39 pp. 2W +0.32% vs SPY –0.22% → outperf +0.54 pp. Momentum is positive but insufficient to close the 2.98 pp inception gap without higher exposure.
 - **Event detector 18:40Z:** Classification **NONE**. All held positions OK. `priorTimestamp: null` persists — snapshot file bug still active.
 
 ---
 
+## Tactical Execution — 2026-06-08 19:20Z
+- **SOXX limit buy 1 @ $570.00 FILLED** between 18:41Z and 19:20Z. Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64.
+- **No open orders remaining.** All resting orders cleared.
+- **No sell triggers breached.** QQQ, VOO, SOXX all held.
+- **No new orders placed this cycle.**
+- **Event detector 19:20Z:** Classification NONE. Normal mode.
+
+---
+
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $705.4467 | $718.28 | $4,309.68 | 43.0% | +$77.00 | +1.82% |
-| VOO | 2 | $678.7025 | $681.23 | $1,362.46 | 13.6% | +$5.06 | +0.37% |
-| SOXX | 1 | $573.11 | $575.58 | $575.58 | 5.7% | +$2.47 | +0.43% |
-| Cash | — | — | — | $3,774.36 | 37.6% | — | — |
-| **Equity** | — | — | — | **$10,022.27** | **100%** | — | **+0.22%** |
+| QQQ | 6 | $705.4467 | $715.38 | $4,292.28 | 42.9% | +$59.60 | +1.41% |
+| VOO | 2 | $678.7025 | $679.70 | $1,359.40 | 13.6% | +$2.00 | +0.15% |
+| SOXX | 2 | $571.525 | $569.83 | $1,139.66 | 11.4% | -$3.39 | -0.30% |
+| Cash | — | — | — | $3,204.42 | 32.1% | — | — |
+| **Equity** | — | — | — | **$9,995.76** | **100%** | — | **-0.04%** |
 
-- **Gross long exposure:** 62.3%
-- **Net exposure:** 62.3%
+- **Gross long exposure:** 67.9%
+- **Net exposure:** 67.9%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 

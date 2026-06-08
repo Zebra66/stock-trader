@@ -2,6 +2,32 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 15:22 : [tactical] SOXX 70 limit filled
+- SOXX limit buy 1 @ 70 filled between 18:41Z-19:20Z
+- Book now 67.9% gross, no open orders
+- No sell triggers, no new orders placed
+- Event detector NONE, normal mode
+
+2026-06-08 : 15:10 : [tactical] No triggers; SOXX limit resting
+- SOXX limit buy 1 @ 70 not filled; price ~71.27
+- All positions stable; no sell triggers or authorizations active
+- Event detector MINOR (SOXX -0.63%); no response required
+- Gross exposure 62.3%; within offensive 60-90% band
+- No orders placed; awaiting 19:35Z hourly guidance
+
+2026-06-08 : 14:50 : [tactical] Hold: SOXX limit resting @ 570
+- Event detector: NONE. All held positions OK.
+- SOXX limit buy 1 @ 70 still open, price 75.01
+- No triggers met, no sells authorized, no new buys confirmed
+- Exposure 62.3%, regime offensive catch-up, in band
+- Daytrade 0/3, no PDT concerns
+
+2026-06-08 : 14:48 : [tactical] No action, SOXX limit resting
+- Event detector NONE at 18:47Z
+- SOXX limit buy 1 @ $570 unfilled; price $574.59
+- All held positions stable; no triggers breached
+- Exposure 62.3%, no PDT concerns
+
 2026-06-08 : 14:46 : [hourly] Repo breach fixed, SOXX 70 resting
 - Critical process breach: working tree reverted to May 29, restored from HEAD
 - SOXX limit buy 1 @ 70 open, not filled; NVDA below 10 threshold
