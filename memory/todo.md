@@ -8,7 +8,7 @@
 - **Gross long exposure:** ~56.6% | **Net exposure:** ~56.6% | **Cash:** ~43.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** SOXX limit buy 1 @ $573.50 (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Status: pending_new.
 - **Market:** OPEN until 16:00 ET. Next tactical: 16:40Z, 16:50Z. Next hourly: 17:35Z (1:35 PM ET).
 - **Macro context:** Monday rebound after Friday risk-off. SPY +0.61%, QQQ +2.0%, semis rebounding (SOXX +5.9%, AVGO +3.1%, NVDA +2.2%). Mideast tensions easing per Reuters but strikes continue. Event detector 16:35Z classification: NONE.
 
@@ -27,10 +27,11 @@
 
 ### SOXX — BUY 1 — LIMIT $573.50
 - **BUY 1 SOXX with limit order at $573.50.** Rationale: strongest 3M trend in universe (+70.55%); modest pullback entry after +5.9% gap-up avoids chasing.
-- Current price ~$575.14 — **above limit.** Wait for pullback. Do NOT use market order.
+- **LIMIT ORDER PLACED 1 SOXX @ $573.50** at 17:10Z (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Status: pending_new. Day order, expires at 20:00Z.
+- Current price ~$573.60 — **above limit.** Wait for pullback to fill. Do NOT use market order.
 - After fill: 1 share ~$573.50 = 5.7% of equity (within 20% ETF cap). Gross exposure rises to ~62.4%.
 - Stop: $565.00 (today's support area). Risk ~$8.50 = 0.08% of equity.
-- **If not filled by 15:55Z (3:55 PM ET):** Cancel order before close to avoid overnight risk.
+- **If not filled by 19:55Z (3:55 PM ET):** Cancel order before close to avoid overnight risk.
 - Do NOT sell SOXX (not held).
 
 ### NVDA — CONDITIONAL BUY 1 — LIMIT $210.50

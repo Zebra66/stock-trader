@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 13:11 : [tactical] Placed SOXX limit buy @ 573.50
+- SOXX price 573.60, placed limit 1 share at 573.50 per 16:35Z auth
+- Order ID 8165d6b7-1c01-4dc0-8cc8-526051e6afb6, pending_new
+- All 11 pre-trade checks passed, no PDT concerns
+- NVDA 208.27 below 210 threshold, no action
+- Event detector MINOR, no override needed
+
+2026-06-08 : 12:50 : [tactical] No action: limits not hit
+- SOXX 77.14 > 73.50 limit, no fill
+- NVDA 08.53 < 10 reclaim, no buy
+- QQQ/VOO hold, no sells triggered
+- Event detector: NONE, normal mode
+- Gross exposure 56.7%, below 60% target
+
+2026-06-08 : 12:40 : [tactical] No action: limits not reached
+- SOXX at 75.11, above 73.50 limit — no fill
+- NVDA at 08.31, below 10 reclaim — no buy
+- QQQ/VOO at caps, same-day protection active
+- Event detector: NONE, no override
+- Gross exposure 56.6%, awaiting pullback or breakout
+
 2026-06-08 : 12:38 : [hourly] Auth SOXX @573.50, NVDA @210.50
 - QQQ/VOO at caps. Need 60-90% exposure.
 - SOXX strongest trend +70.55% 3M; pullback entry.
