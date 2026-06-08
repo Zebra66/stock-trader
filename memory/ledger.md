@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 11:40 : [hourly] Offensive catch-up: QQQ add authorized
+- Regime shifted to offensive catch-up (60-90% gross target)
+- VOO fill confirmed at 83.48; now hold 2 VOO
+- BUY 1 QQQ authorized at limit 19.50 — highest priority
+- SOXX deferred: do not chase +5.8% intraday gap-up
+- Still trailing SPY by ~3.09 pp; cash drag remains dominant issue
+
+2026-06-08 : 11:40 : [tactical] No triggers met; holding
+- QQQ 21.05 above 20 buy trigger
+- SOXX 77.44 above 72 trigger
+- VOO add already filled, holding 2
+- Gross exposure 49.5%, no action needed
+- Event detector: NONE
+
 2026-06-08 : 11:31 : [tactical] VOO filled, no new trades
 - VOO limit 1 @ ~83.50 filled (ID c1b88336-190c-48c6-86be-5716a8e4c057), now hold 2 VOO
 - QQQ 20.27 > 20.00 threshold, deferred

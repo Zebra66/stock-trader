@@ -1,48 +1,48 @@
-# Tactical Todo — Updated 2026-06-08 15:30Z (Monday 11:30 AM ET)
+# Tactical Todo — Updated 2026-06-08 15:35Z (Monday 11:35 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
-- **Regime:** neutral (50–70% band, currently at ~49.5%)
+- **Regime:** offensive catch-up (60–90% band, currently at ~49.5%)
 - **Live book:** QQQ 5, VOO 2
-- **Account equity / cash / buying power:** ~$10,035 / ~$5,067 / ~$34,257
+- **Account equity / cash / buying power:** ~$10,027 / ~$5,067 / ~$34,156
 - **Gross long exposure:** ~49.5% | **Net exposure:** ~49.5% | **Cash:** ~50.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. Next hourly: 15:35Z (11:35 AM ET).
-- **Macro context:** Monday rebound after Friday risk-off. SPY +0.73%, QQQ +1.93%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters. Event detector classification: MINOR (SOXX –0.70%, SMH –0.64%).
+- **Market:** OPEN until 16:00 ET. Next hourly: 16:35Z (12:35 PM ET).
+- **Macro context:** Monday rebound after Friday risk-off. SPY +0.63%, QQQ +1.99%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters but strikes continue. Event detector classification: NONE.
 
 ## Position Instructions — Mon Jun 8 (:40, :50 Tactical Runs)
 
-### QQQ — HOLD 5 — AUTHORIZED ADD 1
-- Weight ~35.8%, within 45% cap. Adding 1 share brings QQQ to ~$4,312 = 43.0% (still within 45% cap).
-- Unrealized +2.28% from avg $702.64. Today +1.93%.
-- **BUY 1 QQQ if price is at or below $720.00 with limit $719.00.** Execute at 14:40Z or 14:50Z tactical run.
+### QQQ — HOLD 5 — AUTHORIZED ADD 1 (HIGHEST PRIORITY)
+- Weight ~35.8%, within 45% cap. Adding 1 share brings QQQ to ~$4,314 = 43.0% (still within 45% cap).
+- Unrealized +2.34% from avg $702.64. Today +1.99%.
+- **BUY 1 QQQ if price is at or below $720.00 with limit $719.50.** Execute at 15:40Z or 15:50Z tactical run.
 - Do NOT sell QQQ today.
 
-### VOO — HOLD 1 — AUTHORIZED ADD 1
-- Weight ~6.8%, within 20% non-QQQ ETF cap. Adding 1 share brings VOO to ~$1,366 = 13.6% (within 20% cap).
-- Unrealized +1.38% from avg $673.925. Today +0.77%.
-- **FILLED** — VOO limit order 1 @ ~$683.50 (Order ID: `c1b88336-190c-48c6-86be-5716a8e4c057`) has filled. Now hold 2 shares at avg ~$678.70.
-- Do NOT sell VOO today.
+### VOO — HOLD 2 — NO FURTHER ADDS
+- Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 more share would breach 20% cap (3 shares = ~20.4%).
+- Unrealized +0.55% from avg $678.70. Today +0.65%.
+- Prior VOO add filled today at $683.48. Do NOT sell VOO today (same-day round-trip prohibited).
 
 ### SOXX — DO NOT BUY — CONDITIONAL ADD 1 (LOWEST PRIORITY)
-- **BUY 1 SOXX if ALL of the following are true:** (1) VOO and QQQ add orders are already confirmed filled, AND (2) price is at or below $572.00 with limit $571.50, AND (3) price is above $568.00.
-- If SOXX gaps above $572, do NOT chase. Defer to next hourly.
+- **BUY 1 SOXX ONLY if ALL of the following are true:** (1) QQQ add order is already confirmed filled, AND (2) price drops to $572.50 or below with limit $572.50.
+- If SOXX stays above $572.50, do NOT chase. Defer to next hourly.
+- Rationale: SOXX is extended after +$14 intraday gap-up ($565 → $579). Do not buy into gap-up exhaustion.
 - Do NOT sell SOXX (not held).
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY TODAY
 - 24h cooldown from June 5 stop-out EXPIRED. Re-entry requires EXPLICIT hourly authorization.
-- Price ~$208.06, below the $210 reclaim threshold. Hourly does NOT authorize re-entry today.
+- Price ~$207.43, below the $210 reclaim threshold. Hourly does NOT authorize re-entry today.
 - Re-evaluate at next hourly if it reclaims $210 with volume.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY TODAY
-- Post-earnings freefall continues. 1W –13.61%. Bounce today is suspect.
+- Post-earnings freefall continues. 1W –13.55%. Bounce today is suspect after gap-up open.
 - Hourly explicitly does NOT authorize re-entry today.
 - Re-evaluate at next hourly only if it finds support above $400.
 
 ### GOOG — DO NOT BUY
-- Support $375 broken. Price ~$358.86. No re-entry until it reclaims $375 with volume and holds for 30 minutes.
+- Support $375 broken. Price ~$359.80. No re-entry until it reclaims $375 with volume and holds for 30 minutes.
 - Do NOT buy GOOG today.
 
 ### META — DO NOT BUY
@@ -62,12 +62,14 @@
 - **Open-order conflict check:** Run `get-orders --status open` before placing any order. If an unauthorized open order exists for the same symbol, cancel it immediately before proceeding.
 - **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
 - **Data quality check:** Is the broker quote confirmed by healthy volume (>10 trades)? If stale/abnormal, abort.
+- **PDT conservation:** With 0/3 daytrades, we have full flexibility, but conserve daytrades for true emergencies. Do NOT consume a daytrade on a small trim or speculative exit.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
 - Any single stock ≤ 15% of equity
 - Any non-QQQ ETF ≤ 20% of equity
 - If an order would breach any cap, it is REJECTED by `alpaca_cli.ts` and `alpaca_client_factory.ts`.
+- **Pre-computed caps this cycle:** QQQ max 6 shares (~43.0%); VOO max 2 shares (~13.6%, already at cap); SOXX max 3 shares (~17.2%).
 
 ## Symbol Ban Guard (Code-Enforced)
 - `memory/.trading_lock.json` contains `bannedSymbols: ["META"]`.
@@ -76,23 +78,27 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **VOO:** TradeCount 10, Volume 105 at 14:34Z — thin. Use limit orders only.
-- **SOXX:** TradeCount 17, Volume 1,090 at 14:34Z — acceptable for limit orders.
+- **VOO:** 6 trades, 244 vol at 15:31Z — thin. Use limit orders only.
+- **SOXX:** 11 trades, 1,021 vol at 15:34Z — acceptable for limit orders.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **VOO 1 share — highest priority, lowest risk. Limit $683.50.**
-2. **QQQ 1 share — second priority, core growth. Limit $719.00.**
-3. **SOXX 1 share — third priority, semi recovery. Limit $571.50. ONLY after VOO+QQQ fills confirmed.**
+1. **QQQ 1 share — highest priority, core growth. Limit $719.50.**
+2. **SOXX 1 share — third priority, semi recovery. Limit $572.50. ONLY if QQQ fill confirmed AND SOXX price drops to $572.50 or below. DO NOT CHASE.**
 
 ## Expected Book After All Adds
 - QQQ 6 (~43.0%), VOO 2 (~13.6%), SOXX 1 (~5.7%)
-- Cash: ~$3,749 (~37.4%)
+- Cash: ~$3,780 (~37.7%)
 - Gross exposure: ~62.3%
 
-## Next Hourly Preview — 15:35Z (11:35 AM ET)
+## If Only QQQ Adds (Most Likely)
+- QQQ 6 (~43.0%), VOO 2 (~13.6%)
+- Cash: ~$4,352 (~43.4%)
+- Gross exposure: ~56.6%
+
+## Next Hourly Preview — 16:35Z (12:35 PM ET)
 - Monitor chip-sector breadth (SOXX vs NVDA vs AVGO).
 - Evaluate NVDA if it reclaims $210.
 - Evaluate AVGO if it finds support above $400.
-- Reassess SOXX add if it did not fill at 14:40Z/14:50Z.
-- Event detector `priorTimestamp` bug remains — tactical agent should proceed with normal execution using current prices.
+- Reassess SOXX add if it did not fill at 15:40Z/15:50Z.
+- Event detector `priorTimestamp` bug — tactical agent should proceed with normal execution using current prices.
