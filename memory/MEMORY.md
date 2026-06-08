@@ -1,5 +1,17 @@
 # Hourly Macro Memory
-*Updated 2026-06-08 16:10Z (Monday 12:10 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+*Updated 2026-06-08 16:30Z (Monday 12:30 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+
+## Tactical Execution Summary — 16:30Z
+- **Action:** QQQ limit buy 1 @ $719.50 **FILLED** at 16:29Z (Order ID: `d84575d0-889d-462c-99b9-18421eee3c24`). Filled avg price $719.47.
+- **Trigger:** Prior tactical cycle (16:10Z) placed order on intraday pullback authorization. Discovered filled at 16:30Z cycle.
+- **Event detector 16:30Z:** Classification **MINOR** (SOXX -0.62%, SMH -0.54%). Held positions OK. No autonomous override applied.
+- **Open orders:** NONE.
+- **No other trades:** SOXX $575.34 did not meet $572.50 pullback threshold. VOO at cap. No sells.
+- **Post-fill state:** QQQ 6 shares, VOO 2 shares. Gross exposure 56.6%. Cash $4,347.
+- **Same-day round-trip guard:** QQQ share bought today at 16:29Z — **cannot sell QQQ today.** VOO bought today at 15:29Z — **cannot sell VOO today.**
+- **Pre-trade checklist:** No new orders to place. All conditions evaluated.
+
+---
 
 ## Tactical Execution Summary — 16:10Z
 - **Action:** Placed limit buy order for QQQ 1 share @ $719.50 (Order ID: `d84575d0-889d-462c-99b9-18421eee3c24`). Status: pending_new.
@@ -40,13 +52,13 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 5 | $702.642 | $719.09 | $3,595.45 | 35.8% | +$82.24 | +2.34% |
-| VOO | 2 | $678.7025 | $682.41 | $1,364.82 | 13.6% | +$7.42 | +0.55% |
-| Cash | — | — | — | $5,066.94 | 50.5% | — | — |
-| **Equity** | — | — | — | **$10,027.14** | **100%** | — | **+0.27%** |
+| QQQ | 6 | $705.4467 | $719.53 | $4,317.18 | 43.0% | +$84.50 | +1.99% |
+| VOO | 2 | $678.7025 | $682.52 | $1,365.04 | 13.6% | +$7.64 | +0.56% |
+| Cash | — | — | — | $4,347.47 | 43.4% | — | — |
+| **Equity** | — | — | — | **$10,029.69** | **100%** | — | **+0.30%** |
 
-- **Gross long exposure:** 49.5%
-- **Net exposure:** 49.5%
+- **Gross long exposure:** 56.6%
+- **Net exposure:** 56.6%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE

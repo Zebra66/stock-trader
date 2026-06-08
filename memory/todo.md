@@ -1,25 +1,24 @@
-# Tactical Todo — Updated 2026-06-08 16:10Z (Monday 12:10 PM ET)
+# Tactical Todo — Updated 2026-06-08 16:30Z (Monday 12:30 PM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
-- **Regime:** offensive catch-up (60–90% band, currently at ~49.5%)
-- **Live book:** QQQ 5, VOO 2
-- **Account equity / cash / buying power:** ~$10,032 / ~$5,067 / ~$34,171
-- **Gross long exposure:** ~49.5% | **Net exposure:** ~49.5% | **Cash:** ~50.5%
+- **Regime:** offensive catch-up (60–90% band, currently at ~56.6%)
+- **Live book:** QQQ 6, VOO 2
+- **Account equity / cash / buying power:** ~$10,030 / ~$4,347 / ~$33,300
+- **Gross long exposure:** ~56.6% | **Net exposure:** ~56.6% | **Cash:** ~43.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** QQQ limit buy 1 @ $719.50 (pending_new, ID: d84575d0-889d-462c-99b9-18421eee3c24)
+- **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET. Next hourly: 16:35Z (12:35 PM ET).
-- **Macro context:** Monday rebound after Friday risk-off. SPY +0.63%, QQQ +1.99%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters but strikes continue. Event detector classification: NONE.
+- **Macro context:** Monday rebound after Friday risk-off. SPY +0.63%, QQQ +1.99%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters but strikes continue. Event detector 16:30Z classification: MINOR (SOXX -0.62%).
 
 ## Position Instructions — Mon Jun 8 (:40, :50 Tactical Runs)
 
-### QQQ — HOLD 5 — LIMIT BUY 1 PLACED
-- Weight ~35.9%, within 45% cap. If filled, 6 shares = ~$4,320 = 43.1% (still within 45% cap).
-- Unrealized +2.46% from avg $702.64. Today +1.99%.
-- **LIMIT BUY 1 QQQ @ $719.50 PLACED at 16:10Z** (Order ID: d84575d0-889d-462c-99b9-18421eee3c24). Status: pending_new. Awaiting fill.
-- **Do NOT place duplicate QQQ order.** Next tactical run should check fill status before any new action.
-- Do NOT sell QQQ today.
+### QQQ — HOLD 6 — FILLED AT $719.47
+- Weight ~43.0%, within 45% cap. 6 shares = ~$4,317 = 43.0%.
+- Unrealized +1.99% from avg $705.45. Today +2.05%.
+- **LIMIT BUY 1 QQQ @ $719.50 FILLED at 16:29Z** (Order ID: d84575d0-889d-462c-99b9-18421eee3c24). Filled avg price $719.47.
+- **Do NOT sell QQQ today** (same-day round-trip prohibited; share bought today).
 
 ### VOO — HOLD 2 — NO FURTHER ADDS
 - Weight ~13.6%, within 20% non-QQQ ETF cap. Adding 1 more share would breach 20% cap (3 shares = ~20.4%).
@@ -27,8 +26,8 @@
 - Prior VOO add filled today at $683.48. Do NOT sell VOO today (same-day round-trip prohibited).
 
 ### SOXX — DO NOT BUY — CONDITIONAL ADD 1 (LOWEST PRIORITY)
-- **BUY 1 SOXX ONLY if ALL of the following are true:** (1) QQQ add order is already confirmed filled, AND (2) price drops to $572.50 or below with limit $572.50.
-- If SOXX stays above $572.50, do NOT chase. Defer to next hourly.
+- **BUY 1 SOXX ONLY if ALL of the following are true:** (1) QQQ add order is confirmed filled ✓, AND (2) price drops to $572.50 or below with limit $572.50.
+- Current price $575.34 — **above threshold.** Do NOT chase. Defer to next hourly.
 - Rationale: SOXX is extended after +$14 intraday gap-up ($565 → $579). Do not buy into gap-up exhaustion.
 - Do NOT sell SOXX (not held).
 

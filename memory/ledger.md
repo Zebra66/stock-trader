@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 12:31 : [tactical] QQQ limit buy 1 filled @ 719.47
+- QQQ limit buy 1 filled at 19.47 (order d84575d0)
+- Position now QQQ 6 shares, avg entry 05.45
+- Gross exposure 56.6%, cash ,347
+- SOXX 75.34 above 72.50 threshold, no chase
+- No PDT impact, daytrade count 0/3
+
+2026-06-08 : 12:20 : [tactical] No trades; QQQ order open
+- QQQ limit buy 1 @ 19.50 still open, price 21.49
+- SOXX 78.92 above 72.50 threshold, no trigger
+- NVDA 09.69 below 10 reclaim, no auth
+- Gross exposure 49.5%, offensive target 60-90%
+- No sells, no overrides, no daytrade risk
+
 2026-06-08 : 12:11 : [tactical] Placed QQQ limit buy 1 @ 719.50
 - QQQ price 19.99 met <= 20.00 trigger
 - Limit buy 1 @ 19.50 placed, order pending_new
