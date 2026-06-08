@@ -1,23 +1,24 @@
-# Tactical Todo — Updated 2026-06-08 15:35Z (Monday 11:35 AM ET)
+# Tactical Todo — Updated 2026-06-08 16:10Z (Monday 12:10 PM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band, currently at ~49.5%)
 - **Live book:** QQQ 5, VOO 2
-- **Account equity / cash / buying power:** ~$10,027 / ~$5,067 / ~$34,156
+- **Account equity / cash / buying power:** ~$10,032 / ~$5,067 / ~$34,171
 - **Gross long exposure:** ~49.5% | **Net exposure:** ~49.5% | **Cash:** ~50.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** QQQ limit buy 1 @ $719.50 (pending_new, ID: d84575d0-889d-462c-99b9-18421eee3c24)
 - **Market:** OPEN until 16:00 ET. Next hourly: 16:35Z (12:35 PM ET).
 - **Macro context:** Monday rebound after Friday risk-off. SPY +0.63%, QQQ +1.99%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters but strikes continue. Event detector classification: NONE.
 
 ## Position Instructions — Mon Jun 8 (:40, :50 Tactical Runs)
 
-### QQQ — HOLD 5 — AUTHORIZED ADD 1 (HIGHEST PRIORITY)
-- Weight ~35.8%, within 45% cap. Adding 1 share brings QQQ to ~$4,314 = 43.0% (still within 45% cap).
-- Unrealized +2.34% from avg $702.64. Today +1.99%.
-- **BUY 1 QQQ if price is at or below $720.00 with limit $719.50.** Execute at 15:40Z or 15:50Z tactical run.
+### QQQ — HOLD 5 — LIMIT BUY 1 PLACED
+- Weight ~35.9%, within 45% cap. If filled, 6 shares = ~$4,320 = 43.1% (still within 45% cap).
+- Unrealized +2.46% from avg $702.64. Today +1.99%.
+- **LIMIT BUY 1 QQQ @ $719.50 PLACED at 16:10Z** (Order ID: d84575d0-889d-462c-99b9-18421eee3c24). Status: pending_new. Awaiting fill.
+- **Do NOT place duplicate QQQ order.** Next tactical run should check fill status before any new action.
 - Do NOT sell QQQ today.
 
 ### VOO — HOLD 2 — NO FURTHER ADDS

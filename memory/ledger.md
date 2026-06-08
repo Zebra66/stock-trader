@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 12:11 : [tactical] Placed QQQ limit buy 1 @ 719.50
+- QQQ price 19.99 met <= 20.00 trigger
+- Limit buy 1 @ 19.50 placed, order pending_new
+- No SOXX add: price 77.28 > 72.50 threshold
+- No other conditions met this cycle
+- Event detector: NONE, all symbols OK
+
+2026-06-08 : 11:50 : [tactical] No triggers met; held QQQ/VOO
+- QQQ 20.68 above 20.00 buy trigger
+- SOXX 77.99 above 72.50 buy trigger
+- Gross exposure 49.5%, no sells authorized
+- Event detector NONE, daytrades 0/3
+- No action taken at 15:50Z
+
 2026-06-08 : 11:40 : [hourly] Offensive catch-up: QQQ add authorized
 - Regime shifted to offensive catch-up (60-90% gross target)
 - VOO fill confirmed at 83.48; now hold 2 VOO
