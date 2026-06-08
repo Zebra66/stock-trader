@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 13:20 : [tactical] SOXX limit buy 1 filled at 573.11
+- Order 8165d6b7-1c01-4dc0-8cc8-526051e6afb6 filled between 17:10Z and 17:20Z
+- No new orders placed this cycle
+- NVDA 207.86 below 210.50 threshold; no trigger
+- Gross exposure now 62.3% within 60-90% offensive band
+- Same-day round-trip guard active on QQQ, VOO, SOXX
+
 2026-06-08 : 13:11 : [tactical] Placed SOXX limit buy @ 573.50
 - SOXX price 573.60, placed limit 1 share at 573.50 per 16:35Z auth
 - Order ID 8165d6b7-1c01-4dc0-8cc8-526051e6afb6, pending_new

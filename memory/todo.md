@@ -2,13 +2,13 @@
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
-- **Regime:** offensive catch-up (60–90% band, currently at ~56.6%)
-- **Live book:** QQQ 6, VOO 2
-- **Account equity / cash / buying power:** ~$10,027 / ~$4,347 / ~$33,292
-- **Gross long exposure:** ~56.6% | **Net exposure:** ~56.6% | **Cash:** ~43.4%
+- **Regime:** offensive catch-up (60–90% band, currently at ~62.3%)
+- **Live book:** QQQ 6, VOO 2, SOXX 1
+- **Account equity / cash / buying power:** ~$10,012 / ~$3,774 / ~$32,562
+- **Gross long exposure:** ~62.3% | **Net exposure:** ~62.3% | **Cash:** ~37.7%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** SOXX limit buy 1 @ $573.50 (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Status: pending_new.
+- **Open orders:** NONE.
 - **Market:** OPEN until 16:00 ET. Next tactical: 16:40Z, 16:50Z. Next hourly: 17:35Z (1:35 PM ET).
 - **Macro context:** Monday rebound after Friday risk-off. SPY +0.61%, QQQ +2.0%, semis rebounding (SOXX +5.9%, AVGO +3.1%, NVDA +2.2%). Mideast tensions easing per Reuters but strikes continue. Event detector 16:35Z classification: NONE.
 
@@ -25,14 +25,12 @@
 - Unrealized +0.52% from avg $678.70. Today +0.63%.
 - Prior VOO add filled today at $683.48. Do NOT sell VOO today (same-day round-trip prohibited on the share bought today).
 
-### SOXX — BUY 1 — LIMIT $573.50
-- **BUY 1 SOXX with limit order at $573.50.** Rationale: strongest 3M trend in universe (+70.55%); modest pullback entry after +5.9% gap-up avoids chasing.
-- **LIMIT ORDER PLACED 1 SOXX @ $573.50** at 17:10Z (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Status: pending_new. Day order, expires at 20:00Z.
-- Current price ~$573.60 — **above limit.** Wait for pullback to fill. Do NOT use market order.
-- After fill: 1 share ~$573.50 = 5.7% of equity (within 20% ETF cap). Gross exposure rises to ~62.4%.
+### SOXX — HOLD 1 — FILLED AT $573.11
+- **LIMIT BUY 1 SOXX @ $573.50 FILLED** at avg price $573.11 (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Discovered filled at 17:20Z tactical cycle.
+- Weight ~5.7% of equity. Within 20% ETF cap.
+- Unrealized –0.13% from avg $573.11. Current price $572.31.
 - Stop: $565.00 (today's support area). Risk ~$8.50 = 0.08% of equity.
-- **If not filled by 19:55Z (3:55 PM ET):** Cancel order before close to avoid overnight risk.
-- Do NOT sell SOXX (not held).
+- **Do NOT sell SOXX today** (same-day round-trip prohibited; share bought today).
 
 ### NVDA — CONDITIONAL BUY 1 — LIMIT $210.50
 - **BUY 1 NVDA with limit order at $210.50 ONLY if price reclaims $210 with volume.** This is breakout confirmation, NOT anticipation.
@@ -90,7 +88,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **SOXX 1 share — highest priority, strongest trend. Limit $573.50.**
+1. ~~SOXX 1 share — highest priority, strongest trend. Limit $573.50.~~ **FILLED.**
 2. **NVDA 1 share — second priority, breakout confirmation. Limit $210.50.**
 
 ## Expected Book After All Adds
@@ -98,15 +96,15 @@ Do not place market orders for these; use limit orders only, or defer.
 - Cash: ~$3,126 (~31.2%)
 - Gross exposure: ~64.5%
 
-## If Only SOXX Adds (Most Likely)
+## Current Book (SOXX Filled)
 - QQQ 6 (~43.0%), VOO 2 (~13.6%), SOXX 1 (~5.7%)
-- Cash: ~$3,774 (~37.6%)
-- Gross exposure: ~62.4%
+- Cash: ~$3,774 (~37.7%)
+- Gross exposure: ~62.3%
 
-## If Neither Adds
-- QQQ 6 (~43.0%), VOO 2 (~13.6%)
-- Cash: ~$4,347 (~43.4%)
-- Gross exposure: ~56.6%
+## If NVDA Also Fills
+- QQQ 6 (~43.0%), VOO 2 (~13.6%), SOXX 1 (~5.7%), NVDA 1 (~2.1%)
+- Cash: ~$3,564 (~35.6%)
+- Gross exposure: ~64.4%
 
 ## Next Hourly Preview — 17:35Z (1:35 PM ET)
 - Monitor SOXX fill status and price action.
