@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 15:37 : [hourly] Hold into close, no new orders
+- Equity 0,003 (+0.03% inception), SPY +2.98%
+- Gross exposure 68%, in offensive-catch-up band
+- All positions bought today; no same-day sells authorized
+- SOXX pullback from +10.5% to +5.75%; do NOT chase
+- Tomorrow watchlist: SOXX add on 67 pullback, NVDA on 10 reclaim
+
+2026-06-08 : 15:30 : [tactical] No action; all holds stable
+- Event detector: NONE, all positions OK
+- SOXX limit 70 filled earlier; no open orders
+- All positions under same-day hold protection
+- No buy/sell triggers breached
+- Exposure 67.9%, in offensive band
+
 2026-06-08 : 15:22 : [tactical] SOXX 70 limit filled
 - SOXX limit buy 1 @ 70 filled between 18:41Z-19:20Z
 - Book now 67.9% gross, no open orders
