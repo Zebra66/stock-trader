@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 09:40 : [hourly] Neutral shift, deploy VOO/QQQ/SOXX
+- Stale-memory emergency detected and resolved
+- Repo restored to HEAD, unauthorized staged reverts rejected
+- Regime shifted defensive→neutral (50-70% target)
+- Deployment queue: VOO 1, QQQ 1, SOXX 1 with limit orders
+- Portfolio +0.17% vs SPY +3.39% — trailing 3.22 pp
+
 2026-06-05 : 15:37 : [hourly] HOLD into close, defensive regime
 - Equity ,969.87 (-0.30% since inception), SPY +2.79%
 - Gross exposure 42.3% within defensive 30-50% band
