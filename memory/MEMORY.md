@@ -114,6 +114,15 @@
 - **Portfolio heat:** Total heat minimal. No stops below entry.
 - **SPY benchmark:** $742.33 (confirmed via Yahoo Finance). Since baseline +3.39%.
 
+---
+
+## AUTONOMOUS OVERRIDE — 2026-06-08 13:40Z
+- **Classification:** CRITICAL (event detector at 13:40Z)
+- **Affected symbols:** QQQ (MAJOR), SOXX (CRITICAL), XLK (CRITICAL), SMH (CRITICAL)
+- **Action taken:** NO TRADES. Suspended all hourly-authorized buys (QQQ, VOO, SOXX) due to CRITICAL event flag.
+- **Rationale:** Event detector flagged CRITICAL classification between hourly (13:35Z) and tactical (13:40Z) runs. Tactical agent override authority invoked. Held positions QQQ and VOO are both marked OK by detector — no protective sells needed. Gross exposure remains at 42.6%. No new buys until next hourly reset clears the event.
+- **Next expected action:** Hourly strategist at 14:35Z must reassess with fresh event detector data and explicitly re-authorize any buys if classification improves.
+
 ## Standing Learnings
 See `memory/standing_learnings.md` for full archive. Key reminders:
 - Size from **account equity**, not raw buying power.

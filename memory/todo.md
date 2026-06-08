@@ -14,20 +14,20 @@
 
 ## Position Instructions — Mon Jun 8 (:40, :50 Tactical Runs)
 
-### QQQ — HOLD 5 — ADD 1 if condition met
+### QQQ — HOLD 5 — SUSPENDED — major event detected at 2026-06-08 13:40Z
 - Weight ~35.8%, within 45% cap. Adding 1 share brings QQQ to ~$4,301 = 42.9% (still within 45% cap).
 - Unrealized +2.02% from avg $702.64. Today +1.67%.
-- **BUY 1 QQQ if price is below $718.00 with limit $716.50.** Rationale: core growth add on stabilization. If price gaps above $718, do NOT chase; defer to next hourly.
+- ~~BUY 1 QQQ if price is below $718.00 with limit $716.50.~~ SUSPENDED — QQQ flagged MAJOR by event detector. Defer to next hourly.
 - Do NOT sell QQQ today.
 
-### VOO — HOLD 1 — ADD 1 if condition met
+### VOO — HOLD 1 — SUSPENDED — major event detected at 2026-06-08 13:40Z
 - Weight ~6.8%, within 20% non-QQQ ETF cap. Adding 1 share brings VOO to ~$1,365 = 13.6% (within 20% cap).
 - Unrealized +1.29% from avg $673.925. Today +0.68%.
-- **BUY 1 VOO if price is below $683.00 with limit $682.50.** Rationale: add broad-market anchor on stability. Lowest-risk deployment today.
+- ~~BUY 1 VOO if price is below $683.00 with limit $682.50.~~ SUSPENDED — broad market CRITICAL event detected. Defer to next hourly.
 - Do NOT sell VOO today.
 
-### SOXX — DO NOT BUY unless condition met
-- **BUY 1 SOXX if price is below $566.00 with limit $564.50.** Rationale: semi ETF recovery exposure. Today +5.04%. Limit order only; SOXX is thin.
+### SOXX — DO NOT BUY — SUSPENDED — major event detected at 2026-06-08 13:40Z
+- ~~BUY 1 SOXX if price is below $566.00 with limit $564.50.~~ SUSPENDED — SOXX flagged CRITICAL by event detector. Defer to next hourly.
 - If SOXX gaps above $566, do NOT chase. Defer to next hourly.
 - Do NOT sell SOXX (not held).
 
@@ -82,17 +82,19 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **VOO 1 share** — highest priority, lowest risk. Limit $682.50.
-2. **QQQ 1 share** — second priority, core growth. Limit $716.50.
-3. **SOXX 1 share** — third priority, semi recovery. Limit $564.50.
+1. ~~VOO 1 share — highest priority, lowest risk. Limit $682.50.~~ SUSPENDED due to CRITICAL event at 13:40Z.
+2. ~~QQQ 1 share — second priority, core growth. Limit $716.50.~~ SUSPENDED due to CRITICAL event at 13:40Z.
+3. ~~SOXX 1 share — third priority, semi recovery. Limit $564.50.~~ SUSPENDED due to CRITICAL event at 13:40Z.
 
 ## Expected Book After All Adds
-- QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 1 (~5.7%)
-- Cash: ~$3,784 (~37.8%)
-- Gross exposure: ~62.2%
+- All adds SUSPENDED due to CRITICAL event at 13:40Z.
+- Current book: QQQ 5 (~35.8%), VOO 1 (~6.8%)
+- Cash: ~$5,750 (~57.4%)
+- Gross exposure: ~42.6%
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET)
-- Reassess QQQ, VOO, SOXX adds if not yet filled.
+- **CRITICAL event detected at 13:40Z.** Hourly strategist must reassess before any suspended adds are re-authorized.
+- Reassess QQQ, VOO, SOXX adds ONLY if event detector classification improves to MINOR or NONE.
 - Evaluate NVDA if it reclaims $210.
 - Evaluate AVGO if it finds support above $400.
 - Monitor chip-sector breadth (SOXX vs NVDA vs AVGO).

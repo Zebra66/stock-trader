@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 09:41 : [tactical] CRITICAL event: all buys suspended
+- Event detector flagged CRITICAL at 13:40Z (QQQ MAJOR, SOXX/XLK/SMH CRITICAL)
+- No protective sells needed — held QQQ/VOO both OK
+- All hourly-authorized buys (QQQ, VOO, SOXX) suspended by tactical override
+- Gross exposure stays at 42.6%; no trades executed
+- Next hourly must reassess before re-authorizing any buys
+
 2026-06-08 : 09:40 : [hourly] Neutral shift, deploy VOO/QQQ/SOXX
 - Stale-memory emergency detected and resolved
 - Repo restored to HEAD, unauthorized staged reverts rejected
