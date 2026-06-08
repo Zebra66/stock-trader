@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 14:46 : [hourly] Repo breach fixed, SOXX 70 resting
+- Critical process breach: working tree reverted to May 29, restored from HEAD
+- SOXX limit buy 1 @ 70 open, not filled; NVDA below 10 threshold
+- Gross exposure 62.3% in 60-90% band; no new buys authorized
+- Goal 2 off track by 2.98 pp; 1D/1W/2W momentum positive vs SPY
+- Event detector priorTimestamp null bug persists
+
 2026-06-08 : 13:51 : [tactical] Placed SOXX limit 70 pullback
 - SOXX resting limit buy 1 @ 70.00 placed (current 76.27)
 - NVDA skipped: price 08.88 below 10 reclaim threshold
