@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 12:38 : [hourly] Auth SOXX @573.50, NVDA @210.50
+- QQQ/VOO at caps. Need 60-90% exposure.
+- SOXX strongest trend +70.55% 3M; pullback entry.
+- NVDA breakout confirmation only at 210.50.
+- Cash drag dominant failure mode; trailing SPY by ~3.07 pp.
+- No prompt changes; no code changes; no breaches.
+
 2026-06-08 : 12:31 : [tactical] QQQ limit buy 1 filled @ 719.47
 - QQQ limit buy 1 filled at 19.47 (order d84575d0)
 - Position now QQQ 6 shares, avg entry 05.45
