@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 13:39 : [hourly] SOXX filled, exposure 62%, auth NVDA+SOXX adds
+- SOXX limit buy 1 filled at 73.11 — gross exposure now 62.3% in band
+- Authorized limit buy SOXX 1 @ 70 (scale-in) and NVDA 1 @ 10.50 (breakout)
+- QQQ 6 and VOO 2 at caps; no further adds possible
+- Goal 2 still failing by ~3.01 pp; need sustained outperformance
+- Event detector NONE; no open orders; 0 daytrades used
+
+2026-06-08 : 13:30 : [tactical] No conditions met, held all
+- NVDA 08.62 below 10 reclaim threshold — no buy triggered
+- QQQ/VOO/SOXX same-day round-trip protection active — no sells
+- Gross exposure 62.4% within 60–90% offensive band
+- Event detector MINOR (SOXX +0.54%) — no override
+- Daytrades 0/3, no PDT concerns, zero orders placed
+
 2026-06-08 : 13:20 : [tactical] SOXX limit buy 1 filled at 573.11
 - Order 8165d6b7-1c01-4dc0-8cc8-526051e6afb6 filled between 17:10Z and 17:20Z
 - No new orders placed this cycle
