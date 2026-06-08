@@ -8,7 +8,7 @@
 - **Gross long exposure:** ~42.6% | **Net exposure:** ~42.6% | **Cash:** ~57.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** VOO buy limit 1 @ $683.50 (placed 14:50Z)
 - **Market:** OPEN until 16:00 ET. Next hourly: 15:35Z (11:35 AM ET).
 - **Macro context:** Monday rebound after Friday risk-off. SPY +0.73%, QQQ +1.93%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters. Event detector classification: NONE.
 
@@ -23,7 +23,7 @@
 ### VOO — HOLD 1 — AUTHORIZED ADD 1
 - Weight ~6.8%, within 20% non-QQQ ETF cap. Adding 1 share brings VOO to ~$1,366 = 13.6% (within 20% cap).
 - Unrealized +1.38% from avg $673.925. Today +0.77%.
-- **BUY 1 VOO if price is at or below $684.00 with limit $683.50.** Execute at 14:40Z or 14:50Z tactical run.
+- **BUY 1 VOO — ORDER PLACED at limit $683.50.** Order ID: `c1b88336-190c-48c6-86be-5716a8e4c057`. Status: `pending_new`. Awaiting fill.
 - Do NOT sell VOO today.
 
 ### SOXX — DO NOT BUY — CONDITIONAL ADD 1 (LOWEST PRIORITY)

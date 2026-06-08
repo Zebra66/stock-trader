@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 10:54 : [tactical] Placed 1 VOO limit buy
+- VOO price ~683.94, limit 683.50 per todo
+- Condition met: price <= 684.00
+- QQQ skipped: price 720.08 > 720.00 threshold
+- SOXX skipped: price 573.69 > 572.00 threshold
+- Gross exposure after fill: ~49.5%
+
+2026-06-08 : 10:40 : [tactical] Event resolved, no triggers met
+- Event detector NONE at 14:40Z; prior CRITICAL resolved
+- Buy triggers not met: QQQ 719>718, VOO 683>683, SOXX 573>566
+- No sell triggers active; no protective sells needed
+- Holding QQQ 5, VOO 1; cash 57.4%, gross 42.6%
+
 2026-06-08 : 10:40 : [hourly] Event cleared; re-auth VOO/QQQ/SOXX buys
 - Event detector NONE at 14:35Z; CRITICAL from 13:40Z resolved
 - Re-authorized 3 adds: VOO 1, QQQ 1, SOXX 1 with limit orders
