@@ -8,7 +8,7 @@
 - **Goal check:** Portfolio **+0.27%** since inception ($10,026.69 vs $10,000). **Goal 1 (positive absolute) MET.** SPY **+3.28%** since baseline ($741.55 vs $718.01). **Goal 2 (beat SPY) FAILED by ~3.01 pp.**
 - **Regime:** **OFFENSIVE CATCH-UP** (60–90% gross target). Exposure now in band at 62.3%. Cash drag remains the structural gap vs SPY; recent 1D/1W/2W outperformance is narrowing the deficit.
 - **Since last hourly (16:35Z):** SOXX limit buy 1 @ $573.50 **FILLED** at 17:10Z. No other trades. Gross exposure rose from 56.6% to 62.3% via authorized SOXX add. No unauthorized exposure drift.
-- **Event detector 17:35Z:** Classification **NONE**. Broad market slightly lower (SPY -0.06%, QQQ -0.06%, SOXX -0.23%). Held positions OK.
+- **Event detector 17:35Z & 17:50Z:** Classification **NONE**. Broad market slightly lower (SPY -0.06%, QQQ -0.06%, SOXX -0.23%). Held positions OK.
 - **News update:** Yahoo search confirms chip rebound continuing (Nasdaq leads rally, Iran pauses strikes, chip stocks stage comeback). NVDA Vera CPU news. Broadcom enterprise AI security expansion. No bearish catalysts.
 - **Analyst sub-agent:** Not invoked. Decisions made with direct data and high confidence.
 
@@ -18,6 +18,7 @@
 - **15:29Z:** VOO limit buy 1 @ $683.48 FILLED.
 - **16:29Z:** QQQ limit buy 1 @ $719.50 FILLED avg $719.47.
 - **17:10Z:** SOXX limit buy 1 @ $573.50 FILLED avg $573.11.
+- **17:50Z:** SOXX limit buy 1 @ $570.00 PLACED (Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64). Resting pullback order; current price $576.27. NVDA skipped ($208.88, below $210 reclaim).
 - **All other tactical cycles (16:40Z, 16:50Z, 17:20Z, 17:30Z):** No action. Conditions not met. No unauthorized orders. No concealment risk.
 - **Same-day round-trip guard active on:** QQQ (share bought 16:29Z), VOO (share bought 15:29Z), SOXX (share bought 17:10Z). None may be sold today.
 

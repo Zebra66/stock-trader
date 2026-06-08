@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-06-08 17:35Z (Monday 1:35 PM ET)
+# Tactical Todo — Updated 2026-06-08 17:50Z (Monday 1:50 PM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
@@ -8,7 +8,7 @@
 - **Gross long exposure:** ~62.3% | **Net exposure:** ~62.3% | **Cash:** ~37.6%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE.
+- **Open orders:** SOXX limit buy 1 @ $570.00 (day order, expires at close). Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64.
 - **Market:** OPEN until 16:00 ET. Next tactical: 17:40Z, 17:50Z. Next hourly: 18:35Z (2:35 PM ET).
 - **Macro context:** Monday rebound after Friday risk-off. SPY +0.55%, QQQ +2.0%, semis rebounding (SOXX +6.4%, AVGO +3.0%, NVDA +2.0%). Iran pauses strikes per headlines. Event detector 17:35Z classification: NONE.
 
@@ -29,7 +29,7 @@
 - **LIMIT BUY 1 SOXX @ $573.50 FILLED** at avg price $573.11 (Order ID: 8165d6b7-1c01-4dc0-8cc8-526051e6afb6). Discovered filled at 17:20Z tactical cycle.
 - Weight ~5.7% of equity. Within 20% ETF cap.
 - Unrealized +0.18% from avg $573.11. Current price $574.13.
-- **BUY 1 SOXX with limit order at $570.00.** Scale-in on intraday pullback. Do NOT chase above $570.50.
+- **BUY 1 SOXX with limit order at $570.00 — ORDER PLACED at 17:50Z.** Scale-in on intraday pullback. Do NOT chase above $570.50.
   - Rationale: strongest 3M trend in universe; modest pullback entry after +6.4% gap-up avoids chasing.
   - After fill: 2 shares ~$1,144 = 11.4% of equity (within 20% ETF cap). Gross exposure rises to ~68.3%.
   - Stop: $565.00 (today's support area). Risk ~$5 = 0.05% equity.

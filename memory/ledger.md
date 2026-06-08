@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 13:51 : [tactical] Placed SOXX limit 70 pullback
+- SOXX resting limit buy 1 @ 70.00 placed (current 76.27)
+- NVDA skipped: price 08.88 below 10 reclaim threshold
+- No sell triggers met; holdings unchanged
+- Order ID: 9375e32b-fde8-499d-adc7-dc7feb8e9f64
+- Exposure 62.3% until fill; daytrades 0/3
+
+2026-06-08 : 13:40 : [tactical] No triggers met, held positions
+- SOXX 74.68 above 70 limit, no fill
+- NVDA 08.70 below 10 reclaim, no buy
+- QQQ/VOO/SOXX same-day protection active
+- Exposure 62.3%, in offensive band
+- Event detector: NONE, normal mode
+
 2026-06-08 : 13:39 : [hourly] SOXX filled, exposure 62%, auth NVDA+SOXX adds
 - SOXX limit buy 1 filled at 73.11 — gross exposure now 62.3% in band
 - Authorized limit buy SOXX 1 @ 70 (scale-in) and NVDA 1 @ 10.50 (breakout)
