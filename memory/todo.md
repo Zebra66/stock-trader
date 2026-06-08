@@ -1,16 +1,16 @@
-# Tactical Todo — Updated 2026-06-08 14:35Z (Monday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-08 15:30Z (Monday 11:30 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
 
 ## Current State
-- **Regime:** neutral (50–70% band, currently at ~42.6%)
-- **Live book:** QQQ 5, VOO 1
-- **Account equity / cash / buying power:** ~$10,025 / ~$5,750 / ~$34,969
-- **Gross long exposure:** ~42.6% | **Net exposure:** ~42.6% | **Cash:** ~57.4%
+- **Regime:** neutral (50–70% band, currently at ~49.5%)
+- **Live book:** QQQ 5, VOO 2
+- **Account equity / cash / buying power:** ~$10,035 / ~$5,067 / ~$34,257
+- **Gross long exposure:** ~49.5% | **Net exposure:** ~49.5% | **Cash:** ~50.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** VOO buy limit 1 @ $683.50 (placed 14:50Z)
+- **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET. Next hourly: 15:35Z (11:35 AM ET).
-- **Macro context:** Monday rebound after Friday risk-off. SPY +0.73%, QQQ +1.93%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters. Event detector classification: NONE.
+- **Macro context:** Monday rebound after Friday risk-off. SPY +0.73%, QQQ +1.93%, semis rebounding (SOXX +5%+, AVGO +3%+, NVDA +2%+). Mideast tensions easing per Reuters. Event detector classification: MINOR (SOXX –0.70%, SMH –0.64%).
 
 ## Position Instructions — Mon Jun 8 (:40, :50 Tactical Runs)
 
@@ -23,7 +23,7 @@
 ### VOO — HOLD 1 — AUTHORIZED ADD 1
 - Weight ~6.8%, within 20% non-QQQ ETF cap. Adding 1 share brings VOO to ~$1,366 = 13.6% (within 20% cap).
 - Unrealized +1.38% from avg $673.925. Today +0.77%.
-- **BUY 1 VOO — ORDER PLACED at limit $683.50.** Order ID: `c1b88336-190c-48c6-86be-5716a8e4c057`. Status: `pending_new`. Awaiting fill.
+- **FILLED** — VOO limit order 1 @ ~$683.50 (Order ID: `c1b88336-190c-48c6-86be-5716a8e4c057`) has filled. Now hold 2 shares at avg ~$678.70.
 - Do NOT sell VOO today.
 
 ### SOXX — DO NOT BUY — CONDITIONAL ADD 1 (LOWEST PRIORITY)

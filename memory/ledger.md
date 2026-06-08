@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 11:31 : [tactical] VOO filled, no new trades
+- VOO limit 1 @ ~83.50 filled (ID c1b88336-190c-48c6-86be-5716a8e4c057), now hold 2 VOO
+- QQQ 20.27 > 20.00 threshold, deferred
+- SOXX 76.42 > 72.00 threshold, deferred
+- No sell triggers, no autonomous override, exposure ~49.5%
+
+2026-06-08 : 11:21 : [tactical] No triggers met, VOO order open
+- VOO limit buy 83.50 remains open (new), price 84.575
+- QQQ buy trigger 20 not met (price 22.79)
+- SOXX buy trigger 72 not met (price 80.88)
+- No sells authorized; exposure stays ~42.7%
+- Daytrade count 0/3; no PDT concerns
+
+2026-06-08 : 11:10 : [tactical] No action; VOO order working
+- VOO limit buy 1@83.50 remains open (status: new), 0 filled
+- QQQ 22.53 > 20 threshold, no buy
+- SOXX 78.37 > 72 threshold, no buy
+- Event detector: MINOR, no override needed
+- Gross exposure ~42.7%, neutral band, 0 daytrades
+
 2026-06-08 : 10:54 : [tactical] Placed 1 VOO limit buy
 - VOO price ~683.94, limit 683.50 per todo
 - Condition met: price <= 684.00
