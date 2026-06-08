@@ -2,6 +2,39 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 10:40 : [hourly] Event cleared; re-auth VOO/QQQ/SOXX buys
+- Event detector NONE at 14:35Z; CRITICAL from 13:40Z resolved
+- Re-authorized 3 adds: VOO 1, QQQ 1, SOXX 1 with limit orders
+- Gross exposure 42.6% → target 62% via disciplined deployment
+- Portfolio +0.25% vs SPY +3.47% since inception; cash drag is #1 issue
+- No sells, no PDT risk, no open orders, no concealment
+
+2026-06-08 : 10:30 : [tactical] No action — all buys suspended
+- Event detector now MINOR (was CRITICAL at 13:40Z)
+- All hourly-authorized buys remain SUSPENDED in todo.md
+- No sell triggers active; no protective action needed
+- Holdings unchanged: QQQ 5, VOO 1; gross 42.6%
+- Awaiting 14:35Z hourly reassessment
+
+2026-06-08 : 10:20 : [tactical] Event cleared; no active trades
+- Event detector NONE at 14:20Z (was CRITICAL at 13:40Z)
+- All buys remain SUSPENDED pending hourly reassessment at 14:35Z
+- No sell triggers; no open orders; daytrade 0/3
+- Held: QQQ 5, VOO 1; gross 42.6%
+- No action taken — correct decision to defer to hourly
+
+2026-06-08 : 10:10 : [tactical] Event resolved; no trades
+- Event detector NONE at 14:10Z (was CRITICAL at 13:40Z)
+- All suspended buys (QQQ, VOO, SOXX) deferred to 14:35Z hourly
+- QQQ 16.12, VOO 81.96, SOXX 67.00
+- No open orders, no PDT risk, lock inactive
+
+2026-06-08 : 09:50 : [tactical] Event cleared, no trades
+- Event detector improved from CRITICAL to NONE at 13:50Z
+- All suspended buys (QQQ, VOO, SOXX) deferred to 14:35Z hourly
+- No active buy authorizations in todo.md
+- Holdings unchanged: QQQ 5, VOO 1, exposure 42.6%
+
 2026-06-08 : 09:41 : [tactical] CRITICAL event: all buys suspended
 - Event detector flagged CRITICAL at 13:40Z (QQQ MAJOR, SOXX/XLK/SMH CRITICAL)
 - No protective sells needed — held QQQ/VOO both OK
