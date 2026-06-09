@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 10:39 : [hourly] SOXX limit 70 open; gap-up reversed
+- Placed SOXX buy 1 @ 70.00 limit — gap-up fully erased
+- Event detector resolved to NONE; prior CRITICAL/MAJOR cleared
+- Portfolio +0.09% inception vs SPY +3.23% — trailing 3.14 pp
+- Todo.md parser fix: rephrased conditional no-buy line for SOXX
+- No sells; QQQ 6, VOO 2, SOXX 2 held; cash ~32%
+
+2026-06-09 : 10:30 : [tactical] No trades; SOXX suspended, market stable
+- Event detector NONE at 14:30Z; prior CRITICAL/MAJOR resolved
+- SOXX limit buy $577.50 remains suspended per todo until hourly reassessment
+- All held positions OK; no sell triggers breached
+- No open orders; daytrade count 0/3; exposure ~68%
+
 2026-06-09 : 10:21 : [tactical] MAJOR event: no trades, buys suspended
 - Event detector MAJOR at 14:20Z: SOXX -1.37%, SMH -1.23%, XLK -1.00%
 - Held positions all OK severity (QQQ -0.79%, SOXX -1.37%, VOO -0.55%)
