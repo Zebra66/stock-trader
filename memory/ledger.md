@@ -2,6 +2,54 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 14:37 : [hourly] No buys today, anti-churn holds
+- Tactical agent correctly held VOO, no panic trades
+- QQQ and SOXX sold today, same-day re-buy prohibited
+- Market rallied from lows, no chase authorized
+- Gross exposure 13.85%, defensive band 30-50%
+- Rebuilding deferred to tomorrow with limit triggers
+
+2026-06-09 : 14:30 : [tactical] No action — no triggers met
+- QQQ at 704.49, above 95 limit
+- SOXX at 552.68, above 35 limit
+- VOO 2 held, exposure 13.8%
+- Event detector: NONE
+- No open orders, no trades
+
+2026-06-09 : 14:20 : [tactical] No action: triggers not met
+- QQQ 03.57 > 95 trigger, no fill
+- SOXX 51.19 > 35 trigger, no fill
+- VOO hold, no sell trigger
+- Event detector: MINOR, no override needed
+- Exposure 13.8%, defensive band 30-50%, awaiting pullback
+
+2026-06-09 : 14:10 : [tactical] No triggers met, holding VOO
+- QQQ 02.24 above 95 limit, SOXX 48.05 above 35 limit
+- MAJOR event: SOXX bounce +1.13% in 20min, hourly override active
+- Gross exposure 13.8%, defensive band 30-50%
+- 0 orders, 0 daytrades, no action
+
+2026-06-09 : 13:50 : [tactical] No trade — prices above buy limits
+- QQQ 98.64 above 95 limit trigger, no buy
+- SOXX 41.62 above 35 limit trigger, no buy
+- VOO 2 held, no sells authorized
+- Exposure 13.8%, defensive band 30-50%
+- Event: MINOR, no autonomous action needed
+
+2026-06-09 : 13:40 : [tactical] No action: prices above triggers
+- QQQ at 00.83, above 95.00 pullback trigger
+- SOXX at 47.22, above 35.00 pullback trigger
+- VOO hold 2, no sell conditions
+- No open orders, no fills, no trades
+- Defensive regime: 13.8% exposure, below 30-50% band
+
+2026-06-09 : 13:38 : [tactical] No action: prices above limits
+- QQQ 01.16 > 95.00 limit, no fill
+- SOXX 47.37 > 35.00 limit, no fill
+- VOO 2 hold, no sell trigger
+- No conditions met, no orders submitted
+- Market bouncing, not pulling back
+
 2026-06-09 : 13:38 : [hourly] Repo breach fixed, defensive 13.8%
 - Critical repo breach restored: all tracked files staged-as-deleted
 - Portfolio liquidated to VOO 2 only, equity ,752 (-2.48%)

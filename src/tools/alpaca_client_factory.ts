@@ -304,20 +304,9 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
     if (side === 'buy') {
       const soldToday = await hasSameDayFill(client, symbol, 'sell');
       if (soldToday) {
-        try {
-          const todo = await Bun.file('./memory/todo.md').text();
-          const authPattern = new RegExp(`AUTHORIZE SAME-DAY BUY ${symbol}\\b`, 'i');
-          if (!authPattern.test(todo)) {
-            throw new Error(
-              `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is not authorized in todo.md.`
-            );
-          }
-        } catch (e) {
-          if (e instanceof Error && e.message.includes('Anti-churn')) throw e;
-          throw new Error(
-            `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is not authorized in todo.md.`
-          );
-        }
+        throw new Error(
+          `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is prohibited.`
+        );
       }
     }
 

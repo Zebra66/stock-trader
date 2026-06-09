@@ -234,15 +234,7 @@ export const alpacaTools = {
     if (side === 'buy') {
       const soldToday = await hasSameDayFill(symUpper, 'sell');
       if (soldToday) {
-        try {
-          const todo = await Bun.file('./memory/todo.md').text();
-          const authPattern = new RegExp(`AUTHORIZE SAME-DAY BUY ${symUpper}\\b`, 'i');
-          if (!authPattern.test(todo)) {
-            return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
-          }
-        } catch {
-          return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is not authorized in todo.md.`;
-        }
+        return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is prohibited.`;
       }
     }
     // Concentration cap guard (BUY orders only)
