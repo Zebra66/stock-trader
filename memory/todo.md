@@ -2,6 +2,7 @@
 *HARD_LOCK LIFTED. Event detector CRITICAL at 14:10Z on semi sector drop. Buy conditions SUSPENDED until hourly reset.*
 
 <!-- Autonomous override applied at 2026-06-09T14:10:00Z due to CRITICAL event -->
+<!-- Autonomous override applied at 2026-06-09T14:20:00Z due to MAJOR event -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band, currently at ~68.1%)

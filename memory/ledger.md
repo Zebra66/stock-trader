@@ -1,3 +1,14 @@
+# Trading Ledger
+
+Per-cycle summary of the hourly and tactical agent findings and decisions.
+Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 10:21 : [tactical] MAJOR event: no trades, buys suspended
+- Event detector MAJOR at 14:20Z: SOXX -1.37%, SMH -1.23%, XLK -1.00%
+- Held positions all OK severity (QQQ -0.79%, SOXX -1.37%, VOO -0.55%)
+- No protective stops breached; todo explicitly says do NOT sell on event flags
+- SOXX limit buy $577.50 remains SUSPENDED; current price $571.11 below limit
+- Awaiting hourly reassessment at 14:35Z (10:35 AM ET)
+
 2026-06-09 : 13:30 : [tactical] CRITICAL event: buys suspended, no sells
 - Event detector CRITICAL at 13:30Z: SOXX +2.54%, SMH +2.14%
 - Held positions all OK (QQQ +0.94%, SOXX +2.54%, VOO +0.53%)
@@ -31,8 +42,6 @@
 - HOLD QQQ 6, VOO 2, SOXX 2; NO sells
 - NVDA watch 10.50; GOOG/AVGO avoid
 - Goal 2 still failing by ~3.0 pp vs SPY
-
-# Trading Ledger
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
