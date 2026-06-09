@@ -1,27 +1,25 @@
-# Tactical Todo — Updated 2026-06-09 16:35Z (Tuesday 12:35 PM ET)
-*Event detector NONE. SOXX stop breached — same-day sell authorized. QQQ already sold. No new buys.*
+# Tactical Todo — Updated 2026-06-09 16:40Z (Tuesday 12:40 PM ET)
+*Event detector MAJOR. SOXX sold via autonomous override. QQQ already sold. All buys suspended.*
+
+<!-- Autonomous override applied at 2026-06-09 16:40Z due to MAJOR event -->
 
 ## Current State
-- **Regime:** defensive (30–50% gross exposure band, currently at ~19.2%)
-- **Live book:** VOO 2, SOXX 1 (to be sold)
+- **Regime:** defensive (30–50% gross exposure band, currently at ~13.7%)
+- **Live book:** VOO 2 only
 - **Open orders:** NONE.
-- **Account equity / cash / buying power:** ~$9,751 / ~$7,884 / ~$36,764
-- **Gross long exposure:** $1,868.45 / $9,751.34 = **19.2%** | **Net exposure:** ~19.2% | **Cash:** ~80.8%
-- **Daytrade count:** 0/3 (will become 1/3 after SOXX sell)
+- **Account equity / cash / buying power:** ~$9,737 / ~$8,407 / ~$36,764
+- **Gross long exposure:** ~$1,330 / ~$9,737 = **13.7%** | **Net exposure:** ~13.7% | **Cash:** ~86.3%
+- **Daytrade count:** 1/3 (used by SOXX same-day sell)
 - **Pattern day trader:** false
 - **Market:** OPEN. Next tactical: 16:40Z. Next hourly: 17:35Z (1:35 PM ET).
 - **Macro context:** Tech rotation continues. SPY -1.57%, QQQ -3.19%, SOXX -6.89% today. All universe red. No confirmed support.
 
 ## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
 
-### SOXX — SELL 1 — AUTHORIZE SAME-DAY SELL SOXX
-- **Weight ~5.4% of equity.** 1 share remaining (bought today at $569.94 at 14:42Z).
-- **Stop-loss $535.00 was BREACHED** at $528.83 during 16:20Z MAJOR event. Price now $531.02 — still below $535.00.
-- **Hourly explicitly authorizes same-day sell** of this 1 share despite anti-churn rule. The stop is breached and the sector is in a confirmed crash (-12% week). Risk management overrides the round-trip guard.
-- **SELL 1 SOXX share** via market order or limit order at $530.00. Rationale: stop-loss discipline; sector crashing; price has not recovered above stop.
-- **After sell:** SOXX weight = 0%. Realized loss ~$40.
-- **Daytrade impact:** This will count as 1 daytrade (bought and sold same day). daytrade_count will become 1/3.
-- **DO NOT RE-BUY SOXX** for 24 hours after this sell fills.
+### SOXX — SOLD 1 — DO NOT RE-BUY — DO NOT ADD
+- **SOLD 1 share @ $523.12** via market order (2026-06-09 16:40Z). Same-day lot bought at $569.94.
+- **Realized loss:** ~$46.82 on this 1-share lot.
+- **DO NOT RE-BUY SOXX** for 24 hours after this sell (until after 2026-06-10 16:40Z).
 - **DO NOT ADD SOXX** today.
 
 ### VOO — HOLD 2 — DO NOT ADD
@@ -65,12 +63,12 @@
 - **No same-day round trips** unless explicitly authorized with exact string `AUTHORIZE SAME-DAY SELL <SYMBOL>`.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Rephrase conditional lines to avoid false matches (e.g., use "entry ceiling" instead of "DO NOT ADD ABOVE").
-- **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for hourly authorization. (Event detector is currently NONE.)
+- **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for hourly authorization. (Event detector is currently MAJOR on SOXX/SMH; override already executed.)
 - **STOP-LOSS EXECUTION RULE:** When a stop is breached, use exact limit price or market order.
 - **Open-order conflict check:** Run `get-orders --status open` before placing any order.
 - **Exposure check:** After this sell, gross exposure will be ~13.7% (VOO only). This is below the 30% defensive lower bound. That is acceptable because the market is in a confirmed correction and no quality setups exist. Do NOT force-buy to hit the band.
 - **Data quality check:** Is the broker quote confirmed by healthy volume (>10 trades)? If stale/abnormal, abort.
-- **PDT conservation:** After SOXX sell, daytrade_count will be 1/3. Conserve remaining 2 daytrades for emergencies.
+- **PDT conservation:** daytrade_count is now 1/3. Conserve remaining 2 daytrades for emergencies.
 - **Illiquidity:** VOO quote is very thin (4 trades, 66 volume). Use limit orders only for VOO. If VOO stop is breached, use limit sell at or slightly below the stop price.
 
 ## Concentration Cap Guard (Code-Enforced)
@@ -88,18 +86,13 @@
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Deployment Queue — Tue Jun 9
-1. **SELL 1 SOXX share — limit $530.00 or market** — stop breached, sector crashing. Highest priority.
+1. ~~SELL 1 SOXX share~~ **EXECUTED** @ $523.12.
 2. **No other authorized trades.**
 3. **ALL BUYS SUSPENDED until hourly reassessment at 17:35Z or tape shows stabilization.**
 
-## Current Book (Pre-Sell)
-- VOO 2 (~13.7%), SOXX 1 (~5.4%)
-- Cash: ~$7,884 (~80.8%)
-- Gross exposure: ~19.2%
-
-## Expected Book (Post-Sell)
+## Current Book (Post-Sell)
 - VOO 2 (~13.7%)
-- Cash: ~$8,415 (~86.3%)
+- Cash: ~$8,407 (~86.3%)
 - Gross exposure: ~13.7%
 
 ## Next Hourly Preview — 17:35Z (1:35 PM ET)

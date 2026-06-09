@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 12:41 : [tactical] Sold 1 SOXX stop-loss MAJOR event
+- SOXX market sell 1 @ 23.12, bought today @ 69.94
+- Realized loss ~6.82 on same-day lot; stop 35 breached
+- Event detector MAJOR on SOXX (-1.43% in 5min); autonomous override
+- Daytrade count now 1/3; VOO stop 65 NOT breached (hold)
+- Gross exposure ~13.7% after exit; all buys suspended
+
 2026-06-09 : 12:36 : [hourly] Sold SOXX stop, 19% exposure, all buys suspended
 - SOXX stop 35 breached, same-day sell authorized, loss ~0
 - QQQ already sold at 16:20Z, no re-buy for 24h
