@@ -5,6 +5,13 @@
 - Buy conditions suspended for volatile symbols
 - Exposure 68.2%, cash $3,204, no open orders
 
+2026-06-09 : 09:37 : [hourly] LIFTED lock, SOXX pullbck auth
+- Event detector CRITICAL was gap-up, not crash
+- Authorized SOXX 1 @ 77.50 limit on pullback
+- HOLD QQQ 6, VOO 2, SOXX 2; NO sells
+- NVDA watch 10.50; GOOG/AVGO avoid
+- Goal 2 still failing by ~3.0 pp vs SPY
+
 # Trading Ledger
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.

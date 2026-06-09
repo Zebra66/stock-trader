@@ -23,7 +23,116 @@
 ---
 
 # Hourly Macro Memory
-*Updated 2026-06-09 13:30Z (Tuesday 9:30 AM ET). Market OPEN. First tactical run of day. Event detector CRITICAL.*
+*Updated 2026-06-09 13:35Z (Tuesday 9:35 AM ET). Market OPEN. First hourly of the day. Event detector gap-up reassessed.*
+
+## Hourly Macro Strategist — 2026-06-09 13:35Z
+### Repo Integrity
+- **Working tree:** Only `memory/tactical_last_prices.json` modified (tactical artifact). No unauthorized source modifications.
+- **Branch:** Even with origin/main (0 ahead, 0 behind).
+
+### Live Broker Refresh (Authoritative)
+- **Equity:** $10,056.67 | **Cash:** $3,204.41 | **Long market value:** $6,852.26
+- **Gross exposure:** $6,852.26 / $10,056.67 = **68.14%**
+- **Daytrade count:** 0/3
+- **Open orders:** NONE.
+
+### Current Holdings
+| Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
+|---|---|---|---|---|---|---|---|
+| QQQ | 6 | $705.45 | $721.03 | $4,326.18 | 43.01% | +$93.50 | +2.21% |
+| SOXX | 2 | $571.53 | $579.38 | $1,158.76 | 11.52% | +$15.71 | +1.37% |
+| VOO | 2 | $678.70 | $683.66 | $1,367.32 | 13.60% | +$9.92 | +0.73% |
+| Cash | — | — | — | $3,204.41 | 31.86% | — | — |
+| **Equity** | — | — | — | **$10,056.67** | **100%** | — | **+0.57%** |
+
+### Goal Check
+- **Portfolio since inception:** +0.57% ($10,056.67 vs $10,000 base)
+- **S&P 500 since inception:** +3.56% (SPY $743.58 vs baseline $718.01)
+- **Status:** **FAILED on Goal 2** (trailing SPY by ~2.99 pp). **Goal 1 MET (+0.57%).**
+- **Dominant failure mode:** **Cash drag** (historical under-deployment + current 31.9% cash). Current exposure 68.14% is in band but suboptimal for catch-up.
+- **Posture classification:** **Offensive catch-up.** Target gross-exposure band: **60–90%**. Need to deploy into outperformers to close gap.
+
+### 1D / 1W / 2W Review
+- **1D (since prior close):** Portfolio +~0.53% (positions up overnight). SPY +0.53% ($739.66 → $743.58). Portfolio matching SPY today.
+- **1W / 2W:** N/A due to account inception May 3; insufficient history for clean windows. Use inception-to-date as primary metric.
+
+### Event Detector Reassessment — 13:35Z
+- **Prior classification:** CRITICAL at 13:30Z (tactical run).
+- **Reassessment:** The CRITICAL flag was triggered by an overnight gap-up in semiconductors (SOXX +1.66% from 19:50Z prior snapshot to 13:35Z open). This is **a rally, not a crash**. The event detector's protective-sell recommendation is inapplicable.
+- **Held positions:** All OK. No protective stops breached.
+- **Decision:** HARD_LOCK LIFTED. Buy suspension lifted for specific pullback entries. Do NOT chase gap-ups.
+
+### Market Intel — Tuesday 9:35 AM ET
+- **Broad market:** SPY $743.58 (+0.53%). QQQ $720.87 (+0.68%). Positive gap-up open.
+- **Semiconductors:** SOXX $579.13 (+1.34% from prior close $571.45). SMH $605.27 (+1.45%). NVDA $209.50 (+0.71% from prior close $207.95). AVGO $399.69 (+0.98%). Broad semi rally.
+- **GOOG:** $369.26 (+2.45% from prior close). Still below broken $375 support. No re-entry.
+- **Earnings:** No binary events in next 48 hours.
+
+### Multi-Timeframe Returns
+| Symbol | 1D | 1W | 1M | 3M |
+|---|---|---|---|---|
+| QQQ | +0.68% | –3.63% | +3.00% | +17.78% |
+| VOO | +0.53% | –2.51% | +1.08% | +8.98% |
+| SOXX | +1.34% | –0.20% | +15.93% | +69.70% |
+| NVDA | +0.71% | –7.31% | –1.68% | +13.85% |
+| AVGO | +0.98% | –13.94% | –4.05% | +14.49% |
+| GOOG | +2.45% | –3.26% | –8.82% | +17.78% |
+| SPY | +0.53% | –2.15% | +1.47% | +8.87% |
+
+### Portfolio Heat Check
+- All positions above entry. Total portfolio heat ≈ **$0** (no stops below entry). Well under 6% limit.
+
+### Concentration Cap Pre-Check
+- QQQ: 6 shares = 43.0% (maxed, ≤45%)
+- VOO: 2 shares = 13.6% (max 2 shares, ≤20%)
+- SOXX: 2 shares = 11.5% (3 shares = 17.3%, ≤20%)
+- NVDA: 0 shares (7 shares = 14.6%, ≤15%)
+
+### Position Map
+| Symbol | Bias | Rationale | Target % |
+|---|---|---|---|
+| QQQ | **Hold 6** | Core liquid growth. At 43.0% cap. | 40–43% |
+| VOO | **Hold 2** | Broad-market anchor. At 2-share cap. | 12–14% |
+| SOXX | **Add 1 on pullback** | Strongest 3M trend. Gap-up open; wait for pullback. 3 shares = 17.3% (within cap). | 15–17% |
+| NVDA | **Watch $210.50** | Lagging semi rally. Re-entry only on confirmed reclaim. | 0–2% |
+| AVGO | **Avoid** | Near $400 but no confirmed support. Weak 1W. | 0% |
+| GOOG | **Avoid** | Bounced +2.4% but still below $375. | 0% |
+| META | **Avoid** | bannedSymbols active. | 0% |
+| All others | **Avoid** | No edge. | 0% |
+
+### Priority Actions
+1. **HOLD all current positions.** No sell triggers breached.
+2. **BUY SOXX 1 @ $577.50 limit** on pullback from gap-up. Do NOT chase above $579.50.
+3. **WATCH NVDA $210.50** for breakout. Re-evaluate at 14:35Z.
+4. **NO buys for AVGO, GOOG, META, or others.**
+5. **NO sells today.** All positions held overnight.
+6. **Target gross exposure:** 72–78% by end of session if SOXX fills.
+
+### Macro Themes
+- **Actionable now:** SOXX is the strongest-trend name with capacity. Gap-up pullback to $577 is the best risk/reward entry.
+- **Worth monitoring:** Semi rally breadth. NVDA lagging SOXX gap-up. If NVDA doesn't catch up, the semi rally may be narrow.
+- **Worth monitoring:** Portfolio needs +3.0 pp to catch SPY. Requires sustained 70%+ exposure in outperformers.
+
+### Data / Process Notes
+- **Alpaca CLI:** Working. All safety guards active.
+- **FMP:** Disabled (placeholder API key). Yahoo Finance v8 used.
+- **Day-trade status:** 0/3. Full flexibility.
+- **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
+- **Event detector:** Prior CRITICAL was gap-up, not crash. Reassessed and lifted.
+
+---
+
+## Tactical Execution Summary — 2026-06-09 13:30Z (Tuesday 9:30 AM ET)
+*Archive: tactical autonomous override before hourly reassessment.*
+- **Event detector classification:** CRITICAL
+- **Broad market triggers:** SOXX +2.54% (CRITICAL), SMH +2.14% (CRITICAL), XLK +1.15% (MAJOR)
+- **Held positions status:** All OK (QQQ +0.94%, SOXX +2.54%, VOO +0.53%)
+- **Action taken:** NO SELLS. Buy conditions SUSPENDED.
+- **Next expected action:** Hourly reassessment at 13:35Z.
+
+---
+
+## Previous Hourly — 2026-06-08 19:35Z (Monday 3:35 PM ET)
 
 ## AUTONOMOUS OVERRIDE — 2026-06-09 13:30Z
 - **Event detector classification:** CRITICAL
