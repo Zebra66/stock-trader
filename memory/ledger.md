@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 11:38 : [hourly] Trim SOXX 2, neutral posture, no buys
+- Event detector resolved to NONE; market in tech rotation selloff
+- Portfolio -1.65% vs SPY +1.89%; failing both goals
+- Authorized SELL 2 SOXX @ 49 limit to reduce semi risk
+- Set stops: QQQ 95, VOO 65, SOXX 35
+- NO NEW BUYS today; all deployment suspended until next hourly
+
 2026-06-09 : 11:30 : [tactical] CRITICAL event: no trades
 - Event detector CRITICAL: SOXX -2.08%, SMH -1.73%
 - Held positions OK/MINOR; no protective stops breached
