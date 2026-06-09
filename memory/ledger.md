@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 12:36 : [hourly] Sold SOXX stop, 19% exposure, all buys suspended
+- SOXX stop 35 breached, same-day sell authorized, loss ~0
+- QQQ already sold at 16:20Z, no re-buy for 24h
+- VOO hold 2, stop 65, no adds
+- No new buys — all universe red, no support confirmation
+- Defensive posture, 30-50% target band, currently 19%
+
+2026-06-09 : 12:30 : [tactical] SOXX stop breached, same-day block
+- SOXX 31.21 < 35.00 stop, still breached
+- Same-day round trip prohibits sale (bought 14:42Z)
+- VOO 68.43 > 65.00, stop OK
+- No other conditions met, no orders placed
+- Awaiting 16:35Z hourly for SOXX override or next-session plan
+
 2026-06-09 : 12:21 : [tactical] Sold 6 QQQ stop-loss fill
 - QQQ stop 95 breached at 91.76, sold 6 at 90.79
 - Realized loss ~7.94 on QQQ lot
