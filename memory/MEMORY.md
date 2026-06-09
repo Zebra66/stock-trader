@@ -1,4 +1,13 @@
 # Hourly Macro Memory
+
+## AUTONOMOUS OVERRIDE — Tactical 2026-06-09 19:20Z
+- **Event detector classification:** MAJOR
+- **Affected symbols:** SOXX (-1.44% in 10 min), SMH (-1.23% in 10 min)
+- **Held position impact:** VOO OK (-0.42%)
+- **Action taken:** No protective sells (VOO stable, no stop breach). No new buys (anti-churn already active). Suspended SOXX next-session trigger in todo.md.
+- **Reason:** Semiconductor sector MAJOR drop detected. Tactical agent logged event and deferred to next hourly cycle for re-entry assessment.
+- **Exposure:** 13.85% gross, defensive posture maintained.
+
 *Updated 2026-06-09 18:35Z (Tuesday 2:35 PM ET). Market OPEN until 20:00Z (~1.5 hrs to close).*
 
 ## Hourly Cycle Summary — 2026-06-09 18:35Z (Tuesday 2:35 PM ET)

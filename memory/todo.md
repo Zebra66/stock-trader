@@ -1,5 +1,6 @@
-# Tactical Todo — Updated 2026-06-09 18:35Z (Tuesday 2:35 PM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 20:00Z (~1.5 hrs).*
+# Tactical Todo — Updated 2026-06-09 19:20Z (Tuesday 3:20 PM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 20:00Z (~40 min).*
+<!-- Autonomous override applied at 2026-06-09T19:20Z due to MAJOR event -->
 
 ## Current State
 - **Regime:** defensive (30–50% gross exposure target band)
@@ -30,7 +31,7 @@
 - Sold 2 shares today at $552.30 (11:41 AM ET) and 1 share at $523.12 (12:40 PM ET). Anti-churn hard stop prohibits same-day re-buy.
 - 24-hour cooldown active until ~12:40 PM ET tomorrow.
 - Current price ~$554.73. Do NOT chase the bounce today.
-- **Next-session trigger (valid starting tomorrow):** BUY 1 share if price drops to **$540.00 or below**. Place limit order at **$539.50**.
+- **Next-session trigger (valid starting tomorrow):** BUY 1 share if price drops to **$540.00 or below**. Place limit order at **$539.50**. SUSPENDED — major event detected at 2026-06-09T19:20Z.
 - **Concentration cap check:** SOXX max 20% of equity = $1,952. Buying 1 share at $539.50 = 5.5% of equity. Well within cap.
 - **DO NOT buy SOXX today.**
 - **Illiquidity warning:** SOXX is thin. Use limit orders only. No market orders.
