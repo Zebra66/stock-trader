@@ -1,18 +1,19 @@
-# Tactical Todo — Updated 2026-06-09 15:10Z (Tuesday 11:10 AM ET)
-*MAJOR event detected at 15:10Z. Event detector resolved to MAJOR. All buys suspended. SOXX limit buy filled.*
+# Tactical Todo — Updated 2026-06-09 15:30Z (Tuesday 11:30 AM ET)
+*CRITICAL event detected at 15:30Z. Broad market semiconductors crashing. All buys suspended. No protective sells triggered. Holding all positions.*
 
 <!-- Autonomous override applied at 2026-06-09T14:10:00Z due to CRITICAL event -->
 <!-- Autonomous override applied at 2026-06-09T14:20:00Z due to MAJOR event -->
 <!-- Autonomous override applied at 2026-06-09T14:50:00Z due to CRITICAL event -->
 <!-- Autonomous override applied at 2026-06-09T15:10:00Z due to MAJOR event -->
+<!-- Autonomous override applied at 2026-06-09T15:30:00Z due to CRITICAL event -->
 
 ## Current State
-- **Regime:** offensive catch-up (60–90% band, currently at ~73.6%)
+- **Regime:** offensive catch-up (60–90% band, currently at ~73.2%)
 - **Live book:** QQQ 6, VOO 2, SOXX 3
 - **Open orders:** NONE.
-- **Override:** MAJOR event detected at 15:10Z. All buy conditions SUSPENDED.
-- **Account equity / cash / buying power:** ~$9,959 / ~$2,634 / ~$31,048
-- **Gross long exposure:** ~73.6% | **Net exposure:** ~73.6% | **Cash:** ~26.4%
+- **Override:** CRITICAL event detected at 15:30Z. All buy conditions SUSPENDED. No protective sells executed.
+- **Account equity / cash / buying power:** ~$9,838 / ~$2,634 / ~$30,708
+- **Gross long exposure:** ~73.2% | **Net exposure:** ~73.2% | **Cash:** ~26.8%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Market:** OPEN. Next tactical: 15:20Z. Next hourly: 15:35Z (11:35 AM ET).

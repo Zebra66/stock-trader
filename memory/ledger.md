@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 11:30 : [tactical] CRITICAL event: no trades
+- Event detector CRITICAL: SOXX -2.08%, SMH -1.73%
+- Held positions OK/MINOR; no protective stops breached
+- SOXX same-day buy prohibits sell; QQQ/VOO DO NOT SELL
+- No orders placed. Waiting for 15:35Z hourly.
+
+2026-06-09 : 11:20 : [tactical] No action; market calm MINOR
+- Event detector MINOR at 15:20Z. No triggers met.
+- All buys suspended per hourly until 15:35Z.
+- Hold QQQ 6, SOXX 3, VOO 2. No sells authorized.
+- SOXX down -0.75% intraday, no stop breached.
+- Exposure 73.5%, within 60-90% band. No PDT risk.
+
 2026-06-09 : 11:10 : [tactical] MAJOR event detected, no trades
 - Event detector MAJOR at 15:10Z (SOXX +1.21%, SMH +1.08%)
 - All held positions OK, no protective stops breached
