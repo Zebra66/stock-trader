@@ -1,3 +1,4 @@
+<!-- Autonomous override applied at 2026-06-09 16:20Z due to MAJOR event -->
 <!-- Autonomous override applied at 2026-06-09 16:10Z due to CRITICAL event -->
 
 # Tactical Todo — Updated 2026-06-09 16:10Z (Tuesday 12:10 PM ET)
@@ -5,24 +6,23 @@
 
 
 ## Current State
-- **Regime:** neutral (50–70% gross exposure band, currently at ~61.8%)
-- **Live book:** QQQ 6, VOO 2, SOXX 1
+- **Regime:** defensive (30–50% gross exposure band, currently at ~19.1%)
+- **Live book:** VOO 2, SOXX 1
 - **Open orders:** NONE.
-- **Account equity / cash / buying power:** $9,790.03 / $3,739.07 / $31,898.98
-- **Gross long exposure:** $6,050.96 / $9,790.03 = **61.8%** | **Net exposure:** ~61.8% | **Cash:** ~38.2%
+- **Account equity / cash / buying power:** ~$9,748 / ~$7,884 / ~$31,898
+- **Gross long exposure:** $1,863.72 / $9,747.53 = **19.1%** | **Net exposure:** ~19.1% | **Cash:** ~80.9%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Market:** OPEN. Next tactical: 16:20Z. Next hourly: 16:35Z (12:35 PM ET).
-- **Macro context:** Event detector CRITICAL at 16:10Z. SOXX -3.03% in 10 min, QQQ -1.07% in 10 min. Tech crash accelerating. SOXX intraday -6.06%, QQQ intraday -2.83%, VOO intraday -1.47%. SPY $728.30 (-1.06% today).
+- **Market:** OPEN. Next tactical: 16:30Z. Next hourly: 16:35Z (12:35 PM ET).
+- **Macro context:** Event detector MAJOR at 16:20Z. SOXX -1.41% in 10 min, SMH -1.24% in 10 min. QQQ stop breached at $691.76 and SOLD. SOXX stop breached at $528.83 but same-day round trip blocked. Tech crash deepening. SPY $726.00 (-1.04% today).
 
 ## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
 
-### QQQ — HOLD 6 — DO NOT ADD
-- Weight ~42.8%, at 45% cap. Cannot add 7th share.
-- Unrealized -0.57% from avg $705.45. Current price ~$701.46.
-- **Stop-loss:** If QQQ drops below $695.00, SELL 6 shares via market or limit order. Rationale: broad market correction deepening.
+### QQQ — SOLD 6 — DO NOT RE-BUY
+- ~~Weight ~42.8%, at 45% cap.~~ **SOLD 6 shares at $690.79** via market order (2026-06-09 16:20Z). Stop at $695.00 breached.
+- **Realized loss:** ~$87.94 on QQQ lot.
+- DO NOT RE-BUY QQQ for 24 hours unless hourly explicitly authorizes.
 - DO NOT ADD QQQ TODAY.
-- DO NOT SELL QQQ today unless stop at $695 is breached.
 
 ### VOO — HOLD 2 — DO NOT ADD
 - Weight ~13.7%, at 20% non-QQQ ETF cap. 3rd share would breach cap.
@@ -31,12 +31,11 @@
 - DO NOT ADD VOO TODAY.
 - DO NOT SELL VOO today unless stop at $665 is breached.
 
-### SOXX — SELL 2 (HOLD 1) — DO NOT ADD
-- Weight ~16.8% of equity. Trimming to ~5.5% to reduce semi-sector risk.
-- ~~SELL 2 SOXX shares at limit $549.00.~~ ✅ **FILLED at $552.30** (2026-06-09 15:41Z). Trim complete.
-- **AUTHORIZE SAME-DAY SELL SOXX** — hourly strategist explicitly authorizes selling the 2 June 8 shares today while the 1 share bought today is protected.
+### SOXX — SOLD 2 (HOLD 1) — DO NOT ADD — STOP BREACHED
+- ~~Weight ~16.8% of equity.~~ Trimming complete. 2 shares sold at $552.30 (15:41Z). 1 share remains.
+- **AUTHORIZE SAME-DAY SELL SOXX** — hourly strategist explicitly authorizes selling the 2 June 8 shares today.
 - **HOLD 1 SOXX share** (bought today at $569.94). DO NOT SELL this 1 share today — same-day round trip prohibited.
-- **Stop-loss for remaining 1 share:** If SOXX drops below $535.00, SELL 1 share via limit order. Rationale: cut further semi-sector risk.
+- **Stop-loss for remaining 1 share:** $535.00 — **BREACHED** at $528.83 (16:20Z). Cannot sell today due to same-day round trip. **Must sell at next session open if stop remains breached, or if hourly authorizes same-day override.**
 - SOXX entry ceiling: $579.50 — chasing higher is not permitted.
 - Do NOT ADD SOXX TODAY.
 - Do NOT RE-BUY SOXX for 24 hours after the 2-share sell fills.
@@ -96,17 +95,18 @@
 3. **ALL BUYS SUSPENDED until hourly reassessment at 16:35Z.**
 
 ## Current Book
-- QQQ 6 (~42.6%), VOO 2 (~13.7%), SOXX 1 (~5.5%)
-- Cash: $3,739.07 (~38.2%)
-- Gross exposure: ~61.8%
+- VOO 2 (~13.7%), SOXX 1 (~5.4%)
+- Cash: ~$7,884 (~80.9%)
+- Gross exposure: ~19.1%
 
 ## Expected Book — Achieved
-- QQQ 6 (~42.6%), VOO 2 (~13.7%), SOXX 1 (~5.5%)
-- Cash: $3,739.07 (~38.2%)
-- Gross exposure: ~61.8%
+- VOO 2 (~13.7%), SOXX 1 (~5.4%)
+- Cash: ~$7,884 (~80.9%)
+- Gross exposure: ~19.1%
 
 ## Next Hourly Preview — 16:35Z (12:35 PM ET)
-- Reassess QQQ $695 stop and VOO $665 stop.
-- Reassess SOXX $535 stop for remaining 1 share.
-- Review if SOXX trim filled and if market stabilized.
+- QQQ stop executed; reassess if/when to re-enter QQQ.
+- Reassess VOO $665 stop.
+- SOXX $535 stop breached but same-day blocked; hourly must authorize immediate same-day override or plan next-session exit.
+- Gross exposure now ~19.1% (defensive). Need to decide if this is appropriate or if we should raise exposure to 30-50% band.
 - No new buy candidates unless tape confirms stabilization.

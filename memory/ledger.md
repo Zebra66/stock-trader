@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 12:21 : [tactical] Sold 6 QQQ stop-loss fill
+- QQQ stop 95 breached at 91.76, sold 6 at 90.79
+- Realized loss ~7.94 on QQQ lot
+- SOXX stop 35 breached but same-day blocked
+- Event detector MAJOR, autonomous override applied
+- Gross exposure now ~19.1% defensive
+
 2026-06-09 : 12:10 : [tactical] CRITICAL event override, no trades
 - SOXX -3.03% in 10min, QQQ -1.07% in 10min
 - No stops breached; no sells executed
