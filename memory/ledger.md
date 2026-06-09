@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 15:37 : [hourly] Held VOO, no buys today, plan tomorrow
+- Anti-churn blocks QQQ/SOXX re-buy today
+- Defensive posture 13.84% gross, target 30-50%
+- Re-entry triggers QQQ 95, SOXX 40 for tomorrow PM
+- Event detector NONE, market stable into close
+- Failing both goals by ~4.7 pp vs SPY
+
+2026-06-09 : 15:30 : [tactical] MAJOR event detected, no action
+- Event detector MAJOR at 19:30Z: SOXX +1.08% in 10 min
+- VOO stable (+0.12%), no protective sells needed
+- No buys authorized today; anti-churn active on QQQ/SOXX
+- No trades executed; deferred to next hourly
+
 2026-06-09 : 15:20 : [tactical] MAJOR event detected, no action
 - SOXX/SMH semis down ~1.4% in 10 min
 - VOO held position OK, no protective sell triggered
