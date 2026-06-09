@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 10:50 : [tactical] CRITICAL event: no action taken
+- Event detector CRITICAL: SOXX -2.28%, QQQ -1.14%, SMH -1.90%
+- No sells: SOXX same-day round trip prohibited; QQQ/VOO no stops breached
+- All buys suspended; SOXX limit 70 already filled (now 3 shares)
+- No open orders; lock inactive; PDT 0/3
+
+2026-06-09 : 10:40 : [tactical] No action — SOXX limit open, no triggers
+- SOXX limit buy 1 @ 70.00 still open (status: new)
+- Price 71.27 above limit, no fill yet
+- No sell triggers breached on QQQ, VOO, SOXX
+- NVDA 07.14 below 10.50 threshold, no buy
+- Event detector: NONE, all positions OK
+
 2026-06-09 : 10:39 : [hourly] SOXX limit 70 open; gap-up reversed
 - Placed SOXX buy 1 @ 70.00 limit — gap-up fully erased
 - Event detector resolved to NONE; prior CRITICAL/MAJOR cleared

@@ -3,11 +3,13 @@
 
 <!-- Autonomous override applied at 2026-06-09T14:10:00Z due to CRITICAL event -->
 <!-- Autonomous override applied at 2026-06-09T14:20:00Z due to MAJOR event -->
+<!-- Autonomous override applied at 2026-06-09T14:50:00Z due to CRITICAL event -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band, currently at ~68.0%)
-- **Live book:** QQQ 6, VOO 2, SOXX 2
-- **Open orders:** SOXX buy 1 @ $570.00 limit (placed by hourly at 14:37Z)
+- **Live book:** QQQ 6, VOO 2, SOXX 3
+- **Open orders:** NONE. SOXX limit buy 1 @ $570.00 filled.
+- **Override:** CRITICAL event detected at 14:50Z. All buy conditions SUSPENDED.
 - **Account equity / cash / buying power:** ~$10,009 / ~$3,204 / ~$31,301
 - **Gross long exposure:** ~68.0% | **Net exposure:** ~68.0% | **Cash:** ~32.0%
 - **Daytrade count:** 0/3
@@ -29,18 +31,16 @@
 - DO NOT SELL VOO today.
 - DO NOT ADD VOO TODAY.
 
-### SOXX — HOLD 2 — DO NOT SELL — LIMIT BUY 1 @ $570.00 ALREADY OPEN
-- Weight ~11.4% of equity. Within 20% ETF cap.
-- Unrealized -0.06% from avg $571.53. Current price ~$571.17.
-- **LIMIT BUY 1 SOXX @ $570.00** — hourly placed this order at 14:37Z. DO NOT place duplicate SOXX buy orders.
-- If SOXX drops below $568, DO NOT lower the limit. The $570.00 limit is the authorized level.
-- If SOXX rallies above $573 without filling, DO NOT chase. Hourly will reassess at 15:35Z.
-- Do NOT sell SOXX today.
+### SOXX — HOLD 3 — DO NOT SELL — DO NOT ADD
+- Weight ~16.9% of equity ($1,676 / $9,909). Within 20% ETF cap.
+- Unrealized -2.14% from avg $570.997. Current price ~$558.76.
+- **LIMIT BUY 1 SOXX @ $570.00 FILLED.** No further SOXX buys authorized.
+- Do NOT sell SOXX today (same-day round trip prohibited; bought at 14:37Z).
 - SOXX entry ceiling: $579.50 — chasing higher is not permitted.
 
-### NVDA — DO NOT BUY — DO NOT RE-BUY — WATCH $210.50
-- Price ~$206.70, well below $210 threshold. Re-entry ONLY on $210.50 reclaim with volume.
-- If it reclaims $210.50 and holds for 10 minutes, hourly will reassess at 15:35Z.
+### NVDA — DO NOT BUY — DO NOT RE-BUY — SUSPENDED
+- Price ~$205.04, well below $210 threshold. Re-entry ONLY on $210.50 reclaim with volume.
+- **SUSPENDED — CRITICAL event detected at 14:50Z.** No NVDA buys until hourly reset.
 - Do NOT place NVDA order in this tactical window.
 - DO NOT RE-BUY NVDA TODAY.
 
@@ -87,9 +87,10 @@
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Deployment Queue — Tue Jun 9
-1. **SOXX 1 share — limit $570.00** — ALREADY OPEN. First priority. If filled, 3 shares = ~17.1% weight.
-2. **NVDA 1 share — limit $210.50** — Second priority. Only if it reclaims $210.50 with volume. Hourly will reassess at 15:35Z.
+1. **SOXX 1 share — limit $570.00** — FILLED. 3 shares = ~16.9% weight.
+2. **NVDA 1 share — limit $210.50** — SUSPENDED due to CRITICAL event at 14:50Z.
 3. **No other authorized buys.**
+4. **ALL BUYS SUSPENDED until hourly reset at 15:35Z.**
 
 ## Current Book
 - QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 2 (~11.4%)
