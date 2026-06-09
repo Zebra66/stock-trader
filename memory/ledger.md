@@ -5,6 +5,26 @@
 - Buy conditions suspended for volatile symbols
 - Exposure 68.2%, cash $3,204, no open orders
 
+2026-06-09 : 10:10 : [tactical] CRITICAL event: SOXX down -1.6%
+- Event detector CRITICAL at 14:10Z on SOXX sector drop
+- No sells: todo explicitly says do NOT sell on event flags
+- No buys: SOXX limit 77.50 not hit; buys suspended
+- Override: SUSPENDED buy conditions, await hourly
+
+2026-06-09 : 09:50 : [tactical] NO_ACTION: MAJOR gap-up rally, no trades
+- SOXX at 88.57 > 77.50 limit, no buy
+- NVDA 10.73 reclaimed 10.50 but hourly reassess at 14:35Z
+- Event detector MAJOR: benign semi rally, all positions UP
+- No sell triggers, no stops breached
+- Next hourly 14:35Z decides NVDA re-entry
+
+2026-06-09 : 09:40 : [tactical] No conditions met, held positions
+- SOXX limit 77.50 not reached (current 80.89)
+- NVDA 10.50 reclaim not reached (current 09.68)
+- All held positions OK, no sell triggers
+- Exposure 68.2%, in 60-90% band
+- No orders placed
+
 2026-06-09 : 09:37 : [hourly] LIFTED lock, SOXX pullbck auth
 - Event detector CRITICAL was gap-up, not crash
 - Authorized SOXX 1 @ 77.50 limit on pullback

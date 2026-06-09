@@ -1,5 +1,7 @@
-# Tactical Todo — Updated 2026-06-09 13:35Z (Tuesday 9:35 AM ET)
-*HARD_LOCK LIFTED. Event detector gap-up reassessed as benign rally. Authorized limit buys on pullback only.*
+# Tactical Todo — Updated 2026-06-09 14:10Z (Tuesday 10:10 AM ET)
+*HARD_LOCK LIFTED. Event detector CRITICAL at 14:10Z on semi sector drop. Buy conditions SUSPENDED until hourly reset.*
+
+<!-- Autonomous override applied at 2026-06-09T14:10:00Z due to CRITICAL event -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band, currently at ~68.1%)
@@ -29,7 +31,8 @@
 ### SOXX — HOLD 2 — DO NOT SELL — AUTHORIZED ADD 1 ON PULLBACK
 - Weight ~11.5% of equity. Within 20% ETF cap.
 - Unrealized +1.37% from avg $571.53. Current price ~$579.38.
-- **LIMIT BUY 1 SOXX @ $577.50** — gap-up pullback entry. If filled, 3 shares = ~17.3% weight (within 20% cap).
+- **SUSPENDED — LIMIT BUY 1 SOXX @ $577.50** — gap-up pullback entry. If filled, 3 shares = ~17.3% weight (within 20% cap).
+- *SUSPENDED at 14:10Z due to CRITICAL event detector flag on semi sector. Do NOT execute until hourly reassessment.*
 - Do NOT sell SOXX today.
 - Do NOT chase above $579.50.
 - DO NOT ADD SOXX ABOVE $579.50.
