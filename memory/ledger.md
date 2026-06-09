@@ -2,6 +2,11 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 23:51 : [hourly] Stale-memory fix, code guards deployed, Tue watchlist set
+- Reconstructed 3-week stale gap, cancelled unauthorized after-hours orders
+- Added stale-memory, duplicate-order, no-buy guards to alpaca_cli.ts
+- Updated MEMORY.md and todo.md with Tue Jun 9 plan: SOXX 567, NVDA 210.50, VOO sell 1
+
 2026-06-08 : 22:16 : [tactical] Cancelled 2 after-hours orders
 - HOOD 1@85 and NVDA 3@209 limit orders placed after 20:00Z market close
 - Orders violated 'No after-hours trading' rule and 'NO NEW BUY ORDERS TODAY' directive
