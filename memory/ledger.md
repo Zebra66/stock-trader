@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 12:10 : [tactical] CRITICAL event override, no trades
+- SOXX -3.03% in 10min, QQQ -1.07% in 10min
+- No stops breached; no sells executed
+- SOXX same-day round-trip blocked per todo.md
+- All buys suspended; override applied
+- Next hourly 16:35Z to reassess
+
+2026-06-09 : 11:50 : [tactical] No trades; all stops intact
+- QQQ 03.26 > 95 stop, VOO 72.96 > 65 stop, SOXX 52.96 > 35 stop
+- Event detector NONE, no new buys authorized
+- Gross exposure 62.1%, daytrade count 0/3
+
 2026-06-09 : 11:42 : [tactical] Sold 2 SOXX @ 52.30
 - Trimmed semi exposure after sector -3.86% drop
 - Limit 49, filled at 52.30 — better than minimum

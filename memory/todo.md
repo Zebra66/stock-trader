@@ -1,16 +1,19 @@
-# Tactical Todo — Updated 2026-06-09 15:35Z (Tuesday 11:35 AM ET)
-*Event detector resolved to NONE at 15:35Z. Market rotation out of tech/growth. Portfolio in drawdown. Trim SOXX, set stops, no new buys.*
+<!-- Autonomous override applied at 2026-06-09 16:10Z due to CRITICAL event -->
+
+# Tactical Todo — Updated 2026-06-09 16:10Z (Tuesday 12:10 PM ET)
+*Event detector CRITICAL at 16:10Z. SOXX -3.03% in 10min, QQQ -1.07% in 10min. All buys suspended. No sells executed (stops not breached).*
+
 
 ## Current State
-- **Regime:** neutral (50–70% gross exposure band, currently at ~62.1%)
+- **Regime:** neutral (50–70% gross exposure band, currently at ~61.8%)
 - **Live book:** QQQ 6, VOO 2, SOXX 1
 - **Open orders:** NONE.
-- **Account equity / cash / buying power:** ~$9,835 / ~$2,634 / ~$30,699
-- **Gross long exposure:** ~73.2% | **Net exposure:** ~73.2% | **Cash:** ~26.8%
+- **Account equity / cash / buying power:** $9,790.03 / $3,739.07 / $31,898.98
+- **Gross long exposure:** $6,050.96 / $9,790.03 = **61.8%** | **Net exposure:** ~61.8% | **Cash:** ~38.2%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Market:** OPEN. Next tactical: 15:40Z. Next hourly: 16:35Z (12:35 PM ET).
-- **Macro context:** S&P 500 and Nasdaq sinking, Dow flat. Tech rotation. SOXX -3.86% today, QQQ -2.02%, VOO -1.09%. Event detector NONE.
+- **Market:** OPEN. Next tactical: 16:20Z. Next hourly: 16:35Z (12:35 PM ET).
+- **Macro context:** Event detector CRITICAL at 16:10Z. SOXX -3.03% in 10 min, QQQ -1.07% in 10 min. Tech crash accelerating. SOXX intraday -6.06%, QQQ intraday -2.83%, VOO intraday -1.47%. SPY $728.30 (-1.06% today).
 
 ## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
 
@@ -93,14 +96,14 @@
 3. **ALL BUYS SUSPENDED until hourly reassessment at 16:35Z.**
 
 ## Current Book
-- QQQ 6 (~42.8%), VOO 2 (~13.7%), SOXX 1 (~5.6%)
-- Cash: ~$3,736 (~38.0%)
-- Gross exposure: ~62.1%
+- QQQ 6 (~42.6%), VOO 2 (~13.7%), SOXX 1 (~5.5%)
+- Cash: $3,739.07 (~38.2%)
+- Gross exposure: ~61.8%
 
 ## Expected Book — Achieved
-- QQQ 6 (~42.8%), VOO 2 (~13.7%), SOXX 1 (~5.6%)
-- Cash: ~$3,736 (~38.0%)
-- Gross exposure: ~62.1%
+- QQQ 6 (~42.6%), VOO 2 (~13.7%), SOXX 1 (~5.5%)
+- Cash: $3,739.07 (~38.2%)
+- Gross exposure: ~61.8%
 
 ## Next Hourly Preview — 16:35Z (12:35 PM ET)
 - Reassess QQQ $695 stop and VOO $665 stop.
