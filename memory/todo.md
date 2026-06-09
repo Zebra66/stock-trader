@@ -1,3 +1,112 @@
+<!-- Autonomous override applied at 2026-06-09 13:30Z due to CRITICAL event -->
+# Tactical Todo — Updated 2026-06-09 13:30Z (Tuesday 9:30 AM ET)
+*HARD_LOCK LIFTED. Event detector CRITICAL at market open. Buy conditions SUSPENDED. Execute protective sells only if stops breached.*
+
+## Current State
+- **Regime:** offensive catch-up (60–90% band, currently at ~68.2%)
+- **Live book:** QQQ 6, VOO 2, SOXX 2
+- **Account equity / cash / buying power:** ~$10,074 / ~$3,204 / ~$32,054
+- **Gross long exposure:** ~68.2% | **Net exposure:** ~68.2% | **Cash:** ~31.8%
+- **Daytrade count:** 0/3
+- **Pattern day trader:** false
+- **Open orders:** NONE.
+- **Market:** OPEN. Next tactical: 13:40Z, 13:50Z. Next hourly: 14:35Z (10:35 AM ET).
+- **Macro context:** Tuesday open. Event detector CRITICAL at 13:30Z: SOXX +2.54%, SMH +2.14%, XLK +1.15%. All held positions OK (QQQ +0.94%, SOXX +2.54%, VOO +0.53%).
+
+## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
+
+### QQQ — HOLD 6 — DO NOT SELL OR ADD
+- Weight ~43.0%, at 45% cap. Cannot add 7th share.
+- Unrealized +2.41% from avg $705.45. Current price ~$722.46.
+- DO NOT SELL QQQ (event detector CRITICAL; wait for hourly authorization).
+- DO NOT ADD QQQ TODAY.
+
+### VOO — HOLD 2 — DO NOT SELL OR ADD
+- Weight ~13.6%, at 20% non-QQQ ETF cap. 3rd share would breach cap.
+- Unrealized +0.71% from avg $678.70. Current price ~$683.52.
+- DO NOT SELL VOO (event detector CRITICAL; wait for hourly authorization).
+- DO NOT ADD VOO TODAY.
+
+### SOXX — HOLD 2 — DO NOT SELL OR ADD
+- Weight ~11.6% of equity. Within 20% ETF cap.
+- Unrealized +2.18% from avg $571.53. Current price ~$583.98.
+- DO NOT SELL SOXX (event detector CRITICAL; wait for hourly authorization).
+- DO NOT ADD SOXX TODAY.
+
+### NVDA — DO NOT BUY — DO NOT RE-BUY
+- Price ~$209.52, below $210 reclaim threshold. Re-entry ONLY on $210 reclaim with volume.
+- Hourly has NOT yet authorized re-entry for today.
+- Re-evaluate at next hourly only if it reclaims $210.
+
+### AVGO — DO NOT BUY — DO NOT RE-BUY
+- Post-earnings crash continues. ~$403.95. Bounced but still weak.
+- Hourly has NOT yet authorized re-entry for today.
+- Re-evaluate at next hourly only if it finds support above $400.
+
+### GOOG — DO NOT BUY
+- Support $375 broken. Price ~$361.15.
+- No re-entry until it reclaims $375 with volume and holds for 30 minutes.
+- Do NOT buy GOOG today.
+
+### META — DO NOT BUY
+- `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
+
+### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
+- No edge, weak relative trends, parabolic reversal risk, or thin liquidity.
+- Hourly has NOT authorized buys for any of these today.
+
+## Hard Rules / No-Trade Conditions
+- **NO NEW BUY ORDERS TODAY.** Event detector CRITICAL at open. All buys suspended until hourly reset.
+- **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
+- **No new short sales** under any circumstances.
+- **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
+- **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
+- **STOP-LOSS EXECUTION RULE:** When a stop is breached, you MUST use either (a) the EXACT limit price specified in the hourly note, or (b) a market order. You may NOT place a limit sell ABOVE the current market price on a stopped position.
+- **Open-order conflict check:** Run `get-orders --status open` before placing any order. If an unauthorized open order exists for the same symbol, cancel it immediately before proceeding.
+- **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
+- **Data quality check:** Is the broker quote confirmed by healthy volume (>10 trades)? If stale/abnormal, abort.
+- **PDT conservation:** With 0/3 daytrades, we have full flexibility, but conserve daytrades for true emergencies. Do NOT consume a daytrade on a small trim or speculative exit.
+
+## Concentration Cap Guard (Code-Enforced)
+- QQQ ≤ 45% of equity
+- Any single stock ≤ 15% of equity
+- Any non-QQQ ETF ≤ 20% of equity
+- If an order would breach any cap, it is REJECTED by `alpaca_cli.ts` and `alpaca_client_factory.ts`.
+- **Pre-computed caps this cycle:** QQQ max 6 shares (~43.0%, already at cap); VOO max 2 shares (~13.6%, already at cap); SOXX max 3 shares (~17.4%); NVDA max 7 shares (~14.6%).
+
+## Symbol Ban Guard (Code-Enforced)
+- `memory/.trading_lock.json` contains `bannedSymbols: ["META"]`. BUY orders for banned symbols are REJECTED regardless of lock active state.
+- Additionally, both tools parse `memory/todo.md` for lines containing `DO NOT BUY`, `DO NOT RE-BUY`, or `DO NOT ADD` and extract symbols, rejecting BUY orders for those symbols automatically.
+
+## Illiquidity Warnings (Universe Watchlist)
+Do not place market orders for these; use limit orders only, or defer.
+- **VOO:** Thin relative to SPY. Use limit orders only.
+- **SOXX:** Acceptable for limit orders; avoid market orders.
+- **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
+
+## Today's Deployment Queue — SUSPENDED
+<!-- Autonomous override: event detector CRITICAL at 13:30Z. Buy conditions suspended until hourly reset. -->
+1. **SOXX 1 share — limit $567.00 — SUSPENDED.** Event detector CRITICAL on semi sector at 13:30Z.
+2. **NVDA 1 share — limit $210.50 — SUSPENDED.** Event detector CRITICAL on semi sector at 13:30Z.
+3. **No other authorized buys unless next hourly note explicitly adds them.**
+
+## Current Book
+- QQQ 6 (~43.0%), VOO 2 (~13.6%), SOXX 2 (~11.6%)
+- Cash: ~$3,204 (~31.8%)
+- Gross exposure: ~68.2%
+
+## Expected Book — Until Hourly Reset
+- QQQ 6 (~43.0%), VOO 2 (~13.6%), SOXX 2 (~11.6%)
+- Cash: ~$3,204 (~31.8%)
+- Gross exposure: ~68.2%
+
+## Next Hourly Preview — 14:35Z (10:35 AM ET)
+- Post-open review after CRITICAL event detector classification.
+- Reassess semi sector after gap-up open.
+- Update watchlist for remainder of session.
+
+---
+
 # Tactical Todo — Updated 2026-06-09 00:01Z (Monday 8:01 PM ET)
 *Post-session. After-hours unauthorized orders cancelled. Positions authorized. Await Tuesday open.*
 

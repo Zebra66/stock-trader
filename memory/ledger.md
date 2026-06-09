@@ -1,3 +1,10 @@
+2026-06-09 : 13:30 : [tactical] CRITICAL event: buys suspended, no sells
+- Event detector CRITICAL at 13:30Z: SOXX +2.54%, SMH +2.14%
+- Held positions all OK (QQQ +0.94%, SOXX +2.54%, VOO +0.53%)
+- No protective sells triggered; all positions up
+- Buy conditions suspended for volatile symbols
+- Exposure 68.2%, cash $3,204, no open orders
+
 # Trading Ledger
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
