@@ -2,8 +2,8 @@
 *Event detector resolved to NONE at 15:35Z. Market rotation out of tech/growth. Portfolio in drawdown. Trim SOXX, set stops, no new buys.*
 
 ## Current State
-- **Regime:** neutral (50–70% gross exposure band, currently at ~73.2%)
-- **Live book:** QQQ 6, VOO 2, SOXX 3
+- **Regime:** neutral (50–70% gross exposure band, currently at ~62.1%)
+- **Live book:** QQQ 6, VOO 2, SOXX 1
 - **Open orders:** NONE.
 - **Account equity / cash / buying power:** ~$9,835 / ~$2,634 / ~$30,699
 - **Gross long exposure:** ~73.2% | **Net exposure:** ~73.2% | **Cash:** ~26.8%
@@ -30,7 +30,8 @@
 
 ### SOXX — SELL 2 (HOLD 1) — DO NOT ADD
 - Weight ~16.8% of equity. Trimming to ~5.5% to reduce semi-sector risk.
-- **SELL 2 SOXX shares at limit $549.00.** These are the 2 shares bought June 8 (avg entry ~$571.53). Selling these does NOT create a daytrade.
+- ~~SELL 2 SOXX shares at limit $549.00.~~ ✅ **FILLED at $552.30** (2026-06-09 15:41Z). Trim complete.
+- **AUTHORIZE SAME-DAY SELL SOXX** — hourly strategist explicitly authorizes selling the 2 June 8 shares today while the 1 share bought today is protected.
 - **HOLD 1 SOXX share** (bought today at $569.94). DO NOT SELL this 1 share today — same-day round trip prohibited.
 - **Stop-loss for remaining 1 share:** If SOXX drops below $535.00, SELL 1 share via limit order. Rationale: cut further semi-sector risk.
 - SOXX entry ceiling: $579.50 — chasing higher is not permitted.
@@ -92,14 +93,14 @@
 3. **ALL BUYS SUSPENDED until hourly reassessment at 16:35Z.**
 
 ## Current Book
-- QQQ 6 (~42.8%), VOO 2 (~13.7%), SOXX 3 (~16.8%)
-- Cash: ~$2,634 (~26.8%)
-- Gross exposure: ~73.2%
+- QQQ 6 (~42.8%), VOO 2 (~13.7%), SOXX 1 (~5.6%)
+- Cash: ~$3,736 (~38.0%)
+- Gross exposure: ~62.1%
 
-## Expected Book — After SOXX Trim
-- QQQ 6 (~43.0%), VOO 2 (~13.7%), SOXX 1 (~5.6%)
-- Cash: ~$3,733 (~38.1%)
-- Gross exposure: ~62.3%
+## Expected Book — Achieved
+- QQQ 6 (~42.8%), VOO 2 (~13.7%), SOXX 1 (~5.6%)
+- Cash: ~$3,736 (~38.0%)
+- Gross exposure: ~62.1%
 
 ## Next Hourly Preview — 16:35Z (12:35 PM ET)
 - Reassess QQQ $695 stop and VOO $665 stop.

@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 11:42 : [tactical] Sold 2 SOXX @ 52.30
+- Trimmed semi exposure after sector -3.86% drop
+- Limit 49, filled at 52.30 — better than minimum
+- Realized loss ~8 on June 8 shares
+- No PDT impact; 1 SOXX share bought today remains held
+- Gross exposure now ~62% (neutral band target)
+
 2026-06-09 : 11:38 : [hourly] Trim SOXX 2, neutral posture, no buys
 - Event detector resolved to NONE; market in tech rotation selloff
 - Portfolio -1.65% vs SPY +1.89%; failing both goals
