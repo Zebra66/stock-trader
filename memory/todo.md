@@ -1,39 +1,40 @@
-# Tactical Todo — Updated 2026-06-09 14:35Z (Tuesday 10:35 AM ET)
-*HARD_LOCK LIFTED. Event detector resolved to NONE. SOXX limit buy open at $570.00.*
+# Tactical Todo — Updated 2026-06-09 15:10Z (Tuesday 11:10 AM ET)
+*MAJOR event detected at 15:10Z. Event detector resolved to MAJOR. All buys suspended. SOXX limit buy filled.*
 
 <!-- Autonomous override applied at 2026-06-09T14:10:00Z due to CRITICAL event -->
 <!-- Autonomous override applied at 2026-06-09T14:20:00Z due to MAJOR event -->
 <!-- Autonomous override applied at 2026-06-09T14:50:00Z due to CRITICAL event -->
+<!-- Autonomous override applied at 2026-06-09T15:10:00Z due to MAJOR event -->
 
 ## Current State
-- **Regime:** offensive catch-up (60–90% band, currently at ~68.0%)
+- **Regime:** offensive catch-up (60–90% band, currently at ~73.6%)
 - **Live book:** QQQ 6, VOO 2, SOXX 3
-- **Open orders:** NONE. SOXX limit buy 1 @ $570.00 filled.
-- **Override:** CRITICAL event detected at 14:50Z. All buy conditions SUSPENDED.
-- **Account equity / cash / buying power:** ~$10,009 / ~$3,204 / ~$31,301
-- **Gross long exposure:** ~68.0% | **Net exposure:** ~68.0% | **Cash:** ~32.0%
+- **Open orders:** NONE.
+- **Override:** MAJOR event detected at 15:10Z. All buy conditions SUSPENDED.
+- **Account equity / cash / buying power:** ~$9,959 / ~$2,634 / ~$31,048
+- **Gross long exposure:** ~73.6% | **Net exposure:** ~73.6% | **Cash:** ~26.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Market:** OPEN. Next tactical: 14:40Z, 14:50Z. Next hourly: 15:35Z (11:35 AM ET).
-- **Macro context:** Gap-up fully reversed. SOXX flat, QQQ flat, VOO slightly up. Event detector NONE. All held positions OK.
+- **Market:** OPEN. Next tactical: 15:20Z. Next hourly: 15:35Z (11:35 AM ET).
+- **Macro context:** Semiconductors bouncing +1.2% after CRITICAL drop. SOXX $565.35, QQQ $711.82, VOO $678.62. Event detector MAJOR. All held positions OK.
 
 ## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~42.9%, at 45% cap. Cannot add 7th share.
-- Unrealized +1.46% from avg $705.45. Current price ~$715.75.
+- Unrealized +0.90% from avg $705.45. Current price ~$711.82.
 - DO NOT SELL QQQ today.
 - DO NOT ADD QQQ TODAY.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
 - Weight ~13.6%, at 20% non-QQQ ETF cap. 3rd share would breach cap.
-- Unrealized +0.36% from avg $678.70. Current price ~$681.11.
+- Unrealized -0.01% from avg $678.70. Current price ~$678.62.
 - DO NOT SELL VOO today.
 - DO NOT ADD VOO TODAY.
 
 ### SOXX — HOLD 3 — DO NOT SELL — DO NOT ADD
 - Weight ~16.9% of equity ($1,676 / $9,909). Within 20% ETF cap.
-- Unrealized -2.14% from avg $570.997. Current price ~$558.76.
+- Unrealized -0.99% from avg $570.997. Current price ~$565.35.
 - **LIMIT BUY 1 SOXX @ $570.00 FILLED.** No further SOXX buys authorized.
 - Do NOT sell SOXX today (same-day round trip prohibited; bought at 14:37Z).
 - SOXX entry ceiling: $579.50 — chasing higher is not permitted.
@@ -93,14 +94,14 @@
 4. **ALL BUYS SUSPENDED until hourly reset at 15:35Z.**
 
 ## Current Book
-- QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 2 (~11.4%)
-- Cash: ~$3,204 (~32.0%)
-- Gross exposure: ~68.0%
+- QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 3 (~17.0%)
+- Cash: ~$2,634 (~26.4%)
+- Gross exposure: ~73.6%
 
-## Expected Book — If SOXX fills
-- QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 3 (~17.1%)
-- Cash: ~$2,634 (~26.3%)
-- Gross exposure: ~73.7%
+## Expected Book — Current
+- QQQ 6 (~42.9%), VOO 2 (~13.6%), SOXX 3 (~17.0%)
+- Cash: ~$2,634 (~26.4%)
+- Gross exposure: ~73.6%
 
 ## Next Hourly Preview — 15:35Z (11:35 AM ET)
 - Reassess NVDA $210.50 reclaim.
