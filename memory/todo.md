@@ -26,8 +26,9 @@
 
 ## Tuesday June 9 Deployment Queue (Pending 09:30 ET Open + Hourly)
 1. **SOXX 1 share — limit $567.00** (per 19:35Z hourly). First priority on orderly pullback.
-2. **NVDA 1 share — limit $210.50** (per 19:35Z hourly). Second priority, breakout confirmation.
-3. **No other authorized buys unless next hourly note explicitly adds them.**
+2. **NVDA 1–2 shares — limit $210.50** (per 19:35Z hourly). Second priority, breakout confirmation. If NVDA gaps above 212 at open, do NOT chase; wait for pullback.
+3. **SELL VOO 1 share** at market open or limit 680 — replace low-beta SPY anchor with higher-conviction growth. Keep 1 VOO share if market looks weak at open (SPY below 738).
+4. **No other authorized buys unless next hourly note explicitly adds them.**
 
 ## Hard Rules / No-Trade Conditions
 - **No after-hours / pre-market trading.** Only regular-session orders.

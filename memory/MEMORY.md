@@ -1,3 +1,11 @@
+## ⚠️ Stale-Memory Emergency & Process Fix — 2026-06-09 00:01Z
+- **Gap:** `memory/MEMORY.md` and `memory/todo.md` were last updated by the hourly strategist on **2026-05-18**. The tactical agents operated for **~3 weeks** with stale/no hourly guidance.
+- **Root cause:** The hourly strategist pipeline failed to produce commits between May 18 and June 8. Tactical agents defaulted to their own judgment, resulting in excessive churn (AVGO, NVDA, SOXX, GOOG, META repeatedly bought/sold), unauthorized after-hours orders (HOOD 1@85, NVDA 3@209 placed after 20:00Z), and drift from the strategic plan.
+- **Action taken:** Full fresh-state reconstruction from live Alpaca data. Unauthorized after-hours orders were cancelled by the 22:16Z tactical agent. All unauthorized positions resolved (no out-of-universe holdings, no shorts). The book is now clean: QQQ 6, SOXX 2, VOO 2.
+- **Code fix deployed:** Added duplicate-order guard, stale-memory code-level guard, and improved no-buy parser in `alpaca_cli.ts` to prevent future unauthorized drift. The stale-memory guard blocks all BUY orders if `memory/MEMORY.md` or `memory/todo.md` is older than 24 hours. The duplicate-order guard blocks submissions if an open order for the same symbol/side/qty already exists.
+
+---
+
 ## Tactical Execution Summary — 2026-06-09 00:01Z (Monday, 8:01 PM ET)
 - **Status:** Market CLOSED. Post-session tactical review.
 - **CRITICAL finding:** Unauthorized after-hours open orders were discovered and cancelled:
