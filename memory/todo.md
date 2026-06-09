@@ -1,102 +1,96 @@
-# Tactical Todo — Updated 2026-06-09 16:40Z (Tuesday 12:40 PM ET)
-*Event detector MAJOR. SOXX sold via autonomous override. QQQ already sold. All buys suspended.*
-
-<!-- Autonomous override applied at 2026-06-09 16:40Z due to MAJOR event -->
+# Tactical Todo — Updated 2026-06-09 17:35Z (Tuesday 1:35 PM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~2.5 hrs).*
 
 ## Current State
-- **Regime:** defensive (30–50% gross exposure band, currently at ~13.7%)
+- **Regime:** defensive (30–50% gross exposure target band)
 - **Live book:** VOO 2 only
-- **Open orders:** NONE.
-- **Account equity / cash / buying power:** ~$9,737 / ~$8,407 / ~$36,764
-- **Gross long exposure:** ~$1,330 / ~$9,737 = **13.7%** | **Net exposure:** ~13.7% | **Cash:** ~86.3%
-- **Daytrade count:** 1/3 (used by SOXX same-day sell)
+- **Account equity / cash / buying power:** ~$9,752 / ~$8,407 / ~$18,159
+- **Gross long exposure:** ~13.8% | **Net exposure:** ~13.8% | **Cash:** ~86.2%
+- **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
-- **Market:** OPEN. Next tactical: 16:40Z. Next hourly: 17:35Z (1:35 PM ET).
-- **Macro context:** Tech rotation continues. SPY -1.57%, QQQ -3.19%, SOXX -6.89% today. All universe red. No confirmed support.
+- **Open orders:** NONE
+- **Market:** OPEN until 16:00 ET. Next hourly: 15:35Z (11:35 AM ET next run? No — current 17:35Z = 1:35 PM ET). Next hourly: 18:35Z (2:35 PM ET).
 
 ## Position Instructions — Tue Jun 9 (:40, :50 Tactical Runs)
 
-### SOXX — SOLD 1 — DO NOT RE-BUY — DO NOT ADD
-- **SOLD 1 share @ $523.12** via market order (2026-06-09 16:40Z). Same-day lot bought at $569.94.
-- **Realized loss:** ~$46.82 on this 1-share lot.
-- **DO NOT RE-BUY SOXX** for 24 hours after this sell (until after 2026-06-10 16:40Z).
-- **DO NOT ADD SOXX** today.
+### VOO — HOLD 2 — DO NOT SELL OR ADD
+- Weight ~13.8%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.7% cap (code-rejected).
+- Broad-market anchor. Only position remaining. Protect it.
+- **DO NOT SELL VOO today under any circumstances.**
 
-### VOO — HOLD 2 — DO NOT ADD
-- Weight ~13.7%, at 20% non-QQQ ETF cap. 3rd share would breach cap.
-- Unrealized -1.47% from avg $678.70. Current price ~$668.72.
-- **Stop-loss:** If VOO drops below $665.00, SELL 2 shares via limit order at $664.50. Rationale: defensive trim in risk-off tape.
-- DO NOT ADD VOO TODAY.
-- DO NOT SELL VOO today unless stop at $665 is breached.
-- **Illiquidity warning:** VOO quote is very thin (4 trades, 66 volume). Use limit orders only. If stop breached, limit sell at $664.50 or slightly below stop.
+### QQQ — BUY 1 ON PULLBACK — DO NOT CHASE
+- Current price ~$700.35. We sold 6 shares at $690.79 earlier today. Do NOT chase the bounce.
+- **Authorized buy:** BUY 1 share if price drops to **$695.00 or below**. Place limit order at **$694.50**.
+- Rationale: Rebuild core liquid growth exposure at a better level than the panic sell.
+- **Concentration cap check:** QQQ max 45% of equity = $4,388. Buying 1 share at $694.50 = $694.50 = 7.1% of equity. Well within cap.
+- **If price does not hit $695.00 by 15:30 ET (3:30 PM ET),** cancel the resting order and await next hourly reassessment.
+- **DO NOT buy QQQ at market price or above $695.00.**
 
-### QQQ — SOLD 6 — DO NOT RE-BUY
-- **SOLD 6 shares at $690.79** via market order (2026-06-09 16:20Z). Stop at $695.00 breached.
-- **Realized loss:** ~$87.94 on QQQ lot.
-- DO NOT RE-BUY QQQ for 24 hours unless hourly explicitly authorizes.
-- DO NOT ADD QQQ TODAY.
+### SOXX — BUY 1 ON DEEPER PULLBACK — DO NOT CHASE
+- Current price ~$546.59. We sold 2 shares at $552.30 and 1 share at $523.12 today. Do NOT chase the bounce.
+- **Authorized buy:** BUY 1 share if price drops to **$535.00 or below**. Place limit order at **$534.50**.
+- Rationale: Rebuild chip exposure on a deeper pullback, not a relief rally.
+- **Concentration cap check:** SOXX max 20% of equity = $1,950. Buying 1 share at $534.50 = 5.5% of equity. Well within cap.
+- **If price does not hit $535.00 by 15:30 ET (3:30 PM ET),** cancel the resting order and await next hourly reassessment.
+- **DO NOT buy SOXX at market price or above $535.00.**
+- **Illiquidity warning:** SOXX is thin. Use limit orders only. No market orders.
 
-### NVDA — DO NOT BUY — DO NOT RE-BUY — SUSPENDED
-- Price ~$201.28, well below $210 threshold. Re-entry ONLY on $210.50 reclaim with volume.
-- Hourly does NOT authorize re-entry today.
-- Do NOT place NVDA order in this tactical window.
-- DO NOT RE-BUY NVDA TODAY.
+### NVDA — DO NOT BUY — DO NOT RE-BUY
+- Fully exited June 5 at $207.80. Current price $204.40. No re-entry authorized.
+- Risk-off tape and individual semi risk too high. Await hourly authorization.
+
+### GOOG — DO NOT BUY — DO NOT RE-BUY
+- Fully exited June 1 at $370.50. Current price $360.55. No re-entry authorized.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY
-- Post-earnings crash continues. ~$374.85. No confirmed support.
-- Hourly does NOT authorize re-entry today.
-- DO NOT BUY AVGO TODAY.
-
-### GOOG — DO NOT BUY
-- Support $375 broken. Price ~$358.49. Still below $375.
-- No re-entry until it reclaims $375 with volume and holds for 30 minutes.
-- DO NOT BUY GOOG TODAY.
+- Fully exited June 4 at $405.16. Current price $383.19. Post-earnings correction. No re-entry authorized.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
-- No edge, weak relative trends, parabolic reversal risk, or thin liquidity.
-- Hourly does NOT authorize buys for any of these today.
+- Risk-off tape. No edge. No catalysts. Thin liquidity.
 
 ## Hard Rules / No-Trade Conditions
-- **No same-day round trips** unless explicitly authorized with exact string `AUTHORIZE SAME-DAY SELL <SYMBOL>`.
+- **No market orders.** All new orders must be limit orders only.
+- **No discretionary buys above authorized limit prices.** If a symbol is not at or below the limit price in this todo, do NOT buy it.
+- **No same-day round trips.** If a symbol is bought today, do NOT sell it today unless the hourly note explicitly authorizes the exit.
 - **No new short sales** under any circumstances.
-- **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Rephrase conditional lines to avoid false matches (e.g., use "entry ceiling" instead of "DO NOT ADD ABOVE").
-- **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for hourly authorization. (Event detector is currently MAJOR on SOXX/SMH; override already executed.)
-- **STOP-LOSS EXECUTION RULE:** When a stop is breached, use exact limit price or market order.
-- **Open-order conflict check:** Run `get-orders --status open` before placing any order.
-- **Exposure check:** After this sell, gross exposure will be ~13.7% (VOO only). This is below the 30% defensive lower bound. That is acceptable because the market is in a confirmed correction and no quality setups exist. Do NOT force-buy to hit the band.
-- **Data quality check:** Is the broker quote confirmed by healthy volume (>10 trades)? If stale/abnormal, abort.
-- **PDT conservation:** daytrade_count is now 1/3. Conserve remaining 2 daytrades for emergencies.
-- **Illiquidity:** VOO quote is very thin (4 trades, 66 volume). Use limit orders only for VOO. If VOO stop is breached, use limit sell at or slightly below the stop price.
+- **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
+- **If event detector flags MAJOR or CRITICAL event, do NOT suspend buys or execute sells autonomously.** The event detector classification is an input for the hourly strategist, not an autonomous trigger. The 17:36Z event detector flagged CRITICAL due to bounce magnitude. This is NOT a crash. Do NOT sell VOO or suspend buys based on this flag.
+- **Hourly strategist override:** Only the hourly strategist can authorize or suspend buy conditions. The tactical agent must not override todo.md instructions based on event detector flags.
+- **Do NOT sell VOO today.** VOO is the only position left. Selling it would drop gross exposure to 0%, far below the 30% defensive minimum.
+- **Cancel stale resting orders by 15:30 ET (3:30 PM ET).** If any limit buy orders are still open and unfilled by 15:30 ET, cancel them to avoid overnight exposure or stale fills.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
 - Any single stock ≤ 15% of equity
 - Any non-QQQ ETF ≤ 20% of equity
-- **Pre-computed caps this cycle:** QQQ max 6 shares; VOO max 2 shares; SOXX max 3 shares; NVDA max 7 shares.
+- If an order would breach any cap, it is REJECTED by `alpaca_cli.ts` and `alpaca_client_factory.ts`.
 
 ## Symbol Ban Guard (Code-Enforced)
-- `memory/.trading_lock.json` contains `bannedSymbols: ["META"]`. BUY orders for banned symbols are REJECTED.
+- `memory/.trading_lock.json` contains `bannedSymbols: ["META"]`.
+- BUY orders for banned symbols are REJECTED regardless of lock active state.
+- Additionally, both tools parse `memory/todo.md` for lines containing `DO NOT BUY`, `DO NOT RE-BUY`, or `DO NOT ADD` and extract symbols, rejecting BUY orders for those symbols automatically.
 
 ## Illiquidity Warnings (Universe Watchlist)
-- **VOO:** Thin relative to SPY. Use limit orders only. Current bar: 4 trades, 66 volume.
-- **SOXX:** Acceptable for limit orders; avoid market orders.
+Do not place market orders for these; use limit orders only, or defer.
+- **SOXX:** Thin relative to large-cap ETFs. Limit orders only.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
-## Deployment Queue — Tue Jun 9
-1. ~~SELL 1 SOXX share~~ **EXECUTED** @ $523.12.
-2. **No other authorized trades.**
-3. **ALL BUYS SUSPENDED until hourly reassessment at 17:35Z or tape shows stabilization.**
+## Today's Deployment Queue
+1. **QQQ add** (priority 1): 1 share @ limit $694.50 if price ≤ $695.00.
+2. **SOXX add** (priority 2): 1 share @ limit $534.50 if price ≤ $535.00.
+3. **No other buys authorized.**
 
-## Current Book (Post-Sell)
-- VOO 2 (~13.7%)
-- Cash: ~$8,407 (~86.3%)
-- Gross exposure: ~13.7%
+## Expected Book Into Close (if no fills)
+- VOO 2 (~13.8%)
+- Cash: ~$8,407 (~86.2%)
+- Gross exposure: ~13.8%
 
-## Next Hourly Preview — 17:35Z (1:35 PM ET)
-- Reassess VOO $665 stop.
-- Monitor if any universe symbol shows stabilization (reclaim of key level with volume).
-- Gross exposure will be ~13.7% after SOXX exit. Decide if any tactical add is warranted.
-- No re-buy of QQQ or SOXX until 24-hour cooldown expires.
+## Next Hourly Preview — 18:35Z (2:35 PM ET) (NOT AUTHORIZED YET)
+- Evaluate whether the QQQ/SOXX pullback limits were filled.
+- If market closes weak, assess whether to add more exposure tomorrow or stay defensive.
+- If market rallies strongly, assess whether to chase a small QQQ add at close.
+- Re-evaluate the 30–50% defensive target band given the actual close.
+- No prompt changes expected unless the tactical agent violated these directives.

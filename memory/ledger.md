@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-09 : 13:38 : [hourly] Repo breach fixed, defensive 13.8%
+- Critical repo breach restored: all tracked files staged-as-deleted
+- Portfolio liquidated to VOO 2 only, equity ,752 (-2.48%)
+- Market CRITICAL bounce from lows; do NOT chase
+- Set QQQ limit 94.50 and SOXX limit 34.50 on pullbacks
+- Failing both goals; trailing SPY by 4.39 pp
+
 2026-06-09 : 12:41 : [tactical] Sold 1 SOXX stop-loss MAJOR event
 - SOXX market sell 1 @ 23.12, bought today @ 69.94
 - Realized loss ~6.82 on same-day lot; stop 35 breached
