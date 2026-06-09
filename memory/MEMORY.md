@@ -1,3 +1,19 @@
+## Tactical Execution Summary — 2026-06-09 00:01Z (Monday, 8:01 PM ET)
+- **Status:** Market CLOSED. Post-session tactical review.
+- **CRITICAL finding:** Unauthorized after-hours open orders were discovered and cancelled:
+  - HOOD buy 1 @ $85 limit (created 20:43Z, cancelled 23:15Z)
+  - NVDA buy 3 @ $209 limit (created 21:18Z, cancelled 23:15Z)
+- **Positions confirmed authorized:** QQQ 6, SOXX 2, VOO 2 are all authorized by the 19:35Z hourly strategist. Pre-fetched event detector CRITICAL flag (19:44Z) was based on stale Friday baseline; hourly at 19:35Z had already classified event detector as NONE.
+- **Live broker refresh (authoritative):**
+  - **Equity:** $10,002.60 | **Cash:** $3,204.42 | **Long market value:** $6,798.18
+  - **Gross exposure:** $6,798.18 (67.96% of equity)
+  - **Daytrade count:** 0/3
+- **Current holdings:** QQQ 6 ($4,293.36 @ $715.56), SOXX 2 ($1,142.13 @ $571.06), VOO 2 ($1,358.94 @ $679.47)
+- **Orders placed (by me):** 2 cancellations (HOOD, NVDA after-hours orders). No new buys or sells.
+- **Next expected action:** Tuesday 9:30 AM ET market open. Follow 19:35Z hourly deployment queue: SOXX 1 @ $567, NVDA 1 @ $210.50 if reclaim. No action until then.
+
+---
+
 # Hourly Macro Memory
 *Updated 2026-06-08 19:35Z (Monday 3:35 PM ET). Market OPEN until 20:00Z (16:00 ET). ~25 minutes to close.*
 

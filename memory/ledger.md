@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-08 : 22:16 : [tactical] Cancelled 2 after-hours orders
+- HOOD 1@85 and NVDA 3@209 limit orders placed after 20:00Z market close
+- Orders violated 'No after-hours trading' rule and 'NO NEW BUY ORDERS TODAY' directive
+- Both cancelled immediately. All positions (QQQ 6, SOXX 2, VOO 2) authorized by 19:35Z hourly
+- Market closed. Await Tue 9:30 ET open. No further action.
+
 2026-06-08 : 15:37 : [hourly] Hold into close, no new orders
 - Equity 0,003 (+0.03% inception), SPY +2.98%
 - Gross exposure 68%, in offensive-catch-up band

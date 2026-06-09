@@ -1,3 +1,51 @@
+# Tactical Todo — Updated 2026-06-09 00:01Z (Monday 8:01 PM ET)
+*Post-session. After-hours unauthorized orders cancelled. Positions authorized. Await Tuesday open.*
+
+## Current State
+- **Regime:** offensive catch-up (60–90% band, currently at ~68.0%)
+- **Live book:** QQQ 6, SOXX 2, VOO 2. All positions authorized by 19:35Z hourly.
+- **Account equity / cash / buying power:** $10,002.60 / $3,204.42 / $31,852.58
+- **Gross long exposure:** ~68.0% | **Net exposure:** ~68.0% | **Cash:** ~32.0%
+- **Daytrade count:** 0/3
+- **Pattern day trader:** false
+- **Open orders:** NONE (2 unauthorized after-hours orders cancelled: HOOD 1@85, NVDA 3@209).
+- **Market:** CLOSED. Next session: Tue Jun 9 09:30 ET.
+- **After-hours breach note:** HOOD 1@85 and NVDA 3@209 limit orders were placed after 20:00Z market close in violation of "No after-hours trading" rule. Both cancelled. No other unauthorized activity detected.
+
+## Post-Session Review
+
+### Cancelled Unauthorized After-Hours Orders
+- **HOOD buy 1 @ $85** limit, day order, created 20:43Z (4:43 PM ET), cancelled 23:15Z.
+- **NVDA buy 3 @ $209** limit, day order, created 21:18Z (5:18 PM ET), cancelled 23:15Z.
+- **Rationale:** Placed after market close. Violated explicit "NO NEW BUY ORDERS TODAY" and "No after-hours trading" directives. Cancelled immediately upon discovery.
+
+### Authorized Positions (Confirmed)
+- **QQQ 6** — authorized by 19:35Z hourly. Core liquid growth. 42.9% weight, near 45% cap.
+- **SOXX 2** — authorized by 19:35Z hourly. Semi leader. 11.4% weight.
+- **VOO 2** — authorized by 19:35Z hourly. Broad-market anchor. 13.6% weight.
+
+## Tuesday June 9 Deployment Queue (Pending 09:30 ET Open + Hourly)
+1. **SOXX 1 share — limit $567.00** (per 19:35Z hourly). First priority on orderly pullback.
+2. **NVDA 1 share — limit $210.50** (per 19:35Z hourly). Second priority, breakout confirmation.
+3. **No other authorized buys unless next hourly note explicitly adds them.**
+
+## Hard Rules / No-Trade Conditions
+- **No after-hours / pre-market trading.** Only regular-session orders.
+- **No same-day round trips.** If a symbol was bought today, do NOT sell it today.
+- **No new short sales** under any circumstances.
+- **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced.
+
+## Expected Book
+- QQQ 6 (~42.9%), SOXX 2 (~11.4%), VOO 2 (~13.6%)
+- Cash: ~$3,204 (~32.0%)
+- Gross exposure: ~68.0%
+
+## Next Hourly Preview
+- Tuesday hourly scheduled 13:35Z (9:35 AM ET).
+- Tactical runs at :10, :20, :30, :40, :50 past each hour.
+
+---
+
 # Tactical Todo — Updated 2026-06-08 19:35Z (Monday 3:35 PM ET)
 *HARD_LOCK LIFTED. Execute authorized orders only. Market OPEN until 16:00 ET (~25 mins).*
 
