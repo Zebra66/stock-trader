@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 09:37 : [hourly] Neutral regime, hold VOO, limit buys QQQ/SOXX
+- CPI 4.2% headline, core eased fears, market down -0.35%
+- VOO 2 only, gross 13.79%, target 30-50%
+- QQQ limit 94.50 after 16:20Z, SOXX limit 39.50 after 16:40Z
+- No trades since 19:35Z, daytrade 0/3, no open orders
+- Failing both goals: -2.47% vs SPY +1.92%, turnover is root cause
+
 2026-06-10 : 09:30 : [tactical] CRITICAL GLD event; no action
 - GLD -2.39% CRITICAL event flagged, not held
 - VOO unaffected (severity OK, +0.03%)
