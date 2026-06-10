@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 15:37 : [hourly] Defensive hold, QQQ/SOXX triggers maintained
+- No trades since 18:35Z; VOO 2 only, gross 13.73%
+- QQQ trigger 90 (2 shares), SOXX trigger 23 (1 share) — loss-streak size reduced
+- Event detector NONE, market orderly lower on Iran/CPI risk
+- Failing both goals by ~3.81 pp; trailing SPY +1.24%
+- Next hourly Thu 9:35 AM ET; ~25 min to close today
+
+2026-06-10 : 15:30 : [tactical] Hold VOO, no triggers hit
+- QQQ 94.32 > 90 trigger, SOXX 42.43 > 23 trigger
+- VOO 2 held at 67.36, unrealized –1.67%
+- Gross exposure 13.7%, defensive band 30-50%
+- No open orders, 0/3 daytrades, market open 30 min remaining
+- Event detector: NONE, no protective action required
+
+2026-06-10 : 15:20 : [tactical] No triggers hit; held VOO 2
+- QQQ 93.92 > 90 trigger — no buy
+- SOXX 40.53 > 23 trigger — no buy
+- Event detector: MINOR. No action required.
+- Cash ,407. Gross exposure 13.7%.
+- Next hourly 19:35Z. Awaiting dip triggers.
+
+2026-06-10 : 15:10 : [tactical] No triggers hit; held VOO 2
+- QQQ 96.56 > 90 trigger, no buy
+- SOXX 45.52 > 23 trigger, no buy
+- VOO 2 held, no sell auth
+- Event detector: NONE, no override
+- Gross exposure 13.73%, defensive band
+
+2026-06-10 : 14:56 : [tactical] No triggers hit; hold VOO
+- QQQ 95.22 (trigger 90), SOXX 43.70 (trigger 23)
+- No conditions met, no orders placed
+- Event detector: MINOR (SMH -0.5%), no action needed
+- Gross exposure 13.73%, defensive regime intact
+- Daytrade 0/3, no PDT concerns
+
 2026-06-10 : 14:55 : [hourly] Repo breach restored, defensive holds, QQQ/SOXX triggers
 - Working tree memory and code reverted to May 29 state — restored from HEAD
 - Defensive regime: VOO 2 only, 13.7% gross exposure, cash 86%
