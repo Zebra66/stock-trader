@@ -1,116 +1,116 @@
 # Hourly Macro Memory
 
-## Hourly Cycle Summary — 2026-06-10 14:35Z (Wednesday 10:35 AM ET)
-- **Status:** Market OPEN. Second hourly run. No repo breaches. No unauthorized trades. No concealment risks.
-- **Live broker refresh:** Equity $9,763.53 | Cash $8,406.91 | Long $1,356.62 | Gross 13.89% | Daytrade 0/3 (official).
+## Hourly Cycle Summary — 2026-06-10 15:35Z (Wednesday 11:35 AM ET)
+- **Status:** Market OPEN. Third hourly run. No repo breaches. No unauthorized trades. No concealment risks.
+- **Live broker refresh:** Equity $9,751.61 | Cash $8,406.91 | Long $1,344.70 | Gross 13.78% | Daytrade 0/3 (official).
 - **Holdings confirmed:** VOO 2 only. QQQ 0, SOXX 0, GOOG 0, NVDA 0, AVGO 0, META 0.
 - **Open orders:** NONE.
-- **Filled trades since prior hourly (13:35Z Jun 10):** NONE. Tactical agent correctly held VOO through all tactical runs (10:10, 10:20, 10:30). No open orders placed.
-- **Goal check:** Portfolio **–2.36%** since inception ($9,763.53 vs $10,000 base) vs SPY **+2.75%** (737.74 vs 718.01 baseline). **FAILING BOTH GOALS.** Trailing SPY by ~5.11 pp. The gap WIDENED because the market rallied ~1.6% (QQQ) and ~3.6% (SOXX) from the open while we remained 86% cash.
-- **Regime:** **Offensive catch-up.** Target gross exposure 30–50%. Current 13.89% — critically below band. Dominant issue is now **late entries / poor execution** (we sold at the lows on Jun 9 and missed the rebound). The cure is to rebuild exposure with disciplined limit orders as soon as cooldowns expire.
-- **Next expected action:** Hold VOO. Update QQQ and SOXX limit buy triggers to reflect the rally. Rebuild to 30–35% by end of day after cooldowns expire.
+- **Filled trades since prior hourly (14:35Z Jun 10):** NONE. Tactical agent correctly held VOO through all tactical runs (11:10, 11:20, 11:30). No open orders placed.
+- **Goal check:** Portfolio **–2.48%** since inception ($9,751.61 vs $10,000 base) vs SPY **+1.83%** (731.16 vs 718.01 baseline). **FAILING BOTH GOALS.** Trailing SPY by ~4.31 pp.
+- **Regime:** **DEFENSIVE.** Target gross exposure 30–50%. Current 13.78% — below band due to risk-off tape. The market reversed sharply from the morning rally on Iran-US escalation fears. Buying into a falling knife violates the skill's confirmation rule.
+- **Next expected action:** Hold VOO. Lower QQQ/SOXX triggers to reflect the new risk-off reality. No buys until the market stabilizes or triggers hit.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $678.31 | $1,356.62 | 13.89% | –$0.79 | –0.06% |
-| Cash | — | — | — | $8,406.91 | 86.11% | — | — |
-| **Equity** | — | — | — | **$9,763.53** | **100%** | — | **–2.36%** |
+| VOO | 2 | $678.7025 | $672.31 | $1,344.70 | 13.78% | –$12.79 | –0.94% |
+| Cash | — | — | — | $8,406.91 | 86.22% | — | — |
+| **Equity** | — | — | — | **$9,751.61** | **100%** | — | **–2.48%** |
 
-- **Gross long exposure:** 13.89%
-- **Net exposure:** 13.89%
+- **Gross long exposure:** 13.78%
+- **Net exposure:** 13.78%
 - **Daytrade count:** 0/3 (official)
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Wed Jun 10 (10:35 AM ET)
-- **1D (today):** portfolio **~+0.01%** (VOO +0.07% * 13.89% weight) vs SPY **+0.08%**. **Underperforming SPY today by ~0.07 pp.** Cash drag is costing us on a rally day.
-- **1W (Jun 3 → Jun 10):** portfolio **~–2.36%** vs SPY **~–2.20%**. **Underperforming SPY over 1W by ~0.16 pp.** The gap flipped from outperformance to underperformance because the market rallied off the lows while we stayed in cash.
-- **2W (May 26 → Jun 10):** portfolio **~–2.36%** vs SPY **~–0.23%** (monthly). **Underperforming SPY over 2W by ~2.13 pp.** The June 5–9 churn eroded the early outperformance.
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **–2.36%** vs SPY **+2.75%** (baseline 718.01 → 737.74). Trailing by ~5.11 pp.
-- What is working: VOO broad-market anchor is stable; cash preserved capital during the CPI-led dip.
-- What is not working: **Missing the rebound.** The QQQ sell at $690.79 and SOXX sell at $523.12 on Jun 9 were bottom-tick panic exits. The market has since recovered +$20 on QQQ and +$40 on SOXX. That churn cost ~$50+ in realized losses and now costs us the rebound.
-- What must change today: **Rebuild exposure immediately after cooldowns.** The market is rallying on Fed-hold expectations. We cannot afford to stay at 13.89% while SPY is +2.75%. Set realistic limit buy triggers and fill them.
+## Performance Review — Wed Jun 10 (11:35 AM ET)
+- **1D (today):** portfolio **~–0.12%** (VOO –0.84% * 13.78% weight) vs SPY **–0.80%**. **Outperforming SPY today by ~0.68 pp.** Cash drag helped us on the risk-off reversal.
+- **1W (Jun 3 → Jun 10):** portfolio **~–3.45%** ($10,099.88 → $9,751.61) vs SPY **–3.45%** (751.41 → 731.16). **Roughly matching SPY over 1W.** The June 9 churn erased the prior outperformance.
+- **2W (May 27 → Jun 10):** SPY **–3.13%** (Yahoo 10d). Portfolio estimated **~–2.5%** (from ~$10,000 range two weeks ago). **Estimated outperformance ~0.6 pp.** Exact 2W portfolio data unavailable; estimate based on equity trajectory.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **–2.48%** vs SPY **+1.83%** (baseline 718.01 → 731.16). Trailing by ~4.31 pp.
+- What is working: Cash preserved capital during the sharp 11:30 AM risk-off reversal. VOO anchor is stable relative to the market.
+- What is not working: **Missing the rebound and then missing the reversal.** The QQQ sell at $690.79 and SOXX sell at $523.12 on Jun 9 were bottom-tick panic exits. The market rallied to $711/$572 then reversed to $700/$547. We are flat in both.
+- What must change today: **Do not buy into a falling knife.** The Iran escalation is a new risk. Wait for stabilization or a clear technical bounce before rebuilding exposure.
 
 ## Goal Check
-- **Portfolio since inception:** –2.36% ($9,763.53 vs $10,000 base)
-- **S&P 500 since inception:** +2.75% (SPY 737.74 vs baseline 718.01)
-- **Status:** **FAILING BOTH GOALS.** Trailing SPY by ~5.11 pp. Goal 1 (positive absolute) BREACHED. Goal 2 (beat SPY) BREACHED.
-- **Dominant failure mode:** **late entries / poor execution.** The portfolio sold at the lows on Jun 9 and is now missing the rebound. The 1W data shows we were outperforming when the market was down, but the rally flipped us to underperformance.
+- **Portfolio since inception:** –2.48% ($9,751.61 vs $10,000 base)
+- **S&P 500 since inception:** +1.83% (SPY 731.16 vs baseline 718.01)
+- **Status:** **FAILING BOTH GOALS.** Trailing SPY by ~4.31 pp. Goal 1 (positive absolute) BREACHED. Goal 2 (beat SPY) BREACHED.
+- **Dominant failure mode:** **late entries / poor execution.** The portfolio sold at the lows on Jun 9 and is now missing the rebound. The 1W data shows we were outperforming until the Jun 9 churn erased the edge.
 
-## Market Intel — Wed Jun 10 (10:35 AM ET)
-- **Broad market:** S&P 500 up ~0.08%, Nasdaq up ~0.40% (QQQ +0.40%), semis up ~1.62% (SOXX). Market opened lower on the CPI headline but has reversed sharply into a broad rally. The tape is now risk-on, not mixed.
-- **CPI report:** May headline CPI hit 4.2%. Core CPI eased some Fed fears. Market is now pricing the Fed to hold rates next week under Warsh. TheStreet headline: "Core CPI Inflation Eases Fed Fears As Warsh Takes Helm." Dow "slashed losses" after Trump comments and rallied.
-- **Geopolitical:** US-Iran truce teeters. Risk premium may return to oil and equities if talks collapse. No direct impact on our universe yet.
-- **Semiconductor sector:** SOXX up +1.62% on the day, recovering from the 13:34 low of $552.04. The sector is bouncing hard. The event detector flagged CRITICAL volatility at 13:50Z but has since resolved to MINOR.
-- **Yahoo Finance 1D/1W/1M data (last update):**
-  - QQQ: $710.69 | 1D +0.40% | 1W –4.50% | 1M –0.36%
-  - SOXX: $571.26 | 1D +1.62% | 1W –7.21% | 1M +7.23%
-  - SPY: $737.63 | 1D +0.08% | 1W –2.20% | 1M –0.23%
-  - VOO: $678.19 | 1D +0.07% | 1W –2.19% | 1M –0.20%
-  - NVDA: $206.59 | 1D –0.77% | 1W –3.80% | 1M –5.86%
-  - GOOG: $363.95 | 1D +0.46% | 1W +2.33% | 1M –5.90%
-  - AVGO: $378.19 | 1D –3.56% | 1W –21.08% | 1M –11.73%
-  - META: $583.58 | 1D –0.17% | 1W –6.32% | 1M –2.55%
-  - HOOD: $89.71 | 1D +7.10% | 1W +8.29% | 1M +11.06%
-- **AVGO / Broadcom:** $378.73. Down ~3.6% today, ~21% on the week. Post-earnings correction deepening. No re-entry.
-- **GOOG / Alphabet:** $364.34. Up slightly today. Down 5.9% on the month. No clear catalyst. Avoid.
-- **NVDA:** $206.74. Down 0.8% today, 3.8% on the week. No catalyst. Avoid.
-- **QQQ:** $711.08. Up 0.40% today. Core liquid growth ETF. Sold 6 shares at $690.79 yesterday. Do not re-buy until 16:20Z. Set limit buy at **$705.00 or below** (2 shares).
-- **SOXX:** $571.80. Up 1.62% today. Sold 2 shares at $552.30 and 1 share at $523.12 yesterday. Do not re-buy until 16:40Z. Set limit buy at **$565.00 or below** (1 share).
-- **HOOD:** $89.80. Up 7.1% today. No clear catalyst. Individual stock risk. Avoid.
-- **News access:** Yahoo Finance RSS returned sparse headlines. Key macro story is CPI + US-Iran. SpaceX IPO headlines but no actionable symbol-specific news for the universe.
+## Market Intel — Wed Jun 10 (11:35 AM ET)
+- **Broad market:** S&P 500 down ~0.80%, Nasdaq down ~1.15% (QQQ), semis down ~2.69% (SOXX). Market opened lower, rallied on CPI/Fed hopes, then reversed sharply into a broad risk-off sell-off around 11:00 AM ET.
+- **CPI report:** May headline CPI hit 4.2%. Core CPI eased some Fed fears. The market initially rallied but has since reversed.
+- **Geopolitical:** US-Iran truce teeters. Oil is rising after reported strikes. Risk premium is returning to equities. This is the dominant driver of the 11:00 AM reversal.
+- **Semiconductor sector:** SOXX down –2.69% on the day, recovering from the morning rally but now in a sharp decline. The sector is the most volatile in our universe.
+- **Yahoo Finance 1D/1W/2W data (last update):**
+  - QQQ: $699.68 | 1D –1.15% | 1W –5.54% | 2W –4.91%
+  - SOXX: $547.03 | 1D –2.69% | 1W –9.28% | 2W –3.98%
+  - SPY: $731.16 | 1D –0.80% | 1W –3.45% | 2W –3.13%
+  - VOO: $672.04 | 1D –0.84% | 1W –3.47% | 2W –3.17%
+  - NVDA: $202.63 | 1D –2.67% | 1W –5.64% | 2W –4.63%
+  - GOOG: $359.57 | 1D –0.75% | 1W +1.09% | 2W –0.80%
+  - AVGO: $374.36 | 1D –4.54% | 1W –21.88% | 2W –12.62%
+  - META: $577.50 | 1D –1.21% | 1W –7.30% | 2W –4.51%
+  - HOOD: $87.40 | 1D +4.33% | 1W +5.49% | 2W +4.68%
+- **AVGO / Broadcom:** $374.36. Down ~4.5% today, ~22% on the week. Post-earnings correction deepening. No re-entry.
+- **GOOG / Alphabet:** $359.57. Down 0.75% today. Down 7.0% on the month. No clear catalyst. Avoid.
+- **NVDA:** $202.63. Down 2.7% today. No catalyst. Avoid.
+- **QQQ:** $700.02. Down 1.15% today. Core liquid growth ETF. Sold 6 shares at $690.79 yesterday. Do not re-buy above $690. Set limit buy at **$690.00 or below** (2 shares).
+- **SOXX:** $546.92. Down 2.69% today. Sold 2 shares at $552.30 and 1 share at $523.12 yesterday. Do not re-buy above $525. Set limit buy at **$525.00 or below** (1 share).
+- **HOOD:** $87.40. Up 4.3% today. No clear catalyst. Individual stock risk. Avoid.
+- **News access:** Yahoo Finance RSS headline: "Global stock index down after data, oil rises after Iran-US strikes." Macro coverage is sufficient. Iran escalation is the primary driver.
 - **Earnings dates:** AVGO passed June 3. GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No binary events in next 48 hours.
-- **Event detector:** MINOR. Market orderly. No autonomous sell triggers. Prior CRITICAL event at 13:50Z has resolved.
+- **Event detector:** NONE. Market orderly in 5-minute window. Prior CRITICAL/MAJOR events resolved. 1-hour volatility is high but not flagged.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---|
-| VOO | Hold | Broad-market anchor. Only position left. 13.89%, at 20% non-QQQ ETF cap. Cannot add a full share (would breach cap). | 10–20% |
-| QQQ | Buy on pullback (after 16:20Z) | Core liquid growth. Sold at $690.79 yesterday. Anti-churn until 16:20Z Jun 10. Rebuild exposure with 2 shares. | 15–30% |
-| SOXX | Buy on pullback (after 16:40Z) | Chip exposure. Sold at $523.12 yesterday. Anti-churn until 16:40Z Jun 10. Rebuild exposure with 1 share. | 5–15% |
+| VOO | Hold | Broad-market anchor. Only position left. 13.78%, at 20% non-QQQ ETF cap. Cannot add a full share (would breach cap). | 10–20% |
+| QQQ | Buy on deep pullback (after 16:20Z) | Core liquid growth. Sold at $690.79 yesterday. Anti-churn until 16:20Z Jun 10. Rebuild exposure ONLY if price drops to $690 or below. | 10–25% |
+| SOXX | Buy on deep pullback (after 16:40Z) | Chip exposure. Sold at $523.12 yesterday. Anti-churn until 16:40Z Jun 10. Rebuild exposure ONLY if price drops to $525 or below. | 5–10% |
 | NVDA | Avoid | Individual semi risk. No catalyst. | 0% |
-| GOOG | Avoid | Down 5.9% on month. No catalyst. | 0% |
-| AVGO | Avoid | Post-earnings correction. Down 21% on week. | 0% |
+| GOOG | Avoid | Down 7.0% on month. No catalyst. | 0% |
+| AVGO | Avoid | Post-earnings correction. Down 22% on week. | 0% |
 | META | Avoid | bannedSymbols active. | 0% |
-| RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | No edge. Thin liquidity. | 0% |
+| RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | No edge. Risk-off tape. Thin liquidity. | 0% |
 
 ## Priority Actions
 1. **HOLD VOO 2.** DO NOT SELL VOO under any circumstances today.
-2. **NO BUYS until 16:20Z.** Anti-churn hard stop prohibits QQQ re-buy until 16:20Z. SOXX until 16:40Z.
-3. **Rebuild exposure systematically after cooldowns expire:**
-   - AUTHORIZE RE-ENTRY QQQ — 24-hour cooldown expires 16:20Z Jun 10. BUY **2 shares** if price drops to **$705.00 or below**. Place limit order at **$704.50**. Stop at $680.00 (–3.5%).
-   - AUTHORIZE RE-ENTRY SOXX — 24-hour cooldown expires 16:40Z Jun 10. BUY **1 share** if price drops to **$565.00 or below**. Place limit order at **$564.50**. Stop at $545.00 (–3.5%).
-   - Target: rebuild gross exposure to 30–35% by end of day.
+2. **NO BUYS until 16:20Z at earliest.** Anti-churn hard stop prevents QQQ re-buy until 16:20Z. SOXX until 16:40Z.
+3. **Lower triggers to reflect risk-off tape:**
+   - AUTHORIZE RE-ENTRY QQQ — 24-hour cooldown expires 16:20Z Jun 10. BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**. Stop at $665.00 (–3.5%).
+   - AUTHORIZE RE-ENTRY SOXX — 24-hour cooldown expires 16:40Z Jun 10. BUY **1 share** if price drops to **$525.00 or below**. Place limit order at **$524.50**. Stop at $505.00 (–3.7%).
+   - Rationale: Buying back above our prior sell prices is poor execution. Wait for a deeper pullback or a clear bounce.
 4. **No market orders.** All new buys must be limit orders only.
-5. **Cash reserve:** ~$8,407 (~86.11%). Preserve for authorized limit orders.
-6. **Gross exposure target:** 30–50% offensive-catch-up band. Current 13.89%. Rebuilding to 30%+ requires ~$1,553 in new buys.
+5. **Cash reserve:** ~$8,407 (~86.22%). Preserve for authorized limit orders.
+6. **Gross exposure target:** 30–50% defensive band. Current 13.78%. Rebuilding requires ~$1,500+ in new buys. Deferred until market stabilizes.
 7. **No same-day round trips.** If a symbol is bought today, it may NOT be sold today unless the hourly note explicitly authorizes the exit.
-8. **Event detector override:** MINOR classification. No autonomous action needed. Prior CRITICAL/MAJOR resolved.
+8. **Event detector override:** NONE classification. No autonomous action needed. Prior CRITICAL/MAJOR resolved.
 
 ## Macro Themes
-- **Actionable now:** CPI 4.2% headline was hot, but core CPI eased Fed fears. The market is now in a relief rally. Fed expected to hold next week. Risk-on tone is recovering. We must rebuild exposure to catch the rebound.
-- **Worth monitoring:** US-Iran truce teeters. If talks collapse, geopolitical risk premium could spike. Watch oil and broad market volatility.
-- **Worth monitoring:** Apple AI disappointment continues to drag the tech complex. Watch for any reversal in sentiment.
-- **Interesting but not actionable yet:** QTUM quantum computing ETF. Government quantum headlines. Thin and extended.
+- **Actionable now:** Iran-US escalation causing risk-off. Oil rising. Equities selling off. The 11:00 AM reversal is sharp. DO NOT chase. Wait for stabilization or a deeper discount.
+- **Worth monitoring:** US-Iran truce. If talks collapse, risk premium could spike further. If de-escalation occurs, the market could bounce sharply.
+- **Worth monitoring:** CPI 4.2% headline was hot. Core CPI eased. Fed expected to hold next week. The macro backdrop is still uncertain.
+- **Interesting but not actionable yet:** OpenAI IPO headlines. SpaceX IPO headlines. No actionable symbol-specific news.
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
-- **FMP** disabled. Yahoo Finance public chart API used as fallback for 1M/1W/1D performance.
-- **News access:** Yahoo Finance RSS is primary source. Sparse actionable headlines; macro coverage (CPI, Iran) is sufficient.
-- **Alpaca `get-latest-price` bars** timestamps at 14:34Z, current within 15 minutes.
+- **FMP** disabled. Yahoo Finance public chart API used as fallback for 1M/1W/2W performance.
+- **News access:** Yahoo Finance RSS is primary source. Iran-US headline is actionable.
+- **Alpaca `get-latest-price` bars** timestamps at 15:34Z, current within 15 minutes.
 - **Day-trade status:** 0/3 official. No same-day round trips today.
-- **SOXX liquidity:** 71 trades, 2,743 vol at 14:34Z — acceptable for limit orders.
-- **QQQ liquidity:** 51 trades, 1,993 vol at 14:34Z — liquid.
+- **SOXX liquidity:** 29 trades, 1,500 vol at 15:34Z — acceptable for limit orders.
+- **QQQ liquidity:** 90 trades, 3,190 vol at 15:34Z — liquid.
 - **Earnings dates:** AVGO passed June 3. GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No binary events in next 48 hours.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
-- **Integer-share constraint:** With ~$9.76K equity, QQQ capped at 6 shares; VOO at 2 shares (at cap); SOXX capped at 3 shares.
+- **Integer-share constraint:** With ~$9.75K equity, QQQ capped at 6 shares; VOO at 2 shares (at cap); SOXX capped at 3 shares.
 - **Repo hygiene:** Clean. No tracked files deleted. No unauthorized staged changes. Staged ledger.md and tactical_last_prices.json are expected tactical artifacts.
-- **Event detector:** `priorTimestamp` present (14:30:03.342Z). Working correctly. Classification MINOR.
+- **Event detector:** `priorTimestamp` present (15:30:03.203Z). Working correctly. Classification NONE.
 
 ## Standing Learnings
 See `memory/standing_learnings.md` for full archive. Key reminders:
@@ -141,4 +141,5 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **In a risk-off tape, broad-market ETFs (VOO, QQQ) outperform individual growth stocks.** The current portfolio is correctly positioned with VOO only.
 - **The anti-churn hard stop is a critical guard.** Same-day round trips destroy edge. If a symbol is sold yesterday, it may NOT be bought back until the 24-hour cooldown expires.
 - **24-hour cooldown is calendar-time, not trading-session-time.** A symbol sold at 12:20 PM ET cannot be re-bought until 12:20 PM ET the next day.
-- **Todo.md written at 14:35Z is in effect for the 10:40 AM ET and 10:50 AM ET tactical runs.** The next hourly run is 15:35Z (11:35 AM ET). The tactical agent must obey the time-locked triggers.
+- **Todo.md written at 15:35Z is in effect for the 11:40 AM ET and 11:50 AM ET tactical runs.** The next hourly run is 16:35Z (12:35 PM ET). The tactical agent must obey the time-locked triggers.
+- **Buying back above your prior sell price is poor execution.** If you sold QQQ at $690.79, do not re-enter at $700. Wait for a better price or a clear confirmation of trend reversal.

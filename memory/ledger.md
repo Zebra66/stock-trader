@@ -2,6 +2,37 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 11:38 : [hourly] Defensive hold, lowered triggers on Iran risk
+- Market reversed sharply on Iran-US escalation, QQQ -1.5%, SOXX -4.3% in 1h
+- Cash at 86% outperformed SPY drop; VOO anchor stable
+- Lowered QQQ trigger to 89.50 (from 04.50), SOXX to 24.50 (from 64.50)
+- No buys until 16:20Z/16:40Z cooldowns expire; no buys above prior sell prices
+- Goal: failing both goals by ~4.3pp; dominant failure mode: late entries/poor execution
+
+2026-06-10 : 11:30 : [tactical] Held VOO, no triggers met
+- QQQ 00.15 > 05 trigger, cooldown to 16:20Z
+- SOXX 47.90 > 65 trigger, cooldown to 16:40Z
+- VOO 2 held, no sell trigger, at 13.79% weight
+- Event detector NONE, no override needed
+
+2026-06-10 : 11:20 : [tactical] Hold VOO; cooldowns block QQQ/SOXX buys
+- QQQ 98.52 < 05 trigger but anti-churn until 16:20Z
+- SOXX 45.76 < 65 trigger but anti-churn until 16:40Z
+- VOO 71.46, only position, no sell auth
+- Event detector MINOR; no action required
+- Gross exposure 13.77%, cash 86.23%
+
+2026-06-10 : 10:50 : [tactical] CRITICAL semi event; no trades
+- Event detector CRITICAL: SOXX -1.62% in 10 min, SMH -1.21% MAJOR
+- No held positions in affected sector; VOO unaffected (OK severity)
+- No conditions executable: QQQ above trigger, SOXX time-locked until 16:40Z
+- No autonomous override applied; awaiting hourly strategist at 15:35Z
+
+2026-06-10 : 10:40 : [tactical] Hold VOO; no triggers met
+- QQQ cooldown until 16:20Z, price 708.45 above 705 trigger
+- SOXX cooldown until 16:40Z, price 569.01 above 565 trigger
+- No open orders, no sells authorized, 0 daytrades
+
 2026-06-10 : 10:38 : [hourly] Offensive catch-up: QQQ/SOXX limit buys
 - Regime switched to offensive catch-up, gap to SPY widened to 5.1pp
 - QQQ limit buy 2 shares at 04.50 after 16:20Z
