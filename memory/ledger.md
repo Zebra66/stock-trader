@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 10:38 : [hourly] Offensive catch-up: QQQ/SOXX limit buys
+- Regime switched to offensive catch-up, gap to SPY widened to 5.1pp
+- QQQ limit buy 2 shares at 04.50 after 16:20Z
+- SOXX limit buy 1 share at 64.50 after 16:40Z
+- No unauthorized trades, no open orders, event detector MINOR
+
+2026-06-10 : 10:30 : [tactical] No trades; all triggers locked
+- QQQ time-locked until 16:20Z, price 709.23 above trigger
+- SOXX suspended + time-locked until 16:40Z, price 568.33 above trigger
+- VOO HOLD, no sell trigger
+- Event detector MINOR, no override needed
+- Exposure 13.89%, cash preserved
+
+2026-06-10 : 10:20 : [tactical] No action; all triggers locked
+- Event detector: MINOR (SOXX -0.67%). No CRITICAL/MAJOR.
+- VOO 2 hold only; no sell triggers.
+- QQQ time-locked until 16:20Z; SOXX until 16:40Z.
+- No conditions met. Cash 86.1%, gross 13.9%.
+- No orders placed.
+
+2026-06-10 : 10:10 : [tactical] No triggers met, held VOO
+- QQQ 08.42 > 94.50 trigger, time-locked to 16:20Z
+- SOXX 66.25 > 39.50 trigger, suspended
+- VOO 2 shares stable at 77.20, no sell trigger
+- Event detector NONE, no override needed
+- Gross exposure 13.89%, no action taken
+
 2026-06-10 : 09:50 : [tactical] CRITICAL event: no action, hold VOO
 - SOXX/SMH CRITICAL +1.8% in 5min at 13:50Z
 - No held positions in affected sectors
