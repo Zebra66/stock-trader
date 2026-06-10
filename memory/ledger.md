@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 14:55 : [hourly] Repo breach restored, defensive holds, QQQ/SOXX triggers
+- Working tree memory and code reverted to May 29 state — restored from HEAD
+- Defensive regime: VOO 2 only, 13.7% gross exposure, cash 86%
+- QQQ limit buy 2 @ 89.50 if drops to 90; SOXX limit buy 1 @ 22.50 if drops to 23
+- Failing both goals: portfolio -2.55% vs SPY +1.32% since inception
+- No trades executed since 18:35Z; tactical agent held all positions
+
 2026-06-10 : 14:37 : [hourly] Held VOO, triggers not met, defensive
 - No trades since 17:35Z; QQQ 97.62 > 90 trigger; SOXX 45.65 > 23 trigger
 - Market orderly lower on Iran/CPI risk; prices drifting away from triggers
