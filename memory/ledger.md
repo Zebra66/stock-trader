@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 13:38 : [hourly] Held VOO, lowered SOXX trigger to 23
+- QQQ 97 > 90 trigger, no fill
+- SOXX 44 > 23 trigger, lowered from 25
+- Event detector NONE, market orderly lower
+- Gross exposure 13.75%, defensive regime
+- No trades, no breaches, tactical compliant
+
+2026-06-10 : 13:30 : [tactical] Hold VOO, no triggers hit
+- QQQ 97.57 > 90 trigger, SOXX 44.03 > 25 trigger
+- Market mildly up, no event response needed
+- Gross exposure 13.8%, defensive regime maintained
+- No orders placed, no PDT concerns
+
+2026-06-10 : 13:20 : [tactical] No triggers hit; held VOO
+- QQQ at 96.58, above 90 trigger
+- SOXX at 43.23, above 25 trigger
+- Event detector: NONE, no override
+- No open orders, no daytrade risk
+- Maintained cash reserve ~86%
+
+2026-06-10 : 13:10 : [tactical] No action: QQQ $697, SOXX $545
+- QQQ at $697.18, above $690 trigger; no buy
+- SOXX at $544.56, above $525 trigger; no buy
+- VOO 2 held; no sell trigger
+- Event detector: NONE; market orderly
+- Gross exposure ~13.76%; defensive band maintained
+
+2026-06-10 : 12:50 : [tactical] Hold VOO; QQQ/SOXX above triggers
+- QQQ 97.93 > trigger 90.00
+- SOXX 45.93 > trigger 25.00
+- VOO 2 hold, no open orders
+- Event detector: MINOR, no action needed
+- Daytrades 0/3, gross 13.77%
+
+2026-06-10 : 12:40 : [tactical] No triggers hit, held VOO 2
+- QQQ 00.97 > 90 trigger, no buy
+- SOXX 49.67 > 25 trigger, no buy
+- VOO 2 held, no sell authorized today
+- Event detector NONE, normal mode
+- Gross exposure 13.79%, below defensive band
+
 2026-06-10 : 12:37 : [hourly] QQQ cooldown expired, hold VOO
 - QQQ 24hr cooldown expired at 16:20Z, trigger 90
 - SOXX cooldown expires 16:40Z, trigger 25
