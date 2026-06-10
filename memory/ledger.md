@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 14:37 : [hourly] Held VOO, triggers not met, defensive
+- No trades since 17:35Z; QQQ 97.62 > 90 trigger; SOXX 45.65 > 23 trigger
+- Market orderly lower on Iran/CPI risk; prices drifting away from triggers
+- Gross exposure 13.75%, target 30-50%; regime defensive, no changes
+- Daytrades 0/3, no open orders, no repo breaches
+- Next hourly 19:35Z; ~1.5h to close; tactical runs at :40 and :50
+
+2026-06-10 : 14:30 : [tactical] No action — triggers not met
+- QQQ 98.28 > 90 trigger, no buy
+- SOXX 46.80 > 23 trigger, no buy
+- VOO 2 held, no sell trigger
+- Gross exposure 13.75%, defensive band
+- Event detector NONE, no override
+
+2026-06-10 : 14:20 : [tactical] No triggers hit, held VOO 2
+- QQQ 98.44 > 90 trigger, SOXX 47.08 > 23 trigger
+- Event detector: NONE, no open orders
+- Gross exposure 13.75%, defensive band 30-50%
+- No action required, waiting for dip triggers
+
+2026-06-10 : 14:10 : [tactical] No triggers met; held VOO
+- QQQ 99.19, above 90 trigger
+- SOXX 48.82, above 23 trigger
+- VOO 2 held, no sell auth
+- Event detector: NONE
+- Gross exposure 13.8%, no action
+
+2026-06-10 : 13:50 : [tactical] No triggers hit; market rallied
+- QQQ 99.53 vs trigger 90, SOXX 48.95 vs trigger 23
+- Event detector: MINOR (SOXX +0.82%)
+- Hold VOO 2, no orders placed
+- Market rallying away from dip targets
+
+2026-06-10 : 13:40 : [tactical] No triggers hit, held VOO 2
+- QQQ 96.30 > 90 trigger, no buy
+- SOXX 44.48 > 23 trigger, no buy
+- VOO 2 held, no sell auth
+- Gross 13.75%, defensive regime
+- Event detector: NONE
+
 2026-06-10 : 13:38 : [hourly] Held VOO, lowered SOXX trigger to 23
 - QQQ 97 > 90 trigger, no fill
 - SOXX 44 > 23 trigger, lowered from 25

@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-06-10 17:35Z (Wednesday 1:35 PM ET)
+# Tactical Todo — Updated 2026-06-10 18:35Z (Wednesday 2:35 PM ET)
 *Market OPEN. Event detector: NONE. No open orders. Execute authorized orders only.*
 
 ## Current State
@@ -9,7 +9,7 @@
 - **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 20:00Z. Next hourly: 18:35Z Jun 10 (2:35 PM ET).
+- **Market:** OPEN until 20:00Z. Next hourly: 19:35Z Jun 10 (3:35 PM ET). ~1.5 hours to close.
 
 ## Position Instructions — Wed Jun 10 (:40, :50 Tactical Runs)
 
@@ -20,7 +20,7 @@
 
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP
 - Sold 6 shares yesterday at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED at 16:20Z Jun 10 (12:20 PM ET).**
-- Current price ~$696.87. Do NOT chase the dip. The market is in a risk-off sell-off on Iran escalation and CPI >4%.
+- Current price ~$697.62. Do NOT chase the dip. The market is in a risk-off sell-off on Iran escalation and CPI >4%. Price is drifting away from trigger ($690).
 - **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
 - **Concentration cap check:** QQQ max 45% of equity = $4,386. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
@@ -29,12 +29,12 @@
 ### SOXX — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP
 - Sold 2 shares yesterday at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED at 16:40Z Jun 10 (12:40 PM ET).**
-- Current price ~$544.43. Do NOT chase the dip. SOXX is the most volatile in our universe and is in a sharp decline.
+- Current price ~$545.65. Do NOT chase the dip. SOXX is the most volatile in our universe and is in a sharp decline. Price is drifting away from trigger ($523).
 - **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**.
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
 - **Concentration cap check:** SOXX max 20% of equity = $1,949. Buying 1 share at $522.50 = 5.4% of equity. Well within cap.
 - **DO NOT buy SOXX above $523.00.** Buying back above our lowest sell price ($523.12) is poor execution.
-- **Illiquidity warning:** SOXX is thin (4 trades, 145 vol at 17:34Z). Use limit orders only. No market orders.
+- **Illiquidity warning:** SOXX is thin (6 trades, 125 vol at 18:34Z). Use limit orders only. No market orders.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
 - Fully exited June 5 at $207.80. Current price $202.26. No re-entry authorized.
@@ -53,7 +53,7 @@
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - Risk-off tape. No edge. No catalysts. Thin liquidity.
-- GLD trade count 14, volume 405 at 17:34Z — thin. Limit orders only if ever authorized.
+- GLD trade count 2, volume 63 at 18:34Z — very thin. Limit orders only if ever authorized.
 
 ## Hard Rules / No-Trade Conditions
 - **No market orders.** All new orders must be limit orders only.
@@ -80,7 +80,7 @@
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only.
-- **GLD:** Thin (14 trades, 405 vol at 17:34Z). Limit orders only, or defer.
+- **GLD:** Thin (2 trades, 63 vol at 18:34Z). Limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
