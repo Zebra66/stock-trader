@@ -1,5 +1,21 @@
 # Hourly Macro Memory
 
+## Tactical Override — 2026-06-10 13:30Z (Wednesday 9:30 AM ET)
+**[AUTONOMOUS_OVERRIDE]**
+- **Event detector classification:** CRITICAL
+- **Affected symbols:** GLD (severity CRITICAL, –2.39%), broad market OK (SPY +0.03%, QQQ flat, SOXX +0.30%)
+- **Held positions:** VOO 2 only (severity OK, +0.03%)
+- **Action taken:** No protective sells executed. GLD is not held; VOO unaffected.
+- **Buy suspensions:** None required. No active BUY lines targeting GLD. QQQ and SOXX future triggers are time-locked and not yet active.
+- **Reasoning:** The CRITICAL event is isolated to GLD (thin, 1 trade, 40 vol). Our only position VOO is flat and marked OK. No exposure to gold. No new buys were authorized today. Regime remains defensive.
+- **Gross exposure:** 13.83% (VOO 2 @ $674.39)
+- **Cash:** $8,406.91
+- **Equity:** $9,755.69
+- **Daytrade count:** 0/3
+- **Open orders:** NONE
+
+---
+
 ## Hourly Cycle Summary — 2026-06-09 19:35Z (Tuesday 3:35 PM ET)
 - **Status:** Market OPEN. ~25 minutes to close. No repo breaches. No unauthorized trades.
 - **Live broker refresh:** Equity $9,757.51 | Cash $8,406.93 | Long $1,350.58 | Gross 13.84% | Daytrade 0/3 (official).

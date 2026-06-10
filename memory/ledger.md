@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 09:30 : [tactical] CRITICAL GLD event; no action
+- GLD -2.39% CRITICAL event flagged, not held
+- VOO unaffected (severity OK, +0.03%)
+- No active buy conditions to suspend
+- No open orders; no trades executed
+
+2026-06-09 : 15:50 : [tactical] Hold VOO, no triggers met
+- Event detector: NONE, no MAJOR/CRITICAL events
+- VOO 2 shares held, no sell trigger
+- QQQ/SOXX on 24h cooldown until tomorrow afternoon
+- No buys authorized today, no conditions met
+- Gross exposure 13.84%, defensive regime
+
+2026-06-09 : 15:40 : [tactical] No action: all triggers blocked
+- QQQ/SOXX anti-churn until tomorrow 16:20Z/16:40Z
+- VOO hold-only, no sell trigger, at 13.8%
+- Event detector: NONE
+- Cash 86%, exposure 13.8%
+- No open orders
+
 2026-06-09 : 15:37 : [hourly] Held VOO, no buys today, plan tomorrow
 - Anti-churn blocks QQQ/SOXX re-buy today
 - Defensive posture 13.84% gross, target 30-50%

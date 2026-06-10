@@ -1,4 +1,5 @@
 # Tactical Todo — Updated 2026-06-09 19:35Z (Tuesday 3:35 PM ET)
+<!-- Autonomous override applied at 2026-06-10 13:30Z due to CRITICAL event — GLD -2.39% -->
 *Market OPEN until 20:00Z (~25 min). No open orders. Execute authorized orders only.*
 
 ## Current State
