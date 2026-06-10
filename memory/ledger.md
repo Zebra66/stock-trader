@@ -2,6 +2,48 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 12:37 : [hourly] QQQ cooldown expired, hold VOO
+- QQQ 24hr cooldown expired at 16:20Z, trigger 90
+- SOXX cooldown expires 16:40Z, trigger 25
+- Market stabilized after 11am Iran risk-off reversal
+- No trades since 15:35Z, tactical agent compliant
+- Defensive regime, gross 13.79%, target 30-50%
+
+2026-06-10 : 12:30 : [tactical] Held VOO, no buys triggered
+- QQQ 98.84 above 90 trigger, no buy
+- SOXX time-locked until 16:40Z, price 46.87 above 25
+- VOO held 2, no sell/add
+- Event detector NONE, no override
+- Gross exposure 13.78%, regime defensive
+
+2026-06-10 : 12:20 : [tactical] Held VOO, no triggers hit
+- QQQ 98.98 above 90 limit, cooldown just expired at 16:20Z
+- SOXX 46.79 above 25 limit, cooldown until 16:40Z
+- VOO 2 held, no sell authorization
+- Gross 13.8%, defensive regime
+- Event detector: NONE, no action needed
+
+2026-06-10 : 12:10 : [tactical] Hold VOO; no triggers hit
+- QQQ at 99.91, trigger 90.00 not reached
+- SOXX at 48.59, trigger 25.00 not reached
+- Cooldowns active: QQQ until 16:20Z, SOXX until 16:40Z
+- Event detector: MINOR, no action required
+- Gross exposure 13.78%, defensive regime
+
+2026-06-10 : 11:50 : [tactical] Holding VOO, no triggers met
+- QQQ 98.13, above 90 trigger; not yet 16:20Z
+- SOXX 43.96, above 25 trigger; not yet 16:40Z
+- VOO 2 shares hold, no sell trigger
+- Defensive regime, 13.78% gross exposure
+- Event detector: NONE, no action needed
+
+2026-06-10 : 11:40 : [tactical] No action: time locks active
+- QQQ 99.44, trigger 90, locked until 16:20Z
+- SOXX 46.27, trigger 25, locked until 16:40Z
+- VOO 2 held, no sell auth, no add cap
+- Event detector: NONE, no override needed
+- Gross exposure 13.78%, defensive regime maintained
+
 2026-06-10 : 11:38 : [hourly] Defensive hold, lowered triggers on Iran risk
 - Market reversed sharply on Iran-US escalation, QQQ -1.5%, SOXX -4.3% in 1h
 - Cash at 86% outperformed SPY drop; VOO anchor stable
