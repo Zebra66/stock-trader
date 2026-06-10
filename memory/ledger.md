@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 09:50 : [tactical] CRITICAL event: no action, hold VOO
+- SOXX/SMH CRITICAL +1.8% in 5min at 13:50Z
+- No held positions in affected sectors
+- VOO stable +0.33%, no protective sells
+- All buys time-locked or suspended, no new exposure
+- Cash preserved at ~86.1%
+
 2026-06-10 : 09:41 : [tactical] MAJOR event: semis rally, no trades
 - Event detector MAJOR at 13:40Z: SOXX +1.07%, SMH +1.02%
 - No held positions in semis; VOO up +0.33%

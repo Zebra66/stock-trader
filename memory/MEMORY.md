@@ -150,3 +150,13 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Action taken:** Suspended SOXX limit buy trigger ($539.50) due to elevated semiconductor volatility. No protective sells needed (no drops in held positions).
 - **Rationale:** Event detector flags MAJOR upward volatility in semis. Tactical agent must not chase breakouts during elevated volatility. QQQ buy trigger remains dormant (time-locked until 16:20Z, MINOR severity). No open orders. No trades executed.
 - **Exposure:** ~13.84% (VOO 2 only). Cash preserved.
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-06-10 13:50Z (9:50 AM ET)
+- **Event detector classification:** CRITICAL
+- **Affected symbols:** SOXX (+1.84% in 5min, CRITICAL), SMH (+1.60% in 5min, CRITICAL), XLK (+1.33% in 5min, MAJOR)
+- **Held positions affected:** NONE (VOO +0.33%, stable)
+- **Action taken:** No protective sells needed (VOO stable). No new buys executed (exposure already minimal, all buys time-locked or suspended). CRITICAL semiconductor/tech volatility confirms no chasing.
+- **Rationale:** Sharp upward volatility in semis and tech. Tactical agent must not chase breakouts. QQQ time-locked until 16:20Z. SOXX already suspended since 13:40Z. VOO is the only held position and is stable.
+- **Exposure:** ~13.88% (VOO 2 only). Cash preserved.

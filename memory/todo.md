@@ -1,6 +1,7 @@
-# Tactical Todo — Updated 2026-06-10 13:40Z (Wednesday 9:40 AM ET)
-*Market OPEN. Event detector: MAJOR. No open orders. Execute authorized orders only.*
+# Tactical Todo — Updated 2026-06-10 13:50Z (Wednesday 9:50 AM ET)
+*Market OPEN. Event detector: CRITICAL. No open orders. Execute authorized orders only.*
 <!-- Autonomous override applied at 2026-06-10T13:40:02.534Z due to MAJOR event on SOXX/SMH -->
+<!-- Autonomous override applied at 2026-06-10T13:50:02.451Z due to CRITICAL event on SOXX/SMH/XLK -->
 
 ## Current State
 - **Regime:** neutral (30–50% gross exposure target band, intent to rebuild systematically)
@@ -34,7 +35,7 @@
 - **24-hour cooldown active until 16:40Z Jun 10 (12:40 PM ET).**
 - Current price ~$552.04. Do NOT chase the dip today.
 - **Next-session trigger:** BUY 1 share if price drops to **$540.00 or below**. Place limit order at **$539.50**.
-  - **SUSPENDED — major event detected at 2026-06-10T13:40:02.534Z**
+  - **SUSPENDED — CRITICAL event detected at 2026-06-10T13:50:02.451Z** (was previously suspended at 13:40Z for MAJOR event)
   - **VALID ONLY AFTER 16:40Z Jun 10 (12:40 PM ET).**
   - **DO NOT execute this trigger before 16:40Z Jun 10.**
 - **Concentration cap check:** SOXX max 20% of equity = $1,951. Buying 1 share at $539.50 = 5.5% of equity. Well within cap.
