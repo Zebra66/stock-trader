@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-10 : 09:41 : [tactical] MAJOR event: semis rally, no trades
+- Event detector MAJOR at 13:40Z: SOXX +1.07%, SMH +1.02%
+- No held positions in semis; VOO up +0.33%
+- Suspended SOXX limit buy due to elevated volatility
+- No orders placed; all buys time-locked or suspended
+
 2026-06-10 : 09:37 : [hourly] Neutral regime, hold VOO, limit buys QQQ/SOXX
 - CPI 4.2% headline, core eased fears, market down -0.35%
 - VOO 2 only, gross 13.79%, target 30-50%

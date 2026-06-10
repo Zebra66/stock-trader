@@ -140,3 +140,13 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **The anti-churn hard stop is a critical guard.** Same-day round trips destroy edge. If a symbol is sold yesterday, it may NOT be bought back until the 24-hour cooldown expires.
 - **24-hour cooldown is calendar-time, not trading-session-time.** A symbol sold at 12:20 PM ET cannot be re-bought until 12:20 PM ET the next day.
 - **Todo.md written at 13:35Z is in effect for the 9:40 AM ET and 9:50 AM ET tactical runs.** The next hourly run is 14:35Z (10:35 AM ET). The tactical agent must obey the time-locked triggers.
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-06-10 13:40Z (9:40 AM ET)
+- **Event detector classification:** MAJOR
+- **Affected symbols:** SOXX (+1.07% in 5min), SMH (+1.02% in 5min)
+- **Held positions affected:** NONE (VOO +0.33%, stable)
+- **Action taken:** Suspended SOXX limit buy trigger ($539.50) due to elevated semiconductor volatility. No protective sells needed (no drops in held positions).
+- **Rationale:** Event detector flags MAJOR upward volatility in semis. Tactical agent must not chase breakouts during elevated volatility. QQQ buy trigger remains dormant (time-locked until 16:20Z, MINOR severity). No open orders. No trades executed.
+- **Exposure:** ~13.84% (VOO 2 only). Cash preserved.
