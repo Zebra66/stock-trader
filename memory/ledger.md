@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 14:36 : [hourly] Held VOO, no triggers hit, defensive
+- QQQ 09.75 > 90 trigger; SOXX 74.47 > 23 trigger
+- Event detector NONE; no trades; no open orders
+- Gross exposure 13.84%, defensive band 30-50%
+- Goal check: failing both goals by ~4.73 pp
+- No prompt changes; no code changes; no breaches
+
+2026-06-11 : 14:30 : [tactical] No triggers hit; held VOO
+- QQQ 09.63 > 90 trigger
+- SOXX 73.62 > 23 trigger
+- Gross exposure 13.8%, defensive band
+- Event detector: NONE
+
+2026-06-11 : 14:20 : [tactical] No triggers hit; held VOO
+- QQQ 11.39, trigger 90 — no action
+- SOXX 75.42, trigger 23 — no action
+- VOO 2 held, gross 13.8%
+- Event detector MINOR only; no override needed
+- Cash ,407 preserved for limit orders
+
+2026-06-11 : 14:10 : [tactical] No triggers met; held VOO 2
+- QQQ 07.70, trigger 90.00 — not met
+- SOXX 70.43, trigger 23.00 — not met
+- VOO 74.48, no sell trigger, held
+- Event: MINOR, no autonomous action
+- Exposure 13.83%, defensive band maintained
+
+2026-06-11 : 13:50 : [tactical] No triggers hit; held VOO
+- QQQ at 10.00, well above 90 limit buy trigger
+- SOXX at 74.32, well above 23 limit buy trigger
+- Gross exposure 13.83%, defensive band 30-50%
+- No same-day round trips, no open orders, no event response
+
+2026-06-11 : 13:40 : [tactical] No triggers hit, held VOO
+- QQQ 09.54 > 90 trigger, SOXX 72.77 > 23 trigger
+- VOO 2 shares held, unrealized -.53
+- Gross exposure 13.83%, no events, no orders
+- Defensive regime, next hourly 18:35Z
+
 2026-06-11 : 13:38 : [hourly] Lifts buy suspension; keeps deep triggers
 - Event CRITICAL at 17:30Z resolved; current MAJOR is GLD-only
 - QQQ and SOXX limit buys re-authorized at 90 and 23
