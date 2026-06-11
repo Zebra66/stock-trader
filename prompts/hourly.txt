@@ -125,6 +125,7 @@ First, decide which data and in which format you need to make a sound macro deci
   - "BUY <TICKER> if price drops below <X> or breaks above <Y> with confirmation — rationale"
   - "SELL <TICKER> if price rises above <X> to trim, or drops below <Y> to cut risk — rationale"
   - "HOLD <TICKER> — target allocation <Y>%"
+  - **For every planned trade, include: Entry price, Stop price, Profit target, and R-multiple.** The tactical agent must not sell a winning position at breakeven or small profit without a fresh hourly authorization; the target defines when to let winners run.
   - Ranked execution priority for new capital
   - Explicit no-trade conditions
   - Any other instructions for the tactical agent

@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 10:38 : [hourly] Held VOO, QQQ/SOXX triggers re-auth
+- Event MAJOR at 14:10Z/14:20Z resolved to NONE
+- QQQ trigger 690 (2 sh), SOXX trigger 523 (1 sh) — both with targets
+- PPI hot + Iran risk-off macro intact; do not chase gap-up
+- Failing both goals: portfolio -2.54% vs SPY +1.58% (trailing 4.12 pp)
+- No trades executed; defensive posture 13.73% gross exposure
+
+2026-06-11 : 10:30 : [tactical] No action: no triggers met
+- Event detector MINOR, no MAJOR/CRITICAL
+- QQQ 02.33, well above 90 trigger (SUSPENDED)
+- SOXX 66.86, well above 23 trigger (SUSPENDED)
+- VOO 2 held, no sell authorized
+- No orders placed, no PDT risk
+
 2026-06-11 : 10:20 : [tactical] MAJOR event: SOXX -1.3%, no trades
 - Event detector MAJOR at 14:20Z (second MAJOR in 10 min)
 - SOXX -1.32% to 561.46, QQQ -0.72% to 699.43
