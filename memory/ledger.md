@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 09:37 : [hourly] Re-auth QQQ/SOXX triggers, hold VOO
+- Event detector CRITICAL at 13:30Z resolved to NONE at 13:35Z
+- QQQ trigger 90 (2 sh), SOXX trigger 23 (1 sh) — both re-authorized
+- PPI hot (back-to-back biggest since 2022); risk-off macro intact
+- No trades executed; gross exposure 13.72% defensive
+- Failing both goals: portfolio -2.56% vs SPY +1.27% (trailing 3.83 pp)
+
+2026-06-11 : 09:30 : [tactical] CRITICAL event: no trades
+- Event detector CRITICAL on semi melt-up (SOXX +2.56%, SMH +2.09%)
+- QQQ 00, SOXX 55 — buy triggers not met
+- Suspended QQQ/SOXX buy conditions per protocol
+- VOO held at 70.11, no protective action needed
+
 2026-06-10 : 15:50 : [tactical] Hold VOO, no triggers met
 - QQQ 95.22 > 90 trigger, SOXX 44.22 > 23 trigger
 - VOO 2 held at 67.96, gross exposure 13.7%
