@@ -1,17 +1,17 @@
-# Tactical Todo — Updated 2026-06-11 14:35Z (Thursday 10:35 AM ET)
-*Market OPEN. Event detector: NONE (resolved from MAJOR at 14:20Z). QQQ and SOXX buy triggers re-authorized. VOO held. No open orders.*
+# Tactical Todo — Updated 2026-06-11 15:35Z (Thursday 11:35 AM ET)
+*Market OPEN. Event detector: NONE. QQQ and SOXX buy triggers active. VOO held. No open orders.*
 
 ## Current State
 - **Regime:** defensive (30–50% gross exposure target band, intent to hold cash until stabilization)
 - **Live book:** VOO 2 only
-- **Account equity / cash / buying power:** ~$9,746 / ~$8,407 / ~$18,153
+- **Account equity / cash / buying power:** ~$9,745 / ~$8,407 / ~$18,152
 - **Gross long exposure:** ~13.73% | **Net exposure:** ~13.73% | **Cash:** ~86.27%
 - **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 20:00Z. Next hourly: Thu Jun 11 15:35Z (11:35 AM ET). ~60 minutes to next hourly.
+- **Market:** OPEN until 20:00Z. Next hourly: Thu Jun 11 16:35Z (12:35 PM ET). ~60 minutes to next hourly.
 - **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
-- **Fresh macro risk:** May PPI surged — back-to-back biggest increase since 2022 (MarketWatch 13:27Z). Hot inflation + Iran strikes = risk-off tape intact. Do not assume the gap-up is durable.
+- **Fresh macro risk:** May PPI surged — back-to-back biggest increase since 2022 (MarketWatch 13:27Z). Hot inflation + Iran strikes + Oracle AI spending fears (-12%) = risk-off tape intact. Do not assume the gap-up is durable.
 
 ## Position Instructions — Thu Jun 11
 
@@ -22,44 +22,44 @@
 
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP (REDUCED SIZE)
 - Sold 6 shares on Jun 9 at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
-- Current price ~$701.30. Market gapped up +1.31% today on Iran news. Do NOT chase.
+- Current price ~$700.51. Market gapped up +0.32% today but pulled back from open highs. Do NOT chase.
 - **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**.
   - **Target:** $735.00 (1.8R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $49 (0.50% of equity). Well below 2% max per trade.
-- **Concentration cap check:** QQQ max 45% of equity = $4,386. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
+- **Concentration cap check:** QQQ max 45% of equity = $4,385. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
 - **DO NOT buy QQQ above $690.00.** Buying back above our prior sell price ($690.79) is poor execution.
 
 ### SOXX — 24-HOUR COOLDOWN EXPIRED — BUY ON DEEP DIP (REDUCED SIZE)
 - Sold 2 shares on Jun 9 at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED.**
-- Current price ~$564.92. Market gapped up +4.81% today. Do NOT chase. SOXX is the most volatile in our universe and is in a sharp decline (–5.83% on week). Barrons: "AI Rally Keeps Unwinding."
+- Current price ~$562.51. Market gapped up +3.89% today but pulled back from open highs. Do NOT chase. SOXX is the most volatile in our universe and is in a sharp decline (–6.51% on week). Barrons: "AI Rally Keeps Unwinding." Oracle AI spending fears (-12%) add spillover risk.
 - **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**.
   - **Target:** $560.00 (2.1R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $17.50 (0.18% of equity). Well below 2% max per trade.
 - **Concentration cap check:** SOXX max 20% of equity = $1,949. Buying 1 share at $522.50 = 5.4% of equity. Well within cap.
 - **DO NOT buy SOXX above $523.00.** Buying back above our lowest sell price ($523.12) is poor execution.
-- **Illiquidity warning:** SOXX is thin (10 trades, 601 vol at 14:34Z). Use limit orders only. No market orders.
+- **Illiquidity warning:** SOXX is very thin (6 trades, 280 vol at 15:34Z). Use limit orders only. No market orders.
 
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
-- Fully exited June 5 at $207.80. Current price $202.25. No re-entry authorized.
-- Risk-off tape and individual semi risk too high. Await hourly authorization.
+- Fully exited June 5 at $207.80. Current price $200.82. No re-entry authorized.
+- Risk-off tape and Oracle AI spending fears (-12%) create spillover risk for AI/semis. Await hourly authorization.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
-- Fully exited June 1 at $370.50. Current price $344.19. No re-entry authorized.
-- Down 9.87% on month. No clear catalyst. Await hourly authorization.
+- Fully exited June 1 at $370.50. Current price $344.87. No re-entry authorized.
+- Down 10.09% on month. No clear catalyst. Await hourly authorization.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY
-- Fully exited June 4 at $405.16. Current price $376.82. Post-earnings correction deepening.
-- Down 9.75% on week. No re-entry authorized.
+- Fully exited June 4 at $405.16. Current price $376.65. Post-earnings correction deepening.
+- Down 10.01% on week. No re-entry authorized.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - Risk-off tape. No edge. No catalysts. Thin liquidity.
-- GLD trade count 8, volume 1,290 at 14:34Z — thin. Limit orders only if ever authorized.
+- GLD trade count 19, volume 1,729 at 15:34Z — thin. Limit orders only if ever authorized.
 
 ## Hard Rules / No-Trade Conditions
 - **No market orders.** All new orders must be limit orders only.
@@ -85,8 +85,8 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 Do not place market orders for these; use limit orders only, or defer.
-- **SOXX:** Thin (10 trades, 601 vol at 14:34Z). Limit orders only.
-- **GLD:** Thin (8 trades, 1,290 vol at 14:34Z). Limit orders only, or defer.
+- **SOXX:** Very thin (6 trades, 280 vol at 15:34Z). Limit orders only.
+- **GLD:** Thin (19 trades, 1,729 vol at 15:34Z). Limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
@@ -94,7 +94,7 @@ Do not place market orders for these; use limit orders only, or defer.
 2. **SOXX limit buy 1 share at $522.50** (cooldown expired, trigger valid now). Target: 5.4% of equity. Priority: MEDIUM.
 3. **Rebuild target:** Gross exposure 30–35% by end of day IF market stabilizes and triggers hit. Requires ~$1,500 in new buys.
 4. **If both limit orders fill:** VOO 2 + QQQ 2 + SOXX 1 = ~33.3% gross. Cash ~$5,405.
-5. **If no triggers hit:** Hold VOO 2. Maintain cash. Reassess on next hourly run (Thu 11:35 AM ET).
+5. **If no triggers hit:** Hold VOO 2. Maintain cash. Reassess on next hourly run (Thu 12:35 PM ET).
 
 ## Expected Book
 - VOO 2 (~13.73%)

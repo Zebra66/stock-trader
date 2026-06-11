@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 11:37 : [hourly] Held VOO, cash 86%, no triggers hit
+- QQQ 00.51, SOXX 62.51 — both above triggers
+- Event detector NONE, no trades
+- Gross exposure 13.73%, defensive regime
+- Goals failing: -2.55% vs SPY +1.36%
+- Blockers: hot PPI, Oracle AI fears, chasing risk
+
+2026-06-11 : 11:30 : [tactical] Held VOO, no triggers hit
+- QQQ 99.57, SOXX 60.46 — both well above buy triggers
+- VOO 2 held, no sell signal
+- Event detector NONE, market flat
+- No orders, no PDT risk
+
+2026-06-11 : 11:20 : [tactical] No action: triggers far above market
+- QQQ 99.96, trigger 90 — not met
+- SOXX 61.38, trigger 23 — not met
+- VOO held 2 shares, no sell trigger
+- Gross exposure 13.7%, cash 86.3%
+- Event detector: NONE, no overrides
+
+2026-06-11 : 11:10 : [tactical] No triggers hit; held VOO
+- QQQ 98.73, trigger 90 — not met
+- SOXX 60.45, trigger 23 — not met
+- VOO 68.20 held, no sell auth
+- Event detector: NONE, market flat
+
+2026-06-11 : 10:50 : [tactical] No conditions met; hold VOO
+- QQQ 99.94, trigger 90 not met
+- SOXX 63.24, trigger 23 not met
+- VOO held 2, no sell trigger
+- Event: MINOR, no action required
+- Gross exposure 13.7%, cash preserved
+
+2026-06-11 : 10:40 : [tactical] HOLD: no triggers met
+- QQQ 02.04 > 90 trigger, SOXX 65.35 > 23 trigger
+- VOO 2 held, no sell trigger
+- Event detector NONE, no protective action needed
+- Gross exposure 13.75%, defensive band 30-50%
+- No orders placed, no PDT risk
+
 2026-06-11 : 10:38 : [hourly] Held VOO, QQQ/SOXX triggers re-auth
 - Event MAJOR at 14:10Z/14:20Z resolved to NONE
 - QQQ trigger 690 (2 sh), SOXX trigger 523 (1 sh) — both with targets
