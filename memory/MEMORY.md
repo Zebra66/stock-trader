@@ -1,5 +1,15 @@
 # Hourly Macro Memory
 
+## Tactical Cycle Summary — 2026-06-11 16:35Z (Thursday 12:35 PM ET)
+- **Event detector:** NONE. Market grinding slightly higher since 15:35Z. SPY 727.77 → 729.33 (+0.21%). QQQ 700.51 → 703.36 (+0.41%). SOXX 562.51 → 564.44 (+0.34%). Russell 2000 leading upside; AI stocks rallying per live coverage.
+- **Action:** No trades executed. VOO 2 held. QQQ and SOXX buy triggers remain active and well below market. Micron rebounding after "healthy" reset — positive semi sentiment, but not enough to counter Oracle's -12% AI spending fears.
+- **Guardrails respected:** No gross exposure increase. No new positions. No concentration cap breach. No PDT risk. No unauthorized orders.
+- **Holdings confirmed:** VOO 2 only. Current price $670.68 (Alpaca). Unrealized –$16.04 (–1.18%).
+- **Live broker refresh:** Equity $9,748.27 | Cash $8,406.91 | Long $1,341.36 | Gross 13.75% | Daytrade 0/3.
+- **No open orders.**
+
+---
+
 ## Tactical Cycle Summary — 2026-06-11 15:35Z (Thursday 11:35 AM ET)
 - **Event detector:** NONE. Market flat to slightly lower since 14:35Z. SPY pulled back from ~729 to 727.77. QQQ eased from ~701 to 700.51. SOXX pulled back from ~568 to 562.51.
 - **Action:** No trades executed. VOO 2 held. QQQ and SOXX buy triggers remain active and well below market.
@@ -49,59 +59,59 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $669.18 | $1,338.36 | 13.73% | –$19.05 | –1.40% |
-| Cash | — | — | — | $8,406.91 | 86.27% | — | — |
-| **Equity** | — | — | — | **$9,745.27** | **100%** | — | **–2.55%** |
+| VOO | 2 | $678.7025 | $670.68 | $1,341.36 | 13.75% | –$16.04 | –1.18% |
+| Cash | — | — | — | $8,406.91 | 86.25% | — | — |
+| **Equity** | — | — | — | **$9,748.27** | **100%** | — | **–2.52%** |
 
-- **Gross long exposure:** 13.73%
-- **Net exposure:** 13.73%
+- **Gross long exposure:** 13.75%
+- **Net exposure:** 13.75%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Thu Jun 11 (11:35 AM ET)
-- **1D (today):** portfolio **~+0.04%** (VOO +0.32% * 13.73% weight) vs SPY **~+0.32%** (727.10 → 727.77). **Underperforming SPY today by ~0.28 pp.** Cash drag limiting upside on gap-up day.
-- **1W (Jun 4 → Jun 11):** portfolio **~–3.51%** ($10,099.88 → $9,745.27) vs SPY **~–3.87%** (757.09 → 727.77). **Outperforming SPY by ~0.36 pp over 1W.** Cash drag + no Jun 9 churn = preserving capital.
-- **2W (May 28 → Jun 11):** SPY **~–3.56%** (754.60 → 727.77). Portfolio **~–2.55%**. **Outperforming SPY by ~1.01 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **–2.55%** vs SPY **+1.36%** (727.77 vs 718.01 baseline). **Trailing by ~3.91 pp.**
+## Performance Review — Thu Jun 11 (12:35 PM ET)
+- **1D (today):** portfolio **~+0.07%** (VOO +0.54% * 13.75% weight) vs SPY **~+0.54%** (VOO proxy). **Underperforming SPY today by ~0.47 pp.** Cash drag limiting upside on a grind-up day.
+- **1W (Jun 4 → Jun 11):** portfolio **~–3.48%** ($10,099.88 → $9,748.27) vs SPY **~–3.69%** (VOO $696.06 → $670.36). **Outperforming SPY by ~0.21 pp over 1W.** Cash drag + no Jun 9 churn = preserving capital.
+- **2W (May 28 → Jun 11):** SPY **~–3.35%** (754.60 → 729.33). Portfolio **~–2.52%**. **Outperforming SPY by ~0.83 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **–2.52%** vs SPY **+1.57%** (729.33 vs 718.01 baseline). **Trailing by ~4.09 pp.**
 - What is working: Cash preserving capital during risk-off tape. VOO anchor stable. 1W/2W relative outperformance positive.
 - What is not working: **Bottom-tick panic exits on Jun 9.** QQQ sold at $690.79, SOXX at $523.12 and $552.30. Market gapped up today; we are flat and missing the rebound. Absolute gap to SPY is widening because SPY is positive since inception.
-- What must change today/this week: **Do not chase the gap-up.** Rebuild only if the tape gives us a discount below prior exits. Hot PPI today confirms risk-off macro is intact. With 3+ consecutive losses, maintain reduced size. The next 2.5 months require disciplined deployment, not aggressive catch-up into a macro headwind.
+- What must change today/this week: **Do not chase the grind-up.** Rebuild only if the tape gives us a discount below prior exits. Hot PPI today confirms risk-off macro is intact. With 3+ consecutive losses, maintain reduced size. The next 2.5 months require disciplined deployment, not aggressive catch-up into a macro headwind.
 
 ## Goal Check
-- **Portfolio since inception:** –2.55% ($9,745.27 vs $10,000 base)
-- **S&P 500 since inception:** +1.36% (SPY 727.77 vs baseline 718.01)
-- **Status:** **FAILING BOTH GOALS.** Trailing SPY by ~3.91 pp. Goal 1 (positive absolute) BREACHED. Goal 2 (beat SPY) BREACHED.
+- **Portfolio since inception:** –2.52% ($9,748.27 vs $10,000 base)
+- **S&P 500 since inception:** +1.57% (SPY 729.33 vs baseline 718.01)
+- **Status:** **FAILING BOTH GOALS.** Trailing SPY by ~4.09 pp. Goal 1 (positive absolute) BREACHED. Goal 2 (beat SPY) BREACHED.
 - **Dominant failure mode:** **late entries / poor execution.** The portfolio sold at the lows on Jun 9 and is now missing the rebound. The 1W/2W data shows we are outperforming on a relative basis due to cash preservation, but the absolute gap is widening.
 
-## Market Intel — Thu Jun 11 (11:35 AM ET)
-- **Broad market:** S&P 500 up ~0.32% (SPY 727.77), Nasdaq up ~0.32% (QQQ 700.51), semis up ~3.89% (SOXX 562.51). Market gapped up at open on Iran "completion of strikes" narrative, but PPI hotness and Oracle AI spending fears have weighed. SPY pulled back from ~729 open to 727.77.
-- **PPI report:** May wholesale inflation surged — biggest back-to-back increase since 2022 (MarketWatch confirmed at 13:27Z). Hot CPI + hot PPI = double inflation scare. Fed hawkish pressure increasing. Risk-off macro intact despite equity gap-up.
-- **Geopolitical:** US completed fresh round of Iran strikes. Risk premium may be partially priced out, but no de-escalation confirmed. Oil elevated. Tension persists.
-- **Semiconductor / AI:** Oracle shares tumbled 12% on Thursday as surging AI spending and debt load spooked investors. This is a warning for AI capex. BofA says rising agentic AI workloads will boost CPU demand — helping INTC/AMD, not necessarily NVDA/AVGO. Barrons: "The AI Rally Keeps Unwinding." Nomura strategist says Big Tech concentration is preventing new highs.
-- **SpaceX IPO:** Heavily oversubscribed. Analysts initiate with buy ratings. Space stocks (RKLB) may get a sentiment lift. RKLB +4.63% today, but no edge for us.
-- **NVDA:** $200.82. Up ~0.52% today, –7.92% on week. No re-entry authorized.
-- **AVGO:** $376.65. Up ~0.38% today, –10.01% on week, –10.10% on month. Post-earnings correction. Broadcom launching $2.5B debt tender. No re-entry.
-- **GOOG:** $344.87. Down ~1.03% today, –6.55% on week. Google expanding home discovery program with HouseCanary. Samsung chip talks. Not enough to counter risk-off. No re-entry.
-- **QQQ:** $700.51 (Alpaca). Up ~0.32% today. 24-hour cooldown **EXPIRED.** Rebuild ONLY if price drops to $690 or below. **Do not buy above $690.** Current price is ~$10.50 above trigger.
-- **SOXX:** $562.51 (Alpaca). Up ~3.89% today. 24-hour cooldown **EXPIRED.** Rebuild ONLY if price drops to $523 or below. **Do not buy above $523.** Current price is ~$39.50 above trigger.
-- **HOOD:** $89.88. Up ~4.66% today. Robinhood CIO says "There's more to life than the Mag 7." No clear catalyst. Avoid.
-- **RKLB:** $110.82. Up ~5.29% today. SpaceX IPO buzz. No edge. Avoid.
-- **META:** $561.13. Down ~0.30% today. Banned. Avoid.
+## Market Intel — Thu Jun 11 (12:35 PM ET)
+- **Broad market:** S&P 500 up ~0.54% (SPY 729.33), Nasdaq up ~0.41% (QQQ 703.36), semis up ~4.23% (SOXX 564.44). Market gapped up at open on Iran narrative, grinded higher through midday. Russell 2000 leading upside; AI stocks rallying per live coverage. Micron rebounding after "healthy" reset — positive semi sentiment. Oracle still seeing worst run in a quarter-century.
+- **PPI report:** May wholesale inflation surged — biggest back-to-back increase since 2022 (MarketWatch confirmed at 13:27Z). Hot CPI + hot PPI = double inflation scare. Fed hawkish pressure increasing. Risk-off macro intact despite equity grind-up.
+- **Geopolitical:** Trump says U.S. will take Iran's oil-export hub Kharg Island. Risk premium may be partially priced out, but no de-escalation confirmed. Oil elevated. Tension persists.
+- **Semiconductor / AI:** Oracle shares tumbled ~12% on Thursday as surging AI spending and debt load spooked investors. This is a warning for AI capex. Micron rebounding after healthy reset — analysts see blue skies. BofA says rising agentic AI workloads will boost CPU demand. Barrons: "The AI Rally Keeps Unwinding." Nomura strategist says Big Tech concentration is preventing new highs.
+- **SpaceX IPO:** Heavily oversubscribed. Analysts initiate with buy ratings. Space stocks (RKLB) may get a sentiment lift. RKLB +5.29% today, but no edge for us.
+- **NVDA:** $201.70. Up ~0.52% today, –7.81% on week. No re-entry authorized.
+- **AVGO:** $379.20. Up ~1.00% today, –9.49% on week, –9.57% on month. Post-earnings correction. Broadcom launching $2.5B debt tender. No re-entry.
+- **GOOG:** $346.43. Up ~0.46% today, –6.14% on week. Google expanding home discovery program with HouseCanary. Samsung chip talks. Not enough to counter risk-off. No re-entry.
+- **QQQ:** $703.36 (Alpaca). Up ~0.41% today. 24-hour cooldown **EXPIRED.** Rebuild ONLY if price drops to $690 or below. **Do not buy above $690.** Current price is ~$13.36 above trigger.
+- **SOXX:** $564.44 (Alpaca). Up ~4.23% today. 24-hour cooldown **EXPIRED.** Rebuild ONLY if price drops to $523 or below. **Do not buy above $523.** Current price is ~$41.44 above trigger.
+- **HOOD:** $90.07. Up ~5.66% today. Robinhood CIO says "There's more to life than the Mag 7." No clear catalyst. Avoid.
+- **RKLB:** $110.93. Up ~5.29% today. SpaceX IPO buzz. No edge. Avoid.
+- **META:** $564.53. Up ~0.61% today. Banned. Avoid.
 - **News access:** Yahoo Finance RSS active. MarketWatch active. No actionable buy catalysts.
 - **Earnings dates:** AVGO passed June 3. GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No binary events in next 48 hours.
-- **Event detector:** NONE (as of 15:35Z). Prior MAJOR at 14:10Z/14:20Z resolved.
+- **Event detector:** NONE (as of 16:35Z). Prior MAJOR at 14:10Z/14:20Z resolved.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---|
-| VOO | Hold | Broad-market anchor. Only position left. 13.73%, at 20% non-QQQ ETF cap. Cannot add a full share (would breach cap). | 10–20% |
+| VOO | Hold | Broad-market anchor. Only position left. 13.75%, at 20% non-QQQ ETF cap. Cannot add a full share (would breach cap). | 10–20% |
 | QQQ | Buy on deep pullback | Core liquid growth. 24-hour cooldown expired. Rebuild exposure ONLY if price drops to $690 or below. Per loss-streak rule, size reduced to 2 shares (baseline was 3–4). | 10–20% |
 | SOXX | Buy on deep pullback | Chip exposure. 24-hour cooldown expired. Rebuild exposure ONLY if price drops to $523 or below. Per loss-streak rule, size reduced to 1 share (baseline was 2). | 5–10% |
 | NVDA | Avoid | Individual semi risk. Oracle AI spending fears spillover risk. | 0% |
-| GOOG | Avoid | Down 10.09% on month. No catalyst. | 0% |
-| AVGO | Avoid | Post-earnings correction. Down 10.01% on week. | 0% |
+| GOOG | Avoid | Down 9.69% on month. No catalyst. | 0% |
+| AVGO | Avoid | Post-earnings correction. Down 9.49% on week. | 0% |
 | META | Avoid | bannedSymbols active. | 0% |
 | RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD | Avoid | No edge. Risk-off tape. Thin liquidity. | 0% |
 
@@ -111,8 +121,8 @@
 3. **SOXX limit buy RE-AUTHORIZED.** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. Target $560.00 (2.1R). Stop at $505.00 (–3.4%). Risk = $17.50 (0.18% of equity). Well within 2% max.
 4. **No market orders.** All new orders must be limit orders only.
 5. **No discretionary buys above trigger prices.** Buying back above prior sell prices ($690.79 for QQQ, $523.12 for SOXX) is poor execution.
-6. **Cash reserve:** ~$8,407 (~86.27%). Preserve for authorized limit orders.
-7. **Gross exposure target:** 30–50% defensive band. Current 13.73%. Rebuilding requires ~$1,500+ in new buys. Only execute if triggers hit.
+6. **Cash reserve:** ~$8,407 (~86.25%). Preserve for authorized limit orders.
+7. **Gross exposure target:** 30–50% defensive band. Current 13.75%. Rebuilding requires ~$1,500+ in new buys. Only execute if triggers hit.
 8. **No same-day round trips.** If a symbol is bought today, it may NOT be sold today unless the hourly note explicitly authorizes the exit.
 9. **Repo vigilance:** The tactical agent and harness must verify git status on every run. The working tree can be silently corrupted. Always check `git diff` against HEAD for memory and code files.
 
@@ -128,14 +138,14 @@
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
 - **FMP** disabled. Yahoo Finance public data used as fallback. Documented.
 - **News access:** Yahoo Finance RSS active. MarketWatch active. No actionable buy catalysts.
-- **Alpaca `get-latest-price` bars** timestamps at 15:34Z, current within 1 minute.
+- **Alpaca `get-latest-price` bars** timestamps at 16:34Z, current within 1 minute.
 - **Day-trade status:** 0/3. No same-day round trips today.
-- **SOXX liquidity:** 6 trades, 280 vol at 15:34Z — VERY THIN. Limit orders only. Do not place market orders.
-- **QQQ liquidity:** 33 trades, 1,798 vol at 15:34Z — liquid.
-- **VOO liquidity:** 12 trades, 372 vol at 15:34Z — thin but acceptable for small 2-share position.
+- **SOXX liquidity:** 16 trades, 1,179 vol at 16:34Z — thin. Limit orders only. Do not place market orders.
+- **QQQ liquidity:** 38 trades, 1,345 vol at 16:34Z — thin but acceptable for limit orders.
+- **VOO liquidity:** 18 trades, 1,004 vol at 16:34Z — thin but acceptable for small 2-share position.
 - **Earnings dates:** AVGO passed June 3. GOOG est. Jul 23; META est. Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB est. Aug 6. No binary events in next 48 hours.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 - **Integer-share constraint:** With ~$9.75K equity, QQQ capped at 6 shares; VOO at 2 shares (at cap); SOXX capped at 3 shares.
-- **Repo hygiene:** Clean. No source changes. Working tree matches HEAD. Staged changes in memory/ledger.md and tactical_last_prices.json are from prior tactical agent runs.
-- **Event detector:** Working correctly. Classification NONE as of 15:35Z. Prior MAJOR at 14:10Z/14:20Z resolved.
+- **Repo hygiene:** Clean. No source changes. Working tree matches HEAD. Staged changes in memory/ledger.md and tactical_last_prices.json from prior tactical runs. Unstaged tactical_last_prices.json update from current run.
+- **Event detector:** Working correctly. Classification NONE as of 16:35Z. Prior MAJOR at 14:10Z/14:20Z resolved.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
