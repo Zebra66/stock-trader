@@ -2,6 +2,37 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 13:30 : [tactical] CRITICAL melt-up; suspends buys
+- QQQ +1.51%, SOXX +2.39% in 10 min
+- VOO +0.98%, no sell triggers breached
+- Buy conditions suspended per event protocol
+
+2026-06-11 : 13:20 : [tactical] No trades; triggers below market
+- QQQ 97.91 > 90 trigger, SOXX 56.35 > 23 trigger
+- Event detector MINOR; no action required
+- VOO 2 held, no open orders, daytrade 0/3
+- Hold-only cycle, no conditions met
+
+2026-06-11 : 13:10 : [tactical] Hold VOO, no triggers met
+- QQQ 00, trigger 90 - not met
+- SOXX 60, trigger 23 - not met
+- Event detector MINOR, no action required
+- Gross exposure 13.72%, daytrade 0/3
+- No trades, no orders, no overrides
+
+2026-06-11 : 12:50 : [tactical] Hold: no triggers hit
+- VOO 2 held at 69.60 (-1.3%)
+- QQQ 02.03, well above 90 trigger
+- SOXX 62.29, well above 23 trigger
+- Event detector: NONE, no override needed
+- Gross exposure 13.74%, cash 86.26%
+
+2026-06-11 : 12:40 : [tactical] Hold VOO, no triggers met
+- QQQ 02.56, SOXX 63.39 — both above buy triggers
+- Event detector NONE, market flat/slightly lower
+- Daytrade 0/3, gross exposure 13.75%
+- No action required
+
 2026-06-11 : 12:38 : [hourly] Held VOO, cash 86%, no triggers hit
 - No trades executed; VOO 2 held
 - QQQ 703.36 > 690 trigger; SOXX 564.44 > 523 trigger

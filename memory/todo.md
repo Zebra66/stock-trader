@@ -1,5 +1,6 @@
-# Tactical Todo — Updated 2026-06-11 16:35Z (Thursday 12:35 PM ET)
-*Market OPEN. Event detector: NONE. QQQ and SOXX buy triggers active. VOO held. No open orders.*
+# Tactical Todo — Updated 2026-06-11 17:30Z (Thursday 1:30 PM ET)
+<!-- Autonomous override applied at 2026-06-11 17:30Z due to CRITICAL event -->
+*Market OPEN. Event detector: CRITICAL. QQQ and SOXX buy triggers SUSPENDED. VOO held. No open orders.*
 
 ## Current State
 - **Regime:** defensive (30–50% gross exposure target band, intent to hold cash until stabilization)
@@ -23,7 +24,7 @@
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP (REDUCED SIZE)
 - Sold 6 shares on Jun 9 at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
 - Current price ~$703.36. Market grinded up +0.41% since last hourly. Do NOT chase.
-- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**.
+- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**. SUSPENDED — CRITICAL event detected at 2026-06-11 17:30Z.
   - **Target:** $735.00 (1.8R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $49 (0.50% of equity). Well below 2% max per trade.
@@ -34,7 +35,7 @@
 - Sold 2 shares on Jun 9 at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED.**
 - Current price ~$564.44. Market grinded up +0.34% since last hourly. Do NOT chase. SOXX is the most volatile in our universe and is in a sharp decline (–6.39% on week). Barrons: "AI Rally Keeps Unwinding." Oracle AI spending fears (-12%) add spillover risk.
-- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**.
+- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. SUSPENDED — CRITICAL event detected at 2026-06-11 17:30Z.
   - **Target:** $560.00 (2.1R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $17.50 (0.18% of equity). Well below 2% max per trade.
@@ -67,7 +68,7 @@
 - **No same-day round trips.** If a symbol is bought today, do NOT sell it today unless the hourly note explicitly authorizes the exit.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
-- **If event detector flags MAJOR or CRITICAL event, suspend buys and execute protective sells only if stop-loss is breached.** The event detector classification is an input for the hourly strategist, but the tactical agent must protect capital. Current classification: NONE.
+- **If event detector flags MAJOR or CRITICAL event, suspend buys and execute protective sells only if stop-loss is breached.** The event detector classification is an input for the hourly strategist, but the tactical agent must protect capital. Current classification: CRITICAL.
 - **Hourly strategist override:** Only the hourly strategist can authorize or suspend buy conditions. The tactical agent must not override todo.md instructions based on event detector flags.
 - **Do NOT sell VOO today.** VOO is the only position left. Selling it would drop gross exposure to 0%, far below the 30% minimum.
 - **No open orders to cancel.** There are no resting limit orders.
@@ -90,8 +91,8 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **QQQ limit buy 2 shares at $689.50** (cooldown expired, trigger valid now). Target: 14.1% of equity. Priority: HIGHEST.
-2. **SOXX limit buy 1 share at $522.50** (cooldown expired, trigger valid now). Target: 5.4% of equity. Priority: MEDIUM.
+1. **QQQ limit buy 2 shares at $689.50** (SUSPENDED — CRITICAL event at 17:30Z). Target: 14.1% of equity. Priority: HIGHEST.
+2. **SOXX limit buy 1 share at $522.50** (SUSPENDED — CRITICAL event at 17:30Z). Target: 5.4% of equity. Priority: MEDIUM.
 3. **Rebuild target:** Gross exposure 30–35% by end of day IF market stabilizes and triggers hit. Requires ~$1,500 in new buys.
 4. **If both limit orders fill:** VOO 2 + QQQ 2 + SOXX 1 = ~33.3% gross. Cash ~$5,405.
 5. **If no triggers hit:** Hold VOO 2. Maintain cash. Reassess on next hourly run (Thu 1:35 PM ET).
