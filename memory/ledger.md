@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 10:10 : [tactical] MAJOR event: SOXX up 1%
+- Event detector MAJOR at 14:10Z
+- SOXX +1.04% to 568.99, QQQ +0.46% to 704.50
+- No triggers met; no trades executed
+- Autonomous override: suspended QQQ and SOXX buys
+- VOO held, no protective sells needed
+
+2026-06-11 : 09:50 : [tactical] Held VOO, no triggers met
+- QQQ at 00.81, well above 90 trigger
+- SOXX at 62.73, well above 23 trigger
+- VOO 2 held, unrealized -1.26%
+- Event detector: MINOR, no override needed
+- Cash 86.2%, defensive regime maintained
+
+2026-06-11 : 09:40 : [tactical] No triggers met; held VOO 2
+- QQQ 98.02 > 90 trigger, no buy
+- SOXX 58.67 > 23 trigger, no buy
+- VOO 2 held, no sell auth
+- Event detector: NONE, no override
+- Gross exposure 13.72%, defensive band
+
 2026-06-11 : 09:37 : [hourly] Re-auth QQQ/SOXX triggers, hold VOO
 - Event detector CRITICAL at 13:30Z resolved to NONE at 13:35Z
 - QQQ trigger 90 (2 sh), SOXX trigger 23 (1 sh) — both re-authorized
