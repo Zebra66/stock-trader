@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 13:38 : [hourly] Lifts buy suspension; keeps deep triggers
+- Event CRITICAL at 17:30Z resolved; current MAJOR is GLD-only
+- QQQ and SOXX limit buys re-authorized at 90 and 23
+- Gross exposure 13.83%; defensive band 30-50% not yet reached
+- No trades executed; no open orders; no concealment risk
+
 2026-06-11 : 13:30 : [tactical] CRITICAL melt-up; suspends buys
 - QQQ +1.51%, SOXX +2.39% in 10 min
 - VOO +0.98%, no sell triggers breached
