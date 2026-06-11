@@ -1,7 +1,8 @@
-# Tactical Todo — Updated 2026-06-11 13:35Z (Thursday 9:35 AM ET)
-*Market OPEN. Event detector: MAJOR at 14:10Z. SOXX +1.04% in 20 min. QQQ +0.46%. Autonomous override applied. QQQ and SOXX buys SUSPENDED. VOO held. No open orders.*
+# Tactical Todo — Updated 2026-06-11 14:20Z (Thursday 10:20 AM ET)
+*Market OPEN. Event detector: MAJOR at 14:20Z (second MAJOR in 10 min). SOXX –1.32% in 10 min. QQQ –0.72%. Autonomous override confirmed. QQQ and SOXX buys SUSPENDED. VOO held. No open orders.*
 
 <!-- Autonomous override applied at 2026-06-11T14:10:02Z due to MAJOR event -->
+<!-- Autonomous override confirmed at 2026-06-11T14:20:02Z due to MAJOR event -->
 
 ## Current State
 - **Regime:** defensive (30–50% gross exposure target band, intent to hold cash until stabilization)

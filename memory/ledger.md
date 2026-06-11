@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-11 : 10:20 : [tactical] MAJOR event: SOXX -1.3%, no trades
+- Event detector MAJOR at 14:20Z (second MAJOR in 10 min)
+- SOXX -1.32% to 561.46, QQQ -0.72% to 699.43
+- No triggers met; QQQ and SOXX buys already suspended
+- VOO held -0.41%, no stop-loss breach, no protective sells
+- Gross exposure 13.7%, defensive posture maintained
+
 2026-06-11 : 10:10 : [tactical] MAJOR event: SOXX up 1%
 - Event detector MAJOR at 14:10Z
 - SOXX +1.04% to 568.99, QQQ +0.46% to 704.50
