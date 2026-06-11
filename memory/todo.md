@@ -1,5 +1,7 @@
-# Tactical Todo — Updated 2026-06-10 19:35Z (Wednesday 3:35 PM ET)
-*Market OPEN. ~25 minutes to close. Event detector: NONE. No open orders. Execute authorized orders only. CRITICAL: Verify git status on every run — working tree corruption risk.*
+<!-- Autonomous override applied at 2026-06-11T13:30Z due to CRITICAL event — semi melt-up detected at open. QQQ and SOXX buy triggers suspended per tactical protocol. -->
+
+# Tactical Todo — Updated 2026-06-11 13:30Z (Thursday 9:30 AM ET)
+*Market OPEN. Event detector: CRITICAL. Semi melt-up at open (SOXX +2.56%, SMH +2.09%). QQQ and SOXX buy triggers SUSPENDED. VOO held. No open orders. Execute authorized orders only.*
 
 ## Current State
 - **Regime:** defensive (30–50% gross exposure target band, intent to hold cash until stabilization)
@@ -22,7 +24,7 @@
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP (REDUCED SIZE)
 - Sold 6 shares yesterday at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
 - Current price ~$695.54. Do NOT chase the dip. The market is in a risk-off sell-off on Iran escalation and CPI >4%.
-- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**.
+- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**. **SUSPENDED — CRITICAL event detected at 2026-06-11T13:30Z.**
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $50 (0.51% of equity). Well below 2% max per trade.
 - **Concentration cap check:** QQQ max 45% of equity = $4,385. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
@@ -32,7 +34,7 @@
 - Sold 2 shares yesterday at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED.**
 - Current price ~$544.55. Do NOT chase the dip. SOXX is the most volatile in our universe and is in a sharp decline (-11.55% on week).
-- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**.
+- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. **SUSPENDED — CRITICAL event detected at 2026-06-11T13:30Z.**
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $18 (0.18% of equity). Well below 2% max per trade.
 - **Concentration cap check:** SOXX max 20% of equity = $1,949. Buying 1 share at $522.50 = 5.4% of equity. Well within cap.
