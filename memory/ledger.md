@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 10:37 : [hourly] Held VOO, SOXX trigger restored
+- Event detector NONE at 14:35Z; prior CRITICAL resolved
+- SOXX buy trigger RESTORED after 14:10Z semi melt-up resolved
+- QQQ trigger 90 maintained; current 18.39 — no chase
+- VOO 2 unrealized +.05 (+0.225%); cash ,407
+- No trades executed; gross exposure 13.93% vs 60-90% target
+
+2026-06-12 : 10:30 : [tactical] Held VOO, no triggers hit
+- Event detector NONE at 14:30Z, prior CRITICAL resolved
+- QQQ 18.20, trigger 90 — not met
+- SOXX 92.13, trigger 23 — not met, still suspended
+- VOO 2 shares, +.88 unrealized, no sell auth
+- No orders, no PDT risk, cash ,407
+
+2026-06-12 : 10:20 : [tactical] Held VOO, no triggers hit
+- VOO 2 +.86 unrealized (+0.28%)
+- QQQ 19.87, well above 90 trigger
+- SOXX 95.12 suspended, above 23 trigger
+- Event detector NONE, no protective action
+- Gross exposure 13.94%, cash ,407
+
 2026-06-12 : 10:11 : [tactical] CRITICAL event: semis melt-up
 - SOXX +1.82% SMH +1.73% CRITICAL at 14:10Z
 - No held positions breached stops; VOO OK
