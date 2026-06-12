@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 11:12 : [tactical] CRITICAL override: buys suspended
+- SOXX CRITICAL melt-up +1.62% in 20 min
+- XLK MAJOR, SMH MAJOR
+- VOO OK, no protective sells
+- QQQ/SOXX buy triggers suspended
+- Exposure 13.93%, no new positions
+
+2026-06-12 : 10:50 : [tactical] Hold VOO, no triggers met
+- QQQ 14.90, trigger 90 — not met
+- SOXX 87.77, trigger 23 — not met
+- Gross exposure 13.9%, below 60-90% band
+- Event detector MINOR, no action required
+- Loss streak active, reduced sizing maintained
+
+2026-06-12 : 10:40 : [tactical] No triggers hit; held VOO 2
+- QQQ 18.85, trigger 90 — no fill
+- SOXX 93.33, trigger 23 — no fill
+- VOO 2 held, no open orders
+- Gross exposure 13.93%, cash 86.07%
+- Event detector: NONE, no action needed
+
 2026-06-12 : 10:37 : [hourly] Held VOO, SOXX trigger restored
 - Event detector NONE at 14:35Z; prior CRITICAL resolved
 - SOXX buy trigger RESTORED after 14:10Z semi melt-up resolved

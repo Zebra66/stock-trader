@@ -1,5 +1,13 @@
 # Hourly Macro Memory
 
+## AUTONOMOUS OVERRIDE — Tactical Cycle 2026-06-12T15:10Z
+- **Detector classification:** CRITICAL (semi melt-up)
+- **Affected symbols:** SOXX (+1.62% in 20 min), XLK (+1.16% MAJOR), SMH (+1.33% MAJOR)
+- **Held position impact:** VOO 2 — severity OK (+0.66%), no stop-loss breached. No protective sell executed.
+- **Action taken:** QQQ and SOXX buy triggers SUSPENDED per event-response protocol. No new positions.
+- **Exposure:** Remains at 13.93% gross. No increase during CRITICAL event.
+- **Why:** Event detector CRITICAL classification mandates suspension of all buy conditions. Held positions unaffected. Will reassess on next hourly run (15:35Z).
+
 ## Hourly Cycle Summary — 2026-06-12 14:35Z (Friday 10:35 AM ET)
 - **Status:** Market OPEN. Event detector: **NONE** at 14:35Z. Prior CRITICAL semi melt-up (14:10Z) fully resolved within 20 minutes.
 - **Live broker refresh:** Equity $9,767.37 | Cash $8,406.91 | Long $1,360.46 | Gross 13.93% | Daytrade 0/3.

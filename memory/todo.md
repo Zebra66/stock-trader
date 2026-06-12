@@ -1,4 +1,5 @@
-# Tactical Todo — Updated 2026-06-12 14:35Z (Friday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-12 15:10Z (Friday 11:10 AM ET)
+<!-- Autonomous override applied at 2026-06-12T15:10Z due to CRITICAL event -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks)
@@ -25,7 +26,7 @@
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP (REDUCED SIZE)
 - Sold 6 shares on Jun 9 at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
 - Current price ~$718.39. Market up +0.65% today after +2.8% yesterday. Do NOT chase.
-- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**. MAINTAINED — no change.
+- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. Place limit order at **$689.50**. MAINTAINED — no change.  <!-- SUSPENDED — CRITICAL event detected at 15:10Z -->
   - **Target:** $735.00 (1.8R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $49 (0.50% of equity). Well below 2% max per trade.
@@ -36,7 +37,7 @@
 - Sold 2 shares on Jun 9 at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED.** CRITICAL event from 14:10Z **RESOLVED** at 14:35Z. Buy trigger RESTORED.
 - Current price ~$592.45. Market up +1.55% today after +5.9% yesterday. Do NOT chase. SOXX is the most volatile in our universe and is in a sharp decline (–5.14% on week, but bouncing). Barrons: "AI Rally Keeps Unwinding." Oracle AI spending fears (-12%) add spillover risk.
-- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. RESTORED — CRITICAL event resolved.
+- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. RESTORED — CRITICAL event resolved.  <!-- SUSPENDED — CRITICAL event detected at 15:10Z -->
   - **Target:** $560.00 (2.1R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $17.50 (0.18% of equity). Well below 2% max per trade.
