@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 11:40 : [hourly] Restored repo, held VOO, no buys
+- Repo integrity breach: memory/code reverted to May 29, restored from HEAD
+- Live book: VOO 2 only, equity ,773, gross 13.98%
+- QQQ and SOXX limit buy triggers maintained; no chase
+- Event detector NONE; prior CRITICAL semi melt-up resolved
+- Goal check: failing both goals, trailing SPY by ~5.72 pp
+
+2026-06-12 : 11:40 : [tactical] No action — triggers far below market
+- QQQ at 721.44, trigger 690.00 not met
+- SOXX at 599.26, trigger 523.00 not met
+- VOO hold 2, no sell trigger
+- Event detector NONE, no override needed
+- Gross exposure 13.97%, cash preserved
+
 2026-06-12 : 11:12 : [tactical] CRITICAL override: buys suspended
 - SOXX CRITICAL melt-up +1.62% in 20 min
 - XLK MAJOR, SMH MAJOR
