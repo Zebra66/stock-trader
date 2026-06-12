@@ -2,6 +2,48 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 12:37 : [hourly] Held VOO, no triggers hit, no trades
+- Equity 769, gross 13.95%, cash 86%
+- QQQ 20.72 vs trigger 90, SOXX 99.09 vs trigger 23
+- Event detector NONE, no open orders, no daytrades
+- Tactical prompt fixed: full price formatting in ledger
+- Failing both goals; maintain discipline, no chasing
+
+2026-06-12 : 12:30 : [tactical] No action: triggers unmoved
+- QQQ 20.01, SOXX 97.97, both well above limit triggers
+- VOO 2 held, no sell auth, no stop breach
+- Event detector: NONE, daytrade 0/3
+- No open orders, no same-day churn risk
+- Waiting for pullback to 90 QQQ / 23 SOXX
+
+2026-06-12 : 12:20 : [tactical] No triggers hit, held VOO 2
+- QQQ 19.83, trigger 90 not hit
+- SOXX 98.32, trigger 23 not hit
+- VOO 2 held, unrealized +.66
+- Event detector NONE, no override
+- Gross 13.9%, cash drag continues
+
+2026-06-12 : 12:10 : [tactical] No triggers hit; held VOO 2
+- QQQ 18.30 vs trigger 90.00 — no dip
+- SOXX 95.77 vs trigger 23.00 — no dip
+- VOO 2 held, gross exposure 13.9%
+- 0 orders, 0 daytrades, no events
+- Market drifting down slightly from hourly but still above all buy triggers
+
+2026-06-12 : 11:50 : [tactical] No triggers hit; VOO hold
+- QQQ 17.56 > 90 trigger, no buy
+- SOXX 93.72 > 23 trigger, no buy
+- VOO 2 hold, no sell auth
+- Event detector: MINOR, no override
+- Gross exposure 13.9%, cash 86.1%
+
+2026-06-12 : 11:41 : [tactical] No conditions met, hold VOO
+- QQQ 20.81 > 90 trigger, no buy
+- SOXX 98.21 > 23 trigger, no buy
+- VOO 2 held, no sell trigger
+- Event detector: NONE, no override
+- Gross 13.98%, cash 86%, no action needed
+
 2026-06-12 : 11:40 : [hourly] Restored repo, held VOO, no buys
 - Repo integrity breach: memory/code reverted to May 29, restored from HEAD
 - Live book: VOO 2 only, equity ,773, gross 13.98%
