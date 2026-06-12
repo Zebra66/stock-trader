@@ -123,3 +123,14 @@
 - **Event detector:** Working correctly. Classification NONE at 13:35Z.
 - **Tactical agent price bug:** Prior ledger entries (Jun 11 afternoon) showed QQQ prices/triggers with missing leading digits (e.g., "15.69" instead of "715.69", "90" instead of "690"). This is a tactical agent hallucination, not a code bug. Hourly strategist should verify ledger entries against live prices.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-06-12T14:10:02.873Z
+- **Detector classification:** CRITICAL
+- **Affected symbols:** SOXX (+1.82% CRITICAL), SMH (+1.73% CRITICAL), XLK (+1.25% MAJOR)
+- **Held positions:** VOO 2 — OK (+0.58% from 13:50Z), no stop breach. No protective sell executed.
+- **Action taken:** Suspended SOXX buy trigger ($523) due to CRITICAL semi melt-up. No new buys initiated. No open orders.
+- **Exposure:** Gross 13.91% (VOO 2). Cash $8,406.91. No increase.
+- **Why:** Tactical agent entered Event Response Mode on CRITICAL detector signal. No held positions in volatile symbols; only VOO anchor held. No protective sells required. Buy suspension applied to SOXX per protocol. QQQ is MINOR; trigger unchanged but far from current price ($719.66). No PDT or concentration issues.
+- **Next expected action:** Hourly reset at 14:35Z. Tactical agent will reassess after hourly update.

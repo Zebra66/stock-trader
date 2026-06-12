@@ -11,7 +11,8 @@
 - **Market:** OPEN until 20:00Z. Next tactical: 13:40Z. Next hourly: 14:35Z (10:35 AM ET).
 - **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
 - **Fresh macro risk:** Iran de-escalation continues + cooler core PPI = bullish macro shift. Market consolidated after yesterday's sharp rally. Do not chase.
-- **Event detector:** NONE at 13:35Z. Broad market OK. Buy suspension NOT active.
+- **Event detector:** CRITICAL at 14:10Z. SOXX and SMH flagged CRITICAL. Buy suspension ACTIVE for SOXX. QQQ MINOR; no suspension.
+- **Autonomous override:** <!-- Autonomous override applied at 2026-06-12T14:10:02.873Z due to CRITICAL event -->
 - **Blocker preventing deployment:** All actionable setups in the universe are trading well above their positive-EV entry triggers. QQQ at $713.71 (needs ≤$690 for 2:1 R/R). SOXX at $583.41 (needs ≤$523 for 2:1 R/R). No other symbol in the universe has a confirmed setup with R/R ≥ 2:1. Cash will remain elevated until the market provides a discount or a new positive-EV setup emerges.
 
 ## Position Instructions — Fri Jun 12
@@ -35,7 +36,7 @@
 - Sold 2 shares on Jun 9 at $552.30 (15:41Z / 11:41 AM ET) and 1 share at $523.12 (16:40Z / 12:40 PM ET). Anti-churn hard stop prohibited same-day re-buy.
 - **24-hour cooldown EXPIRED.**
 - Current price ~$583.41. Market flat today after +5.9% yesterday. Do NOT chase. SOXX is the most volatile in our universe and is in a sharp decline (–5.14% on week, but bouncing yesterday). Barrons: "AI Rally Keeps Unwinding." Oracle AI spending fears (-12%) add spillover risk.
-- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. MAINTAINED — no change from 18:35Z.
+- **Trigger:** BUY **1 share** if price drops to **$523.00 or below**. Place limit order at **$522.50**. MAINTAINED — no change from 18:35Z. SUSPENDED — CRITICAL event detected at 2026-06-12T14:10:02.873Z.
   - **Target:** $560.00 (2.1R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If SOXX falls below $505.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $17.50 (0.18% of equity). Well below 2% max per trade.
@@ -68,7 +69,7 @@
 - **No same-day round trips.** If a symbol is bought today, do NOT sell it today unless the hourly note explicitly authorizes the exit.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
-- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: NONE. Broad market OK. No suspension.
+- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: CRITICAL (SOXX, SMH). SOXX buy suspended. VOO OK. No protective sells.
 - **Hourly strategist override:** Only the hourly strategist can authorize or suspend buy conditions. The tactical agent must not override todo.md instructions based on event detector flags.
 - **Do NOT sell VOO today.** VOO is the only position left. Selling it would drop gross exposure to 0%, far below the 30% minimum.
 - **No open orders to cancel.** There are no resting limit orders.

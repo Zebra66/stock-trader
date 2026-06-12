@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 10:11 : [tactical] CRITICAL event: semis melt-up
+- SOXX +1.82% SMH +1.73% CRITICAL at 14:10Z
+- No held positions breached stops; VOO OK
+- Suspended SOXX buy trigger
+- No orders placed; gross exposure 13.91%
+- Autonomous override applied; no trades
+
+2026-06-12 : 09:50 : [tactical] No triggers, held VOO
+- QQQ 12.92 / SOXX 86.02 above buy triggers
+- VOO 2 shares held, unrealized -.73
+- Event detector MINOR, no action required
+- Gross exposure 13.9%, cash 86.1%
+
+2026-06-12 : 09:40 : [tactical] Held VOO, no triggers met
+- QQQ 16.54 >> trigger 90, no buy
+- SOXX 87.35 >> trigger 23, no buy
+- VOO 79.45 stable, no sell
+- Event: MINOR (SOXX +0.71%, QQQ +0.40%)
+- Gross exposure 13.92%, cash 86.08%
+
 2026-06-12 : 09:39 : [hourly] Offensive catch-up, triggers maintained, no trades
 - Regime shifted to offensive catch-up (60-90% target)
 - QQQ trigger 690 and SOXX trigger 523 maintained
