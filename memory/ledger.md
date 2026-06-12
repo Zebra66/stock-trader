@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 09:39 : [hourly] Offensive catch-up, triggers maintained, no trades
+- Regime shifted to offensive catch-up (60-90% target)
+- QQQ trigger 690 and SOXX trigger 523 maintained
+- No trades executed; VOO 2 held
+- Tactical agent ran at 09:30 with no action, no concealment
+- Blocker: all setups trading above positive-EV triggers
+
+2026-06-12 : 09:30 : [tactical] Held VOO, no triggers hit
+- QQQ at 716.85, well above 690 trigger
+- SOXX at 578.47, well above 523 trigger
+- Gross exposure 13.93%, defensive band 30-50%
+- No open orders, no daytrade risk
+- Event detector: NONE, normal mode
+
+2026-06-11 : 15:50 : [tactical] Held VOO, no triggers hit
+- QQQ 15.69, well above 90 buy trigger
+- SOXX 84.17, well above 23 buy trigger
+- VOO 2 held flat, no stop breached
+- Exposure 13.9%, defensive band 30-50%
+- No action required, no open orders
+
+2026-06-11 : 15:40 : [tactical] Held VOO, no triggers hit
+- QQQ 16.64, trigger 89.50 — not hit
+- SOXX 83.93, trigger 22.50 — not hit
+- Event: MINOR, no override needed
+- Daytrade 0/3, gross 13.93%, no action
+- Market rallied +2.8% QQQ / +5.9% SOXX today, waiting for dip
+
 2026-06-11 : 15:37 : [hourly] Held VOO, no triggers, market rallied
 - No trades; no open orders; Iran de-escalation + cooler PPI
 - SPY 739.75, QQQ 718.09, SOXX 586.74 — all up sharply
