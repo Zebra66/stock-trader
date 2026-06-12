@@ -100,6 +100,7 @@ First, decide which data and in which format you need to make a sound macro deci
 - Are there new opportunities in the Investment Universe?
 - Review the tactical todo.md — did the tactical agent flag any issues? Are those still valid?
 - Refresh buy/sell trigger levels from the latest price snapshot and nearby support/resistance; do not blindly reuse the prior hour's numbers
+- **Trigger realism check:** If a buy trigger is more than 10% below the current price and has remained unfilled for 3+ trading sessions, recalibrate it to a realistic pullback level that still offers ≥ 2:1 R/R. Do not stubbornly keep a panic-low trigger that has negligible probability of filling. However, do not chase: the recalibrated trigger must still be below the current market price.
 - Based on market changes, are there new buy/sell conditions to set?
 - For analyst commentary, investor moves, and mega-trends, distinguish between: actionable now, worth monitoring, and interesting but not actionable yet. Tie any actionable theme back to specific holdings, target sectors, or watchlist symbols.
 - Keep controlled outperformance posture: favor high-quality setups, avoid overtrading, and demand enough expected edge to overcome transaction costs
