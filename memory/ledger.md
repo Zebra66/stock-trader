@@ -2,6 +2,48 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 15:38 : [hourly] SOXX trigger raised to $575, GTC
+- Canceled day orders, placed GTC QQQ 2@$689.50 and SOXX 1@$575.00
+- SOXX trigger raised from $522.50 to $575.00; 12.3% below current was unrealistic
+- Equity $9,768.51, gross 13.94%, VOO 2 only. No unauthorized orders.
+- Portfolio -2.31% vs SPY +3.13% since inception. Failing both goals.
+- Cash drag dominant. Offensive catch-up regime. Next reassess: Monday 13:35Z.
+
+2026-06-12 : 15:30 : [tactical] Hold VOO 2; no triggers hit
+- VOO 2 shares held at $681.92, price stable
+- QQQ limit buy 2 at $689.50 resting, current $721.53
+- SOXX limit buy 1 at $522.50 resting, current $597.66
+- Event detector NONE, no protective action needed
+- Daytrade 0/3, no PDT concerns, no orders executed
+
+2026-06-12 : 15:20 : [tactical] Hold VOO, no triggers met
+- QQQ at $722.24, well above $690.00 buy trigger
+- SOXX at $598.53, well above $523.00 buy trigger
+- VOO 2 unchanged, no sell trigger active
+- Open orders resting: QQQ 2@$689.50, SOXX 1@$522.50
+- Gross exposure 13.96%, far below 60–90% target; no execution justified
+
+2026-06-12 : 15:10 : [tactical] Hold: no triggers met, 2 resting orders
+- QQQ at $722.14, trigger $689.50 — no fill
+- SOXX at $598.61, trigger $522.50 — no fill
+- VOO 2 held at $682.065, no sell trigger
+- Exposure 13.96%, well below 60-90% band
+- Daytrade 0/3, no same-day churn risk
+
+2026-06-12 : 14:50 : [tactical] No trades, triggers resting
+- QQQ at $722.75, buy trigger $689.50 not met
+- SOXX at $599.96, buy trigger $522.50 not met
+- VOO 2 held at $682.38, up 0.52pct since entry
+- Two authorized open orders confirmed in system
+- No action required, market rallying into close
+
+2026-06-12 : 14:40 : [tactical] No action — triggers far above market
+- QQQ at $722.20, limit buy $689.50, no fill
+- SOXX at $599.52, limit buy $522.50, no fill
+- VOO 2 hold at $682.10, unrealized gain +0.50%
+- Gross exposure 13.96%, far below 60-90% target
+- Market rallying into close, no CRITICAL/MAJOR events
+
 2026-06-12 : 14:38 : [hourly] Held VOO, triggers far, order mismatch caught
 - Equity $9,770.69, gross 13.96%, cash 86.04%
 - QQQ limit buy 2@$689.50 active, price $722.24, no fill
