@@ -96,6 +96,7 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
       const upper = line.toUpperCase();
       if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
       if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+      if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
       }

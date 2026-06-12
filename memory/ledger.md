@@ -2,6 +2,55 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 13:44 : [hourly] Maintained triggers, fixed parser + ledger validation
+- VOO 2 held at $681.82, no sell auth
+- QQQ limit buy 2@$689.50 active, SOXX limit buy 1@$522.50 active
+- No-buy parser fixed: ABOVE/BELOW exclusion prevents false blocks
+- Ledger CLI now rejects truncated prices < 20% of reference
+- Market flat from 16:35Z, no triggers hit, no trades
+
+2026-06-12 : 13:40 : [tactical] No action — triggers far above market
+- QQQ 22.65 vs trigger 89.50 — gap 3.15
+- SOXX 01.335 vs trigger 22.50 — gap 8.84
+- VOO 2 hold at 81.97, no sell trigger
+- Gross exposure 13.96%, regime offensive catch-up
+- Event detector NONE, no protective action needed
+
+2026-06-12 : 13:30 : [tactical] No triggers met; held VOO 2
+- QQQ 23.03 > trigger 90.00
+- SOXX 01.25 > trigger 23.00
+- VOO 82.355 stable, no sell auth
+- Gross exposure 13.95%, well below 60-90% target
+- Event detector: NONE; no override needed
+
+2026-06-12 : 13:20 : [tactical] Hold VOO, no triggers met
+- QQQ at 23.28 (needs ≤90.00) — no fill
+- SOXX at 01.26 (needs ≤23.00) — no fill
+- VOO 2 held at 82.09, +0.59% unrealized
+- Gross exposure 13.95%, cash 86.05% — no action required
+- Event detector: NONE at 17:20Z
+
+2026-06-12 : 13:10 : [tactical] Hold VOO, no triggers hit
+- QQQ at 23.13 above 90.00 trigger; SOXX at 00.77 above 23.00 trigger
+- VOO 2 shares at 82.56, unrealized +.72
+- No open orders, no trades, no daytrade risk
+- Gross exposure 13.97% far below 60-90% target band
+- Event detector NONE, market normal
+
+2026-06-12 : 12:50 : [tactical] No action: triggers untouched
+- QQQ 21.27 above 90.00 trigger, SOXX 99.46 above 23.00 trigger
+- VOO 2 held, no sell signal
+- Gross exposure 13.95%, cash 86.05%
+- No open orders, no daytrade risk
+- Event detector NONE, no override needed
+
+2026-06-12 : 12:40 : [tactical] Hold VOO 2, no triggers hit
+- VOO 2 held at 81.205, no sell trigger active
+- QQQ 20.26, well above 90.00 buy trigger
+- SOXX 98.52, well above 23.00 buy trigger
+- Event detector NONE, gross exposure 13.95%
+- No action required, cash ,406.91 preserved
+
 2026-06-12 : 12:37 : [hourly] Held VOO, no triggers hit, no trades
 - Equity 769, gross 13.95%, cash 86%
 - QQQ 20.72 vs trigger 90, SOXX 99.09 vs trigger 23

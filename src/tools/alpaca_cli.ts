@@ -156,8 +156,9 @@ export const alpacaTools = {
                          upper.includes('NO NEW BUY') || upper.includes('NO BUY') || upper.includes('NO ADD') ||
                          upper.includes('PROHIBITED') || upper.includes('BANNED');
         if (!hasNoBuy) continue;
-        // Skip lines that contain explicit authorization overrides
+        // Skip lines that contain explicit authorization overrides or price-conditional qualifiers
         if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION') || upper.includes('AUTHORIZE') || upper.includes('AUTHORIZED')) continue;
+        if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
         for (const sym of UNIVERSE) {
           if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) noBuySymbols.add(sym);
         }
