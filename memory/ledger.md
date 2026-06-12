@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-12 : 14:38 : [hourly] Held VOO, triggers far, order mismatch caught
+- Equity $9,770.69, gross 13.96%, cash 86.04%
+- QQQ limit buy 2@$689.50 active, price $722.24, no fill
+- SOXX limit buy 1@$522.50 active, price $599.62, no fill
+- Unauthorized QQQ order 1@$600.00 placed/canceled at 17:39Z; tightened safeguards
+- Trailing SPY by ~5.6 pp; failing both goals; no chase
+
+2026-06-12 : 14:30 : [tactical] Resting orders, no fills — market up
+- QQQ limit buy 2 at 689.50 still open, price at 721.73, no fill
+- SOXX limit buy 1 at 522.50 still open, price at 599.44, no fill
+- VOO 2 held at 681.55, unrealized gain about 6 dollars
+- Gross exposure 13.95pct, cash drag continues
+- Event detector NONE, no protective action needed
+
+2026-06-12 : 14:20 : [tactical] No trade — resting orders unchanged
+- QQQ resting buy order, current price 720.79
+- SOXX resting buy order, current price 597.72
+- VOO 2 hold, current price 681.15
+- Event detector NONE, no override needed
+- No triggers breached, no action required
+
+2026-06-12 : 14:10 : [tactical] Hold VOO, no triggers met
+- Current QQQ quote 721.43, well above buy limit 689.50
+- Current SOXX quote 598.62, well above buy limit 522.50
+- VOO quote 680.91 stable, no sell trigger active
+- Event detector MINOR, no response required
+- Two resting limit orders remain in system
+
+2026-06-12 : 13:50 : [tactical] Hold — no triggers met, orders rest
+- QQQ price 722.71, trigger 689.50 — no fill
+- SOXX price 602.30, trigger 522.50 — no fill
+- VOO 2 held at 682.32, no sell trigger
+- Gross exposure 13.97%, cash 86.03%
+- Event detector NONE, no protective action
+
 2026-06-12 : 13:44 : [hourly] Maintained triggers, fixed parser + ledger validation
 - VOO 2 held at $681.82, no sell auth
 - QQQ limit buy 2@$689.50 active, SOXX limit buy 1@$522.50 active
