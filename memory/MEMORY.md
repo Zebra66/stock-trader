@@ -150,6 +150,21 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Bash expands `$6`, `$7`, `$9` inside double quotes as positional parameters.** Always use single quotes for `--detail` arguments containing dollar signs, or write a temporary TypeScript helper.
 - **Tactical agent may CANCEL authorized limit BUY orders without logging.** Hourly strategist must verify open orders on every run and restore them if missing. Add explicit todo.md instructions to prevent cancellation.
 
+## Tactical Execution Summary — 2026-06-15 20:23Z (Monday, 16:23 ET — Market CLOSED)
+- **Status:** Market CLOSED at 20:00Z. Next open: Tuesday 2026-06-16 09:30 ET.
+- **Event detector:** NONE (ran at 14:17Z; no re-run needed before close).
+- **Live broker refresh (authoritative):** Equity $9,790.74 | Cash $8,008.58 | Long $1,782.16 | Gross 18.20% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,387.14 @ $693.57, +2.17% unrealized), AVGO 1 ($394.54 @ $394.535, +0.79% unrealized).
+- **Open orders at close:** QQQ 2@$689.50 GTC (id: 9eeb45e0), SOXX 1@$575.00 GTC (id: f0680394). Both orders did NOT fill today; market closed well above limits.
+- **Close-of-day prices:** SPY 754.75, QQQ 743.97, SOXX 627.76, AVGO 393.97, VOO 693.99.
+- **Actions taken this cycle:**
+  1. **Canceled 5 stale GTC orders** placed at 09:37 ET (AVGO $385, RKLB $100, QQQ $689.50, GOOG $360, SOXX $575) — these were the old orders that had already been replaced by the hourly strategist at 18:37Z. No harm done; the hourly agent restored QQQ and SOXX with new order IDs.
+  2. **Did NOT cancel the authorized QQQ and SOXX orders** placed at 18:37Z — they are legitimate and remain open for Tuesday.
+  3. **No new orders placed.** Market closed before any tactical triggers were hit.
+  4. **No sells executed.** VOO and AVGO both held; no stop breaches.
+- **Decision rationale:** The hourly strategist at 18:38Z explicitly authorized QQQ and SOXX limit buys and prohibited cancellation. I respected that directive. All other symbols were on "DO NOT BUY" status. Market closed ~7% above QQQ trigger and ~8% above SOXX trigger, so no fills occurred.
+- **Next expected action:** Tuesday 2026-06-16 09:30 ET — QQQ and SOXX GTC orders remain active. If market gaps down or pulls back to trigger levels, they will fill. Otherwise, next hourly strategist at 19:35Z (3:35 PM ET Tuesday) will reassess.
+
 ## Prior Tactical Executions (Archived)
 See git history for full detail.
 - **2026-06-15 18:38Z:** RESTORED QQQ 2@$689.50 GTC and SOXX 1@$575.00 GTC after discovering unauthorized cancellation at 18:22Z. No fills. 2 open orders active.
