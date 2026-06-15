@@ -4,20 +4,20 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest",
-    "@types/node": "^25.6.0"
+    "@types/bun": "1.3.14",
+    "@types/node": "^25.9.0"
   },
   "peerDependencies": {
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@ai-sdk/google": "^3.0.67",
+    "@ai-sdk/google": "^3.0.75",
     "@alpacahq/alpaca-trade-api": "^3.1.3",
-    "@mariozechner/pi-agent-core": "^0.72.1",
-    "@mariozechner/pi-ai": "^0.72.1",
-    "@mariozechner/pi-coding-agent": "^0.72.1",
-    "@opencode-ai/sdk": "^1.14.33",
-    "ai": "^6.0.174",
+    "@mariozechner/pi-agent-core": "^0.73.1",
+    "@mariozechner/pi-ai": "^0.73.1",
+    "@mariozechner/pi-coding-agent": "^0.73.1",
+    "@opencode-ai/sdk": "^1.15.5",
+    "ai": "^6.0.185",
     "elysia": "^1.4.28",
     "pino": "^10.3.1"
   }

@@ -36,4 +36,5 @@ temp_files/
 .DS_Store
 
 .pi/todos/*
-.sysyphus
+.sisyphus/
+~

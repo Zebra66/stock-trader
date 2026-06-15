@@ -1,10 +1,18 @@
 import '../env';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
+import { withTimeout } from './with_timeout';
 import { AlpacaPosition } from '@alpacahq/alpaca-trade-api/dist/resources/datav2/entityv2';
+import type Alpaca from '@alpacahq/alpaca-trade-api';
 
-const alpaca = getDefaultAlpacaClient();
+let _alpaca: Alpaca | null = null;
+function getAlpaca(): Alpaca {
+  if (!_alpaca) _alpaca = getDefaultAlpacaClient();
+  return _alpaca;
+}
 
-const SNAPSHOT_PATH = './temp_files/tactical_last_prices.json';
+const API_TIMEOUT_MS = 15_000;
+
+const SNAPSHOT_PATH = './memory/tactical_last_prices.json';
 
 const BENCHMARK_SYMBOLS = ['SPY', 'QQQ', 'SOXX', 'XLK', 'GLD', 'SMH'];
 
@@ -55,26 +63,26 @@ function classifyPosition(pctChange: number): EventReport['heldPositions'][0]['s
   return 'OK';
 }
 
-function loadLastSnapshot(): LastSnapshot | null {
+async function loadLastSnapshot(): Promise<LastSnapshot | null> {
   try {
-    const raw = Bun.file(SNAPSHOT_PATH);
+    const raw = await Bun.file(SNAPSHOT_PATH).text();
     return JSON.parse(raw) as LastSnapshot;
   } catch {
     return null;
   }
 }
 
-function saveSnapshot(prices: Record<string, number>) {
+async function saveSnapshot(prices: Record<string, number>) {
   const snapshot: LastSnapshot = {
     timestamp: new Date().toISOString(),
     prices,
   };
-  Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
+  await Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
 }
 
 async function fetchPrice(symbol: string): Promise<number | null> {
   try {
-    const snap = await alpaca.getSnapshot(symbol) as {
+    const snap = await withTimeout(getAlpaca().getSnapshot(symbol), API_TIMEOUT_MS, `Alpaca getSnapshot(${symbol})`) as {
       LatestTrade?: { Price?: number };
       MinuteBar?: { ClosePrice?: number };
     };
@@ -90,12 +98,12 @@ function pctChange(oldPrice: number, newPrice: number): number {
 
 export async function detectEvents(): Promise<EventReport> {
   const now = new Date().toISOString();
-  const prior = loadLastSnapshot();
+  const prior = await loadLastSnapshot();
 
   // Fetch positions
   let positions: AlpacaPosition[] = [];
   try {
-    positions = await alpaca.getPositions() as AlpacaPosition[];
+    positions = await withTimeout(getAlpaca().getPositions(), API_TIMEOUT_MS, 'Alpaca getPositions') as AlpacaPosition[];
   } catch {
     positions = [];
   }
@@ -193,7 +201,7 @@ export async function detectEvents(): Promise<EventReport> {
   };
 
   // Save snapshot for next run
-  saveSnapshot(currentPrices);
+  await saveSnapshot(currentPrices);
 
   return report;
 }
