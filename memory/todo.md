@@ -1,20 +1,21 @@
-# Tactical Todo — Updated 2026-06-12 19:37Z (Friday 3:37 PM ET)
-*HARD_LOCK LIFTED. Two GTC orders resting. NO NEW ORDERS beyond authorized limits. Execute authorized orders only. Market closes at 20:00Z (4:00 PM ET). Next tactical: Monday 09:40Z (5:40 AM ET). Next hourly: Monday 13:35Z (9:35 AM ET).*
+# Tactical Todo — Updated 2026-06-15 13:30Z (Monday 9:30 AM ET)
+<!-- Autonomous override applied at 2026-06-15 13:30Z due to CRITICAL event -->
+*HARD_LOCK LIFTED. CRITICAL event override active. All BUY conditions SUSPENDED. NO open orders. NO NEW ORDERS until hourly reset. Market OPEN. Next tactical: 09:40Z. Next hourly: 13:35Z.*
 
 ## Current State
-- **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks)
+- **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks) — **SUSPENDED due to CRITICAL event**
 - **Live book:** VOO 2 only
-- **Account equity / cash / buying power:** ~$9,769 / ~$8,407 / ~$35,539
-- **Gross long exposure:** ~13.94% | **Net exposure:** ~13.94% | **Cash:** ~86.06%
+- **Account equity / cash / buying power:** ~$9,790 / ~$8,407 / ~$35,540
+- **Gross long exposure:** ~14.13% | **Net exposure:** ~14.13% | **Cash:** ~85.87%
 - **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
-- **Open orders:** QQQ limit buy 2@$689.50 (GTC), SOXX limit buy 1@$575.00 (GTC)
-- **Market:** OPEN until 20:00Z. Next tactical: Monday 09:40Z. Next hourly: Monday 13:35Z (9:35 AM ET).
+- **Open orders:** NONE (cancelled due to CRITICAL event override at 2026-06-15 13:30Z)
+- **Market:** OPEN. Next tactical: 09:40Z. Next hourly: 13:35Z (9:35 AM ET).
 - **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
-- **Fresh macro risk:** Iran de-escalation confirmed (Pakistan announced peace deal) + cooler PPI + AMD Citi upgrade + Intel rally = bullish macro shift. Market slightly pulling back from highs in last 5 minutes. Do not chase.
-- **Event detector:** NONE at 19:35Z. Prior CRITICAL semi melt-up (14:10Z) fully resolved.
-- **Autonomous override:** RESOLVED at 15:36Z. SOXX buy trigger ACTIVE.
-- **Blocker preventing deployment:** All actionable setups in the universe are trading above their positive-EV entry triggers. QQQ at $720.25 (needs ≤$690 for 1.8R). SOXX at $595.88 (needs ≤$575 for 2.0R). No other symbol in the universe has a confirmed setup with R/R ≥ 2:1. Cash will remain elevated until the market provides a discount or a new positive-EV setup emerges.
+- **Fresh macro risk:** CRITICAL melt-up at Monday open. SPY +1.46%, QQQ +2.29%, SOXX +4.02%. Weekend gap-up on Iran de-escalation follow-through + AMD Citi upgrade + Intel rally. Buying into this without fresh hourly reassessment is prohibited. Do NOT chase.
+- **Event detector:** CRITICAL at 13:30Z. Broad market melt-up: SPY MAJOR +1.46%, QQQ CRITICAL +2.29%, SOXX CRITICAL +4.02%, XLK CRITICAL +2.73%, GLD CRITICAL +3.45%, SMH CRITICAL +3.48%. All BUY triggers SUSPENDED.
+- **Autonomous override:** ACTIVE at 13:30Z. Stale GTC orders cancelled. BUY triggers SUSPENDED. Hourly strategist must reassess.
+- **Blocker preventing deployment:** CRITICAL event override. All Friday-calibrated triggers are dangerously stale. QQQ at $737.40 (needs fresh trigger), SOXX at $622.84 (needs fresh trigger). No new buys until hourly reset.
 
 ## Position Instructions — Fri Jun 12 (:40, :50 Tactical Runs) and Monday
 
@@ -26,7 +27,7 @@
 ### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON DIP (REDUCED SIZE)
 - Sold 6 shares on Jun 9 at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
 - Current price ~$720.25. Market up +0.41% today after +2.8% yesterday. Do NOT chase.
-- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. GTC limit order at **$689.50**. If the order is missing or was canceled, replace it immediately.
+- **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. GTC limit order at **$689.50** [CANCELLED]. SUSPENDED — major event detected at 2026-06-15 13:30Z.
   - **Target:** $735.00 (1.8R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $49 (0.50% of equity). Well below 2% max per trade.
@@ -38,7 +39,7 @@
 - **24-hour cooldown EXPIRED.** CRITICAL event from 14:10Z **RESOLVED** at 15:36Z. Buy trigger ACTIVE.
 - Current price ~$595.88. Market up +1.95% today after +5.9% yesterday. Do NOT chase.
 - **Prior trigger was $523.00.** That trigger is now 12.3% below current and has very low probability of filling. It has been **RAISED to $575.00** — a 3.5% pullback that still offers 2:1 R/R.
-- **Trigger:** BUY **1 share** if price drops to **$575.00 or below**. GTC limit order at **$575.00**. If the order is missing or was canceled, replace it immediately.
+- **Trigger:** BUY **1 share** if price drops to **$575.00 or below**. GTC limit order at **$575.00** [CANCELLED]. SUSPENDED — major event detected at 2026-06-15 13:30Z.
   - **Target:** $625.00 (2.0R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If SOXX falls below $550.00 after fill, **SELL all SOXX shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $25 (0.26% of equity). Well below 2% max per trade.
@@ -71,10 +72,10 @@
 - **No same-day round trips.** If a symbol is bought today, do NOT sell it today unless the hourly note explicitly authorizes the exit.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
-- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: NONE at 19:35Z. All buy triggers ACTIVE. No protective sells required.
+- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: CRITICAL at 13:30Z. All buy triggers SUSPENDED. No protective sells required (VOO 2 up, no stop breach).
 - **Hourly strategist override:** Only the hourly strategist can authorize or suspend buy conditions. The tactical agent must not override todo.md instructions based on event detector flags.
 - **Do NOT sell VOO today.** VOO is the only position left. Selling it would drop gross exposure to 0%, far below the 30% minimum.
-- **No open orders to cancel.** Both GTC limit orders are authorized and should remain in place until filled.
+- **No open orders.** Both GTC limit orders were cancelled due to CRITICAL event override. No replacement orders until hourly reset.
 - **NO NEW ORDERS beyond the two authorized limit buys.** If any unauthorized order appears in the system (e.g., QQQ, SOXX, or any other symbol with a quantity or limit price that does not match the hourly authorization), cancel it immediately and report it in the ledger. This is an order-mismatch drift.
 
 ## Concentration Cap Guard (Code-Enforced)
@@ -95,11 +96,10 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **QQQ limit buy 2 shares at $689.50** (GTC — ACTIVE in system). Target: 14.1% of equity. Priority: HIGHEST.
-2. **SOXX limit buy 1 share at $575.00** (GTC — ACTIVE in system). Target: 5.9% of equity. Priority: MEDIUM.
-3. **Rebuild target:** Gross exposure 30–35% by end of Monday IF market gives a pullback and triggers hit. Requires ~$1,954 in new buys.
-4. **If both limit orders fill:** VOO 2 + QQQ 2 + SOXX 1 = ~33.9% gross. Cash ~$5,452.
-5. **If no triggers hit by Wednesday:** Reassess triggers and consider raising or adding new symbols.
+1. ~~QQQ limit buy 2 shares at $689.50~~ [CANCELLED due to CRITICAL event override at 13:30Z]
+2. ~~SOXX limit buy 1 share at $575.00~~ [CANCELLED due to CRITICAL event override at 13:30Z]
+3. **Rebuild target:** SUSPENDED. Gross exposure to remain at ~14.1% until hourly strategist reassesses after CRITICAL event.
+4. **If no triggers hit by Wednesday:** Reassess triggers and consider raising or adding new symbols.
 
 ## Expected Book
 - VOO 2 (~13.94%)
@@ -109,9 +109,9 @@ Do not place market orders for these; use limit orders only, or defer.
 - If both limit buys fill: VOO 2 + QQQ 2 + SOXX 1 = ~33.9% gross. Cash ~$5,452.
 
 ## Next Hourly Preview — Monday 13:35Z (9:35 AM ET) (NOT AUTHORIZED YET)
-- Reassess QQQ and SOXX triggers if market gives a pullback over the weekend.
-- If market continues to rally and triggers remain unfilled, consider whether to maintain or raise triggers for Monday.
-- Monitor event detector for any new CRITICAL/MAJOR events.
+- CRITICAL event override active. Reassess all triggers after melt-up. QQQ now at $737.40, SOXX at $622.84. Prior triggers ($689.50 / $575.00) are dangerously stale.
+- Consider whether to raise triggers or wait for a confirmed pullback.
+- Monitor event detector for resolution or continuation of CRITICAL event.
 - Verify repo integrity (git status) before writing new directives.
-- Explicitly review the 17:39Z unauthorized order incident and confirm no new mismatches.
-- If GTC orders filled over the weekend, update todo.md and set stop-losses.
+- Confirm no unauthorized orders appeared during the gap-up.
+- If no new hourly directives by 13:35Z, maintain SUSPENDED status.

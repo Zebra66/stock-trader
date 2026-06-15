@@ -1,5 +1,16 @@
 # Hourly Macro Memory
-*Updated 2026-06-12 19:37Z (Friday 3:37 PM ET). Market OPEN until 20:00Z. ~23 min to close.*
+*Updated 2026-06-15 13:30Z (Monday 9:30 AM ET). Market OPEN. CRITICAL event override active.*
+
+## AUTONOMOUS OVERRIDE — 2026-06-15 13:30Z
+- **Classification:** CRITICAL
+- **Affected symbols:** SPY (MAJOR +1.46%), QQQ (CRITICAL +2.29%), SOXX (CRITICAL +4.02%), XLK (CRITICAL +2.73%), GLD (CRITICAL +3.45%), SMH (CRITICAL +3.48%)
+- **Action taken:** Cancelled stale GTC limit buys (QQQ 2@$689.50, SOXX 1@$575.00). Suspended all BUY conditions in todo.md. No protective sells needed (only VOO 2 held, up +1.49% to $691.42, no stop breach).
+- **Why:** Weekend gap-up melt-up. Friday-calibrated triggers are dangerously stale. Market rallied massively on Iran de-escalation follow-through + AMD upgrade + Intel rally. Buying into this without fresh hourly assessment risks chasing a blow-off top. Exposure preserved at ~14.1% gross. Hourly strategist must reassess before any new deployment.
+- **Live state:** Equity $9,789.75 | Cash $8,406.91 | VOO 2 @ $691.42 = $1,382.84 | Gross 14.13% | Daytrade 0/3 | NO open orders.
+
+---
+
+*Historical record below — 2026-06-12 19:37Z*
 
 ## Hourly Cycle Summary — 2026-06-12 19:37Z (Friday 3:37 PM ET)
 - **Status:** Market OPEN. ~23 min to close. Next hourly: Monday 13:35Z (9:35 AM ET).

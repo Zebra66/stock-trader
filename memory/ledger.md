@@ -2,6 +2,23 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 09:32 : [tactical] CRITICAL override: cancelled GTC buys
+- CRITICAL event at Monday open: QQQ $737.40 (+2.29%), SOXX $622.84 (+4.02%), SPY $751.91 (+1.46%)
+- Cancelled stale GTC orders: QQQ 2@$689.50, SOXX 1@$575.00
+- No protective sells needed: VOO 2 at $691.42 (+1.49%), no stop breach
+- All BUY triggers SUSPENDED until hourly reset
+- Gross exposure 14.13%, cash preserved
+
+2026-06-12 : 15:50 : [tactical] Hold VOO, limit orders resting
+- Event detector NONE at 19:50Z. QQQ limit buy 2@$689.50 resting, current $721.00. SOXX limit buy 1@$575.00 resting, current $596.48. VOO 2 held at $681.37, no sell trigger. No fills, no action needed.
+
+2026-06-12 : 15:40 : [tactical] No action; triggers unmet, GTC resting
+- QQQ at $720.40, trigger $689.50 — not met
+- SOXX at $596.01, trigger $575.00 — not met
+- VOO 2 held at $681.14, avg entry $678.70, small gain
+- GTC orders verified: QQQ 2@$689.50, SOXX 1@$575.00
+- Event detector NONE; market flat into close
+
 2026-06-12 : 15:38 : [hourly] SOXX trigger raised to $575, GTC
 - Canceled day orders, placed GTC QQQ 2@$689.50 and SOXX 1@$575.00
 - SOXX trigger raised from $522.50 to $575.00; 12.3% below current was unrealistic
