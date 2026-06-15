@@ -1,14 +1,15 @@
-# Tactical Todo — Updated 2026-06-15 16:35Z (Monday 12:35 PM ET)
-*HARD_LOCK LIFTED. All BUY conditions ACTIVE. Market OPEN until 20:00Z (16:00 ET). ~3.5 hrs to close. Next tactical: ~16:40Z. Next hourly: 17:35Z (1:35 PM ET).*
+# Tactical Todo — Updated 2026-06-15 16:50Z (Monday 12:50 PM ET)
+*HARD_LOCK LIFTED. All BUY conditions ACTIVE. Market OPEN until 20:00Z (16:00 ET). ~3.1 hrs to close. Next tactical: ~17:00Z. Next hourly: 17:35Z (1:35 PM ET).*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks)
-- **Live book:** VOO 2 only
-- **Account equity / cash / buying power:** $9,797.60 / $8,406.91 / $34,807.53
-- **Gross long exposure:** 14.20% | **Net exposure:** 14.20% | **Cash:** 85.80%
+- **Live book:** VOO 2, AVGO 1
+- **Account equity / cash / buying power:** $9,797.91 / $8,015.48 / $34,730.19
+- **Gross long exposure:** 18.19% | **Net exposure:** 18.19% | **Cash:** 81.81%
 - **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
-- **Open orders:** 4 limit buys open (unfilled): QQQ 2@$689.50 GTC (restored 16:33Z), SOXX 1@$575.00 GTC (restored 16:33Z), GOOG 1@$368.50 day, AVGO 1@$391.50 day.
+- **Open orders:** 3 limit buys open (unfilled): QQQ 2@$689.50 GTC (restored 16:33Z), SOXX 1@$575.00 GTC (restored 16:33Z), GOOG 1@$368.50 day.
+- **Filled today:** AVGO 1 share @ $391.43 (day limit buy, 16:47Z). Position now held.
 - **Market:** OPEN until 20:00Z (16:00 ET). Next open: Tuesday June 16, 09:30 ET.
 - **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
 - **Event detector:** NONE at 16:35Z. Broad market OK.
@@ -53,15 +54,13 @@
 - **Concentration cap check:** GOOG max 15% of equity = $1,469.64. Buying 1 share at $368.50 = 3.76% of equity. Well within cap.
 - **Do NOT buy GOOG above $370.50.** That is our prior sell price; buying above it is poor execution.
 
-### AVGO — BUY ON PULLBACK (NEW POSITION)
-- Fully exited June 4 at $405.16. Current price $392.76 — **below our prior sell price.**
+### AVGO — HOLD 1 — FILLED TODAY
+- **Position:** 1 share filled at $391.43 (16:47Z). Current price $392.65.
 - Post-earnings correction deepening. Down –10.69% 1M.
-- **Trigger:** BUY **1 share** if price drops to **$391.50 or below**. Day limit order at **$391.50**.
-  - **Target:** $425.00 (2.0R from entry). Let winners run.
-  - **Stop loss:** If AVGO falls below $365.00 after fill, **SELL all AVGO shares at market** on next tactical run.
-  - **Rationale:** Risk = $20 (0.20% of equity). Well below 2% max per trade.
-- **Concentration cap check:** AVGO max 15% of equity = $1,469.64. Buying 1 share at $391.50 = 4.00% of equity. Well within cap.
-- **Do NOT buy AVGO above $405.16.** That is our prior sell price; buying above it is poor execution.
+- **Stop loss:** If AVGO falls below $365.00, **SELL all AVGO shares at market** on next tactical run.
+- **Target:** $425.00 (2.0R from entry). Let winners run.
+- **Do NOT sell AVGO today** unless stop-loss is breached. Same-day round-trip prohibited.
+- **Concentration cap check:** AVGO max 15% of equity = $1,469.64. Current position 1 share = 4.01% of equity. Well within cap.
 
 ### RKLB — DO NOT BUY — DO NOT RE-BUY
 - No prior position. Current price $109.98.
@@ -121,11 +120,12 @@ Do not place market orders for these; use limit orders only, or defer.
 
 ## Expected Book Into Close
 - VOO 2 (~14.2%)
-- Cash: ~$8,407 (~85.8%)
-- Gross exposure: ~14.2% (if no fills)
-- If GOOG fills: ~18.0%
-- If AVGO fills: ~21.9%
-- If both fill: ~21.9% (GOOG + AVGO = $760)
+- AVGO 1 (~4.0%)
+- Cash: ~$8,015 (~81.8%)
+- Gross exposure: ~18.2% (current)
+- If GOOG fills: ~22.0%
+- If QQQ fills: ~36.0%
+- If SOXX fills: ~36.0%
 
 ## Next Hourly Preview — 17:35Z (1:35 PM ET)
 - Reassess GOOG/AVGO fill status. If unfilled, consider whether to raise limits for the afternoon session.

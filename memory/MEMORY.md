@@ -1,13 +1,13 @@
 # Hourly Macro Memory
-*Updated 2026-06-15 16:35Z (Monday 12:35 PM ET). Market OPEN until 20:00Z (16:00 ET). ~3.5 hrs to close.*
+*Updated 2026-06-15 16:50Z (Monday 12:50 PM ET). Market OPEN until 20:00Z (16:00 ET). ~3.1 hrs to close.*
 
-## Hourly Cycle Summary — 2026-06-15 16:35Z (Monday 12:35 PM ET)
-- **Status:** Market OPEN. ~3.5 hours to close. Event detector NONE at 16:35Z.
-- **Repo integrity:** Clean. Working tree matches HEAD `8e6c4ec`. No tracked files deleted. No staged changes except `memory/tactical_last_prices.json` (event detector state update). No critical breaches.
-- **Live broker refresh:** Equity $9,797.60 | Cash $8,406.91 | Long $1,390.69 | Gross 14.20% | Daytrade 0/3.
-- **Holdings confirmed:** VOO 2 only. Current price $695.345. Unrealized +$33.29 (+2.45% from avg entry $678.7025).
-- **Open orders:** 4 limit buys open (all unfilled): QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$368.50 day, AVGO 1@$391.50 day.
-- **Filled trades since prior hourly (15:35Z):** NONE. No concealment risk.
+## Hourly Cycle Summary — 2026-06-15 16:50Z (Monday 12:50 PM ET)
+- **Status:** Market OPEN. ~3.1 hours to close. Event detector NONE at 16:50Z.
+- **Repo integrity:** Clean. Working tree matches HEAD `8e6c4ec`. No tracked files deleted. No staged changes. No critical breaches.
+- **Live broker refresh:** Equity $9,797.91 | Cash $8,015.48 | Long $1,782.43 | Gross 18.19% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2, AVGO 1. VOO current $694.889, unrealized +$32.37 (+2.39%). AVGO current $392.65, unrealized +$1.22 (+0.31% from avg entry $391.43).
+- **Open orders:** 3 limit buys open (unfilled): QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$368.50 day.
+- **Filled trades since prior hourly (15:35Z):** AVGO 1 share @ $391.43 (day limit buy filled 16:47Z). No concealment risk.
 - **Tactical agent today:** Ran at 09:30–16:33 (no trades). No unauthorized executions. QQQ and SOXX GTC orders were restored at 16:33Z after being cancelled at 16:20Z/16:21Z.
 - **Goal check:** Portfolio **–2.04%** since inception ($9,797.60 vs $10,000 base) vs SPY **+5.33%** (756.25 vs 718.01 baseline). **FAILING BOTH GOALS.** Trailing SPY by ~7.37 pp.
 - **Regime:** **OFFENSIVE CATCH-UP.** Target gross exposure 60–90%. Current 14.20% — far below band. Must deploy capital.
@@ -18,15 +18,16 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $695.35 | $1,390.69 | 14.20% | +$33.29 | +2.45% |
-| Cash | — | — | — | $8,406.91 | 85.80% | — | — |
-| **Equity** | — | — | — | **$9,797.60** | **100%** | — | **–2.04%** |
+| VOO | 2 | $678.7025 | $694.889 | $1,389.78 | 14.18% | +$32.37 | +2.39% |
+| AVGO | 1 | $391.43 | $392.65 | $392.65 | 4.01% | +$1.22 | +0.31% |
+| Cash | — | — | — | $8,015.48 | 81.81% | — | — |
+| **Equity** | — | — | — | **$9,797.91** | **100%** | — | **–2.02%** |
 
-- **Gross long exposure:** 14.20%
-- **Net exposure:** 14.20%
+- **Gross long exposure:** 18.19%
+- **Net exposure:** 18.19%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** 4 limit buys (unfilled)
+- **Open orders:** 3 limit buys (unfilled)
 
 ## Performance Review — Mon Jun 15 (12:35 PM ET)
 - **1D (today):** SPY **+1.83%** (est. 741.75 → 756.25). Portfolio **+0.27%** ($9,770.81 → $9,797.60). **Underperforming SPY by ~1.56 pp.** Cash drag severe.
@@ -50,7 +51,7 @@
 - **Space:** RKLB -3.23% 1W. KeyBanc upgrade + Cathie Wood buying SpaceX + Nasdaq 100 inclusion June 22. Catalysts intact but stock volatile.
 - **Crypto:** HOOD +17.24% 1W. Ripple +9%, Ethereum +9%, Bitcoin +4% on Iran truce. High churn; no edge.
 - **NVDA:** $212.37. +1.79% 1W, -9.91% 1M. No re-entry authorized. Above prior sell price $207.80.
-- **AVGO:** $392.76. -0.97% 1W, -10.69% 1M. Below our sell price ($405.16). Re-entry authorized at $391.50.
+- **AVGO:** $392.65. -0.97% 1W, -10.69% 1M. **Position filled 1 share at $391.43.** Stop at $365.00. Do NOT sell today unless stop breached.
 - **GOOG:** $369.10. +2.20% 1W, -7.07% 1M. Below our sell price ($370.50). Re-entry authorized at $368.50.
 - **QQQ:** $744.10. +3.91% 1W. 24-hour cooldown **EXPIRED.** Rebuild ONLY at $690 or below. Current is ~$54 above trigger.
 - **SOXX:** $626.17. +9.58% 1W. 24-hour cooldown **EXPIRED.** Trigger at $575 — 8.17% below current. 2:1 R/R.
@@ -68,7 +69,7 @@
 | QQQ | Buy on pullback | Core liquid growth. 24-hour cooldown expired. Rebuild at $690. Reduced size: 2 shares. Risk = $49. | 10–20% |
 | SOXX | Buy on pullback | Chip exposure. 24-hour cooldown expired. Rebuild at $575. Reduced size: 1 share. Risk = $25. | 5–10% |
 | GOOG | Buy on pullback | Below our sell price. Beaten down. 1 share at $368.50. Risk = $20. | 3–5% |
-| AVGO | Buy on pullback | Below our sell price. Post-earnings correction. 1 share at $391.50. Risk = $20. | 3–5% |
+| AVGO | Hold | Position filled at $391.43. Stop at $365.00. Small unrealized gain. | 3–5% |
 | RKLB | Avoid | Cancelled $100 limit. No conviction for today. Reassess next cycle. | 0% |
 | NVDA | Avoid | Above prior sell price. No catalyst. | 0% |
 | META | Avoid | bannedSymbols active. | 0% |
@@ -80,13 +81,13 @@
 2. **QQQ limit buy ACTIVE.** BUY **2 shares** if price drops to **$690.00 or below**. GTC limit order at **$689.50**. Target $735.00 (1.8R). Stop at $665.00. Risk = $49 (0.50% of equity).
 3. **SOXX limit buy ACTIVE.** BUY **1 share** if price drops to **$575.00 or below**. GTC limit order at **$575.00**. Target $625.00 (2.0R). Stop at $550.00. Risk = $25 (0.26% of equity).
 4. **GOOG limit buy ACTIVE.** BUY **1 share** if price drops to **$368.50 or below**. Day limit order at **$368.50**. Target $400.00. Stop at $340.00. Risk = $20 (0.20% of equity).
-5. **AVGO limit buy ACTIVE.** BUY **1 share** if price drops to **$391.50 or below**. Day limit order at **$391.50**. Target $425.00. Stop at $365.00. Risk = $20 (0.20% of equity).
+5. ~~AVGO limit buy ACTIVE~~ **FILLED at $391.43.** HOLD 1 share. Stop at $365.00. Target $425.00. Do NOT sell today unless stop breached.
 6. **RKLB limit CANCELLED.** No position; no re-entry authorized today.
 7. **NO MARKET ORDERS.** All new orders must be limit orders only.
 8. **No discretionary buys above trigger prices.** Anti-churn hard stop blocks all adds above $690 for QQQ, above $575 for SOXX, above $370.50 for GOOG, above $405.16 for AVGO.
 9. **No same-day round trips.** If a symbol is bought today, it may NOT be sold today unless the hourly note explicitly authorizes the exit.
-10. **Cash reserve:** ~$8,407 (~85.80%). Preserve for authorized limit orders.
-11. **Gross exposure target:** 60–90% offensive catch-up band. Current 14.20%. If GOOG + AVGO fill, gross = ~21.5%. If QQQ + SOXX also fill, gross = ~35.5%. We will add more shares next cycle if triggers fill and thesis holds.
+10. **Cash reserve:** ~$8,015 (~81.81%). Preserve for authorized limit orders.
+11. **Gross exposure target:** 60–90% offensive catch-up band. Current 18.19%. AVGO filled. If GOOG fills, gross = ~22.0%. If QQQ + SOXX also fill, gross = ~36.0%. We will add more shares next cycle if triggers fill and thesis holds.
 12. **If no GOOG/AVGO fills by EOD, reassess at next hourly.** Consider raising triggers or placing market orders on open if gap-down or flat open.
 13. **SOXX illiquidity warning:** Latest bar shows 12 trades, 336 volume. Thin. Our existing limit order is acceptable because it is a passive bid; do not add market orders for SOXX.
 14. **Event detector bug:** `priorTimestamp` still null. Need to fix `memory/tactical_last_prices.json` persistence.
@@ -112,7 +113,7 @@
 - **Integer-share constraint:** With ~$9.8K equity, QQQ capped at 6 shares; GOOG at 4 shares; VOO at 2 shares; AVGO at 3 shares. Deployment options are structurally limited.
 - **Repo hygiene:** Clean. No breaches.
 - **Code integrity:** All guards intact (stale-memory, duplicate-order, anti-churn, ABOVE/BELOW parser exception). No code gaps detected.
-- **Event detector note:** `priorTimestamp` was null at 16:35Z, indicating detector state file (`memory/tactical_last_prices.json`) is being reset or not read correctly. Bug persists.
+- **Event detector note:** `priorTimestamp` now working at 16:50Z (16:40Z prior). State file persistence appears fixed.
 
 ## Standing Learnings
 See `memory/standing_learnings.md` for full archive. Key reminders:
@@ -144,6 +145,7 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 
 ## Prior Tactical Executions (Archived)
 See git history for full detail.
+- **2026-06-15 16:50Z:** Detected AVGO 1@$391.50 day limit filled at $391.43 (16:47Z). No action taken. 3 open orders remain.
 - **2026-06-15 16:33Z:** Restored QQQ 2@$689.50 GTC and SOXX 1@$575.00 GTC after discovering they were cancelled at 16:20Z/16:21Z. Fixed todo.md parser false positive.
 - **2026-06-15 15:40Z:** CANCELLED GOOG 1@$360.00 GTC, AVGO 1@$385.00 GTC, RKLB 1@$100.00 GTC. PLACED GOOG 1@$368.50 day, AVGO 1@$391.50 day.
 - **2026-06-15 13:37Z:** Placed QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$360.00 GTC, AVGO 1@$385.00 GTC, RKLB 1@$100.00 GTC.
