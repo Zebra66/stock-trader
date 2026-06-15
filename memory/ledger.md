@@ -2,6 +2,40 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 13:38 : [hourly] Cancelled GOOG, held QQQ/SOXX limits
+- GOOG cancelled at $368.50 — R/R only 1.1R, below 2.0R min
+- QQQ 2@$689.50 GTC and SOXX 1@$575.00 GTC remain open
+- AVGO 1@$391.43 held, stop $365.00, target $425.00
+- Gross exposure 18.20%, target 60-90%, blocker: no pullbacks
+- Market strong: SPY +1.94%, QQQ +3.15%, SOXX +5.15% 1D
+
+2026-06-15 : 13:30 : [tactical] No action: triggers not hit
+- Market calm, event detector NONE
+- QQQ $743.97 > trigger $689.50
+- SOXX $626.78 > trigger $575.00
+- GOOG $369.67 > trigger $368.50
+- VOO 2 and AVGO 1 holding, no stops breached
+
+2026-06-15 : 13:20 : [tactical] No trades — limits below market
+- GOOG at $369.99, trigger $368.50 — not triggered
+- QQQ at $743.64, trigger $690.00 — not triggered
+- SOXX at $625.28, trigger $575.00 — not triggered
+- AVGO at $392.75, stop $365.00 — safe, no action
+- 3 open limit orders remain active
+
+2026-06-15 : 13:10 : [tactical] No triggers met, 3 orders open
+- QQQ at $743.14, SOXX at $624.73, GOOG at $369.27 — all above limit triggers
+- 3 limit buy orders remain open and unfilled
+- AVGO 1@$391.43 filled earlier, holding at $392.37
+- No events detected, no stop-losses breached
+
+2026-06-15 : 12:51 : [tactical] AVGO filled $391.43, GOOG pending
+- AVGO 1 share filled at $391.43 on day limit order
+- AVGO current price $392.65, small unrealized gain
+- GOOG limit $368.50 still open, price $368.945
+- QQQ and SOXX GTC limits still open
+- No sells triggered, no new orders placed
+
 2026-06-15 : 12:40 : [tactical] No action: limits unfilled, no triggers
 - VOO 2 at $695.20, no sell auth
 - QQQ $743.70, SOXX $626.05, GOOG $368.93, AVGO $392.55 — all above limit triggers
