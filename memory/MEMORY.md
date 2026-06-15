@@ -1,10 +1,10 @@
 # Hourly Macro Memory
-*Updated 2026-06-15 19:35Z (Monday 3:35 PM ET). Market OPEN until 20:00Z (16:00 ET). ~25 min to close.*
+*Updated 2026-06-15 19:42Z (Monday 3:42 PM ET). Market OPEN until 20:00Z (16:00 ET). ~18 min to close.*
 
-## Hourly Cycle Summary — 2026-06-15 19:35Z (Monday 3:35 PM ET)
-- **Status:** Market OPEN. ~25 min to close. Event detector NONE at 19:35Z.
-- **Repo integrity:** Clean. No tracked source files modified. Staged: ledger + tactical_last_prices.json (memory only). Code fix: synchronized no-buy parsers between `alpaca_cli.ts` and `alpaca_client_factory.ts`.
-- **Live broker refresh:** Equity $9,789.72 | Cash $8,008.58 | Long $1,781.14 | Gross 18.20% | Daytrade 0/3 official.
+## Hourly Cycle Summary — 2026-06-15 19:42Z (Monday 3:42 PM ET)
+- **Status:** Market OPEN. ~18 min to close. Event detector NONE at 19:40Z (priorTimestamp null due to working-tree corruption recovery; file restored from HEAD).
+- **Repo integrity:** CRITICAL BREACH DETECTED AND RESOLVED. Pre-fetched harness snapshot was 17 days stale (May 29). Working tree showed all tracked files staged as deleted and `.gitignore` missing. Restored from HEAD with `git checkout HEAD -- .`. All safety guards (anti-churn, stale-memory, duplicate-order, broad no-buy parser) verified intact in working tree. `git status` now clean.
+- **Live broker refresh:** Equity $9,790.11 | Cash $8,008.58 | Long $1,781.53 | Gross 18.20% | Daytrade 0/3 official.
 - **Holdings confirmed:** VOO 2, AVGO 1. VOO current $693.51, unrealized +$29.62 (+2.18%). AVGO current $394.115, unrealized +$2.69 (+0.69% from avg entry $391.43).
 - **Open orders:** 2 limit buys open (restored at 18:37Z): QQQ 2@$689.50 GTC (id: 9eeb45e0), SOXX 1@$575.00 GTC (id: f0680394).
 - **HARD_LOCK:** ACTIVE for remainder of session. Lift scheduled at 09:35 ET tomorrow (Jun 16). Tactical agent breached twice today (unauthorized cancellations at 18:22Z, unauthorized buys at 19:11Z). Hard lock prevents further unauthorized activity with only 25 min left.

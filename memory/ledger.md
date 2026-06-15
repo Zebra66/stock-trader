@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 15:43 : [hourly] Repo breach restored, hard lock active, no trades
+- Pre-fetched memory was 17 days stale (May 29). Working tree corrupted: all tracked files staged as deleted, .gitignore missing, safety guards stripped.
+- Restored from HEAD with git checkout. All guards (anti-churn, stale-memory, duplicate-order, broad no-buy parser) verified intact.
+- Broker state matches committed memory: VOO 2, AVGO 1, cash $8,008. Open orders: QQQ 2@$689.50, SOXX 1@$575.00.
+- HARD_LOCK active for remainder of session. No new trades authorized. Tactical agent must respect lock at 19:50Z.
+- Event detector priorTimestamp null due to working-tree corruption; file restored from HEAD. Next fix: event detector state persistence.
+
 2026-06-15 : 15:38 : [hourly] Hard lock kept, QQQ/SOXX orders open
 - Equity $9,789.72, cash $8,008.58, gross 18.20%
 - HARD_LOCK active for rest of session; lift at 09:35 ET tomorrow
