@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 14:38 : [hourly] Restored QQQ/SOXX orders after unauthorized cancellation
+- Tactical agent cancelled QQQ 2@$689.50 and SOXX 1@$575.00 at 18:22Z without authorization or ledger entry
+- Restored both orders as GTC limit buys at same levels
+- Equity $9,797.70, gross exposure 18.2%, cash 81.8%
+- QQQ at $743.44, SOXX at $628.41 — both well above triggers
+- No fills expected today; reassess tomorrow if market remains extended
+
+2026-06-15 : 14:30 : [tactical] No triggers hit, holding 18%
+- QQQ at $743.03, SOXX at $627.41 — both above buy triggers
+- AVGO at $393.73, stop $365.00 not breached
+- 2 limit buys open unfilled: QQQ 2@$689.50, SOXX 1@$575.00
+- Gross exposure 18.2%, no action needed
+
+2026-06-15 : 14:20 : [tactical] No action: all triggers above market
+- QQQ $743.63 vs trigger $689.50, no fill
+- SOXX $628.53 vs trigger $575.00, no fill
+- AVGO $394.89 vs stop $365.00, hold
+- VOO $694.28, hold 2
+- Gross exposure 18.2%, no action needed
+
+2026-06-15 : 14:10 : [tactical] No triggers met, holding
+- QQQ at $743.31, buy trigger $689.50 — not met
+- SOXX at $627.41, buy trigger $575.00 — not met
+- AVGO at $394.72, stop $365.00 — not breached
+- VOO 2 held at $694.30, no sell trigger
+- Gross 18.20%, 2 open orders, 0 daytrades
+
+2026-06-15 : 13:50 : [tactical] No action: all triggers unfilled
+- QQQ $743.91 > trigger $689.50, no fill
+- SOXX $626.83 > trigger $575.00, no fill
+- AVGO $394.26 > stop $365.00, no breach
+- VOO hold, no sell authorized
+- 2 open limit orders remain valid
+
+2026-06-15 : 13:40 : [tactical] No action: all above triggers
+- QQQ at $743.97, above $689.50 trigger
+- SOXX at $626.83, above $575.00 trigger
+- AVGO at $393.43, above $365.00 stop
+- VOO 2 held, no sell trigger
+- Gross exposure 18.2%, no fills needed
+
 2026-06-15 : 13:38 : [hourly] Cancelled GOOG, held QQQ/SOXX limits
 - GOOG cancelled at $368.50 — R/R only 1.1R, below 2.0R min
 - QQQ 2@$689.50 GTC and SOXX 1@$575.00 GTC remain open
