@@ -1,39 +1,38 @@
-# Tactical Todo — Updated 2026-05-18 15:27Z (Monday 11:27 AM ET)
-*Live broker state: XLK short is -3 shares (not -2). See MEMORY.md for full context.*
+# Tactical Todo — Updated 2026-06-15 17:34Z (Monday 13:34 ET)
+*Live broker state: VOO 2, cash $8,406.91, equity $9,792.15. MEMORY.md fully rewritten.*
 
 ## Current State
-- **Regime:** defensive / compliance-cleanup hard lock
-- **Live book:** GOOG 3, NVDA 3, QQQ 6, XLK -3 (SHORT), SOXX 0, AVGO 0
-- **Account equity / cash / buying power:** $9,960.47 / $4,388.34 / $13,305.89
-- **Gross exposure:** $6,615.05 (66.4% of equity)
-- **Daytrade count:** 3 (threshold; next daytrade = PDT flag)
+- **Regime:** UNKNOWN — stale directive from 2026-05-18. Hourly strategist must update.
+- **Live book:** VOO 2
+- **Account equity / cash / buying power:** $9,792.15 / $8,406.91 / $34,707.26
+- **Gross exposure:** $1,385.24 (14.1% of equity)
+- **Daytrade count:** 0
 - **Pattern day trader:** false
-- **Unauthorized positions:** XLK -3 shares SHORT — must cover all 3 at Tuesday 2026-05-19 open.
+- **Open orders:**
+  - GOOG 1 @ $368.50 limit day (placed 11:40 ET)
+  - AVGO 1 @ $391.50 limit day (placed 11:40 ET)
 
-## Immediate Actions (Tuesday 2026-05-19 Open)
-1. **BUY TO COVER XLK 3 shares** — compliance cleanup of unauthorized short.
-   - This MUST be done at Tuesday open, not Monday, to avoid daytrade #4 / PDT flag.
-   - Use market order or limit near prev close (~$173.82).
-
-2. **HOLD GOOG 3, NVDA 3, QQQ 6** — no action until fresh hourly guidance arrives.
+## Immediate Actions
+1. **WAIT for hourly strategist** — no new discretionary orders until fresh hourly guidance arrives.
+2. **LEAVE open day-limit orders** for GOOG and AVGO if they are within reasonable range of current market; they expire at 4:00 PM ET today.
+3. **HOLD VOO 2** — no stop breach, no hourly instruction to sell.
 
 ## Hard Rules / No-Trade Conditions
-- **No new BUY orders** until XLK short is confirmed closed and hourly strategist lifts lock.
-- **No SELL orders** for current longs until fresh hourly stops are provided.
-- **Do not re-buy SOXX or AVGO** until hourly strategist explicitly authorizes re-entry and 24h cooldown is confirmed.
+- **No new BUY orders** outside the 2 pending day-limit orders until hourly strategist updates guidance.
+- **No SELL orders** for VOO unless hourly stop is breached or hourly authorizes exit.
+- **Do not re-buy any symbol** sold within 24 hours without explicit hourly authorization.
 - **Do not open any new symbol** outside approved universe.
-- **One trade only** next cycle (XLK cover).
+- **One trade only** per tactical cycle unless hourly explicitly authorizes more.
 
-## Stop Levels (STALE — use only as reference until hourly updates)
-- QQQ: watch 700 support
-- GOOG: watch 394 support
-- NVDA: watch 218 support
+## Stop Levels
+- None set by hourly. VOO held without explicit stop.
 
-## This Cycle — 2026-05-18 15:27Z
+## This Cycle — 2026-06-15 17:34Z (Monday 13:34 ET)
 - **Event detector:** NONE.
-- **Live broker refresh:** Equity $9,960.47 | Cash $4,388.34 | Long $6,093.59 | Short -$521.46 | Gross exposure 66.4% | Daytrade 3/3.
-- **Holdings:** QQQ 6 ($4,225.50), GOOG 3 ($1,199.37), NVDA 3 ($668.72), XLK -3 (-$521.46).
-- **Critical discrepancy resolved:** Live broker confirms XLK short is **-3 shares**, not -2 or -1. Prior memory undercounted the unauthorized short.
-- **Protective stops:** QQQ $704.25 (>700.0), GOOG $399.79 (>394.0), NVDA $222.91 (>218.0). None breached.
-- **Orders placed:** None. Hard lock active, no triggers hit, XLK cover deferred to Tue open.
-- **Next expected action:** Tuesday 2026-05-19 09:30 ET — BUY XLK 3 shares (cover full short). No other trades until hourly lock is lifted and 24h cooldowns expire.
+- **Live broker refresh:** Equity $9,792.15 | Cash $8,406.91 | Long $1,385.24 | Short $0 | Gross exposure 14.1% | Daytrade 0/3.
+- **Holdings:** VOO 2 ($1,385.32).
+- **Open orders:** GOOG 1 @ $368.50, AVGO 1 @ $391.50.
+- **Canceled stale orders:** 5 GTC limit orders placed at 09:37 ET (AVGO, RKLB, QQQ, GOOG, SOXX) because prices had moved well above limits and no hourly guidance authorized them.
+- **Protective stops:** None set.
+- **Orders placed:** None new.
+- **Next expected action:** Hourly strategist must provide fresh macro regime, target allocation, and tactical directives.
