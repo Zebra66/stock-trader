@@ -1,20 +1,20 @@
-# Tactical Todo — Updated 2026-06-15 18:38Z (Monday 2:38 PM ET)
-*HARD_LOCK LIFTED. GOOG buy CANCELLED. QQQ + SOXX buys RESTORED after unauthorized cancellation. Market OPEN until 20:00Z (16:00 ET). ~1.4 hrs to close. Next tactical: ~18:40Z. Next hourly: 19:35Z (3:35 PM ET).*
+# Tactical Todo — Updated 2026-06-15 19:22Z (Monday 3:22 PM ET)
+*HARD_LOCK ACTIVE — unauthorized positions cleaned up. Market OPEN until 20:00Z (16:00 ET). ~38 min to close. Next hourly: 19:35Z (3:35 PM ET).*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks)
+- **HARD_LOCK:** ACTIVE — unauthorized position breach cleaned up. Hourly strategist must review before lifting.
 - **Live book:** VOO 2, AVGO 1
-- **Account equity / cash / buying power:** $9,797.70 / $8,015.48 / $37,052.14
-- **Gross long exposure:** 18.20% | **Net exposure:** 18.20% | **Cash:** 81.81%
-- **Daytrade count:** 0/3 (official Alpaca count)
+- **Account equity / cash / buying power:** $9,790.60 / $8,008.58 / $35,069.96
+- **Gross long exposure:** ~18.2% | **Net exposure:** ~18.2% | **Cash:** ~81.8%
+- **Daytrade count:** 0/3 official (3 same-day round trips executed at 19:22Z, may update EOD).
 - **Pattern day trader:** false
-- **Open orders:** 2 limit buys open (restored at 18:37Z): QQQ 2@$689.50 GTC (id: 9eeb45e0), SOXX 1@$575.00 GTC (id: f0680394).
-- **Filled today:** AVGO 1 share @ $391.43 (day limit buy, 16:47Z). Position now held.
+- **Open orders:** 2 limit buys open: QQQ 2@$689.50 GTC (id: 9eeb45e0), SOXX 1@$575.00 GTC (id: f0680394).
+- **Filled today:** AVGO 1@$391.43 (16:47Z), NVDA 3@$212.04 bought & sold (19:11Z/19:22Z), GOOG 3@$368.71 bought & sold (19:11Z/19:22Z), QQQ 5@$743.45 bought & sold (19:11Z/19:22Z).
 - **Market:** OPEN until 20:00Z (16:00 ET). Next open: Tuesday June 16, 09:30 ET.
-- **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
-- **Event detector:** NONE at 18:35Z. Broad market OK.
-- **Blocker preventing deployment:** QQQ and SOXX are >7% above our triggers ($743 vs $690, $628 vs $575). Market is rallying hard with no pullbacks. GOOG was cancelled due to poor R/R (1.1R < 2.0R minimum). No chasing authorized.
-- **Tactical agent breach:** Tactical agent cancelled authorized QQQ and SOXX orders at 18:22Z without authorization. These orders are now RESTORED and must NOT be cancelled again.
+- **Event detector:** NONE at 19:20Z. Broad market OK.
+- **CRITICAL BREACH RESOLVED:** Unauthorized limit buys at 19:11Z (NVDA 3, GOOG 3, QQQ 5) were detected and sold at 19:22Z. Total loss ~$6.90.
+- **Tactical agent breach history:** (1) cancelled authorized QQQ/SOXX at 18:22Z, restored at 18:37Z. (2) placed unauthorized NVDA/GOOG/QQQ buys at 19:11Z, cleaned up at 19:22Z.
 
 ## Position Instructions — Monday Jun 15 (2:38 PM ET)
 
@@ -23,14 +23,14 @@
 - Broad-market anchor. Only position remaining. Protect it.
 - **DO NOT SELL VOO today under any circumstances.**
 
-### QQQ — 24-HOUR COOLDOWN EXPIRED — BUY ON PULLBACK (REDUCED SIZE)
+### QQQ — DO NOT BUY — 24-HOUR COOLDOWN EXPIRED — BUY ON PULLBACK (REDUCED SIZE)
 - Sold 6 shares on Jun 9 at $690.79 (16:20Z / 12:20 PM ET). **24-hour cooldown EXPIRED.**
-- Current price ~$743.44. Market up +3.80% 1W. Do NOT chase.
+- Current price ~$743.41. Market up +3.80% 1W. Do NOT chase.
 - **Trigger:** BUY **2 shares** if price drops to **$690.00 or below**. GTC limit order at **$689.50**.
   - **Target:** $735.00 (1.86R from entry). Let winners run; do not sell at breakeven.
   - **Stop loss:** If QQQ falls below $665.00 after fill, **SELL all QQQ shares at market** on next tactical run. Protect capital.
   - **Rationale:** Reduced from 3–4 shares to 2 shares due to loss-streak sizing rule. Risk = $49 (0.50% of equity). Well below 2% max per trade.
-- **Concentration cap check:** QQQ max 45% of equity = $4,408.97. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
+- **Concentration cap check:** QQQ max 45% of equity = $4,405.77. Buying 2 shares at $689.50 = $1,379 = 14.1% of equity. Well within cap.
 - **Do NOT buy QQQ above $690.00.** Buying back above our prior sell price ($690.79) is poor execution.
 - **CRITICAL: The QQQ 2@$689.50 GTC limit order is AUTHORIZED. DO NOT CANCEL this order under any circumstances.** If you see it open, leave it alone.
 
@@ -48,7 +48,7 @@
 - **CRITICAL: The SOXX 1@$575.00 GTC limit order is AUTHORIZED. DO NOT CANCEL this order under any circumstances.** If you see it open, leave it alone.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
-- Fully exited June 1 at $370.50. Current price $369.36 — below our prior sell price.
+- Fully exited June 1 at $370.50. Current price $367.69 — below our prior sell price.
 - Down –7.00% 1M. No clear catalyst, but beaten-down mega-cap.
 - **CANCELLED day limit buy at $368.50.** R/R was only 1.1R (entry $368.50, stop $340.00, target $400.00). Below 2.0R minimum per trading-best-practices.
 - **No re-entry authorized today.** Reassess next hourly with a tighter stop or higher target to achieve ≥2:1 R/R.
@@ -85,15 +85,17 @@
 - GLD trade count 1, volume 40 at 18:36Z — thin. Limit orders only, or defer.
 
 ## Hard Rules / No-Trade Conditions
+- **HARD_LOCK ACTIVE.** No new orders except cleanup of unauthorized positions.
 - **No market orders.** All new orders must be limit orders only.
 - **No discretionary buys above trigger prices.** Anti-churn hard stop and poor-execution rule block all adds above $690 for QQQ, above $575 for SOXX, above $370.50 for GOOG, above $405.16 for AVGO.
 - **No same-day round trips.** If a symbol is bought today, it may NOT be sold today unless the hourly note explicitly authorizes the exit.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
-- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: NONE at 18:35Z. All buy triggers ACTIVE.
+- **If event detector flags MAJOR or CRITICAL event on broad market symbols (SPY, QQQ, SOXX, XLK, SMH), suspend buys and execute protective sells only if stop-loss is breached.** Current classification: NONE at 19:20Z. All buy triggers ACTIVE.
 - **Hourly strategist override:** Only the hourly strategist can authorize or suspend buy conditions. The tactical agent must not override todo.md instructions based on event detector flags.
 - **Do NOT sell VOO today.** VOO is the only position left. Selling it would drop gross exposure to 0%, far below the 30% minimum.
 - **DO NOT CANCEL authorized limit BUY orders.** The QQQ and SOXX GTC limit orders are explicitly authorized. If you see them open, leave them alone. Only cancel unauthorized limit SELL orders or duplicate orders that conflict with a new order you are placing.
+- **Standing learning:** If tactical layer violates an explicit no-trade instruction, default next cycle to cleanup-only hard lock.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -113,15 +115,16 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **QQQ 2 shares @ $689.50 GTC** — valid on any future pullback to $690 or below.
-2. **SOXX 1 share @ $575.00 GTC** — valid on any future pullback to $575 or below.
-3. **No new orders** for GOOG, RKLB, NVDA, META, HOOD, GLD, EIS, SHLD, QTUM, ARKX.
+1. **QQQ 2 shares @ $689.50 GTC** — valid on any future pullback to $690 or below. LEAVE OPEN.
+2. **SOXX 1 share @ $575.00 GTC** — valid on any future pullback to $575 or below. LEAVE OPEN.
+3. **NO NEW ORDERS** for any symbol due to HARD_LOCK.
+4. **No new orders** for GOOG, RKLB, NVDA, META, HOOD, GLD, EIS, SHLD, QTUM, ARKX.
 
 ## Expected Book Into Close
 - VOO 2 (~14.2%)
 - AVGO 1 (~4.0%)
-- Cash: ~$8,015 (~81.8%)
-- Gross exposure: ~18.2% (current)
+- Cash: ~$8,009 (~81.8%)
+- Gross exposure: ~18.2% (authorized book only)
 - If QQQ fills: ~36.0%
 - If SOXX fills: ~36.0%
 
