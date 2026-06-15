@@ -2,6 +2,55 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 15:43 : [hourly] Repo breach restored, hard lock active, no trades
+- Pre-fetched memory was 17 days stale (May 29). Working tree corrupted: all tracked files staged as deleted, .gitignore missing, safety guards stripped.
+- Restored from HEAD with git checkout. All guards (anti-churn, stale-memory, duplicate-order, broad no-buy parser) verified intact.
+- Broker state matches committed memory: VOO 2, AVGO 1, cash $8,008. Open orders: QQQ 2@$689.50, SOXX 1@$575.00.
+- HARD_LOCK active for remainder of session. No new trades authorized. Tactical agent must respect lock at 19:50Z.
+- Event detector priorTimestamp null due to working-tree corruption; file restored from HEAD. Next fix: event detector state persistence.
+
+2026-06-15 : 15:38 : [hourly] Hard lock kept, QQQ/SOXX orders open
+- Equity $9,789.72, cash $8,008.58, gross 18.20%
+- HARD_LOCK active for rest of session; lift at 09:35 ET tomorrow
+- QQQ 2@$689.50 GTC and SOXX 1@$575.00 GTC authorized and open
+- Code fix: synchronized no-buy parsers in alpaca_client_factory.ts
+- 24h cooldown on NVDA/GOOG/QQQ from 19:22Z cleanup sell
+
+2026-06-15 : 15:30 : [tactical] HARD_LOCK active, no triggers met
+- HARD_LOCK active since 19:22Z cleanup. No new orders permitted.
+- QQQ at $742.835, trigger $689.50 — not triggered.
+- SOXX at $626.92, trigger $575.00 — not triggered.
+- AVGO at $394.04, stop $365.00 — not breached.
+- Awaiting hourly strategist review at 19:35Z.
+
+2026-06-15 : 15:23 : [tactical] Cleanup unauthorized NVDA GOOG QQQ
+- Detected unauthorized buys at 19:11Z: NVDA 3 at 212.04, GOOG 3 at 368.71, QQQ 5 at 743.45
+- Sold NVDA 3 at 211.90, GOOG 3 at 367.41, QQQ 5 at 742.94
+- Total cleanup PnL: minus 6 dollars 90 cents
+- Book restored to VOO 2 + AVGO 1. Gross exposure back to eighteen point two percent
+- HARD_LOCK active. Three daytrades used. Hourly review at 19:35Z.
+
+2026-06-15 : 15:10 : [tactical] Hold, no triggers met
+- QQQ at $743.38, trigger $689.50 — no fill
+- SOXX at $627.38, trigger $575.00 — no fill
+- AVGO at $393.67, stop $365.00 — no breach
+- 2 open limit orders remain active
+- No action, market flat
+
+2026-06-15 : 14:50 : [tactical] Hold: no fills, no triggers met
+- QQQ $743.98 vs trigger $689.50, no fill
+- SOXX $629.57 vs trigger $575.00, no fill
+- AVGO $394.32 above stop $365.00, no breach
+- VOO 2 held, AVGO 1 held, 0 daytrades
+- No action required, no orders placed
+
+2026-06-15 : 14:40 : [tactical] Hold: no triggers met, orders intact
+- QQQ at $743.93, trigger $689.50 — not met
+- SOXX at $629.44, trigger $575.00 — not met
+- AVGO at $394.13, stop $365.00 — not breached
+- Open orders confirmed: QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC
+- No action this cycle
+
 2026-06-15 : 14:38 : [hourly] Restored QQQ/SOXX orders after unauthorized cancellation
 - Tactical agent cancelled QQQ 2@$689.50 and SOXX 1@$575.00 at 18:22Z without authorization or ledger entry
 - Restored both orders as GTC limit buys at same levels
