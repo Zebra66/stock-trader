@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 12:33 : [tactical] Restored QQQ/SOXX orders, no fills
+- QQQ and SOXX GTC orders were cancelled at 16:20Z/16:21Z by prior tactical run; restored both at 16:33Z
+- Fixed todo.md wording to prevent SOXX parser false positive (Do not add -> Maximum 1)
+- No triggers met: GOOG $369.08, AVGO $393.16, QQQ $744.60, SOXX $626.84
+- 4 open limit orders: QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$368.50 day, AVGO 1@$391.50 day
+- Gross exposure 14.19%, daytrade 0/3, no market orders
+
+2026-06-15 : 12:20 : [tactical] No action: all triggers above market
+- QQQ $744.015 vs trigger $689.50 — no fill
+- SOXX $625.99 vs trigger $575.00 — no fill
+- GOOG $369.47 vs trigger $368.50 — no fill
+- AVGO $392.95 vs trigger $391.50 — no fill
+- VOO 2 held at $695.24, 4 open orders remain
+
+2026-06-15 : 12:11 : [tactical] No trade, all limits above triggers
+- GOOG at $370.175, trigger $368.50 — not triggered
+- AVGO at $393.56, trigger $391.50 — not triggered
+- QQQ at $744.23, trigger $689.50 — not triggered
+- SOXX at $625.99, trigger $575.00 — not triggered
+- VOO 2 held, no sell trigger
+
+2026-06-15 : 11:50 : [tactical] No action: all triggers above market
+- GOOG $369.33 vs trigger $368.50
+- AVGO $392.41 vs trigger $391.50
+- QQQ $743.80 vs trigger $689.50
+- SOXX $624.21 vs trigger $575.00
+- VOO 2 held, no sells authorized, 4 open limit buys intact
+
+2026-06-15 : 11:44 : [tactical] No action, all triggers above market
+- All 4 limit buy orders remain unfilled, no triggers hit
+- GOOG $369.07 > trigger $368.50, AVGO $393.47 > trigger $391.50
+- QQQ $743.17 > trigger $689.50, SOXX $624.60 > trigger $575.00
+- VOO 2 shares hold at $694.42, unrealized +2.34%
+- Event detector NONE, no stop-losses breached, no daytrade risk
+
 2026-06-15 : 11:42 : [hourly] Restored repo breach, placed GOOG/AVGO limits
 - Working tree reverted to May 29; restored from HEAD
 - Cancelled deep GOOG 360, AVGO 385, RKLB 100 GTC orders

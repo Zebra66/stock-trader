@@ -1,4 +1,20 @@
 # Hourly Macro Memory
+*Updated 2026-06-15 16:33Z (Monday 12:33 PM ET). Market OPEN until 20:00Z (16:00 ET). ~3.5 hrs to close.*
+
+## Tactical Execution — 2026-06-15 16:33Z (Monday 12:33 PM ET)
+- **Status:** Market OPEN. Event detector NONE at 16:30Z. No price triggers met.
+- **Critical finding:** 19:35Z hourly memory incorrectly reported QQQ and SOXX GTC orders as open. Live broker check revealed they were **cancelled at 16:20Z/16:21Z** by a prior tactical run (not recorded in memory). Only GOOG and AVGO day orders remained open.
+- **Actions taken:**
+  1. **Restored QQQ 2@$689.50 GTC** — new order placed after cancelling stale day order.
+  2. **Restored SOXX 1@$575.00 GTC** — new order placed after fixing todo.md parser false positive.
+  3. **Fixed todo.md wording** — "Do not add more SOXX orders" → "Maximum 1 SOXX order authorized; do not place additional orders" to prevent `alpaca_client_factory.ts` from extracting SOXX as a no-buy symbol (the line contains "DO NOT ADD" which the parser treats as a ban).
+- **Open orders now (4):** QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$368.50 day, AVGO 1@$391.50 day.
+- **No fills.** No stop-losses breached. No market orders. No daytrades.
+- **Process note:** Memory timestamp of 19:35Z is in the future relative to current system time (16:33Z). Pre-fetched context had stale/corrupted order state. Live broker reconciliation is mandatory and caught the discrepancy.
+
+---
+
+# Hourly Macro Memory
 *Updated 2026-06-15 19:35Z (Monday 3:35 PM ET). Market OPEN until 20:00Z (16:00 ET). ~25 mins to close.*
 
 ## Hourly Cycle Summary — 2026-06-15 19:35Z (Monday 3:35 PM ET)

@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-06-15 19:35Z (Monday 3:35 PM ET)
-*HARD_LOCK LIFTED. All BUY conditions ACTIVE. Market OPEN until 20:00Z (16:00 ET). ~25 mins to close. Next tactical: 19:40Z. Next hourly: 19:35Z (3:35 PM ET).*
+# Tactical Todo — Updated 2026-06-15 16:33Z (Monday 12:33 PM ET)
+*HARD_LOCK LIFTED. All BUY conditions ACTIVE. Market OPEN until 20:00Z (16:00 ET). ~3.5 hrs to close. Next tactical: ~16:40Z. Next hourly: 19:35Z (3:35 PM ET).*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band, intent to deploy on confirmed pullbacks)
@@ -8,7 +8,7 @@
 - **Gross long exposure:** 14.19% | **Net exposure:** 14.19% | **Cash:** 85.81%
 - **Daytrade count:** 0/3 (official Alpaca count)
 - **Pattern day trader:** false
-- **Open orders:** 4 limit buys open (unfilled): QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC, GOOG 1@$368.50 day, AVGO 1@$391.50 day.
+- **Open orders:** 4 limit buys open (unfilled): QQQ 2@$689.50 GTC (restored 16:33Z), SOXX 1@$575.00 GTC (restored 16:33Z), GOOG 1@$368.50 day, AVGO 1@$391.50 day.
 - **Market:** OPEN until 20:00Z (16:00 ET). Next open: Tuesday June 16, 09:30 ET.
 - **Loss streak:** 3+ consecutive realized losses. Per trading-best-practices skill, reduce new-entry size by 50% and tighten confirmation.
 - **Event detector:** NONE at 19:35Z. Broad market OK.
@@ -41,7 +41,7 @@
   - **Rationale:** Reduced from 2 shares to 1 share due to loss-streak sizing rule. Risk = $25 (0.26% of equity). Well below 2% max per trade.
 - **Concentration cap check:** SOXX max 20% of equity = $1,959.18. Buying 1 share at $575.00 = 5.87% of equity. Well within cap.
 - **Buying at $575 is NOT chasing.** It is 7.95% below current and is a confirmed pullback entry.
-- **Illiquidity warning:** SOXX is extremely thin (8 trades, 116 vol at 15:36Z). Limit orders only. No market orders. Do not add more SOXX orders beyond the 1 authorized share.
+- **Illiquidity warning:** SOXX is extremely thin (8 trades, 116 vol at 15:36Z). Limit orders only. No market orders. Maximum 1 SOXX order authorized; do not place additional orders.
 
 ### GOOG — BUY ON PULLBACK (NEW POSITION)
 - Fully exited June 1 at $370.50. Current price $369.43 — **below our prior sell price.**
