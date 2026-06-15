@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 11:42 : [hourly] Restored repo breach, placed GOOG/AVGO limits
+- Working tree reverted to May 29; restored from HEAD
+- Cancelled deep GOOG 360, AVGO 385, RKLB 100 GTC orders
+- Placed GOOG 1 at 368.50 day, AVGO 1 at 391.50 day
+- Kept QQQ 2 at 689.50 GTC and SOXX 1 at 575 GTC
+- Equity 9796, gross 14.2%, failing both goals by 7.2 pp
+
 2026-06-15 : 11:40 : [tactical] No action: all triggers above market
 - QQQ at $743.03 vs trigger $690.00, SOXX at $624.73 vs trigger $575.00, GOOG at $369.49 vs trigger $360.00, AVGO at $393.63 vs trigger $385.00, RKLB at $107.06 vs trigger $100.00
 - All 5 GTC limit buys remain unfilled; market rallying
