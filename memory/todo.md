@@ -1,3 +1,18 @@
+# Tactical Todo — Updated 2026-06-15 20:23Z (Monday 16:23 ET — Market CLOSED)
+*Market closed at 20:00Z. HARD_LOCK remains active until 09:35 ET tomorrow. No new orders until then. QQQ + SOXX GTC orders remain active overnight. Next tactical: ~09:40Z Tuesday. Next hourly: 09:35Z Tuesday.*
+
+## This Cycle — 2026-06-15 20:23Z (Monday 16:23 ET — Market CLOSED)
+- **Event detector:** NONE (ran at 14:17Z).
+- **Live broker refresh:** Equity $9,790.74 | Cash $8,008.58 | Long $1,782.16 | Gross 18.20% | Daytrade 0/3.
+- **Holdings:** VOO 2 ($1,387.14), AVGO 1 ($394.54).
+- **Open orders at close:** QQQ 2@$689.50 GTC, SOXX 1@$575.00 GTC. Neither filled.
+- **Close prices:** SPY 754.75, QQQ 743.97, SOXX 627.76, AVGO 393.97, VOO 693.99.
+- **Orders placed:** None new this cycle.
+- **Actions:** Canceled 5 stale GTC orders from 09:37 ET (already superseded by hourly restoration). Did NOT cancel the authorized QQQ/SOXX orders.
+- **Next expected action:** Tuesday 09:35 ET — HARD_LOCK lifted. Tactical agent resumes normal execution.
+
+---
+
 # Tactical Todo — Updated 2026-06-15 19:42Z (Monday 3:42 PM ET)
 *HARD_LOCK ACTIVE — tactical agent breach cleaned up. Market OPEN until 20:00Z (16:00 ET). ~25 min to close. Next hourly: 09:35Z (9:35 AM ET) tomorrow (Jun 16).*
 
