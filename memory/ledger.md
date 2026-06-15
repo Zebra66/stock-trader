@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 09:38 : [hourly] Re-auth 5 limit buys, CRITICAL lifted
+- Event detector NONE at 13:35Z; lifted CRITICAL override
+- Placed QQQ 2@$689.50, SOXX 1@$575.00, GOOG 1@$360.00, AVGO 1@$385.00, RKLB 1@$100.00
+- Equity $9,791.44, gross 14.14%, daytrade 0/3
+- Portfolio -2.09% vs SPY +4.88% since inception; trailing 6.97 pp
+- Loss streak 3+; size reduced 50%; total heat $122 (1.25% equity)
+
 2026-06-15 : 09:32 : [tactical] CRITICAL override: cancelled GTC buys
 - CRITICAL event at Monday open: QQQ $737.40 (+2.29%), SOXX $622.84 (+4.02%), SPY $751.91 (+1.46%)
 - Cancelled stale GTC orders: QQQ 2@$689.50, SOXX 1@$575.00

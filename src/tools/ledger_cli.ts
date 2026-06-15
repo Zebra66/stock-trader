@@ -17,13 +17,16 @@ async function loadReferencePrices(): Promise<Record<string, number>> {
 
 function validateLedgerDetails(details: string[], prices: Record<string, number>): void {
   for (const detail of details) {
-    const upper = detail.toUpperCase();
-    for (const sym of UNIVERSE) {
-      if (!new RegExp(`\\b${sym}\\b`, 'i').test(detail)) continue;
+    // Split detail by universe symbols so we only validate numbers that appear
+    // after each symbol and before the next symbol.
+    const parts = detail.split(new RegExp(`\\b(${UNIVERSE.join('|')})\\b`, 'i'));
+    for (let i = 1; i < parts.length; i += 2) {
+      const sym = parts[i].toUpperCase();
+      const segment = parts[i + 1] || '';
       const knownPrice = prices[sym];
       if (!knownPrice || knownPrice <= 0) continue;
-      // Extract all numbers from the detail (allow $ prefix and commas)
-      const numMatches = detail.match(/\$?\d{1,3}(?:,\d{3})*(?:\.\d+)?\b(?!%)|\$?\d+(?:\.\d+)?\b(?!%)/g);
+      // Extract all numbers from the segment following the symbol
+      const numMatches = segment.match(/\$?\d{1,3}(?:,\d{3})*(?:\.\d+)?\b(?!%)|\$?\d+(?:\.\d+)?\b(?!%)/g);
       if (!numMatches) continue;
       for (const raw of numMatches) {
         const cleaned = raw.replace(/[$,]/g, '');
