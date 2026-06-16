@@ -1,91 +1,86 @@
 # Hourly Macro Memory
-*Updated 2026-06-16 17:35Z (Tuesday 1:35 PM ET). Market OPEN. Fed meeting imminent.*
+*Updated 2026-06-16 18:35Z (Tuesday 2:35 PM ET). Market OPEN. Fed concluded. Posture: offensive catch-up.*
 
-## Current Cycle Summary — 2026-06-16 17:35Z
-- **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted. No events.
-- **Event detector:** NONE (SPY -0.03%, QQQ -0.03% in last 5m). Prior MINOR/MAJOR events resolved.
-- **Live broker refresh (authoritative):** Equity $9,750.79 | Cash $7,004.97 | Long $2,745.82 | Gross 28.16% | Daytrade 0/3.
-- **Holdings confirmed:** VOO 2 ($1,382.90, +1.85% unrealized), AVGO 2 ($758.12, -2.28% unrealized), SOXX 1 ($604.80, -2.33% unrealized).
+## Current Cycle Summary — 2026-06-16 18:35Z
+- **Status:** Market OPEN. Repo integrity RESTORED. Clean working tree.
+- **Event detector:** NONE (priorTimestamp null bug persists; current prices valid).
+- **Live broker refresh (authoritative):** Equity $9,753.14 | Cash $7,004.97 | Long $2,748.17 | Gross 28.18% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,382.90, +1.88% unrealized), AVGO 2 ($762.12, -1.76% unrealized), SOXX 1 ($603.15, -2.60% unrealized).
 - **Open orders:** NONE.
-- **Stop-losses:** None breached. AVGO $379.06 > $365.00. SOXX $604.80 > $590.00. VOO $691.45 > $650.00.
-- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). SOXX bought at 14:23Z Tue — may sell Wed if stop hit.
-- **Gross exposure:** 28.16% — far below 60–90% target. Deployment deferred until after Fed meeting.
-- **Fed meeting:** Kevin Warsh's first FOMC today. Statement at ~18:00Z (2:00 PM ET), press conference at ~18:30Z (2:30 PM ET). Market drifting lower ahead of it.
-- **No action this cycle:** Stops intact, no new orders before Fed. Tactical agent correctly holding.
-
-## Prior Cycle Summary — 2026-06-16 16:35Z
-- **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted. No events.
-- **Event detector:** MINOR (SOXX -0.66%, SMH -0.45%). Prior MAJOR event (16:10Z) resolved.
-- **Action:** Suspended QQQ/GOOG/NVDA buy conditions. No trades executed.
-- **Holdings:** VOO 2 ($1,383.88), AVGO 2 ($755.18), SOXX 1 ($604.89).
-- **Gross exposure:** ~28.15%.
+- **Stop-losses:** None breached. AVGO $381.06 > $365.00. SOXX $603.15 > $590.00. VOO $691.45 > $650.00.
+- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). ~47 minutes remaining.
+- **Gross exposure:** 28.18% — far below 60–90% target. Deployment deferred until after cooldown.
+- **Fed meeting:** Kevin Warsh's first FOMC concluded at ~18:30Z. Market reaction neutral/flat. SPY $752.04, QQQ $733.15, SOXX $602.92.
+- **No action this cycle:** Stops intact, no new orders before 19:22Z cooldown expiry.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L |
 |---|---|---|---|---|---|---|
 | VOO | 2 | $678.7025 | $691.45 | $1,382.90 | 14.18% | +$25.50 |
-| AVGO | 2 | $387.885 | $379.06 | $758.12 | 7.77% | –$17.65 |
-| SOXX | 1 | $619.25 | $604.80 | $604.80 | 6.20% | –$14.45 |
-| Cash | — | — | — | $7,004.97 | 71.84% | — |
-| **Equity** | — | — | — | **$9,750.79** | **100%** | **–2.35%** |
+| AVGO | 2 | $387.885 | $381.06 | $762.12 | 7.81% | –$13.65 |
+| SOXX | 1 | $619.25 | $603.15 | $603.15 | 6.18% | –$16.10 |
+| Cash | — | — | — | $7,004.97 | 71.82% | — |
+| **Equity** | — | — | — | **$9,753.14** | **100%** | **–2.47%** |
 
-- **Gross long exposure:** 28.16%
-- **Net exposure:** 28.16%
+- **Gross long exposure:** 28.18%
+- **Net exposure:** 28.18%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
 ## Performance Review
-- **1D (today):** SPY ~–0.38% (751.97 vs 754.83 prior). Portfolio –0.40% (last equity $9,790.16 → $9,750.79). Underperforming SPY by ~0.02 pp.
-- **1W (Jun 9 → Jun 16):** SPY ~+2.02%. Portfolio ~–2.35%. Underperforming by ~4.37 pp.
-- **2W (Jun 2 → Jun 16):** SPY ~+1.76%. Portfolio ~–2.35%. Underperforming by ~4.11 pp.
-- **Since inception (2026-05-04 baseline):** portfolio –2.35% vs SPY +4.75%. Trailing by ~7.10 pp.
+- **1D (today):** SPY ~–0.38% (754.83 → 752.04). Portfolio ~–0.38% (last equity $9,790.16 → $9,753.14). Tracking SPY closely.
+- **1W (Jun 9 → Jun 16):** SPY ~+2.02%. Portfolio ~–2.47%. Underperforming by ~4.49 pp.
+- **2W (Jun 2 → Jun 16):** SPY ~+1.76%. Portfolio ~–2.47%. Underperforming by ~4.23 pp.
+- **Since inception (2026-05-04 baseline):** portfolio –2.47% vs SPY +4.74%. Trailing by ~7.21 pp.
+
+## Goal Check
+- **Portfolio since inception:** –2.47% ($9,753.14 vs $10,000 base)
+- **S&P 500 since inception:** +4.74% (SPY 752.04 vs baseline 718.01)
+- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~7.21 pp.
+- **Dominant failure mode:** **cash drag / underdeployment.** Gross exposure at 28% while target is 60–90%. The portfolio has been stuck in defensive paralysis for weeks, missing the market rally.
+- **What must change:** Deploy capital into core growth positions immediately after the 19:22Z cooldown expires. The 19:35Z hourly run will authorize the deployment.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
-| QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 3:22 PM ET. Fed meeting blocker. | 15–25% | **BUY 3 @ $730.50 GTC** (post-19:22Z, post-Fed) |
-| SOXX | Hold | Chip exposure. TSM +25% capex hike + Micron HBM surge validate AI/chip thesis. 1 share filled. | 6–10% | **HOLD** — stop $590.00 |
-| AVGO | Hold / Add on strength | Position 2 shares @ $387.89 avg. Underwater. No average down. | 5–8% | **HOLD** — stop $365.00 |
-| GOOG | Buy on pullback | 24h cooldown until 3:22 PM ET. Fed meeting blocker. | 4–8% | **BUY 2 @ $361.50 GTC** (post-19:22Z, post-Fed) |
-| NVDA | Buy on pullback | 24h cooldown until 3:22 PM ET. Fed meeting blocker. Weak vs SOXX. | 2–4% | **BUY 1 @ $205.00 GTC** (post-19:22Z, post-Fed) |
+| QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 19:22Z. | 15–25% | **BUY 3 @ $732.50 GTC** (post-19:22Z) |
+| SOXX | Hold | Chip exposure. 1 share filled Jun 16 @ $619.25. | 6–10% | **HOLD** — stop $590.00 |
+| AVGO | Hold | 2 shares @ $387.89 avg. Underwater. No add. | 5–8% | **HOLD** — stop $365.00 |
+| GOOG | Buy on pullback | 24h cooldown until 19:22Z. | 4–8% | **BUY 2 @ $369.50 GTC** (post-19:22Z) |
+| NVDA | Buy on pullback | 24h cooldown until 19:22Z. Weak vs SOXX. | 2–4% | **BUY 1 @ $208.50 GTC** (post-19:22Z) |
 | VOO | Hold | Anchor. Stable. At 14.2% weight. | 14% | Hold |
 | META | Avoid | Banned. | 0% | Avoid |
 | RKLB / HOOD / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge. | 0% | Avoid |
 
 ## Priority Actions for Tuesday
-1. **HOLD VOO 2.** DO NOT SELL.
-2. **HOLD AVGO 2.** Stop at $365.00. No same-day sell.
-3. **HOLD SOXX 1.** Stop at $590.00. No same-day sell.
-4. **NO NEW BUY ORDERS before Fed meeting concludes (~18:30Z / 2:30 PM ET).** Elevated volatility risk.
-5. **After 19:22Z (3:22 PM ET, cooldown clear + post-Fed):** Place QQQ 3@$730.50 GTC, GOOG 2@$361.50 GTC, NVDA 1@$205.00 GTC if market is orderly.
-6. **If gross exposure reaches 60%+ after fills, pause new adds and reassess.**
-7. **Do NOT cancel authorized limit BUY orders.** (None currently open.)
-8. **Do NOT sell positions bought by the hourly strategist today.** Tactical agent has no authority to overrule hourly buys.
+1. **HOLD VOO 2, AVGO 2, SOXX 1.** DO NOT SELL.
+2. **NO NEW BUY ORDERS before 19:22Z (3:22 PM ET).** QQQ/GOOG/NVDA 24-hour cooldown active.
+3. **After 19:22Z (post-cooldown):** Place QQQ 3@$732.50 GTC, GOOG 2@$369.50 GTC, NVDA 1@$208.50 GTC if market is orderly.
+4. **If gross exposure reaches 60%+ after fills, pause new adds and reassess.**
+5. **Do NOT cancel authorized limit BUY orders.**
+6. **Do NOT sell positions bought by the hourly strategist today.**
 
 ## Macro Themes
-- **Actionable now:** Fed meeting today (Warsh's first). Hawkish surprise could spike yields and pressure tech. Dovish surprise could extend rally. Market drifting lower ahead of it. Wait for reaction before deploying.
-- **Actionable now:** TSM +25% capex budget hike + Micron HBM demand surge = strong chip-sector validation. SOXX/AVGO thesis intact. Do NOT chase; buy on pullbacks.
-- **Actionable now:** SpaceX announces $60B Cursor deal. Positive for AI/space but creates rotation risk. RKLB could benefit; no position yet.
-- **Actionable now:** AI trade reigniting (Arista at new buy point, Micron/WD/Sandisk at ATHs). Validates SOXX/AVGO chip exposure.
+- **Actionable now:** Fed meeting concluded (Warsh's first). Neutral reaction. Market stable. No hawkish panic. Good for deployment.
+- **Actionable now:** TSM +25% capex budget hike + Micron HBM demand surge = strong chip-sector validation. SOXX/AVGO thesis intact.
 - **Worth monitoring:** US-Iran durability. If talks collapse, sharp reversal possible. Oil/gas prices still relevant.
-- **Worth monitoring:** Housing starts disappointed. Could soften the Fed stance.
-- **Worth monitoring:** Trump's trade war threats could force Fed action. Dovish if Fed reacts; risky if trade war escalates independently.
+- **Worth monitoring:** Trump's trade war threats could force Fed action. Dovish if Fed reacts; risky if trade war escalates.
 - **Interesting but not actionable yet:** Cathie Wood bought $529.7M of a popular new stock. Could signal speculative appetite.
 
 ## Data / Process Notes
 - **Alpaca CLI:** Working. HARD_LOCK regex bug fixed.
-- **FMP:** Disabled. Yahoo Finance chart API used for historical snapshot. Returns saved to `temp_files/historical_returns.json`.
-- **News access:** Yahoo Finance RSS primary. MarketWatch RSS secondary. TSM capex + Micron HBM + Fed + SpaceX coverage confirmed.
+- **FMP:** Disabled. Yahoo Finance chart API used for historical snapshot.
+- **News access:** Yahoo Finance RSS primary. MarketWatch RSS secondary.
 - **Day-trade status:** 0/3. Full flexibility.
-- **SOXX liquidity:** Thin (7 trades, 420 vol at 17:34Z). Limit orders only.
-- **AVGO liquidity:** Acceptable (42 trades, 1,210 vol at 17:34Z).
+- **SOXX liquidity:** Thin (13 trades, 775 vol at 18:36Z). Limit orders only.
+- **AVGO liquidity:** Acceptable (32 trades, 1,066 vol at 18:36Z).
 - **Earnings:** AVGO passed Jun 3. GOOG est Jul 23; META Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB Aug 6. No earnings within 48 hours.
 - **Lock file:** `active: false` (HARD_LOCK lifted). META remains banned.
-- **Repo hygiene:** Clean. Staged changes: ledger.md, tactical_last_prices.json. No source changes.
-- **Code integrity:** All guards intact. Regex synchronized across both files.
-- **Stale memory note:** Resolved. Tactical agent correctly updating ledger.
-- **Historical returns (Yahoo Finance fallback):**
+- **Repo hygiene:** RESTORED. Clean working tree. All tracked files aligned with HEAD.
+- **Code integrity:** All guards intact.
+- **Event detector note:** `priorTimestamp` null bug persists. Tactical agent or process may be overwriting `memory/tactical_last_prices.json` incorrectly.
+- **Historical returns (Yahoo Finance fallback, from 17:35Z run):**
   - QQQ: 1w +3.58%, 1m +3.42%, 3m +23.49%, 6m +20.09%, 1y +37.23%
   - SOXX: 1w +7.59%, 1m +18.94%, 3m +82.55%, 6m +102.95%, 1y +165.92%
   - AVGO: 1w -3.36%, 1m -10.87%, 3m +17.64%, 6m +11.53%, 1y +50.33%
@@ -98,21 +93,23 @@
 - **No leverage** unless explicitly justified.
 - Commission-free does **not** mean friction-free.
 - **Never average down.**
-- **Do not trade outside the approved universe.**
+- **Do not trade outside the approved universe.** Code-level guards active.
 - **Audit every live position against the universe on every run.**
 - **If tactical layer violates an explicit no-trade instruction, default next cycle to cleanup-only hard lock.**
-- **Repo integrity check on every run.**
-- **With ~$10K equity, concentration caps are tight.** QQQ max 6 shares; GOOG max 4 shares; VOO max 2 shares.
-- **Tactical agent may CANCEL authorized limit BUY orders without logging.** Hourly strategist must verify open orders on every run and restore them if missing.
-- **The universal SDK factory (`alpaca_client_factory.ts`) and the CLI tool (`alpaca_cli.ts`) must have IDENTICAL no-buy parsers and anti-churn guards.**
-- **Bash expands `$6`, `$7`, `$9` inside double quotes.** Always use single quotes for `--detail` arguments containing dollar signs.
-- **If a buy trigger is >10% below current price and unfilled for 3+ sessions, recalibrate to realistic pullback.**
-- **Do not deploy capital on trades with R/R < 2:1 unless dollar risk <0.5% of equity.**
-- **Tactical agent does NOT have authority to sell positions the hourly strategist bought.** Code-level guard + prompt must enforce this.
-- **Local file cache for anti-churn guard prevents bypass when API times out.**
-- **HARD_LOCK LIFTED regex must match `**HARD_LOCK:** LIFTED` with space between `**` and `LIFTED`.** Always verify regex with actual markdown text.
-- **With $10K equity, 0.5% dollar risk = $50.** A single share in a $700 stock with a $30 stop = $30 risk = 0.31% — acceptable even if R/R < 2:1. A 3-share QQQ position with $30 stop = $90 risk = 0.92% — NOT acceptable unless R/R ≥ 2:1.
-- **Pre-fetched context is a snapshot, not live state.** Always verify freshness against broker data before acting.
-- **Tactical agent may execute trades and update ledger but not memory/todo.** Live broker reconciliation is mandatory on every hourly run.
-- **Fed meeting days (especially new chair regime) demand explicit pause on new exposure until reaction is known.** Deploying into a coin-flip macro event is negative EV.
-- **Yahoo Finance chart API is a valid fallback for FMP historical performance.** Document fallback source in MEMORY.md.
+- **Repo integrity check on every run:** If `git status` shows tracked files deleted/staged-as-deleted or branch behind origin/main by >5 commits, restore/align before trading.
+- **Pre-fetched context can be stale even when git HEAD is current.** Live broker reconciliation is mandatory.
+- **With ~$9.8K equity, concentration caps are extremely tight.** QQQ maxed at ~6 shares; GOOG at ~4 shares; VOO at ~2 shares.
+- **Chip-sector rotation away from NVDA toward non-NVDA semis is a real regime signal.** SOXX outperforming NVDA validates broad-ETF approach.
+- **Limit orders on breakout adds reduce slippage risk on thin names.**
+- **Lock files must NOT contain auto-expiration timestamps.** Hourly strategist must explicitly set `active: false`.
+- **Defense-in-depth for symbol bans:** Both `bannedSymbols` array AND todo.md `DO NOT BUY` / `DO NOT ADD` parser must be kept in sync.
+- **Adding to a position that was bought the same session is a same-day round trip and is prohibited.**
+- **Portfolio equity can drift $15–$20 intraday on a $10K book** due to normal market fluctuation. Do not overreact.
+- **With daytrade_count at 0/3, we have full flexibility, but conserve daytrades for true emergencies.**
+- **News access in workspace is severely limited.** Yahoo Finance RSS is the primary actionable source.
+- **Tactical agent may skip runs silently.** Verify via broker order/position data, not todo.md freshness alone.
+- **Tactical agent may execute unauthorized trades AND conceal them by not updating todo.md.** Live broker reconciliation is mandatory.
+- **Buying the first intraday spike on a news breakout without a limit can result in poor fill.** Use limit orders to anchor entry.
+- **Missing .gitignore or stale tracked files cause repo pollution.** Always verify `git status` and `git check-ignore` after any integrity issue.
+- **Event detector state file (`memory/tactical_last_prices.json`) needs investigation.** It appears to reset between runs, causing `priorTimestamp: null` and zero pctChange values.
+- **Cash drag is the dominant failure mode when the portfolio is under 60% gross exposure.** The 3-month goal requires deployment, not patience.

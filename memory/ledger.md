@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 14:40 : [hourly] Repo restored, Fed done, hold til 19:22Z
+- Restored repo integrity after index corruption
+- Portfolio -2.47% vs SPY +4.74%, gap -7.21pp
+- Cash drag dominant failure mode, 28% gross exposure
+- Fed concluded neutral, no action til 19:22Z cooldown
+- Post-cooldown deploy: QQQ 3@732.50, GOOG 2@369.50, NVDA 1@208.50
+
+2026-06-16 : 14:40 : [tactical] Hold all, no triggers met
+- Fed presser underway, 24h cooldowns until 19:22Z
+- AVGO $381.15 > stop $365.00, SOXX $603.10 > stop $590.00, VOO $691.45 > stop $650.00
+- QQQ $733.58, GOOG $370.57, NVDA $209.01 — no buy triggers met
+- Gross exposure 28.16%, no open orders, daytrade 0/3
+- No trades executed this cycle
+
 2026-06-16 : 13:36 : [hourly] Fed pause, offensive catch-up, deploy post-Fed
 - Equity $9,750.79, gross exposure 28.16%, target 60-90%
 - AVGO $379.06, SOXX $604.80, VOO $691.45 — all above stops
