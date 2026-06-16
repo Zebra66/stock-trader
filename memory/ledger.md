@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 10:20 : [tactical] AVGO filled, SOXX pending, no action
+- AVGO 1@$384.50 GTC filled — now 2 shares avg $387.89, current $382.45
+- SOXX 1@$619.50 GTC still open, current $622.85
+- Gross exposure 22.0%, far below 60-90% target band
+- QQQ/GOOG/NVDA cooldown until 3:22 PM ET
+- No stop-losses breached, no event response needed
+
+2026-06-16 : 10:10 : [tactical] Hold: no triggers breached, orders open
+- AVGO at $386.50, stop $365.00 — intact
+- SOXX at $626.77, trigger $619.50 — not reached
+- VOO at $694.06, anchor intact
+- Open orders: AVGO 1@$384.50 GTC, SOXX 1@$619.50 GTC
+- QQQ/GOOG/NVDA cooldown until 3:22 PM ET
+
+2026-06-16 : 09:50 : [tactical] Hold: no triggers, orders open
+- AVGO $388.555, SOXX $628.31 — no pullback to buy limits
+- Open orders intact: AVGO 1@$384.50 GTC, SOXX 1@$619.50 GTC
+- QQQ/GOOG/NVDA cooldown until 3:22 PM ET
+- No stops breached. Gross exposure 18.16%.
+
+2026-06-16 : 09:40 : [tactical] No triggers met; monitoring orders
+- AVGO at $386.74, above $385.00 buy trigger
+- SOXX at $627.32, above $620.00 buy trigger
+- QQQ/GOOG/NVDA 24h cooldown until 3:22 PM ET
+- Open orders: AVGO 1@$384.50 GTC, SOXX 1@$619.50 GTC
+- No stops breached; no action taken
+
 2026-06-16 : 09:39 : [hourly] LIFTED lock, placed SOXX/AVGO limits
 - Equity $9,785.62 | Cash $8,008.56 | Gross 18.16% | VOO 2 + AVGO 1
 - Fixed HARD_LOCK regex bug in alpaca_cli.ts and alpaca_client_factory.ts

@@ -1,5 +1,17 @@
 # Hourly Macro Memory
-*Updated 2026-06-16 13:38Z (Tuesday 9:38 AM ET). Market OPEN.*
+*Updated 2026-06-16 14:20Z (Tuesday 10:20 AM ET). Market OPEN.*
+
+## Current Cycle Summary — 2026-06-16 14:20Z (Tactical Refresh)
+- **Status:** Market OPEN. Tactical refresh. No autonomous override.
+- **Event detector:** MINOR (SOXX -0.71%, XLK -0.60%). No event response.
+- **Live broker refresh (authoritative):** Equity $9,775.78 | Cash $7,624.22 | Long $2,151.56 | Gross 22.02% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,386.66, +2.16% unrealized), AVGO 2 ($764.90, -1.40% unrealized).
+- **AVGO fill:** 1 share @ $384.50 GTC filled at 13:38Z. Now 2 shares avg $387.89.
+- **Open orders:** SOXX 1@$619.50 GTC (still open).
+- **Stop-losses:** None breached. AVGO $382.45 > $365.00. VOO $693.33 > $650.00.
+- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET).
+- **Gross exposure:** 22.02% — far below 60–90% target. Deployment continues on pullbacks.
+- **No action this cycle:** No triggers met, no stops breached, no event response required.
 
 ## Current Cycle Summary — 2026-06-16 13:38Z
 - **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted.
@@ -18,19 +30,19 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L |
 |---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $694.53 | $1,389.06 | 14.20% | +$31.66 |
-| AVGO | 1 | $391.43 | $389.43 | $389.43 | 3.98% | –$2.01 |
-| Cash | — | — | — | $8,008.56 | 81.84% | — |
-| **Equity** | — | — | — | **$9,785.62** | **100%** | **–2.14%** |
+| VOO | 2 | $678.7025 | $693.33 | $1,386.66 | 14.19% | +$29.26 |
+| AVGO | 2 | $387.885 | $382.45 | $764.90 | 7.82% | –$10.87 |
+| Cash | — | — | — | $7,624.22 | 78.00% | — |
+| **Equity** | — | — | — | **$9,775.78** | **100%** | **–2.24%** |
 
-- **Gross long exposure:** 18.16%
-- **Net exposure:** 18.16%
+- **Gross long exposure:** 22.02%
+- **Net exposure:** 22.02%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** SOXX 1@$619.50 GTC, AVGO 1@$384.50 GTC
+- **Open orders:** SOXX 1@$619.50 GTC
 
 ## Performance Review
-- **1D (today):** SPY +0.08%. Portfolio –0.05% (last equity $9,790.16 → $9,785.62). Underperformed SPY by ~0.13 pp due to AVGO drag and cash drag.
+- **1D (today):** SPY ~-0.14%. Portfolio –0.15% (last equity $9,790.16 → $9,775.78). Roughly in line with SPY. AVGO fill at $384.50 added exposure.
 - **1W (Jun 9 → Jun 16):** SPY ~+2.1%. Portfolio ~–2.14%. Underperforming by ~4.24 pp.
 - **2W (Jun 2 → Jun 16):** SPY ~+1.6%. Portfolio ~–2.14%. Underperforming by ~3.74 pp.
 - **Since inception (2026-05-04 baseline):** portfolio –2.14% vs SPY +5.18%. Trailing by ~7.32 pp.
@@ -40,7 +52,7 @@
 |---|---|---|---|---|
 | QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 3:22 PM ET. | 7–15% | **BUY 1 @ $734.50 GTC** (post-3:22 PM) |
 | SOXX | Buy on pullback | Chip exposure. AI trade reigniting. | 6–10% | **BUY 1 @ $619.50 GTC** (order open) |
-| AVGO | Hold / Add | Position @ $391.43. Small unrealized loss. | 5–8% | **BUY 1 @ $384.50 GTC** (order open) |
+| AVGO | Hold / Add | Position 2 shares @ $387.89 avg. Filled 1@$384.50. | 5–8% | **HOLD** — no additional add authorized |
 | GOOG | Buy on pullback | 24h cooldown until 3:22 PM ET. | 4–8% | **BUY 1 @ $361.50 GTC** (post-3:22 PM) |
 | NVDA | Buy on pullback | 24h cooldown until 3:22 PM ET. Weak vs SOXX. | 2–4% | **BUY 1 @ $207.50 GTC** (post-3:22 PM) |
 | VOO | Hold | Anchor. Stable. At 20% ETF cap. | 14% | Hold |
@@ -49,7 +61,7 @@
 
 ## Priority Actions for Tuesday
 1. **HOLD VOO 2.** DO NOT SELL.
-2. **HOLD AVGO 1.** Stop at $365.00. Add 1 share on pullback to $384.50 (order open).
+2. **HOLD AVGO 2.** Stop at $365.00. Added 1 share @ $384.50 GTC (filled 13:38Z).
 3. **SOXX 1@$619.50 GTC** — order open. Do not cancel.
 4. **After 3:22 PM ET (cooldown clear):** Place QQQ 1@$734.50 GTC, GOOG 1@$361.50 GTC, NVDA 1@$207.50 GTC if market is orderly.
 5. **If gross exposure reaches 60%+ after fills, pause new adds and reassess.**

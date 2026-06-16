@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-06-16 13:35Z (Tuesday 9:35 AM ET)
-*HARD_LOCK LIFTED. Market OPEN. Next tactical: ~09:40 ET.*
+# Tactical Todo — Updated 2026-06-16 14:20Z (Tuesday 10:20 AM ET)
+*HARD_LOCK LIFTED. Market OPEN. Next tactical: ~10:30 ET.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** VOO 2 ($1,389.06), AVGO 1 ($389.43)
-- **Account equity / cash / buying power:** $9,785.62 / $8,008.56 / $37,010.01
-- **Gross long exposure:** 18.16% | **Net exposure:** 18.16% | **Cash:** 81.84%
+- **Live book:** VOO 2 ($1,386.66), AVGO 2 ($764.90)
+- **Account equity / cash / buying power:** $9,775.78 / $7,624.22 / $35,901.74
+- **Gross long exposure:** 22.02% | **Net exposure:** 22.02% | **Cash:** 78.00%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** SOXX 1@$619.50 GTC, AVGO 1@$384.50 GTC.
+- **Open orders:** SOXX 1@$619.50 GTC.
 - **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). AVGO bought at 16:47Z Mon — may sell Tue if trigger hit.
 - **Market:** OPEN. SPY +0.08%, QQQ +0.06%, SOXX +0.56%.
 
@@ -21,8 +21,8 @@
 - **DO NOT ADD VOO** — concentration cap (20% max) prevents additional shares.
 
 ### AVGO — HOLD / ADD ON PULLBACK (PRIORITY #1)
-- Current position: 1 share @ $391.43 avg, current $389.43 (-0.51%).
-- **BUY 1 share** if price drops to **$385.00 or below** — limit $384.50 GTC.
+- Current position: 2 shares @ $387.89 avg, current $382.45 (-1.40%).
+- **BUY 1 share** if price drops to **$385.00 or below** — limit $384.50 GTC. **FILLED at 13:38Z.** No additional add authorized.
 - **Stop loss:** If AVGO falls below $365.00 after fill, **SELL all AVGO shares at market** on next tactical run.
 - **Do NOT sell AVGO today** unless stop is breached.
 
@@ -95,13 +95,14 @@
 - VOO: concentration cap prevents adds.
 - No new orders for META, RKLB, HOOD, GLD, EIS, SHLD, QTUM, ARKX.
 
-## This Cycle — 2026-06-16 13:35Z (Tuesday 9:35 AM ET)
+## This Cycle — 2026-06-16 14:20Z (Tuesday 10:20 AM ET)
 - **Status:** Market OPEN.
-- **Event detector:** MINOR (SOXX +0.56%). No autonomous action.
-- **Live broker refresh:** Equity $9,785.62 | Cash $8,008.56 | Long $1,777.06 | Gross 18.16% | Daytrade 0/3.
-- **Holdings:** VOO 2 ($1,389.06), AVGO 1 ($389.43).
-- **Open orders:** NONE.
-- **Protective stops:** None breached.
+- **Event detector:** MINOR (SOXX -0.71%, XLK -0.60%). No autonomous action.
+- **Live broker refresh:** Equity $9,775.78 | Cash $7,624.22 | Long $2,151.56 | Gross 22.02% | Daytrade 0/3.
+- **Holdings:** VOO 2 ($1,386.66, +2.16% unrealized), AVGO 2 ($764.90, -1.40% unrealized).
+- **Open orders:** SOXX 1@$619.50 GTC.
+- **Protective stops:** None breached. AVGO $382.45 > stop $365.00. VOO $693.33 > stop $650.00.
 - **HARD_LOCK:** LIFTED at 13:35Z.
-- **Orders placed:** SOXX 1@$619.50 GTC (13:38Z), AVGO 1@$384.50 GTC (13:38Z).
-- **Next expected action:** Tactical agent to monitor fills and stop-losses. Place QQQ/GOOG/NVDA orders after 3:22 PM ET cooldown.
+- **Orders filled:** AVGO 1@$384.50 GTC (13:38Z).
+- **Orders still open:** SOXX 1@$619.50 GTC.
+- **Next expected action:** Monitor SOXX fill and stop-losses. Place QQQ/GOOG/NVDA orders after 3:22 PM ET cooldown.
