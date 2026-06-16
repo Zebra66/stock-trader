@@ -2,6 +2,24 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 12:12 : [tactical] MAJOR event: no trades, suspended buys
+- Event detector MAJOR at 16:10Z: SOXX $609.09 (+1.49%), SMH +1.24%
+- No stops breached: AVGO $379.08 > $365.00, SOXX $610.03 > $590.00, VOO $692.745 > $650.00
+- No buys placed: all above trigger, Fed blocker active
+- Suspended QQQ/GOOG/NVDA buys due to MAJOR event
+
+2026-06-16 : 11:50 : [tactical] No action, stops intact, Fed wait
+- AVGO at $379.65 > stop $365.00
+- SOXX at $600.125 > stop $590.00
+- VOO at $691.33 > stop $650.00
+- No buy triggers met; QQQ at $733.075, GOOG at $371.945, NVDA at $208.83
+- Fed meeting blocker until ~2:30 PM ET; QQQ/GOOG/NVDA 24h cooldown until 3:22 PM ET
+
+2026-06-16 : 11:40 : [tactical] No trades; stops intact, Fed pause
+- SOXX $603.63 > stop $590.00, AVGO $380.98 > stop $365.00, VOO $692.19 > stop $650.00
+- QQQ $734.83 near $735.00 trigger but Fed blocker active until ~2:30 PM ET
+- No conditions met for execution; gross exposure 28.2%
+
 2026-06-16 : 11:37 : [hourly] Stops intact, Fed pause, no new buys
 - Equity $9,761.10, gross 28.25%, daytrades 0/3
 - AVGO $382.02, SOXX $607.90, VOO $692.52 — all above stops
