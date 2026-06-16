@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 10:38 : [hourly] SOXX filled, Fed pause, no buys
+- SOXX 1@$619.25 GTC filled at 14:23Z — now 3 positions, gross 28.28%
+- AVGO 2 shares avg $387.89, current $381.80, stop $365.00
+- Equity $9,766.35, cash $7,004.97, daytrades 0/3
+- Fed meeting today (Warsh first) — no new buys before ~2:30 PM ET
+- QQQ 3@$734.50, GOOG 2@$361.50, NVDA 1@$207.50 authorized post-Fed
+
+2026-06-16 : 10:30 : [tactical] SOXX filled, no new action
+- SOXX 1@$619.25 GTC filled on pullback to $618.77
+- AVGO $382.22, SOXX $617.94, VOO $692.30 all above stops
+- No buy triggers met; QQQ $739.26, GOOG $368.34, NVDA $209.06 all above limits
+- Gross exposure 28.3%, regime offensive, 0/3 daytrades
+- Cooldowns QQQ/GOOG/NVDA expire at 3:22 PM ET
+
 2026-06-16 : 10:20 : [tactical] AVGO filled, SOXX pending, no action
 - AVGO 1@$384.50 GTC filled — now 2 shares avg $387.89, current $382.45
 - SOXX 1@$619.50 GTC still open, current $622.85
