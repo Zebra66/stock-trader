@@ -1,60 +1,54 @@
 # Hourly Macro Memory
-*Updated 2026-06-16 14:35Z (Tuesday 10:35 AM ET). Market OPEN.*
+*Updated 2026-06-16 15:35Z (Tuesday 11:35 AM ET). Market OPEN.*
 
-## Current Cycle Summary — 2026-06-16 14:35Z
+## Current Cycle Summary — 2026-06-16 15:35Z
+- **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted. No events.
+- **Event detector:** NONE. Broad market calm. Held positions all OK.
+- **Live broker refresh (authoritative):** Equity $9,761.10 | Cash $7,004.97 | Long $2,756.98 | Gross 28.25% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,385.04, +2.04% unrealized), AVGO 2 ($764.04, -1.51% unrealized), SOXX 1 ($607.90, -1.83% unrealized).
+- **Open orders:** NONE.
+- **Stop-losses:** None breached. AVGO $382.02 > $365.00. SOXX $607.90 > $590.00. VOO $692.52 > $650.00.
+- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). SOXX bought at 14:23Z Tue — may sell Wed if stop hit.
+- **Gross exposure:** 28.25% — far below 60–90% target. Deployment deferred until after Fed meeting.
+- **Fed meeting:** Kevin Warsh's first FOMC today. Statement at ~2:00 PM ET, press conference at ~2:30 PM ET. Live headlines note "challenging inflation backdrop." Market drifting lower ahead of it. Volatility risk elevated.
+- **No action this cycle:** Stops intact, no new orders before Fed. Tactical agent correctly holding.
+
+## Prior Cycle Summary — 2026-06-16 14:35Z
 - **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted.
 - **Event detector:** MINOR (SOXX -0.64%, SMH -0.50%). No event response.
-- **Live broker refresh (authoritative):** Equity $9,766.35 | Cash $7,004.97 | Long $2,761.38 | Gross 28.28% | Daytrade 0/3.
-- **Holdings confirmed:** VOO 2 ($1,383.84, +1.95% unrealized), AVGO 2 ($763.60, -1.57% unrealized), SOXX 1 ($613.95, -0.86% unrealized).
+- **Live broker refresh:** Equity $9,766.35 | Cash $7,004.97 | Long $2,761.38 | Gross 28.28% | Daytrade 0/3.
+- **Holdings:** VOO 2 ($1,383.84, +1.95% unrealized), AVGO 2 ($763.60, -1.57% unrealized), SOXX 1 ($613.95, -0.86% unrealized).
 - **SOXX fill:** 1 share @ $619.25 GTC filled at 14:23Z. Now 1 share avg $619.25.
 - **AVGO fill:** 1 share @ $384.34 GTC filled at 13:38Z. Now 2 shares avg $387.89.
-- **Open orders:** NONE.
-- **Stop-losses:** None breached. AVGO $381.80 > $365.00. SOXX $613.95 > $590.00. VOO $691.92 > $650.00.
-- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). SOXX bought at 14:23Z Tue — may sell Wed if stop hit.
+- **Open orders:** NONE. No stop breaches.
 - **Gross exposure:** 28.28% — far below 60–90% target. Deployment deferred until after Fed meeting.
-- **Fed meeting:** Kevin Warsh's first FOMC meeting today. Statement at ~2:00 PM ET, press conference at ~2:30 PM ET. Market drifting lower ahead of it. Volatility risk elevated.
-- **No action this cycle:** Stops intact, no new orders before Fed.
-
-## Current Cycle Summary — 2026-06-16 13:38Z
-- **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted.
-- **Repo integrity:** Verified. Code-level bug fixed: `HARD_LOCK LIFTED` regex in `alpaca_cli.ts` and `alpaca_client_factory.ts` was missing `\s*` before `LIFTED`, causing the tactical agent to see the lock as active even when explicitly lifted. This prevented the 09:31 tactical run from placing orders.
-- **Tactical agent:** No unauthorized trades. Correctly observed lock was active at 09:31 and did nothing.
-- **Live broker refresh (authoritative):** Equity $9,785.62 | Cash $8,008.56 | Long $1,777.06 | Gross 18.16% | Daytrade 0/3.
-- **Holdings confirmed:** VOO 2 ($1,389.06, +2.33% unrealized), AVGO 1 ($389.43, -0.51% unrealized).
-- **Open orders:** SOXX 1@$619.50 GTC (placed 13:38Z), AVGO 1@$384.50 GTC (placed 13:38Z).
-- **HARD_LOCK:** LIFTED at 13:35Z.
-- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon. Cooldown expires at 19:22Z Tue (3:22 PM ET). AVGO bought at 16:47Z Mon — may sell Tue if stop breached.
-- **Market context:** SPY flat +0.08% to ~755.19. Iran ceasefire rally continuing. Oil below $80. AI trade reigniting (Micron/WD at ATHs). Mixed indexes — housing starts disappointed. Bullish macro but not chasing.
-- **Goal check:** Portfolio **–2.14%** since inception ($9,785.62 vs ~$10,000 base) vs SPY **+5.18%**. **FAILING BOTH GOALS.** Trailing SPY by ~7.32 pp.
-- **Regime:** **OFFENSIVE CATCH-UP.** Target gross exposure 60–90%. Current 18.16% — far below band. Must deploy today.
-- **Dominant failure mode:** cash drag + late entries / poor execution. June 9 panic exits and tactical churn crystallized losses. Deep pullback triggers were too conservative and missed the rally. R/R discipline is tight; we must deploy in smaller chunks to stay within dollar-risk limits.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L |
 |---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $691.92 | $1,383.84 | 14.17% | +$26.44 |
-| AVGO | 2 | $387.885 | $381.80 | $763.60 | 7.82% | –$12.18 |
-| SOXX | 1 | $619.25 | $613.95 | $613.95 | 6.29% | –$5.31 |
-| Cash | — | — | — | $7,004.97 | 71.72% | — |
-| **Equity** | — | — | — | **$9,766.35** | **100%** | **–2.34%** |
+| VOO | 2 | $678.7025 | $692.52 | $1,385.04 | 14.19% | +$27.64 |
+| AVGO | 2 | $387.885 | $382.02 | $764.04 | 7.83% | –$11.73 |
+| SOXX | 1 | $619.25 | $607.90 | $607.90 | 6.23% | –$11.35 |
+| Cash | — | — | — | $7,004.97 | 71.75% | — |
+| **Equity** | — | — | — | **$9,761.10** | **100%** | **–2.39%** |
 
-- **Gross long exposure:** 28.28%
-- **Net exposure:** 28.28%
+- **Gross long exposure:** 28.25%
+- **Net exposure:** 28.25%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
 ## Performance Review
-- **1D (today):** SPY ~-0.05%. Portfolio –0.24% (last equity $9,790.16 → $9,766.35). Underperforming SPY by ~0.19 pp.
-- **1W (Jun 9 → Jun 16):** SPY ~+2.1%. Portfolio ~–2.34%. Underperforming by ~4.44 pp.
-- **2W (Jun 2 → Jun 16):** SPY ~+1.6%. Portfolio ~–2.34%. Underperforming by ~3.94 pp.
-- **Since inception (2026-05-04 baseline):** portfolio –2.34% vs SPY +4.81%. Trailing by ~7.15 pp.
+- **1D (today):** SPY ~+0.05%. Portfolio –0.30% (last equity $9,790.16 → $9,761.10). Underperforming SPY by ~0.35 pp.
+- **1W (Jun 9 → Jun 16):** SPY ~+2.1%. Portfolio ~–2.39%. Underperforming by ~4.49 pp.
+- **2W (Jun 2 → Jun 16):** SPY ~+1.6%. Portfolio ~–2.39%. Underperforming by ~3.99 pp.
+- **Since inception (2026-05-04 baseline):** portfolio –2.39% vs SPY +4.89%. Trailing by ~7.28 pp.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
 | QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 3:22 PM ET. Fed meeting blocker. | 15–25% | **BUY 3 @ $734.50 GTC** (post-3:22 PM ET, post-Fed) |
-| SOXX | Hold | Chip exposure. AI trade reigniting. 1 share filled. | 6–10% | **HOLD** — stop $590.00 |
+| SOXX | Hold | Chip exposure. TSM +25% capex hike + Micron HBM surge validate AI/chip thesis. 1 share filled. | 6–10% | **HOLD** — stop $590.00 |
 | AVGO | Hold / Add on strength | Position 2 shares @ $387.89 avg. Underwater. No average down. | 5–8% | **HOLD** — stop $365.00 |
 | GOOG | Buy on pullback | 24h cooldown until 3:22 PM ET. Fed meeting blocker. | 4–8% | **BUY 2 @ $361.50 GTC** (post-3:22 PM ET, post-Fed) |
 | NVDA | Buy on pullback | 24h cooldown until 3:22 PM ET. Fed meeting blocker. Weak vs SOXX. | 2–4% | **BUY 1 @ $207.50 GTC** (post-3:22 PM ET, post-Fed) |
@@ -73,25 +67,27 @@
 8. **Do NOT sell positions bought by the hourly strategist today.** Tactical agent has no authority to overrule hourly buys.
 
 ## Macro Themes
-- **Actionable now:** Fed meeting today (Warsh's first). Hawkish surprise could spike yields and pressure tech. Dovish surprise could extend rally. Wait for reaction before deploying.
+- **Actionable now:** Fed meeting today (Warsh's first). Hawkish surprise could spike yields and pressure tech. Dovish surprise could extend rally. Live headlines note "challenging inflation backdrop." Wait for reaction before deploying.
+- **Actionable now:** TSM +25% capex budget hike + Micron HBM demand surge = strong chip-sector validation. SOXX/AVGO thesis intact. Do NOT chase; buy on pullbacks.
 - **Actionable now:** Iran de-escalation + oil below $80 = bullish macro. Risk premium compressing. Do NOT chase, but deploy on pullbacks after Fed clears.
 - **Actionable now:** AI trade reigniting (Micron/WD/Sandisk at ATHs). Validates SOXX/AVGO chip exposure.
 - **Worth monitoring:** US-Iran durability. If talks collapse, sharp reversal possible.
 - **Worth monitoring:** Housing starts disappointed. Could soften the Fed stance.
+- **Worth monitoring:** Trump's trade war threats could force Fed action. Dovish if Fed reacts; risky if trade war escalates independently.
 - **Interesting but not actionable yet:** SpaceX IPO at $2.1T. Positive for RKLB but creates rotation risk.
 
 ## Data / Process Notes
 - **Alpaca CLI:** Working. HARD_LOCK regex bug fixed.
 - **FMP:** Disabled. Yahoo Finance chart API used for historical snapshot.
-- **News access:** Yahoo Finance RSS primary. Fed meeting headlines confirmed.
+- **News access:** Yahoo Finance RSS primary. TSM capex + Micron HBM + Fed live coverage confirmed.
 - **Day-trade status:** 0/3. Full flexibility.
-- **SOXX liquidity:** Thin (12 trades, 438 vol). Limit orders only.
-- **AVGO liquidity:** Acceptable (61 trades, 1,827 vol).
+- **SOXX liquidity:** Thin (5 trades, 300 vol at 15:34Z). Limit orders only.
+- **AVGO liquidity:** Acceptable (54 trades, 2,070 vol at 15:34Z).
 - **Earnings:** AVGO passed Jun 3. GOOG est Jul 23; META Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB Aug 6.
 - **Lock file:** `active: false` (HARD_LOCK lifted). META remains banned.
 - **Repo hygiene:** Clean. Staged changes: ledger.md, tactical_last_prices.json. No source changes.
 - **Code integrity:** All guards intact. Regex synchronized across both files.
-- **Stale memory note:** Tactical agent updated ledger with SOXX fill at 10:30 but did NOT update MEMORY.md or todo.md. Working tree was stale for 15 minutes. Hourly strategist caught the discrepancy via live broker reconciliation. This is a state-sync gap, not a concealment risk.
+- **Stale memory note:** Resolved. Tactical agent correctly updating ledger.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.

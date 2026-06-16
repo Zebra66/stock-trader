@@ -1,17 +1,17 @@
-# Tactical Todo — Updated 2026-06-16 14:35Z (Tuesday 10:35 AM ET)
-*HARD_LOCK LIFTED. Market OPEN. Fed meeting today. Next tactical: ~10:40 ET.*
+# Tactical Todo — Updated 2026-06-16 15:35Z (Tuesday 11:35 AM ET)
+*HARD_LOCK LIFTED. Market OPEN. Fed meeting today. Next tactical: ~11:40 ET.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band) with Fed pause
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** VOO 2 ($1,383.84), AVGO 2 ($763.60), SOXX 1 ($613.95)
-- **Account equity / cash / buying power:** $9,766.35 / $7,004.97 / $35,751.74
-- **Gross long exposure:** 28.28% | **Net exposure:** 28.28% | **Cash:** 71.72%
+- **Live book:** VOO 2 ($1,385.04), AVGO 2 ($764.04), SOXX 1 ($607.90)
+- **Account equity / cash / buying power:** $9,761.10 / $7,004.97 / $35,737.04
+- **Gross long exposure:** 28.25% | **Net exposure:** 28.25% | **Cash:** 71.75%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE.
 - **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon — cooldown expires at 19:22Z Tue (3:22 PM ET). SOXX bought at 14:23Z Tue — may sell Wed if stop hit.
-- **Market:** OPEN. SPY -0.05%, QQQ -0.25%, SOXX -0.64%.
+- **Market:** OPEN. SPY +0.05%, QQQ -0.10%, SOXX -0.64%.
 - **Fed meeting:** Kevin Warsh's first FOMC today. Statement ~2:00 PM ET, presser ~2:30 PM ET. NO new buy orders before presser concludes.
 
 ## Position Instructions — Tuesday Jun 16
@@ -22,13 +22,13 @@
 - **DO NOT ADD VOO** — concentration cap (20% max) prevents additional shares.
 
 ### AVGO — HOLD
-- Current position: 2 shares @ $387.89 avg, current $381.80 (-1.57%).
+- Current position: 2 shares @ $387.89 avg, current $382.02 (-1.51%).
 - **Stop loss:** If AVGO falls below $365.00, **SELL all AVGO shares at market** on next tactical run.
 - **Do NOT sell AVGO today** unless stop is breached.
 - **Do NOT add AVGO** — currently underwater; never average down.
 
 ### SOXX — HOLD
-- Current position: 1 share @ $619.25, current $613.95 (-0.86%).
+- Current position: 1 share @ $619.25, current $607.90 (-1.83%).
 - **Stop loss:** If SOXX falls below $590.00, **SELL all SOXX shares at market** on next tactical run.
 - **Do NOT sell SOXX today** unless stop is breached.
 - **Do NOT add SOXX** — currently underwater; never average down.
@@ -36,18 +36,18 @@
 ### QQQ — BUY ON PULLBACK (AFTER 3:22 PM ET + POST-FED)
 - 24-hour cooldown from 19:22Z Mon expires at 19:22Z Tue. **After 3:22 PM ET, cooldown is clear.**
 - **Fed meeting blocker:** Do NOT place QQQ order before ~2:30 PM ET (18:30Z). Wait for market reaction.
-- Current price ~$737.36. Market near all-time highs. Do NOT chase.
+- Current price ~$736.16. Market near all-time highs. Do NOT chase.
 - **BUY 3 shares** if price drops to **$735.00 or below** — limit $734.50 GTC.
 - **Target:** $760.00.
 - **Stop loss:** If QQQ falls below $720.00 after fill, **SELL all QQQ shares at market** on next tactical run.
 - **Dollar risk:** ~$14.50 per share = $43.50 = 0.45% of equity. Under 0.5% exception for R/R < 2:1.
-- **Concentration cap check:** QQQ max 45% of equity = $4,394.85. Buying 3 shares at $734.50 = $2,203.50 = 22.6% of equity. Well within cap.
+- **Concentration cap check:** QQQ max 45% of equity = $4,392.50. Buying 3 shares at $734.50 = $2,203.50 = 22.6% of equity. Well within cap.
 - **CRITICAL: The QQQ 3@$734.50 GTC limit order is AUTHORIZED only after 3:22 PM ET and after the Fed press conference concludes. DO NOT place this order before then.**
 
 ### GOOG — BUY ON PULLBACK (AFTER 3:22 PM ET + POST-FED)
 - 24-hour cooldown from 19:22Z Mon expires at 19:22Z Tue. **After 3:22 PM ET, cooldown is clear.**
 - **Fed meeting blocker:** Do NOT place GOOG order before ~2:30 PM ET (18:30Z).
-- Current price ~$368.93. Below prior sell price $370.50.
+- Current price ~$372.69. Below prior sell price $370.50.
 - **BUY 2 shares** if price drops to **$362.00 or below** — limit $361.50 GTC.
 - **Target:** $385.00.
 - **Stop loss:** If GOOG falls below $340.00 after fill, **SELL all GOOG shares at market** on next tactical run.
@@ -57,7 +57,7 @@
 ### NVDA — BUY ON PULLBACK (AFTER 3:22 PM ET + POST-FED — LOW PRIORITY)
 - 24-hour cooldown from 19:22Z Mon expires at 19:22Z Tue. **After 3:22 PM ET, cooldown is clear.**
 - **Fed meeting blocker:** Do NOT place NVDA order before ~2:30 PM ET (18:30Z).
-- Current price ~$208.70. Weak relative to SOXX.
+- Current price ~$209.40. Weak relative to SOXX.
 - **BUY 1 share** if price drops to **$208.00 or below** — limit $207.50 GTC.
 - **Target:** $225.00.
 - **Stop loss:** If NVDA falls below $195.00 after fill, **SELL all NVDA shares at market** on next tactical run.
@@ -100,13 +100,13 @@
 - AVGO / SOXX: currently underwater; no average down.
 - No new orders for META, RKLB, HOOD, GLD, EIS, SHLD, QTUM, ARKX.
 
-## This Cycle — 2026-06-16 14:35Z (Tuesday 10:35 AM ET)
+## This Cycle — 2026-06-16 15:35Z (Tuesday 11:35 AM ET)
 - **Status:** Market OPEN.
-- **Event detector:** MINOR (SOXX -0.64%, SMH -0.50%). No autonomous action.
-- **Live broker refresh:** Equity $9,766.35 | Cash $7,004.97 | Long $2,761.38 | Gross 28.28% | Daytrade 0/3.
-- **Holdings:** VOO 2 ($1,383.84, +1.95% unrealized), AVGO 2 ($763.60, -1.57% unrealized), SOXX 1 ($613.95, -0.86% unrealized).
+- **Event detector:** NONE. No autonomous action.
+- **Live broker refresh:** Equity $9,761.10 | Cash $7,004.97 | Long $2,756.98 | Gross 28.25% | Daytrade 0/3.
+- **Holdings:** VOO 2 ($1,385.04, +2.04% unrealized), AVGO 2 ($764.04, -1.51% unrealized), SOXX 1 ($607.90, -1.83% unrealized).
 - **Open orders:** NONE.
-- **Protective stops:** None breached. AVGO $381.80 > stop $365.00. SOXX $613.95 > stop $590.00. VOO $691.92 > stop $650.00.
+- **Protective stops:** None breached. AVGO $382.02 > stop $365.00. SOXX $607.90 > stop $590.00. VOO $692.52 > stop $650.00.
 - **HARD_LOCK:** LIFTED at 13:35Z.
 - **Orders filled:** SOXX 1@$619.25 GTC (14:23Z), AVGO 1@$384.34 GTC (13:38Z).
 - **Next expected action:** Monitor stops. No new buy orders before Fed meeting concludes (~2:30 PM ET). Place QQQ/GOOG/NVDA orders after 3:22 PM ET if market is orderly.
