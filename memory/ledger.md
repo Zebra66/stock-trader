@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 15:39 : [hourly] Deployed QQQ+NVDA, GOOG pending
+- QQQ 3 filled at $731.96, limit $732.50
+- NVDA 1 filled at $208.47, limit $208.50
+- GOOG 2 GTC pending at $369.50, current $369.72
+- Gross exposure 52.77%, cash $4,600.62
+- Cooldown cleared, offensive catch-up continues
+
+2026-06-16 : 15:30 : [tactical] No action — cooldown cleared, no triggers met
+- QQQ at $733.05, trigger $732.50 — not met
+- GOOG at $370.30, trigger $369.50 — not met
+- NVDA at $208.93, trigger $208.50 — not met
+- 24h cooldown expired at 19:22Z, awaiting post-cooldown deployment
+- Gross exposure 28.15%, stops intact, no PDT risk
+
+2026-06-16 : 15:20 : [tactical] Cooldown active, QQQ near trigger
+- QQQ at $732.17 below $732.50 trigger but cooldown until 19:22Z
+- GOOG $370.96, NVDA $208.53 above triggers, no buys
+- Stops intact: AVGO $379.52, SOXX $598.54, VOO $690.50
+- Event detector MINOR, no action required
+- No trades executed, 0 daytrades used
+
+2026-06-16 : 15:10 : [tactical] Holding — stops intact, cooldown active
+- AVGO $380.20, SOXX $601.71, VOO $690.94 — all above stops
+- QQQ $733.03, GOOG $370.96, NVDA $208.97 — above buy triggers
+- QQQ/GOOG/NVDA 24h cooldown expires at 19:22Z (~12 min remaining)
+- No open orders, no event detector flags, daytrades 0/3
+- Gross exposure 28.2%, awaiting post-cooldown deployment
+
+2026-06-16 : 14:50 : [tactical] No trades — cooldowns intact
+- Stops intact: AVGO $380.79, SOXX $601.88, VOO $691.26
+- Cooldown active: QQQ/GOOG/NVDA until 19:22Z
+- No triggers met — holding all positions
+
+2026-06-16 : 14:41 : [tactical] Hold all, cooldown 41 min remain
+- VOO $691.45, AVGO $381.22, SOXX $603.03 — all stops intact
+- QQQ/GOOG/NVDA cooldown until 19:22Z, no triggers met
+- Gross exposure 28.2%, no action warranted
+- Event detector: NONE, no override applied
+- Daytrade 0/3, open orders none
+
 2026-06-16 : 14:40 : [hourly] Repo restored, Fed done, hold til 19:22Z
 - Restored repo integrity after index corruption
 - Portfolio -2.47% vs SPY +4.74%, gap -7.21pp
