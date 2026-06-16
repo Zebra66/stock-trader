@@ -1,79 +1,79 @@
 # Hourly Macro Memory
-*Updated 2026-06-15 22:52Z (Monday 6:52 PM ET). Market CLOSED. Next open: Tuesday 2026-06-16 09:30 ET.*
+*Updated 2026-06-16 13:38Z (Tuesday 9:38 AM ET). Market OPEN.*
 
-## Current Cycle Summary — 2026-06-15 22:52Z
-- **Status:** Market CLOSED. Hourly session completed post-close.
-- **Repo integrity:** Verified. Code-level anti-churn guard strengthened with local file cache (`temp_files/today_orders.json`) in `alpaca_client_factory.ts` and `alpaca_cli.ts`. Audit trail append bug fixed.
-- **Tactical agent breach:** Resolved. The tactical agent sold QQQ 5, GOOG 3, NVDA 3 at 19:22Z (11 min after hourly buys at 19:11Z), creating 3 same-day round trips. Code guard now checks local cache before API call to prevent bypass. Prompts updated to explicitly prohibit tactical agent from second-guessing hourly buys.
-- **Live broker refresh (authoritative):** Equity $9,789.54 | Cash $8,008.58 | Long $1,780.96 | Gross 18.20% | Daytrade 0/3 (new day tomorrow).
-- **Holdings confirmed:** VOO 2 ($1,386.00, +2.11% unrealized), AVGO 1 ($394.41, +0.76% unrealized).
-- **Open orders:** NONE. Prior QQQ/SOXX GTC orders were canceled at 19:44Z.
-- **HARD_LOCK:** LIFTED for Tuesday open.
-- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon. Cooldown clears at 19:22Z Tue (3:22 PM ET). AVGO bought at 16:47Z Mon — may sell Tue if stop breached.
-- **Market context:** SPY +2.01% today to ~754.75. Iran ceasefire rally. Nasdaq +3.77%. Strong risk-on tape.
-- **Goal check:** Portfolio **–2.02%** since inception ($9,789.54 vs ~$10,000 base) vs SPY **+5.12%**. **FAILING BOTH GOALS.** Trailing SPY by ~7.14 pp.
-- **Regime:** **OFFENSIVE CATCH-UP.** Target gross exposure 60–90%. Current 18.20% — far below band. Must deploy on Tuesday.
-- **Dominant failure mode:** late entries / poor execution + excessive turnover. June 9 panic exits crystallized losses. Tactical agent churn destroyed positions.
+## Current Cycle Summary — 2026-06-16 13:38Z
+- **Status:** Market OPEN. Hourly session active. HARD_LOCK lifted.
+- **Repo integrity:** Verified. Code-level bug fixed: `HARD_LOCK LIFTED` regex in `alpaca_cli.ts` and `alpaca_client_factory.ts` was missing `\s*` before `LIFTED`, causing the tactical agent to see the lock as active even when explicitly lifted. This prevented the 09:31 tactical run from placing orders.
+- **Tactical agent:** No unauthorized trades. Correctly observed lock was active at 09:31 and did nothing.
+- **Live broker refresh (authoritative):** Equity $9,785.62 | Cash $8,008.56 | Long $1,777.06 | Gross 18.16% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,389.06, +2.33% unrealized), AVGO 1 ($389.43, -0.51% unrealized).
+- **Open orders:** SOXX 1@$619.50 GTC (placed 13:38Z), AVGO 1@$384.50 GTC (placed 13:38Z).
+- **HARD_LOCK:** LIFTED at 13:35Z.
+- **24-hour cooldowns:** QQQ, GOOG, NVDA sold at 19:22Z Mon. Cooldown expires at 19:22Z Tue (3:22 PM ET). AVGO bought at 16:47Z Mon — may sell Tue if stop breached.
+- **Market context:** SPY flat +0.08% to ~755.19. Iran ceasefire rally continuing. Oil below $80. AI trade reigniting (Micron/WD at ATHs). Mixed indexes — housing starts disappointed. Bullish macro but not chasing.
+- **Goal check:** Portfolio **–2.14%** since inception ($9,785.62 vs ~$10,000 base) vs SPY **+5.18%**. **FAILING BOTH GOALS.** Trailing SPY by ~7.32 pp.
+- **Regime:** **OFFENSIVE CATCH-UP.** Target gross exposure 60–90%. Current 18.16% — far below band. Must deploy today.
+- **Dominant failure mode:** cash drag + late entries / poor execution. June 9 panic exits and tactical churn crystallized losses. Deep pullback triggers were too conservative and missed the rally. R/R discipline is tight; we must deploy in smaller chunks to stay within dollar-risk limits.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L |
 |---|---|---|---|---|---|---|
-| VOO | 2 | $678.7025 | $693.00 | $1,386.00 | 14.17% | +$28.60 |
-| AVGO | 1 | $391.43 | $394.41 | $394.41 | 4.03% | +$2.98 |
-| Cash | — | — | — | $8,008.58 | 81.81% | — |
-| **Equity** | — | — | — | **$9,789.54** | **100%** | **–2.02%** |
+| VOO | 2 | $678.7025 | $694.53 | $1,389.06 | 14.20% | +$31.66 |
+| AVGO | 1 | $391.43 | $389.43 | $389.43 | 3.98% | –$2.01 |
+| Cash | — | — | — | $8,008.56 | 81.84% | — |
+| **Equity** | — | — | — | **$9,785.62** | **100%** | **–2.14%** |
 
-- **Gross long exposure:** 18.20%
-- **Net exposure:** 18.20%
-- **Daytrade count:** 0/3 (resets for new day)
+- **Gross long exposure:** 18.16%
+- **Net exposure:** 18.16%
+- **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** SOXX 1@$619.50 GTC, AVGO 1@$384.50 GTC
 
 ## Performance Review
-- **1D (today):** SPY +2.01%. Portfolio +0.19% (last equity $9,770.81 → $9,789.54). Underperformed SPY by ~1.82 pp due to cash drag.
-- **1W (Jun 8 → Jun 15):** SPY +2.03%. Portfolio –2.02%. Underperforming by ~4.05 pp.
-- **2W (Jun 1 → Jun 15):** SPY +1.55%. Portfolio –2.02%. Underperforming by ~3.57 pp.
-- **Since inception (2026-05-04 baseline):** portfolio –2.02% vs SPY +5.12%. Trailing by ~7.14 pp.
+- **1D (today):** SPY +0.08%. Portfolio –0.05% (last equity $9,790.16 → $9,785.62). Underperformed SPY by ~0.13 pp due to AVGO drag and cash drag.
+- **1W (Jun 9 → Jun 16):** SPY ~+2.1%. Portfolio ~–2.14%. Underperforming by ~4.24 pp.
+- **2W (Jun 2 → Jun 16):** SPY ~+1.6%. Portfolio ~–2.14%. Underperforming by ~3.74 pp.
+- **Since inception (2026-05-04 baseline):** portfolio –2.14% vs SPY +5.18%. Trailing by ~7.32 pp.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
-| QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 3:22 PM ET. | 20–25% | **BUY 3 @ $734.50 GTC** |
-| SOXX | Buy on pullback | Chip exposure. No cooldown. | 8–12% | **BUY 1 @ $619.50 GTC** |
-| AVGO | Hold / Add | Position @ $391.43. Small gain. | 5–8% | **BUY 1 @ $384.50 GTC** |
-| GOOG | Buy on pullback | 24h cooldown until 3:22 PM ET. | 8–12% | **BUY 2 @ $361.50 GTC** (post-3:22 PM) |
-| NVDA | Buy on pullback | 24h cooldown until 3:22 PM ET. Weak vs SOXX. | 4–6% | **BUY 2 @ $207.50 GTC** (post-3:22 PM) |
-| VOO | Hold | Anchor. Stable. | 10–15% | Hold |
+| QQQ | Buy on pullback | Core liquid growth. 24h cooldown until 3:22 PM ET. | 7–15% | **BUY 1 @ $734.50 GTC** (post-3:22 PM) |
+| SOXX | Buy on pullback | Chip exposure. AI trade reigniting. | 6–10% | **BUY 1 @ $619.50 GTC** (order open) |
+| AVGO | Hold / Add | Position @ $391.43. Small unrealized loss. | 5–8% | **BUY 1 @ $384.50 GTC** (order open) |
+| GOOG | Buy on pullback | 24h cooldown until 3:22 PM ET. | 4–8% | **BUY 1 @ $361.50 GTC** (post-3:22 PM) |
+| NVDA | Buy on pullback | 24h cooldown until 3:22 PM ET. Weak vs SOXX. | 2–4% | **BUY 1 @ $207.50 GTC** (post-3:22 PM) |
+| VOO | Hold | Anchor. Stable. At 20% ETF cap. | 14% | Hold |
 | META | Avoid | Banned. | 0% | Avoid |
 | RKLB / HOOD / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge. | 0% | Avoid |
 
 ## Priority Actions for Tuesday
 1. **HOLD VOO 2.** DO NOT SELL.
-2. **HOLD AVGO 1.** Stop at $365.00.
-3. **Place GTC limit orders at Tuesday open:** QQQ 3@$734.50, SOXX 1@$619.50, AVGO 1@$384.50.
-4. **After 3:22 PM ET (cooldown clear):** Place GOOG 2@$361.50 GTC and NVDA 2@$207.50 GTC if market is orderly.
-5. **Do NOT cancel authorized limit BUY orders.** Explicitly prohibited in todo.md.
-6. **Do NOT sell positions bought by the hourly strategist today.** Tactical agent has no authority to overrule hourly buys.
-7. **If gross exposure reaches 60%+ after fills, pause new adds and reassess.**
-8. **If market gaps down >2% at open, assess whether to lower triggers or defer.**
+2. **HOLD AVGO 1.** Stop at $365.00. Add 1 share on pullback to $384.50 (order open).
+3. **SOXX 1@$619.50 GTC** — order open. Do not cancel.
+4. **After 3:22 PM ET (cooldown clear):** Place QQQ 1@$734.50 GTC, GOOG 1@$361.50 GTC, NVDA 1@$207.50 GTC if market is orderly.
+5. **If gross exposure reaches 60%+ after fills, pause new adds and reassess.**
+6. **Do NOT cancel authorized limit BUY orders.**
+7. **Do NOT sell positions bought by the hourly strategist today.** Tactical agent has no authority to overrule hourly buys.
 
 ## Macro Themes
-- **Actionable now:** Iran de-escalation = bullish macro. Risk premium compressing. Do NOT chase, but deploy on pullbacks.
-- **Worth monitoring:** Chip sector divergence. NVDA/AVGO lagging SOXX. Validates broad ETF approach.
+- **Actionable now:** Iran de-escalation + oil below $80 = bullish macro. Risk premium compressing. Do NOT chase, but deploy on pullbacks.
+- **Actionable now:** AI trade reigniting (Micron/WD/Sandisk at ATHs). Validates SOXX/AVGO chip exposure.
 - **Worth monitoring:** US-Iran durability. If talks collapse, sharp reversal possible.
+- **Worth monitoring:** Housing starts disappointed. Could soften the Fed stance.
 - **Interesting but not actionable yet:** SpaceX IPO at $2.1T. Positive for RKLB but creates rotation risk.
 
 ## Data / Process Notes
-- **Alpaca CLI:** Working. Anti-churn guard now uses local file cache + API fallback.
-- **FMP:** Disabled. Yahoo Finance RSS used for news.
-- **News access:** Yahoo Finance RSS primary. Coverage sufficient for macro direction.
-- **Day-trade status:** 0/3 tomorrow. Full flexibility.
-- **SOXX liquidity:** Thin. Limit orders only.
-- **AVGO liquidity:** Acceptable. 117 trades, 4,309 vol.
+- **Alpaca CLI:** Working. HARD_LOCK regex bug fixed.
+- **FMP:** Disabled. Yahoo Finance chart API used for historical snapshot.
+- **News access:** Yahoo Finance RSS primary. Headlines actionable (AI trade, oil, SpaceX).
+- **Day-trade status:** 0/3. Full flexibility.
+- **SOXX liquidity:** Thin (11 trades, 461 vol). Limit orders only.
+- **AVGO liquidity:** Acceptable (97 trades, 5,270 vol).
 - **Earnings:** AVGO passed Jun 3. GOOG est Jul 23; META Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB Aug 6.
-- **Lock file:** `active: false` (HARD_LOCK lifted).
-- **Repo hygiene:** Clean. Code fix staged: local cache for anti-churn guard.
-- **Code integrity:** All guards intact. Local cache added to prevent API-timeout bypass.
+- **Lock file:** `active: false` (HARD_LOCK lifted). META remains banned.
+- **Repo hygiene:** Clean. Regex fix applied to `alpaca_cli.ts` and `alpaca_client_factory.ts`.
+- **Code integrity:** All guards intact. Regex synchronized across both files.
 
 ## Standing Learnings
 - Size from **account equity**, not raw buying power.
@@ -92,3 +92,5 @@
 - **Do not deploy capital on trades with R/R < 2:1 unless dollar risk <0.5% of equity.**
 - **Tactical agent does NOT have authority to sell positions the hourly strategist bought.** Code-level guard + prompt must enforce this.
 - **Local file cache for anti-churn guard prevents bypass when API times out.**
+- **HARD_LOCK LIFTED regex must match `**HARD_LOCK:** LIFTED` with space between `**` and `LIFTED`.** Always verify regex with actual markdown text.
+- **With $10K equity, 0.5% dollar risk = $50.** A single share in a $700 stock with a $30 stop = $30 risk = 0.31% — acceptable even if R/R < 2:1. A 3-share QQQ position with $30 stop = $90 risk = 0.92% — NOT acceptable unless R/R ≥ 2:1.

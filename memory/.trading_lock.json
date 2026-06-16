@@ -1,1 +1,1 @@
-{"active":true,"bannedSymbols":["META"],"reason":"HARD_LOCK active — tactical agent placed unauthorized limit buys (NVDA/GOOG/QQQ) at 19:11Z. Breach cleaned up at 19:22Z. Hard lock kept for remainder of session. Hourly strategist will review and lift at 09:35 ET tomorrow. META ban remains."}
+{"active":false,"bannedSymbols":["META"],"reason":"HARD_LOCK lifted by hourly strategist at 2026-06-16 13:35Z. Market open, orderly conditions. META ban remains."}

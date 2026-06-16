@@ -219,7 +219,7 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
-        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}\s*LIFTED\b/i.test(lockLine);
         if (!isExplicitlyLifted && side === 'buy') {
           throw new Error(
             `Order blocked: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`

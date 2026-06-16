@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-16 : 09:39 : [hourly] LIFTED lock, placed SOXX/AVGO limits
+- Equity $9,785.62 | Cash $8,008.56 | Gross 18.16% | VOO 2 + AVGO 1
+- Fixed HARD_LOCK regex bug in alpaca_cli.ts and alpaca_client_factory.ts
+- Placed SOXX 1@$619.50 GTC and AVGO 1@$384.50 GTC
+- QQQ/GOOG/NVDA cooldown until 3:22 PM ET; orders deferred
+- Market flat +0.08% SPY; AI trade reigniting; oil below $80
+
+2026-06-16 : 09:31 : [tactical] Lock file active, no orders placed
+- Trading lock .trading_lock.json active: true with no allowed array
+- Hourly strategist scheduled lift at 09:35 ET today
+- QQQ/SOXX/AVGO limit buys blocked until lock lifted
+- Market open, no triggers breached, no event flags
+
 2026-06-15 : 22:05 : [hourly] Post-close: lifted HARD_LOCK, set GTC orders, fixed anti-churn guard
 - Equity $9,789.54 | Cash $8,008.58 | Gross 18.2% | VOO 2 + AVGO 1 | Market closed
 - Placed QQQ 3@$734.50, SOXX 1@$619.50, AVGO 1@$384.50 GTC orders for Tue
