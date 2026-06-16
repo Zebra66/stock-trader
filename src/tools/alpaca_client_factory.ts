@@ -112,7 +112,42 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
   return blocked;
 }
 
+const LOCAL_ORDER_CACHE = './temp_files/today_orders.json';
+
+async function getCachedOrders(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  try {
+    const file = Bun.file(LOCAL_ORDER_CACHE);
+    if (!(await file.exists())) return false;
+    const data = await file.json();
+    const today = new Date().toISOString().slice(0, 10);
+    const orders = data[today] || [];
+    return orders.some((o: any) => o.symbol === symbol && o.side === side);
+  } catch {
+    return false;
+  }
+}
+
+async function cacheOrder(symbol: string, side: 'buy' | 'sell'): Promise<void> {
+  try {
+    const file = Bun.file(LOCAL_ORDER_CACHE);
+    let data: any = {};
+    if (await file.exists()) {
+      data = await file.json();
+    }
+    const today = new Date().toISOString().slice(0, 10);
+    data[today] = data[today] || [];
+    data[today].push({ symbol, side, timestamp: new Date().toISOString() });
+    await Bun.write(LOCAL_ORDER_CACHE, JSON.stringify(data, null, 2));
+  } catch {
+    // ignore cache write failures
+  }
+}
+
 async function hasSameDayFill(client: Alpaca, symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  // Check local cache first (fast, no API dependency)
+  const cached = await getCachedOrders(symbol, side);
+  if (cached) return true;
+
   try {
     const today = new Date().toISOString().slice(0, 10);
     const after = `${today}T00:00:00Z`;
@@ -162,7 +197,17 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
         limit_price: params.limit_price ?? null,
         time_in_force: String(params.time_in_force ?? 'day'),
       };
-      await Bun.write('./temp_files/order_audit.jsonl', JSON.stringify(auditEntry) + '\n', { append: true });
+      const auditPath = './temp_files/order_audit.jsonl';
+      let existing = '';
+      try {
+        const auditFile = Bun.file(auditPath);
+        if (await auditFile.exists()) {
+          existing = await auditFile.text();
+        }
+      } catch {
+        // ignore
+      }
+      await Bun.write(auditPath, existing + JSON.stringify(auditEntry) + '\n');
     } catch {
       // ignore audit write failures — do not block trading
     }
@@ -355,7 +400,10 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       }
     }
 
-    return originalCreateOrder(params);
+    const result = await originalCreateOrder(params);
+    // Update local cache after successful order creation
+    await cacheOrder(symbol, side);
+    return result;
   };
 
   return client;

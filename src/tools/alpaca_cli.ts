@@ -82,7 +82,26 @@ function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?:
   return false;
 }
 
+const LOCAL_ORDER_CACHE = './temp_files/today_orders.json';
+
+async function getCachedOrders(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  try {
+    const file = Bun.file(LOCAL_ORDER_CACHE);
+    if (!(await file.exists())) return false;
+    const data = await file.json();
+    const today = new Date().toISOString().slice(0, 10);
+    const orders = data[today] || [];
+    return orders.some((o: any) => o.symbol === symbol && o.side === side);
+  } catch {
+    return false;
+  }
+}
+
 async function hasSameDayFill(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
+  // Check local cache first (fast, no API dependency)
+  const cached = await getCachedOrders(symbol, side);
+  if (cached) return true;
+
   try {
     const today = new Date().toISOString().slice(0, 10);
     const after = `${today}T00:00:00Z`;

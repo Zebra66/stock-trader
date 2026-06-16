@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-15 : 22:05 : [hourly] Post-close: lifted HARD_LOCK, set GTC orders, fixed anti-churn guard
+- Equity $9,789.54 | Cash $8,008.58 | Gross 18.2% | VOO 2 + AVGO 1 | Market closed
+- Placed QQQ 3@$734.50, SOXX 1@$619.50, AVGO 1@$384.50 GTC orders for Tue
+- GOOG 2@$361.50 and NVDA 2@$207.50 GTC after 3:22 PM ET cooldown
+- Fixed anti-churn guard: added local file cache in alpaca_client_factory.ts and alpaca_cli.ts
+- Fixed audit trail append bug in alpaca_client_factory.ts
+
 2026-06-15 : 15:43 : [hourly] Repo breach restored, hard lock active, no trades
 - Pre-fetched memory was 17 days stale (May 29). Working tree corrupted: all tracked files staged as deleted, .gitignore missing, safety guards stripped.
 - Restored from HEAD with git checkout. All guards (anti-churn, stale-memory, duplicate-order, broad no-buy parser) verified intact.
