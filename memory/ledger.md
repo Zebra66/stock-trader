@@ -2,6 +2,25 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-17 : 09:31 : [tactical] CRITICAL semi gap-up; no action
+- Event detector CRITICAL: SOXX +1.82%, SMH +1.56% gap-up at open
+- All held positions OK severity; no stops breached
+- GOOG GTC limit $369.50 remains open; GOOG at $366.22
+- Equity $9778.34, gross exposure 52.96%, daytrade 0/3
+- No protective sells; semis rallied, benefiting SOXX and AVGO exposure
+
+2026-06-16 : 15:50 : [tactical] No action; all stops safe
+- All held positions above stops. QQQ $732.43, AVGO $379.28, SOXX $599.20, NVDA $208.84, VOO $690.74
+- GOOG limit $369.50 pending; current $370.54. No fill.
+- Gross exposure ~52.8%. Daytrade 0/3. No PDT concerns.
+- Event detector: NONE. No trades executed.
+
+2026-06-16 : 15:40 : [tactical] Hold all; GOOG limit pending
+- All stops intact: AVGO $378.75 > $365.00, SOXX $597.76 > $590.00, QQQ $731.57 > $720.00, NVDA $208.29 > $195.00, VOO $690.07 > $650.00
+- GOOG limit order 2 shares at $369.50 pending; current $370.34, no fill
+- Event detector: MINOR (SOXX -0.61%%). No autonomous action required
+- Gross exposure ~52.8%%. No conditions met for trade execution
+
 2026-06-16 : 15:39 : [hourly] Deployed QQQ+NVDA, GOOG pending
 - QQQ 3 filled at $731.96, limit $732.50
 - NVDA 1 filled at $208.47, limit $208.50

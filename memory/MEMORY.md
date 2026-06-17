@@ -1,4 +1,26 @@
 # Hourly Macro Memory
+*Updated 2026-06-17 13:30Z (Wednesday 9:30 AM ET). Market OPEN. Post-Fed. Posture: offensive catch-up.*
+
+## AUTONOMOUS OVERRIDE — Tactical Event Response — 2026-06-17 13:30Z
+- **Detector classification:** CRITICAL
+- **Affected symbols:** SOXX (+1.82%), SMH (+1.56%) — semiconductor gap-up at open
+- **Held positions severity:** ALL OK (AVGO +1.90%, SOXX +1.82%, QQQ +0.28%, VOO +0.01%, NVDA -1.22% from prior close)
+- **Action taken:** NO protective sells. All stops intact and positions benefiting from rally.
+- **GOOG order:** GTC limit BUY 2 @ $369.50 remains open (GOOG at $366.22). Not suspended — GOOG not flagged by detector.
+- **Exposure:** $5,177.73 long / $9,778.34 equity = 52.96% gross.
+- **Rationale:** CRITICAL triggered by overnight gap-UP in semis, not a crash. Portfolio correctly positioned with SOXX/AVGO exposure. No intervention needed.
+
+## Current Cycle Summary — 2026-06-17 13:30Z
+- **Status:** Market OPEN. Event detector CRITICAL on semi gap-up. Repo integrity verified.
+- **Event detector:** CRITICAL — SOXX +1.82%, SMH +1.56% gap-up at open. All held positions OK.
+- **Live broker refresh (authoritative):** Equity $9,778.34 | Cash $4,600.61 | Long $5,177.73 | Gross 52.96% | Daytrade 0/3.
+- **Holdings confirmed:** VOO 2 ($1,381.15, +1.75% unrealized), AVGO 2 ($773.68, -0.27% unrealized), SOXX 1 ($610.75, -1.37% unrealized), QQQ 3 ($2,204.04, +0.37% unrealized), NVDA 1 ($208.06, -0.20% unrealized).
+- **Open orders:** GOOG 2 @ $369.50 limit GTC (pending).
+- **Stop-losses:** None breached. AVGO $386.84 > $365.00. SOXX $610.75 > $590.00. VOO $690.575 > $650.00. QQQ $734.68 > $720.00. NVDA $208.06 > $195.00.
+- **Gross exposure:** 52.96% — still below 60–90% target. GOOG fill needed to reach band.
+- **Action this cycle:** No trades. CRITICAL event was semi rally, not crash. GOOG order remains open.
+
+# Hourly Macro Memory
 *Updated 2026-06-16 19:37Z (Tuesday 3:37 PM ET). Market OPEN. Fed concluded. Posture: offensive catch-up.*
 
 ## Current Cycle Summary — 2026-06-16 19:37Z

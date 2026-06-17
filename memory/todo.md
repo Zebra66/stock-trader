@@ -1,12 +1,14 @@
-# Tactical Todo — Updated 2026-06-16 19:37Z (Tuesday 3:37 PM ET)
-*HARD_LOCK LIFTED. Market OPEN. Fed concluded. QQQ and NVDA filled. GOOG GTC pending.*
+# Tactical Todo — Updated 2026-06-17 13:30Z (Wednesday 9:30 AM ET)
+*HARD_LOCK LIFTED. Market OPEN. Post-Fed. GOOG GTC pending.*
+
+<!-- Autonomous override applied at 2026-06-17 13:30Z due to CRITICAL event — SOXX/SMH gap-up +1.8% at open. No protective action needed; all held positions OK. GOOG order not suspended (GOOG not flagged). -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** VOO 2 ($1,380.26), AVGO 2 ($757.92), SOXX 1 ($598.23), QQQ 3 ($2,195.22), NVDA 1 ($208.49)
-- **Account equity / cash / buying power:** $9,741.58 / $4,600.62 / $32,058.16
-- **Gross long exposure:** ~52.77% | **Net exposure:** ~52.77% | **Cash:** ~47.23%
+- **Live book:** VOO 2 ($1,381.15), AVGO 2 ($773.68), SOXX 1 ($610.75), QQQ 3 ($2,204.04), NVDA 1 ($208.06)
+- **Account equity / cash / buying power:** $9,778.34 / $4,600.61 / $32,161.07
+- **Gross long exposure:** ~52.96% | **Net exposure:** ~52.96% | **Cash:** ~47.04%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** GOOG 2 @ $369.50 limit GTC (pending).
