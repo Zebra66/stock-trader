@@ -2,6 +2,38 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-17 : 11:38 : [hourly] Held all, AVGO +5.7% intraday
+- Equity $9,780.50, gross 75.5%, daytrade 1/3
+- AVGO $398.14, SOXX $611.08, QQQ $732.88
+- No new orders. All stops intact. HOLD posture.
+
+2026-06-17 : 11:30 : [tactical] Hold all positions, no triggers
+- Event detector: NONE. All positions within normal ranges.
+- Stops intact: QQQ $732.66 > $720.00, AVGO $397.22 > $365.00, VOO $689.58 > $650.00, SOXX $610.70 > $590.00, NVDA $206.44 > $195.00, GOOG $362.22 > $340.00
+- Gross exposure ~75.5%, cash ~$2,397.11
+- No conditions met. No orders placed.
+
+2026-06-17 : 11:21 : [tactical] Hold all positions, no triggers breached
+- All 6 holdings above stop-losses; no breaches
+- Gross exposure 75.5% within 60-90% target band
+- QQQ $732.74, AVGO $398.37, VOO $689.81, SOXX $610.75, GOOG $362.75, NVDA $206.57
+- No open orders, no events detected
+- HOLD posture maintained, daytrades 1/3
+
+2026-06-17 : 11:10 : [tactical] Hold: all stops intact, no triggers
+- QQQ $731.15 > stop $720.00, AVGO $396.92 > stop $365.00
+- VOO $688.58 > stop $650.00, GOOG $361.17 > stop $340.00
+- SOXX $608.48 > stop $590.00, NVDA $206.17 > stop $195.00
+- No buy triggers met. QQQ add at $725.00 not reached.
+- Gross 75.5%, daytrades 1/3. No action.
+
+2026-06-17 : 10:50 : [tactical] Hold all; no stops breached
+- VOO $688.87 > stop $650.00
+- QQQ $731.40 > stop $720.00
+- AVGO $393.99 > stop $365.00
+- SOXX $607.89 > stop $590.00
+- GOOG $362.93 > stop $340.00; NVDA $207.18 > stop $195.00
+
 2026-06-17 : 10:42 : [hourly] Held all, gross 75.5%, no new adds
 - Equity $9,776.60, gross 75.5%, cash $2,397.11
 - QQQ at $732.99, AVGO at $396.31, GOOG at $364.04

@@ -1,20 +1,20 @@
-# Tactical Todo — Updated 2026-06-17 14:35Z (Wednesday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-17 15:35Z (Wednesday 11:35 AM ET)
 *HARD_LOCK LIFTED. Market OPEN. Gross 75.5%. HOLD posture. No new orders.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** VOO 2 ($1,379.67), AVGO 2 ($792.61), SOXX 1 ($609.72), QQQ 5 ($3,664.96), NVDA 1 ($207.36), GOOG 2 ($728.08)
-- **Account equity / cash / buying power:** $9,776.60 / $2,397.11 / $30,251.00
-- **Gross long exposure:** ~75.51% | **Net exposure:** ~75.51% | **Cash:** ~24.49%
-- **Daytrade count:** 0/3
+- **Live book:** VOO 2 ($1,380.04), AVGO 2 ($796.27), SOXX 1 ($611.08), QQQ 5 ($3,664.40), NVDA 1 ($206.45), GOOG 2 ($725.15)
+- **Account equity / cash / buying power:** $9,780.50 / $2,397.11 / $30,261.93
+- **Gross long exposure:** ~75.49% | **Net exposure:** ~75.49% | **Cash:** ~24.51%
+- **Daytrade count:** 1/3
 - **Pattern day trader:** false
 - **Open orders:** None.
 - **24-hour cooldowns:** None active.
-- **Market:** OPEN. SPY ~flat, QQQ ~+1.09% intraday (off highs), SOXX ~+3.3% intraday (off highs), AVGO ~+5.2% intraday.
+- **Market:** OPEN. SPY ~+1.0%, QQQ ~+0.4% intraday, SOXX ~+3.4% intraday, AVGO ~+5.7% intraday.
 - **Event detector:** NONE.
 
-## Position Instructions — Wednesday Jun 17 (14:40Z and 14:50Z Tactical Runs)
+## Position Instructions — Wednesday Jun 17 (15:40Z and 15:50Z Tactical Runs)
 
 ### VOO — HOLD
 - Broad-market anchor. 14.1% weight. In profit.
@@ -23,7 +23,7 @@
 - **Stop loss:** If VOO falls below $650.00, **SELL all VOO shares at market** on next tactical run.
 
 ### QQQ — HOLD — DO NOT SELL TODAY
-- Current position: 5 shares @ $732.16 avg, current $732.99 (+0.11%).
+- Current position: 5 shares @ $732.16 avg, current $732.88 (+0.10%).
 - 2 shares were filled TODAY at 09:56 ET @ $732.47. Same-day round-trip prohibition applies to those 2 shares.
 - **Stop loss:** If QQQ falls below $720.00, **SELL all QQQ shares at market** on next tactical run. AUTHORIZE SAME-DAY SELL QQQ if stop breached.
 - **Do NOT sell QQQ today** except if stop is breached.
@@ -31,30 +31,30 @@
 - **Target:** $760.00.
 
 ### AVGO — HOLD
-- Current position: 2 shares @ $387.89 avg, current $396.31 (+2.17%).
-- Chip thesis intact. Intraday up +5.2%.
+- Current position: 2 shares @ $387.89 avg, current $398.14 (+2.64%).
+- Chip thesis intact. Intraday up +5.7%.
 - **Stop loss:** If AVGO falls below $365.00, **SELL all AVGO shares at market** on next tactical run.
 - **Do NOT sell AVGO today** unless stop is breached. Bought yesterday (Jun 16).
 - **Do NOT add AVGO** — not at +1R yet per pyramiding rule.
 
 ### SOXX — HOLD
-- Current position: 1 share @ $619.25, current $609.72 (-1.54%).
-- Recovering +3.3% intraday. Chip ETF thesis intact.
+- Current position: 1 share @ $619.25, current $611.08 (-1.32%).
+- Recovering +3.4% intraday. Chip ETF thesis intact.
 - **Stop loss:** If SOXX falls below $590.00, **SELL all SOXX shares at market** on next tactical run.
 - **Do NOT sell SOXX today** unless stop is breached. Bought yesterday (Jun 16).
 - **Do NOT add SOXX** — currently underwater; never average down.
 - **Illiquidity warning:** Use limit orders only if trading.
 
 ### GOOG — HOLD — FILLED TODAY
-- **FILLED:** 2 shares @ $369.28 avg at 09:31 ET today (2026-06-17). Current price $364.04.
+- **FILLED:** 2 shares @ $369.28 avg at 09:31 ET today (2026-06-17). Current price $362.58.
 - **Stop loss:** If GOOG falls below $340.00, **SELL all GOOG shares at market** on next tactical run. AUTHORIZE SAME-DAY SELL GOOG if stop breached.
 - **Do NOT sell GOOG today** except if stop is breached.
 - **Do NOT add GOOG** — underwater; never average down.
 - **Target:** $385.00.
-- **Concentration cap check:** GOOG max 15% of equity = $1,466.49. Current 2 shares = $728 = 7.45%.
+- **Concentration cap check:** GOOG max 15% of equity = $1,467.08. Current 2 shares = $725 = 7.41%.
 
 ### NVDA — HOLD
-- Current position: 1 share @ $208.47 at 19:37Z Jun 16. Current price $207.36.
+- Current position: 1 share @ $208.47 at 19:37Z Jun 16. Current price $206.45.
 - **Stop loss:** If NVDA falls below $195.00, **SELL all NVDA shares at market** on next tactical run.
 - **Do NOT sell NVDA today** under any circumstances unless stop breached. Bought yesterday (Jun 16).
 - **Do NOT add NVDA** — flat/underwater; never average down.
@@ -104,11 +104,11 @@ Do not place market orders for these; use limit orders only, or defer.
 4. All hourly directives for this cycle are complete. Hold positions.
 
 ## Current Book
-- VOO 2 (~14.1%), AVGO 2 (~8.1%), SOXX 1 (~6.2%), QQQ 5 (~37.5%), NVDA 1 (~2.1%), GOOG 2 (~7.5%)
+- VOO 2 (~14.1%), AVGO 2 (~8.1%), SOXX 1 (~6.2%), QQQ 5 (~37.5%), NVDA 1 (~2.1%), GOOG 2 (~7.4%)
 - Cash: ~$2,397 (~24.5%)
 - Gross exposure: ~75.5%
 
-## Next Hourly Preview — 15:35Z (11:35 AM ET)
+## Next Hourly Preview — 16:35Z (12:35 PM ET)
 - Review QQQ behavior. If extended further, no new adds.
 - Monitor semi momentum (SOXX/AVGO). If continuation, maintain stops. If reversal, tighten.
 - If GOOG or NVDA recover toward breakeven, reassess add potential next hour.
