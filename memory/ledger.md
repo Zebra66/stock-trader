@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-17 : 14:39 : [hourly] Held all, AVGO +5% on JPM
+- Equity $9,763.08, gross 75.5%
+- AVGO at $396.96 on JPMorgan upgrade; stop $365 intact
+- QQQ recovered to $730.58 from $728.40; stop $720 intact
+- No stops breached, no new orders, event NONE
+- Daytrade count 1/3; full flexibility remains
+
+2026-06-17 : 14:30 : [tactical] Hold all, no triggers hit
+- Event detector MINOR; no MAJOR or CRITICAL events on holdings
+- All stops clear: QQQ $728.88 > $720.00, SOXX $608.31 > $590.00
+- AVGO $394.89 > $365.00, VOO $686.21 > $650.00, NVDA $205.98 > $195.00
+- GOOG $363.78 > $340.00; gross ~75.4%; no action required
+- No open orders; daytrade count 1/3 corrected to 1/3 wait no live shows 0/3
+
+2026-06-17 : 14:20 : [tactical] Hold all, no triggers met
+- Stops intact: AVGO $395.215, QQQ $730.68, VOO $687.40, SOXX $610.81, NVDA $206.365, GOOG $364.04
+- No stop-losses breached, no buy conditions met
+- Gross exposure 75.4%, within 60-90% target band
+- Daytrade count 1/3, no PDT concerns
+- Event detector: NONE at 18:20Z
+
+2026-06-17 : 14:10 : [tactical] CRITICAL GLD event, book safe
+- Event detector CRITICAL: GLD at $394.26, -1.75%
+- Held positions unaffected: QQQ $729.34, VOO $686.66, AVGO $396.42
+- No stops breached, no protective sells needed
+- No buys authorized, no action taken
+- Gross exposure ~75.4%, daytrade 0/3
+
+2026-06-17 : 13:50 : [tactical] Hold — no triggers, all stops intact
+- All positions within normal ranges; event detector classification NONE
+- Stops intact: AVGO $395.95 > $365.00, QQQ $732.65 > $720.00, SOXX $611.89 > $590.00
+- VOO $689.28 > $650.00, NVDA $207.44 > $195.00, GOOG $363.29 > $340.00
+- Gross exposure 75.5% within 60–90% target band
+- No fresh hourly buy authorization; no same-day round-trip risk
+
+2026-06-17 : 13:40 : [tactical] No action, holds stable
+- All positions within normal ranges, no stops breached
+- Gross ~75.5%, equity ~$9,777, cash $2,397.11
+- QQQ $732.69, SPY $749.63, AVGO $396.31
+
 2026-06-17 : 13:38 : [hourly] Held all, no action, corrected daytrade 0/3
 - Equity $9,770.67, gross 75.5%, daytrade 0/3 corrected
 - No sells triggered; no new orders placed
