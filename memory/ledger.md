@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-17 : 10:10 : [tactical] QQQ GTC fill realized, no action
+- QQQ 2-share limit GTC filled at avg ~$732.16
+- Equity $9,764.69, gross exposure 75.46%, cash $2,397.11
+- No stop losses breached; no tactical orders placed
+- Event detector: MINOR only; no autonomous override
+
+2026-06-17 : 09:51 : [tactical] QQQ limit resting, no action
+- Open QQQ limit buy 2 @ $732.50 already placed at 13:40Z
+- Current QQQ $733.71, order resting below market
+- All stops healthy, no sells triggered
+- Gross exposure 60.5%, cash $3,862.05
+
 2026-06-17 : 09:41 : [hourly] GOOG filled; placed QQQ 2@$732.50
 - GOOG GTC filled 2 shares at $369.28 this morning
 - Gross exposure now 60.45% with GOOG on book

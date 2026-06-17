@@ -4,9 +4,9 @@
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** VOO 2 ($1,380.36), AVGO 2 ($770.94), SOXX 1 ($608.39), QQQ 3 ($2,199.75), NVDA 1 ($208.40), GOOG 2 ($736.06)
-- **Account equity / cash / buying power:** $9,765.95 / $3,862.05 / $31,979.11
-- **Gross long exposure:** ~60.45% | **Net exposure:** ~60.45% | **Cash:** ~39.55%
+- **Live book:** VOO 2 ($1,380.40), AVGO 2 ($784.36), SOXX 1 ($605.38), QQQ 5 ($3,660.10), NVDA 1 ($207.08), GOOG 2 ($730.26)
+- **Account equity / cash / buying power:** $9,764.69 / $2,397.11 / $30,217.66
+- **Gross long exposure:** ~75.46% | **Net exposure:** ~75.46% | **Cash:** ~24.54%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** None.
@@ -22,15 +22,12 @@
 - **DO NOT ADD VOO** — at 14.1%; adding 1 share would exceed 20% cap.
 - **Stop loss:** If VOO falls below $650.00, **SELL all VOO shares at market** on next tactical run.
 
-### QQQ — BUY — AUTHORIZED ADD
-- Current position: 3 shares @ $731.96 avg, current $733.25 (+0.18%).
-- **AUTHORIZED BUY:** Limit BUY 2 shares QQQ @ $732.50 GTC.
-  - Rationale: Core growth position. Best SPY catch-up vehicle. In profit.
-  - Post-add target MV: ~$3,665 = 37.5% of equity (under 45% cap).
-  - Post-add gross exposure: ~75.5%.
+### QQQ — HOLD — FILLED
+- Current position: 5 shares @ $732.16 avg, current $732.02 (+0.00%).
+- **FILLED:** 2-share limit GTC buy executed at ~$732.16. All authorized adds complete.
 - **Stop loss:** If QQQ falls below $720.00, **SELL all QQQ shares at market** on next tactical run.
 - **Do NOT sell QQQ today** under any circumstances unless stop breached.
-- **Do NOT add QQQ beyond the authorized 2 shares** without fresh hourly note.
+- **Do NOT add QQQ** without fresh hourly note.
 - **Target:** $760.00.
 
 ### AVGO — HOLD
@@ -101,12 +98,12 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **AUTHORIZED:** QQQ 2 shares limit GTC @ $732.50. Expected fill ~$1,465.
-2. **Gross exposure after QQQ fill:** ~75.5%. Pause further adds and reassess.
-3. **If QQQ limit does not fill:** Carry into tomorrow. Reassess trigger on next hourly.
+1. ~~**AUTHORIZED:** QQQ 2 shares limit GTC @ $732.50.~~ **FILLED** at ~$732.16 avg.
+2. **Gross exposure after QQQ fill:** ~75.46%. Pause further adds and reassess.
+3. All hourly directives for this cycle are complete. Hold positions.
 
-## Expected Book Into Close (after QQQ fill)
-- VOO 2 (~14.1%), AVGO 2 (~7.9%), SOXX 1 (~6.2%), QQQ 5 (~37.5%), NVDA 1 (~2.1%), GOOG 2 (~7.5%)
+## Current Book (post-QQQ fill)
+- VOO 2 (~14.1%), AVGO 2 (~8.0%), SOXX 1 (~6.2%), QQQ 5 (~37.5%), NVDA 1 (~2.1%), GOOG 2 (~7.5%)
 - Cash: ~$2,397 (~24.5%)
 - Gross exposure: ~75.5%
 
