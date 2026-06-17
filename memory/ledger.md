@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-17 : 09:41 : [hourly] GOOG filled; placed QQQ 2@$732.50
+- GOOG GTC filled 2 shares at $369.28 this morning
+- Gross exposure now 60.45% with GOOG on book
+- Authorized and placed QQQ 2-share limit GTC at $732.50
+- Post-fill gross target ~75.5%; QQQ weight ~37.5%
+- Regime: offensive catch-up; no sells unless stops breached
+
+2026-06-17 : 09:41 : [tactical] GOOG filled, exposure at 60.4%
+- GOOG GTC limit filled 2 shares at avg $369.28, current $366.88
+- Gross exposure 60.4%, within 60-90% target band
+- All stop-losses intact, no triggers breached
+- No open orders, daytrade count 0/3
+
 2026-06-17 : 09:31 : [tactical] CRITICAL semi gap-up; no action
 - Event detector CRITICAL: SOXX +1.82%, SMH +1.56% gap-up at open
 - All held positions OK severity; no stops breached
