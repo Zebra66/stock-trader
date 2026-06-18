@@ -2,6 +2,76 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-18 : 10:30 : [tactical] No action, all stops intact
+- All positions well above stop-loss triggers, no conditions met
+- QQQ at $735.39 > $720.00 stop, AVGO at $407.49 > $365.00 stop
+- SOXX at $633.17 > $590.00 stop, VOO at $687.07 > $650.00 stop
+- GOOG at $359.85 > $340.00 stop, NVDA at $209.125 > $195.00 stop
+- Gross exposure 75.6%, daytrades 0/3, no open orders
+
+2026-06-18 : 10:20 : [tactical] All holds safe, no action required
+- QQQ $737.52 > stop $720.00, AVGO $409.73 > stop $365.00, SOXX $634.65 > stop $590.00
+- VOO $687.79 > stop $650.00, NVDA $208.94 > stop $195.00, GOOG $360.80 > stop $340.00
+- Gross exposure 75.6%, equity $9,844.93, daytrades 0/3
+- No events, no triggers, no open orders, hold posture maintained
+
+2026-06-18 : 09:50 : [tactical] Hold all positions, no triggers
+- Market rallying, SPY +0.10%, QQQ $735.12, all positions healthy
+- No stop-losses breached, no event detector flags
+- No fresh hourly authorization for new trades
+- Gross exposure 75.6% within 60-90% target band
+- Daytrade count 0/3, no open orders
+
+2026-06-18 : 09:40 : [tactical] All holds, no triggers met
+- QQQ at $733.86 above $720.00 stop
+- AVGO $408.43, SOXX $630.17, VOO $686.51, all safe
+- NVDA $207.38, GOOG $358.42 above stops
+- Equity $9810.73, gross ~75.6%, daytrade 2/3
+
+2026-06-17 : 15:50 : [tactical] Hold all, no triggers
+- All stops intact, no sells triggered
+- QQQ at $723.06 > stop $720.00
+- VOO at $681.63 > stop $650.00
+- AVGO at $391.57 > stop $365.00
+- SOXX at $603.09 > stop $590.00
+
+2026-06-17 : 15:40 : [tactical] HOLD: all stops intact, no action
+- QQQ at $721.63, stop $720.00 not breached
+- SOXX minor dip to $600.62, stop $590.00 intact
+- No open orders. Gross 75.2%. Daytrade 1/3.
+
+2026-06-17 : 15:30 : [tactical] Hold — no triggers, minor event
+- All stops intact: QQQ $725.69, AVGO $393.20, VOO $682.17, SOXX $608.31, GOOG $360.45, NVDA $204.73
+- Event detector MINOR: SOXX -0.59pct in 10 min, all others OK
+- Gross exposure 75.3pct, cash $2397.11, daytrade 1/3
+- No orders placed. Hold posture continues.
+
+2026-06-17 : 15:20 : [tactical] Hold all, no triggers met
+- QQQ at $727.86, stop $720.00 not breached
+- AVGO at $394.93, stop $365.00 not breached
+- VOO at $684.04, stop $650.00 not breached
+- SOXX at $611.83, stop $590.00 not breached
+- Event detector MINOR, no autonomous action required
+
+2026-06-17 : 15:14 : [tactical] MAJOR GLD event, no action
+- Event detector MAJOR at 19:10Z due to GLD -1.14%
+- All held positions OK, no stops breached
+- QQQ $729.09, AVGO $396.60, SOXX $611.19, VOO $685.77, NVDA $205.41, GOOG $362.26
+- No protective sells, no buys suspended
+- Gross 75.5%, cash $2397.11
+
+2026-06-17 : 14:50 : [tactical] Hold all, no triggers, minor event
+- All 6 positions above stops. No sell triggers met.
+- Gross exposure 75.5%. No new buy conditions.
+- Event detector: MINOR (SOXX/SMH +0.9%).
+- Daytrade 1/3. Open orders: none.
+
+2026-06-17 : 14:40 : [tactical] No action; all holds safe
+- Event detector: MINOR. No CRITICAL/MAJOR events on held positions.
+- All 6 positions above stops. QQQ at $731.74, AVGO at $397.74, VOO at $687.88, SOXX at $615.24, GOOG at $363.84, NVDA at $206.39.
+- Gross exposure ~75.5% in 60-90% target band. No todo triggers met.
+- No orders placed. No open orders. PDT headroom intact.
+
 2026-06-17 : 14:39 : [hourly] Held all, AVGO +5% on JPM
 - Equity $9,763.08, gross 75.5%
 - AVGO at $396.96 on JPMorgan upgrade; stop $365 intact
