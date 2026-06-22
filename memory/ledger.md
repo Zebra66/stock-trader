@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 13:36 : [hourly] Held all, SOXX leads, cash reserved
+- Equity $9,801.02, gross exposure 68.4%, cash $3,095.62
+- SOXX strongest at $649.78, up +1.64% today; AVGO at $396.25, down -3.69% on ex-div + headline
+- GOOG on 24h cooldown after $349.26 stop-out; fresh $269B market-cap wipeout headline
+- Micron earnings Wednesday Jun 24 = binary catalyst; no fresh capital deployed
+- 0/3 daytrades, no open orders, event detector NONE at 17:35Z
+
+2026-06-22 : 13:30 : [tactical] No trades — all stops clear, holds
+- QQQ $736.55, AVGO $396.59, SOXX $649.77, NVDA $208.96, VOO $686.50
+- All stops above water; no conditions met
+- Exposure 68.4%, no daytrades, event NONE
+- No orders placed; no files changed
+
+2026-06-22 : 13:20 : [tactical] No trades, all stops intact
+- QQQ $736.79, VOO $686.80, AVGO $396.65, SOXX $649.79, NVDA $209.29
+- All 5 positions held. No stops breached.
+- SOXX conditional add not triggered ($649.79 > $640.00).
+- Gross exposure ~68.5%. Daytrade 0/3.
+- No orders placed.
+
+2026-06-22 : 13:10 : [tactical] Held all positions, no triggers met
+- QQQ $735.29, VOO $686.06, AVGO $396.37, SOXX $647.93, NVDA $209.02
+- All stops intact. No conditions breached. No trades executed.
+- Event detector: NONE. Gross exposure ~68.4%. Daytrade 0/3.
+
+2026-06-22 : 12:50 : [tactical] No triggers, all positions held
+- QQQ $736.10, VOO $686.42, AVGO $396.96, SOXX $649.12, NVDA $209.72
+- All stops intact: QQQ > $730, VOO > $680, AVGO > $390, SOXX > $620, NVDA > $200
+- SOXX pullback add $640.00 not triggered; no new orders
+- Event detector NONE at 16:50Z, daytrades 0/3
+- Cash $3,095.62, gross exposure ~68% within 60-90% band
+
+2026-06-22 : 12:40 : [tactical] No action: all holds, no triggers
+- QQQ $735.59 > stop $730.00
+- VOO $686.26 > stop $680.00
+- AVGO $396.39 > stop $390.00
+- SOXX $648.05 > stop $620.00, add not triggered
+- NVDA $209.49 > stop $200.00
+
 2026-06-22 : 12:37 : [hourly] Held all, SOXX leads, cash for Micron Wed
 - Equity $9,793.53, gross exposure 68.4%, cash $3,095.62
 - SOXX strongest at $647.52, up +1.26% today; AVGO at $395.73, down -3.80% on ex-div + headline
