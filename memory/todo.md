@@ -1,5 +1,8 @@
 # Tactical Todo — Updated 2026-06-22 13:35Z (Monday 9:35 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
+<!-- Autonomous override applied at 2026-06-22 13:40Z due to CRITICAL event -->
+<!-- Event detector: SOXX +1.80% CRITICAL, GOOG -2.94% MAJOR, XLK +1.20% MAJOR, SMH +1.27% MAJOR -->
+<!-- No stops breached. No trades executed. All 6 positions held. -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)

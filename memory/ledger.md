@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 09:41 : [tactical] Event CRITICAL, no sells, all holds
+- Event detector CRITICAL at 2026-06-22 13:40Z
+- SOXX flagged CRITICAL at $653.50 but stop $620.00 not breached
+- GOOG flagged MAJOR at $355.47 but stop $350.00 not breached
+- Stale memory (>24h old) from 2026-06-18 19:35Z
+- No trades, no conditions met, holding all positions
+
 2026-06-22 : 09:40 : [hourly] Repo restored, hold all, tighten AVGO-GOOG stops
 - Critical repo breach: .gitignore missing, node_modules staged, memory reverted to May 29 — restored from HEAD
 - AVGO ex-dividend plus Google-MediaTek TPU v9 headline risk; stop lowered to three-ninety
