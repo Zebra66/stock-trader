@@ -1,28 +1,26 @@
-# Tactical Todo — Updated 2026-06-22 13:35Z (Monday 9:35 AM ET)
+# Tactical Todo — Updated 2026-06-22 14:35Z (Monday 10:35 AM ET)
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market OPEN until 16:00 ET.*
-<!-- Autonomous override applied at 2026-06-22 13:40Z due to CRITICAL event -->
-<!-- Event detector: SOXX +1.80% CRITICAL, GOOG -2.94% MAJOR, XLK +1.20% MAJOR, SMH +1.27% MAJOR -->
-<!-- No stops breached. No trades executed. All 6 positions held. -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** QQQ 5 ($3,714.15), VOO 2 ($1,379.68), AVGO 2 ($798.24), SOXX 1 ($654.70), NVDA 1 ($212.22)
-- **Account equity / cash / buying power:** $9,853.15 / $3,095.62 / $31,303.56
-- **Gross long exposure:** ~68.6% | **Net exposure:** ~68.6% | **Cash:** ~31.4%
+- **Live book:** QQQ 5 ($3,694.00), VOO 2 ($1,374.32), AVGO 2 ($793.56), SOXX 1 ($651.00), NVDA 1 ($210.12)
+- **Account equity / cash / buying power:** $9,818.64 / $3,095.62 / $31,206.94
+- **Gross long exposure:** ~68.5% | **Net exposure:** ~68.5% | **Cash:** ~31.5%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **24-hour cooldowns:** None active. All positions held overnight from Jun 16–17.
-- **Market:** OPEN. SPY +0.37%, QQQ +0.46% intraday.
-- **Event detector:** NONE (priorTimestamp null bug persists).
-- **Warning:** AVGO ex-dividend today ($0.65/share). GOOG negative headlines on AI talent exodus.
+- **24-hour cooldowns:** GOOG (sold at 14:20Z, no re-buy until 2026-06-23 14:20Z)
+- **Market:** OPEN. SPY –0.16%, QQQ –0.25% intraday.
+- **Event detector:** NONE (classification: NONE, priorTimestamp working at 14:30:04Z).
+- **Upcoming catalyst:** Micron earnings Wednesday June 24 (sector-wide binary event for semiconductors).
+- **Warning:** AVGO ex-dividend today ($0.65/share). GOOG negative headlines on AI talent exodus + MediaTek chip partnership.
 
 ## Position Instructions — Monday Jun 22 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 5 — DO NOT SELL OR ADD
 - Weight ~37.6%, within 45% cap. Adding 1 share would breach ~45.1% cap.
-- Unrealized +1.26% from avg $732.164. Current $741.405. Intraday +0.11%.
+- Unrealized +0.91% from avg $732.164. Current $738.80. Intraday –0.25%.
 - **Stop loss:** If QQQ falls below $730.00, **SELL all QQQ shares at market** on next tactical run. AUTHORIZE SAME-DAY SELL QQQ if stop breached.
 - **Do NOT sell QQQ today** except if stop is breached.
 - **Do NOT add QQQ** — already at target weight near 35–40% target band.
@@ -30,14 +28,14 @@
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
 - Weight ~14.0%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.9% cap.
-- Broad-market anchor. In profit (+1.62% unrealized).
+- Broad-market anchor. In profit (+1.25% unrealized).
 - **Stop loss:** If VOO falls below $680.00, **SELL all VOO shares at market** on next tactical run.
 - **Do NOT sell VOO today** except if stop is breached.
 - **Do NOT add VOO** — near cap.
 - **Target:** $700.00.
 
 ### AVGO — HOLD 2 — DO NOT ADD — TIGHTENED STOP
-- Position avg $387.885. Current $404.065 (unrealized +4.17%). Intraday –1.77% on ex-dividend ($0.65/share) + Google-MediaTek TPU v9 headline risk.
+- Position avg $387.885. Current $396.78 (unrealized +2.29%). Intraday –3.54% on ex-dividend ($0.65/share) + Google-MediaTek TPU v9 headline risk.
 - J.P. Morgan defending AVGO against Google-rumor threats. TPU v9 is 2028-dated; current business intact.
 - **Stop loss:** If AVGO falls below $390.00, **SELL all AVGO shares at market** on next tactical run. AUTHORIZE SAME-DAY SELL AVGO if stop breached.
 - **Do NOT sell AVGO today** unless stop is breached.
@@ -45,7 +43,7 @@
 - **Target:** $425.00.
 
 ### SOXX — HOLD 1 — CONDITIONAL ADD ON PULLBACK
-- Position avg $619.25. Current $652.31 (unrealized +5.34%). Intraday +2.01%.
+- Position avg $619.25. Current $651.00 (unrealized +5.13%). Intraday +1.83%.
 - Strongest performer. Chip ETF thesis intact. BofA +22% upside call on megacap chip.
 - **Stop loss:** If SOXX falls below $620.00, **SELL all SOXX shares at market** on next tactical run.
 - **Do NOT sell SOXX today** except if stop is breached.
@@ -61,7 +59,7 @@
 - **Target:** N/A — exited position.
 
 ### NVDA — HOLD 1 — DO NOT ADD
-- Position avg $208.47. Current $213.7664 (unrealized +2.54%). Intraday +1.46%.
+- Position avg $208.47. Current $210.12 (unrealized +0.79%). Intraday –0.27%.
 - Chip rotation still favors SOXX/AVGO over NVDA. Small position.
 - **Stop loss:** If NVDA falls below $200.00, **SELL all NVDA shares at market** on next tactical run.
 - **Do NOT sell NVDA today** except if stop is breached.
@@ -73,10 +71,10 @@
 
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
-- Exception: HOOD +1.34% today but +44.67% 1M — extremely extended. No chase.
+- Exception: HOOD +0.37% today but +43.28% 1M — extremely extended. No chase.
 
 ## Hard Rules / No-Trade Conditions
-- **No discretionary buys this cycle.** Gross exposure is 75.7%; adding shares pushes toward 82% but headline risk for GOOG/AVGO makes adds low-conviction.
+- **No discretionary buys this cycle.** Gross exposure is 68.5%; within target band. Micron earnings Wednesday creates binary risk.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
   - All current positions were bought Jun 16–17 (>24h ago). Same-day sell only if stop breached.
 - **No new short sales** under any circumstances.
@@ -102,7 +100,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **No fresh capital deployment authorized this cycle.** Market mixed; negative headlines for GOOG and AVGO.
+1. **No fresh capital deployment authorized this cycle.** Market mixed; Micron earnings Wednesday creates binary semiconductor risk.
 2. **Conditional add queue (requires explicit stop/pulback trigger):**
    - SOXX if pullback to $640 or below (limit $639.50).
    - NVDA if pullback to $208 or below (limit $207.50) — but only if chip rotation broadens.
@@ -111,13 +109,14 @@ Do not place market orders for these; use limit orders only, or defer.
 3. **All hourly directives for this cycle are complete. Hold positions.**
 
 ## Current Book
-- QQQ 5 (~37.7%), VOO 2 (~14.0%), AVGO 2 (~8.1%), SOXX 1 (~6.6%), NVDA 1 (~2.2%)
-- Cash: ~$3,096 (~31.4%)
-- Gross exposure: ~68.6%
+- QQQ 5 (~37.6%), VOO 2 (~14.0%), AVGO 2 (~8.1%), SOXX 1 (~6.6%), NVDA 1 (~2.1%)
+- Cash: ~$3,095.62 (~31.5%)
+- Gross exposure: ~68.5%
 
-## Next Hourly Preview — 14:35Z (10:35 AM ET)
-- Review whether GOOG stabilizes above $350 or breaks down.
-- Monitor AVGO price action post-ex-dividend. Does JPM defense stabilize the stock above $390?
-- Evaluate SOXX momentum. If it holds above $650, maintain conditional add on pullback.
+## Next Hourly Preview — 15:35Z (11:35 AM ET)
+- Review whether AVGO stabilizes above $390 or approaches stop.
+- Monitor SOXX momentum. If it holds above $650, maintain conditional add on pullback.
+- Evaluate any new macro headlines from US-Iran talks or semiconductor sector.
 - If any position hits stop, execute protective sell immediately.
 - With 0/3 daytrades used, protective exits are fully authorized.
+
