@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 09:40 : [hourly] Repo restored, hold all, tighten AVGO-GOOG stops
+- Critical repo breach: .gitignore missing, node_modules staged, memory reverted to May 29 — restored from HEAD
+- AVGO ex-dividend plus Google-MediaTek TPU v9 headline risk; stop lowered to three-ninety
+- GOOG AI talent exodus headlines; defensive stop at three-fifty
+- SOXX strong plus two pct; conditional add on pullback to six-forty limit
+- No trades since Jun 17; equity nine-eight-sixty-five vs SPY plus four point one nine pct
+
 2026-06-18 : 15:39 : [hourly] HOLD all, stops refreshed, no action needed
 - Portfolio equity $9,877.89, gross 75.7%, all 6 positions above refreshed stops
 - QQQ at $739.41, stop $730.00; AVGO at $409.60, stop $395.00
