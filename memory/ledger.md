@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 12:37 : [hourly] Held all, SOXX leads, cash for Micron Wed
+- Equity $9,793.53, gross exposure 68.4%, cash $3,095.62
+- SOXX strongest at $647.52, up +1.26% today; AVGO at $395.73, down -3.80% on ex-div + headline
+- GOOG on 24h cooldown after $349.26 stop-out; no re-buy until 2026-06-23 14:20Z
+- Micron earnings Wednesday Jun 24 = binary catalyst; no fresh capital deployed
+- 0/3 daytrades, no open orders, event detector NONE
+
+2026-06-22 : 12:30 : [tactical] Hold: no stops or triggers hit
+- QQQ $736.43 > stop $730.00
+- VOO $686.135 > stop $680.00
+- AVGO $397.125 > stop $390.00
+- SOXX $649.57 > add trigger $640.00
+- NVDA $209.755 > stop $200.00
+
+2026-06-22 : 12:20 : [tactical] No trades. All stops clear, holds.
+- QQQ $736.015 above stop $730.00
+- VOO $686.28 above stop $680.00
+- AVGO $396.80 above stop $390.00
+- SOXX $647.92 above stop $620.00, add trigger $640.00 not met
+- NVDA $209.70 above stop $200.00
+
+2026-06-22 : 12:10 : [tactical] Held all positions, no triggers met
+- No stop losses breached on any held position
+- QQQ $735.39, VOO $685.99, AVGO $395.41, SOXX $646.30, NVDA $209.61
+- SOXX conditional add trigger $640.00 not met
+- Gross exposure ~68.4%, within 60-90% target band
+- Event detector NONE, daytrade count 0/3
+
+2026-06-22 : 11:50 : [tactical] No action: holds steady
+- No stop losses breached. QQQ at $735.54, VOO at $686.12, AVGO at $395.99, SOXX at $647.85, NVDA at $209.77.
+- Event detector: NONE. Gross exposure ~68.4%.
+- 0/3 daytrades. No open orders.
+
+2026-06-22 : 11:40 : [tactical] Held all 5 positions, no stops hit
+- QQQ $736.96, VOO $686.89, AVGO $396.40, SOXX $648.72, NVDA $210.72 — all above stops
+- SOXX pullback add $640.00 not triggered
+- Event detector: NONE classification
+- No orders placed
+
 2026-06-22 : 11:37 : [hourly] Held all, SOXX leads, cash for Micron
 - Equity $9,801.20, gross exposure 68.4%, cash $3,095.62
 - SOXX strongest at $648.69, up +1.42% today; AVGO at $395.26, down -3.90% on ex-div + headline
