@@ -2,6 +2,43 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 15:36 : [hourly] Held all, no adds, Micron Wed catalyst
+- QQQ at $736.29, VOO at $685.52, AVGO at $394.92, SOXX at $649.79, NVDA at $207.97
+- Gross exposure 68.4%, cash $3095.62, daytrades 0/3
+- No stops breached, no open orders, no trades executed
+- Micron earnings Wednesday Jun 24 — binary catalyst for chip sector
+- GOOG on 24h cooldown until 2026-06-23 14:20Z
+
+2026-06-22 : 15:30 : [tactical] Hold all positions, no triggers met
+- QQQ at $735.51, stop $730.00 not breached
+- AVGO at $394.62, stop $390.00 not breached
+- SOXX at $648.10, pullback add $640.00 not triggered
+- Gross exposure 68.4%, daytrades 0/3, no orders placed
+
+2026-06-22 : 15:20 : [tactical] Hold all positions, no triggers hit
+- QQQ $736.27 above stop $730.00
+- VOO $685.82 above stop $680.00
+- AVGO $395.14 above stop $390.00
+- SOXX $648.57 above stop $620.00, add trigger $640 not hit
+- NVDA $208.51 above stop $200.00
+
+2026-06-22 : 15:10 : [tactical] Held all positions, no triggers breached
+- All 5 positions held. No stop-losses breached on QQQ at $735.785, VOO at $685.48, AVGO at $393.89, SOXX at $648.11, NVDA at $208.57
+- Gross exposure ~68.4% within 60-90% target band. No action required.
+- 0/3 daytrades used. No open orders. Event detector: NONE.
+
+2026-06-22 : 14:50 : [tactical] Hold all positions, no triggers
+- QQQ at $736.87, stop $730.00 — not breached
+- VOO at $686.52, stop $680.00 — not breached
+- AVGO at $395.97, stop $390.00 — not breached
+- SOXX at $648.99, pullback add $640.00 — not triggered
+- NVDA at $208.95, stop $200.00 — not breached
+
+2026-06-22 : 14:40 : [tactical] No action, all stops safe
+- QQQ $737.19, AVGO $396.00, SOXX $649.41, VOO $686.815, NVDA $208.88 — all above stops
+- Gross exposure ~68.4%, no conditions met
+- Event detector: NONE classification
+
 2026-06-22 : 14:37 : [hourly] Held all positions, stable hour, Micron Wed
 - Equity $9,806.92, gross exposure 68.4%, cash $3,095.62
 - QQQ $737.37, AVGO $396.25, SOXX $649.97, NVDA $208.92
