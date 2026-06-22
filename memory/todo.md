@@ -7,9 +7,9 @@
 ## Current State
 - **Regime:** offensive catch-up (60–90% gross exposure target band)
 - **HARD_LOCK:** LIFTED — normal execution resumes.
-- **Live book:** QQQ 5 ($3,707.03), VOO 2 ($1,379.34), AVGO 2 ($808.13), SOXX 1 ($652.31), NVDA 1 ($213.77), GOOG 2 ($707.68)
-- **Account equity / cash / buying power:** $9,865.36 / $2,397.10 / $30,499.53
-- **Gross long exposure:** ~75.7% | **Net exposure:** ~75.7% | **Cash:** ~24.3%
+- **Live book:** QQQ 5 ($3,714.15), VOO 2 ($1,379.68), AVGO 2 ($798.24), SOXX 1 ($654.70), NVDA 1 ($212.22)
+- **Account equity / cash / buying power:** $9,853.15 / $3,095.62 / $31,303.56
+- **Gross long exposure:** ~68.6% | **Net exposure:** ~68.6% | **Cash:** ~31.4%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -53,13 +53,12 @@
 - **Illiquidity warning:** Use limit orders only. Do not place market orders.
 - **Target:** $670.00.
 
-### GOOG — HOLD 2 — DO NOT ADD — DO NOT AVERAGE DOWN
-- Position avg $369.28. Current $353.84 (unrealized –4.18%). Intraday –3.71%.
-- Only underwater position. AI talent exodus headlines. Support $350–$355 being tested.
-- **Stop loss:** If GOOG falls below $350.00, **SELL all GOOG shares at market** on next tactical run. AUTHORIZE SAME-DAY SELL GOOG if stop breached.
-- **Do NOT sell GOOG today** except if stop is breached.
-- **Do NOT add GOOG** — underwater; never average down.
-- **Target:** $385.00.
+### GOOG — DO NOT RE-BUY — STOP EXECUTED
+- **STOP EXECUTED:** Sold 2 shares at $349.26 on 2026-06-22 14:20Z. Stop $350.00 breached.
+- **Realized loss:** ~$40.02 from avg entry $369.28.
+- **DO NOT RE-BUY GOOG** for 24 hours (until 2026-06-23 14:20Z) unless hourly strategist explicitly authorizes re-entry.
+- **Reason:** AI talent exodus headlines, support breakdown below $350.00. Capital preserved.
+- **Target:** N/A — exited position.
 
 ### NVDA — HOLD 1 — DO NOT ADD
 - Position avg $208.47. Current $213.7664 (unrealized +2.54%). Intraday +1.46%.
@@ -112,9 +111,9 @@ Do not place market orders for these; use limit orders only, or defer.
 3. **All hourly directives for this cycle are complete. Hold positions.**
 
 ## Current Book
-- QQQ 5 (~37.6%), VOO 2 (~14.0%), AVGO 2 (~8.2%), SOXX 1 (~6.6%), NVDA 1 (~2.2%), GOOG 2 (~7.2%)
-- Cash: ~$2,397 (~24.3%)
-- Gross exposure: ~75.7%
+- QQQ 5 (~37.7%), VOO 2 (~14.0%), AVGO 2 (~8.1%), SOXX 1 (~6.6%), NVDA 1 (~2.2%)
+- Cash: ~$3,096 (~31.4%)
+- Gross exposure: ~68.6%
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET)
 - Review whether GOOG stabilizes above $350 or breaks down.

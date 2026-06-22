@@ -1,4 +1,18 @@
 # Hourly Macro Memory
+*Updated 2026-06-22 14:20Z (Monday 10:20 AM ET). Market OPEN until 16:00 ET.*
+
+## Tactical Execution — 2026-06-22 14:20Z
+- **Action:** SOLD 2 GOOG at $349.26 (market) on stop-loss breach.
+- **Trigger:** GOOG stop $350.00 breached. Live quote $349.25 (Alpaca positions) / $349.30 (latest bar). Todo explicitly authorized: "If GOOG falls below $350.00, SELL all GOOG shares at market."
+- **Realized P&L:** ~–$40.02 from avg entry $369.28.
+- **Post-trade book:** QQQ 5 ($3,714.15), VOO 2 ($1,379.68), AVGO 2 ($798.24), SOXX 1 ($654.70), NVDA 1 ($212.22). Cash $3,095.62.
+- **Post-trade exposure:** Gross ~68.6% ($6,757.53 / $9,853.15 equity). Cash ~31.4%.
+- **Daytrade count:** 0/3 (GOOG held since Jun 16, not a daytrade).
+- **Next:** Monitor AVGO ($399.12, stop $390.00), QQQ ($742.83, stop $730.00), VOO ($689.84, stop $680.00), SOXX ($654.70, stop $620.00), NVDA ($212.22, stop $200.00). No re-buy GOOG for 24h.
+
+---
+
+## Hourly Macro Memory
 *Updated 2026-06-22 13:35Z (Monday 9:35 AM ET). Market OPEN until 16:00 ET. Juneteenth holiday Friday June 19 — last trade was June 18.*
 
 ## Tactical Execution — 2026-06-22 13:40Z [AUTONOMOUS_OVERRIDE]

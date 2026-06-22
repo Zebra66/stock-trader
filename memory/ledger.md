@@ -2,6 +2,27 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 10:22 : [tactical] Sold 2 GOOG at $349.26 stop-loss
+- GOOG stop $350.00 breached at $349.26 on live quote
+- Market sell 2 shares filled at $349.26
+- Realized loss ~$40.02 from avg entry $369.28
+- Gross exposure now ~68.6%, cash ~$3,095.62
+- Remaining 5 positions: QQQ, VOO, AVGO, SOXX, NVDA
+
+2026-06-22 : 10:10 : [tactical] Hold all, no triggers breached
+- GOOG $351.85 above $350.00 stop, AVGO $398.97 above $390.00 stop
+- SOXX $654.43 above $620.00 stop, add NOT triggered ($640.00 target)
+- QQQ $745.01, VOO $691.29, NVDA $213.75 all above stops
+- Event detector MINOR, no override applied
+- No trades, gross exposure ~75.7%
+
+2026-06-22 : 09:50 : [tactical] All holds, no triggers met
+- QQQ $743.31 > stop $730.00, VOO $690.79 > stop $680.00, AVGO $401.16 > stop $390.00
+- GOOG $354.33 > stop $350.00, SOXX $651.62 > stop $620.00, NVDA $212.54 > stop $200.00
+- SOXX pullback add at $640.00 not triggered (current $651.62)
+- Gross exposure 75.7%, daytrades 0/3, no open orders
+- Event detector: NONE, all positions OK
+
 2026-06-22 : 09:41 : [tactical] Event CRITICAL, no sells, all holds
 - Event detector CRITICAL at 2026-06-22 13:40Z
 - SOXX flagged CRITICAL at $653.50 but stop $620.00 not breached
