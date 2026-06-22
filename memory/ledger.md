@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-22 : 11:37 : [hourly] Held all, SOXX leads, cash for Micron
+- Equity $9,801.20, gross exposure 68.4%, cash $3,095.62
+- SOXX strongest at $648.69, up +1.42% today; AVGO at $395.26, down -3.90% on ex-div + headline
+- GOOG on 24h cooldown after $349.26 stop-out; no re-buy until 2026-06-23 14:20Z
+- Micron earnings Wednesday Jun 24 = binary catalyst; no fresh capital deployed
+- 0/3 daytrades, no open orders, event detector NONE
+
+2026-06-22 : 11:30 : [tactical] No trades; all stops intact
+- All 5 positions above stops. QQQ at $736.84, VOO at $686.27, AVGO at $394.95, SOXX at $649.88, NVDA at $209.94.
+- Event detector: NONE classification. No MAJOR or CRITICAL events.
+- Cash $3,095.62. Gross exposure ~68.4%. No open orders.
+- Daytrade count 0/3. No same-day round-trip concerns.
+
+2026-06-22 : 11:20 : [tactical] Hold all positions, no stops breached
+- QQQ $736.79, AVGO $394.64, SOXX $649.265, VOO $685.99, NVDA $209.84 all above stops
+- Event detector: NONE. No conditions met in todo.md.
+- Gross exposure 68.4%, within 60-90% target band.
+- No orders placed. Market open until 16:00 ET.
+
+2026-06-22 : 11:10 : [tactical] HOLD all positions, no stops breached
+- QQQ $737.80 > stop $730.00
+- VOO $686.16 > stop $680.00
+- AVGO $395.17 > stop $390.00
+- SOXX $651.05 > stop $620.00, add needs $640.00
+- NVDA $209.88 > stop $200.00
+
+2026-06-22 : 10:50 : [tactical] Held positions, no triggers breached
+- All 5 positions above stops, no action needed
+- QQQ $737.43 > stop $730.00, AVGO $395.16 > stop $390.00
+- SOXX $648.25 > stop $620.00, VOO $686.40 > stop $680.00
+- NVDA $209.44 > stop $200.00
+- SOXX pullback add at $640.00 not reached; no buys triggered
+
+2026-06-22 : 10:40 : [tactical] Holds maintained, no triggers breached
+- QQQ $739.26 above $730.00 stop
+- AVGO $395.97 above $390.00 stop
+- SOXX $649.78 above $620.00 stop, no $640.00 add trigger
+- VOO $687.33 above $680.00 stop
+- NVDA $209.86 above $200.00 stop
+
 2026-06-22 : 10:37 : [hourly] GOOG stopped out, cash held, Micron Wed
 - Sold GOOG at $349.26, stop $350.00 breached
 - Equity $9,818.64, gross exposure 68.5%, cash $3,095.62
