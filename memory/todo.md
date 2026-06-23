@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-06-23 13:40Z (Tuesday 9:40 AM ET)
-*CRITICAL event resolved to MINOR. All core positions sold. Only NVDA remains held. NO new buys today.*
+# Tactical Todo — Updated 2026-06-23 14:35Z (Tuesday 10:35 AM ET)
+*Event detector NONE. Market stabilizing post-CRITICAL. Only NVDA remains held. NO new buys today.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure ~2.1%
 - **HARD_LOCK:** LIFTED — no active lock
-- **Live book:** NVDA 1 ($201.88)
-- **Account equity / cash / buying power:** $9,603.12 / $9,401.24 / $35,596.04
+- **Live book:** NVDA 1 ($202.85)
+- **Account equity / cash / buying power:** $9,604.09 / $9,401.24 / $38,172.94
 - **Gross long exposure:** ~2.1% | **Net exposure:** ~2.1% | **Cash:** ~97.9%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
@@ -16,14 +16,13 @@
   - AVGO: until 2026-06-24 13:34Z
   - SOXX: until 2026-06-24 13:33Z
 - **GOOG cooldown:** EXPIRED at 2026-06-23 14:20Z. But hourly strategist does NOT authorize re-entry.
-- **Market:** OPEN. MINOR broad market selloff. SPY -1.53%, QQQ -3.01%, SOXX -7.31%.
-- **Event detector:** MINOR at 13:35Z. No autonomous action required.
-- **Upcoming catalyst:** Micron earnings Wednesday June 24 (sector-wide binary event for semiconductors).
+- **Market:** OPEN. Event detector NONE at 14:35Z. Market recovering from gap-down open.
+- **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 
 ## Position Instructions — Tuesday Jun 23 (Tactical Runs)
 
 ### NVDA — HOLD 1 — DO NOT ADD
-- Position avg $208.47. Current $201.88 (unrealized -3.16%). Intraday -3.24%.
+- Position avg $208.47. Current $202.85 (unrealized -2.70%). Intraday recovering from -3.24% earlier.
 - **Stop loss:** If NVDA falls below $200.00, **SELL all NVDA shares at market** on next tactical run.
 - **Do NOT sell NVDA today** except if stop is breached.
 - **Do NOT add NVDA** — not at +1R yet; adding to underwater position is prohibited.
@@ -51,12 +50,12 @@
 - **SOLD:** 1 share at market $609.77 on 2026-06-23 13:33Z. Stop $620.00 breached.
 - **Realized loss:** ~$9.48 from avg entry $619.25.
 - **DO NOT RE-BUY SOXX** for 24 hours (until 2026-06-24 13:33Z) unless hourly strategist explicitly authorizes re-entry.
-- **Reason:** CRITICAL market event. Semiconductor sector down -7.31%. Protective exit. 24-hour cooldown active.
+- **Reason:** CRITICAL market event. Semiconductor sector volatile. Protective exit. 24-hour cooldown active.
 
 ### GOOG — DO NOT BUY
 - **STOP EXECUTED:** Sold 2 shares at $349.26 on 2026-06-22 14:20Z.
 - **24-hour cooldown EXPIRED** at 2026-06-23 14:20Z. BUT hourly strategist does NOT authorize re-entry.
-- **Reason:** AI talent exodus headlines, Waymo recall, support breakdown. Goldman Sachs warning on AI trade extends the negative narrative. Capital preserved.
+- **Reason:** Weak relative trend (-6.4% 5d, -9.75% 1mo). AI talent exodus, Waymo recall. Goldman Sachs warning on AI trade extends negative narrative. No edge.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
@@ -64,10 +63,10 @@
 
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
-- **Market in selloff.** No new positions until hourly authorization.
+- **Market recovering from gap-down.** No new positions until hourly authorization.
 
 ## Hard Rules / No-Trade Conditions
-- **NO discretionary buys this cycle.** Gross exposure collapsed to ~2.1%. Market in selloff.
+- **NO discretionary buys this cycle.** Gross exposure collapsed to ~2.1%. Market recovering from gap-down.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
@@ -91,8 +90,8 @@
 - Cash: $9,401.24 (~97.9%)
 - Gross exposure: ~2.1%
 
-## Next Hourly Preview — 14:35Z (10:35 AM ET)
-- Hourly strategist will review market recovery or continuation.
+## Next Hourly Preview — 15:35Z (11:35 AM ET)
+- Hourly strategist will review market stabilization or continuation.
 - Evaluate NVDA stop at $200.00.
 - If 24-hour cooldowns expire and market stabilizes, evaluate re-entry for QQQ, VOO, AVGO, SOXX.
 - DO NOT deploy cash until hourly authorization.
