@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-23 : 09:31 : [tactical] CRITICAL event: sold 4 positions
+- CRITICAL event detector at 13:30Z: QQQ -2.92%, SOXX -6.74%, AVGO -4.14%, XLK -3.69%
+- Stops breached: QQQ $730.00 > $714.92, VOO $680.00 > $675.99, AVGO $390.00 > $379.17, SOXX $620.00 > $606.42
+- Sold QQQ 5, VOO 2, AVGO 2, SOXX 1 at market. NVDA 1 held, stop $200.00 not breached at $201.87
+- Gross exposure collapsed from ~68.4% to ~2.1%. Cash ~$9,388. Waiting for hourly reset.
+
+2026-06-22 : 15:50 : [tactical] Held all, no triggers breached
+- QQQ $736.34, VOO $685.42, AVGO $395.30, SOXX $650.43, NVDA $207.79 — all stops intact, no breaches
+- SOXX conditional add not triggered: price $650.43, pullback trigger $640.00
+- Gross exposure ~68.4%, within 60-90% target band
+- Daytrade count 0/3, no PDT concerns, no open orders
+- Event detector NONE at 19:50Z, no protective action needed
+
+2026-06-22 : 15:40 : [tactical] Held all positions, no triggers met
+- QQQ $736.14 vs stop $730.00, no breach
+- AVGO $395.08 vs stop $390.00, no breach
+- SOXX $650.38 vs add trigger $640.00, no pullback
+- VOO $685.40 vs stop $680.00, no breach
+- NVDA $207.92 vs stop $200.00, no breach
+
 2026-06-22 : 15:36 : [hourly] Held all, no adds, Micron Wed catalyst
 - QQQ at $736.29, VOO at $685.52, AVGO at $394.92, SOXX at $649.79, NVDA at $207.97
 - Gross exposure 68.4%, cash $3095.62, daytrades 0/3
