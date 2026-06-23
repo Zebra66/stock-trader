@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-06-23 18:35Z (Tuesday 2:35 PM ET)
-*Event detector NONE. Market stabilizing but chip/tech weak. Portfolio is 100% cash. NO new buys today. Anti-churn guard active in code.*
+# Tactical Todo — Updated 2026-06-23 19:35Z (Tuesday 3:35 PM ET)
+*Event detector NONE. Market stabilizing into close. Portfolio is 100% cash. NO new buys today. Anti-churn guard active in code.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -17,15 +17,16 @@
   - AVGO: until 2026-06-24 13:34Z
   - SOXX: until 2026-06-24 13:33Z
 - **GOOG cooldown:** EXPIRED at 2026-06-23 14:20Z. But hourly strategist does NOT authorize re-entry.
-- **Market:** OPEN. Event detector NONE at 18:35Z. Market recovering from gap-down open but chip/tech remains weak. "AI trade cools" narrative active.
+- **Market:** OPEN until 20:00Z. Event detector NONE at 19:35Z. Market stabilizing into close. "AI trade cools" narrative active.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
-- **Critical code note:** The prior run staged deletions of safety guards. Hourly strategist reverted them to HEAD. All code-level guards (anti-churn, duplicate-order, stale-memory, ledger validation) are active.
+- **Code integrity note:** Safety guards active. No staged deletions detected this cycle.
 
 ## Position Instructions — Tuesday Jun 23 (Tactical Runs)
 
 ### NO POSITIONS HELD
 - All positions were sold today. Portfolio is 100% cash.
 - **No action required for any held position.**
+- **NO discretionary buys this cycle.** Market closes in ~25 minutes. No new positions.
 
 ### NVDA — SOLD — DO NOT RE-BUY
 - **SOLD:** 1 share at market $202.15 on 2026-06-23 17:42Z (accidental test execution).
@@ -72,14 +73,14 @@
 
 ## Tomorrow's Re-Entry Triggers (Wednesday Jun 24 — Pending Hourly Authorization)
 - These are PREPARATORY triggers only. The hourly strategist must explicitly authorize any buy before the tactical agent executes.
-- **QQQ:** Consider limit BUY if price drops below $710 or if price stabilizes above $715 with volume > 1.5x average. Max 3 shares (reduced size, ~$2,145 / 22% of equity). Rationale: Core broad-tech exposure.
-- **VOO:** Consider limit BUY if price drops below $675 or if SPY holds above $730. Max 1 share (reduced size, ~$678 / 7% of equity). Rationale: Core S&P exposure.
-- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Rationale: Individual semiconductor exposure.
+- **QQQ:** Consider limit BUY if price drops below $710 or if price stabilizes above $715 with volume > 1.5x average. Max 3 shares (reduced size, ~$2,145 / 22% of equity). Stop: $690. Target: $740. Rationale: Core broad-tech exposure.
+- **VOO:** Consider limit BUY if price drops below $675 or if SPY holds above $730. Max 1 share (reduced size, ~$678 / 7% of equity). Stop: $660. Target: $700. Rationale: Core S&P exposure.
+- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Stop: $365. Target: $410. Rationale: Individual semiconductor exposure.
 - **SOXX:** DO NOT BUY until after Micron earnings reaction is known (Thursday Jun 25 or later). Rationale: Binary catalyst risk.
 - **NVDA:** DO NOT RE-BUY until cooldown expires at 2026-06-24 17:42Z AND hourly strategist explicitly authorizes. Rationale: Prediction markets betting against chip prices; 24-hour cooldown.
 
 ## Hard Rules / No-Trade Conditions
-- **NO discretionary buys this cycle.** Gross exposure is 0%. Market recovering from gap-down.
+- **NO discretionary buys this cycle.** Gross exposure is 0%. Market closes in ~25 minutes.
 - **No same-day round trips.** Code-level anti-churn guard is now active in `alpaca_client_factory.ts`.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
@@ -87,6 +88,7 @@
 - **Do NOT run test scripts or code verification on the live account.** Use `DRY_RUN=1` only.
 - **After 3+ consecutive loss events, reduce position size by 50% on next deployment.**
 - **Do NOT enter SOXX or NVDA before Micron earnings reaction.**
+- **If any buy trigger is hit today, DO NOT execute.** Wait for tomorrow's hourly authorization.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -99,14 +101,14 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 1, Volume 63. Treat as illiquid for the remainder of this session. Limit orders only if authorized.
+- **SOXX:** Latest bar shows TradeCount 10, Volume 596. Treat as illiquid. Limit orders only if authorized.
 
 ## Current Book
 - Cash: $9,603.39 (100%)
 - Gross exposure: 0%
 
-## Next Hourly Preview — 19:35Z (3:35 PM ET)
-- Hourly strategist will review final hour stabilization.
-- If market holds current levels into the close, tomorrow may see stabilization.
+## Next Hourly Preview — 14:35Z (10:35 AM ET) Wed Jun 24
+- Hourly strategist will evaluate market after overnight session and Micron earnings preview.
+- QQQ/VOO/AVGO/SOXX cooldowns will have expired by then.
 - DO NOT deploy cash until hourly authorization tomorrow.
 - Micron earnings after close tomorrow is the primary catalyst.
