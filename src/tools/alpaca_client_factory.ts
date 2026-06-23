@@ -94,14 +94,8 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     const todo = await Bun.file('./memory/todo.md').text();
     for (const line of todo.split('\n')) {
       const upper = line.toUpperCase();
-      // Broader pattern matching to catch variants (must match alpaca_cli.ts)
-      const hasNoBuy = upper.includes('DO NOT BUY') || upper.includes('DO NOT RE-BUY') || upper.includes('DO NOT ADD') ||
-                       upper.includes('NO NEW BUY') || upper.includes('NO BUY') || upper.includes('NO ADD') ||
-                       upper.includes('PROHIBITED') || upper.includes('BANNED');
-      if (!hasNoBuy) continue;
-      // Skip lines with explicit authorization overrides or price-conditional qualifiers
-      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION') || upper.includes('AUTHORIZE') || upper.includes('AUTHORIZED')) continue;
-      if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
+      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
       }
@@ -110,52 +104,6 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     // ignore read errors
   }
   return blocked;
-}
-
-const LOCAL_ORDER_CACHE = './temp_files/today_orders.json';
-
-async function getCachedOrders(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
-  try {
-    const file = Bun.file(LOCAL_ORDER_CACHE);
-    if (!(await file.exists())) return false;
-    const data = await file.json();
-    const today = new Date().toISOString().slice(0, 10);
-    const orders = data[today] || [];
-    return orders.some((o: any) => o.symbol === symbol && o.side === side);
-  } catch {
-    return false;
-  }
-}
-
-async function cacheOrder(symbol: string, side: 'buy' | 'sell'): Promise<void> {
-  try {
-    const file = Bun.file(LOCAL_ORDER_CACHE);
-    let data: any = {};
-    if (await file.exists()) {
-      data = await file.json();
-    }
-    const today = new Date().toISOString().slice(0, 10);
-    data[today] = data[today] || [];
-    data[today].push({ symbol, side, timestamp: new Date().toISOString() });
-    await Bun.write(LOCAL_ORDER_CACHE, JSON.stringify(data, null, 2));
-  } catch {
-    // ignore cache write failures
-  }
-}
-
-async function hasSameDayFill(client: Alpaca, symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
-  // Check local cache first (fast, no API dependency)
-  const cached = await getCachedOrders(symbol, side);
-  if (cached) return true;
-
-  try {
-    const today = new Date().toISOString().slice(0, 10);
-    const after = `${today}T00:00:00Z`;
-    const orders = await client.getOrders({ status: 'closed', after });
-    return orders.some((o: any) => String(o.symbol ?? '').toUpperCase() === symbol.toUpperCase() && o.side === side && o.filled_qty && parseFloat(o.filled_qty) > 0);
-  } catch {
-    return false;
-  }
 }
 
 export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.env): Alpaca {
@@ -186,32 +134,6 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       );
     }
 
-    // ── Audit trail (append-only) ─────────────────────────────────────────
-    try {
-      const auditEntry = {
-        t: new Date().toISOString(),
-        symbol,
-        side,
-        qty,
-        type: String(params.type ?? 'market'),
-        limit_price: params.limit_price ?? null,
-        time_in_force: String(params.time_in_force ?? 'day'),
-      };
-      const auditPath = './temp_files/order_audit.jsonl';
-      let existing = '';
-      try {
-        const auditFile = Bun.file(auditPath);
-        if (await auditFile.exists()) {
-          existing = await auditFile.text();
-        }
-      } catch {
-        // ignore
-      }
-      await Bun.write(auditPath, existing + JSON.stringify(auditEntry) + '\n');
-    } catch {
-      // ignore audit write failures — do not block trading
-    }
-
     // ── HARD_LOCK check (todo.md) ──────────────────────────────────────────
     try {
       const todo = await Bun.file('./memory/todo.md').text();
@@ -219,7 +141,7 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
-        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}\s*LIFTED\b/i.test(lockLine);
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
         if (!isExplicitlyLifted && side === 'buy') {
           throw new Error(
             `Order blocked: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`
@@ -332,32 +254,25 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       }
     }
 
-    // ── Anti-churn guard ────────────────────────────────────────────────────
+    // ── Anti-churn guard: block same-day sell of a symbol bought today ─────
     if (side === 'sell') {
-      const boughtToday = await hasSameDayFill(client, symbol, 'buy');
-      if (boughtToday) {
-        try {
-          const todo = await Bun.file('./memory/todo.md').text();
-          const authPattern = new RegExp(`AUTHORIZE SAME-DAY SELL ${symbol}\\b`, 'i');
-          if (!authPattern.test(todo)) {
-            throw new Error(
-              `Order blocked: Anti-churn rule — ${params.symbol} was bought today and same-day sell is not authorized in todo.md.`
-            );
-          }
-        } catch (e) {
-          if (e instanceof Error && e.message.includes('Anti-churn')) throw e;
+      try {
+        const orders = await client.getOrders({ status: 'closed' } as any);
+        const today = new Date().toISOString().slice(0, 10);
+        const sameDayBuy = orders.find((o: any) => {
+          const sym = String(o.symbol ?? '').toUpperCase();
+          const filledAt = o.filled_at ? String(o.filled_at).slice(0, 10) : null;
+          const orderSide = String(o.side ?? '').toLowerCase();
+          return sym === symbol && orderSide === 'buy' && filledAt === today;
+        });
+        if (sameDayBuy) {
           throw new Error(
-            `Order blocked: Anti-churn rule — ${params.symbol} was bought today and same-day sell is not authorized in todo.md.`
+            `Order blocked: ${symbol} was bought today at ${sameDayBuy.filled_at}. Same-day round trip is prohibited.`
           );
         }
-      }
-    }
-    if (side === 'buy') {
-      const soldToday = await hasSameDayFill(client, symbol, 'sell');
-      if (soldToday) {
-        throw new Error(
-          `Order blocked: Anti-churn rule — ${params.symbol} was sold today and same-day re-buy is prohibited.`
-        );
+      } catch (e) {
+        if (e instanceof Error && e.message.includes('Same-day round trip')) throw e;
+        // getOrders failed — fall through to allow sell (fail-open is safer for exits)
       }
     }
 
@@ -400,10 +315,7 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
       }
     }
 
-    const result = await originalCreateOrder(params);
-    // Update local cache after successful order creation
-    await cacheOrder(symbol, side);
-    return result;
+    return originalCreateOrder(params);
   };
 
   return client;

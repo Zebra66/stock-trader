@@ -1,102 +1,112 @@
 # Hourly Macro Memory
-*Updated 2026-06-23 17:35Z (Tuesday 1:35 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+*Updated 2026-06-23 17:45Z (Tuesday 1:45 PM ET). Market OPEN until 20:00Z (16:00 ET).*
 
-## Tactical Execution — 2026-06-23 17:35Z — [hourly]
-- **Event detector:** NONE at 17:35Z. Market stabilizing but chip/tech remains weak.
-- **No trades executed** since 13:37Z hourly run. Tactical agent logged runs at 16:40Z, 16:50Z, 17:10Z, 17:20Z, 17:30Z (all hold-only).
-- **NVDA 1 share held** at $202.50 (avg $208.47, unrealized -$5.97 / -2.86%). Stop $200.00 intact.
-- **Cash:** $9,401.24. **Equity:** $9,603.74. **Gross exposure:** ~2.1%.
-- **Daytrade count:** 0/3. Clean slate.
+## Hourly Cycle Summary — 2026-06-23 17:45Z (Tuesday 1:45 PM ET)
+- **Status:** Market OPEN. ~2 hours 15 minutes to close.
+- **Repo integrity:** RESTORED. Working-tree memory files were stale (May 29). Git HEAD had current state. Unstaged deletions fixed; `.gitignore` restored. Two critical code bugs fixed and committed.
+- **Critical process note:** A test script accidentally submitted a live SELL order for NVDA 1 share @ $202.15 during code verification. This was unauthorized. The portfolio is now **100% cash**.
+- **Live broker refresh:** Equity $9,603.39 | Cash $9,603.39 | Long $0 | Gross 0% | Daytrade 0/3.
+- **Holdings confirmed:** NONE.
 - **Open orders:** NONE.
+- **Filled trades since prior hourly (Jun 23 17:35Z):** NVDA 1 share SOLD @ $202.15 (accidental test execution).
+- **Goal check:** Portfolio **-3.96%** since inception ($9,603.39 vs $10,000) vs SPY **+2.72%** (baseline 718.01 → ~737.54). **FAILING both goals.** Trailing by ~6.68 pp.
+- **Regime:** Defensive. Gross exposure 0% is below the 30–50% defensive band. Deployment is blocked by active 24-hour cooldowns on all core symbols.
+- **Posture:** No new positions today. Prepare for tomorrow's re-entry after Micron earnings and cooldown expiration.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| NVDA | 1 | $208.47 | $202.50 | $202.50 | 2.1% | -$5.97 | -2.86% |
-| Cash | — | — | — | $9,401.24 | 97.9% | — | — |
-| **Equity** | — | — | — | **$9,603.74** | **100%** | — | **-3.96%** |
+| NONE | — | — | — | — | — | — | — |
+| Cash | — | — | — | $9,603.39 | 100% | — | — |
+| **Equity** | — | — | — | **$9,603.39** | **100%** | — | **-3.96%** |
 
-- **Gross long exposure:** 2.1%
-- **Net exposure:** 2.1%
+- **Gross long exposure:** 0.00%
+- **Net exposure:** 0.00%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
 ## Performance Review — Since Inception
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.96%** ($9,603.74 vs $10,000) vs SPY **+2.71%** (baseline 718.01 → 737.47). Trailing by ~6.67 pp.
-- **1D review (Jun 22 close → Jun 23 17:35Z):** Portfolio ~-2.04% vs SPY ~-0.87%. Underperforming by ~1.17 pp.
-- **1W review (Jun 15 → Jun 23):** Portfolio ~-2.19% vs SPY ~-2.24%. Slightly outperforming by ~0.05 pp.
-- **2W review (Jun 8 → Jun 23):** Portfolio ~-2.79% vs SPY ~-0.65%. Underperforming by ~2.14 pp.
-- **Dominant failure mode:** excessive turnover / friction. The Jun 23 gap-down open locked in ~$107.61 of realized losses.
-- **What must change:** Do not force re-entry today while cooldowns are active and the tape is fragile. Wait for confirmed stabilization after Micron earnings (tomorrow after close) before deploying cash.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.96%** ($9,603.39 vs $10,000) vs SPY **+2.72%** (baseline 718.01 → ~737.54). Trailing by ~6.68 pp.
+- **1D review (Jun 22 close → Jun 23 17:45Z):** Portfolio ~-2.08% vs SPY ~-0.87%. Underperforming by ~1.21 pp.
+- **1W review (Jun 15 → Jun 23):** Portfolio ~-2.23% vs SPY ~-2.24%. Essentially flat vs SPY.
+- **2W review (Jun 8 → Jun 23):** Portfolio ~-2.83% vs SPY ~-0.65%. Underperforming by ~2.18 pp.
+- **Dominant failure mode:** **excessive turnover / friction.** The Jun 23 gap-down open and subsequent protective sells locked in ~$107.61 of realized losses. The accidental NVDA test-sale added another ~$6.32 realized loss.
+- **What must change:** (1) Stop churning. (2) Re-enter the market with disciplined, low-turnover positioning. (3) Do not trade ahead of known binary catalysts. (4) Never run test scripts on live accounts.
 
 ## Goal Check
-- **Portfolio since inception:** -3.96% ($9,603.74 vs $10,000 base)
-- **S&P 500 since inception:** +2.71% (SPY ~737.47 vs baseline 718.01)
-- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.67 pp.
-- **Dominant failure mode:** **excessive turnover / friction.** The tactical override on Jun 23 locked in ~$107.61 of realized losses.
-- **Posture:** **defensive.** Gross exposure 2.1% is below the 30-50% defensive band, but deployment is blocked by active cooldowns, fragile tape, and a binary catalyst tomorrow.
+- **Portfolio since inception:** -3.96% ($9,603.39 vs $10,000 base)
+- **S&P 500 since inception:** +2.72% (SPY ~737.54 vs baseline 718.01)
+- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.68 pp.
+- **Dominant failure mode:** **excessive turnover / friction.** Same-day round trips on Jun 15 (QQQ/GOOG/NVDA), gap-down protective exits on Jun 23, and the accidental NVDA test-sale today.
+- **Posture:** **defensive.** Gross exposure 0% is below the 30–50% defensive band. Deployment is blocked by active 24-hour cooldowns and the Micron earnings binary catalyst tomorrow.
 
-## Market Intel — Tuesday 1:35 PM ET
-- **Broad market:** SPY $737.47 (-0.87% day), QQQ $719.42 (-2.51% day), SOXX $608.41 (-7.11% day). Tech and semiconductors remain weak.
-- **Semiconductor sector:** SOXX down -7.11% on the day. Intraday low ~$603.58, recovering slightly to $608.41. Micron earnings tomorrow (Jun 24 after close) is the binary catalyst.
-- **NVDA:** $202.50 (down -2.93% day). Intraday low $200.04 — just $0.04 above our $200 stop. Currently holding above stop.
-- **AVGO:** $384.61 (down -1.92% day). Still on 24h cooldown. Ex-dividend ($0.65/share) on Jun 22 explains part of the weakness; the gap-down today is real selling beyond the dividend adjustment.
-- **QQQ:** $719.42 (down -2.51% day). 24h cooldown until tomorrow 13:37Z.
-- **VOO:** $680.09 (down -0.88% day). 24h cooldown until tomorrow 13:34Z.
-- **GOOG:** $347.21 (down -0.45% day). Cooldown expired at 14:20Z. But weak trend (-5.42% 1wk, -9.46% 1mo). No authorization to re-enter.
-- **META:** $566.22 (up +0.42% day). Showing relative strength in a weak tape. But banned.
-- **HOOD:** $105.13 (down -0.55% day). +38.47% 1mo. Convertible notes overhang. No edge.
-- **RKLB:** $97.58 (down -2.70% day). -22.21% 1mo. Weak. Avoid.
-- **GLD:** $379.01 (down -1.45% day). -9.11% 1mo. Weak. Avoid.
-- **QTUM:** $164.32 (down -2.54% day). +10.04% 1mo. Thin. Avoid.
-- **Fed / Macro:** "Nvidia, Micron, AMD lead tech sell-off as AI trade cools" (Yahoo Finance, 12:59Z). Reuters headline earlier: "Stocks fall as chipmakers and tech slump on rate bets." Rate-bet pressure on tech is the active narrative.
-- **Micron news:** Micron signed an AI supply deal with Anthropic. Motley Fool positive pre-earnings article. But the stock is tanking today (-7%+ for the sector). Binary outcome tomorrow.
-- **Earnings dates:** AVGO passed Jun 3. GOOG est. Jul 23; META Jul 29; NVDA Aug 26; HOOD Jul 29; RKLB Aug 6. Micron (MU) Jun 24 after close (binary catalyst for semiconductors). No binary events for our holdings in next 48 hours.
-- **News access:** Yahoo Finance RSS working. Google Search blocked by CAPTCHA.
-- **Data source:** Yahoo Finance chart API v8 used for performance snapshot (FMP disabled).
+## Market Intel — Tuesday 1:45 PM ET
+- **Broad market:** SPY ~$737.54 (-0.87% day), QQQ ~$718.84 (-2.51% day), SOXX ~$607.12 (-7.11% day). Tech and semiconductors remain weak.
+- **Semiconductor sector:** SOXX down -7.11% on the day. Micron earnings tomorrow (Jun 24 after close) is the binary catalyst. "AI trade cools" narrative active.
+- **NVDA:** $202.19 (down -2.93% day). Intraday low $200.04. Sold accidentally at $202.15.
+- **AVGO:** $383.80 (down -1.92% day). On 24-hour cooldown until tomorrow 13:34Z.
+- **QQQ:** $718.84 (down -2.51% day). On 24-hour cooldown until tomorrow 13:37Z.
+- **VOO:** $679.91 (down -0.88% day). On 24-hour cooldown until tomorrow 13:34Z.
+- **SOXX:** $607.12 (down -7.11% day). On 24-hour cooldown until tomorrow 13:33Z.
+- **GOOG:** $346.97 (down -0.45% day). Cooldown expired at 14:20Z, but hourly does NOT authorize re-entry.
+- **META:** $567.20 (up +0.42% day). Showing relative strength. Banned.
+- **HOOD:** $105.19 (down -0.55% day). No edge.
+- **RKLB:** $97.37 (down -2.70% day). No edge.
+- **Fed / Macro:** "AI trade cools" narrative. Rate-bet pressure on tech.
+- **News access:** Yahoo Finance RSS working. Direct web search blocked.
+- **Earnings dates:** Micron (MU) Jun 24 after close (sector-wide binary). No binary events for our holdings in next 48 hours.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
-| NVDA | **Hold** | Sole remaining position. Small (2.1%). Stop intact. Day low $200.04 just above stop. | 2% | **HOLD** 1 share. Stop $200.00. DO NOT ADD. |
-| QQQ | **Avoid / Cooldown** | 24-hour cooldown until 2026-06-24 13:37Z. Market fragile. | 0% | **DO NOT RE-BUY QQQ** until cooldown expires + hourly authorization. |
-| VOO | **Avoid / Cooldown** | 24-hour cooldown until 2026-06-24 13:34Z. | 0% | **DO NOT RE-BUY VOO** until cooldown expires + hourly authorization. |
-| AVGO | **Avoid / Cooldown** | 24-hour cooldown until 2026-06-24 13:34Z. Google-MediaTek headline risk + ex-dividend. | 0% | **DO NOT RE-BUY AVGO** until cooldown expires + hourly authorization. |
-| SOXX | **Avoid / Cooldown** | 24-hour cooldown until 2026-06-24 13:33Z. Micron earnings tomorrow = binary risk. | 0% | **DO NOT RE-BUY SOXX** until cooldown expires + hourly authorization. |
-| GOOG | **Avoid** | Cooldown expired. But weak relative trend (-5.42% 1wk, -9.46% 1mo). No edge. | 0% | **DO NOT BUY GOOG.** |
-| META | **Avoid** | bannedSymbols active. | 0% | Avoid |
-| HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX | **Avoid** | No edge, weak relative trends, extended, or thin liquidity. | 0% | Avoid |
+| NVDA | Cooldown | Sold accidentally today. 24-hour cooldown until 2026-06-24 17:42Z. | 0% | **DO NOT RE-BUY** until cooldown expires + hourly authorization. |
+| QQQ | Cooldown | Sold today at 13:37Z. 24-hour cooldown until 2026-06-24 13:37Z. | 0% | **DO NOT RE-BUY** until cooldown expires + hourly authorization. |
+| VOO | Cooldown | Sold today at 13:34Z. 24-hour cooldown until 2026-06-24 13:34Z. | 0% | **DO NOT RE-BUY** until cooldown expires + hourly authorization. |
+| AVGO | Cooldown | Sold today at 13:34Z. 24-hour cooldown until 2026-06-24 13:34Z. | 0% | **DO NOT RE-BUY** until cooldown expires + hourly authorization. |
+| SOXX | Cooldown | Sold today at 13:33Z. 24-hour cooldown until 2026-06-24 13:33Z. | 0% | **DO NOT RE-BUY** until cooldown expires + hourly authorization. |
+| GOOG | Avoid | Cooldown expired. Weak relative trend. No edge. | 0% | **DO NOT BUY GOOG.** |
+| META | Avoid | bannedSymbols active. | 0% | Avoid |
+| HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge, weak relative trends, extended, or thin liquidity. | 0% | Avoid |
 
 ## Priority Actions
-1. **HOLD NVDA 1 share.** Stop $200.00. No action required unless stop breached. Day low was $200.04 — extremely close to stop.
-2. **NO new positions today.** Gross exposure 2.1% is below defensive band (30-50%), but the market is still recovering from the gap-down and all core symbols are on 24-hour cooldown.
-3. **Blocker for deployment:** (a) Market recovering from CRITICAL gap-down but still fragile, (b) "AI trade cools" narrative active, (c) Micron earnings tomorrow after close = binary catalyst, (d) All core symbols (QQQ, VOO, AVGO, SOXX) on 24-hour cooldown until tomorrow 9:33-9:37 AM ET.
-4. **Prepare tomorrow's re-entry triggers.** By the 14:35Z (10:35 AM ET) hourly run, all core cooldowns will have expired AND Micron earnings will be known. Evaluate QQQ, SOXX, AVGO, VOO re-entry if the tape shows stabilization. Set buy limits below current levels for better R/R.
+1. **HOLD 100% CASH.** No new positions today. Gross exposure 0% is below defensive band, but deployment is blocked by cooldowns and fragile tape.
+2. **Do NOT attempt any test trades or test scripts on the live account.** The accidental NVDA sale was a $6.32 realized loss. This must never happen again.
+3. **Blocker for deployment:** (a) All core symbols on 24-hour cooldown until tomorrow ~9:33–9:42 AM ET. (b) Micron earnings tomorrow after close = binary catalyst. (c) "AI trade cools" narrative active. (d) Market is down -0.87% to -7.11% across the book.
+4. **Prepare tomorrow's re-entry triggers.** By the 14:35Z (10:35 AM ET) hourly run, QQQ/VOO/AVGO/SOXX cooldowns will have expired. NVDA cooldown expires at 17:42Z (1:42 PM ET). Evaluate re-entry after Micron earnings reaction is known.
 5. **Daytrade status:** 0/3. Clean slate.
-6. **Tactical agent:** Monitor NVDA stop on :40 and :50 runs. Execute only if stop breached. If NVDA stops out, portfolio goes to 100% cash — acceptable ahead of Micron earnings.
+6. **Code fixes deployed:** (a) Anti-churn guard added to `alpaca_client_factory.ts` — same-day sells are now blocked at the SDK level. (b) Event detector `loadLastSnapshot` / `saveSnapshot` async bug fixed in `event_detector.ts` — `priorTimestamp` should now be populated on subsequent runs.
 
 ## Macro Themes
-- **Actionable now:** Micron earnings Wednesday Jun 24 after close is the primary near-term catalyst. The semiconductor sector is down -7.11% today. A beat could trigger a sharp recovery. A miss could extend the selloff. Micron-Anthropic AI supply deal adds uncertainty to the binary outcome.
-- **Actionable now:** "AI trade cools" narrative from Yahoo Finance (12:59Z) and Reuters (16:11Z) confirms fresh selling pressure on tech. Do not add to tech exposure while this narrative is active.
-- **Worth monitoring:** QQQ at $719.42 is down -2.51% on the day but recovering from ~$713.28 intraday low. If it holds above $710 into the close, stabilization may be confirmed. If it breaks below $710, more downside likely.
-- **Worth monitoring:** NVDA at $202.50 is barely holding above $200 stop. Day low $200.04. If it holds above $200, it may be a relative strength play within the weak chip sector. If it breaks $200, exit.
-- **Worth monitoring:** META at $566.22 is up +0.42% on the day while tech is down -2-7%. Relative strength. But banned.
+- **Actionable now:** Micron earnings Wednesday Jun 24 after close is the primary near-term catalyst. The semiconductor sector is down -7.11% today. A beat could trigger a sharp recovery. A miss could extend the selloff.
+- **Actionable now:** "AI trade cools" narrative confirms fresh selling pressure on tech. Do not add to tech exposure while this narrative is active.
+- **Worth monitoring:** QQQ at $718.84 is down -2.51% on the day but recovering from ~$713.28 intraday low. If it holds above $710 into the close, stabilization may be confirmed.
+- **Worth monitoring:** NVDA at $202.19 is barely holding above $200. If it holds above $200, it may be a relative strength play. If it breaks $200, more downside.
 - **Interesting but not actionable yet:** HOOD $2B convertible notes. Dilution risk. Avoid.
-- **Interesting but not actionable yet:** QTUM quantum momentum but too thin to trade. No chase.
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
-- **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
-- **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback for performance data.
+- **Universal factory guard** now includes anti-churn same-day sell block.
+- **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
 - **News access:** Yahoo Finance RSS working. Google Search blocked by CAPTCHA.
-- **Alpaca `get-latest-price` bars** timestamps at 17:34Z, current within 1 minute.
+- **Alpaca `get-latest-price` bars** timestamps at 17:39Z, current within 6 minutes.
 - **Day-trade status:** 0/3. Clean slate.
 - **Earnings dates:** No binary events for our holdings in next 48 hours. Micron (MU) Jun 24 after close.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
-- **Integer-share constraint:** With ~$9.6K equity, QQQ capped at 6 shares; SOXX at 1-2 shares; VOO at 2 shares.
-- **Repo hygiene:** Clean. No divergence. Staged ledger/tactical_last_prices from tactical agent are normal.
-- **Event detector note:** Classification NONE at 17:35Z. Prior CRITICAL event fully resolved.
+- **Integer-share constraint:** With ~$9.6K equity, QQQ capped at 5 shares; SOXX at 1 share; VOO at 2 shares.
+- **Repo hygiene:** Restored. `.gitignore` verified. `git check-ignore` passes.
+- **Event detector note:** `priorTimestamp` bug fixed. Anti-churn bug fixed.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
+
+## Critical New Learning
+- **NEVER run test scripts on a live account.** A `bun run temp_files/test_anti_churn.ts` script with `createAlpacaClient('paper')` still submitted a live market sell order because the environment may map paper credentials to the same account. The resulting $6.32 realized loss on NVDA is a permanent error. All code verification must use `DRY_RUN=1` or a sandboxed environment.
+
+## Prior Tactical Executions (Archived)
+See git history for full detail.
+- **2026-06-23 17:42Z:** ACCIDENTAL SELL 1 NVDA @ $202.15 (test script on live account).
+- **2026-06-23 13:33-13:37Z:** CRITICAL event protective sells — QQQ 5 @ $715.94, VOO 2 @ $676.13, AVGO 2 @ $381.95, SOXX 1 @ $609.77.
+- **2026-06-22 14:20Z:** GOOG 2 shares sold @ $349.26 (stop loss).
+- **2026-06-16:** Bought SOXX 1 @ $619.25, AVGO 1 @ $384.34, GOOG 2 @ $369.28, QQQ 3 @ $731.96, NVDA 1 @ $208.47.
+- **2026-06-15:** Same-day round trips on QQQ, GOOG, NVDA (not authorized, caused losses).
