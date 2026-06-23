@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-06-23 14:35Z (Tuesday 10:35 AM ET)
-*Event detector NONE. Market stabilizing post-CRITICAL. Only NVDA remains held. NO new buys today.*
+# Tactical Todo — Updated 2026-06-23 15:35Z (Tuesday 11:35 AM ET)
+*Event detector NONE. Market stabilizing but tech weak. Only NVDA remains held. NO new buys today.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure ~2.1%
 - **HARD_LOCK:** LIFTED — no active lock
-- **Live book:** NVDA 1 ($202.85)
-- **Account equity / cash / buying power:** $9,604.09 / $9,401.24 / $38,172.94
+- **Live book:** NVDA 1 ($201.36)
+- **Account equity / cash / buying power:** $9,602.57 / $9,401.24 / $38,168.68
 - **Gross long exposure:** ~2.1% | **Net exposure:** ~2.1% | **Cash:** ~97.9%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
@@ -16,13 +16,13 @@
   - AVGO: until 2026-06-24 13:34Z
   - SOXX: until 2026-06-24 13:33Z
 - **GOOG cooldown:** EXPIRED at 2026-06-23 14:20Z. But hourly strategist does NOT authorize re-entry.
-- **Market:** OPEN. Event detector NONE at 14:35Z. Market recovering from gap-down open.
+- **Market:** OPEN. Event detector NONE at 15:35Z. Market recovering from gap-down open but tech remains weak.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 
 ## Position Instructions — Tuesday Jun 23 (Tactical Runs)
 
 ### NVDA — HOLD 1 — DO NOT ADD
-- Position avg $208.47. Current $202.85 (unrealized -2.70%). Intraday recovering from -3.24% earlier.
+- Position avg $208.47. Current $201.36 (unrealized -3.41%). Intraday low was $200.04 — extremely close to stop.
 - **Stop loss:** If NVDA falls below $200.00, **SELL all NVDA shares at market** on next tactical run.
 - **Do NOT sell NVDA today** except if stop is breached.
 - **Do NOT add NVDA** — not at +1R yet; adding to underwater position is prohibited.
@@ -55,7 +55,7 @@
 ### GOOG — DO NOT BUY
 - **STOP EXECUTED:** Sold 2 shares at $349.26 on 2026-06-22 14:20Z.
 - **24-hour cooldown EXPIRED** at 2026-06-23 14:20Z. BUT hourly strategist does NOT authorize re-entry.
-- **Reason:** Weak relative trend (-6.4% 5d, -9.75% 1mo). AI talent exodus, Waymo recall. Goldman Sachs warning on AI trade extends negative narrative. No edge.
+- **Reason:** Weak relative trend (-6.99% 5d, -10.31% 1mo). AI talent exodus, Waymo recall. Goldman Sachs warning on AI trade extends negative narrative. No edge.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
@@ -90,8 +90,8 @@
 - Cash: $9,401.24 (~97.9%)
 - Gross exposure: ~2.1%
 
-## Next Hourly Preview — 15:35Z (11:35 AM ET)
+## Next Hourly Preview — 16:35Z (12:35 PM ET)
 - Hourly strategist will review market stabilization or continuation.
-- Evaluate NVDA stop at $200.00.
+- Evaluate NVDA stop at $200.00. Day low $200.04 was very close.
 - If 24-hour cooldowns expire and market stabilizes, evaluate re-entry for QQQ, VOO, AVGO, SOXX.
 - DO NOT deploy cash until hourly authorization.
