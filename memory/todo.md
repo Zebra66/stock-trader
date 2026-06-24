@@ -1,6 +1,6 @@
-# Tactical Todo — Updated 2026-06-24 13:35Z (Wednesday 9:35 AM ET)
-<!-- Autonomous override applied at 2026-06-24 13:40Z due to MAJOR event (SOXX -1.13% in 5 min) -->
-*Event detector MAJOR. SOXX dropped -1.13% in 5 min. Semis weak, defensives bid. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+# Tactical Todo — Updated 2026-06-24 14:35Z (Wednesday 10:35 AM ET)
+<!-- Prior autonomous override at 2026-06-24 13:40Z due to MAJOR event (SOXX -1.13% in 5 min) — RESOLVED. -->
+*Event detector NONE at 14:35Z. Market calm. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -15,9 +15,9 @@
   - SOXX: EXPIRED at 2026-06-24 13:33Z
   - VOO: EXPIRED at 2026-06-24 13:34Z
   - AVGO: EXPIRED at 2026-06-24 13:34Z
-  - QQQ: EXPIRES at 2026-06-24 13:37Z (expires during this cycle)
+  - QQQ: EXPIRED at 2026-06-24 13:37Z
   - NVDA: until 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector MINOR at 13:35Z.
+- **Market:** OPEN until 20:00Z. Event detector NONE at 14:35Z.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
@@ -30,7 +30,7 @@
 
 ### QQQ — SOLD — DO NOT RE-BUY
 - **SOLD:** 5 shares at market avg $715.942 on 2026-06-23 13:37Z.
-- **24-hour cooldown EXPIRES at 2026-06-24 13:37Z.** BUT hourly strategist does NOT authorize re-entry today.
+- **24-hour cooldown EXPIRED at 2026-06-24 13:37Z.** BUT hourly strategist does NOT authorize re-entry today.
 - **Reason:** CRITICAL market event. Protective exit. Micron earnings tonight = binary catalyst.
 - **DO NOT RE-BUY QQQ** today regardless of cooldown expiration.
 
@@ -101,14 +101,14 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 20, Volume 724. Treat as illiquid. Limit orders only if authorized.
+- **SOXX:** Latest bar shows TradeCount 5, Volume 180. Treat as illiquid. Limit orders only if authorized.
 
 ## Current Book
 - Cash: $9,603.37 (100%)
 - Gross exposure: 0%
 
-## Next Hourly Preview — 14:35Z (10:35 AM ET) Wed Jun 24
+## Next Hourly Preview — 15:35Z (11:35 AM ET) Wed Jun 24
 - Hourly strategist will evaluate market after Micron earnings preview and intraday tape.
-- QQQ/VOO/AVGO/SOXX cooldowns will have expired by then.
+- All QQQ/VOO/AVGO/SOXX cooldowns are EXPIRED.
 - DO NOT deploy cash until after Micron earnings reaction is known.
 - Micron earnings after close today is the primary catalyst.
