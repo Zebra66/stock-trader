@@ -103,7 +103,10 @@ When the detector reports CRITICAL or MAJOR, stale todo conditions may be danger
 
 ### Step R2 — Protective action (your ONLY autonomous decision)
 **A. Execute protective sells**
-- If a held position has dropped through its authorized stop-loss, or the detector shows CRITICAL/MAJOR severity, sell that position even if the todo stop was written at a stale higher level.
+- You may ONLY sell a held position if **one of the following is true**:
+  1. The position has dropped through its **authorized hard stop** written in `memory/todo.md`.
+  2. The position itself is classified as **CRITICAL or MAJOR** in the event detector's `heldPositions` array (e.g., dropped ≥4% or ≥2.5% respectively).
+- **You may NOT sell a position that is above its hard stop just because the broad market or the detector's overall classification is CRITICAL/MAJOR.** A hard lock in `memory/todo.md` takes precedence over Event Response Mode for any position that has not individually breached its stop.
 - You may reduce position size (partial sell) if a full exit would breach PDT rules.
 - **Never sell more shares than you hold.**
 
