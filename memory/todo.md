@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-06-24 18:35Z (Wednesday 02:35 PM ET)
-*Event detector NONE at 18:35Z. Market recovered from afternoon lows. QQQ $710.33, SOXX $595.85, NVDA $198.36. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+# Tactical Todo — Updated 2026-06-24 19:35Z (Wednesday 03:35 PM ET)
+*Event detector NONE at 19:35Z. Market faded into the close. QQQ $707.66, SOXX $594.37, NVDA $197.51. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -16,7 +16,7 @@
   - AVGO: EXPIRED at 2026-06-24 13:34Z
   - QQQ: EXPIRED at 2026-06-24 13:37Z
   - NVDA: EXPIRED at 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector NONE at 18:35Z.
+- **Market:** OPEN until 20:00Z. Event detector NONE at 19:35Z.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
@@ -68,15 +68,15 @@
 
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
-- **Market recovered from afternoon lows.** QQQ $710.33, SOXX $595.85, NVDA $198.36. No new positions until hourly authorization after Micron reaction.
+- **Market faded into the close.** QQQ $707.66, SOXX $594.37, NVDA $197.51. No new positions until hourly authorization after Micron reaction.
 - **RKLB is down -7.01% today and -34.85% on the month.** Avoid.
 - **GLD is down -2.53% today.** US dollar at 13-month high. Avoid.
 
 ## Tomorrow's Re-Entry Triggers (Thursday Jun 25 — Pending Hourly Authorization)
 - These are PREPARATORY triggers only. The hourly strategist must explicitly authorize any buy before the tactical agent executes.
-- **QQQ:** Consider limit BUY if price drops below $710 or if price stabilizes above $715 with volume > 1.5x average. Max 3 shares (reduced size, ~$2,130 / 22% of equity). Entry: $710. Stop: $690. Target: $750. R/R: 2.0:1. Rationale: Core broad-tech exposure.
-- **VOO:** Consider limit BUY if price drops below $675 or if SPY holds above $730. Max 1 share (reduced size, ~$676 / 7% of equity). Entry: $676. Stop: $665. Target: $700. R/R: 2.2:1. Rationale: Core S&P exposure.
-- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Entry: $382. Stop: $370. Target: $410. R/R: 2.3:1. Rationale: Individual semiconductor exposure.
+- **QQQ:** Consider limit BUY if price stabilizes above $710 with volume > 1.5x average OR if price drops to $700 with support. Max 3 shares (reduced size, ~$2,130 / 22% of equity). Entry: $707. Stop: $690. Target: $745. R/R: 2.1:1. Rationale: Core broad-tech exposure.
+- **VOO:** Consider limit BUY if price drops below $672 or if SPY holds above $730. Max 1 share (reduced size, ~$674 / 7% of equity). Entry: $674. Stop: $665. Target: $695. R/R: 2.3:1. Rationale: Core S&P exposure.
+- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Entry: $379. Stop: $370. Target: $405. R/R: 2.9:1. Rationale: Individual semiconductor exposure.
 - **SOXX:** DO NOT BUY until after Micron earnings reaction is known and digested (Thursday Jun 25 or later). Rationale: Pure-play semi exposure; highest volatility.
 - **NVDA:** DO NOT RE-BUY. Cooldown EXPIRED at 17:42Z but hourly strategist does NOT authorize re-entry today. Rationale: Binary catalyst.
 
@@ -103,14 +103,14 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 11, Volume 259 at 18:34Z. Liquidity improved but still thin. Limit orders only if authorized.
+- **SOXX:** Latest bar shows TradeCount 11, Volume 332 at 19:34Z. Liquidity improved but still thin. Limit orders only if authorized.
 
 ## Current Book
 - Cash: $9,603.37 (100%)
 - Gross exposure: 0%
 
-## Next Hourly Preview — 19:35Z (03:35 PM ET) Wed Jun 24
-- Hourly strategist will evaluate market with ~25 minutes until close.
+## Next Hourly Preview — 20:35Z (04:35 PM ET) Wed Jun 24
+- Market will be CLOSED. Hourly strategist will evaluate post-Micron earnings reaction and pre-market action.
 - ALL 24-hour cooldowns are EXPIRED (including NVDA at 17:42Z).
 - DO NOT deploy cash until after Micron earnings reaction is known.
 - Micron earnings after close today is the primary catalyst.
