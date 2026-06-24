@@ -1,21 +1,21 @@
 # Hourly Macro Memory
-*Updated 2026-06-24 16:35Z (Wednesday 12:35 PM ET). Market OPEN until 20:00Z (16:00 ET).*
+*Updated 2026-06-24 17:35Z (Wednesday 01:35 PM ET). Market OPEN until 20:00Z (16:00 ET).*
 
-## Hourly Cycle Summary — 2026-06-24 16:35Z (Wednesday 12:35 PM ET)
-- **Status:** Market OPEN. Fourth hourly run of the day.
-- **Event detector:** NONE at 16:35Z. Market calm, no rotation.
+## Hourly Cycle Summary — 2026-06-24 17:35Z (Wednesday 01:35 PM ET)
+- **Status:** Market OPEN. Fifth hourly run of the day. ~25 minutes until close.
+- **Event detector:** NONE at 17:35Z. Market calm, no rotation.
 - **Live broker refresh:** Equity $9,603.37 | Cash $9,603.37 | Long $0 | Gross 0% | Daytrade 0/3.
 - **Holdings confirmed:** NONE.
 - **Open orders:** NONE.
-- **Filled trades since prior hourly (15:35Z):** NONE. Tactical ledger confirms no trades.
-- **Goal check:** Portfolio **-3.96%** since inception ($9,603.37 vs $10,000) vs SPY **+2.64%** (baseline 718.01 → ~739.40). **FAILING both goals.** Trailing by ~6.60 pp.
+- **Filled trades since prior hourly (16:35Z):** NONE. Tactical ledger confirms no trades.
+- **Goal check:** Portfolio **-3.96%** since inception ($9,603.37 vs $10,000) vs SPY **+2.64%** (baseline 718.01 → ~732.35). **FAILING both goals.** Trailing by ~6.60 pp.
 - **Regime:** Defensive. Gross exposure 0% is below the 30–50% defensive band. Deployment blocked by the Micron earnings binary catalyst tonight.
-- **Posture:** No new positions today. Afternoon tape fading from morning highs. Micron earnings after close = binary catalyst. Wait for reaction.
-- **Intraday tape:** SPY -0.23% from 11:35 (739.40 → 737.71), QQQ -0.25% (717.12 → 715.30), SOXX -0.05% (603.56 → 603.23). Morning rebound losing momentum into afternoon.
+- **Posture:** No new positions today. Afternoon tape has accelerated lower. QQQ broke $710. SOXX broke $600. NVDA broke $200. Wait for Micron earnings reaction tomorrow.
+- **Intraday tape:** SPY -0.73% from 12:35 (737.71 → 732.35), QQQ -0.97% (715.30 → 708.46), SOXX -1.63% (603.23 → 593.39), NVDA -1.19% (200.29 → 197.91). Afternoon selloff accelerating into close.
 - **Account health flags:** trading_blocked=false, account_blocked=false, pattern_day_trader=false. All clear.
 - **No stale open orders.** No open orders to cancel.
 - **Universe compliance:** No live holdings. No breach.
-- **Rapid-exposure-drift guard:** Gross exposure unchanged at 0% since 15:35Z. No drift.
+- **Rapid-exposure-drift guard:** Gross exposure unchanged at 0% since 16:35Z. No drift.
 - **Concurrent execution:** No conflicting orders detected. No race-condition drift.
 - **Tactical ledger data-quality:** All entries from recent cycles match live broker snapshot. No hallucination.
 - **Daytrade status:** 0/3. Clean slate.
@@ -51,10 +51,10 @@
 - **Dominant failure mode:** **excessive turnover / friction.** Same-day round trips on Jun 15, gap-down protective exits on Jun 23, and the accidental NVDA test-sale.
 - **Posture:** **defensive.** Gross exposure 0% is below the 30–50% defensive band. Deployment blocked by the Micron earnings binary catalyst tonight.
 
-## Market Intel — Wednesday 12:35 PM ET
-- **Broad market:** SPY ~$737.71, QQQ ~$715.30, SOXX ~$603.23. Morning rebound fading into afternoon. SPY +0.56% on day, QQQ +0.25%, SOXX flat.
-- **Semiconductor sector:** Micron earnings tonight (Jun 24 after close) is the binary catalyst. BofA reiterated buy on Micron with $1,500 target. Korean memory chip losses fueled AI trade doubts.
-- **News (Yahoo Finance RSS):** No new actionable headlines in the last hour. Key stories from earlier: "Beyond the Quarter: What Could Power The Next Leg Of Broadcom Stock's Climb" (Jun 24 15:03Z), "NVIDIA (NVDA) Remains a Must-Own for Bernstein Despite Tech Sell-Off" (Jun 24), "JPMorgan raises S&P 500 target to 7,800 but warns of 'flash crash'" (Jun 24 14:52Z), "US dollar rises to 13-month high on Fed rate hike views" (Jun 24 14:46Z).
+## Market Intel — Wednesday 01:35 PM ET
+- **Broad market:** SPY ~$732.35, QQQ ~$708.46, SOXX ~$593.39. Afternoon selloff accelerating. QQQ broke below $710. SOXX broke below $600. NVDA broke below $200. SPY still +0.09% on day, QQQ -0.72%, SOXX -1.63%, NVDA -1.19%.
+- **Semiconductor sector:** Micron earnings tonight (Jun 24 after close) is the binary catalyst. Market is selling off semi-exposed names into the close. BofA reiterated buy on Micron with $1,500 target. Korean memory chip losses fueled AI trade doubts.
+- **News (Yahoo Finance RSS):** No new actionable headlines in the last hour. MarketWatch noted "Everyone on Wall Street now believes in buying the dip. That is exactly why you should worry." (17:14 GMT) — contrarian sentiment signal, but not actionable for our timeline.
 - **Relative strength (1M):** HOOD (+36.37%), SOXX (+12.33%), QTUM (+4.95%) strongest. RKLB (-34.85%), GLD (-11.13%), EIS (-9.47%), GOOG (-7.77%), META (-7.42%), AVGO (-6.87%), NVDA (-6.71%) weakest.
 - **Earnings dates:** Micron (MU) Jun 24 after close (sector-wide binary). No binary earnings for our holdings in next 48 hours. Yahoo earnings query failed; proceeding with known information.
 
@@ -83,19 +83,19 @@
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
-| QQQ | Avoid | Cooldown EXPIRED. Price $715.30. Micron earnings tonight = binary catalyst. | 0% | **DO NOT RE-BUY QQQ** today. Wait for post-Micron authorization. |
-| VOO | Avoid | Cooldown EXPIRED. Price $679.94. Less semi-exposure than QQQ. | 0% | **DO NOT RE-BUY VOO** today. Wait for post-Micron authorization. |
-| AVGO | Avoid | Cooldown EXPIRED. Price $385.43. Direct semi exposure. | 0% | **DO NOT RE-BUY AVGO** today. Wait for post-Micron authorization. |
-| SOXX | Avoid | Cooldown EXPIRED. Price $603.23. Pure semi exposure. | 0% | **DO NOT RE-BUY SOXX** today. Wait for post-Micron authorization. |
-| NVDA | Avoid | Cooldown until 17:42Z. Price $200.29. | 0% | **DO NOT RE-BUY NVDA** today. |
-| GOOG | Avoid | Weak 1M (-7.77%). Price $348.76. AI talent retention risk. | 0% | **DO NOT BUY GOOG.** |
+| QQQ | Avoid | Cooldown EXPIRED. Price $708.46. Broke $710. Micron earnings tonight = binary catalyst. | 0% | **DO NOT RE-BUY QQQ** today. Wait for post-Micron authorization. |
+| VOO | Avoid | Cooldown EXPIRED. Price $675.04. Less semi-exposure than QQQ. | 0% | **DO NOT RE-BUY VOO** today. Wait for post-Micron authorization. |
+| AVGO | Avoid | Cooldown EXPIRED. Price $380.87. Direct semi exposure. | 0% | **DO NOT RE-BUY AVGO** today. Wait for post-Micron authorization. |
+| SOXX | Avoid | Cooldown EXPIRED. Price $593.39. Broke $600. Pure semi exposure. | 0% | **DO NOT RE-BUY SOXX** today. Wait for post-Micron authorization. |
+| NVDA | Avoid | Cooldown EXPIRED at 17:42Z. Price $197.91. Broke $200. | 0% | **DO NOT RE-BUY NVDA** today. |
+| GOOG | Avoid | Weak 1M (-7.77%). Price $348.165. AI talent retention risk. | 0% | **DO NOT BUY GOOG.** |
 | META | Avoid | bannedSymbols active. | 0% | Avoid |
 | HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge, weak relative trends, or thin liquidity. | 0% | Avoid |
 
 ## Priority Actions
-1. **HOLD 100% CASH.** No new positions today. Afternoon tape fading from morning highs. Micron earnings tonight after close.
+1. **HOLD 100% CASH.** No new positions today. Afternoon tape accelerating lower. QQQ broke $710. SOXX broke $600. NVDA broke $200. Micron earnings tonight after close.
 2. **Micron earnings tonight** is the primary make-or-break event for the AI/semiconductor trade. The entire sector will re-price after the report. Do not enter semi-exposed positions before this.
-3. **Cooldown status:** All QQQ/VOO/AVGO/SOXX cooldowns EXPIRED. NVDA until 17:42Z. All symbols remain **DO NOT RE-BUY** until hourly authorization after Micron reaction.
+3. **Cooldown status:** ALL cooldowns EXPIRED (including NVDA at 17:42Z). All symbols remain **DO NOT RE-BUY** until hourly authorization after Micron reaction.
 4. **Prepare tomorrow's re-entry triggers.** By the 14:35Z (10:35 AM ET) hourly run tomorrow, Micron reaction will be known. Evaluate QQQ/VOO/AVGO re-entry with reduced sizing.
 5. **Apply reduced sizing.** Per trading-best-practices: after 3+ consecutive loss events, reduce position size by 50% on next deployment. QQQ max 3 shares (was 5), VOO max 1 share (was 2), AVGO max 2 shares (was 3).
 6. **Daytrade status:** 0/3. Clean slate.
@@ -120,7 +120,7 @@
 - **Universal factory guard** includes anti-churn same-day sell block.
 - **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback for performance.
 - **News access:** Yahoo Finance RSS working. Google Search blocked by CAPTCHA.
-- **Alpaca `get-latest-price` bars** timestamps at 16:34Z, current within 1 minute.
+- **Alpaca `get-latest-price` bars** timestamps at 17:34Z, current within 1 minute.
 - **Day-trade status:** 0/3. Clean slate.
 - **Earnings dates:** Micron (MU) Jun 24 after close. No binary events for our holdings in next 48 hours (Yahoo earnings query failed; using known memory).
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
