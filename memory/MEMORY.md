@@ -134,3 +134,13 @@
 - **Critical code breach guard:** Run `git diff --cached --stat` on every run and revert any staged removal of safety guards to `HEAD`.
 - **Market stabilization does not equal a buy signal.** Prices can stabilize and then drift lower. Require confirmation before deploying capital.
 - **Stale-memory emergency:** If memory files are >24 hours old, reconstruct from live broker data before writing any directives. Default to conservative posture until reconciliation is complete.
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-06-24 13:40Z
+- **Event detector classification:** MAJOR
+- **Trigger:** SOXX dropped -1.13% in 5 minutes ($607.46 → $600.605)
+- **Sector rotation:** Semis weak, defensives bid (GLD +0.48%)
+- **Action taken:** NONE — portfolio already 100% cash, no positions to protect
+- **Buy conditions:** All buys already suspended by hourly strategist (Micron earnings tonight). No additional suspension needed.
+- **Rationale:** Tactical executor confirms the defensive posture. No override trades required. Waiting for Micron earnings reaction before any re-entry.

@@ -1,5 +1,6 @@
 # Tactical Todo — Updated 2026-06-24 13:35Z (Wednesday 9:35 AM ET)
-*Event detector MINOR. Market bouncing after two-day tech rout. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+<!-- Autonomous override applied at 2026-06-24 13:40Z due to MAJOR event (SOXX -1.13% in 5 min) -->
+*Event detector MAJOR. SOXX dropped -1.13% in 5 min. Semis weak, defensives bid. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
