@@ -1,6 +1,6 @@
-# Tactical Todo — Updated 2026-06-24 15:35Z (Wednesday 11:35 AM ET)
+# Tactical Todo — Updated 2026-06-24 16:35Z (Wednesday 12:35 PM ET)
 <!-- Prior autonomous override at 2026-06-24 13:40Z due to MAJOR event (SOXX -1.13% in 5 min) — RESOLVED. -->
-*Event detector NONE at 15:35Z. Market calm. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+*Event detector NONE at 16:35Z. Market calm. Afternoon tape fading from morning highs. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -17,7 +17,7 @@
   - AVGO: EXPIRED at 2026-06-24 13:34Z
   - QQQ: EXPIRED at 2026-06-24 13:37Z
   - NVDA: until 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector NONE at 15:35Z.
+- **Market:** OPEN until 20:00Z. Event detector NONE at 16:35Z.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
@@ -69,7 +69,7 @@
 
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
-- **Market bouncing from two-day rout.** No new positions until hourly authorization.
+- **Market bouncing from two-day rout but fading into afternoon.** No new positions until hourly authorization.
 - **RKLB is down -7.01% today and -34.85% on the month.** Avoid.
 - **GLD is down -2.53% today.** US dollar at 13-month high. Avoid.
 
@@ -103,13 +103,13 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 1, Volume 40 at 15:34Z. Treat as illiquid. Limit orders only if authorized.
+- **SOXX:** Latest bar shows TradeCount 2, Volume 44 at 16:34Z. Treat as illiquid. Limit orders only if authorized.
 
 ## Current Book
 - Cash: $9,603.37 (100%)
 - Gross exposure: 0%
 
-## Next Hourly Preview — 16:35Z (12:35 PM ET) Wed Jun 24
+## Next Hourly Preview — 17:35Z (01:35 PM ET) Wed Jun 24
 - Hourly strategist will evaluate market after Micron earnings preview and intraday tape.
 - All QQQ/VOO/AVGO/SOXX cooldowns are EXPIRED.
 - DO NOT deploy cash until after Micron earnings reaction is known.
