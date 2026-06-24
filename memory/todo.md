@@ -1,6 +1,6 @@
-# Tactical Todo — Updated 2026-06-24 14:35Z (Wednesday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-24 15:35Z (Wednesday 11:35 AM ET)
 <!-- Prior autonomous override at 2026-06-24 13:40Z due to MAJOR event (SOXX -1.13% in 5 min) — RESOLVED. -->
-*Event detector NONE at 14:35Z. Market calm. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+*Event detector NONE at 15:35Z. Market calm. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -17,7 +17,7 @@
   - AVGO: EXPIRED at 2026-06-24 13:34Z
   - QQQ: EXPIRED at 2026-06-24 13:37Z
   - NVDA: until 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector NONE at 14:35Z.
+- **Market:** OPEN until 20:00Z. Event detector NONE at 15:35Z.
 - **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
@@ -61,7 +61,7 @@
 ### GOOG — DO NOT BUY
 - **STOP EXECUTED:** Sold 2 shares at $349.26 on 2026-06-22 14:20Z.
 - **24-hour cooldown EXPIRED** at 2026-06-23 14:20Z. BUT hourly strategist does NOT authorize re-entry.
-- **Reason:** Weak relative trend. AI talent exodus, Waymo recall. No edge.
+- **Reason:** Weak relative trend. AI talent retention risk. No edge.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
@@ -70,6 +70,8 @@
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
 - **Market bouncing from two-day rout.** No new positions until hourly authorization.
+- **RKLB is down -7.01% today and -34.85% on the month.** Avoid.
+- **GLD is down -2.53% today.** US dollar at 13-month high. Avoid.
 
 ## Tomorrow's Re-Entry Triggers (Thursday Jun 25 — Pending Hourly Authorization)
 - These are PREPARATORY triggers only. The hourly strategist must explicitly authorize any buy before the tactical agent executes.
@@ -77,7 +79,7 @@
 - **VOO:** Consider limit BUY if price drops below $675 or if SPY holds above $730. Max 1 share (reduced size, ~$679 / 7% of equity). Stop: $660. Target: $700. Rationale: Core S&P exposure.
 - **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Stop: $365. Target: $410. Rationale: Individual semiconductor exposure.
 - **SOXX:** DO NOT BUY until after Micron earnings reaction is known and digested (Thursday Jun 25 or later). Rationale: Pure-play semi exposure; highest volatility.
-- **NVDA:** DO NOT RE-BUY until cooldown expires at 2026-06-24 17:42Z AND hourly strategist explicitly authorizes after Micron reaction. Rationale: Prediction markets betting against chip prices; binary catalyst.
+- **NVDA:** DO NOT RE-BUY until cooldown expires at 2026-06-24 17:42Z AND hourly strategist explicitly authorizes after Micron reaction. Rationale: Binary catalyst.
 
 ## Hard Rules / No-Trade Conditions
 - **NO discretionary buys today.** Gross exposure is 0%. Micron earnings tonight after close.
@@ -101,13 +103,13 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 5, Volume 180. Treat as illiquid. Limit orders only if authorized.
+- **SOXX:** Latest bar shows TradeCount 1, Volume 40 at 15:34Z. Treat as illiquid. Limit orders only if authorized.
 
 ## Current Book
 - Cash: $9,603.37 (100%)
 - Gross exposure: 0%
 
-## Next Hourly Preview — 15:35Z (11:35 AM ET) Wed Jun 24
+## Next Hourly Preview — 16:35Z (12:35 PM ET) Wed Jun 24
 - Hourly strategist will evaluate market after Micron earnings preview and intraday tape.
 - All QQQ/VOO/AVGO/SOXX cooldowns are EXPIRED.
 - DO NOT deploy cash until after Micron earnings reaction is known.
