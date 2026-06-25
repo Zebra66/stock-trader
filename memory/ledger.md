@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 12:50 : [tactical] VOO limit filled at $675.00
+- VOO limit BUY 1 @ $675.00 filled between 16:35Z and 16:50Z
+- Now holding 2 VOO shares @ avg $675.98, current $675.25
+- SOXX limit BUY 1 @ $610 still open, SOXX at $623.10
+- Gross exposure up to ~70.5% from 63.5%, within 60-90% target
+- No sell triggers breached, no new orders placed
+
+2026-06-25 : 12:40 : [tactical] No action; all holds above stops
+- QQQ at $714.74, AVGO at $380.71, VOO at $675.68
+- Limit buys VOO @ $675 and SOXX @ $610 still open, unfilled
+- No stop breached; no event detected; daytrade 0/3
+
 2026-06-25 : 12:38 : [hourly] Held all, limits open, no fills
 - Equity $9,622.83, gross 63.5%, daytrade 0/3
 - VOO limit $675.00 open, SOXX limit $610.00 open

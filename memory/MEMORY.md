@@ -1,5 +1,14 @@
 # Hourly Macro Memory
 
+## Tactical Execution Summary — 2026-06-25 16:50Z (Thursday 12:50 PM ET)
+- **Status:** Market OPEN. VOO limit BUY 1 @ $675 **FILLED**. Now holding 2 VOO shares. SOXX limit BUY 1 @ $610 still open, unfilled.
+- **Live broker refresh:** Equity $9,615.71 | Cash $2,835.81 | Long $6,779.90 | Gross ~70.5% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 shares @ avg $713.015, AVGO 3 shares @ avg $379.17, VOO 2 shares @ avg $675.98.
+- **Open orders:** SOXX limit BUY 1 @ $610 (day).
+- **No sell triggers breached.** QQQ $714.65 > stop $705. AVGO $380.44 > stop $375. VOO $675.25 > stop $670.
+- **Event detector:** NONE at 16:50Z.
+- **Action:** VOO fill executed automatically via limit order. No new orders placed. Await SOXX fill or next hourly direction.
+
 ## Tactical Execution Summary — 2026-06-25 16:35Z (Thursday 12:35 PM ET)
 - **Status:** Market OPEN. VOO limit BUY 1 @ $675 and SOXX limit BUY 1 @ $610 remain open, unfilled. No new fills since 15:35Z.
 - **Live broker refresh:** Equity $9,622.83 | Cash $3,510.78 | Long $6,112.05 | Gross 63.5% | Daytrade 0/3.
@@ -29,17 +38,17 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $713.015 | $714.96 | $4,289.76 | 44.6% | +$11.67 | +0.27% |
-| AVGO | 3 | $379.17 | $382.175 | $1,146.53 | 11.9% | +$9.02 | +0.79% |
-| VOO | 1 | $676.99 | $675.765 | $675.77 | 7.0% | -$1.23 | -0.18% |
-| Cash | — | — | — | $3,510.78 | 36.5% | — | — |
-| **Equity** | — | — | — | **$9,622.83** | **100%** | — | **-3.77%** |
+| QQQ | 6 | $713.015 | $714.65 | $4,287.90 | 44.6% | +$9.81 | +0.23% |
+| AVGO | 3 | $379.17 | $380.44 | $1,141.32 | 11.9% | +$3.81 | +0.34% |
+| VOO | 2 | $675.98 | $675.25 | $1,350.50 | 14.0% | -$1.46 | -0.11% |
+| Cash | — | — | — | $2,835.81 | 29.5% | — | — |
+| **Equity** | — | — | — | **$9,615.71** | **100%** | — | **-3.84%** |
 
-- **Gross long exposure:** ~63.5%
-- **Net exposure:** ~63.5%
+- **Gross long exposure:** ~70.5%
+- **Net exposure:** ~70.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** VOO limit BUY 1 @ $675, SOXX limit BUY 1 @ $610
+- **Open orders:** SOXX limit BUY 1 @ $610
 
 ## Performance Review
 - **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.77%** ($9,622.83 vs $10,000) vs SPY **+2.13%** (baseline 718.01 → $733.315). Trailing by ~5.9 pp.

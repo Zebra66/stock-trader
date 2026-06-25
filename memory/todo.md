@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-06-25 16:35Z (Thursday 12:35 PM ET)
-*PCE hot. Split tape: financials lead, big tech weak, semis strong. AVGO and VOO fills from earlier confirmed. Gross 63.5%. Limit buys open, awaiting fills.*
+# Tactical Todo — Updated 2026-06-25 16:50Z (Thursday 12:50 PM ET)
+*VOO limit BUY 1 @ $675 FILLED. Now holding 2 VOO shares. SOXX limit BUY 1 @ $610 still open. Gross 70.5%. No sell triggers breached.*
 
 ## Current State
 - **Regime:** offensive catch-up (scale in on gap pullback, but cautious due to PCE headwind)
 - **Lock status:** LIFTED — no active lock
-- **Live book:** QQQ 6 shares @ $713.015, AVGO 3 shares @ $379.17, VOO 1 share @ $676.99
-- **Account equity / cash / buying power:** $9,622.83 / $3,510.78 / ~$29,871.84
-- **Gross long exposure:** ~63.5% | **Net exposure:** ~63.5% | **Cash:** ~36.5%
+- **Live book:** QQQ 6 shares @ $713.015, AVGO 3 shares @ $379.17, VOO 2 shares @ $675.98
+- **Account equity / cash / buying power:** $9,615.71 / $2,835.81 / ~$29,716.95
+- **Gross long exposure:** ~70.5% | **Net exposure:** ~70.5% | **Cash:** ~29.5%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** VOO limit BUY 1 @ $675, SOXX limit BUY 1 @ $610
+- **Open orders:** SOXX limit BUY 1 @ $610 (day order)
 - **24-hour cooldowns:** ALL EXPIRED (last sell was Jun 23).
 - **Market:** OPEN until 20:00Z.
 - **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT. PCE hot today.
@@ -35,14 +35,13 @@
 - **Concentration:** 11.9% of equity. Adding 1 share = 15.9% (breaches 15% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL AVGO` appears above.
 
-### VOO — HOLD 1 — AUTHORIZED LIMIT BUY 1
-- **FILLED:** 1 share at avg $676.99 on 2026-06-25.
-- **Current price:** $675.765. Unrealized -$1.23 (-0.18%).
+### VOO — HOLD 2 — NO NEW BUYS
+- **FILLED:** 2 shares at avg $675.98 on 2026-06-25.
+- **Current price:** $675.25. Unrealized -$1.46 (-0.11%).
 - **Stop:** $670. **Target:** $695.
 - **HOLD.** Do not sell unless stop $670 is breached.
 - **AUTHORIZED SAME-DAY SELL VOO** if price drops below $670.00. Rationale: protect capital on broad market breakdown.
-- **Limit BUY 1 share if price drops below $675.** Entry $675, stop $670, target $695. R/R 4.0:1.
-- **Concentration:** 1 share @ $675.765 = 7.0% of equity. Adding 1 share = 14.1% (within 20% cap).
+- **Concentration:** 2 shares @ $675.25 = 14.0% of equity (within 20% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL VOO` appears above.
 
 ### SOXX — AUTHORIZED LIMIT BUY 1
@@ -89,21 +88,19 @@
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
 
 ## Current Book
-- QQQ: 6 shares @ $713.015, current $714.96, value $4,289.76 (44.6%)
-- AVGO: 3 shares @ $379.17, current $382.175, value $1,146.53 (11.9%)
-- VOO: 1 share @ $676.99, current $675.765, value $675.77 (7.0%)
-- Cash: ~$3,510.78 (36.5%)
-- Gross exposure: ~63.5%
+- QQQ: 6 shares @ $713.015, current $714.65, value $4,287.90 (44.6%)
+- AVGO: 3 shares @ $379.17, current $380.44, value $1,141.32 (11.9%)
+- VOO: 2 shares @ $675.98, current $675.25, value $1,350.50 (14.0%)
+- Cash: ~$2,835.81 (29.5%)
+- Gross exposure: ~70.5%
 
 ## Open Orders (Active)
-- VOO: limit BUY 1 @ $675 (day order, placed 15:43Z)
 - SOXX: limit BUY 1 @ $610 (day order, placed 15:43Z)
 
 ## Next Hourly Preview — 17:35Z (1:35 PM ET) Thu Jun 25
 - Market will be OPEN. Hourly strategist will evaluate PCE impact and whether to add more.
-- QQQ 6, AVGO 3, VOO 1 are filled and in HOLD. Stops active: QQQ $705, AVGO $375, VOO $670.
-- If VOO limit $675 fills, hourly may keep SOXX limit @ $610.
-- If SOXX limit $610 fills, hourly may keep VOO limit @ $675.
-- If both fill, gross ~77%. Hourly may evaluate new high-conviction adds.
-- If neither fills, gross 63.5%. Hourly may reassess limits or hold.
+- QQQ 6, AVGO 3, VOO 2 are filled and in HOLD. Stops active: QQQ $705, AVGO $375, VOO $670.
+- SOXX limit BUY 1 @ $610 remains open. SOXX at $623.10, well above limit.
+- If SOXX limit $610 fills, gross ~76.8%. Hourly may evaluate new high-conviction adds.
+- If SOXX does not fill, gross ~70.5%. Hourly may keep limit or reassess.
 - If market drops below stops, hourly may revert to defensive and cut at stops.
