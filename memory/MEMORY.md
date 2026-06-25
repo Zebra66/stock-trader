@@ -1,69 +1,68 @@
 # Hourly Macro Memory
 
-## Tactical Execution Summary — 2026-06-25 15:10Z (Thursday 11:10 AM ET)
-- **Status:** Market OPEN. QQQ limit BUY 1 @ $714.00 filled. Position now 6 shares @ avg $713.015.
-- **Live broker refresh:** Equity $9,612.65 | Cash $4,566.59 | Long $5,046.06 | Gross 52.5% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6 shares @ avg $713.015, AVGO 2 shares @ avg $379.345.
-- **Open orders:** AVGO 1 @ $379, VOO 1 @ $677.
-- **No sell triggers breached.** QQQ $713.79 > stop $705. AVGO $381.66 > stop $375.
-- **Event detector:** NONE at 15:10Z.
-- **No action required.** Orders left in place. Awaiting next hourly at 15:35Z.
-*Updated 2026-06-25 14:52Z (Thursday 10:52 AM ET). Market OPEN until 20:00Z (16:00 ET).*
+## Tactical Execution Summary — 2026-06-25 15:35Z (Thursday 11:35 AM ET)
+- **Status:** Market OPEN. AVGO limit BUY 1 @ $379 and VOO limit BUY 1 @ $677 both filled since 15:10Z. No open orders remaining.
+- **Live broker refresh:** Equity $9,609.17 | Cash $3,510.78 | Long $6,098.39 | Gross 63.5% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 shares @ avg $713.015, AVGO 3 shares @ avg $379.17, VOO 1 share @ avg $676.99.
+- **Open orders:** None.
+- **No sell triggers breached.** QQQ $713.32 > stop $705. AVGO $380.535 > stop $375. VOO $676.86 > stop $670.
+- **Event detector:** NONE at 15:35Z.
+- **PCE report:** Hot PCE released today; Nasdaq slipping, Dow/S&P rising. Macro headwind for tech.
+- **Action:** Set limit buys for SOXX 1 @ $610 and VOO 1 @ $675. Awaiting fills.
 
-## Hourly Cycle Summary — 2026-06-25 14:52Z (Thursday 10:52 AM ET)
-- **Status:** Market OPEN. ~3 hours to close. Second tranche partially deployed.
-- **Repo integrity:** CRITICAL BREACH DETECTED AND RESOLVED. All tracked files were staged as deleted; restored from HEAD. Working tree memory files were stale (May 29). Git HEAD versions now active. Branch up to date with origin/main.
-- **Event detector:** NONE at 14:38Z. Prior CRITICAL event (13:50Z) fully resolved.
-- **Live broker refresh:** Equity $9,625.21 | Cash $5,280.59 | Long $4,344.62 | Gross 45.1% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 5 shares @ avg $712.818, AVGO 2 shares @ avg $379.345.
-- **Open orders:** QQQ 1 share limit $714, AVGO 1 share limit $379, VOO 1 share limit $677.
-- **Filled trades this cycle:** QQQ BUY 2 shares limit $712, filled at 14:47Z.
-- **Goal check:** Portfolio **-3.75%** since inception ($9,625.21 vs $10,000) vs SPY **+2.39%** (baseline 718.01 → $735.24). **FAILING both goals.** Trailing by ~6.14 pp.
-- **Regime:** Offensive catch-up. First + second tranche partially deployed. Gross 45.1% after QQQ fill. Need 60–90%.
-- **Posture:** Micron gap-up fully reversed and now bouncing. QQQ from $712.66 low → $715.79. AVGO from $379.80 low → $383.42. We caught the QQQ dip at $712. AVGO and VOO limits still pending.
-- **Universe compliance:** QQQ and AVGO within caps. No breach.
-- **Rapid-exposure-drift guard:** Gross jumped from 0% to 30.2% to 45.1% this cycle. All authorized.
-- **Concurrent execution:** Tactical agent bought 3 QQQ + 2 AVGO at 14:32Z. Hourly strategist added 2 QQQ at 14:47Z. No race condition.
+## Hourly Cycle Summary — 2026-06-25 15:35Z (Thursday 11:35 AM ET)
+- **Status:** Market OPEN. ~2.5 hours to close. Third tranche not yet deployed.
+- **Event detector:** NONE at 15:35Z.
+- **Live broker refresh:** Equity $9,609.17 | Cash $3,510.78 | Long $6,098.39 | Gross 63.5% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 @ avg $713.015, AVGO 3 @ avg $379.17, VOO 1 @ avg $676.99.
+- **Filled trades this cycle:** AVGO BUY 1 share limit $379, filled at 15:20Z. VOO BUY 1 share limit $677, filled at 15:20Z.
+- **Goal check:** Portfolio **-3.91%** since inception ($9,609.17 vs $10,000) vs SPY **+2.27%** (baseline 718.01 → $734.315). **FAILING both goals.** Trailing by ~6.18 pp.
+- **Regime:** Offensive catch-up. Gross 63.5% within 60–90% target. Need to deploy more to catch up.
+- **Posture:** PCE hotness is new macro headwind. Nasdaq slipping, Dow/S&P rising. Tech rotation risk. Current tech-heavy book (QQQ 44.5% + AVGO 11.9% = 56.4%) vulnerable.
+- **Universe compliance:** QQQ, AVGO, VOO within caps. No breach.
+- **Rapid-exposure-drift guard:** Gross jumped from 0% to 30.2% to 45.1% to 63.5% today. All authorized.
+- **Concurrent execution:** Tactical agent filled AVGO and VOO at 15:20Z. No race condition.
 - **Daytrade status:** 0/3. Clean slate.
-- **Code integrity:** Repo restored to HEAD. All source files intact.
+- **Code integrity:** No staged deletions. All source files intact. Branch up to date.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $713.015 | $713.79 | $4,282.74 | 44.6% | +$4.65 | +0.11% |
-| AVGO | 2 | $379.345 | $381.66 | $763.32 | 7.9% | +$4.63 | +0.61% |
-| Cash | — | — | — | $4,566.59 | 47.5% | — | — |
-| **Equity** | — | — | — | **$9,612.65** | **100%** | — | **-3.87%** |
+| QQQ | 6 | $713.015 | $713.32 | $4,279.92 | 44.5% | +$1.83 | +0.04% |
+| AVGO | 3 | $379.17 | $380.535 | $1,141.61 | 11.9% | +$4.10 | +0.36% |
+| VOO | 1 | $676.99 | $676.86 | $676.86 | 7.0% | -$0.13 | -0.02% |
+| Cash | — | — | — | $3,510.78 | 36.5% | — | — |
+| **Equity** | — | — | — | **$9,609.17** | **100%** | — | **-3.91%** |
 
-- **Gross long exposure:** ~52.5%
-- **Net exposure:** ~52.5%
+- **Gross long exposure:** ~63.5%
+- **Net exposure:** ~63.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** AVGO 1 @ $379, VOO 1 @ $677
+- **Open orders:** None
 
 ## Performance Review
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.75%** ($9,625.21 vs $10,000) vs SPY **+2.39%** (baseline 718.01 → $735.24). Trailing by ~6.14 pp.
-- **1D review:** Portfolio +0.25% vs SPY +0.34%. Slightly underperforming.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.91%** ($9,609.17 vs $10,000) vs SPY **+2.27%** (baseline 718.01 → $734.315). Trailing by ~6.18 pp.
+- **1D review:** Portfolio ~+0.06% today vs SPY ~+0.34%. Underperforming due to cash drag and tech exposure under PCE headwind.
 - **1W review:** Portfolio +0.00% vs SPY +1.5%. Underperforming due to cash drag.
 - **2W review:** Portfolio +0.00% vs SPY +2.0%. Underperforming due to cash drag.
 - **Dominant failure mode:** **excessive turnover / friction + cash drag.** The Jun 23 gap-down protective sells locked in ~$107.61 of realized losses. The accidental NVDA test-sale added another ~$6.32. Since then, 100% cash missed the SPY rally.
-- **What must change:** (1) Stop churning. (2) Scale in today on pullback. (3) Add to winners next hour if tape holds.
+- **What must change:** (1) Stop churning. (2) Deploy remaining cash into high-conviction setups. (3) Add defensive anchor (VOO) to reduce tech concentration. (4) Monitor PCE impact on tech — if rotation continues, reduce tech concentration.
 
 ## Goal Check
-- **Portfolio since inception:** -3.87% ($9,612.65 vs $10,000 base)
-- **S&P 500 since inception:** +2.33% (SPY $734.79 vs baseline 718.01)
-- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.20 pp.
+- **Portfolio since inception:** -3.91% ($9,609.17 vs $10,000 base)
+- **S&P 500 since inception:** +2.27% (SPY $734.315 vs baseline 718.01)
+- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.18 pp.
 - **Dominant failure mode:** **excessive turnover / friction + cash drag.**
 - **Posture:** **offensive catch-up.**
 
-## Market Intel — Thursday 10:52 AM ET
-- **Broad market:** SPY $735.24, QQQ $715.79, SOXX $615.49, NVDA $195.105, AVGO $383.42, VOO $677.72. Market gapped up on Micron earnings, fully reversed, now bouncing.
-- **Semiconductor sector:** Micron earnings crushed estimates. AI chip demand structural. AVGO +0.35% today, recovering from gap-down. SOXX +2.12% today.
+## Market Intel — Thursday 11:35 AM ET
+- **Broad market:** SPY $734.315, QQQ $713.17, SOXX $616.35, NVDA $195.38, AVGO $380.59, VOO $676.82. PCE hot; Nasdaq slips, Dow/S&P rise.
+- **Semiconductor sector:** Micron earnings crushed estimates. AI chip demand structural. AVGO -0.40% today, SOXX +2.12% today. Semis diverging: SOXX strongest 1M (+7.75%), AVGO/NVDA weak (-9.86%/-9.33%).
 - **Relative strength (1M):** HOOD (+28.98%), SOXX (+7.75%), QTUM (+0.92%) strongest. RKLB (-42.60%), GLD (-10.94%), EIS (-12.61%), GOOG (-11.12%), META (-9.55%), AVGO (-9.86%), NVDA (-9.33%) weakest.
-- **Earnings dates:** Micron reported Jun 24 BEAT. No binary earnings for our holdings in next 48 hours.
-- **News:** Micron "blowout earnings expose AI's memory bottleneck." PCE inflation hot but falling oil calms Fed fears. IBM unveiled chip for AI push. Qualcomm data center AI chips. Gold below $4,000 for first time since Nov '25.
+- **Earnings dates:** Micron reported Jun 24 BEAT. AVGO next: Sep 3, 2026. NVDA next: Aug 26, 2026. No binary earnings for our holdings in next 48 hours.
+- **News:** PCE inflation hot. Big Tech falters. Micron "blowout earnings expose AI's memory bottleneck." Apple MacBooks/iPads getting more expensive as memory crunch deepens. IBM unveiled chip for AI push. Qualcomm data center AI chips.
 
 ## Multi-Timeframe Performance (Yahoo Finance v8 Fallback)
 *Fetched 2026-06-25 14:49Z.*
@@ -89,11 +88,11 @@
 ## Position Map
 | Symbol | Bias | Rationale | Target % | Action |
 |---|---|---|---|---|
-| QQQ | Buy / Hold | Core broad-tech. 5 shares filled. 1 share pending. | 36–45% | HOLD 5. Limit BUY 1 @ $714. Stop $705. |
-| AVGO | Buy / Hold | AI infrastructure. 2 shares filled. 1 share pending. | 8–12% | HOLD 2. Limit BUY 1 @ $379. Stop $375. |
-| VOO | Buy | S&P anchor. 1 share pending. | 5–10% | Limit BUY 1 @ $677. Stop $670. |
-| SOXX | Wait | Pure-play semi. Volatile. Gap huge. | 0% | DO NOT BUY today. Re-evaluate at 11:35Z. |
-| NVDA | Wait | Single-stock AI. Weak 1M (-9.33%). | 0% | DO NOT BUY today. |
+| QQQ | Hold | Core broad-tech. 6 shares filled. At 45% cap. | 36–45% | HOLD 6. Stop $705. No new buys. |
+| AVGO | Hold | AI infrastructure. 3 shares filled. At 15% cap. | 8–12% | HOLD 3. Stop $375. No new buys. |
+| VOO | Buy / Hold | S&P anchor. 1 share filled. Add 1 more on pullback. | 10–15% | HOLD 1. Limit BUY 1 @ $675. Stop $670. |
+| SOXX | Buy | Pure-play semi. Strongest 1M. Micron beat. | 5–10% | Limit BUY 1 @ $610. Stop $590. |
+| NVDA | Avoid | Single-stock AI. Weak 1M (-9.33%). Down 2.11% today. | 0% | DO NOT BUY today. |
 | GOOG | Avoid | Weak 1M (-11.12%), down 0.86% today. | 0% | DO NOT BUY. |
 | META | Avoid | bannedSymbols active. | 0% | Avoid |
 | HOOD | Avoid | -1.68% today, -9.16% 1W. Choppy. | 0% | Avoid |
@@ -101,37 +100,38 @@
 | GLD / EIS / SHLD / QTUM / ARKX | Avoid | Weak trends, thin liquidity. | 0% | Avoid |
 
 ## Priority Actions
-1. **HOLD QQQ 6 and AVGO 2.** Both slightly profitable. Do not sell unless stop breached.
-2. **Monitor open orders.** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677. If market pulls back, these fill. If not, we may raise limits at next hourly.
-3. **Stop levels:** QQQ stop $705. AVGO stop $375. VOO stop $670.
-4. **AUTHORIZE SAME-DAY SELL QQQ** if price drops below $705. AUTHORIZE SAME-DAY SELL AVGO if price drops below $375.
-5. **Concentration caps respected:** QQQ 37.2% (cap 45%). AVGO 8.0% (cap 15%). VOO 0% (cap 20%).
+1. **HOLD QQQ 6, AVGO 3, VOO 1.** All within stop levels. Do not sell unless stop breached.
+2. **Set limit buys.** VOO 1 @ $675, SOXX 1 @ $610. Only fill on pullback.
+3. **Stop levels:** QQQ stop $705. AVGO stop $375. VOO stop $670. SOXX stop $590.
+4. **AUTHORIZE SAME-DAY SELL QQQ** if price drops below $705. AUTHORIZE SAME-DAY SELL AVGO if price drops below $375. AUTHORIZE SAME-DAY SELL VOO if price drops below $670.
+5. **Concentration caps respected:** QQQ 44.5% (cap 45%). AVGO 11.9% (cap 15%). VOO 7.0% (cap 20%).
 6. **Daytrade status:** 0/3. Clean slate.
-7. **Code integrity:** Repo restored. All guards active.
+7. **Monitor PCE impact.** If Nasdaq continues to slip, pause SOXX add and focus on VOO.
 
 ## Deployment Queue (Thursday Jun 25)
-1. **Current open orders:** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677.
-2. **If all fill:** Gross ~56%. Next hourly (11:35Z) may add SOXX 1 @ $610 or NVDA 1 @ $193 if tape holds.
-3. **If none fill:** QQQ 5 + AVGO 2 = 45.1%. Next hourly may raise limits or add QQQ 1 @ $715.
-4. **If market drops below stops:** Exit QQQ and AVGO, revert to defensive, preserve capital.
+1. **Current open orders:** None.
+2. **Next limit buys:** VOO 1 @ $675, SOXX 1 @ $610.
+3. **If both fill:** Gross ~77%. Next hourly (12:35Z) may add NVDA 1 @ $192 or VOO 1 @ $675 if tape stabilizes.
+4. **If neither fill:** Gross 63.5%. Next hourly may raise limits or hold.
+5. **If market drops below stops:** Exit QQQ and AVGO, revert to defensive, preserve capital.
 
 ## Macro Themes
-- **Actionable now:** AI chip demand structural. Micron beat validates. QQQ/AVGO are correct exposure.
-- **Worth monitoring:** PCE hot but oil falling. Fed fears calmed. Risk-on backdrop.
-- **Worth monitoring:** QQQ gap from $707.66 to $725.70 now filled to $712.66. Bounce to $715.79. If it holds above $712, breakout is valid.
+- **Actionable now:** PCE hot = tech headwind. Add VOO for stability. Add SOXX only on deeper pullback.
+- **Worth monitoring:** Micron beat validates AI memory demand. Semis diverging (SOXX strong, AVGO/NVDA weak).
+- **Worth monitoring:** QQQ gap from $707.66 to $725.70 now filled to $712.66. Bounce to $713.17. If it holds above $712, breakout is valid.
 - **Interesting but not actionable yet:** Gold below $4,000. Bitcoin lows. Risk-off in safe havens = risk-on for equities?
 
 ## Data / Process Notes
 - **Alpaca CLI** working. Concentration cap guard active.
 - **Universal factory guard** active for anti-churn, HARD_LOCK, trading lock file, universe gate.
-- **FMP** disabled. Yahoo Finance chart API v8 used as fallback.
+- **FMP** disabled. Yahoo Finance chart API v8 used as fallback. Earnings dates scraped from Yahoo Finance page.
 - **News access:** Yahoo Finance RSS working. Google Search blocked.
 - **Alpaca `get-latest-price` bars** timestamps current within 1 minute.
 - **Day-trade status:** 0/3. Clean slate.
-- **Earnings dates:** Micron reported Jun 24. No binary events for our holdings in next 48 hours.
+- **Earnings dates:** AVGO Sep 3, NVDA Aug 26. No binary events for our holdings in next 48 hours.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
-- **Repo hygiene:** CRITICAL BREACH RESOLVED. All files restored from HEAD.
-- **Event detector:** `priorTimestamp` bug still present (null). Prices valid; pctChange absent.
+- **Event detector:** `priorTimestamp` present in 15:35Z run (was null in prior runs). Bug may be fixed.
+- **Repo hygiene:** Clean. No staged deletions. Branch up to date.
 
 ## Standing Learnings
 See `memory/standing_learnings.md` for full archive. Key reminders:
@@ -146,4 +146,4 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **With ~$10K equity, concentration caps are extremely tight.**
 - **Gap-up opens on macro catalysts are poor entry points.** Limit orders on pullbacks preserve edge.
 - **Anti-churn rules must be code-enforced at the SDK level.**
-- **Event detector `priorTimestamp` null bug caused by `Bun.file()` usage.** Use `await Bun.file(path).text()`.
+- **Event detector `priorTimestamp` null bug may be resolved.** Monitor next run.
