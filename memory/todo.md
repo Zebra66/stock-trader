@@ -1,5 +1,8 @@
-# Tactical Todo — Updated 2026-06-24 19:35Z (Wednesday 03:35 PM ET)
-*Event detector NONE at 19:35Z. Market faded into the close. QQQ $707.66, SOXX $594.37, NVDA $197.51. Portfolio is 100% cash. NO new buys today. Micron earnings tonight after close.*
+# Tactical Todo — Updated 2026-06-25 13:30Z (Thursday 09:30 AM ET)
+*Event detector CRITICAL at 13:30Z. Massive post-Micron gap-up. QQQ $725.70 (+2.59%), SOXX $636.42 (+6.92%), SPY $739.10 (+0.99%). Portfolio is 100% cash. NO new buys.*
+
+<!-- Autonomous override applied at 2026-06-25 13:30Z due to CRITICAL event -->
+<!-- All preparatory buy triggers suspended. Awaiting hourly strategist authorization. -->
 
 ## Current State
 - **Regime:** defensive (protect capital) — gross exposure 0%
@@ -16,8 +19,8 @@
   - AVGO: EXPIRED at 2026-06-24 13:34Z
   - QQQ: EXPIRED at 2026-06-24 13:37Z
   - NVDA: EXPIRED at 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector NONE at 19:35Z.
-- **Upcoming catalyst:** Micron earnings Wednesday June 24 after close (sector-wide binary event for semiconductors).
+- **Market:** OPEN until 20:00Z. Event detector CRITICAL at 13:30Z. Massive post-Micron gap-up.
+- **Catalyst status:** Micron earnings reported Wednesday June 24 after close. Market gapping up massively. SOXX +6.92%, QQQ +2.59% at open.
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
 ## Position Instructions — Wednesday Jun 24 (Tactical Runs)
@@ -74,9 +77,9 @@
 
 ## Tomorrow's Re-Entry Triggers (Thursday Jun 25 — Pending Hourly Authorization)
 - These are PREPARATORY triggers only. The hourly strategist must explicitly authorize any buy before the tactical agent executes.
-- **QQQ:** Consider limit BUY if price stabilizes above $710 with volume > 1.5x average OR if price drops to $700 with support. Max 3 shares (reduced size, ~$2,130 / 22% of equity). Entry: $707. Stop: $690. Target: $745. R/R: 2.1:1. Rationale: Core broad-tech exposure.
-- **VOO:** Consider limit BUY if price drops below $672 or if SPY holds above $730. Max 1 share (reduced size, ~$674 / 7% of equity). Entry: $674. Stop: $665. Target: $695. R/R: 2.3:1. Rationale: Core S&P exposure.
-- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Entry: $379. Stop: $370. Target: $405. R/R: 2.9:1. Rationale: Individual semiconductor exposure.
+- **QQQ:** Consider limit BUY if price stabilizes above $710 with volume > 1.5x average OR if price drops to $700 with support. Max 3 shares (reduced size, ~$2,130 / 22% of equity). Entry: $707. Stop: $690. Target: $745. R/R: 2.1:1. Rationale: Core broad-tech exposure. SUSPENDED — major event detected at 2026-06-25 13:30Z.
+- **VOO:** Consider limit BUY if price drops below $672 or if SPY holds above $730. Max 1 share (reduced size, ~$674 / 7% of equity). Entry: $674. Stop: $665. Target: $695. R/R: 2.3:1. Rationale: Core S&P exposure. SUSPENDED — major event detected at 2026-06-25 13:30Z.
+- **AVGO:** Consider limit BUY ONLY if semis stabilize and Micron earnings reaction is positive. Max 2 shares (reduced size, ~$764 / 8% of equity). Entry: $379. Stop: $370. Target: $405. R/R: 2.9:1. Rationale: Individual semiconductor exposure. SUSPENDED — major event detected at 2026-06-25 13:30Z.
 - **SOXX:** DO NOT BUY until after Micron earnings reaction is known and digested (Thursday Jun 25 or later). Rationale: Pure-play semi exposure; highest volatility.
 - **NVDA:** DO NOT RE-BUY. Cooldown EXPIRED at 17:42Z but hourly strategist does NOT authorize re-entry today. Rationale: Binary catalyst.
 

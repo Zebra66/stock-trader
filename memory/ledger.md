@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 09:30 : [tactical] CRITICAL gap-up: no positions, buys suspended
+- Event detector CRITICAL at 13:30Z. QQQ $725.70 (+2.59%), SOXX $636.42 (+6.92%)
+- Post-Micron earnings massive gap-up. No positions held. No protective sells possible.
+- All preparatory buy triggers suspended. Awaiting hourly strategist authorization.
+- Portfolio: 100% cash. Equity $9,603.37. Daytrade 0/3. No orders placed.
+
+2026-06-24 : 15:50 : [tactical] Held 100% cash, no trades
+- Market fading into close, Micron earnings tonight after close
+- Portfolio 100% cash, gross exposure 0%, no positions held
+- No open orders, daytrade count 0/3 clean slate
+- All buy triggers suspended until post-Micron hourly authorization
+- No action required per todo.md defensive regime instructions
+
+2026-06-24 : 15:40 : [tactical] Hold cash, no action
+- No positions held. Cash $9,603.37
+- Event detector NONE. Market calm.
+- Micron earnings tonight after close
+- Todo explicitly blocks all buys today
+- No trades executed. Gross exposure 0%.
+
 2026-06-24 : 15:36 : [hourly] Hold cash, market faded, Micron eve
 - Equity $9,603.37, SPY $731.72, QQQ $707.66, SOXX $594.37, NVDA $197.51
 - Market faded into close from 18:35Z bounce; no positions held

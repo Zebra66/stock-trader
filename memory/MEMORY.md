@@ -1,3 +1,14 @@
+## AUTONOMOUS OVERRIDE — 2026-06-25 13:30Z (Thursday 09:30 AM ET)
+- **Event detector classification:** CRITICAL
+- **Affected symbols:** QQQ (+2.59%), SOXX (+6.92%), XLK (+3.30%), SMH (+5.80%)
+- **Action taken:** No protective sells (no positions held). All re-entry buy triggers suspended.
+- **Reason:** Post-Micron earnings massive gap-up in semiconductors and tech. Tactical agent MUST NOT chase gap-up. Awaiting hourly strategist authorization after market digests reaction.
+- **Exposure:** 0% gross. No increase during CRITICAL event.
+- **Live prices:** QQQ $725.70, SOXX $636.42, SPY $739.10, NVDA $201.50, AVGO $388.82, VOO $678.73
+- **Portfolio:** 100% cash. Equity $9,603.37. Daytrade 0/3.
+
+---
+
 # Hourly Macro Memory
 *Updated 2026-06-24 19:35Z (Wednesday 03:35 PM ET). Market OPEN until 20:00Z (16:00 ET).*
 
