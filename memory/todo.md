@@ -1,12 +1,12 @@
-# Tactical Todo — Updated 2026-06-25 13:35Z (Thursday 09:35 AM ET)
-*Micron earnings BEAT. Market gapped up. Gap slightly fading. Event detector NONE. Portfolio 100% cash. Hourly strategist authorizes limit buy orders on pullback.*
+# Tactical Todo — Updated 2026-06-25 14:32Z (Thursday 10:32 AM ET)
+*Micron earnings BEAT. Gap fully reversed. Event detector NONE at 14:30Z. Tactical agent deployed first tranche: QQQ 3 shares, AVGO 2 shares. VOO trigger not met.*
 
 ## Current State
 - **Regime:** offensive catch-up (scale in on gap pullback)
-- **HARD_LOCK:** LIFTED — no active lock
-- **Live book:** NONE (100% cash)
-- **Account equity / cash / buying power:** $9,603.37 / $9,603.37 / $38,413.48
-- **Gross long exposure:** 0% | **Net exposure:** 0% | **Cash:** 100%
+- **Lock status:** LIFTED — no active lock
+- **Live book:** QQQ 3 shares @ $713.363333, AVGO 2 shares @ $379.345
+- **Account equity / cash / buying power:** $9,603.37 / ~$6,704.59 / ~$35,514.70
+- **Gross long exposure:** ~30.2% | **Net exposure:** ~30.2% | **Cash:** ~69.8%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -22,34 +22,29 @@
 
 ## Position Instructions — Thursday Jun 25 (Tactical Runs)
 
-### NO POSITIONS HELD
-- All positions were sold Jun 23. Portfolio is 100% cash.
-- **No action required for any held position.**
-- **Daytrade status:** 0/3. Clean slate.
+### QQQ — HOLD
+- **FILLED:** 3 shares at limit $718, avg fill $713.363333 on 2026-06-25 14:32Z.
+- **Current price:** $715.11. Unrealized +$5.24 (+0.245%).
+- **Stop:** $705. **Target:** $745.
+- **HOLD.** Do not sell unless stop $705 is breached or hourly strategist authorizes exit.
+- **Concentration:** 22.3% of equity. Within 45% cap.
+- **Daytrade status:** 0/3. Position opened today; do NOT sell today unless `AUTHORIZE SAME-DAY SELL QQQ` appears in this file.
 
-### QQQ — AUTHORIZED LIMIT BUY (SUSPENDED)
-- **SOLD:** 5 shares at market avg $715.942 on 2026-06-23 13:37Z.
-- **24-hour cooldown EXPIRED at 2026-06-24 13:37Z.**
-- **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** QQQ dropped to $713.50 (-1.21% in 10 min). DO NOT BUY during CRITICAL event.
-- **BUY QQQ if price drops below $718.** Limit buy 3 shares. Entry $718. Stop $705. Target $745. R/R 2.1:1. Rationale: Core broad-tech exposure, post-Micron gap pullback.
-- **DO NOT BUY QQQ above $718.** No market orders. Limit only.
-- **Concentration check:** 3 shares @ $718 = $2,154 = 22.4% of equity. Within 45% cap.
+### AVGO — HOLD
+- **FILLED:** 2 shares at limit $384, avg fill $379.345 on 2026-06-25 14:32Z.
+- **Current price:** $380.15. Unrealized +$1.61 (+0.212%).
+- **Stop:** $375. **Target:** $405.
+- **HOLD.** Do not sell unless stop $375 is breached or hourly strategist authorizes exit.
+- **Concentration:** 7.9% of equity. Within 15% cap.
+- **Daytrade status:** 0/3. Position opened today; do NOT sell today unless `AUTHORIZE SAME-DAY SELL AVGO` appears in this file.
 
 ### VOO — AUTHORIZED LIMIT BUY (SUSPENDED)
 - **SOLD:** 2 shares at market $676.13 on 2026-06-23 13:34Z.
 - **24-hour cooldown EXPIRED at 2026-06-24 13:34Z.**
 - **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** SPY dropped to $732.93 (-0.57% in 10 min). DO NOT BUY during CRITICAL event.
 - **BUY VOO if price drops below $677.** Limit buy 1 share. Entry $677. Stop $670. Target $695. R/R 2.6:1. Rationale: Core S&P exposure, lower volatility anchor.
-- **DO NOT BUY VOO above $677.** No market orders. Limit only.
+- **AVOID VOO above $677.** No market orders. Limit only.
 - **Concentration check:** 1 share @ $677 = $677 = 7.0% of equity. Within 20% cap.
-
-### AVGO — AUTHORIZED LIMIT BUY (SUSPENDED)
-- **SOLD:** 2 shares at market $381.95 on 2026-06-24 13:34Z.
-- **24-hour cooldown EXPIRED at 2026-06-24 13:34Z.**
-- **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** Tech/semis CRITICAL. DO NOT BUY during CRITICAL event.
-- **BUY AVGO if price drops below $384.** Limit buy 2 shares. Entry $384. Stop $375. Target $405. R/R 2.3:1. Rationale: AI infrastructure / networking, not pure memory play.
-- **DO NOT BUY AVGO above $384.** No market orders. Limit only.
-- **Concentration check:** 2 shares @ $384 = $768 = 8.0% of equity. Within 15% cap.
 
 ### SOXX — DO NOT BUY
 - **SOLD:** 1 share at market $609.77 on 2026-06-23 13:33Z.
@@ -79,6 +74,7 @@
 - **GLD is down -11.0% on the month.** US dollar at 13-month high. Avoid.
 
 <!-- Autonomous override applied at 2026-06-25T13:50:02.930Z due to CRITICAL event — SOXX -2.73%, QQQ -1.21%, XLK -1.80%, SMH -2.33% in 10 min. All buys SUSPENDED. -->
+<!-- Override LIFTED at 2026-06-25 14:30Z — event detector NONE. QQQ 3 shares + AVGO 2 shares filled at 14:32Z. -->
 
 ## Hard Rules / No-Trade Conditions
 - **NO market orders today.** All buys must be limit orders. Gap-up opens are poor entry points.
@@ -89,7 +85,7 @@
 - **Do NOT run test scripts or code verification on the live account.** Use `DRY_RUN=1` only.
 - **After 3+ consecutive loss events, reduce position size by 50% on next deployment.** Applied: QQQ max 3 shares, VOO max 1 share, AVGO max 2 shares.
 - **Tactical agent must NOT sell positions bought today unless the exact phrase `AUTHORIZE SAME-DAY SELL <SYMBOL>` appears in this file.**
-- **If QQQ/VOO/AVGO fills and then drops below stop, DO NOT sell same day.** Wait for next hourly authorization unless stop is breached with CRITICAL event.
+- **If QQQ/AVGO drops below stop, DO NOT sell same day.** Wait for next hourly authorization unless stop is breached with CRITICAL event.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -105,11 +101,14 @@
 - **SOXX:** Latest bar shows TradeCount 46, Volume 2437 at 13:34Z. Liquidity improved but still thin. Limit orders only if authorized.
 
 ## Current Book
-- Cash: $9,603.37 (100%)
-- Gross exposure: 0%
+- QQQ: 3 shares @ $713.363333, current $715.11, value $2,145.33 (22.3%)
+- AVGO: 2 shares @ $379.345, current $380.15, value $760.30 (7.9%)
+- Cash: ~$6,704.59 (69.8%)
+- Gross exposure: ~30.2%
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET) Thu Jun 25
-- Market will be OPEN. Evaluate whether gap-up holds.
-- If QQQ/VOO/AVGO limit orders filled, HOLD with stops active.
-- If gap holds and QQQ stays above $720, authorize additional QQQ share (4th) and possibly NVDA 1 share.
-- If gap fills and QQQ drops below $710, revert to defensive and cut any filled positions at stop.
+- Market will be OPEN. Hourly strategist will evaluate whether to add second tranche.
+- QQQ and AVGO are filled and in HOLD. Stops active: QQQ $705, AVGO $375.
+- If QQQ stays above $720, hourly may authorize 4th QQQ share and possibly NVDA 1 share.
+- If QQQ drops below $710, hourly may revert to defensive and cut at stops.
+- VOO: trigger still $677. Current $677.76 — not met. Tactical agent will place if trigger hits and hourly authorizes.

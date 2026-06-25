@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 10:20 : [tactical] No action: buys suspended, gap weak
+- Event detector NONE at 14:20Z, prior CRITICAL resolved
+- QQQ $712.85 below $718 trigger but dipped below $710, gap filling
+- VOO $676.52 below $677 trigger but thin liquidity (9 trades)
+- AVGO $379.44 below $384 trigger, gap weakness
+- Waiting for hourly strategist at 14:35Z to re-evaluate triggers
+
+2026-06-25 : 10:10 : [tactical] No action — buys suspended
+- Event detector NONE at 14:10Z (resolved from CRITICAL)
+- QQQ at $712.68, AVGO at $378.83 triggers met but suspended
+- VOO at $677.225 above $677 trigger, not met
+- No positions held, 0% exposure, 0/3 daytrades
+- Awaiting hourly strategist at 14:35Z to re-evaluate
+
 2026-06-25 : 09:50 : [tactical] CRITICAL event: all buys suspended
 - Event detector CRITICAL at 13:50Z: SOXX $615.215 (-2.73%), QQQ $713.50 (-1.21%), XLK (-1.80%), SMH (-2.33%)
 - Portfolio 100% cash. No protective sells needed.
