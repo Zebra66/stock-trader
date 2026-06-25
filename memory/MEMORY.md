@@ -1,5 +1,21 @@
 # Hourly Macro Memory
-*Updated 2026-06-25 14:32Z (Thursday 10:32 AM ET). Market OPEN until 20:00Z (16:00 ET).*
+*Updated 2026-06-25 14:50Z (Thursday 10:50 AM ET). Market OPEN until 20:00Z (16:00 ET).*
+
+## Tactical Execution Summary — 2026-06-25 14:50Z (Thursday 10:50 AM ET)
+- **Status:** Market OPEN. Event detector NONE at 14:50Z. No trades executed this tactical cycle.
+- **Event detector:** NONE at 14:50Z. Broad market and held positions all OK.
+- **Live broker refresh:** Equity $9,617.69 | Cash ~$5,280.59 | Long $4,337.10 | Gross ~45.1% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 5 shares @ $712.818 avg, AVGO 2 shares @ $379.345 avg.
+- **Open orders:** VOO 1 share limit $677 (new at 14:47Z), AVGO 1 share limit $379 (new at 14:47Z).
+- **Regime:** Offensive catch-up. Second tranche deployed by 14:35Z hourly. Gross exposure now ~45.1%, approaching 60–90% target band.
+- **Posture:** QQQ stable at $714.64, AVGO at $381.95. Both positions profitable. Micron gap-up pullback holding. No new events.
+- **Actions taken:**
+  1. Reconciled stale memory files with live broker state. QQQ now 5 shares (hourly added 2 @ $712 at 14:47Z). AVGO/VOO open orders added by hourly at 14:47Z.
+  2. No new orders placed. No orders cancelled. All conditions unchanged.
+- **Daytrade status:** 0/3. Clean slate.
+- **Code integrity:** No staged/unstaged deletions. Branch up to date.
+
+---
 
 ## Tactical Execution Summary — 2026-06-25 14:32Z (Thursday 10:32 AM ET)
 - **Status:** Market OPEN. Two limit buy orders executed after CRITICAL event resolved.
@@ -47,16 +63,16 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 3 | $713.363333 | $715.11 | $2,145.33 | 22.3% | +$5.24 | +0.245% |
-| AVGO | 2 | $379.345 | $380.15 | $760.30 | 7.9% | +$1.61 | +0.212% |
-| Cash | — | — | — | ~$6,704.59 | 69.8% | — | — |
-| **Equity** | — | — | — | **$9,603.37** | **100%** | — | **-3.96%** |
+| QQQ | 5 | $712.818 | $714.64 | $3,573.20 | 37.2% | +$9.11 | +0.256% |
+| AVGO | 2 | $379.345 | $381.95 | $763.90 | 7.9% | +$5.21 | +0.687% |
+| Cash | — | — | — | ~$5,280.59 | 54.9% | — | — |
+| **Equity** | — | — | — | **$9,617.69** | **100%** | — | **-3.82%** |
 
-- **Gross long exposure:** ~30.2%
-- **Net exposure:** ~30.2%
+- **Gross long exposure:** ~45.1%
+- **Net exposure:** ~45.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** VOO 1 share limit $677, AVGO 1 share limit $379
 
 ## Performance Review
 - **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.96%** ($9,603.37 vs $10,000) vs SPY **+2.72%** (baseline 718.01 → $737.55). Trailing by ~6.68 pp.

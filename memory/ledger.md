@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 10:51 : [tactical] Hold QQQ/AVGO, orders open
+- QQQ 5 shares at $714.64, AVGO 2 shares at $381.95
+- Open orders: VOO 1@$677.00, AVGO 1@$379.00
+- No sell triggers hit, no new buys triggered
+- Event detector NONE at 14:50Z
+- Stale memory files reconciled: QQQ 5 shares, cash $5,280.59
+
+2026-06-25 : 10:40 : [tactical] Hold: no triggers met
+- QQQ $714.82, stop $705 not breached
+- AVGO $380.30, stop $375 not breached
+- VOO $679.10, trigger $677 not met
+- Event detector MINOR, no override needed
+- Gross exposure ~30.2%, cash ~69.8%
+
 2026-06-25 : 10:20 : [tactical] No action: buys suspended, gap weak
 - Event detector NONE at 14:20Z, prior CRITICAL resolved
 - QQQ $712.85 below $718 trigger but dipped below $710, gap filling
