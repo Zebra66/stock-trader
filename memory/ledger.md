@@ -2,6 +2,32 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 13:38 : [hourly] Held all, keep SOXX limit at 610
+- Equity $9,626.69, gross 70.5%, daytrade 0/3
+- QQQ $716.35, AVGO $380.36, VOO $675.59 — all above stops
+- SOXX limit BUY 1 @ $610.00 open, current $626.42, order not filled
+- No concentration room for QQQ/AVGO/VOO adds; SOXX only deploy target
+- PCE split tape: semis strong, big tech weak, financials lead
+
+2026-06-25 : 13:30 : [tactical] No action: all holds above stops, SOXX limit open
+- QQQ $716.51 > stop $705.00
+- AVGO $380.25 > stop $375.00
+- VOO $675.90 > stop $670.00
+- SOXX limit BUY 1 @ $610.00 unfilled; price $626.75
+- Gross exposure 70.6%. No triggers. No orders.
+
+2026-06-25 : 13:20 : [tactical] No action, holds stable
+- QQQ $715.065, AVGO $379.87, VOO $675.68 all above stops
+- SOXX limit BUY 1 @ $610 still open, price $625.51
+- Gross exposure ~70.5%, no sell triggers breached
+- Event detector NONE, no autonomous override
+
+2026-06-25 : 13:10 : [tactical] Hold QQQ AVGO VOO; no triggers
+- QQQ at $715.15, AVGO at $380.37, VOO at $675.35 — all above stops
+- SOXX limit BUY 1 @ $610.00 still open, unfilled
+- Gross exposure 70.5%, daytrade 0/3
+- No sell triggers breached, no new orders placed
+
 2026-06-25 : 12:50 : [tactical] VOO limit filled at $675.00
 - VOO limit BUY 1 @ $675.00 filled between 16:35Z and 16:50Z
 - Now holding 2 VOO shares @ avg $675.98, current $675.25
