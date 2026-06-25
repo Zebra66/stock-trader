@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 14:37 : [hourly] Held all, SOXX limit open, MINOR event
+- Equity $9,627.12, gross 70.5%, daytrade 0/3
+- QQQ $716.59, AVGO $379.60, VOO $676.56 — all above stops
+- SOXX limit BUY 1 @ $610.00 open, current $622.04, not filled
+- No concentration room for QQQ/AVGO/VOO adds; SOXX only deploy target
+- Event detector MINOR at 18:35Z; Iran/Hormuz headline at 1:30 PM ET
+
+2026-06-25 : 14:30 : [tactical] No triggers, SOXX limit open
+- QQQ $718.95, AVGO $381.64, VOO $678.14 all above stops
+- SOXX limit BUY 1 @ $610 open, expires 20:00Z
+- Event detector NONE, no conditions met
+- No orders placed, gross ~70.6%
+
+2026-06-25 : 14:20 : [tactical] Hold all, no triggers breached
+- QQQ $718.46 > stop $705.00
+- AVGO $381.28 > stop $375.00
+- VOO $677.62 > stop $670.00
+- SOXX $627.06 above limit $610.00, no fill
+- Gross 70.6%, daytrade 0/3
+
+2026-06-25 : 14:10 : [tactical] Hold all, no triggers breached
+- QQQ $717.46 above stop $705.00, AVGO $380.72 above stop $375.00, VOO $676.06 above stop $670.00
+- SOXX limit BUY 1 @ $610 still open; price $627.575 above limit
+- Event detector NONE. No sells or buys triggered.
+- Gross exposure ~70.5%, daytrade 0/3. No action required.
+
+2026-06-25 : 13:50 : [tactical] No action, holds stable
+- QQQ $714.99 above stop $705.00, HOLD
+- AVGO $379.74 above stop $375.00, HOLD
+- VOO $674.47 above stop $670.00, HOLD
+- SOXX limit buy $610.00 open, current $624.83
+- Event detector NONE, no triggers breached
+
+2026-06-25 : 13:40 : [tactical] Hold all, no triggers, SOXX open
+- No sell triggers breached; QQQ at $716.48, AVGO at $380.58, VOO at $676.015
+- SOXX limit BUY 1 @ $610 not filled; current $627.03
+- Event detector NONE at 17:40Z
+- Gross exposure ~70.5%, cash ~29.5%
+- One open order: SOXX limit BUY 1 @ $610
+
 2026-06-25 : 13:38 : [hourly] Held all, keep SOXX limit at 610
 - Equity $9,626.69, gross 70.5%, daytrade 0/3
 - QQQ $716.35, AVGO $380.36, VOO $675.59 — all above stops

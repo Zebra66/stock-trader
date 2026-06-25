@@ -1,47 +1,47 @@
-# Tactical Todo — Updated 2026-06-25 17:35Z (Thursday 1:35 PM ET)
-*Held all positions. SOXX limit BUY 1 @ $610 still open. Gross 70.5%. No sell triggers breached.*
+# Tactical Todo — Updated 2026-06-25 18:35Z (Thursday 2:35 PM ET)
+*Held all positions. SOXX limit BUY 1 @ $610 still open. Gross 70.5%. No sell triggers breached. Event detector MINOR.*
 
 ## Current State
 - **Regime:** offensive catch-up (hold current positions, add SOXX only on pullback)
 - **Lock status:** LIFTED — no active lock
 - **Live book:** QQQ 6 shares @ $713.015, AVGO 3 shares @ $379.17, VOO 2 shares @ $675.98
-- **Account equity / cash / buying power:** $9,626.69 / $2,835.81 / ~$29,747.69
-- **Gross long exposure:** ~70.5% | **Net exposure:** ~70.5% | **Cash:** ~29.5%
+- **Account equity / cash / buying power:** $9,627.12 / $2,835.81 / ~$29,748.90
+- **Gross long exposure:** ~70.5% | **Net exposure:** ~70.5% | **Cash:** ~29.4%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** SOXX limit BUY 1 @ $610 (day order, expires 20:00Z)
 - **24-hour cooldowns:** ALL EXPIRED (last sell was Jun 23).
 - **Market:** OPEN until 20:00Z.
-- **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT. PCE hot today.
+- **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT. PCE hot today. Iran/Hormuz headline at 1:30 PM ET.
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
 ## Position Instructions — Thursday Jun 25 (Tactical Runs)
 
 ### QQQ — HOLD 6 — NO NEW BUYS (45% CAP)
 - **FILLED:** 6 shares total. Blended avg $713.015.
-- **Current price:** $716.35. Unrealized +$20.01 (+0.47%).
+- **Current price:** $716.59. Unrealized +$21.45 (+0.50%).
 - **Stop:** $705. **Target:** $745.
 - **HOLD.** Do not sell unless stop $705 is breached.
 - **AUTHORIZED SAME-DAY SELL QQQ** if price drops below $705.00. Rationale: protect capital on breakdown below gap support.
-- **Concentration:** 44.6% of equity. Adding any shares would breach 45% cap.
+- **Concentration:** 44.7% of equity. Adding any shares would breach 45% cap.
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL QQQ` appears above.
 
 ### AVGO — HOLD 3 — NO NEW BUYS (15% CAP)
 - **FILLED:** 3 shares at avg $379.17 on 2026-06-25.
-- **Current price:** $380.36. Unrealized +$3.57 (+0.31%).
+- **Current price:** $379.60. Unrealized +$1.29 (+0.11%).
 - **Stop:** $375. **Target:** $405.
 - **HOLD.** Do not sell unless stop $375 is breached.
 - **AUTHORIZED SAME-DAY SELL AVGO** if price drops below $375.00. Rationale: protect capital on pre-earnings breakdown.
-- **Concentration:** 11.9% of equity. Adding 1 share = 15.9% (breaches 15% cap).
+- **Concentration:** 11.8% of equity. Adding 1 share = 15.8% (breaches 15% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL AVGO` appears above.
 
 ### VOO — HOLD 2 — NO NEW BUYS
 - **FILLED:** 2 shares at avg $675.98 on 2026-06-25.
-- **Current price:** $675.59. Unrealized -$0.26 (-0.02%).
+- **Current price:** $676.56. Unrealized +$1.16 (+0.09%).
 - **Stop:** $670. **Target:** $695.
 - **HOLD.** Do not sell unless stop $670 is breached.
 - **AUTHORIZED SAME-DAY SELL VOO** if price drops below $670.00. Rationale: protect capital on broad market breakdown.
-- **Concentration:** 2 shares @ $675.59 = 14.0% of equity (within 20% cap). Adding 1 share = 21.0% (breaches 20% cap).
+- **Concentration:** 2 shares @ $676.56 = 14.1% of equity (within 20% cap). Adding 1 share = 21.1% (breaches 20% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL VOO` appears above.
 
 ### SOXX — AUTHORIZED LIMIT BUY 1
@@ -90,17 +90,17 @@
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
 
 ## Current Book
-- QQQ: 6 shares @ $713.015, current $716.35, value $4,298.10 (44.6%)
-- AVGO: 3 shares @ $379.17, current $380.36, value $1,141.08 (11.9%)
-- VOO: 2 shares @ $675.98, current $675.59, value $1,351.70 (14.0%)
-- Cash: ~$2,835.81 (29.5%)
+- QQQ: 6 shares @ $713.015, current $716.59, value $4,299.54 (44.7%)
+- AVGO: 3 shares @ $379.17, current $379.60, value $1,138.80 (11.8%)
+- VOO: 2 shares @ $675.98, current $676.56, value $1,353.12 (14.1%)
+- Cash: ~$2,835.81 (29.4%)
 - Gross exposure: ~70.5%
 
 ## Open Orders (Active)
 - SOXX: limit BUY 1 @ $610 (day order, placed 15:43Z, expires 20:00Z)
 
-## Next Hourly Preview — 18:35Z (2:35 PM ET) Thu Jun 25
-- Market will be OPEN. Hourly strategist will evaluate PCE impact and whether to add more.
+## Next Hourly Preview — 19:35Z (3:35 PM ET) Thu Jun 25
+- Market will be OPEN. Hourly strategist will evaluate Iran/Hormuz impact and whether to add more.
 - QQQ 6, AVGO 3, VOO 2 are filled and in HOLD. Stops active: QQQ $705, AVGO $375, VOO $670.
 - SOXX limit BUY 1 @ $610 may expire at 20:00Z if not filled.
 - If SOXX limit $610 fills, gross ~76.8%. Hourly may evaluate new high-conviction adds.
