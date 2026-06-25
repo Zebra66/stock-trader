@@ -27,23 +27,26 @@
 - **No action required for any held position.**
 - **Daytrade status:** 0/3. Clean slate.
 
-### QQQ — AUTHORIZED LIMIT BUY
+### QQQ — AUTHORIZED LIMIT BUY (SUSPENDED)
 - **SOLD:** 5 shares at market avg $715.942 on 2026-06-23 13:37Z.
 - **24-hour cooldown EXPIRED at 2026-06-24 13:37Z.**
+- **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** QQQ dropped to $713.50 (-1.21% in 10 min). DO NOT BUY during CRITICAL event.
 - **BUY QQQ if price drops below $718.** Limit buy 3 shares. Entry $718. Stop $705. Target $745. R/R 2.1:1. Rationale: Core broad-tech exposure, post-Micron gap pullback.
 - **DO NOT BUY QQQ above $718.** No market orders. Limit only.
 - **Concentration check:** 3 shares @ $718 = $2,154 = 22.4% of equity. Within 45% cap.
 
-### VOO — AUTHORIZED LIMIT BUY
+### VOO — AUTHORIZED LIMIT BUY (SUSPENDED)
 - **SOLD:** 2 shares at market $676.13 on 2026-06-23 13:34Z.
 - **24-hour cooldown EXPIRED at 2026-06-24 13:34Z.**
+- **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** SPY dropped to $732.93 (-0.57% in 10 min). DO NOT BUY during CRITICAL event.
 - **BUY VOO if price drops below $677.** Limit buy 1 share. Entry $677. Stop $670. Target $695. R/R 2.6:1. Rationale: Core S&P exposure, lower volatility anchor.
 - **DO NOT BUY VOO above $677.** No market orders. Limit only.
 - **Concentration check:** 1 share @ $677 = $677 = 7.0% of equity. Within 20% cap.
 
-### AVGO — AUTHORIZED LIMIT BUY
+### AVGO — AUTHORIZED LIMIT BUY (SUSPENDED)
 - **SOLD:** 2 shares at market $381.95 on 2026-06-24 13:34Z.
 - **24-hour cooldown EXPIRED at 2026-06-24 13:34Z.**
+- **SUSPENDED — CRITICAL event detected at 2026-06-25T13:50:02.930Z.** Tech/semis CRITICAL. DO NOT BUY during CRITICAL event.
 - **BUY AVGO if price drops below $384.** Limit buy 2 shares. Entry $384. Stop $375. Target $405. R/R 2.3:1. Rationale: AI infrastructure / networking, not pure memory play.
 - **DO NOT BUY AVGO above $384.** No market orders. Limit only.
 - **Concentration check:** 2 shares @ $384 = $768 = 8.0% of equity. Within 15% cap.
@@ -74,6 +77,8 @@
 - No edge, weak relative trends, extended, or thin liquidity.
 - **RKLB is down -3.9% today and -42.7% on the month.** Avoid.
 - **GLD is down -11.0% on the month.** US dollar at 13-month high. Avoid.
+
+<!-- Autonomous override applied at 2026-06-25T13:50:02.930Z due to CRITICAL event — SOXX -2.73%, QQQ -1.21%, XLK -1.80%, SMH -2.33% in 10 min. All buys SUSPENDED. -->
 
 ## Hard Rules / No-Trade Conditions
 - **NO market orders today.** All buys must be limit orders. Gap-up opens are poor entry points.

@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 09:50 : [tactical] CRITICAL event: all buys suspended
+- Event detector CRITICAL at 13:50Z: SOXX $615.215 (-2.73%), QQQ $713.50 (-1.21%), XLK (-1.80%), SMH (-2.33%)
+- Portfolio 100% cash. No protective sells needed.
+- Buy triggers hit (QQQ $713.50 < $718, VOO $674.72 < $677, AVGO $377.69 < $384) but SUSPENDED per CRITICAL protocol
+- No orders placed. Daytrade count 0/3 unchanged.
+
+2026-06-25 : 09:40 : [tactical] Hold, no triggers met
+- QQQ $722.06 above $718.00 limit, VOO $679.49 above $677.00 limit, AVGO $385.40 above $384.00 limit
+- Event detector MINOR, no autonomous action required
+- Portfolio 100% cash, 0% exposure, 0/3 daytrades
+- No open orders, no conditions met
+
 2026-06-25 : 09:38 : [hourly] Authorized limit buys: QQQ/VOO/AVGO on pullback
 - Micron earnings BEAT. Market gapped up. Event detector NONE at 13:35Z.
 - QQQ limit buy 3 shares below $718. Entry $718, stop $705, target $745. Risk reward ratio is 2-to-1.

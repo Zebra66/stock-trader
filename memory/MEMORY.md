@@ -129,6 +129,13 @@
 - **Event detector note:** `priorTimestamp` bug fixed. Anti-churn bug fixed.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
 
+## AUTONOMOUS OVERRIDE — 2026-06-25T13:50:02.930Z (Tactical Cycle)
+- **[AUTONOMOUS_OVERRIDE]** Event detector classification: **CRITICAL**.
+- **Affected symbols:** QQQ (MAJOR, -1.21% in 10 min → $713.50), SOXX (CRITICAL, -2.73% → $615.215), XLK (CRITICAL, -1.80%), SMH (CRITICAL, -2.33%). SPY also down -0.57% to $732.93.
+- **Action taken:** All BUY orders SUSPENDED (QQQ, VOO, AVGO). No protective sells needed — portfolio is 100% cash.
+- **Why:** CRITICAL event detected in tech/semiconductor sector. The Micron gap-up is fully reversing. Limit buy triggers were hit ($713.50 < $718, $674.72 < $677, $377.69 < $384) but buying into a CRITICAL event violates event-response protocol. Default to inaction. Hourly strategist will re-evaluate at 14:35Z.
+- **Portfolio remains:** 100% cash ($9,603.37). Gross exposure 0%. Daytrade 0/3.
+
 ## Critical Learnings
 - **NEVER run test scripts on a live account.** A `bun run temp_files/test_anti_churn.ts` script with `createAlpacaClient('paper')` still submitted a live market sell order. The resulting $6.32 realized loss on NVDA is permanent.
 - **Critical code breach guard:** Run `git diff --cached --stat` on every run and revert any staged removal of safety guards to `HEAD`.
