@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 15:37 : [hourly] Held all, SOXX expires, no action
+- Equity $9,603.64, gross 70.47%, daytrade 0/3
+- QQQ $713.96, AVGO $378.13, VOO $674.84 — all above stops
+- SOXX limit BUY 1 @ $610 day order expires 20:00Z, not filled
+- Event detector NONE. No new orders placed.
+- No same-day sell authorization needed today.
+
+2026-06-25 : 15:30 : [tactical] Hold positions, no triggers met
+- QQQ $714.89 above stop $705.00, no breach
+- AVGO $378.32 above stop $375.00, no breach
+- VOO $675.22 above stop $670.00, no breach
+- SOXX $621.04 above limit $610.00, no fill
+- Event detector MINOR, no action required
+
+2026-06-25 : 15:20 : [tactical] Hold QQQ AVGO VOO; SOXX lim open
+- QQQ $713.75 above stop $705.00, AVGO $378.06 above stop $375.00, VOO $674.77 above stop $670.00
+- SOXX limit BUY 1 @ $610 still open, current $617.53, expires 20:00Z
+- No sell triggers breached, no same-day churn risk, no orders placed
+- Event detector NONE, all positions OK severity
+- Gross exposure ~70.5%, daytrade 0/3
+
+2026-06-25 : 15:10 : [tactical] No action: all holds above stops
+- QQQ $715.20 > stop $705.00, AVGO $378.47 > stop $375.00, VOO $675.77 > stop $670.00
+- SOXX limit $610 open, price $619.97, not filled
+- Event detector NONE. No sell triggers breached.
+- Gross 70.5%, 0/3 daytrades. All positions bought today.
+
+2026-06-25 : 14:50 : [tactical] Hold all; SOXX limit $610 open
+- QQQ $716.36, AVGO $379.48, VOO $676.095 — all above stops
+- SOXX limit buy 1 @ $610 not filled (price $622.34)
+- No sell triggers breached, no orders placed
+- Daytrade 0/3, gross 70.5%, event detector NONE
+
+2026-06-25 : 14:40 : [tactical] Hold all; no stops breached
+- QQQ $717.06, stop $705.00 — not breached
+- AVGO $379.77, stop $375.00 — not breached
+- VOO $676.79, stop $670.00 — not breached
+- SOXX limit $610 not filled at $622.00
+- Gross exposure 70.6%, no action needed
+
 2026-06-25 : 14:37 : [hourly] Held all, SOXX limit open, MINOR event
 - Equity $9,627.12, gross 70.5%, daytrade 0/3
 - QQQ $716.59, AVGO $379.60, VOO $676.56 — all above stops
