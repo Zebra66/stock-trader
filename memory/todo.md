@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-06-25 15:35Z (Thursday 11:35 AM ET)
-*PCE hot. Nasdaq slips. AVGO and VOO fills confirmed. Gross 63.5%. Setting limit buys on pullback.*
+# Tactical Todo — Updated 2026-06-25 16:35Z (Thursday 12:35 PM ET)
+*PCE hot. Split tape: financials lead, big tech weak, semis strong. AVGO and VOO fills from earlier confirmed. Gross 63.5%. Limit buys open, awaiting fills.*
 
 ## Current State
 - **Regime:** offensive catch-up (scale in on gap pullback, but cautious due to PCE headwind)
 - **Lock status:** LIFTED — no active lock
 - **Live book:** QQQ 6 shares @ $713.015, AVGO 3 shares @ $379.17, VOO 1 share @ $676.99
-- **Account equity / cash / buying power:** $9,609.17 / $3,510.78 / ~$31,118.60
+- **Account equity / cash / buying power:** $9,622.83 / $3,510.78 / ~$29,871.84
 - **Gross long exposure:** ~63.5% | **Net exposure:** ~63.5% | **Cash:** ~36.5%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** None
+- **Open orders:** VOO limit BUY 1 @ $675, SOXX limit BUY 1 @ $610
 - **24-hour cooldowns:** ALL EXPIRED (last sell was Jun 23).
 - **Market:** OPEN until 20:00Z.
 - **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT. PCE hot today.
@@ -19,30 +19,30 @@
 
 ### QQQ — HOLD 6 — NO NEW BUYS (45% CAP)
 - **FILLED:** 6 shares total. Blended avg $713.015.
-- **Current price:** $713.32. Unrealized +$1.83 (+0.04%).
+- **Current price:** $714.96. Unrealized +$11.67 (+0.27%).
 - **Stop:** $705. **Target:** $745.
 - **HOLD.** Do not sell unless stop $705 is breached.
 - **AUTHORIZED SAME-DAY SELL QQQ** if price drops below $705.00. Rationale: protect capital on breakdown below gap support.
-- **Concentration:** 44.5% of equity. Adding any shares would breach 45% cap.
+- **Concentration:** 44.6% of equity. Adding any shares would breach 45% cap.
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL QQQ` appears above.
 
 ### AVGO — HOLD 3 — NO NEW BUYS (15% CAP)
 - **FILLED:** 3 shares at avg $379.17 on 2026-06-25.
-- **Current price:** $380.535. Unrealized +$4.10 (+0.36%).
+- **Current price:** $382.175. Unrealized +$9.02 (+0.79%).
 - **Stop:** $375. **Target:** $405.
 - **HOLD.** Do not sell unless stop $375 is breached.
 - **AUTHORIZED SAME-DAY SELL AVGO** if price drops below $375.00. Rationale: protect capital on pre-earnings breakdown.
-- **Concentration:** 11.9% of equity. Adding 1 share = 15.8% (breaches 15% cap).
+- **Concentration:** 11.9% of equity. Adding 1 share = 15.9% (breaches 15% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL AVGO` appears above.
 
 ### VOO — HOLD 1 — AUTHORIZED LIMIT BUY 1
 - **FILLED:** 1 share at avg $676.99 on 2026-06-25.
-- **Current price:** $676.86. Unrealized -$0.13 (-0.02%).
+- **Current price:** $675.765. Unrealized -$1.23 (-0.18%).
 - **Stop:** $670. **Target:** $695.
 - **HOLD.** Do not sell unless stop $670 is breached.
 - **AUTHORIZED SAME-DAY SELL VOO** if price drops below $670.00. Rationale: protect capital on broad market breakdown.
-- **Limit BUY 1 share if price drops below $675.** New order.
-- **Concentration:** 1 share @ $676.86 = 7.0% of equity. Adding 1 share = 14.1% (within 20% cap).
+- **Limit BUY 1 share if price drops below $675.** Entry $675, stop $670, target $695. R/R 4.0:1.
+- **Concentration:** 1 share @ $675.765 = 7.0% of equity. Adding 1 share = 14.1% (within 20% cap).
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL VOO` appears above.
 
 ### SOXX — AUTHORIZED LIMIT BUY 1
@@ -53,11 +53,11 @@
 - **No position yet; no same-day churn risk.**
 
 ### NVDA — DO NOT BUY
-- **Reason:** Single-stock AI exposure. Weak 1M (-9.33%). Down 2.11% today. PCE headwind adds risk.
+- **Reason:** Single-stock AI exposure. Weak 1M (-9.33%). Down 1.78% today. PCE headwind adds risk.
 - **DO NOT BUY NVDA** today.
 
 ### GOOG — DO NOT BUY
-- **Reason:** Weak 1M (-11.12%), down 0.86% today. No edge.
+- **Reason:** Weak 1M (-11.12%), down 1.42% today. No edge.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
@@ -89,9 +89,9 @@
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
 
 ## Current Book
-- QQQ: 6 shares @ $713.015, current $713.32, value $4,279.92 (44.5%)
-- AVGO: 3 shares @ $379.17, current $380.535, value $1,141.61 (11.9%)
-- VOO: 1 share @ $676.99, current $676.86, value $676.86 (7.0%)
+- QQQ: 6 shares @ $713.015, current $714.96, value $4,289.76 (44.6%)
+- AVGO: 3 shares @ $379.17, current $382.175, value $1,146.53 (11.9%)
+- VOO: 1 share @ $676.99, current $675.765, value $675.77 (7.0%)
 - Cash: ~$3,510.78 (36.5%)
 - Gross exposure: ~63.5%
 
@@ -99,9 +99,11 @@
 - VOO: limit BUY 1 @ $675 (day order, placed 15:43Z)
 - SOXX: limit BUY 1 @ $610 (day order, placed 15:43Z)
 
-## Next Hourly Preview — 16:35Z (12:35 PM ET) Thu Jun 25
+## Next Hourly Preview — 17:35Z (1:35 PM ET) Thu Jun 25
 - Market will be OPEN. Hourly strategist will evaluate PCE impact and whether to add more.
 - QQQ 6, AVGO 3, VOO 1 are filled and in HOLD. Stops active: QQQ $705, AVGO $375, VOO $670.
-- If VOO limit $675 fills, hourly may add SOXX limit $610 or raise it.
+- If VOO limit $675 fills, hourly may keep SOXX limit @ $610.
+- If SOXX limit $610 fills, hourly may keep VOO limit @ $675.
+- If both fill, gross ~77%. Hourly may evaluate new high-conviction adds.
+- If neither fills, gross 63.5%. Hourly may reassess limits or hold.
 - If market drops below stops, hourly may revert to defensive and cut at stops.
-- If PCE rotation intensifies, hourly may pivot to more VOO and less SOXX.

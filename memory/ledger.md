@@ -2,6 +2,38 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 12:38 : [hourly] Held all, limits open, no fills
+- Equity $9,622.83, gross 63.5%, daytrade 0/3
+- VOO limit $675.00 open, SOXX limit $610.00 open
+- QQQ $714.96 > stop $705, AVGO $382.175 > stop $375
+- PCE split tape: semis strong, big tech weak, no events
+- No new orders; awaiting pullback fills
+
+2026-06-25 : 12:30 : [tactical] Hold: no triggers met, limits open
+- VOO limit $675.00 and SOXX limit $610.00 remain open, not filled
+- QQQ $716.51 > stop $705.00, AVGO $384.07 > stop $375.00, VOO $676.62 > stop $670.00
+- Gross exposure ~63.5%, daytrade 0/3, event detector NONE
+- No action required this tactical cycle
+
+2026-06-25 : 12:20 : [tactical] No action: limits below market, stops safe
+- QQQ $717.86 > stop $705, AVGO $385.47 > stop $375, VOO $678.13 > stop $670
+- Open limit buys: VOO @ $675 (current $678.13), SOXX @ $610 (current $627.17). No fills.
+- Event detector: MINOR (SOXX +0.51%). No override needed.
+- Gross exposure ~63.6%. Daytrade 0/3. No orders placed.
+
+2026-06-25 : 12:10 : [tactical] No action; limits open, stops safe
+- VOO limit $675 and SOXX limit $610 both open, unfilled
+- QQQ $717.17 > stop $705, AVGO $384.55 > stop $375, VOO $677.66 > stop $670
+- Event detector MINOR; no sell triggers breached
+- Gross 63.6%, cash $3,510.78, daytrade 0/3
+
+2026-06-25 : 11:50 : [tactical] No action: limits above market
+- VOO $677.12 > limit $675.00, no fill
+- SOXX $618.35 > limit $610.00, no fill
+- All stops intact, no sells triggered
+- Gross exposure 63.5%, 2 open orders active
+- Daytrade 0/3, no churn risk
+
 2026-06-25 : 11:44 : [hourly] Limit buys: VOO 1@675, SOXX 1@610
 - Equity $9,609.17, gross 63.5%, daytrade 0/3
 - AVGO 3 @ $380.535, VOO 1 @ $676.86, QQQ 6 @ $713.32
