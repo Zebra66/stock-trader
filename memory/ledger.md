@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 11:10 : [tactical] QQQ 1 share filled at $714.00
+- QQQ limit BUY 1 @ $714.00 filled at 14:47Z. Position now 6 shares @ avg $713.015.
+- AVGO limit BUY 1 @ $379.00 still open. VOO limit BUY 1 @ $677.00 still open.
+- No sell triggers breached. QQQ $713.79 > stop $705. AVGO $381.66 > stop $375.
+- Gross exposure 52.5% after QQQ fill. Cash $4,566.59. Daytrade 0/3.
+- Event detector NONE. Market OK. No action required this cycle.
+
+2026-06-25 : 10:53 : [tactical] No trades; holds steady
+- QQQ at $716.52, AVGO at $384.31, no triggers breached
+- Gross exposure 45.2%, limit orders pending at $714, $379, $677
+- Event detector MINOR, no autonomous action required
+
 2026-06-25 : 10:53 : [hourly] QQQ+2 filled at 712, AVGO/VOO pending
 - Repo critical breach restored from HEAD
 - QQQ 2-share limit buy filled at 712, gross 30pct to 45pct

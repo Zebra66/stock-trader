@@ -4,12 +4,12 @@
 ## Current State
 - **Regime:** offensive catch-up (scale in on gap pullback)
 - **Lock status:** LIFTED — no active lock
-- **Live book:** QQQ 5 shares @ $712.818, AVGO 2 shares @ $379.345
-- **Account equity / cash / buying power:** $9,625.21 / $5,280.59 / ~$32,203
-- **Gross long exposure:** ~45.1% | **Net exposure:** ~45.1% | **Cash:** ~54.8%
+- **Live book:** QQQ 6 shares @ $713.015, AVGO 2 shares @ $379.345
+- **Account equity / cash / buying power:** $9,612.65 / $4,566.59 / ~$31,339
+- **Gross long exposure:** ~52.5% | **Net exposure:** ~52.5% | **Cash:** ~47.5%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677
+- **Open orders:** AVGO 1 @ $379, VOO 1 @ $677
 - **24-hour cooldowns:** ALL EXPIRED (last sell was Jun 23).
 - **Market:** OPEN until 20:00Z.
 - **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT.
@@ -17,19 +17,18 @@
 
 ## Position Instructions — Thursday Jun 25 (Tactical Runs)
 
-### QQQ — HOLD 5 — AUTHORIZED LIMIT BUY 1
-- **FILLED:** 5 shares total. 3 shares at avg $713.363333 on 2026-06-25 14:32Z. 2 shares at $712 on 2026-06-25 14:47Z.
-- **Blended avg:** $712.818. **Current price:** $715.79. Unrealized +$14.86 (+0.42%).
+### QQQ — HOLD 6 — NO NEW BUYS (45% CAP)
+- **FILLED:** 6 shares total. 3 shares at avg $713.363333 on 2026-06-25 14:32Z. 2 shares at $712 on 2026-06-25 14:47Z. 1 share at $714.00 on 2026-06-25 14:47Z.
+- **Blended avg:** $713.015. **Current price:** $713.79. Unrealized +$4.65 (+0.11%).
 - **Stop:** $705. **Target:** $745.
 - **HOLD.** Do not sell unless stop $705 is breached.
 - **AUTHORIZED SAME-DAY SELL QQQ** if price drops below $705.00. Rationale: protect capital on breakdown below gap support.
-- **Limit BUY 1 share if price drops below $714.** Limit order already active.
-- **Concentration:** 37.2% of equity. Adding 1 share = 44.5% (within 45% cap).
+- **Concentration:** 44.6% of equity. Adding any shares would breach 45% cap.
 - **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL QQQ` appears above.
 
 ### AVGO — HOLD 2 — AUTHORIZED LIMIT BUY 1
 - **FILLED:** 2 shares at avg $379.345 on 2026-06-25 14:32Z.
-- **Current price:** $383.42. Unrealized +$8.15 (+1.07%).
+- **Current price:** $381.66. Unrealized +$4.63 (+0.61%).
 - **Stop:** $375. **Target:** $405.
 - **HOLD.** Do not sell unless stop $375 is breached.
 - **AUTHORIZED SAME-DAY SELL AVGO** if price drops below $375.00. Rationale: protect capital on pre-earnings breakdown.
@@ -84,19 +83,18 @@
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
 
 ## Current Book
-- QQQ: 5 shares @ $712.818, current $715.79, value $3,578.95 (37.2%)
-- AVGO: 2 shares @ $379.345, current $383.42, value $766.84 (8.0%)
-- Cash: ~$5,280.59 (54.8%)
-- Gross exposure: ~45.1%
+- QQQ: 6 shares @ $713.015, current $713.79, value $4,282.74 (44.6%)
+- AVGO: 2 shares @ $379.345, current $381.66, value $763.32 (7.9%)
+- Cash: ~$4,566.59 (47.5%)
+- Gross exposure: ~52.5%
 
 ## Open Orders (Active)
-- QQQ: limit BUY 1 @ $714 (day order)
 - AVGO: limit BUY 1 @ $379 (day order)
 - VOO: limit BUY 1 @ $677 (day order)
 
 ## Next Hourly Preview — 15:35Z (11:35 AM ET) Thu Jun 25
 - Market will be OPEN. Hourly strategist will evaluate whether to add third tranche.
-- QQQ and AVGO are filled and in HOLD. Stops active: QQQ $705, AVGO $375.
+- QQQ 6 and AVGO 2 are filled and in HOLD. Stops active: QQQ $705, AVGO $375.
 - If QQQ stays above $715, hourly may authorize 6th share and raise AVGO/VOO limits.
 - If QQQ drops below $710, hourly may revert to defensive and cut at stops.
 - If open orders are unfilled, hourly may raise limits or cancel and redirect to SOXX/NVDA.

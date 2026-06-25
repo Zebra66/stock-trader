@@ -1,4 +1,13 @@
 # Hourly Macro Memory
+
+## Tactical Execution Summary — 2026-06-25 15:10Z (Thursday 11:10 AM ET)
+- **Status:** Market OPEN. QQQ limit BUY 1 @ $714.00 filled. Position now 6 shares @ avg $713.015.
+- **Live broker refresh:** Equity $9,612.65 | Cash $4,566.59 | Long $5,046.06 | Gross 52.5% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 6 shares @ avg $713.015, AVGO 2 shares @ avg $379.345.
+- **Open orders:** AVGO 1 @ $379, VOO 1 @ $677.
+- **No sell triggers breached.** QQQ $713.79 > stop $705. AVGO $381.66 > stop $375.
+- **Event detector:** NONE at 15:10Z.
+- **No action required.** Orders left in place. Awaiting next hourly at 15:35Z.
 *Updated 2026-06-25 14:52Z (Thursday 10:52 AM ET). Market OPEN until 20:00Z (16:00 ET).*
 
 ## Hourly Cycle Summary — 2026-06-25 14:52Z (Thursday 10:52 AM ET)
@@ -23,16 +32,16 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 5 | $712.818 | $715.79 | $3,578.95 | 37.2% | +$14.86 | +0.42% |
-| AVGO | 2 | $379.345 | $383.42 | $766.84 | 8.0% | +$8.15 | +1.07% |
-| Cash | — | — | — | $5,280.59 | 54.8% | — | — |
-| **Equity** | — | — | — | **$9,625.21** | **100%** | — | **-3.75%** |
+| QQQ | 6 | $713.015 | $713.79 | $4,282.74 | 44.6% | +$4.65 | +0.11% |
+| AVGO | 2 | $379.345 | $381.66 | $763.32 | 7.9% | +$4.63 | +0.61% |
+| Cash | — | — | — | $4,566.59 | 47.5% | — | — |
+| **Equity** | — | — | — | **$9,612.65** | **100%** | — | **-3.87%** |
 
-- **Gross long exposure:** ~45.1%
-- **Net exposure:** ~45.1%
+- **Gross long exposure:** ~52.5%
+- **Net exposure:** ~52.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677
+- **Open orders:** AVGO 1 @ $379, VOO 1 @ $677
 
 ## Performance Review
 - **Since inception (2026-05-04 baseline $10,000):** portfolio **-3.75%** ($9,625.21 vs $10,000) vs SPY **+2.39%** (baseline 718.01 → $735.24). Trailing by ~6.14 pp.
@@ -43,9 +52,9 @@
 - **What must change:** (1) Stop churning. (2) Scale in today on pullback. (3) Add to winners next hour if tape holds.
 
 ## Goal Check
-- **Portfolio since inception:** -3.75% ($9,625.21 vs $10,000 base)
-- **S&P 500 since inception:** +2.39% (SPY $735.24 vs baseline 718.01)
-- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.14 pp.
+- **Portfolio since inception:** -3.87% ($9,612.65 vs $10,000 base)
+- **S&P 500 since inception:** +2.33% (SPY $734.79 vs baseline 718.01)
+- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.20 pp.
 - **Dominant failure mode:** **excessive turnover / friction + cash drag.**
 - **Posture:** **offensive catch-up.**
 
@@ -92,7 +101,7 @@
 | GLD / EIS / SHLD / QTUM / ARKX | Avoid | Weak trends, thin liquidity. | 0% | Avoid |
 
 ## Priority Actions
-1. **HOLD QQQ 5 and AVGO 2.** Both slightly profitable. Do not sell unless stop breached.
+1. **HOLD QQQ 6 and AVGO 2.** Both slightly profitable. Do not sell unless stop breached.
 2. **Monitor open orders.** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677. If market pulls back, these fill. If not, we may raise limits at next hourly.
 3. **Stop levels:** QQQ stop $705. AVGO stop $375. VOO stop $670.
 4. **AUTHORIZE SAME-DAY SELL QQQ** if price drops below $705. AUTHORIZE SAME-DAY SELL AVGO if price drops below $375.
