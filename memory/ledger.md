@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 09:38 : [hourly] Authorized limit buys: QQQ/VOO/AVGO on pullback
+- Micron earnings BEAT. Market gapped up. Event detector NONE at 13:35Z.
+- QQQ limit buy 3 shares below $718. Entry $718, stop $705, target $745. Risk reward ratio is 2-to-1.
+- VOO limit buy 1 share below $677. Entry $677, stop $670, target $695. Risk reward ratio is 2.6-to-1.
+- AVGO limit buy 2 shares below $384. Entry $384, stop $375, target $405. Risk reward ratio is 2.3-to-1.
+- Equity $9,603.37, gross 0%, daytrade 0/3. Offensive catch-up regime.
+
 2026-06-25 : 09:30 : [tactical] CRITICAL gap-up: no positions, buys suspended
 - Event detector CRITICAL at 13:30Z. QQQ $725.70 (+2.59%), SOXX $636.42 (+6.92%)
 - Post-Micron earnings massive gap-up. No positions held. No protective sells possible.
