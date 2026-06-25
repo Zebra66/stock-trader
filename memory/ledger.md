@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-25 : 10:53 : [hourly] QQQ+2 filled at 712, AVGO/VOO pending
+- Repo critical breach restored from HEAD
+- QQQ 2-share limit buy filled at 712, gross 30pct to 45pct
+- AVGO 1 at 379 and VOO 1 at 677 limit orders pending
+- Failing both goals: -3.75pct vs SPY +2.39pct
+- Stops active: QQQ 705, AVGO 375; same-day sells authorized
+
 2026-06-25 : 10:51 : [tactical] Hold QQQ/AVGO, orders open
 - QQQ 5 shares at $714.64, AVGO 2 shares at $381.95
 - Open orders: VOO 1@$677.00, AVGO 1@$379.00

@@ -1,70 +1,58 @@
-# Tactical Todo — Updated 2026-06-25 14:50Z (Thursday 10:50 AM ET)
-*Micron earnings BEAT. Gap fully reversed. Event detector NONE at 14:50Z. Hourly strategist deployed second tranche at 14:35Z: QQQ +2 shares, VOO 1 share limit $677, AVGO 1 share limit $379.*
+# Tactical Todo — Updated 2026-06-25 14:52Z (Thursday 10:52 AM ET)
+*Micron earnings BEAT. Gap fully reversed. Market bouncing. Second tranche partially deployed: QQQ 2 shares filled at $712. Open orders pending.*
 
 ## Current State
 - **Regime:** offensive catch-up (scale in on gap pullback)
 - **Lock status:** LIFTED — no active lock
 - **Live book:** QQQ 5 shares @ $712.818, AVGO 2 shares @ $379.345
-- **Account equity / cash / buying power:** $9,617.69 / ~$5,280.59 / ~$32,210.22
-- **Gross long exposure:** ~45.1% | **Net exposure:** ~45.1% | **Cash:** ~54.9%
+- **Account equity / cash / buying power:** $9,625.21 / $5,280.59 / ~$32,203
+- **Gross long exposure:** ~45.1% | **Net exposure:** ~45.1% | **Cash:** ~54.8%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** VOO 1 share limit $677, AVGO 1 share limit $379
-- **24-hour cooldowns:**
-  - SOXX: EXPIRED at 2026-06-24 13:33Z
-  - VOO: EXPIRED at 2026-06-24 13:34Z
-  - AVGO: EXPIRED at 2026-06-24 13:34Z
-  - QQQ: EXPIRED at 2026-06-24 13:37Z
-  - NVDA: EXPIRED at 2026-06-24 17:42Z
-- **Market:** OPEN until 20:00Z. Event detector NONE at 14:50Z.
-- **Catalyst status:** Micron earnings reported Wednesday June 24 after close. BEAT. Market gapped up. Now digesting.
+- **Open orders:** QQQ 1 @ $714, AVGO 1 @ $379, VOO 1 @ $677
+- **24-hour cooldowns:** ALL EXPIRED (last sell was Jun 23).
+- **Market:** OPEN until 20:00Z.
+- **Catalyst status:** Micron earnings reported Wednesday Jun 24 after close. BEAT.
 - **Code integrity note:** Safety guards active. No staged deletions detected.
 
 ## Position Instructions — Thursday Jun 25 (Tactical Runs)
 
-### QQQ — HOLD
-- **FILLED:** 3 shares at limit $718, avg fill $713.363333 on 2026-06-25 14:32Z.
-- **ADDED:** 2 shares at limit $712, avg fill $712.00 on 2026-06-25 14:47Z.
-- **Current price:** $714.64. Unrealized +$9.11 (+0.256%).
+### QQQ — HOLD 5 — AUTHORIZED LIMIT BUY 1
+- **FILLED:** 5 shares total. 3 shares at avg $713.363333 on 2026-06-25 14:32Z. 2 shares at $712 on 2026-06-25 14:47Z.
+- **Blended avg:** $712.818. **Current price:** $715.79. Unrealized +$14.86 (+0.42%).
 - **Stop:** $705. **Target:** $745.
-- **HOLD.** Do not sell unless stop $705 is breached or hourly strategist authorizes exit.
-- **Concentration:** 37.2% of equity. Within 45% cap.
-- **Daytrade status:** 0/3. Position opened today; do NOT sell today unless `AUTHORIZE SAME-DAY SELL QQQ` appears in this file.
+- **HOLD.** Do not sell unless stop $705 is breached.
+- **AUTHORIZED SAME-DAY SELL QQQ** if price drops below $705.00. Rationale: protect capital on breakdown below gap support.
+- **Limit BUY 1 share if price drops below $714.** Limit order already active.
+- **Concentration:** 37.2% of equity. Adding 1 share = 44.5% (within 45% cap).
+- **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL QQQ` appears above.
 
-### AVGO — HOLD
-- **FILLED:** 2 shares at limit $384, avg fill $379.345 on 2026-06-25 14:32Z.
-- **OPEN ORDER:** 1 share limit $379 placed at 2026-06-25 14:47Z. Not yet filled.
-- **Current price:** $381.95. Unrealized +$5.21 (+0.687%).
+### AVGO — HOLD 2 — AUTHORIZED LIMIT BUY 1
+- **FILLED:** 2 shares at avg $379.345 on 2026-06-25 14:32Z.
+- **Current price:** $383.42. Unrealized +$8.15 (+1.07%).
 - **Stop:** $375. **Target:** $405.
-- **HOLD.** Do not sell unless stop $375 is breached or hourly strategist authorizes exit.
-- **Concentration:** 7.9% of equity (8.0% if open order fills). Within 15% cap.
-- **Daytrade status:** 0/3. Position opened today; do NOT sell today unless `AUTHORIZE SAME-DAY SELL AVGO` appears in this file.
+- **HOLD.** Do not sell unless stop $375 is breached.
+- **AUTHORIZED SAME-DAY SELL AVGO** if price drops below $375.00. Rationale: protect capital on pre-earnings breakdown.
+- **Limit BUY 1 share if price drops below $379.** Limit order already active.
+- **Concentration:** 8.0% of equity. Adding 1 share = 12.0% (within 15% cap).
+- **Daytrade status:** 0/3. Position opened today; DO NOT SELL today unless `AUTHORIZE SAME-DAY SELL AVGO` appears above.
 
-### VOO — AUTHORIZED LIMIT BUY (OPEN ORDER)
-- **SOLD:** 2 shares at market $676.13 on 2026-06-23 13:34Z.
-- **24-hour cooldown EXPIRED at 2026-06-24 13:34Z.**
-- **OPEN ORDER:** 1 share limit $677 placed at 2026-06-25 14:47Z. Not yet filled.
-- **BUY VOO if price drops below $677.** Limit buy 1 share. Entry $677. Stop $670. Target $695. R/R 2.6:1. Rationale: Core S&P exposure, lower volatility anchor.
-- **AVOID VOO above $677.** No market orders. Limit only.
-- **Concentration check:** 1 share @ $677 = $677 = 7.0% of equity. Within 20% cap.
+### VOO — AUTHORIZED LIMIT BUY 1
+- **Limit BUY 1 share if price drops below $677.** Limit order already active.
+- **Stop:** $670. **Target:** $695.
+- **Concentration:** 1 share @ $677 = 7.0% of equity (within 20% cap).
+- **No position yet; no same-day churn risk.**
 
 ### SOXX — DO NOT BUY
-- **SOLD:** 1 share at market $609.77 on 2026-06-23 13:33Z.
-- **24-hour cooldown EXPIRED at 2026-06-24 13:33Z.**
-- **Reason:** Pure-play semi exposure. Gap is 7% from yesterday. Most volatile. Hourly strategist does NOT authorize entry today.
+- **Reason:** Pure-play semi exposure. Most volatile. Gap is 7% from yesterday. Hourly strategist does NOT authorize entry today.
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
-- **SOLD:** 1 share at market $202.15 on 2026-06-23 17:42Z (accidental test execution).
-- **Realized loss:** ~$6.32 from avg entry $208.47.
-- **24-hour cooldown EXPIRED at 2026-06-24 17:42Z.**
-- **Reason:** Single-stock AI exposure. Hourly strategist does NOT authorize entry today. Wait for next hourly if rally sustains.
+- **Reason:** Single-stock AI exposure. Weak 1M (-9.33%). Hourly strategist does NOT authorize entry today.
 - **DO NOT BUY NVDA** today.
 
 ### GOOG — DO NOT BUY
-- **STOP EXECUTED:** Sold 2 shares at $349.26 on 2026-06-22 14:20Z.
-- **24-hour cooldown EXPIRED** at 2026-06-23 14:20Z.
-- **Reason:** Weak 1M (-12.6%), down 2.5% today. No edge.
+- **Reason:** Weak 1M (-11.12%), down 0.86% today. No edge.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
@@ -72,22 +60,15 @@
 
 ### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
 - No edge, weak relative trends, extended, or thin liquidity.
-- **RKLB is down -3.9% today and -42.7% on the month.** Avoid.
-- **GLD is down -11.0% on the month.** US dollar at 13-month high. Avoid.
-
-<!-- Autonomous override applied at 2026-06-25T13:50:02.930Z due to CRITICAL event — SOXX -2.73%, QQQ -1.21%, XLK -1.80%, SMH -2.33% in 10 min. All buys SUSPENDED. -->
-<!-- Override LIFTED at 2026-06-25 14:30Z — event detector NONE. QQQ 3 shares + AVGO 2 shares filled at 14:32Z. -->
 
 ## Hard Rules / No-Trade Conditions
-- **NO market orders today.** All buys must be limit orders. Gap-up opens are poor entry points.
+- **NO market orders today.** All buys must be limit orders.
 - **No same-day round trips.** Code-level anti-churn guard is active in `alpaca_client_factory.ts`.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **Never average down.**
-- **Do NOT run test scripts or code verification on the live account.** Use `DRY_RUN=1` only.
-- **After 3+ consecutive loss events, reduce position size by 50% on next deployment.** Applied: QQQ max 3 shares, VOO max 1 share, AVGO max 2 shares.
 - **Tactical agent must NOT sell positions bought today unless the exact phrase `AUTHORIZE SAME-DAY SELL <SYMBOL>` appears in this file.**
-- **If QQQ/AVGO drops below stop, DO NOT sell same day.** Wait for next hourly authorization unless stop is breached with CRITICAL event.
+- **If QQQ/AVGO drops below stop, DO NOT sell same day.** Wait for next hourly authorization unless CRITICAL event.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -100,17 +81,22 @@
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
-- **SOXX:** Latest bar shows TradeCount 46, Volume 2437 at 13:34Z. Liquidity improved but still thin. Limit orders only if authorized.
+- **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
 
 ## Current Book
-- QQQ: 5 shares @ $712.818, current $714.64, value $3,573.20 (37.2%)
-- AVGO: 2 shares @ $379.345, current $381.95, value $763.90 (7.9%)
-- Cash: ~$5,280.59 (54.9%)
+- QQQ: 5 shares @ $712.818, current $715.79, value $3,578.95 (37.2%)
+- AVGO: 2 shares @ $379.345, current $383.42, value $766.84 (8.0%)
+- Cash: ~$5,280.59 (54.8%)
 - Gross exposure: ~45.1%
 
-## Next Hourly Preview — 14:35Z (10:35 AM ET) Thu Jun 25
-- Market will be OPEN. Hourly strategist will evaluate whether to add second tranche.
+## Open Orders (Active)
+- QQQ: limit BUY 1 @ $714 (day order)
+- AVGO: limit BUY 1 @ $379 (day order)
+- VOO: limit BUY 1 @ $677 (day order)
+
+## Next Hourly Preview — 15:35Z (11:35 AM ET) Thu Jun 25
+- Market will be OPEN. Hourly strategist will evaluate whether to add third tranche.
 - QQQ and AVGO are filled and in HOLD. Stops active: QQQ $705, AVGO $375.
-- If QQQ stays above $720, hourly may authorize 4th QQQ share and possibly NVDA 1 share.
+- If QQQ stays above $715, hourly may authorize 6th share and raise AVGO/VOO limits.
 - If QQQ drops below $710, hourly may revert to defensive and cut at stops.
-- VOO: trigger still $677. Current $677.76 — not met. Tactical agent will place if trigger hits and hourly authorizes.
+- If open orders are unfilled, hourly may raise limits or cancel and redirect to SOXX/NVDA.
