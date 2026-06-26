@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-06-26 14:35Z (Friday 10:35 AM ET)
+# Tactical Todo — Updated 2026-06-26 15:35Z (Friday 11:35 AM ET)
 *HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 16:00 ET.*
 
 ## Current State
@@ -11,6 +11,7 @@
 - **Pattern day trader:** false
 - **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET.
+- **Tactical windows 10:40–11:30:** No action. No orders. No events.
 
 ## Position Instructions — Friday Jun 26 (Remaining Session)
 
@@ -18,7 +19,7 @@
 - **SOLD:** 6 shares @ $704.03 via market order at 9:41 AM ET today.
 - **Anti-churn rule:** QQQ was sold today. You may NOT buy QQQ back today.
 - **24-hour cooldown:** Also active. Do NOT RE-BUY QQQ until Monday Jun 30 hourly authorization.
-- **Monday trigger (preview):** Re-entry authorized IF QQQ holds $705–$710 range OR breaks above $718 with volume confirmation. Stop would be $700. Limit orders only.
+- **Monday trigger (preview):** Re-entry authorized IF QQQ holds $710+ OR breaks above $718 with volume confirmation. Stop would be $700. Limit orders only.
 - **DO NOT BUY QQQ** today.
 
 ### VOO — DO NOT BUY — DO NOT RE-BUY
@@ -86,12 +87,17 @@
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
-- **AVGO:** Thin today (12 trades, 284 vol). Limit orders only if authorized.
+- **AVGO:** Thin today (83 trades, 2707 vol). Limit orders only if authorized.
 
 ## Current Book
 - NO POSITIONS
 - Cash: ~$9,501 (100%)
 - Gross exposure: ~0%
+
+## Next Hourly Preview — 12:35 PM ET
+- Continue holding cash. No new positions.
+- Monitor QQQ/SPY for any breakdown below morning lows.
+- No action needed unless market structure changes materially.
 
 ## Next Hourly Preview — Monday Jun 30 9:35 AM ET
 - Reassess QQQ support after weekend.
