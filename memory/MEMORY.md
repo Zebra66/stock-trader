@@ -1,6 +1,16 @@
 # Hourly Macro Memory
 *Updated 2026-06-26 13:38Z (Friday 9:38 AM ET). Market OPEN until 16:00 ET.*
 
+## Tactical Execution — 2026-06-26 13:41Z (Friday 9:41 AM ET) [AUTONOMOUS_OVERRIDE]
+- **Event detector:** CRITICAL classification. QQQ -1.40% (MAJOR), SOXX -4.39% (CRITICAL), XLK -1.88% (CRITICAL), SMH -3.42% (CRITICAL).
+- **Action:** SOLD 6 QQQ @ $704.03 via market order. Stop-loss triggered: price breached $705.00 authorized hard stop.
+- **Pre-trade checklist:** All passed. Universe ✓, cooldown ✓, churn ✓ (overnight position), market hours ✓, PDT ✓ (not opened today), short-selling ✓ (held 6 shares), explicit authorization ✓ (`AUTHORIZED SAME-DAY SELL QQQ` in todo.md), lock file ✓, open orders ✓, exposure ✓.
+- **Result:** Portfolio now **100% cash**. No positions held. Gross exposure 0%.
+- **Daytrade impact:** 0/3. QQQ was bought Jun 25, sold Jun 26 — overnight hold, not a daytrade.
+- **Realized loss:** QQQ 6 shares @ avg $713.015 → $704.03 = ~$53.91 realized loss.
+- **Posture:** Fully defensive. Cash preserved. Awaiting next hourly (10:35 AM ET) before any re-entry.
+- **Note:** Corrected the 9:30 AM tactical agent failure to execute QQQ stop-loss. The 9:40 AM tactical agent executed immediately upon CRITICAL event detection and confirmed stop breach.
+
 ## CRITICAL PROCESS BREACH — RESOLVED
 - **Status:** CRITICAL. Working tree memory files (`MEMORY.md`, `todo.md`, `ledger.md`) were reverted to **May 29/31 state** while committed HEAD had June 25 state. Tracked source files (`src/tools/alpaca_cli.ts`, `src/tools/alpaca_client_factory.ts`, `src/tools/event_detector.ts`, `src/tools/ledger_cli.ts`) showed **unauthorized removals of safety guards** (anti-churn, stale-memory, duplicate-order, price-hallucination validation). Prompts/hourly.txt had ~108 lines of safety instructions removed.
 - **Root cause:** Container restart at 9:35 AM ET restored persistent volume snapshot from May 31, overwriting June 25 working tree. The 9:30 AM ET tactical agent executed on the pre-restart state (which had June 25 instructions) and placed stop-loss sells.

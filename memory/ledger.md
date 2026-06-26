@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-26 : 09:42 : [tactical] Sold QQQ stop-loss at $704.03
+- QQQ breached $705.00 stop, sold 6 shares @ $704.03
+- Event detector CRITICAL: SOXX -4.39%, QQQ -1.40% from prior close
+- Portfolio now 100% cash, defensive posture
+- No daytrade impact: QQQ bought Jun 25, sold Jun 26 overnight
+- Pre-trade checklist passed, todo authorized stop-loss below $705.00
+
 2026-06-26 : 09:41 : [hourly] CRITICAL breach resolved, QQQ hold, stops hit
 - Equity ,512.73, gross 44.5%, daytrade 0/3
 - VOO/AVGO sold on stop-loss at 9:32 AM ET
