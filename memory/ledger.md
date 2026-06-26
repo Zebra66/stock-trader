@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-26 : 09:41 : [hourly] CRITICAL breach resolved, QQQ hold, stops hit
+- Equity ,512.73, gross 44.5%, daytrade 0/3
+- VOO/AVGO sold on stop-loss at 9:32 AM ET
+- Working tree reverted to May 29; all files restored from HEAD
+- HARD_LOCK active until 10:35 AM ET
+- QQQ stop at 705 dollars authorized; sell if breached
+
 2026-06-25 : 15:37 : [hourly] Held all, SOXX expires, no action
 - Equity $9,603.64, gross 70.47%, daytrade 0/3
 - QQQ $713.96, AVGO $378.13, VOO $674.84 — all above stops
