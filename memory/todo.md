@@ -1,17 +1,17 @@
-# Tactical Todo — Updated 2026-06-26 17:35Z (Friday 1:35 PM ET)
-*HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 16:00 ET.*
+# Tactical Todo — Updated 2026-06-26 18:35Z (Friday 2:35 PM ET)
+*HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 20:00Z (4:00 PM ET).*
 
 ## Current State
 - **Regime:** defensive (30–50% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** NO POSITIONS. 100% cash.
-- **Account equity / cash / buying power:** ~$9,501 / ~$9,501 / ~$38,006
+- **Account equity / cash / buying power:** ~$9,501 / ~$9,501 / ~$38,007
 - **Gross long exposure:** ~0% | **Net exposure:** ~0% | **Cash:** ~100%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET.
-- **Tactical windows 12:40–13:30:** No action. No orders. No events.
+- **Market:** OPEN until 20:00Z (4:00 PM ET). ~1 hour 25 minutes to close.
+- **Tactical windows 13:40–14:30:** No action. No orders. No events.
 
 ## Position Instructions — Friday Jun 26 (Remaining Session)
 
@@ -37,34 +37,34 @@
 - **DO NOT BUY AVGO** today.
 
 ### SOXX — DO NOT BUY
-- **Reason:** Down 4.94% today. Semis volatile. Memory-cost headwinds. No edge.
+- **Reason:** Down 5.13% today. Semis volatile. Memory-cost headwinds. No edge.
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
-- **Reason:** Single-stock AI. Weak 1M (–10.81%). Down 1.81% today.
+- **Reason:** Single-stock AI. Weak 1M (–8.75%). Down 0.89% today.
 - **DO NOT BUY NVDA** today.
 
 ### GOOG — DO NOT BUY
-- **Reason:** Weak 1M (–13.44%). Down 1.32% today.
+- **Reason:** Weak 1M (–11.71%). Down 0.70% today.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### HOOD — DO NOT BUY
-- **Reason:** No edge. Weak 1W (–8.48%).
+- **Reason:** No edge. Weak 1W (–10.49%). Up 3.57% today is likely a dead-cat bounce in a damaged tape.
 - **DO NOT BUY HOOD** today.
 
 ### RKLB — DO NOT BUY
-- **Reason:** No edge. Weak 1M (–39.25%). Up 4.23% today is likely a dead-cat bounce.
+- **Reason:** No edge. Weak 1M (–43.19%). Up 5.77% today is likely a dead-cat bounce.
 - **DO NOT BUY RKLB** today.
 
 ### GLD — DO NOT BUY
-- **Reason:** Defensive gold. Weak 3M (–7.95%). No edge in a risk-off tape when gold is already failing.
+- **Reason:** Defensive gold. Weak 3M (–9.86%). No edge in a risk-off tape when gold is already failing.
 - **DO NOT BUY GLD** today.
 
 ### EIS / SHLD / QTUM / ARKX — DO NOT BUY
-- **Reason:** No edge, weak relative trends, or thin liquidity. EIS and SHLD have 1–2 trades in last bar.
+- **Reason:** No edge, weak relative trends, or thin liquidity. EIS and SHLD have very low trade counts.
 - **DO NOT BUY EIS**, **DO NOT BUY SHLD**, **DO NOT BUY QTUM**, **DO NOT BUY ARKX** today.
 
 ## Hard Rules / No-Trade Conditions
@@ -87,14 +87,14 @@
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
-- **AVGO:** Thin today (22 trades, 672 vol at 17:35Z). Limit orders only if authorized.
+- **AVGO:** Thin today (37 trades, 1473 vol at 18:34Z). Limit orders only if authorized.
 
 ## Current Book
 - NO POSITIONS
 - Cash: ~$9,501 (100%)
 - Gross exposure: ~0%
 
-## Next Hourly Preview — 14:35 PM ET
+## Next Hourly Preview — 15:35 PM ET (3:35 PM ET)
 - Continue holding cash. No new positions.
 - Monitor QQQ/SPY for any breakdown below morning lows.
 - No action needed unless market structure changes materially.
