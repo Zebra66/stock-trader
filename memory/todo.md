@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-06-26 16:35Z (Friday 12:35 PM ET)
+# Tactical Todo — Updated 2026-06-26 17:35Z (Friday 1:35 PM ET)
 *HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 16:00 ET.*
 
 ## Current State
@@ -11,7 +11,7 @@
 - **Pattern day trader:** false
 - **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET.
-- **Tactical windows 11:40–12:30:** No action. No orders. No events.
+- **Tactical windows 12:40–13:30:** No action. No orders. No events.
 
 ## Position Instructions — Friday Jun 26 (Remaining Session)
 
@@ -87,14 +87,14 @@
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
-- **AVGO:** Thin today (35 trades, 933 vol at 16:34Z). Limit orders only if authorized.
+- **AVGO:** Thin today (22 trades, 672 vol at 17:35Z). Limit orders only if authorized.
 
 ## Current Book
 - NO POSITIONS
 - Cash: ~$9,501 (100%)
 - Gross exposure: ~0%
 
-## Next Hourly Preview — 13:35 PM ET
+## Next Hourly Preview — 14:35 PM ET
 - Continue holding cash. No new positions.
 - Monitor QQQ/SPY for any breakdown below morning lows.
 - No action needed unless market structure changes materially.
