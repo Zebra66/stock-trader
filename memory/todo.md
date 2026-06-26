@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-06-26 18:35Z (Friday 2:35 PM ET)
-*HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 20:00Z (4:00 PM ET).*
+# Tactical Todo — Updated 2026-06-26 19:35Z (Friday 3:35 PM ET)
+*HARD_LOCK LIFTED. Final hourly run of Friday. Hold cash into weekend. Market OPEN until 20:00Z (4:00 PM ET).*
 
 ## Current State
 - **Regime:** defensive (30–50% band)
@@ -10,8 +10,8 @@
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 20:00Z (4:00 PM ET). ~1 hour 25 minutes to close.
-- **Tactical windows 13:40–14:30:** No action. No orders. No events.
+- **Market:** OPEN until 20:00Z (4:00 PM ET). ~25 minutes to close.
+- **Tactical windows 14:40–15:30:** No action. No orders. No events.
 
 ## Position Instructions — Friday Jun 26 (Remaining Session)
 
@@ -87,17 +87,12 @@
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
-- **AVGO:** Thin today (37 trades, 1473 vol at 18:34Z). Limit orders only if authorized.
+- **AVGO:** Thin today (84 trades, 4942 vol at 19:34Z). Limit orders only if authorized.
 
 ## Current Book
 - NO POSITIONS
 - Cash: ~$9,501 (100%)
 - Gross exposure: ~0%
-
-## Next Hourly Preview — 15:35 PM ET (3:35 PM ET)
-- Continue holding cash. No new positions.
-- Monitor QQQ/SPY for any breakdown below morning lows.
-- No action needed unless market structure changes materially.
 
 ## Next Hourly Preview — Monday Jun 30 9:35 AM ET
 - Reassess QQQ support after weekend.
