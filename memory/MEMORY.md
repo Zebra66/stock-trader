@@ -1,78 +1,58 @@
 # Hourly Macro Memory
-*Updated 2026-06-26 13:38Z (Friday 9:38 AM ET). Market OPEN until 16:00 ET.*
+*Updated 2026-06-26 14:35Z (Friday 10:35 AM ET). Market OPEN until 16:00 ET.*
 
-## Tactical Execution — 2026-06-26 13:41Z (Friday 9:41 AM ET) [AUTONOMOUS_OVERRIDE]
-- **Event detector:** CRITICAL classification. QQQ -1.40% (MAJOR), SOXX -4.39% (CRITICAL), XLK -1.88% (CRITICAL), SMH -3.42% (CRITICAL).
-- **Action:** SOLD 6 QQQ @ $704.03 via market order. Stop-loss triggered: price breached $705.00 authorized hard stop.
-- **Pre-trade checklist:** All passed. Universe ✓, cooldown ✓, churn ✓ (overnight position), market hours ✓, PDT ✓ (not opened today), short-selling ✓ (held 6 shares), explicit authorization ✓ (`AUTHORIZED SAME-DAY SELL QQQ` in todo.md), lock file ✓, open orders ✓, exposure ✓.
-- **Result:** Portfolio now **100% cash**. No positions held. Gross exposure 0%.
-- **Daytrade impact:** 0/3. QQQ was bought Jun 25, sold Jun 26 — overnight hold, not a daytrade.
-- **Realized loss:** QQQ 6 shares @ avg $713.015 → $704.03 = ~$53.91 realized loss.
-- **Posture:** Fully defensive. Cash preserved. Awaiting next hourly (10:35 AM ET) before any re-entry.
-- **Note:** Corrected the 9:30 AM tactical agent failure to execute QQQ stop-loss. The 9:40 AM tactical agent executed immediately upon CRITICAL event detection and confirmed stop breach.
-
-## CRITICAL PROCESS BREACH — RESOLVED
-- **Status:** CRITICAL. Working tree memory files (`MEMORY.md`, `todo.md`, `ledger.md`) were reverted to **May 29/31 state** while committed HEAD had June 25 state. Tracked source files (`src/tools/alpaca_cli.ts`, `src/tools/alpaca_client_factory.ts`, `src/tools/event_detector.ts`, `src/tools/ledger_cli.ts`) showed **unauthorized removals of safety guards** (anti-churn, stale-memory, duplicate-order, price-hallucination validation). Prompts/hourly.txt had ~108 lines of safety instructions removed.
-- **Root cause:** Container restart at 9:35 AM ET restored persistent volume snapshot from May 31, overwriting June 25 working tree. The 9:30 AM ET tactical agent executed on the pre-restart state (which had June 25 instructions) and placed stop-loss sells.
-- **Resolution:** Restored all files from `HEAD` via `git checkout`. Verified repo clean. All safety guards are now active.
-- **Consequence:** The 9:30 tactical sells (VOO, AVGO) were executed while memory was technically stale, but the sells aligned with June 25 authorized stop-loss levels. No out-of-universe trades or same-day round trips detected. QQQ stop was NOT triggered by 9:30 agent despite dipping below $705 — reason unclear; may be a timing gap or order failure. **Treat this as a concealment risk requiring tight next-hour safeguards.**
-
----
-
-## Hourly Cycle Summary — 2026-06-26 13:38Z (Friday 9:38 AM ET)
-- **Status:** Market OPEN. ~6 hours 22 minutes to close.
-- **Live broker refresh:** Equity $9,512.73 | Cash $5,277.51 | Long $4,235.22 | Gross 44.5% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6 shares @ avg $713.015, current $705.87, unrealized -$42.87 (-1.00%).
+## Hourly Cycle Summary — 2026-06-26 14:35Z (Friday 10:35 AM ET)
+- **Status:** Market OPEN. ~5 hours 25 minutes to close.
+- **Live broker refresh:** Equity $9,501.69 | Cash $9,501.69 | Long $0 | Gross 0% | Daytrade 0/3.
+- **Holdings confirmed:** NONE. 100% cash.
 - **Open orders:** NONE.
-- **Filled trades since prior hourly (Jun 25 19:35Z):**
-  - **2026-06-26 09:32:06 ET:** SOLD 2 VOO @ $668.74 (market order). Reason: stop-loss triggered (price below $670).
-  - **2026-06-26 09:32:06 ET:** SOLD 3 AVGO @ $368.08 (market order). Reason: stop-loss triggered (price below $375).
-- **Universe compliance:** QQQ only. No breach.
-- **Rapid-exposure-drift guard:** Gross dropped from 70.47% to 44.5% via authorized stop-loss sells. No unauthorized drift.
-- **Concurrent execution:** No race conditions detected this cycle.
-- **Daytrade status:** 0/3. QQQ bought Jun 25 (overnight). VOO/AVGO sells are not daytrades.
-- **Code integrity:** RESTORED. All safety guards active. No staged deletions. Branch up to date.
+- **Filled trades since prior hourly (9:41 AM ET):** NONE. Tactical agent respected HARD_LOCK across 9:50, 10:10, 10:20, 10:30 windows.
+- **Universe compliance:** No positions. No breach.
+- **Rapid-exposure-drift guard:** Gross dropped from 44.5% to 0% via authorized stop-loss sells at 9:32–9:41 AM ET. No drift since.
+- **Concurrent execution:** No race conditions. No unauthorized orders.
+- **Daytrade status:** 0/3. Clean slate.
+- **Code integrity:** Clean. No staged/unstaged source modifications. All safety guards active.
+- **Branch:** Up to date with origin/main.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $713.015 | $705.87 | $4,235.22 | 44.5% | –$42.87 | –1.00% |
-| Cash | — | — | — | $5,277.51 | 55.5% | — | — |
-| **Equity** | — | — | — | **$9,512.73** | **100%** | — | **–4.87%** |
+| Cash | — | — | — | $9,501.69 | 100% | — | — |
+| **Equity** | — | — | — | **$9,501.69** | **100%** | — | **–4.99%** |
 
-- **Gross long exposure:** 44.5%
-- **Net exposure:** 44.5%
+- **Gross long exposure:** 0%
+- **Net exposure:** 0%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
 
-## Performance Review — Fri Jun 26 (9:38 AM ET)
-- **1D (today):** portfolio **–0.95%** ($9,603.64 → $9,512.73) vs SPY **–0.52%** ($732.15 → $728.35). **Underperforming SPY by ~0.43 pp today.**
-- **1W (Jun 19 → Jun 26):** Portfolio ~–1.5% (est. $9,660 → $9,512.73) vs SPY ~–0.5% (est. $732 → $728.35). **Underperforming SPY over 1W by ~1.0 pp.**
-- **2W (Jun 12 → Jun 26):** Portfolio ~–2.0% (est. $9,710 → $9,512.73) vs SPY ~–1.0% (est. $736 → $728.35). **Underperforming SPY over 2W by ~1.0 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** portfolio **–4.87%** ($9,512.73 vs $10,000) vs SPY **+1.44%** (baseline 718.01 → $728.35). **Trailing by ~6.31 pp.**
-- What is working: Nothing today. Cash preserved 55.5% of capital from further downside.
-- What is not working: QQQ core down 1.51% today. AVGO/VOO stop-losses triggered, locking in losses. Process breach prevented real-time reconciliation.
-- What must change: To close the 6.31 pp gap in ~5 weeks, we need to stop the bleeding, avoid churn, and deploy cash into high-conviction setups only when the tape stabilizes. We cannot afford another process breach or premature stop-out.
+## Performance Review — Fri Jun 26 (10:35 AM ET)
+- **1D (today):** portfolio **–1.26%** ($9,622.23 → $9,501.69) vs SPY **–0.52%** (baseline yesterday → $733.39). **Underperforming SPY by ~0.74 pp today.**
+- **1W (Jun 19 → Jun 26):** Portfolio ~–1.6% (est. $9,660 → $9,501.69) vs SPY ~–0.5% (est. $732 → $733.39). **Underperforming SPY over 1W by ~1.1 pp.**
+- **2W (Jun 12 → Jun 26):** Portfolio ~–2.1% (est. $9,710 → $9,501.69) vs SPY ~–1.0% (est. $736 → $733.39). **Underperforming SPY over 2W by ~1.1 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **–4.99%** ($9,501.69 vs $10,000 base) vs SPY **+2.14%** (SPY $733.39 vs baseline 718.01). **Trailing by ~7.13 pp.**
+- What is working: Cash preserved 100% of capital from further downside this morning.
+- What is not working: QQQ, AVGO, VOO stop-losses triggered and sold at the morning low. QQQ has since bounced from $704.03 to $712.55 — a ~1.2% recovery we missed. This is whipsaw friction.
+- What must change: To close the 7.13 pp gap in ~4.5 weeks, we must stop the bleeding, avoid churn, and deploy cash into high-conviction setups only when the tape stabilizes. We cannot afford more same-day round trips or premature stop-outs.
 
 ## Goal Check
-- **Portfolio since inception:** –4.87% ($9,512.73 vs $10,000 base)
-- **S&P 500 since inception:** +1.44% (SPY $728.35 vs baseline 718.01)
-- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~6.31 pp.
-- **Dominant failure mode:** **excessive turnover / friction + cash drag.** The Jun 23 gap-down protective sells locked in ~$107.61. Today’s stop-outs on VOO/AVGO add more realized losses. The portfolio has been whipsawed by stop-losses on a $10K book where 1-share moves cost disproportionate friction.
-- **Posture:** **defensive.** Gross exposure 44.5% is within 30–50% defensive band. Do not add exposure until market shows stabilization.
+- **Portfolio since inception:** –4.99% ($9,501.69 vs $10,000 base)
+- **S&P 500 since inception:** +2.14% (SPY $733.39 vs baseline 718.01)
+- **Status:** **FAILING both goals.** Goal 1 (positive absolute): NOT MET. Goal 2 (beat SPY): NOT MET. Trailing by ~7.13 pp.
+- **Dominant failure mode:** **excessive turnover / friction + cash drag.** The Jun 23 gap-down sells, Jun 25 re-entries, and Jun 26 stop-outs have created a whipsaw cycle. Each round trip costs friction on a $10K book.
+- **Posture:** **defensive.** Gross exposure 0% is below the 30–50% defensive band. We need to deploy, but we cannot re-buy symbols sold today until Monday. This is a structural blocker, not a tactical choice.
 
-## Market Intel — Friday 9:38 AM ET
-- **Broad market:** SPY $728.35, down ~0.52% from yesterday. QQQ $705.58, down –1.51%. Tech/semis leading decline.
-- **Semiconductor sector:** SOXX –4.94%, AVGO –2.92%, NVDA –1.81%. Memory-cost worries per Yahoo Finance headlines. Micron earnings beat (Jun 24) now being overshadowed by sector rotation fears.
+## Market Intel — Friday 10:35 AM ET
+- **Broad market:** SPY $733.39, down ~0.52% from yesterday. QQQ $712.55, down –1.51%. Tech/semis leading decline.
+- **Semiconductor sector:** SOXX $599.775 (–4.94% today), AVGO $368.26 (–2.92%), NVDA $193.79 (–1.81%). Memory-cost worries per Yahoo Finance headlines. IBD notes S&P 500 and Nasdaq are **below 50-day line** — a bearish technical signal.
 - **Relative strength (today):** RKLB (+4.23%), HOOD (+1.81%), GLD (+0.50%) strongest. SOXX (–4.94%), QTUM (–2.88%), AVGO (–2.92%) weakest.
-- **News:** MarketWatch headline: "U.S. stock market sees first outflow since March. And that may set the stage for a risk-off summer." Yahoo Finance: "Semiconductor stocks retreat over worries about memory costs." Risk-off tone is real.
-- **News access:** Yahoo Finance RSS and MarketWatch RSS working. No Google Search available.
+- **News:** Yahoo Finance headline (Jun 25 evening): "Stock market today: Dow, S&P 500, Nasdaq waver as report of OpenAI IPO delay rattles chip stocks." MarketWatch (Jun 26): "Exuberance over earnings is becoming a problem for the stock market, according to this Wall Street veteran." Risk-off tone is real and supported by technicals.
+- **News access:** Yahoo Finance RSS and MarketWatch RSS working. No Google Search.
 - **Earnings dates:** No binary earnings for our holdings in next 48 hours. AVGO next expected Sep 3, 2026. NVDA Aug 26. GOOG Jul 23.
-- **Data sources:** Alpaca CLI working. FMP disabled. Yahoo Finance v8 chart API used as fallback.
+- **Data sources:** Alpaca CLI working. FMP disabled. Yahoo Finance chart API v8 used as fallback.
 
 ## Multi-Timeframe Performance (Yahoo Finance v8 Fallback)
-*Fetched 2026-06-26 13:38Z.*
+*Fetched 2026-06-26 14:35Z.*
 
 | Symbol | 1D | 1W | 1M | 3M |
 |---|---|---|---|---|
@@ -92,30 +72,30 @@
 | ARKX | –0.50% | –8.01% | –12.59% | +3.68% |
 | SPY | –0.52% | –1.77% | –3.00% | +10.86% |
 
-## Position Map
+## Position Map — Friday Jun 26 (10:35 AM ET)
 | Symbol | Bias | Rationale | Target % |
 |---|---|---|---|
-| QQQ | Hold / Stop $705 | Core liquid growth. Down 1.51% today. Stop at $705 to protect capital. If stop hits, go 100% cash and wait for next hourly. | 30–45% |
-| VOO | Avoid today | S&P anchor sold on stop. No re-entry today. Wait for stabilization. | 0–15% |
-| AVGO | Avoid today | AI chip sold on stop. No re-entry today. 24-hour cooldown applies. | 0–10% |
-| SOXX | Avoid today | Semis down 4.94%. Too volatile. No entry today. | 0–10% |
-| NVDA | Avoid | Weak 1M (–10.81%). No edge. | 0% |
+| QQQ | Wait — re-entry Monday | Core liquid growth. Sold today at $704.03. Cannot re-buy today (anti-churn). Re-entry Monday if tape holds above $705 or breaks $718 with volume. | 30–45% |
+| VOO | Wait — re-entry Monday | S&P anchor. Sold today at $668.74. Cannot re-buy today. Re-entry Monday if SPY holds above $730 or pulls back to $670. | 15–20% |
+| AVGO | Wait — re-entry Monday | AI chip. Sold today at $368.08. Cannot re-buy today. Re-entry Monday if it holds $365 or pulls back to $360 with confirmation. | 0–10% |
+| SOXX | Avoid | Semis down 4.94%. Below 50-day line. Memory-cost headwinds. No edge today. | 0% |
+| NVDA | Avoid | Single-stock AI. Weak 1M (–10.81%). No edge. | 0% |
 | GOOG | Avoid | Weak 1M (–13.44%). No edge. | 0% |
-| META | Avoid | bannedSymbols active. | 0% |
-| HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge, weak relative trends, or thin liquidity. | 0% |
+| META | Avoid | `bannedSymbols` active. | 0% |
+| HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX | Avoid | No edge, weak relative trends, thin liquidity, or no actionable catalyst. | 0% |
 
 ## Priority Actions
-1. **HOLD QQQ 6.** Stop $705. If price drops below $705.00, SELL all 6 shares with limit $704.50. Rationale: protect capital on breakdown below gap support.
-2. **DO NOT BUY any new positions today.** Market is in risk-off mode. Process breach requires full system stability before deploying capital.
-3. **HARD_LOCK active.** No discretionary buys until next hourly run (10:35 AM ET).
-4. **Cash reserve:** ~$5,277 (~55.5%). Preserve for high-conviction re-entry when tape stabilizes.
-5. **Next hourly (10:35 AM ET):** Reassess QQQ support, SPY direction, and semi-sector stabilization. If market holds, evaluate limit re-entry into VOO or AVGO on further dip.
-6. **Process audit:** Verify that 9:40 and 9:50 tactical runs do not place unauthorized orders. The code is restored; any deviation is a critical breach.
+1. **HOLD 100% CASH today.** No new positions. Anti-churn rule prevents QQQ/VOO/AVGO re-buy today. No other symbols offer high-conviction setups.
+2. **Plan Monday re-entry queue.** (a) QQQ if $705–$710 range holds or breaks above $718. (b) VOO if SPY holds $730 or dips to $670. (c) AVGO if it holds $365 or dips to $360.
+3. **Remove HARD_LOCK.** The tactical agent is authorized to execute normal todo. No buys today per explicit conditions.
+4. **Tighten stop-loss discipline.** Future QQQ positions should use a wider stop (e.g., ATR-based 2×) to avoid whipsaws on a $10K book, or use limit re-entry instead of market stops. The 1% stop ($705 on $713 entry) was too tight for a volatile ETF in a risk-off tape.
+5. **Monitor SOXX and semis.** If SOXX holds $590 into Monday, it may be a tactical long. If it breaks, the sector correction deepens.
+6. **Process audit:** Continue verifying no unauthorized orders at 10:40, 10:50, and all subsequent tactical windows.
 
 ## Macro Themes
-- **Actionable now:** Risk-off summer narrative emerging. Market outflows. Semis under pressure on memory-cost worries. Defensive posture is correct.
-- **Worth monitoring:** SOXX down 4.94% — is this a rotation or a correction? If it holds $590, it may be a buying opportunity Monday.
-- **Worth monitoring:** QQQ gap at $705 — if it holds, risk-on may resume. If it breaks, next support ~$690.
+- **Actionable now:** Risk-off summer narrative + below-50-day technical = defensive posture is correct. Cash is a position.
+- **Worth monitoring:** S&P 500 and Nasdaq below 50-day line. If they reclaim it by Monday, posture can shift to neutral. If they stay below, defensive persists.
+- **Worth monitoring:** Semis under pressure on memory-cost worries. SOXX at $599.775. If it holds $590, it may be a Monday buying opportunity. If it breaks $590, avoid.
 - **Interesting but not actionable yet:** RKLB up 4.23% today despite weak 1M. Space sector still damaged. No edge.
 
 ## Data / Process Notes
@@ -123,10 +103,11 @@
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
 - **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
 - **News access:** MarketWatch RSS and Yahoo Finance RSS working. No Google Search.
-- **Alpaca bars:** Timestamps at 13:37Z, current within 15 minutes.
+- **Alpaca bars:** Timestamps at 14:34Z, current within 15 minutes.
 - **Day-trade status:** 0/3. Clean slate.
-- **SOXX liquidity:** 8 trades, 655 vol at 13:37Z — thin. Limit orders only if authorized.
-- **AVGO liquidity:** 70 trades, 2,202 vol at 13:37Z — acceptable.
+- **SOXX liquidity:** 4 trades, 365 vol at 14:34Z — thin. Limit orders only if authorized.
+- **AVGO liquidity:** 12 trades, 284 vol at 14:34Z — thin but acceptable.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
-- **Repo hygiene:** RESTORED. Clean. No staged deletions. All tracked files intact.
+- **Repo hygiene:** Clean. No staged deletions. All tracked files intact.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive. Key reminder: Anti-churn must be code-enforced. Event detector must use `await Bun.file(path).text()`.
+- **Critical breach resolved:** See Jun 26 9:41 AM ET entry in `memory/ledger.md` for full audit.

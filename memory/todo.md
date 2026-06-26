@@ -1,38 +1,42 @@
-# Tactical Todo — Updated 2026-06-26 13:41Z (Friday 9:41 AM ET)
-*HARD_LOCK ACTIVE. No discretionary buys. Execute authorized stop-loss only. Market OPEN until 16:00 ET.*
-*<!-- Autonomous override applied at 2026-06-26 13:41Z due to CRITICAL event -->*
+# Tactical Todo — Updated 2026-06-26 14:35Z (Friday 10:35 AM ET)
+*HARD_LOCK LIFTED. No discretionary buys today. Market OPEN until 16:00 ET.*
 
 ## Current State
 - **Regime:** defensive (30–50% band)
-- **Lock status:** HARD_LOCK — no discretionary buys until next hourly run
+- **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** NO POSITIONS. 100% cash.
-- **Account equity / cash / buying power:** ~$9,501 / ~$9,501 / ~$29,968
+- **Account equity / cash / buying power:** ~$9,501 / ~$9,501 / ~$38,006
 - **Gross long exposure:** ~0% | **Net exposure:** ~0% | **Cash:** ~100%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET.
-- **Process note:** CRITICAL BREACH detected and resolved this cycle. All safety guards restored. Verify no unauthorized orders at 9:40 and 9:50 tactical runs.
 
 ## Position Instructions — Friday Jun 26 (Remaining Session)
 
-### QQQ — SOLD 6 @ $704.03 — STOP-LOSS EXECUTED
-- **SOLD:** 6 shares @ $704.03 via market order at 2026-06-26 13:41Z.
-- **Reason:** Price breached $705.00 authorized hard stop. Event detector CRITICAL.
-- **Realized loss:** ~$53.91 (avg $713.015 → $704.03).
-- **Daytrade status:** 0/3. Overnight hold, not a daytrade.
-- **24-hour cooldown:** DO NOT RE-BUY QQQ until next hourly authorization.
+### QQQ — DO NOT BUY — DO NOT RE-BUY
+- **SOLD:** 6 shares @ $704.03 via market order at 9:41 AM ET today.
+- **Anti-churn rule:** QQQ was sold today. You may NOT buy QQQ back today.
+- **24-hour cooldown:** Also active. Do NOT RE-BUY QQQ until Monday Jun 30 hourly authorization.
+- **Monday trigger (preview):** Re-entry authorized IF QQQ holds $705–$710 range OR breaks above $718 with volume confirmation. Stop would be $700. Limit orders only.
+- **DO NOT BUY QQQ** today.
 
 ### VOO — DO NOT BUY — DO NOT RE-BUY
-- **Reason:** Sold this morning at $668.74 on stop-loss. 24-hour cooldown expired, but hourly explicitly does NOT authorize re-entry today.
+- **SOLD:** 2 shares @ $668.74 via market order at 9:32 AM ET today.
+- **Anti-churn rule:** VOO was sold today. You may NOT buy VOO back today.
+- **24-hour cooldown:** Also active. Do NOT RE-BUY VOO until Monday Jun 30 hourly authorization.
+- **Monday trigger (preview):** Re-entry authorized IF VOO holds above $670 OR dips to $665 with confirmation. Stop would be $660. Limit orders only.
 - **DO NOT BUY VOO** today.
 
 ### AVGO — DO NOT BUY — DO NOT RE-BUY
-- **Reason:** Sold this morning at $368.08 on stop-loss. 24-hour cooldown expired, but hourly explicitly does NOT authorize re-entry today.
+- **SOLD:** 3 shares @ $368.08 via market order at 9:32 AM ET today.
+- **Anti-churn rule:** AVGO was sold today. You may NOT buy AVGO back today.
+- **24-hour cooldown:** Also active. Do NOT RE-BUY AVGO until Monday Jun 30 hourly authorization.
+- **Monday trigger (preview):** Re-entry authorized IF AVGO holds $365 OR dips to $360 with confirmation. Stop would be $355. Limit orders only.
 - **DO NOT BUY AVGO** today.
 
 ### SOXX — DO NOT BUY
-- **Reason:** Down 4.94% today. Semis volatile. No edge. Hourly explicitly does NOT authorize entry today.
+- **Reason:** Down 4.94% today. Semis volatile. Memory-cost headwinds. No edge.
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
@@ -46,18 +50,29 @@
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
-### HOOD / RKLB / GLD / EIS / SHLD / QTUM / ARKX — DO NOT BUY
-- No edge, weak relative trends, extended, or thin liquidity.
+### HOOD — DO NOT BUY
+- **Reason:** No edge. Weak 1W (–8.48%).
+- **DO NOT BUY HOOD** today.
+
+### RKLB — DO NOT BUY
+- **Reason:** No edge. Weak 1M (–39.25%). Up 4.23% today is likely a dead-cat bounce.
+- **DO NOT BUY RKLB** today.
+
+### GLD — DO NOT BUY
+- **Reason:** Defensive gold. Weak 3M (–7.95%). No edge in a risk-off tape when gold is already failing.
+- **DO NOT BUY GLD** today.
+
+### EIS / SHLD / QTUM / ARKX — DO NOT BUY
+- **Reason:** No edge, weak relative trends, or thin liquidity. EIS and SHLD have 1–2 trades in last bar.
+- **DO NOT BUY EIS**, **DO NOT BUY SHLD**, **DO NOT BUY QTUM**, **DO NOT BUY ARKX** today.
 
 ## Hard Rules / No-Trade Conditions
-- **HARD_LOCK ACTIVE.** No discretionary buys until next hourly run (10:35 AM ET). Code-level rejection for any BUY order.
-- **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
+- **No same-day round trips.** If a symbol was sold today, you may NOT buy it back today.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **Never average down.**
 - **Tactical agent must NOT sell positions unless the exact phrase `AUTHORIZED SAME-DAY SELL <SYMBOL>` appears in this file.**
-- **If QQQ drops below $705.00, DO NOT delay.** Execute the authorized stop-loss immediately.
-- **If event detector flags CRITICAL event on QQQ, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt). The stop-loss is already authorized.
+- **If event detector flags CRITICAL event, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt).
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -71,14 +86,15 @@
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **SOXX:** Thin relative to large-cap ETFs. Limit orders only if authorized.
+- **AVGO:** Thin today (12 trades, 284 vol). Limit orders only if authorized.
 
 ## Current Book
 - NO POSITIONS
 - Cash: ~$9,501 (100%)
 - Gross exposure: ~0%
 
-## Next Hourly Preview — 10:35 AM ET
-- Reassess QQQ support after next hour of trading.
-- Evaluate SPY direction and breadth.
-- If market stabilizes, prepare re-entry queue for VOO/AVGO/SOXX on deeper pullback.
-- If QQQ stop triggers, evaluate defensive posture (100% cash) until Monday.
+## Next Hourly Preview — Monday Jun 30 9:35 AM ET
+- Reassess QQQ support after weekend.
+- Evaluate SPY direction relative to 50-day moving average.
+- If market stabilizes, execute Monday re-entry queue for QQQ/VOO/AVGO per triggers above.
+- If market weakens further, extend defensive posture.
