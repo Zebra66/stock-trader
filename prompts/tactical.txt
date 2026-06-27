@@ -73,6 +73,8 @@ Before executing ANY order via the Alpaca CLI, verify ALL of the following. If a
 9. **HARD_LOCK check:** If `memory/todo.md` contains the word `HARD_LOCK`, **abort ALL orders** regardless of conditions. The code-level guard in the CLI will also block the order, but you must catch it here first.
 10. **Exposure check:** After this buy, will gross exposure exceed 90%? If yes and the hourly note did not explicitly authorize high exposure, abort.
 11. **Data quality check:** Is the broker quote confirmed by a second source or healthy volume (>10 trades)? If stale/abnormal, abort.
+12. **Total-liquidation check:** If this is a SELL, will it reduce gross exposure below 30% OR is it the last/only sell of more than one symbol in this cycle? If yes and the hourly note did NOT explicitly authorize de-risking, abort.
+13. **Daily trade-budget check:** Count filled orders today via `get-orders --status filled`. If today already has 3+ filled orders and the hourly note did not authorize more, abort.
 
 ### Step 5 — Execute orders
 - For each condition met in todo.md that passes the pre-trade checklist, execute the corresponding order via the Alpaca CLI
