@@ -9,9 +9,9 @@
 - **Gross long exposure:** ~0% | **Net exposure:** ~0% | **Cash:** ~100%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** NONE
-- **Market:** OPEN until 20:00Z (4:00 PM ET). ~6.5 hours to close.
-- **Daily trade budget:** 3 orders authorized for this tactical cycle. Use them for QQQ, VOO, AVGO.
+- **Open orders:** QQQ 5@$715.50 limit, VOO 2@$676.50 limit, AVGO 3@$372.00 limit (all placed 13:41–13:42Z, status `new`)
+- **Market:** OPEN until 20:00Z (4:00 PM ET). ~6.25 hours to close.
+- **Daily trade budget:** 3 limit orders placed today; budget exhausted for new order placement. Fills counted against budget only if/when they execute.
 
 ## BUY Instructions — Execute in Next Tactical Window
 
@@ -47,7 +47,7 @@
 ## DO NOT BUY — Symbols Blocked This Cycle
 
 ### SOXX — DO NOT BUY
-- **Reason:** Chip-climax warning from Morgan Stanley Wilson today. SOXX is +73% 3M — pure momentum. Overlaps QQQ tech exposure. No add.
+- **Reason:** Chip-climax warning from Morgan Stanley Wilson today. SOXX is +73% 3M — pure momentum. Overlaps QQQ tech exposure. Avoid any SOXX adds.
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
@@ -107,9 +107,13 @@
 - **AVGO:** 21 trades at 13:34Z. Limit orders only.
 
 ## Current Book
-- NO POSITIONS
+- **Open orders (pending fill):**
+  - QQQ: 5 shares limit $715.50 (order 23167401)
+  - VOO: 2 shares limit $676.50 (order 749a53c9)
+  - AVGO: 3 shares limit $372.00 (order 265eda40)
+- **Filled positions:** NONE
 - Cash: ~$9,501.67 (100%)
-- Gross exposure: ~0%
+- Gross exposure: ~0% (will be ~63.6% if all open orders fill)
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET)
 - Verify QQQ/VOO/AVGO fills from 13:40/13:50/14:10/14:20/14:30 tactical windows.

@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 09:43 : [tactical] Placed 3 limit buys: QQQ/VOO/AVGO
+- QQQ limit $715.50 x5, VOO limit $676.50 x2, AVGO limit $372.00 x3
+- All orders pending_new; no fills yet
+- Fixed todo.md NO ADD parser false-positive on QQQ
+- Target gross exposure 63.6% after fills
+- Daytrade count 0/3; daily budget 0 filled today
+
 2026-06-29 : 09:38 : [hourly] Deploy core: 5 QQQ 2 VOO 3 AVGO
 - Equity $9,501.67, 100% cash, 0 positions
 - SPY/QQQ/VOO reclaimed 50-day MA today

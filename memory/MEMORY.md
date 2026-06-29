@@ -17,6 +17,18 @@
 - **Branch:** Up to date with origin/main.
 - **Tactical ledger data-quality note:** 09:31Z tactical entry has price hallucination bug: `,501.67` instead of `$9,501.67`. Root cause is bash `$9` expansion in double-quoted detail strings. Fixed by using ledger_cli.ts with single-quote args or TypeScript helper. Disregard the missing digit for concealment detection; the true state is confirmed by live API.
 
+## Tactical Execution — 2026-06-29 13:42Z (Monday 9:42 AM ET)
+- **Action:** Placed 3 resting limit BUY orders per hourly authorization.
+  - QQQ: 5 shares @ $715.50 limit (order 23167401, status `new`)
+  - VOO: 2 shares @ $676.50 limit (order 749a53c9, status `new`)
+  - AVGO: 3 shares @ $372.00 limit (order 265eda40, status `new`)
+- **Fills:** None yet. All orders are resting until price pulls back to limits.
+- **Authoritative holdings:** NONE. 100% cash ($9,501.67).
+- **Current gross exposure:** 0% (will be ~63.6% if all 3 fill).
+- **Daytrade count:** 0/3. No PDT risk from today's buys.
+- **Next expected action:** Monitor fills in 13:50/14:00/14:10 tactical windows. QQQ limit ($715.50) is 6¢ below last trade ($715.56) — highest fill probability. VOO ($676.50) and AVGO ($372.00) are below current market and may need tape weakening or next-hourly limit raise.
+- **System fix:** Corrected todo.md false-positive where `NO ADD` parser extracted QQQ from the SOXX reason line (`Overlaps QQQ tech exposure. No add.`). Reworded to `Avoid any SOXX adds.` to prevent parser from banning QQQ.
+
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
@@ -27,7 +39,7 @@
 - **Net exposure:** 0%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** QQQ 5@$715.50, VOO 2@$676.50, AVGO 3@$372.00 (all limit, day TIF, expires 20:00Z)
 
 ## Performance Review — Mon Jun 29 (9:35 AM ET)
 - **1D (today so far):** portfolio **0.00%** (flat, 100% cash) vs SPY **+1.25%** (Yahoo official close 728.99 → 738.14). **Underperforming SPY by ~1.25 pp today.**
