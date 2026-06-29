@@ -1,68 +1,66 @@
-# Tactical Todo — Updated 2026-06-29 19:35Z (Monday 3:35 PM ET)
-*Market OPEN until 20:00Z (4:00 PM ET). ~25 minutes to close.*
+# Tactical Todo — Updated 2026-06-29 21:05Z (Monday post-close)
+*Market CLOSED. Next regular session: Tuesday Jun 30 09:30 AM ET. Do NOT submit after-hours orders.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,456.
-- **Account equity / cash / buying power:** $9,554.15 / $3,456 / $30,898.81
+- **Account equity / cash / buying power:** $9,548.47 / $3,456 / $30,883
 - **Gross long exposure:** 63.8% | **Net exposure:** 63.8% | **Cash:** 36.2%
-- **Daytrade count:** 0/3 (live API verified)
+- **Daytrade count:** 0/3 (clean slate for Tuesday)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 20:00Z (4:00 PM ET). ~25 minutes to close.
-- **Daily trade budget:** 3 orders filled today (QQQ, VOO, AVGO). Budget exhausted. **NO NEW BUYS TODAY without explicit fresh hourly authorization.**
+- **Market:** CLOSED. Next open: Tuesday Jun 30 13:30Z (9:30 AM ET).
+- **Daily trade budget:** Reset to 0/3 for Tuesday. Budget exhausted on Monday; no new orders Monday after hours.
 
-## HOLD Instructions — Execute in Next Tactical Windows (:40 and :50 of 19:00Z hour)
+## HOLD Instructions — Active During Tuesday Regular Session
 
 ### QQQ — HOLD 5 shares
-- **Entry:** Avg $715.38 (filled this morning)
-- **Current:** $723.33
+- **Entry:** Avg $715.38 (filled Mon morning)
+- **Monday close:** $723.00 (+1.07% unrealized)
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
-- **Rationale:** Core growth. Above 50-day MA. Unrealized profit growing.
-- **R-multiple:** Risk per share $25.38. 5 shares = $126.90 total risk (1.33% of equity). Reward per share $34.67. R/R = 1.37:1.
-- **Concentration:** 37.8% of equity. Under 45% cap. Adding 1 share would breach cap at current price. No adds today.
-- **AUTHORIZE SAME-DAY SELL QQQ if price breaches $690.00**
+- **Rationale:** Core growth. Above 50-day MA. Stop is 4.6% below Monday close.
+- **Concentration:** 37.9% of equity. Under 45% cap. Adding 1 share would breach cap (45.6%). No adds unless equity grows.
+- **AUTHORIZE SAME-DAY SELL QQQ if price breaches $690.00 AND event detector is CRITICAL/MAJOR**
 
 ### VOO — HOLD 2 shares
-- **Entry:** Avg $676.46 (filled this morning)
-- **Current:** $680.67
+- **Entry:** Avg $676.46 (filled Mon morning)
+- **Monday close:** $680.90 (+0.66% unrealized)
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
-- **Rationale:** S&P anchor. Small unrealized profit growing. Low beta complement.
-- **R-multiple:** Risk per share $16.46. 2 shares = $32.92 total risk (0.34% of equity). Reward per share $22.33. R/R = 1.36:1.
-- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would breach 21.3%. No adds today.
-- **AUTHORIZE SAME-DAY SELL VOO if price breaches $660.00**
+- **Rationale:** S&P anchor. Low beta complement. Stop is 3.1% below Monday close.
+- **Concentration:** 14.3% of equity. Under 20% cap. Adding 1 share would breach 21.4%. No adds.
+- **AUTHORIZE SAME-DAY SELL VOO if price breaches $660.00 AND event detector is CRITICAL/MAJOR**
 
 ### AVGO — HOLD 3 shares
-- **Entry:** Avg $371.95 (filled this morning)
-- **Current:** $373.39
+- **Entry:** Avg $371.95 (filled Mon morning)
+- **Monday close:** $371.89 (–0.02% unrealized)
 - **Stop:** $350.00 (hard disaster stop). Do NOT sell below $350 unless event detector flags CRITICAL/MAJOR on AVGO specifically.
 - **Profit target:** $400.00. Do NOT trim or sell below $400 without fresh hourly authorization.
-- **Rationale:** AI chip alpha. Diversifies beyond pure index exposure.
-- **R-multiple:** Risk per share $21.95. 3 shares = $65.85 total risk (0.69% of equity). Reward per share $28.05. R/R = 1.28:1.
-- **Concentration:** 11.7% of equity. Under 15% cap. Adding 1 share would breach 15.7%. No adds today.
-- **Liquidity note:** AVGO is thin (50 trades at 19:34Z). LIMIT ORDER ONLY for any future orders.
-- **AUTHORIZE SAME-DAY SELL AVGO if price breaches $350.00**
+- **Rationale:** AI chip alpha. Recovered to flat. Stop is 5.9% below Monday close.
+- **Concentration:** 11.7% of equity. Under 15% cap. Adding 1 share would breach 15.6%. No adds.
+- **Liquidity note:** AVGO is thin. LIMIT ORDER ONLY for any future orders.
+- **AUTHORIZE SAME-DAY SELL AVGO if price breaches $350.00 AND event detector is CRITICAL/MAJOR**
 
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 = $225.67 (2.36% of equity). Under 6% daily loss cap.
-- Current price-to-stop heat: QQQ $166.65 + VOO $41.34 + AVGO $70.17 = $278.16 (2.91% of equity).
+- QQQ $165.00 + VOO $41.80 + AVGO $65.67 = $272.47 (2.85% of equity). Under 6% daily loss cap.
 
-## NO NEW BUYS TODAY
+## NO ORDERS AFTER HOURS — Next Session Triggers Only
+
+**All buy conditions below are for Tuesday regular session ONLY. Do NOT submit pre-market or after-hours orders.**
 
 ### QQQ — DO NOT ADD
-- **Reason:** At 37.8% of equity. Adding 1 share would push QQQ to ~45.7%, breaching 45% cap. Averaging down prohibited.
-- **DO NOT BUY QQQ** today.
+- **Reason:** At 37.9% of equity. Adding 1 share would push QQQ to ~45.6%, breaching 45% cap. No edge from adding at higher prices after a +2.3% day.
+- **DO NOT BUY QQQ** at Tuesday open unless hourly strategist explicitly overrides.
 
 ### VOO — DO NOT ADD
-- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~21.3%, breaching the 20% non-QQQ ETF cap.
-- **DO NOT BUY VOO** today.
+- **Reason:** At 14.3% of equity. Adding 1 share would push VOO to ~21.4%, breaching the 20% non-QQQ ETF cap.
+- **DO NOT BUY VOO** at Tuesday open unless hourly strategist explicitly overrides.
 
 ### AVGO — DO NOT ADD
-- **Reason:** At 11.7% of equity. Adding 1 share would push AVGO to ~15.7%, breaching 15% single-stock cap.
-- **DO NOT BUY AVGO** today.
+- **Reason:** Flat from entry; adding on gap-up is poor R/R. At 11.7% of equity. Adding 1 share would breach 15.6% cap.
+- **DO NOT BUY AVGO** at Tuesday open unless hourly strategist explicitly overrides.
 
 ## Deployment Queue — For Tomorrow (Tue Jun 30)
 Ranked candidates for fresh capital if market is orderly:
@@ -104,7 +102,8 @@ Ranked candidates for fresh capital if market is orderly:
 - **DO NOT BUY EIS**, **DO NOT BUY SHLD**, **DO NOT BUY QTUM**, **DO NOT BUY ARKX** today.
 
 ## Hard Rules / No-Trade Conditions
-- **No same-day round trips.** QQQ, VOO, AVGO were all bought today. Same-day sell only authorized if hard stop breached and event detector is CRITICAL/MAJOR.
+- **No after-hours / pre-market orders.** All triggers converted to next regular-session conditions.
+- **No same-day round trips.** QQQ, VOO, AVGO were bought Monday. Tuesday same-day sell only authorized if hard stop breached AND event detector is CRITICAL/MAJOR.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **Never average down.**
@@ -136,7 +135,7 @@ Ranked candidates for fresh capital if market is orderly:
 - Cash: $3,456 (36.2%)
 - Gross exposure: 63.8%
 
-## Next Hourly Preview — 20:35Z (4:35 PM ET, post-close)
-- Market will be CLOSED. Next regular session is Tue Jun 30 9:30 AM ET.
+## Next Hourly — Tuesday Jun 30 13:35Z (9:35 AM ET)
+- Market opens at 13:30Z (9:30 AM ET).
 - Hold all core positions overnight. No after-hours orders.
-- Prepare 4th-position deployment queue for Tuesday open.
+- 4th-position deployment queue ready for Tuesday open if market is orderly.
