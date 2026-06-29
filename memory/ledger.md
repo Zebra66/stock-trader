@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 10:31 : [tactical] MAJOR chip bounce, hold all
+- Event detector MAJOR at 14:30Z (SOXX +1.36%, SMH +1.20%)
+- No held position breached hard stop
+- QQQ at $711.64, VOO at $676.55, AVGO at $367.58
+- Daily trade budget exhausted (3/3), no open orders
+- Autonomous override applied, no protective sells warranted
+
+2026-06-29 : 10:20 : [tactical] Hold all, no triggers met
+- QQQ $707.24 above stop $690.00, VOO $674.17 above stop $660.00, AVGO $363.18 above stop $350.00
+- Event downgraded to MINOR; no autonomous action
+- Daily trade budget exhausted (3/3 filled); no new buys
+- Suspended buy lines remain frozen pending hourly strategist at 14:35Z
+
 2026-06-29 : 10:11 : [tactical] CRITICAL chip crash; holds, no sells
 - Event detector CRITICAL: SOXX down 2.21% to $581.09, SMH down 1.93% in 20-min window
 - All 3 limit buy orders now filled: QQQ 5@$715.38, VOO 2@$676.46, AVGO 3@$371.95

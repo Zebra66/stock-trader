@@ -1,13 +1,13 @@
 # Tactical Todo — Updated 2026-06-29 14:10Z (Monday 10:10 AM ET)
-<!-- Autonomous override applied at 2026-06-29 14:10Z due to CRITICAL event -->
-*HARD_LOCK LIFTED. Deploy core positions. Market OPEN until 20:00Z (4:00 PM ET). CRITICAL chip crash in progress.*
+<!-- Autonomous override applied at 2026-06-29 14:40Z due to MAJOR event (SOXX +1.36%, SMH +1.20%) -->
+*HARD_LOCK LIFTED. Deploy core positions. Market OPEN until 20:00Z (4:00 PM ET). Prior CRITICAL chip crash partially reversed; MAJOR bounce in progress.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,456.
-- **Account equity / cash / buying power:** ~$9,454.29 / ~$3,456 / ~$30,619.21
-- **Gross long exposure:** ~63.4% | **Net exposure:** ~63.4% | **Cash:** ~36.6%
+- **Account equity / cash / buying power:** ~$9,470.47 / ~$3,456 / ~$30,664.52
+- **Gross long exposure:** ~63.5% | **Net exposure:** ~63.5% | **Cash:** ~36.5%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE. All prior limit orders filled.
@@ -114,8 +114,8 @@
   - QQQ: 5 shares avg $715.38 (order 23167401, filled)
   - VOO: 2 shares avg $676.46 (order 749a53c9, filled)
   - AVGO: 3 shares avg $371.95 (order 265eda40, filled)
-- Cash: ~$3,456 (~36.6%)
-- Gross exposure: ~63.4%
+- Cash: ~$3,456 (~36.5%)
+- Gross exposure: ~63.5%
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET)
 - All core positions filled. Gross exposure ~63.4%.
