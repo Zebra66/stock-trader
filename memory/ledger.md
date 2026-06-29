@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 10:11 : [tactical] CRITICAL chip crash; holds, no sells
+- Event detector CRITICAL: SOXX down 2.21% to $581.09, SMH down 1.93% in 20-min window
+- All 3 limit buy orders now filled: QQQ 5@$715.38, VOO 2@$676.46, AVGO 3@$371.95
+- Gross exposure now 63.4%, unrealized -$47.53 (-0.50% equity) on new positions
+- No protective sells: all positions above hard stops (QQQ $710.35 > $690.00, VOO $675.575 > $660.00, AVGO $365.08 > $350.00)
+- Buy triggers suspended; waiting for 14:35Z hourly reset
+
+2026-06-29 : 09:51 : [tactical] AVGO filled; QQQ/VOO resting
+- AVGO 3 shares filled at avg $371.95, last trade $371.38
+- QQQ limit $715.50 resting, market $716.90
+- VOO limit $676.50 resting, market $679.48
+- Gross exposure 11.7%, cash $8,385.82, 1 of 3 orders filled
+- No action needed; stops intact, daytrade 0/3
+
 2026-06-29 : 09:43 : [tactical] Placed 3 limit buys: QQQ/VOO/AVGO
 - QQQ limit $715.50 x5, VOO limit $676.50 x2, AVGO limit $372.00 x3
 - All orders pending_new; no fills yet

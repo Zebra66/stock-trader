@@ -1,17 +1,18 @@
-# Tactical Todo — Updated 2026-06-29 13:35Z (Monday 9:35 AM ET)
-*HARD_LOCK LIFTED. Deploy core positions. Market OPEN until 20:00Z (4:00 PM ET).*
+# Tactical Todo — Updated 2026-06-29 14:10Z (Monday 10:10 AM ET)
+<!-- Autonomous override applied at 2026-06-29 14:10Z due to CRITICAL event -->
+*HARD_LOCK LIFTED. Deploy core positions. Market OPEN until 20:00Z (4:00 PM ET). CRITICAL chip crash in progress.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
-- **Live book:** NO POSITIONS. 100% cash.
-- **Account equity / cash / buying power:** ~$9,501.67 / ~$9,501.67 / ~$38,006.68
-- **Gross long exposure:** ~0% | **Net exposure:** ~0% | **Cash:** ~100%
+- **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,456.
+- **Account equity / cash / buying power:** ~$9,454.29 / ~$3,456 / ~$30,619.21
+- **Gross long exposure:** ~63.4% | **Net exposure:** ~63.4% | **Cash:** ~36.6%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
-- **Open orders:** QQQ 5@$715.50 limit, VOO 2@$676.50 limit, AVGO 3@$372.00 limit (all placed 13:41–13:42Z, status `new`)
+- **Open orders:** NONE. All prior limit orders filled.
 - **Market:** OPEN until 20:00Z (4:00 PM ET). ~6.25 hours to close.
-- **Daily trade budget:** 3 limit orders placed today; budget exhausted for new order placement. Fills counted against budget only if/when they execute.
+- **Daily trade budget:** 3 orders filled today (QQQ, VOO, AVGO). Budget exhausted. No new orders without fresh hourly authorization.
 
 ## BUY Instructions — Execute in Next Tactical Window
 
@@ -79,9 +80,10 @@
 
 ## Secondary Triggers (Only if Primary Fills and Market Holds)
 
-### QQQ — ADD 1 share if pullback to $708.00 with limit order
+### QQQ — ADD 1 share if pullback to $708.00 with limit order [SUSPENDED]
 - **Condition:** Only if the initial 5-share QQQ position is already filled AND QQQ is holding above $718 by next hourly.
 - **Concentration check:** 6 shares total at ~$714 avg = $4,284 = 45.08% of equity. At or near 45% cap. Do NOT add more than 6 shares total today.
+- **SUSPENDED:** CRITICAL event detected at 14:10Z (SOXX -2.21%, SMH -1.93%). No new buys during crash.
 
 ## Hard Rules / No-Trade Conditions
 - **No same-day round trips.** None of our symbols were sold today. Anti-churn does NOT block QQQ/VOO/AVGO today.
@@ -107,16 +109,16 @@
 - **AVGO:** 21 trades at 13:34Z. Limit orders only.
 
 ## Current Book
-- **Open orders (pending fill):**
-  - QQQ: 5 shares limit $715.50 (order 23167401)
-  - VOO: 2 shares limit $676.50 (order 749a53c9)
-  - AVGO: 3 shares limit $372.00 (order 265eda40)
-- **Filled positions:** NONE
-- Cash: ~$9,501.67 (100%)
-- Gross exposure: ~0% (will be ~63.6% if all open orders fill)
+- **Open orders (pending fill):** NONE
+- **Filled positions:**
+  - QQQ: 5 shares avg $715.38 (order 23167401, filled)
+  - VOO: 2 shares avg $676.46 (order 749a53c9, filled)
+  - AVGO: 3 shares avg $371.95 (order 265eda40, filled)
+- Cash: ~$3,456 (~36.6%)
+- Gross exposure: ~63.4%
 
 ## Next Hourly Preview — 14:35Z (10:35 AM ET)
-- Verify QQQ/VOO/AVGO fills from 13:40/13:50/14:10/14:20/14:30 tactical windows.
-- If fills occurred, verify gross exposure is ~63% and no unauthorized orders exist.
-- If no fills, consider raising limit prices or switching to market orders for core QQQ/VOO if tape remains strong.
-- Monitor SOXX direction for chip-climax validity.
+- All core positions filled. Gross exposure ~63.4%.
+- CRITICAL chip crash in progress (SOXX -2.21%, SMH -1.93%). Monitor for escalation.
+- If AVGO breaches $350.00 hard stop or detector flags AVGO as CRITICAL, execute protective sell immediately.
+- Do NOT authorize new buys until chip crash stabilizes.
