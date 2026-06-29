@@ -1,23 +1,23 @@
-# Tactical Todo — Updated 2026-06-29 16:35Z (Monday 12:35 PM ET)
+# Tactical Todo — Updated 2026-06-29 17:35Z (Monday 1:35 PM ET)
 *Market OPEN until 20:00Z (4:00 PM ET).*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,456.
-- **Account equity / cash / buying power:** $9,523.81 / $3,456 / $30,813.87
-- **Gross long exposure:** 63.7% | **Net exposure:** 63.7% | **Cash:** 36.3%
+- **Account equity / cash / buying power:** $9,554.20 / $3,456 / $30,898.95
+- **Gross long exposure:** 63.8% | **Net exposure:** 63.8% | **Cash:** 36.2%
 - **Daytrade count:** 0/3 (live API verified)
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 20:00Z (4:00 PM ET). ~3.5 hours to close.
+- **Market:** OPEN until 20:00Z (4:00 PM ET). ~2.5 hours to close.
 - **Daily trade budget:** 3 orders filled today (QQQ, VOO, AVGO). Budget exhausted. **NO NEW BUYS TODAY without explicit fresh hourly authorization.**
 
 ## HOLD Instructions — Execute in Next Tactical Window
 
 ### QQQ — HOLD 5 shares
 - **Entry:** Avg $715.38 (filled this morning)
-- **Current:** $719.49
+- **Current:** $722.69
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
 - **Rationale:** Core growth. Above 50-day MA. Unrealized profit growing.
@@ -27,49 +27,48 @@
 
 ### VOO — HOLD 2 shares
 - **Entry:** Avg $676.46 (filled this morning)
-- **Current:** $678.49
+- **Current:** $680.47
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
 - **Rationale:** S&P anchor. Small unrealized profit growing. Low beta complement.
-- **R-multiple:** Risk per share $16.46. 2 shares = $32.92 total risk (0.35% of equity). Reward per share $22.51. R/R = 1.37:1.
-- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would breach 20.6%. No adds today.
+- **R-multiple:** Risk per share $16.46. 2 shares = $32.92 total risk (0.34% of equity). Reward per share $22.51. R/R = 1.37:1.
+- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would breach 21.3%. No adds today.
 - **AUTHORIZE SAME-DAY SELL VOO if price breaches $660.00**
 
 ### AVGO — HOLD 3 shares
 - **Entry:** Avg $371.95 (filled this morning)
-- **Current:** $370.325
+- **Current:** $374.78
 - **Stop:** $350.00 (hard disaster stop). Do NOT sell below $350 unless event detector flags CRITICAL/MAJOR on AVGO specifically.
 - **Profit target:** $400.00. Do NOT trim or sell below $400 without fresh hourly authorization.
 - **Rationale:** AI chip alpha. Diversifies beyond pure index exposure.
-- **R-multiple:** Risk per share $21.95. 3 shares = $65.85 total risk (0.69% of equity). Reward per share $29.68. R/R = 1.35:1.
-- **Concentration:** 11.7% of equity. Under 15% cap. Adding 1 share would breach 15.5%. No adds today.
-- **Liquidity note:** AVGO is thin (22 trades at 16:34Z). LIMIT ORDER ONLY for any future orders.
+- **R-multiple:** Risk per share $21.95. 3 shares = $65.85 total risk (0.69% of equity). Reward per share $28.05. R/R = 1.28:1.
+- **Concentration:** 11.8% of equity. Under 15% cap. Adding 1 share would breach 15.7%. No adds today.
+- **Liquidity note:** AVGO is thin (14 trades at 17:34Z). LIMIT ORDER ONLY for any future orders.
 - **AUTHORIZE SAME-DAY SELL AVGO if price breaches $350.00**
 
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 = $225.67 (2.37% of equity). Under 6% daily loss cap.
-- Current price-to-stop heat: QQQ $147.45 + VOO $36.98 + AVGO $60.98 = $245.41 (2.58% of equity).
+- QQQ $126.90 + VOO $32.92 + AVGO $65.85 = $225.67 (2.36% of equity). Under 6% daily loss cap.
+- Current price-to-stop heat: QQQ $163.45 + VOO $40.94 + AVGO $74.34 = $278.73 (2.92% of equity).
 
 ## NO NEW BUYS TODAY
 
 ### QQQ — DO NOT ADD
-- **Reason:** At 37.8% of equity. Adding 1 share would push QQQ to ~45.4%, breaching 45% cap. Averaging down prohibited.
+- **Reason:** At 37.8% of equity. Adding 1 share would push QQQ to ~45.7%, breaching 45% cap. Averaging down prohibited.
 - **DO NOT BUY QQQ** today.
 
 ### VOO — DO NOT ADD
-- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~20.6%, breaching the 20% non-QQQ ETF cap.
+- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~21.3%, breaching the 20% non-QQQ ETF cap.
 - **DO NOT BUY VOO** today.
 
 ### AVGO — DO NOT ADD
-- **Reason:** At 11.7% of equity. Adding 1 share would push AVGO to ~15.5%, breaching 15% single-stock cap.
+- **Reason:** At 11.8% of equity. Adding 1 share would push AVGO to ~15.7%, breaching 15% single-stock cap.
 - **DO NOT BUY AVGO** today.
 
 ## Deployment Queue — For Tomorrow (Tue Jun 30)
 Ranked candidates for fresh capital if market is orderly:
-1. **QQQ add 1 share** if pullback to $700.00–$705.00 with intraday support. Would bring QQQ to ~43–44% of equity. Requires price to be low enough to stay under 45% cap.
-2. **GOOG 1–2 shares** if it reclaims 50-day MA (approx $355+) on volume after today's Dow-inclusion gap. Entry on pullback to $340–$345, stop $325, target $370. R/R ~2:1.
-3. **HOOD 1–2 shares** if it holds above $98.00 for 2+ sessions. Stop $90, target $110. R/R ~1.5:1 (marginal).
-4. **NVDA 1 share** only if it reclaims $200 with volume. Stop $185, target $220. R/R ~1.3:1 (below 2:1 threshold; defer).
+1. **HOOD 10 shares** if price pulls back to $98.00–$99.00 with intraday support. Stop $95.00. Target $115.00. R/R ~5.7:1. Would use ~$980–$990 cash and bring gross exposure to ~74%. Requires 2:1 R/R minimum.
+2. **GOOG 4 shares** if it pulls back to $340.00–$345.00 after today's Dow-inclusion gap. Stop $325.00. Target $370.00. R/R ~2:1. Would use ~$1,360–$1,380 cash.
+3. **QQQ add 1 share** only if equity grows to ~$10,500+ while QQQ stays under $720, keeping QQQ under 45% cap. Unlikely tomorrow.
 
 ## DO NOT BUY — Symbols Blocked This Cycle
 
@@ -82,18 +81,18 @@ Ranked candidates for fresh capital if market is orderly:
 - **DO NOT BUY NVDA** today.
 
 ### GOOG — DO NOT BUY
-- **Reason:** Below 50-day MA. Chasing +4% gap-up on headline news is poor R/R. Wait for pullback to $340–$345 with support.
+- **Reason:** Below 50-day MA. Chasing +5% gap-up on headline news is poor R/R. Wait for pullback to $340–$345 with support or reclaim of $355.
 - **DO NOT BUY GOOG** today.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### HOOD — DO NOT BUY
-- **Reason:** No catalyst. Above 50-day but below 200-day. No edge today.
+- **Reason:** No explicit hourly authorization for entry today. Trade budget exhausted. Entry authorized only tomorrow on pullback to $98–$99.
 - **DO NOT BUY HOOD** today.
 
 ### RKLB — DO NOT BUY
-- **Reason:** +8.7% today on acquisition news. Chasing gap-up after large move is poor R/R. Wait for base above $95.
+- **Reason:** +15.6% today on acquisition news. Chasing gap-up after large move is poor R/R. Wait for base above $95.
 - **DO NOT BUY RKLB** today.
 
 ### GLD — DO NOT BUY
@@ -123,10 +122,10 @@ Ranked candidates for fresh capital if market is orderly:
 
 ## Illiquidity Warnings (Universe Watchlist)
 - **EIS / ARKX / GLD / QTUM:** Very low trade count / volume. Limit orders only.
-- **SHLD:** 20 trades at 16:31Z. Acceptable but limit orders preferred.
-- **VOO:** 7 trades at 16:30Z but liquid underlying. Limit orders only.
-- **SOXX:** 8 trades at 16:34Z. Limit orders only if authorized.
-- **AVGO:** 22 trades at 16:34Z. Acceptable but limit orders preferred.
+- **SHLD:** 7 trades at 17:33Z. Acceptable but limit orders preferred.
+- **VOO:** 1 trade at 17:33Z but liquid underlying. Limit orders only.
+- **SOXX:** 15 trades at 17:34Z. Acceptable but limit orders preferred.
+- **AVGO:** 14 trades at 17:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
 - **Open orders (pending fill):** NONE
@@ -134,10 +133,10 @@ Ranked candidates for fresh capital if market is orderly:
   - QQQ: 5 shares avg $715.38 (order 23167401, filled 13:55Z)
   - VOO: 2 shares avg $676.46 (order 749a53c9, filled 14:00Z)
   - AVGO: 3 shares avg $371.95 (order 265eda40, filled 13:46Z)
-- Cash: $3,456 (36.3%)
-- Gross exposure: 63.7%
+- Cash: $3,456 (36.2%)
+- Gross exposure: 63.8%
 
-## Next Hourly Preview — 17:35Z (1:35 PM ET)
+## Next Hourly Preview — 18:35Z (2:35 PM ET)
 - Hold all core positions. Monitor for +1R/+2R progress.
-- If QQQ reaches $740.00 (+$20.51 = +0.81R), consider raising stop to breakeven in next hourly.
+- If QQQ reaches $740.76 (+$18.07 = +0.71R), consider raising stop to breakeven in next hourly.
 - No new buy authorization expected today. Prepare 4th-position deployment queue for tomorrow.
