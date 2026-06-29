@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 12:37 : [hourly] Held all, cash drag, plan 4th pos tomorrow
+- QQQ at $719.49, VOO at $678.49, AVGO at $370.325 — all above stops
+- Equity $9,523.81, gross 63.7%, cash 36.3% — budget 3/3 exhausted
+- No new trades today; concentration caps bind all existing positions
+- Deployment queue for Tue: GOOG pullback $340-345, HOOD base $98, NVDA reclaim $200
+- Event detector NONE at 16:35Z; market orderly
+
+2026-06-29 : 12:30 : [tactical] Held QQQ VOO AVGO, no triggers
+- QQQ $719.56, VOO $678.67, AVGO $370.36
+- No stops breached, no targets hit
+- Trade budget 3/3 exhausted, no new buys
+- Event detector NONE, market orderly
+
+2026-06-29 : 12:20 : [tactical] Hold all, no triggers met
+- QQQ at $719.77, stop $690.00 — no breach
+- VOO at $678.80, stop $660.00 — no breach
+- AVGO at $370.58, stop $350.00 — no breach
+- Event detector NONE, budget 3/3 exhausted
+- Gross exposure ~63.6%, within 60–90% band
+
+2026-06-29 : 12:10 : [tactical] Hold all; no triggers met
+- QQQ $719.43, VOO $679.01, AVGO $371.43
+- All stops intact; event detector MINOR
+- Trade budget 3/3 exhausted; no new buys authorized
+- Gross exposure 63.7%, within 60-90% band
+
+2026-06-29 : 11:50 : [tactical] Held all, no triggers met
+- Event detector NONE at 15:50Z
+- QQQ $717.75, VOO $678.39, AVGO $370.13 all above hard stops
+- Trade budget exhausted (3/3), no new buys authorized
+- No orders placed
+
+2026-06-29 : 11:40 : [tactical] No action: all positions safe, no triggers
+- QQQ at $717.59, well above stop $690.00
+- VOO at $678.35, well above stop $660.00
+- AVGO at $370.31, well above stop $350.00
+- Daily trade budget exhausted (3/3)
+- Event detector: NONE. No override needed.
+
 2026-06-29 : 11:37 : [hourly] Hold core, cash drag, plan 4th pos
 - Equity $9,504.22, gross 63.6%, cash 36.4%
 - QQQ at $716.765, VOO at $677.72, AVGO at $370.435

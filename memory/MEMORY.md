@@ -1,62 +1,62 @@
 # Hourly Macro Memory
-*Updated 2026-06-29 15:35Z (Monday 11:35 AM ET). Market OPEN until 20:00Z (4:00 PM ET).*
+*Updated 2026-06-29 16:35Z (Monday 12:35 PM ET). Market OPEN until 20:00Z (4:00 PM ET).*
 
-## Hourly Cycle Summary — 2026-06-29 15:35Z (Monday 11:35 AM ET)
-- **Status:** Market OPEN. Third hourly run of Monday.
-- **Live broker refresh:** Equity $9,504.22 | Cash $3,456.00 | Long $6,048.22 | Gross 63.6% | Daytrade 0/3.
+## Hourly Cycle Summary — 2026-06-29 16:35Z (Monday 12:35 PM ET)
+- **Status:** Market OPEN. Fourth hourly run of Monday.
+- **Live broker refresh:** Equity $9,523.81 | Cash $3,456.00 | Long $6,067.81 | Gross 63.7% | Daytrade 0/3.
 - **Holdings confirmed:** QQQ 5, VOO 2, AVGO 3.
 - **Open orders:** NONE.
-- **Filled trades since prior hourly (14:35Z):** NONE. Tactical agent held at :40, :50, and :10, :20, :30 windows.
+- **Filled trades since prior hourly (15:35Z):** NONE. Tactical agent held at :40, :50, and :10, :20, :30 windows.
 - **Universe compliance:** All 3 holdings in universe. No breach.
 - **Rapid-exposure-drift guard:** No unauthorized drift.
 - **Concurrent execution:** No race conditions. No unauthorized orders.
 - **Daytrade status:** 0/3. Clean slate.
 - **Code integrity:** Clean.
 - **Branch:** Up to date with origin/main.
-- **Freshness:** Live Alpaca data matches pre-fetch. Event detector live run at 15:35Z confirms NONE.
+- **Freshness:** Live Alpaca data matches pre-fetch. Event detector live run at 16:35Z confirms NONE.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 5 | $715.38 | $716.765 | $3,583.83 | 37.71% | +$6.93 | +0.19% |
-| VOO | 2 | $676.46 | $677.72 | $1,355.44 | 14.26% | +$2.52 | +0.19% |
-| AVGO | 3 | $371.95 | $370.435 | $1,111.31 | 11.69% | –$4.55 | –0.41% |
-| Cash | — | — | — | $3,456.00 | 36.34% | — | — |
-| **Equity** | — | — | — | **$9,504.22** | **100%** | — | **–4.96%** |
+| QQQ | 5 | $715.38 | $719.49 | $3,597.45 | 37.77% | +$20.55 | +0.57% |
+| VOO | 2 | $676.46 | $678.49 | $1,356.98 | 14.25% | +$4.06 | +0.30% |
+| AVGO | 3 | $371.95 | $370.325 | $1,110.98 | 11.67% | –$4.88 | –0.44% |
+| Cash | — | — | — | $3,456.00 | 36.29% | — | — |
+| **Equity** | — | — | — | **$9,523.81** | **100%** | — | **–4.76%** |
 
-- **Gross long exposure:** 63.6%
-- **Net exposure:** 63.6%
+- **Gross long exposure:** 63.7%
+- **Net exposure:** 63.7%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Portfolio heat:** $225.67 (2.37% of equity). Under 6% daily loss cap.
+- **Portfolio heat (entry-to-stop):** $225.67 (2.37% of equity). Under 6% daily loss cap.
 - **Open orders:** NONE
 
-## Performance Review — Mon Jun 29 (11:35 AM ET)
-- **1D (today so far):** Portfolio +0.03% ($9,501.67 → $9,504.22) vs SPY ~+1.11%. **Underperforming by ~1.08 pp.** Cash drag on gap-up open.
-- **1W (Jun 22 → Jun 29):** Portfolio ~–1.0% (est. $9,600 → $9,504) vs SPY ~–0.94%. **Roughly flat vs SPY.**
-- **2W (Jun 15 → Jun 29):** Portfolio ~–2.5% (est. $9,745 → $9,504) vs SPY ~–2.06%. **Underperforming by ~0.44 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** Portfolio **–4.96%** ($9,504.22 vs $10,000) vs SPY **+2.70%** (SPY $737.43 vs baseline $718.01). **Trailing by ~7.66 pp.**
-- What is working: Core positions slightly profitable after morning entries. Event detector resolved to NONE. No churn today.
-- What is not working: Cash drag (36.4%) prevented capture of full gap-up rally. SPY +1.11% while we are +0.03%.
+## Performance Review — Mon Jun 29 (12:35 PM ET)
+- **1D (today so far):** Portfolio +0.24% ($9,501.67 → $9,523.81) vs SPY ~+1.08%. **Underperforming by ~0.84 pp.** Cash drag on gap-up open.
+- **1W (Jun 22 → Jun 29):** Portfolio ~–0.8% (est. $9,600 → $9,524) vs SPY ~–0.94%. **Roughly flat vs SPY.**
+- **2W (Jun 15 → Jun 29):** Portfolio ~–2.3% (est. $9,745 → $9,524) vs SPY ~–2.06%. **Underperforming by ~0.24 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** Portfolio **–4.76%** ($9,523.81 vs $10,000) vs SPY **+2.80%** (SPY $738.12 vs baseline $718.01). **Trailing by ~7.56 pp.**
+- What is working: Core positions profitable after morning entries. QQQ up +0.57% unrealized. No churn today.
+- What is not working: Cash drag (36.3%) still preventing full capture of rally. SPY +1.08% while we are +0.24%.
 - What must change: Deploy remaining cash into a 4th position tomorrow if a high-quality setup emerges. Cannot add to existing positions without breaching concentration caps (whole shares).
 
 ## Goal Check
-- **Portfolio since inception:** –4.96% ($9,504.22 vs $10,000 base)
-- **S&P 500 since inception:** +2.70% (SPY $737.43 vs baseline $718.01)
-- **Status:** **FAILING both goals.** Trailing by ~7.66 pp.
+- **Portfolio since inception:** –4.76% ($9,523.81 vs $10,000 base)
+- **S&P 500 since inception:** +2.80% (SPY $738.12 vs baseline $718.01)
+- **Status:** **FAILING both goals.** Trailing by ~7.56 pp.
 - **Dominant failure mode:** **cash drag + excessive turnover / friction.** Whipsaw cycle in June (round trips on Jun 23, Jun 25, Jun 26) cost ~$100+ in realized losses. Now cash is too high on a rally day.
-- **Posture:** **offensive catch-up.** Gross exposure 63.6% is within 60–90% band but at the low end. Must reach 75%+.
+- **Posture:** **offensive catch-up.** Gross exposure 63.7% is within 60–90% band but at the low end. Must reach 75%+.
 
-## Market Intel — Monday 11:35 AM ET
-- **Broad market:** SPY $737.43 (+1.11%), QQQ $716.77 (+1.42%), VOO $677.67 (+1.11%). All above 50-day MA. Orderly tape.
-- **Semiconductor sector:** SOXX $599.52 (+1.62%), NVDA $193.76 (+0.64%). Chip-climax warning not materializing as crash. Orderly.
+## Market Intel — Monday 12:35 PM ET
+- **Broad market:** SPY $738.12 (+1.08%), QQQ $719.49 (+1.83%), VOO $678.49 (+1.23%). All above 50-day MA. Orderly tape.
+- **Semiconductor sector:** SOXX $605.92 (+1.80%), NVDA $192.89 (+0.95%). Chip-climax warning not materializing as crash. Orderly.
 - **Fed news:** Supreme Court ruled Lisa Cook can stay at Fed. Preserves independence. Mildly bullish.
-- **GOOG:** +4.18% on Dow inclusion news. Currently $348.67. Below 50-day MA. Chasing here is poor R/R.
-- **RKLB:** +8.73% on $8B Iridium acquisition. $91.92. Post-gap-up; wait for base.
-- **QTUM:** +1.51%. UBS/BofA/Jefferies initiated Buy today. $158.33. Very thin (1 trade in latest bar).
+- **GOOG:** +4.18% on Dow inclusion news. Currently $350.06. Below 50-day MA. Chasing here is poor R/R.
+- **RKLB:** +8.73% on $8B Iridium acquisition. $94.885. Post-gap-up; wait for base.
+- **QTUM:** +1.51%. UBS/BofA/Jefferies initiated Buy today. $159.72. Very thin (1 trade in latest bar).
 - **Relative strength (today):** RKLB (+8.7%), GOOG (+4.2%), META (+2.8%), ARKX (+2.1%).
 - **Earnings dates:** No binary earnings for holdings in next 48 hours. AVGO ~Sep 3. NVDA ~Aug 26. GOOG/META ~Jul 23.
-- **Illiquidity flags:** EIS (4 trades, stale Jun 26), ARKX (3 trades), SHLD (2 trades), GLD (1 trade), QTUM (1 trade). Limit orders only if ever authorized.
+- **Illiquidity flags:** EIS (4 trades, stale Jun 26), ARKX (1 trade), SHLD (20 trades), GLD (2 trades), QTUM (1 trade). Limit orders only if ever authorized.
 
 ## Multi-Timeframe Performance (Yahoo Finance v8)
 *Fetched 2026-06-29 15:35Z.*
@@ -96,8 +96,8 @@
 
 ## Priority Actions
 1. **HOLD ALL CORE POSITIONS.** No new orders today. Let QQQ/VOO/AVGO work. 3/3 trade budget already used.
-2. **Do not average down.** QQQ and AVGO are near breakeven. Adding at current prices is prohibited by skill rule #10.
-3. **Plan 4th position for tomorrow.** With $3,456 cash and caps binding on existing positions, a new symbol is required to increase gross exposure. Top candidates: GOOG (on pullback to $340–$345 with support), HOOD (if it holds $98), or NVDA (if it reclaims $200). Require 2:1 R/R.
+2. **Do not average down.** QQQ is +0.57% unrealized. Adding at current prices is prohibited by skill rule #10.
+3. **Plan 4th position for tomorrow.** With $3,456 cash and caps binding on existing positions, a new symbol is required to increase gross exposure. Top candidates: GOOG (on pullback to $340–$345 with support), HOOD (if it holds $98), or NVDA (if it reclaims $200 with volume). Require 2:1 R/R.
 4. **Monitor chip volatility.** If SOXX reverses hard and AVGO breaches $350.00, protective sell authorized only during CRITICAL/MAJOR event per tactical override.
 5. **Watch RKLB base.** If it holds above $95 for 2+ sessions post-acquisition, it may become a tactical long candidate.
 
