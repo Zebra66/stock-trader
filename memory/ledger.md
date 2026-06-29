@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 10:39 : [hourly] Hold core positions, no new trades
+- QQQ at $714.06, stop $690.00, target $750.00
+- VOO at $677.86, stop $660.00, target $700.00
+- AVGO at $368.65, stop $350.00, target $400.00
+- Gross exposure 63.6%, daily trade budget 3/3 used
+- No new setups with EV > 0; hold only today
+
 2026-06-29 : 10:31 : [tactical] MAJOR chip bounce, hold all
 - Event detector MAJOR at 14:30Z (SOXX +1.36%, SMH +1.20%)
 - No held position breached hard stop
