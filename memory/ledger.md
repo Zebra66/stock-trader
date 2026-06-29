@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 15:38 : [hourly] Hold all, no trades, plan HOOD tomorrow
+- QQQ at $723.33, VOO at $680.67, AVGO at $373.39 — all profitable
+- No filled trades since 18:35Z; tactical held at all windows
+- Trade budget exhausted 3/3; no new buys authorized today
+- Gross exposure 63.8%; deploy 4th position tomorrow (HOOD or GOOG)
+- Event detector NONE; no protective action needed
+
+2026-06-29 : 15:30 : [tactical] Hold all, no triggers hit
+- QQQ $723.43 above stop $690.00, below target $750.00
+- VOO $681.07 above stop $660.00, below target $700.00
+- AVGO $374.03 above stop $350.00, below target $400.00
+- Event detector NONE, no protective action needed
+- Trade budget exhausted (3/3), no new buys authorized today
+
+2026-06-29 : 15:20 : [tactical] No events, held all positions
+- Event detector NONE at 19:20Z, all holdings OK
+- QQQ $723.455, VOO $680.80, AVGO $372.14 — all above hard stops
+- Daily trade budget exhausted (3/3 filled today)
+- Gross exposure 63.8%, within 60–90% offensive band
+- No buy/sell conditions met in todo.md
+
+2026-06-29 : 15:10 : [tactical] Held QQQ VOO AVGO, no triggers
+- QQQ $723.415, stop $690.00 — no breach
+- VOO $680.99, stop $660.00 — no breach
+- AVGO $372.905, stop $350.00 — no breach
+- Budget 3/3 exhausted, no new buys
+- Event MINOR, no override needed
+
+2026-06-29 : 14:50 : [tactical] HOLD all, no triggers met
+- Event detector NONE. QQQ $724.005, VOO $681.04, AVGO $374.83 all above hard stops.
+- Trade budget exhausted: 3 orders filled today.
+- Gross exposure 63.8%, within 60-90% band. No action required.
+
+2026-06-29 : 14:40 : [tactical] No action: holds working
+- QQQ $723.63, above $690.00 stop
+- VOO $680.835, above $660.00 stop
+- AVGO $375.36, above $350.00 stop
+- Trade budget 3/3 exhausted today
+- No buy/sell triggers met, no event flags
+
 2026-06-29 : 14:37 : [hourly] Hold all core, no trades, plan HOOD Tue
 - QQQ at $723.32, VOO at $680.82, AVGO at $374.93 — all profitable
 - No filled trades since 17:35Z; tactical held at all windows
