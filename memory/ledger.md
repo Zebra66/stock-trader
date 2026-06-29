@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 11:10 : [tactical] CRITICAL event — hold all, no trades
+- Event detector CRITICAL at 15:10Z: SOXX $597.52 (+1.91%), SMH $619.18 (+1.40%)
+- Held positions all OK: QQQ $716.08, VOO $677.62, AVGO $370.265
+- No hard stops breached — no protective sells executed
+- Daily budget 3/3 exhausted; gross exposure 63.6% unchanged
+- Override logged; awaiting hourly reset
+
+2026-06-29 : 10:50 : [tactical] Hold all, no triggers met
+- Event detector: NONE. No protective sells required.
+- QQQ $712.44 above stop $690.00, VOO $677.15 above stop $660.00, AVGO $368.37 above stop $350.00
+- Daily trade budget exhausted: 3/3 filled today
+- No open orders, no conditions met, no action taken
+
+2026-06-29 : 10:40 : [tactical] Hold all positions, no triggers hit
+- QQQ at $712.84 above $690.00 stop
+- VOO at $677.62 above $660.00 stop
+- AVGO at $368.97 above $350.00 stop
+- Daily budget exhausted (3/3 filled today)
+- Event detector NONE, gross exposure 63.6%
+
 2026-06-29 : 10:39 : [hourly] Hold core positions, no new trades
 - QQQ at $714.06, stop $690.00, target $750.00
 - VOO at $677.86, stop $660.00, target $700.00

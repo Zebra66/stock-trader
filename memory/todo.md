@@ -1,4 +1,5 @@
 # Tactical Todo — Updated 2026-06-29 14:37Z (Monday 10:37 AM ET)
+<!-- Autonomous override applied at 2026-06-29 15:10Z due to CRITICAL event (SOXX/SMH semiconductor volatility spike). No sells executed — all held positions above authorized stops. -->
 *Market OPEN until 20:00Z (4:00 PM ET).*
 
 ## Current State

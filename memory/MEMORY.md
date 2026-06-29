@@ -116,3 +116,13 @@
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 - **Repo hygiene:** Clean. No unauthorized source changes.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
+
+## AUTONOMOUS OVERRIDE — 2026-06-29 15:10Z
+- **Trigger:** Event detector classification **CRITICAL** at 15:10Z.
+- **Affected broad-market symbols:** SOXX (+1.91% → CRITICAL), SMH (+1.40% → MAJOR). Semiconductor-sector volatility spike.
+- **Held positions status (event detector):** All OK — QQQ +0.52%, AVGO +0.48%, VOO +0.04%. None individually flagged CRITICAL/MAJOR.
+- **Hard-stop verification:** QQQ $716.08 (stop $690.00), VOO $677.62 (stop $660.00), AVGO $370.27 (stop $350.00). All well above stops.
+- **Protective action:** **NO SELLS EXECUTED.** Positions remain above authorized disaster stops. No held position individually breached stop.
+- **Buy suspension:** All buy conditions already blocked in current todo (budget exhausted + DO NOT BUY gates). No new buys initiated.
+- **Exposure:** Gross 63.6% unchanged. No liquidation.
+- **Rationale:** CRITICAL classification driven by SOXX/SMH volatility, not by deterioration in held positions. Hourly strategist stops intact. Default to hold until next hourly cycle or position-level stop breach.
