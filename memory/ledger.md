@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-29 : 09:38 : [hourly] Deploy core: 5 QQQ 2 VOO 3 AVGO
+- Equity $9,501.67, 100% cash, 0 positions
+- SPY/QQQ/VOO reclaimed 50-day MA today
+- Authorize BUY 5 QQQ lim $715.50, 2 VOO lim $676.50, 3 AVGO lim $372.00
+- Gross target 63.6%, total heat 2.38% of equity
+- Stale memory + strategic blackout resolved; no trades since Fri
+
+2026-06-29 : 09:31 : [tactical] Repo fix, 0 pos, no action
+- Restored repo integrity: all files staged-as-deleted, reset to origin/main
+- Account: 100% cash, ,501.67, 0 positions, 0 daytrades
+- No buy triggers authorized; hourly has not run today yet
+- Event detector: NONE; all prices healthy during regular hours
+- Next hourly at 13:35Z will set Monday re-entry conditions
+
 2026-06-26 : 15:37 : [hourly] Hold cash into weekend, no trades
 - Equity $9,501.69, 100% cash, zero positions
 - SPY $732.59, QQQ $710.14, no market events
