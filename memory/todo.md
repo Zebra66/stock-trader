@@ -1,17 +1,17 @@
-# Tactical Todo — Updated 2026-06-30 14:46Z (Tuesday 10:46 AM ET)
+# Tactical Todo — Updated 2026-06-30 14:50Z (Tuesday 10:50 AM ET)
 *HARD_LOCK LIFTED. Market OPEN. Event detector NONE. Tactical agent may execute normal todo. No hard lock active.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
-- **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,455.99. Open: HOOD limit 10 @ $101.50 (order b423815a).
-- **Account equity / cash / buying power:** $9,621.82 / $3,455.99 / $30,093.27
-- **Gross long exposure:** 64.1% | **Net exposure:** 64.1% | **Cash:** 35.9%
+- **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10. Cash $2,440.99. No open orders.
+- **Account equity / cash / buying power:** $9,608.90 / $2,440.99 / $29,834.11
+- **Gross long exposure:** 74.6% | **Net exposure:** 74.6% | **Cash:** 25.4%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
-- **Open orders:** HOOD 10 shares limit buy at $101.50 (pending, day order)
+- **Open orders:** NONE.
 - **Market:** OPEN. Regular session until 20:00Z (4:00 PM ET).
-- **Daily trade budget:** 0/3 used today. Up to 3 new orders authorized without fresh hourly.
+- **Daily trade budget:** 1/3 used today (HOOD filled). Up to 2 new orders authorized without fresh hourly.
 
 ## HOLD Instructions — Active During Tuesday Regular Session
 
@@ -43,24 +43,31 @@
 - **Liquidity note:** AVGO is thin. LIMIT ORDER ONLY for any future orders.
 - **AUTHORIZE SAME-DAY SELL AVGO if price breaches $350.00 AND event detector is CRITICAL/MAJOR**
 
+### HOOD — HOLD 10 shares
+- **Entry:** Avg $101.50 (filled 14:46Z today)
+- **Current:** $101.425 (–0.07% unrealized)
+- **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically.
+- **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
+- **Rationale:** Strong 1M/3M momentum. Outside Mag 7 rotation. 4th position deployed.
+- **Concentration:** 10.6% of equity. Under 15% cap. No adds.
+- **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR**
+
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 = $225.67 (2.34% of equity). Under 6% daily loss cap.
+- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $64.50 = $289.17 (3.01% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — Active During Tuesday Regular Session
 
-### HOOD — BUY 10 shares limit at $101.50 (PRIMARY)
-- **Current price:** $102.04. Trigger is 0.5% below market — realistic intraday pullback.
-- **Entry:** $101.50 limit. Do NOT pay above $101.75.
-- **Stop:** $95.00. Do NOT hold below $95 without fresh hourly authorization.
+### HOOD — FILLED 10 shares at $101.50 (PRIMARY)
+- **Status:** FILLED at 14:46:32Z (order b423815a). Now a HOLD position.
+- **Entry:** $101.50 avg. Current $101.425 (–0.07% unrealized).
+- **Stop:** $95.00. Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
 - **R/R:** ($115.00 − $101.50) / ($101.50 − $95.00) = $13.50 / $6.50 = **2.08:1**.
-- **Position size:** 10 shares = ~$1,015.00. Risk = $65.00 = 0.68% equity. Under 2% per-trade cap.
-- **Concentration if filled:** ~$1,015 / $9,622 = 10.5% of equity. Under 15% single-stock cap.
-- **Gross exposure if filled:** (~$6,166 + ~$1,015) / ~$9,622 = **74.7%**. Within 60–90% band.
+- **Position size:** 10 shares = ~$1,014.25. Risk = $64.50 = 0.67% equity. Under 2% per-trade cap.
+- **Concentration:** 10.6% of equity. Under 15% single-stock cap.
+- **Gross exposure with HOOD:** 74.6%. Within 60–90% band.
 - **Rationale:** Strong 1M (+8.2%) and 3M (+56.7%) momentum. Above 50-day MA. Outside Mag 7 rotation. Best 4th-position candidate.
-- **Execution:** LIMIT ORDER ALREADY PLACED at $101.50 (order b423815a, day order). If price pulls back to $101.50 with intraday support, fill. If price gaps down through $101.50 without support, do NOT chase; cancel and wait for next hourly authorization.
 - **24-hour cooldown:** HOOD was never sold in last 24 hours. No cooldown blocker.
-- **IMPORTANT:** Do NOT modify or cancel this order without fresh hourly authorization.
 
 ## DO NOT BUY — Symbols Blocked This Cycle
 
@@ -133,18 +140,20 @@
 - **RKLB:** 10 trades at 14:34Z. Limit orders only.
 
 ## Current Book
-- **Open orders (pending fill):** HOOD 10 shares limit buy at $101.50 (order b423815a, day order)
-- **Filled positions today (Tue Jun 30):** NONE
+- **Open orders (pending fill):** NONE
+- **Filled positions today (Tue Jun 30):**
+  - HOOD: 10 shares avg $101.50 (order b423815a, filled 14:46:32Z)
 - **Filled positions yesterday (Mon Jun 29):**
   - QQQ: 5 shares avg $715.38 (order 23167401, filled 13:55Z)
   - VOO: 2 shares avg $676.46 (order 749a53c9, filled 14:00Z)
   - AVGO: 3 shares avg $371.95 (order 265eda40, filled 13:46Z)
-- Cash: $3,455.99 (35.9%)
-- Gross exposure: 64.1%
+- Cash: $2,440.99 (25.4%)
+- Gross exposure: 74.6%
 
 ## Next Hourly — Tuesday Jun 30 15:35Z (11:35 AM ET)
-- Hold all core positions.
-- Monitor HOOD limit order. If filled, update ledger and this file.
-- If no fill by 15:35Z, re-evaluate whether limit needs adjustment or whether to switch to alternate candidate.
+- Hold all core positions (QQQ, VOO, AVGO, HOOD).
+- HOOD limit filled at $101.50. Now monitor for continuation toward $115 target or reversal toward $95 stop.
+- Do NOT add to any existing position unless hourly strategist explicitly authorizes (all near caps).
 - Monitor AVGO for continuation above $375 and watch for any reversal on insider-selling news.
 - Watch for any CRITICAL/MAJOR event flags.
+- Gross exposure 74.6% is within band. Next deployment only on fresh high-conviction setup with ≥2:1 R/R.

@@ -1,6 +1,16 @@
 # Hourly Macro Memory
 *Updated 2026-06-30 14:46Z (Tuesday 10:46 AM ET). Market OPEN until 20:00Z (4:00 PM ET).*
 
+## Tactical Cycle Summary — 2026-06-30 14:50Z
+- **Status:** Market OPEN. Next hourly: 15:35Z (11:35 AM ET). Next tactical: 15:00Z.
+- **Event detector:** NONE at 14:50Z. No protective action required.
+- **Live broker refresh:** Equity $9,608.90 | Cash $2,440.99 | Long $7,167.91 | Gross 74.6% | Daytrade 0/3.
+- **Holdings confirmed:** QQQ 5 ($731.73, +2.28% unrealized), VOO 2 ($683.80, +1.09% unrealized), AVGO 3 ($375.76, +1.02% unrealized), HOOD 10 ($101.425, -0.07% unrealized).
+- **Open orders:** NONE. HOOD limit buy filled at 14:46Z.
+- **Filled trades since prior hourly (13:35Z):** HOOD 10 shares @ $101.50 (order b423815a, filled 14:46:32Z).
+- **Universe compliance:** All 4 holdings in universe. No breach.
+- **Daily trade budget:** 1/3 filled orders used today (HOOD buy).
+
 ## Hourly Cycle Summary — 2026-06-30 14:46Z
 - **Status:** Market OPEN. Next hourly: 15:35Z (11:35 AM ET). Next tactical: 14:50Z.
 - **Repo integrity:** Working tree restored from HEAD at start of cycle (divergent memory/ledger.md and memory/tactical_last_prices.json). Clean now.
@@ -18,18 +28,19 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 5 | $715.38 | $732.80 | $3,664.00 | 38.1% | +$87.10 | +2.44% |
-| VOO | 2 | $676.46 | $684.74 | $1,369.48 | 14.2% | +$16.56 | +1.22% |
-| AVGO | 3 | $371.95 | $377.56 | $1,132.68 | 11.8% | +$16.83 | +1.51% |
-| Cash | — | — | — | $3,455.99 | 35.9% | — | — |
-| **Equity** | — | — | — | **$9,621.82** | **100%** | — | **–3.78%** |
+| QQQ | 5 | $715.38 | $731.73 | $3,658.65 | 38.1% | +$81.75 | +2.28% |
+| VOO | 2 | $676.46 | $683.80 | $1,367.60 | 14.2% | +$14.68 | +1.09% |
+| AVGO | 3 | $371.95 | $375.76 | $1,127.28 | 11.7% | +$11.43 | +1.02% |
+| HOOD | 10 | $101.50 | $101.425 | $1,014.25 | 10.6% | –$0.75 | –0.07% |
+| Cash | — | — | — | $2,440.99 | 25.4% | — | — |
+| **Equity** | — | — | — | **$9,608.90** | **100%** | — | **–4.07%** |
 
-- **Gross long exposure:** 64.1%
-- **Net exposure:** 64.1%
+- **Gross long exposure:** 74.6%
+- **Net exposure:** 74.6%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Portfolio heat (entry-to-stop):** $225.67 (2.34% of equity). Under 6% daily loss cap.
-- **Open orders:** HOOD 10 @ $101.50 limit (order b423815a)
+- **Portfolio heat (entry-to-stop):** $292.52 (3.04% of equity). Under 6% daily loss cap.
+- **Open orders:** NONE
 
 ## Performance Review — Tue Jun 30 (Intraday, ~10:46 AM ET)
 *Fresh Yahoo Finance data used for index benchmarks.*
