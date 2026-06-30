@@ -94,8 +94,14 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     const todo = await Bun.file('./memory/todo.md').text();
     for (const line of todo.split('\n')) {
       const upper = line.toUpperCase();
-      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
-      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+      // Broader pattern matching to catch variants like "NO NEW BUY ORDERS", "NO BUY", etc.
+      const hasNoBuy = upper.includes('DO NOT BUY') || upper.includes('DO NOT RE-BUY') || upper.includes('DO NOT ADD') ||
+                       upper.includes('NO NEW BUY') || upper.includes('NO BUY') || upper.includes('NO ADD') ||
+                       upper.includes('PROHIBITED') || upper.includes('BANNED');
+      if (!hasNoBuy) continue;
+      // Skip lines that contain explicit authorization overrides or price-conditional qualifiers
+      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION') || upper.includes('AUTHORIZE') || upper.includes('AUTHORIZED')) continue;
+      if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
       }
