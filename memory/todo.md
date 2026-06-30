@@ -1,11 +1,11 @@
-# Tactical Todo — Updated 2026-06-30 15:35Z (Tuesday 11:35 AM ET)
+# Tactical Todo — Updated 2026-06-30 16:35Z (Tuesday 12:35 PM ET)
 *HARD_LOCK LIFTED. Market OPEN. Event detector NONE. Tactical agent may execute normal todo. No hard lock active.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10. Cash $2,440.99. No open orders.
-- **Account equity / cash / buying power:** $9,628.15 / $2,440.99 / $29,887.99
+- **Account equity / cash / buying power:** $9,619.09 / $2,440.99 / $29,862.64
 - **Gross long exposure:** 74.6% | **Net exposure:** 74.6% | **Cash:** 25.4%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
@@ -17,43 +17,43 @@
 
 ### QQQ — HOLD 5 shares
 - **Entry:** Avg $715.38 (filled Mon morning)
-- **Current:** $733.40 (+2.52% unrealized)
+- **Current:** $735.02 (+2.75% unrealized)
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
-- **Rationale:** Core growth. Above 50-day MA. Stop is 5.9% below current price.
-- **Concentration:** 38.1% of equity. Under 45% cap. Adding 1 share would breach cap (45.9%). No adds.
+- **Rationale:** Core growth. Above 50-day MA. Stop is 6.1% below current price.
+- **Concentration:** 38.2% of equity. Under 45% cap. Adding 1 share would breach cap (~45.9%). No adds.
 - **AUTHORIZE SAME-DAY SELL QQQ if price breaches $690.00 AND event detector is CRITICAL/MAJOR**
 
 ### VOO — HOLD 2 shares
 - **Entry:** Avg $676.46 (filled Mon morning)
-- **Current:** $685.125 (+1.28% unrealized)
+- **Current:** $685.87 (+1.39% unrealized)
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
-- **Rationale:** S&P anchor. Low beta complement. Stop is 3.7% below current price.
-- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would breach 21.4%. No adds.
+- **Rationale:** S&P anchor. Low beta complement. Stop is 3.8% below current price.
+- **Concentration:** 14.3% of equity. Under 20% cap. Adding 1 share would breach 21.5%. No adds.
 - **AUTHORIZE SAME-DAY SELL VOO if price breaches $660.00 AND event detector is CRITICAL/MAJOR**
 
 ### AVGO — HOLD 3 shares
 - **Entry:** Avg $371.95 (filled Mon morning)
-- **Current:** $374.92 (+0.80% unrealized)
+- **Current:** $374.32 (+0.64% unrealized)
 - **Stop:** $350.00 (hard disaster stop). Do NOT sell below $350 unless event detector flags CRITICAL/MAJOR on AVGO specifically.
 - **Profit target:** $400.00. Do NOT trim or sell below $400 without fresh hourly authorization.
-- **Rationale:** AI chip alpha. Now profitable. Co-founder selling $720M quarterly is a risk; OpenAI Jalapeño partnership is a new bullish offset. Monitor for reversal. Stop is 6.6% below current price.
+- **Rationale:** AI chip alpha. Now profitable. Co-founder selling $720M quarterly is a risk; OpenAI Jalapeño partnership is a new bullish offset. Monitor for reversal. Stop is 6.5% below current price.
 - **Concentration:** 11.7% of equity. Under 15% cap. Adding 1 share would breach 15.7%. No adds.
 - **Liquidity note:** AVGO is thin. LIMIT ORDER ONLY for any future orders.
 - **AUTHORIZE SAME-DAY SELL AVGO if price breaches $350.00 AND event detector is CRITICAL/MAJOR**
 
 ### HOOD — HOLD 10 shares
 - **Entry:** Avg $101.50 (filled 14:46Z today)
-- **Current:** $102.64 (+1.12% unrealized)
+- **Current:** $100.79 (–0.70% unrealized)
 - **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
-- **Rationale:** Record June trading + new analyst bullish price targets. Strong 1M/3M momentum. Outside Mag 7 rotation. 4th position deployed and working.
-- **Concentration:** 10.7% of equity. Under 15% cap. No adds today.
+- **Rationale:** Record June trading + new analyst bullish price targets. Strong 1M/3M momentum. Outside Mag 7 rotation. 4th position deployed. Pulled back slightly but thesis intact.
+- **Concentration:** 10.5% of equity. Under 15% cap. No adds today. **NEVER AVERAGE DOWN on HOOD.**
 - **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR**
 
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $65.00 = $289.67 (3.01% of equity). Under 6% daily loss cap.
+- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $65.00 = $290.67 (3.02% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — Active During Tuesday Regular Session
 
@@ -65,11 +65,11 @@
 ## DO NOT BUY — Symbols Blocked This Cycle
 
 ### QQQ — DO NOT ADD
-- **Reason:** At 38.1% of equity. Adding 1 share would push QQQ to ~45.9%, breaching 45% cap.
+- **Reason:** At 38.2% of equity. Adding 1 share would push QQQ to ~45.9%, breaching 45% cap.
 - **DO NOT BUY QQQ** today unless hourly strategist explicitly overrides.
 
 ### VOO — DO NOT ADD
-- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~21.4%, breaching the 20% non-QQQ ETF cap.
+- **Reason:** At 14.3% of equity. Adding 1 share would push VOO to ~21.5%, breaching the 20% non-QQQ ETF cap.
 - **DO NOT BUY VOO** today unless hourly strategist explicitly overrides.
 
 ### AVGO — DO NOT ADD
@@ -77,7 +77,7 @@
 - **DO NOT BUY AVGO** today unless hourly strategist explicitly overrides.
 
 ### HOOD — DO NOT ADD
-- **Reason:** Bought today at $101.50. Adding at $102.64+ is chasing a fresh position and adds friction risk. Preserve cash for better R/R setup or protective action.
+- **Reason:** Bought today at $101.50. Current $100.79. Adding to a losing position is averaging down and is **PROHIBITED.** Preserve cash for better R/R setup or protective action.
 - **DO NOT BUY HOOD** today unless hourly strategist explicitly overrides.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
@@ -128,13 +128,15 @@
 - BUY orders for banned symbols are REJECTED regardless of lock active state.
 
 ## Illiquidity Warnings (Universe Watchlist)
-- **EIS / ARKX / GLD / QTUM / SHLD:** Very low trade count / volume. Limit orders only.
-- **VOO:** 4 trades at 15:31Z but liquid underlying. Limit orders only.
-- **SOXX:** 8 trades at 15:34Z. Acceptable but limit orders preferred.
-- **AVGO:** 45 trades at 15:34Z. Acceptable but limit orders preferred.
-- **HOOD:** 12 trades at 15:34Z. Acceptable but limit orders preferred.
-- **GOOG:** 36 trades at 15:34Z. Acceptable but limit orders preferred.
-- **RKLB:** 14 trades at 15:34Z. Limit orders only.
+- **EIS / ARKX / QTUM:** Very low trade count / volume (1–3 trades). Limit orders only.
+- **SHLD:** 3 trades at 16:29Z. Limit orders only.
+- **GLD:** 10 trades at 16:33Z. Acceptable but limit orders preferred.
+- **VOO:** 2 trades at 16:34Z but liquid underlying. Limit orders only.
+- **SOXX:** 10 trades at 16:34Z. Acceptable but limit orders preferred.
+- **AVGO:** 29 trades at 16:34Z. Acceptable but limit orders preferred.
+- **HOOD:** 10 trades at 16:34Z. Acceptable but limit orders preferred.
+- **GOOG:** 23 trades at 16:34Z. Acceptable but limit orders preferred.
+- **RKLB:** 57 trades at 16:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
 - **Open orders (pending fill):** NONE
@@ -147,9 +149,9 @@
 - Cash: $2,440.99 (25.4%)
 - Gross exposure: 74.6%
 
-## Next Hourly — Tuesday Jun 30 16:35Z (12:35 PM ET)
+## Next Hourly — Tuesday Jun 30 17:35Z (1:35 PM ET)
 - Hold all core positions (QQQ, VOO, AVGO, HOOD).
-- HOOD filled at $101.50 and working at $102.64. Monitor for continuation toward $115 target or reversal toward $95 stop.
+- HOOD filled at $101.50 and now $100.79 (–0.70%). Monitor for continuation toward $115 target or acceleration below $100.
 - Do NOT add to any existing position unless hourly strategist explicitly authorizes (all near caps or just bought).
 - Monitor AVGO for continuation above $375 and weigh insider selling vs OpenAI Jalapeño partnership.
 - Watch for any CRITICAL/MAJOR event flags.
