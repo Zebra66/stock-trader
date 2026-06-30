@@ -1,4 +1,5 @@
 # Tactical Todo — Updated 2026-06-29 21:05Z (Monday post-close)
+<!-- Autonomous override applied at 2026-06-30 13:30Z due to MAJOR event (SOXX/SMH gap-up at open). No trades executed. Held positions all OK. -->
 *Market CLOSED. Next regular session: Tuesday Jun 30 09:30 AM ET. Do NOT submit after-hours orders.*
 
 ## Current State

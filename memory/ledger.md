@@ -2,6 +2,25 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-30 : 09:30 : [tactical] MAJOR chip rally, no trades, hold
+- SOXX $618.725 and SMH $636.455 flagged MAJOR at 13:30Z open
+- All held positions OK: QQQ $724.34, VOO $681.34, AVGO $375.44
+- No stops breached; no protective sells executed
+- Buy triggers not met: HOOD $101.89, GOOG $351.15
+- Waiting for 13:35Z hourly cycle
+
+2026-06-29 : 15:50 : [tactical] Hold all — no triggers, budget exhausted
+- QQQ $723.41, VOO $680.92, AVGO $373.29 — all well above stops
+- Daily trade budget 3/3 exhausted
+- Event detector NONE, no protective action needed
+- Market closes in ~10 min, no new orders
+
+2026-06-29 : 15:40 : [tactical] HOLD all, budget exhausted
+- QQQ $723.64, VOO $680.75, AVGO $373.75 — all above stops
+- Daily trade budget 3/3 exhausted (QQQ, VOO, AVGO fills today)
+- No event detected. No stops breached. No new buys authorized.
+- Cash drag 36.2%, gross exposure 63.8%. Hold into close.
+
 2026-06-29 : 15:38 : [hourly] Hold all, no trades, plan HOOD tomorrow
 - QQQ at $723.33, VOO at $680.67, AVGO at $373.39 — all profitable
 - No filled trades since 18:35Z; tactical held at all windows

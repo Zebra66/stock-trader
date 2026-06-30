@@ -120,3 +120,14 @@
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 - **Repo hygiene:** Clean. No unauthorized source changes.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
+
+## AUTONOMOUS OVERRIDE — Tactical Cycle 2026-06-30 13:30Z
+- **Classification:** MAJOR (Event Response Mode entered)
+- **Cause:** SOXX +1.37% ($610.37 → $618.725) and SMH +1.16% ($629.18 → $636.455) at market open. Semiconductor sector gap-up.
+- **Held positions severity:** All OK — QQQ +0.23%, VOO +0.11%, AVGO +0.73%. None breached hard stops ($690, $660, $350).
+- **Action:** No protective sells. No new buys. HOLD all core positions.
+- **Current holdings:** QQQ 5 ($3,621.70), VOO 2 ($1,362.68), AVGO 3 ($1,126.32). Cash $3,455.99.
+- **Gross exposure:** 63.9% ($6,110.78 / $9,566.77 equity). Within offensive 60–90% band.
+- **Daytrade count:** 0/3.
+- **Buy suspension:** No active buy triggers met. Deployment queue (HOOD pullback <$99, GOOG pullback <$345) remains pending.
+- **Next expected action:** Hourly cycle at 13:35Z (9:35 AM ET) will re-evaluate strategy post-open.
