@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-30 : 19:06 : [hourly] Open HOOD limit, hold core, cash drag
+- Equity $9,604.16, gross 64.0%, cash 36.0%
+- QQQ $730.63 (+2.13%), VOO $683.21 (+1.00%), AVGO $376.15 (+1.13%)
+- HOOD limit buy 10 at $99.50 open from 9:40 tactical window
+- Event detector NONE; no protective action needed
+- 9:35 hourly run skipped; fresh directives written at 10:35
+
 2026-06-30 : 10:00 : [tactical] CRITICAL event, hold all, HOOD conflict
 - Event detector CRITICAL at 14:00Z: SOXX +3.24%, XLK +1.92%, SMH +2.86%, QQQ +1.08%
 - All held positions safe above stops; no protective sells triggered
