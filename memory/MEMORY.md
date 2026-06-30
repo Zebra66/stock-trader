@@ -134,5 +134,5 @@
 - **Day-trade status:** 0/3. Clean slate.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
 - **Repo hygiene:** Normal tactical updates to memory/ledger.md and memory/tactical_last_prices.json. No source code modifications.
-- **Event detector:** NONE at 19:35Z. Prior timestamp 19:30Z.
+- **Event detector:** NONE at 19:35Z. Prior timestamp 19:30Z. Prior run at 14:00Z flagged CRITICAL (chip rally: SOXX +3.24%, XLK +1.92%, SMH +2.86%); no action taken as all positions held above stops.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.

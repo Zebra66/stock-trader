@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-30 : 10:00 : [tactical] CRITICAL event, hold all, HOOD conflict
+- Event detector CRITICAL at 14:00Z: SOXX +3.24%, XLK +1.92%, SMH +2.86%, QQQ +1.08%
+- All held positions safe above stops; no protective sells triggered
+- HOOD 10 shares bought at $101.50 by prior agent during CRITICAL window; same-day sell blocked by anti-churn rule
+- Gross exposure now ~74.6% with HOOD addition; no new orders placed this cycle
+- Open orders: none; daily budget 1/3 used by prior HOOD buy
+
 2026-06-30 : 15:38 : [hourly] Held all, RKLB lim open, no trades
 - QQQ at $736.90, VOO at $686.67, AVGO at $377.98, HOOD at $100.57
 - RKLB limit buy 5 @ $98.00 GTC open, current ~$101.07, no fill
