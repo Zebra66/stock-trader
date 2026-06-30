@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-30 : 10:47 : [hourly] Adjusted HOOD limit to $101.50, hold core
+- Canceled old HOOD limit at $99.50; placed new limit buy 10 shares at $101.50
+- QQQ at $732.80, VOO at $684.74, AVGO at $377.56 — all profitable, no churn
+- Gross exposure 64.1%; target 74.7% if HOOD fills. Cash drag remains #1 issue.
+- Event detector NONE. No protective sells. 0/3 daytrades used.
+- Fresh Yahoo snapshot corrected stale pre-fetched performance data.
+
+2026-06-30 : 10:40 : [tactical] Hold — no triggers breached
+- Event detector NONE at 14:40Z. No protective action required.
+- QQQ $732.61, VOO $684.48, AVGO $376.77 all above hard stops.
+- HOOD limit buy 10 @ $99.50 still open (price $101.77, no fill).
+- 0/3 daily trade budget used. Gross exposure ~64.0%.
+- No conditions met. Hold all positions.
+
 2026-06-30 : 09:41 : [tactical] Placed HOOD limit buy at $99.50
 - Limit buy 10 HOOD at $99.50, current $101.18
 - Order pending, day order expires 20:00Z
