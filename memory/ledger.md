@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-06-30 : 15:38 : [hourly] Held all, RKLB lim open, no trades
+- QQQ at $736.90, VOO at $686.67, AVGO at $377.98, HOOD at $100.57
+- RKLB limit buy 5 @ $98.00 GTC open, current ~$101.07, no fill
+- No filled trades since 18:35Z; tactical agent held across all windows
+- Gross exposure 74.7%, daytrade 0/3, portfolio heat 3.02% of equity
+- Offensive catch-up maintained; slight 1D edge vs SPY +0.04 pp
+
+2026-06-30 : 15:30 : [tactical] Hold all, RKLB limit open at $98.00
+- Event detector NONE at 19:30Z. All 4 positions hold.
+- QQQ $737.03, VOO $686.985, AVGO $378.505, HOOD $100.90
+- RKLB limit buy 5 @ $98.00 open, current $101.435. No fill.
+- Gross exposure 74.7%, daytrade 0/3, budget 1/3 used
+- No triggers met. No orders placed.
+
+2026-06-30 : 15:20 : [tactical] Held all, RKLB limit open
+- Event detector NONE at 19:20Z, all positions OK
+- QQQ $737.08, VOO $687.25, AVGO $378.48, HOOD $100.95
+- RKLB limit buy 5 @ $98.00 open, current $101.355
+- Daily trade budget 1/3, no action taken
+
+2026-06-30 : 15:11 : [tactical] Held all positions, no triggers met
+- Event detector NONE at 2026-06-30 19:10Z. No protective action required.
+- QQQ $737.05 (+3.03%), VOO $687.07 (+1.57%), AVGO $379.07 (+1.91%), HOOD $100.79 (-0.70%). All above stops.
+- RKLB limit buy 5 @ $98.00 remains open (order b7b1502f). Current $101.18, not triggered.
+- Daily trade budget 1/3 filled (HOOD). No orders placed this cycle.
+- Gross exposure ~74.7%, within offensive 60-90% band. Next hourly 19:35Z.
+
+2026-06-30 : 14:50 : [tactical] Hold all, RKLB limit open above $98
+- QQQ $736.78, VOO $686.89, AVGO $378.34, HOOD $100.28 all above stops
+- RKLB at $101.44, limit buy 5 @ $98.00 not filled
+- Event detector NONE, gross exposure 74.7%
+- No sell triggers breached, no buy conditions met
+- Daily budget 1/3 used, 0 daytrades
+
+2026-06-30 : 14:41 : [tactical] Held all positions, RKLB limit open
+- Event detector NONE at 18:40Z; all broad market and held positions OK
+- QQQ $735.91, VOO $686.41, AVGO $377.42, HOOD $99.95 — all above hard stops
+- RKLB limit buy 5 @ $98.00 open (order b7b1502f), current price $100.725, not filled
+- No sell triggers breached; no new buy conditions met; cash $2,440.99
+- Daily trade budget 1/3 used; daytrade count 0/3
+
 2026-06-30 : 14:40 : [hourly] Placed RKLB lim 5@$98, fixed parser sync, hold all
 - RKLB limit buy 5 shares at $98.00 placed (GTC), stop $90.00, target $120.00, R/R 2.75:1
 - Synced alpaca_client_factory.ts no-buy parser with CLI to fix ABOVE/BELOW skip bug
