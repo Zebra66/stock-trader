@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-06-30 13:35Z (Tuesday 9:35 AM ET)
+# Tactical Todo — Updated 2026-06-30 13:40Z (Tuesday 9:40 AM ET)
 *Market OPEN. Event detector MINOR. Tactical agent may execute normal todo. No hard lock active.*
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
-- **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,455.99.
+- **Live book:** QQQ 5, VOO 2, AVGO 3. Cash $3,455.99. Open: HOOD limit 10 @ $99.50.
 - **Account equity / cash / buying power:** $9,593.76 / $3,455.99 / $31,009.70
 - **Gross long exposure:** 64.0% | **Net exposure:** 64.0% | **Cash:** 36.0%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** HOOD 10 shares limit buy at $99.50 (pending, day order)
 - **Market:** OPEN. Regular session until 20:00Z (4:00 PM ET).
 - **Daily trade budget:** 0/3 used today. Up to 3 new orders authorized without fresh hourly.
 
@@ -49,7 +49,7 @@
 ## BUY Triggers — Active During Tuesday Regular Session
 
 ### HOOD — BUY 10 shares limit at $99.50 (PRIMARY)
-- **Current price:** $101.68. Trigger is 2.1% below market — realistic intraday pullback.
+- **Current price:** $101.18. Trigger is 1.7% below market — realistic intraday pullback.
 - **Entry:** $99.50 limit. Do NOT pay above $99.75.
 - **Stop:** $95.00. Do NOT hold below $95 without fresh hourly authorization.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
@@ -58,11 +58,11 @@
 - **Concentration if filled:** ~$995 / $9,594 = 10.4% of equity. Under 15% single-stock cap.
 - **Gross exposure if filled:** (~$6,138 + ~$995) / ~$9,594 = **74.3%**. Within 60–90% band.
 - **Rationale:** Strong 1M (+20%) and 3M (+40%) momentum. Above 50-day MA. Consolidating after yesterday's +3.7%. Best 4th-position candidate.
-- **Execution:** LIMIT ORDER ONLY. Place at market open if not already active. If price touches $99.50 with intraday support (e.g., bounce off VWAP or prior day's high), fill. If price gaps down through $99.50 without support, do NOT chase; wait for reclaim.
+- **Execution:** LIMIT ORDER PLACED at $99.50 (order 96f1de6f, day order). If price touches $99.50 with intraday support (e.g., bounce off VWAP or prior day's high), fill. If price gaps down through $99.50 without support, do NOT chase; wait for reclaim.
 - **24-hour cooldown:** HOOD was never sold in last 24 hours. No cooldown blocker.
 
 ### GOOG — BUY 4 shares limit at $340.00 (SECONDARY)
-- **Current price:** $349.06. Trigger is 2.6% below market.
+- **Current price:** $348.725. Trigger is 2.5% below market.
 - **Entry:** $340.00 limit. Do NOT pay above $342.00.
 - **Stop:** $330.00. Do NOT hold below $330 without fresh hourly authorization.
 - **Profit target:** $370.00. Do NOT trim or sell below $370 without fresh hourly authorization.
@@ -140,7 +140,7 @@
 - **GOOG:** 51 trades at 13:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
-- **Open orders (pending fill):** NONE
+- **Open orders (pending fill):** HOOD 10 shares limit buy at $99.50 (order 96f1de6f, day order)
 - **Filled positions today (Tue Jun 30):** NONE
 - **Filled positions yesterday (Mon Jun 29):**
   - QQQ: 5 shares avg $715.38 (order 23167401, filled 13:55Z)
