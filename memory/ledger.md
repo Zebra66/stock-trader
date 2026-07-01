@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-01 : 10:37 : [hourly] Held all 4, RKLB limit open, no trades
+- Equity $9616.64, gross 74.6%, cash 25.4%
+- HOOD surged to $105.18, unrealized +$36.80
+- RKLB limit 5 at $98.00 open, market $100.995
+- Event detector MINOR, no protective action
+- Zero filled orders today, 0/3 daytrade budget
+
+2026-07-01 : 10:30 : [tactical] HOLD all 4, no triggers hit
+- Event detector NONE at 14:30Z, all held positions OK
+- QQQ $730.14, VOO $686.44, AVGO $371.90, HOOD $104.96 — all well above hard stops
+- RKLB limit 5 @ $98.00 open unfilled, market $101.24
+- 0 filled orders today, 0/3 daytrade budget used
+- No action, awaiting 14:35Z hourly refresh
+
+2026-07-01 : 10:20 : [tactical] HOLD all 4; RKLB limit open; no trades
+- QQQ $730.48, VOO $686.31, AVGO $373.18, HOOD $105.66 all above hard stops
+- RKLB limit 5 @ $98.00 still open, market at $102.83
+- Event detector NONE, no buy/sell triggers met
+- 0/3 daytrades, 0/3 daily orders, no action needed
+
+2026-07-01 : 10:10 : [tactical] No action — holds, no triggers
+- Event detector NONE at 14:10Z
+- QQQ $730.58, VOO $685.84, AVGO $372.63, HOOD $104.99 — all above stops
+- RKLB limit $98.00 open, market $102.40 — no fill
+- Daily trade budget 0/3, no orders placed
+- Gross exposure ~74.6%, within offensive band
+
 2026-07-01 : 09:50 : [tactical] MAJOR semi spike, no action taken
 - Event detector MAJOR at 13:50Z on SOXX $618.53 (+1.38%) and SMH $637.24 (+1.34%)
 - All held positions OK: QQQ $728.52, VOO $683.50, AVGO $370.37, HOOD $103.32
