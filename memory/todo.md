@@ -1,6 +1,8 @@
 # Tactical Todo — Updated 2026-07-01 18:35Z (Wednesday 2:35 PM ET)
 *Market OPEN. Next hourly: 19:35Z (3:35 PM ET).*
 
+<!-- Autonomous override applied at 2026-07-01 19:10Z due to MAJOR event (SOXX volatility) — no action taken, all held positions OK -->
+
 ## Current State
 - **Regime:** offensive catch-up (60–90% target band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.

@@ -1,6 +1,13 @@
 # Hourly Macro Memory
 *Updated 2026-07-01 18:35Z (Wednesday 2:35 PM ET). Market OPEN. Next regular session hourly: 19:35Z (3:35 PM ET).*
 
+## AUTONOMOUS OVERRIDE — 2026-07-01 19:10Z (Wednesday 3:10 PM ET)
+- **Classification:** MAJOR event detected by event_detector.ts
+- **Trigger:** SOXX +1.01% bounce in 20-min window ($599.73 → $606.00). Elevated semiconductor-sector volatility.
+- **Held positions impact:** NONE. All 5 positions (QQQ, VOO, AVGO, HOOD, RKLB) classified OK in detector report. No hard stops breached.
+- **Action taken:** No protective sells. No new positions. No buy conditions suspended (all already blocked/filled).
+- **Rationale:** MAJOR classification applies to SOXX, which we do not hold. Our chip exposure via AVGO is showing relative strength (+0.73% in same window). All stops are far away. Defaulting to hold and let hourly strategist reassess at 19:35Z.
+
 ## Hourly Cycle Summary — 2026-07-01 18:35Z (Wednesday 2:35 PM ET)
 - **Status:** Market OPEN. Tape orderly on 5-min timeframe. Event detector NONE. **SOXX down -6.17% on the day — major chip-sector rout.** No new orders placed or filled since 17:35Z hourly cycle.
 - **Live broker refresh:** Equity $9,670.40 | Cash $1,950.98 | Long $7,719.42 | Gross 79.8% | Daytrade 0/3.
