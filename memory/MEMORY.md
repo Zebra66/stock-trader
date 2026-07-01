@@ -125,3 +125,14 @@
 - **Repo hygiene:** Restored from critical breach. `.gitignore` verified. `node_modules` properly ignored.
 - **Code integrity:** All tracked source files restored from HEAD. Anti-churn, stale-memory, duplicate-order, and blackout guards are active.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive. Critical reminder: learning 64 — container restart can overwrite working tree with stale persistent volume snapshots. Always `git diff HEAD` on startup.
+
+---
+
+## [AUTONOMOUS_OVERRIDE] Tactical Event Response — 2026-07-01 13:50Z
+- **Event detector classification:** MAJOR
+- **Trigger:** SOXX +1.38% ($610.12 → $618.53) and SMH +1.34% ($628.83 → $637.24) in 10-minute window.
+- **Held positions status:** ALL OK — QQQ +0.36%, VOO +0.07%, AVGO +0.56%, HOOD +2.22%. None breached hard stops.
+- **Action taken:** NONE. No protective sells executed. No held position individually flagged MAJOR/CRITICAL and no hard stops breached.
+- **Buy conditions:** RKLB limit buy 5 @ $98.00 GTC remains open. RKLB is not a semiconductor name and was not flagged by the detector. It is a limit order well below market ($102.51), not a breakout chase. Hourly authorization to keep it open remains valid.
+- **No new positions opened.**
+- **Next expected action:** Hold all 4 core positions. Wait for next hourly at 14:35Z.

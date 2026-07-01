@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-01 : 09:50 : [tactical] MAJOR semi spike, no action taken
+- Event detector MAJOR at 13:50Z on SOXX $618.53 (+1.38%) and SMH $637.24 (+1.34%)
+- All held positions OK: QQQ $728.52, VOO $683.50, AVGO $370.37, HOOD $103.32
+- No hard stops breached; no protective sells executed
+- RKLB limit buy 5 @ $98.00 remains open, unaffected by semi event
+
 2026-07-01 : 09:41 : [hourly] Restored repo, hold 4 posns, keep RKLB lim
 - Equity 9564, gross 74.5pct, cash 25.5pct
 - Container restart reverted working tree to May 29; restored from HEAD
