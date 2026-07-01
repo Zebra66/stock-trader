@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-07-01 15:10Z (Wednesday 11:10 AM ET)
-*Market OPEN. RKLB limit filled. Next hourly: 15:35Z (11:35 AM ET).*
+# Tactical Todo — Updated 2026-07-01 15:35Z (Wednesday 11:35 AM ET)
+*Market OPEN. RKLB limit filled earlier. Next hourly: 16:35Z (12:35 PM ET).*
 
 <!-- Autonomous override applied at 2026-07-01 13:50Z due to MAJOR event on SOXX/SMH semiconductor spike. No action taken — all held positions OK, no stops breached. -->
 
@@ -7,19 +7,19 @@
 - **Regime:** offensive catch-up (60–90% target band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10, RKLB 5. Cash $1,950.98.
-- **Account equity / cash / buying power:** $9,663.42 / $1,950.98 / $29,398.75
-- **Gross long exposure:** 79.8% | **Net exposure:** 79.8% | **Cash:** 20.2%
+- **Account equity / cash / buying power:** $9,702.07 / $1,950.98 / $29,506.97
+- **Gross long exposure:** 79.9% | **Net exposure:** 79.9% | **Cash:** 20.1%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
-- **Market:** OPEN. Next hourly: 15:35Z (11:35 AM ET).
+- **Market:** OPEN. Next hourly: 16:35Z (12:35 PM ET).
 - **Daily trade budget:** 1/3 filled today (RKLB limit buy filled at 14:58Z).
 
 ## HOLD Instructions — Active During Wednesday Regular Session
 
 ### QQQ — HOLD 5 shares
 - **Entry:** Avg $715.38 (filled Jun 29 morning)
-- **Current:** $728.95 (+1.90% unrealized)
+- **Current:** $731.06 (+2.17% unrealized)
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
 - **Rationale:** Core growth. Above 50-day MA. Breakeven is $715.38. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
@@ -28,7 +28,7 @@
 
 ### VOO — HOLD 2 shares
 - **Entry:** Avg $676.46 (filled Jun 29 morning)
-- **Current:** $687.25 (+1.60% unrealized)
+- **Current:** $688.25 (+1.74% unrealized)
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
 - **Rationale:** S&P anchor. Breakeven is $676.46. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
@@ -37,7 +37,7 @@
 
 ### AVGO — HOLD 3 shares
 - **Entry:** Avg $371.95 (filled Jun 29 morning)
-- **Current:** $370.58 (–0.37% unrealized)
+- **Current:** $372.32 (+0.10% unrealized)
 - **Stop:** $350.00 (hard disaster stop). Do NOT sell below $350 unless event detector flags CRITICAL/MAJOR on AVGO specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $400.00. Do NOT trim or sell below $400 without fresh hourly authorization.
 - **Rationale:** AI chip alpha. Breakeven is $371.95. Selling at breakeven or small loss is PROHIBITED without hourly authorization.
@@ -47,7 +47,7 @@
 
 ### HOOD — HOLD 10 shares
 - **Entry:** Avg $101.50 (filled Jun 30 14:46Z)
-- **Current:** $107.43 (+5.84% unrealized)
+- **Current:** $107.66 (+6.07% unrealized)
 - **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
 - **Rationale:** 4th position. Strong 1M/3M momentum. Surging today despite negative earnings headline. Breakeven is $101.50. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
@@ -57,16 +57,16 @@
 
 ### RKLB — HOLD 5 shares
 - **Entry:** Avg $98.00 (filled Jul 1 14:58Z)
-- **Current:** $101.44 (+3.51% unrealized)
+- **Current:** $105.285 (+7.43% unrealized)
 - **Stop:** $90.00 (hard disaster stop). Do NOT sell below $90 unless event detector flags CRITICAL/MAJOR on RKLB specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
-- **Rationale:** 5th position. Space-sector M&A thesis ($8B Iridium deal). Launch scrub temporary. Breakeven is $98.00. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
-- **Concentration:** 5.2% of equity. Under 15% single-stock cap.
+- **Rationale:** 5th position. Space-sector M&A thesis ($8B Iridium deal). Wedbush "best time in a generation" for space/defense validates. Launch scrub temporary. Breakeven is $98.00. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
+- **Concentration:** 5.4% of equity. Under 15% single-stock cap.
 - **Liquidity note:** RKLB is thin. LIMIT ORDER ONLY.
 - **AUTHORIZE SAME-DAY SELL RKLB if price breaches $90.00 AND event detector is CRITICAL/MAJOR**
 
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $65.00 + RKLB $40.00 = $330.67 (3.42% of equity). Under 6% daily loss cap.
+- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $65.00 + RKLB $40.00 = $330.67 (3.41% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — For Wednesday Regular Session Only
 
@@ -97,7 +97,7 @@
 - **DO NOT BUY AVGO** today.
 
 ### RKLB — DO NOT ADD
-- **Reason:** At 5.2% of equity. No add authorized today.
+- **Reason:** At 5.4% of equity. No add authorized today.
 - **DO NOT BUY RKLB** today.
 
 ### HOOD — DO NOT ADD
@@ -107,11 +107,11 @@
 ## DO NOT BUY — Symbols Blocked This Cycle
 
 ### SOXX — DO NOT BUY
-- **Reason:** Down –5.3% today. Falling knife risk. Overlaps QQQ/AVGO.
+- **Reason:** Down –5.3% from highs. Falling knife risk. Overlaps QQQ/AVGO.
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
-- **Reason:** Below 50-day MA. Down –2.8% today. No edge over AVGO.
+- **Reason:** Below 50-day MA. Down –2.7% today. No edge over AVGO.
 - **DO NOT BUY NVDA** today.
 
 ### META — DO NOT BUY
@@ -134,7 +134,7 @@
 - **Tactical agent must NOT sell positions unless the exact phrase `AUTHORIZE SAME-DAY SELL <SYMBOL>` appears in this file.**
 - **Tactical agent must NOT sell a winning position at breakeven or small profit without fresh hourly authorization.** The profit target defines when winners may be trimmed.
 - **If event detector flags CRITICAL event, evaluate protective sells on held positions using authorized stop levels.**
-- **If RKLB fills, log the fill to `memory/ledger.md` immediately.**
+- **If RKLB fills, log the fill to `memory/ledger.md` immediately.** (Already filled and logged.)
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -146,21 +146,21 @@
 - BUY orders for banned symbols are REJECTED regardless of lock active state.
 
 ## Illiquidity Warnings (Universe Watchlist)
-- **HOOD:** 69 trades at 15:09Z. Very thin. LIMIT ORDER ONLY.
-- **RKLB:** 20 trades at 15:09Z. Thin. LIMIT ORDER ONLY.
+- **HOOD:** 7 trades at 15:34Z. Very thin. LIMIT ORDER ONLY.
+- **RKLB:** 50 trades at 15:34Z. Acceptable but limit orders preferred.
 - **EIS / ARKX / GLD / QTUM:** Very low trade count / volume. Limit orders only.
-- **SHLD:** 1 trade at 15:08Z. Limit orders preferred.
-- **VOO:** 52 trades at 15:09Z but liquid underlying. Limit orders only.
-- **SOXX:** 20 trades at 15:09Z. Acceptable but limit orders preferred.
-- **AVGO:** 26 trades at 15:09Z. Acceptable but limit orders preferred.
+- **SHLD:** 2 trades at 15:33Z. Limit orders preferred.
+- **VOO:** 7 trades at 15:33Z but liquid underlying. Limit orders only.
+- **SOXX:** 2 trades at 15:34Z. Acceptable but limit orders preferred.
+- **AVGO:** 42 trades at 15:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
 - **Open orders (pending fill):** NONE
 - **Filled positions today:** RKLB 5 shares limit buy @ $98.00 (filled 14:58Z)
-- Cash: $1,950.98 (20.2%)
-- Gross exposure: 79.8%
+- Cash: $1,950.98 (20.1%)
+- Gross exposure: 79.9%
 
-## Next Hourly — Wednesday Jul 1 15:35Z (11:35 AM ET)
+## Next Hourly — Wednesday Jul 1 16:35Z (12:35 PM ET)
 - Hold all 5 current positions.
 - No new buy orders unless a new hourly note explicitly authorizes a 6th position.
-- Event detector expected at ~15:07Z. If CRITICAL/MAJOR, evaluate protective sells at hard stops.
+- Event detector expected at ~16:07Z. If CRITICAL/MAJOR, evaluate protective sells at hard stops.
