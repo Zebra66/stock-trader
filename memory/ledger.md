@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-01 : 09:41 : [hourly] Restored repo, hold 4 posns, keep RKLB lim
+- Equity 9564, gross 74.5pct, cash 25.5pct
+- Container restart reverted working tree to May 29; restored from HEAD
+- HOOD filled Jun 30 at 101.50; RKLB 5 at 98 GTC open
+- Offensive catch-up, zero-churn mandate, hard stops set
+- No new buys authorized; concentration caps binding on QQQ VOO AVGO
+
+2026-07-01 : 09:41 : [tactical] Hold-only, no triggers met
+- Event detector MINOR, no action required
+- QQQ $726.15, VOO $682.82, AVGO $368.75 all above stops
+- HOOD filled yesterday at $101.50, now held
+- RKLB open order $98.00 GTC, current $100.04
+- No filled orders today, 0/3 budget used
+
 2026-06-30 : 19:06 : [hourly] Open HOOD limit, hold core, cash drag
 - Equity $9,604.16, gross 64.0%, cash 36.0%
 - QQQ $730.63 (+2.13%), VOO $683.21 (+1.00%), AVGO $376.15 (+1.13%)
