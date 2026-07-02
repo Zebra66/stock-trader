@@ -1,7 +1,7 @@
 # Hourly Macro Memory
-*Updated 2026-07-02 19:35Z (Thursday 3:35 PM ET). Market CLOSES at 20:00Z. **MARKET CLOSED Friday Jul 3 (Independence Day observed). Next session: Monday Jul 6. Next hourly: 2026-07-06 13:35Z (9:35 AM ET).***
+*Updated 2026-07-02 21:00Z (Thursday 5:00 PM ET). **MARKET CLOSED at 20:00Z.** Friday Jul 3 is CLOSED (Independence Day observed). Next session: Monday Jul 6, 2026 13:30Z (9:30 AM ET). Next hourly: 2026-07-06 13:35Z (9:35 AM ET).***
 
-## Live Book (Alpaca) — TRUE STATE — 19:35Z
+## Live Book (Alpaca) — TRUE STATE — 19:35Z (final regular session snapshot)
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
 | QQQ | 5 | $715.38 | $710.70 | $3,553.50 | 37.1% | –$23.40 | –0.65% |
@@ -11,6 +11,14 @@
 | RKLB | 5 | $98.00 | $99.185 | $495.93 | 5.2% | +$5.93 | +1.21% |
 | Cash | — | — | — | $2,523.52 | 26.3% | — | — |
 | **Equity** | — | — | — | **$9,582.50** | **100%** | — | **–4.18%** |
+
+## End-of-Day Closing Update — 2026-07-02 20:00Z (Thursday 4:00 PM ET)
+- **Market status:** CLOSED. Regular session ended at 20:00Z.
+- **Event detector (post-market, 20:54Z):** MINOR classification. SOXX rallied +0.78% and SMH +0.61% in final minutes. Broad market closed slightly higher (SPY +0.17%, QQQ +0.26% from 19:35Z levels).
+- **Final closing prices (Alpaca 19:59Z bars):** QQQ $712.53, AVGO $360.50, HOOD $112.71, RKLB $100.34.
+- **Estimated closing equity:** ~$9,598 (up ~$15 from 19:35Z due to rally into close).
+- **No trades after 19:35Z.** Tactical agent held all positions through close.
+- **Holiday:** Friday Jul 3, 2026 is CLOSED. Next session Monday Jul 6.
 
 - **Gross long exposure:** 73.7%
 - **Net exposure:** 73.7%

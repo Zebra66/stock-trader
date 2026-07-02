@@ -94,7 +94,7 @@
 - **Note:** Trigger is valid for Monday Jul 6 regular session. Do NOT place order during pre-market or after-hours.
 - **Note:** If both RKLB and HOOD triggers fill on Monday, gross exposure rises to ~84.0% (within 60–90% band). Cash remains ~$1,524. Acceptable.
 
-## DO NOT ADD — Existing Positions
+## DO NOT ADD — Existing Positions (Monday Jul 6)
 
 ### QQQ — DO NOT ADD
 - **Reason:** At 37.1% of equity. Adding 1 share would push QQQ to ~44.5%, leaving minimal headroom under 45% cap.
@@ -116,7 +116,7 @@
 - **Reason:** Current price $112.69. Only add on pullback to $105.00 as authorized above. Do NOT chase above $110.
 - **DO NOT BUY HOOD** above $110 today or Monday.
 
-## DO NOT BUY — Symbols Blocked This Cycle
+## DO NOT BUY — Symbols Blocked Monday Jul 6
 
 ### SOXX — DO NOT BUY
 - **Reason:** Down -2.8% today. Semis weak after Asia selloff. Watch $560 support. Do NOT buy into uncertainty. Overlaps QQQ/AVGO.
