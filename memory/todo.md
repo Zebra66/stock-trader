@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-07-02 15:12Z (Thursday 11:12 AM ET)
+# Tactical Todo — Updated 2026-07-02 15:16Z (Thursday 11:16 AM ET)
 *Market OPEN (closes 20:00Z). Next hourly: 2026-07-02 16:35Z (Thursday 12:35 PM ET).*
 
 <!-- Event detector MAJOR at 15:10Z (SOXX -1.18%, SMH -0.88%, RKLB -3.10%). No protective sells triggered; no hard stops breached. -->
@@ -11,7 +11,7 @@
 - **Gross long exposure:** 79.76% | **Net exposure:** 79.76% | **Cash:** 20.2%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
-- **Open orders:** HOOD limit SELL 5 @ $117.00 (order `385d2b75-e612-44ab-bb6b-8672229f8eba`, status `new`).
+- **Open orders:** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, status `pending_new`, day order).
 - **Market:** OPEN until 20:00Z. Next hourly: 2026-07-02 16:35Z.
 - **Daily trade budget:** 0/3 filled today (new session Jul 2).
 - **Event detector:** MAJOR at 15:10Z. SOXX/tech fading, RKLB sharp pullback. No autonomous action required because no hard stops breached.
@@ -27,8 +27,8 @@
 - **Concentration:** 11.8% of equity pre-trim. After trim ~5.9%. Under 15% cap.
 - **Liquidity note:** HOOD acceptable (40 trades at 15:09Z). LIMIT ORDER ONLY.
 - **TACTICAL INSTRUCTION:**
-  1. **CANCEL** open order `385d2b75-e612-44ab-bb6b-8672229f8eba` (HOOD limit SELL 5 @ $117.00).
-  2. **PLACE** new limit SELL 5 HOOD shares @ **$114.50** (day order).
+  1. **CANCELED** open order `385d2b75-e612-44ab-bb6b-8672229f8eba` (HOOD limit SELL 5 @ $117.00) — ✅ done at 15:16Z.
+  2. **PLACED** new limit SELL 5 HOOD shares @ **$114.50** (day order) — ✅ order `b07a3040-8f50-4a14-a4c2-c615b12f7644`.
   3. If price drops below $113.00 before the new order fills, **cancel** and wait for next hourly authorization.
 - **ANTI-CHURN:** This is NOT a same-day reversal (bought Jun 30). Valid.
 - **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR (for remaining 5 shares)**
@@ -164,14 +164,14 @@
 - **QQQ:** 24 trades at 15:09Z. Acceptable but limit orders preferred.
 
 ## Current Book
-- **Open orders (pending fill):** HOOD limit SELL 5 @ $117.00 (to be CANCELED per hourly instruction).
+- **Open orders (pending fill):** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, day order).
 - **Filled positions today:** NONE
-- **Orders placed today:** 1 (HOOD limit sell at 14:40Z)
+- **Orders placed today:** 2 (HOOD limit sell at 14:40Z, adjusted at 15:16Z)
 - Cash: $1,950.97 (20.2%)
 - Gross exposure: 79.76%
 
 ## Next Hourly — Thursday Jul 2 16:35Z (12:35 PM ET)
-- Execute HOOD trim adjustment: CANCEL $117 limit, PLACE new limit SELL 5 @ $114.50.
+- HOOD trim adjustment COMPLETE: Canceled $117 limit, placed new limit SELL 5 @ $114.50.
 - Hold QQQ, VOO, AVGO, RKLB.
 - No new buy orders unless a new hourly note explicitly authorizes a 6th position or add.
 - Event detector expected at ~16:07Z. If CRITICAL/MAJOR, evaluate protective sells at hard stops.
