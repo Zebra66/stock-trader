@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 11:14 : [hourly] Adjust HOOD trim to plus-two-R
+- HOOD pulled back from recent high to current level; old limit unlikely to fill in weak tape
+- Cancel open order and place new limit sell five shares at plus-two-R level
+- Event detector MAJOR on semis and RKLB; no hard stops breached
+- Repo integrity restored from HEAD after pre-fetch injected stale May files into working tree
+- Portfolio deeply underwater versus SPY since inception; zero churn is paramount
+
 2026-07-02 : 10:41 : [tactical] Placed HOOD limit sell 5@$117
 - HOOD trim: limit sell 5 shares at $117.00, current $116.28
 - Avg entry $101.50, +2.2R unrealized, order pending_new
