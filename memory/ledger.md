@@ -2,6 +2,44 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 13:38 : [hourly] Set RKLB/HOOD buy triggers on dip
+- QQQ at $709.68, VOO at $681.39, AVGO at $359.48
+- HOOD at $111.63 (+9.98% unrealized), RKLB at $98.39 (+0.40%)
+- Gross exposure 73.6%, cash 26.4%, daytrades 0/3
+- BUY RKLB 5 @ $95.00 if dip, BUY HOOD 5 @ $105.00 if dip
+- Event detector NONE, no hard stops breached
+
+2026-07-02 : 13:30 : [tactical] Hold all, no triggers met
+- Event detector NONE at 17:30Z, all positions stable
+- QQQ $710.47 > stop $690.00, AVGO $359.17 > stop $350.00
+- HOOD $111.975 > stop $95.00, RKLB $98.915 > stop $90.00
+- Gross exposure 73.6%, daily budget 1/3 used
+- 0/3 daytrades, no open orders, hold-only cycle
+
+2026-07-02 : 13:20 : [tactical] Hold all, no triggers met at 17:20Z
+- Event detector NONE at 17:20Z
+- QQQ $710.17, VOO $681.49, AVGO $358.45, HOOD $111.69, RKLB $98.73
+- All hard stops intact, no breach
+- Gross exposure 73.6%, daytrades 0/3
+- No orders placed, no open orders
+
+2026-07-02 : 13:10 : [tactical] Hold all, no triggers met
+- Event detector NONE at 17:10Z. All holds authorized.
+- QQQ $710.39, VOO $681.55, AVGO $358.73, HOOD $111.815, RKLB $99.77.
+- Gross exposure 73.6%. Daytrade count 0/3. No open orders.
+
+2026-07-02 : 12:50 : [tactical] Hold all, NONE event, no triggers
+- Event detector NONE at 16:50Z. No protective sells required.
+- QQQ $712.18, VOO $682.80, AVGO $359.77, HOOD $112.19, RKLB $99.94 — all above hard stops.
+- No open orders. Daytrade count 0/3.
+- No buy/sell conditions met. Default hold-only.
+
+2026-07-02 : 12:40 : [tactical] Hold all, no triggers met
+- Event detector NONE at 16:40Z
+- All 5 positions above hard stops, no protective action
+- No buy triggers authorized in todo.md
+- Gross exposure 73.7%, cash $2,523.52, daytrade 0/3
+
 2026-07-02 : 12:38 : [hourly] Hold all, tape weak, no new risk
 - HOOD trim filled earlier at $114.51; 5 shares remain target $125
 - QQQ $711.46, VOO $682.67, AVGO $359.25, HOOD $111.33, RKLB $99.92
