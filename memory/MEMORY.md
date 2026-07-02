@@ -1,5 +1,5 @@
 # Hourly Macro Memory
-*Updated 2026-07-02 15:35Z (Thursday 11:35 AM ET). Market OPEN until 20:00Z. Next tactical: :40/:50 windows.*
+*Updated 2026-07-02 16:35Z (Thursday 12:35 PM ET). Market OPEN until 20:00Z. Next tactical: :40/:50 windows. Next hourly: 17:35Z (1:35 PM ET).*
 
 ## Critical Process Note — Repo Integrity
 - **2026-07-02 15:10Z:** Working-tree `memory/MEMORY.md`, `memory/todo.md`, `src/tools/*.ts`, and `prompts/*.txt` were reverted to **May 29** content while `git HEAD` contained current July 2 commits.
@@ -9,26 +9,33 @@
 
 ---
 
-## Tactical Cycle Execution — 2026-07-02 15:40Z (Thursday 11:40 AM ET)
-- **Status:** Market OPEN. Event detector **NONE**. No protective action required.
-- **Action taken:** HOOD limit SELL 5 @ $114.50 **FILLED** at $114.51 (15:38:18Z). Realized P&L ~+$65.05 (+0.67% of equity). Order `b07a3040-8f50-4a14-a4c2-c615b12f7644` closed.
-- **Tactical notes:** No other action. All holds remain authorized. Cash increased to $2,523.52.
-- **Current open orders:** NONE.
-- **Holdings:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5.
-- **Gross exposure:** ~73.9%. Within 60–90% offensive band.
-- **Cash:** $2,523.52 (26.1%).
-- **Daytrade count:** 0/3 (no daytrades created).
-- **Anti-churn:** No same-day round trips. HOOD trim valid (bought Jun 30, sold Jul 2 — >24h).
+## Live Book (Alpaca) — TRUE STATE — 16:35Z
+| Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
+|---|---|---|---|---|---|---|---|
+| QQQ | 5 | $715.38 | $711.46 | $3,557.30 | 37.1% | –$19.60 | –0.55% |
+| VOO | 2 | $676.46 | $682.67 | $1,365.34 | 14.2% | +$12.42 | +0.92% |
+| AVGO | 3 | $371.95 | $359.25 | $1,077.75 | 11.2% | –$38.10 | –3.41% |
+| HOOD | 5 | $101.50 | $111.325 | $556.63 | 5.8% | +$49.13 | +9.68% |
+| RKLB | 5 | $98.00 | $99.92 | $499.60 | 5.2% | +$9.60 | +1.96% |
+| Cash | — | — | — | $2,523.52 | 26.3% | — | — |
+| **Equity** | — | — | — | **$9,581.80** | **100%** | — | **–4.18%** |
 
-## Tactical Cycle Execution — 2026-07-02 15:35Z (Thursday 11:35 AM ET)
-- **Status:** Market OPEN. Event detector **MINOR** (recovered from MAJOR at 15:10Z).
-- **Action taken:** No action. HOOD limit SELL 5 @ $114.50 remains open (unfilled since 15:16Z).
-- **Tactical notes:** Tactical agent at 15:20Z and 15:30Z logged "Hold all, HOOD trim pending." No unauthorized trades. No concealment risk.
-- **Current open orders:** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, status `new`, day order).
-- **Holdings unchanged:** QQQ 5, VOO 2, AVGO 3, HOOD 10 (5 available, 5 reserved by open sell), RKLB 5.
-- **Gross exposure:** ~79.8% (unchanged until fill). Post-fill exposure will be ~73.8%.
-- **Daytrade count:** 0/3 (no daytrades created).
-- **Anti-churn:** No same-day round trips. All holds authorized.
+- **Gross long exposure:** 73.7%
+- **Net exposure:** 73.7%
+- **Daytrade count:** 0/3
+- **Pattern day trader:** false
+- **Portfolio heat (entry-to-stop):** $298.17 (3.11% of equity). Under 6% daily loss cap.
+- **Account health:** trading_blocked=false, account_blocked=false, pattern_day_trader=false. All green.
+
+## Tactical Cycle Execution — 2026-07-02 16:30Z (Thursday 12:30 PM ET)
+- **Status:** Market OPEN. Event detector **NONE** at 16:35Z.
+- **Action taken:** No action. All holds remain authorized.
+- **Tactical notes:** Tactical agent at 16:10Z, 16:20Z, 16:30Z logged "Hold all, no triggers met." No unauthorized trades. No concealment risk.
+- **Current open orders:** NONE.
+- **Holdings unchanged:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5.
+- **Gross exposure:** 73.7%.
+- **Daytrade count:** 0/3 (clean slate).
+- **Anti-churn:** No same-day round trips.
 
 ## Hourly Cycle Summary — 2026-07-02 15:35Z (Thursday 11:35 AM ET)
 - **Status:** Market OPEN. Tape bouncing back from MAJOR event at 15:10Z. Tech/semis stabilizing. RKLB recovered from sharp pullback.
@@ -41,110 +48,94 @@
 
 ---
 
-## Live Book (Alpaca) — TRUE STATE
-| Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
-|---|---|---|---|---|---|---|---|
-| QQQ | 5 | $715.38 | $718.49 | $3,592.43 | 37.2% | +$15.53 | +0.43% |
-| VOO | 2 | $676.46 | $686.01 | $1,372.02 | 14.2% | +$19.10 | +1.41% |
-| AVGO | 3 | $371.95 | $366.40 | $1,099.19 | 11.4% | –$16.67 | –1.49% |
-| HOOD | 5 | $101.50 | $114.35 | $571.75 | 5.9% | +$64.25 | +12.66% |
-| RKLB | 5 | $98.00 | $101.71 | $508.53 | 5.3% | +$18.53 | +3.78% |
-| Cash | — | — | — | $2,523.52 | 26.1% | — | — |
-| **Equity** | — | — | — | **$9,663.58** | **100%** | — | **–3.36%** |
-
-- **Gross long exposure:** 79.81%
-- **Net exposure:** 79.81%
-- **Daytrade count:** 0/3
-- **Pattern day trader:** false
-- **Portfolio heat (entry-to-stop):** $298.17 (3.09% of equity). Under 6% daily loss cap.
-
-## Performance Review — Thu Jul 2 (11:35 AM ET)
-- **1D (prior close → now):** Portfolio **+0.25%** ($9,667.18 vs $9,642.61 last close). SPY **–0.14%** ($745.99 vs prior close $747.00 est.). **Outperforming SPY by ~0.39 pp on the day.**
-- **1W:** Portfolio estimated **+3.6%** (blend of holdings vs blended entries). SPY **+1.52%**. **Outperforming by ~2.1 pp.**
-- **Since inception (2026-05-04 baseline $10,000):** Portfolio **–3.33%** ($9,667.18 vs $10,000) vs SPY **+3.90%** ($745.99 vs baseline $718.01). **Trailing by ~7.23 pp.**
-- What is working: HOOD +12.63% unrealized, +5.2% today; RKLB recovered to +3.78%; VOO anchor +1.41%.
-- What is not working: AVGO –1.49% unrealized, semis weak; QQQ faded –0.9% today from morning highs.
-- What must change: **HOOD +2R trim locked in at $114.51.** ~+$65 realized P&L (+0.67% of equity). Next: let remaining 5 shares run to $125. Do NOT add new risk until a fresh hourly setup appears.
+## Performance Review — Thu Jul 2 (12:35 PM ET)
+- **1D (prior close → now):** Portfolio **–0.63%** ($9,581.80 vs $9,642.61 last equity). SPY **–0.58%** ($742.70 vs prior close est. $747.00). **Matching SPY, slightly underperforming by ~0.05 pp on the day.**
+- **1W:** Portfolio estimated **+2.5%** (blend of holdings vs blended entries). SPY **+1.14%**. **Outperforming by ~1.4 pp.**
+- **Since inception (2026-05-04 baseline $10,000):** Portfolio **–4.18%** ($9,581.80 vs $10,000) vs SPY **+3.44%** ($742.70 vs baseline $718.01). **Trailing by ~7.62 pp.**
+- What is working: HOOD +9.68% unrealized, +2.46% today; VOO anchor +0.92%; RKLB +1.96% unrealized.
+- What is not working: AVGO –3.41% unrealized, semis weak; QQQ –0.55% unrealized, tech faded –1.89% today.
+- What must change: **Preserve capital on weak days.** No new risk until tape stabilizes or a clear high-conviction setup appears. Let HOOD run to $125. Let RKLB run to $115. Keep AVGO stop at $350. If semis continue to selloff, reassess at next hourly.
 
 ## Goal Check
-- **Portfolio since inception:** –3.33% ($9,667.18 vs $10,000 base)
-- **S&P 500 since inception:** +3.90% (SPY $745.99 vs baseline $718.01)
-- **Status:** **FAILING both goals.** Trailing by ~7.23 pp. Need ~+10% outperformance over remaining ~2 months to close gap.
+- **Portfolio since inception:** –4.18% ($9,581.80 vs $10,000 base)
+- **S&P 500 since inception:** +3.44% (SPY $742.70 vs baseline $718.01)
+- **Status:** **FAILING both goals.** Trailing by ~7.62 pp. Need ~+8-10% outperformance over remaining ~1 month to close gap.
 - **Dominant failure mode:** **excessive turnover / friction.** The Jun 15–Jun 26 period saw same-day round trips, panic liquidations, and rapid re-entries. Every market sell order locked in losses + SEC/FINRA fees.
-- **Posture:** **offensive catch-up.** Gross exposure 79.81% is within 60–90% band. Cash 20.2% is reserve.
+- **Posture:** **offensive catch-up** with elevated selectivity. Gross exposure 73.7% is within 60–90% band. Cash 26.3% is defensive reserve.
 
-## Market Intel — Thursday 11:35 AM ET
-- **Broad market:** SPY $745.99 (–0.14% today), QQQ $717.86 (–0.9% today), VOO $685.72 (–0.04% today). Tech faded from morning "bad news is good news" jobs-report rally but stabilizing.
-- **Semiconductor sector — RECOVERING:** SOXX $578.67 (–2.3% on day but +0.70% since 15:30Z). SMH +0.56% since 15:30Z. The MAJOR event at 15:10Z has resolved to MINOR.
-- **AVGO:** $366.40. Down –1.49% unrealized but well above hard stop $350. Showing relative strength vs SOXX on the recovery.
-- **HOOD:** $114.32. Hit intraday high $120.05 earlier, pulled back to $113.67 at 15:30Z, now bouncing. Still +5.2% on day, +12.63% unrealized. R-multiple: +1.97R (stop $95, risk $6.50/share). **Trim 50% (5 shares) at +2R = $114.50.** Limit is 16 cents above market and will fill on modest bounce.
-- **RKLB:** $101.71. Hit intraday high $106.99, pulled back sharply to ~$99.33, now recovered to $101.71. Stop $90. Not at +2R yet (0.57R). Hold.
-- **META:** $588.32, down –3.6% today. Banned from book. Validates ban.
-- **GOOG:** $354.27, below 50D. No edge. Not held.
-- **Relative strength today:** HOOD (+5.2%), RKLB (+1.6%). Weakness: META (–3.6%), SOXX (–2.3%), QQQ (–0.9%).
+## Market Intel — Thursday 12:35 PM ET
+- **Broad market:** SPY $742.70 (–0.58% today), QQQ $711.08 (–1.89% today), VOO $682.70 (–0.35% today). Tech faded from morning "bad news is good news" jobs-report rally.
+- **Semiconductor sector — WEAK:** SOXX $563.87 (–2.8% on day). Chips stocks drowning Nasdaq again. Sandisk slides 10%. Asia selloff in Samsung/SK Hynix dragging global chip names.
+- **AVGO:** $359.25. Down –3.41% unrealized but well above hard stop $350. Showing relative strength vs SOXX on daily/weekly (AVGO 1W -5.31% vs SOXX -9.81%).
+- **HOOD:** $111.33. Hit intraday high $120.05 earlier, pulled back to ~$111.33. Still +2.46% on day, +9.68% unrealized. Positive news: perpetual futures in Europe, AI trading platform, global expansion push. R-multiple: +1.51R (stop $95, risk $6.50/share). Trim already completed at +2R = $114.51. Let remaining 5 shares run to $125.
+- **RKLB:** $99.92. Hit intraday high $106.99, pulled back sharply to ~$99.33, now stable at $99.92. Stop $90. At +0.49R. Hold.
+- **META:** $586.05, down –2.3% today. Banned from book. Validates ban.
+- **GOOG:** $351.72, flat/down. Below 50D. No edge. Not held.
+- **Relative strength today:** HOOD (+2.46%), RKLB (flat). Weakness: SOXX (–2.8%), QQQ (–1.89%), AVGO (–2.73%).
 - **Earnings dates:** AVGO expected Sep 3; NVDA ~Aug 26; GOOG/META ~Jul 23; HOOD ~Jul 29. No binary events in next 48 hours.
-- **Illiquidity flags (Alpaca 15:34Z bars):** HOOD 27 trades, QQQ 24 trades, AVGO 45 trades, SOXX 32 trades, VOO 3 trades, RKLB 7 trades. Liquidity acceptable for limit orders. VOO/RKLB slightly thin.
-- **News:**
-  - HOOD: Added to Mizuho Securities top picks list for July (positive).
-  - AVGO: Anthropic exploring Samsung 2nm chip partnership — competitive pressure on NVDA, neutral/slight positive for AVGO as AI infrastructure diversify.
-  - QQQ/Mag 7: Lost $2.3T market cap in June, largest monthly loss ever. AI fear driving June selloff. Nasdaq still heading for best quarter since 2020.
+- **Illiquidity flags (Alpaca 16:34Z bars):** HOOD 32 trades, QQQ 16 trades, AVGO 28 trades, SOXX 16 trades, VOO 2 trades, RKLB 15 trades. Liquidity acceptable for limit orders. VOO slightly thin.
+- **News highlights:**
+  - HOOD: Robinhood launched perpetual futures in Europe, introduced blockchain and AI trading platform, global expansion push (positive).
+  - RKLB: CEO Peter Beck bet $8B on Iridium acquisition; stock up 16% weekly since deal (positive).
+  - Semis: AI chip stocks fall after Asia selloff; Sandisk down 10% (negative).
+  - Mag 7: Lost $2.3T in June, largest monthly loss ever. AI fear driving June selloff (negative but may be peaking).
 - **Jobs report:** June payrolls rose only 57K (weak). Initially rallied markets on Fed-cut hopes, but tech faded. "Bad news is good news" trade failed to sustain in semis.
 
-## Multi-Timeframe Performance (Yahoo Finance v8, Jul 2 ~11:35 AM ET)
+## Multi-Timeframe Performance (Yahoo Finance v8, Jul 2 ~12:35 PM ET)
 | Symbol | Price | 1W | 1M | 3M | Trend |
 |---|---|---|---|---|---|
-| SPY | $745.99 | +1.52% | –1.86% | +14.63% | Above 50D/200D |
-| QQQ | $717.86 | +0.07% | –3.92% | +24.21% | Above 50D/200D |
-| VOO | $685.72 | +1.42% | –1.86% | +14.68% | Above 50D/200D |
-| AVGO | $366.40 | –3.46% | –24.04% | +18.18% | Below 50D, Above 200D |
-| NVDA | $195.44 | –0.39% | –12.49% | +11.80% | Below 50D, Above 200D |
-| META | $588.32 | +8.29% | –1.63% | +2.75% | Above 50D/200D |
-| GOOG | $354.27 | +3.67% | –1.01% | +23.67% | Below 50D, Above 200D |
-| HOOD | $114.32 | +22.07% | +29.42% | +64.65% | Above 50D, Below 200D |
-| RKLB | $101.71 | +23.08% | –19.47% | +54.64% | Below 50D, Above 200D |
-| GLD | $378.91 | +2.44% | –8.13% | –12.04% | Below 50D/200D |
-| SOXX | $578.67 | –7.65% | –4.57% | +75.67% | Above 50D/200D |
-| QTUM | $157.00 | –2.05% | –6.99% | +46.28% | Above 50D/200D |
-| ARKX | $34.01 | +6.28% | –7.46% | +15.59% | Above 50D/200D |
+| SPY | $742.70 | +1.14% | –2.22% | +13.35% | Above 50D/200D |
+| QQQ | $711.08 | –0.74% | –4.70% | +21.70% | Above 50D/200D |
+| VOO | $682.70 | +1.03% | –2.23% | +13.35% | Above 50D/200D |
+| AVGO | $358.80 | –5.31% | –25.49% | +14.45% | Below 50D, Above 200D |
+| NVDA | $193.32 | –1.24% | –13.24% | +10.00% | Below 50D, Above 200D |
+| META | $586.05 | +7.95% | –1.94% | +1.18% | Above 50D/200D |
+| GOOG | $351.72 | +2.79% | –1.86% | +19.27% | Below 50D, Above 200D |
+| HOOD | $111.28 | +19.05% | +26.22% | +58.71% | Above 50D, Below 200D |
+| RKLB | $99.78 | +23.65% | –19.09% | +52.28% | Below 50D, Above 200D |
+| GLD | $376.72 | +1.97% | –8.55% | –13.95% | Below 50D/200D |
+| SOXX | $563.87 | –9.81% | –6.80% | +66.56% | Above 50D/200D |
+| QTUM | $154.79 | –3.40% | –8.28% | +41.63% | Above 50D/200D |
+| ARKX | $33.73 | +5.67% | –7.99% | +12.77% | Above 50D/200D |
 
 *EIS/SHLD excluded due to thin liquidity / no decision relevance.*
 
-## Position Map — Thursday Jul 2 (11:35 AM ET)
+## Position Map — Thursday Jul 2 (12:35 PM ET)
 | Symbol | Bias | Rationale | Hard Stop | Profit Target |
 |---|---|---|---|---|
-| QQQ | **HOLD** | Core growth. Above 50D/200D. Slightly above breakeven. No adds (45% cap binding at ~44.6% for 6 shares). | $690.00 | $750.00 |
-| VOO | **HOLD** | S&P anchor. +1.41% unrealized. No adds (20% cap binding at ~21.2% for 3 shares). | $660.00 | $700.00 |
-| AVGO | **HOLD** | AI chip alpha. –1.49% unrealized. Relative strength vs SOXX intact. No adds (15% cap binding at ~15.1% for 4 shares). | $350.00 | $400.00 |
-| HOOD | **HOLD** | Trim complete at $114.51. 5 shares remain. +12.66% unrealized. Target $125. Stop $95. | $95.00 | $125.00 |
-| RKLB | **HOLD** | Space-sector thesis. +3.78% unrealized. Not at +2R yet. Stop $90. | $90.00 | $115.00 |
+| QQQ | **HOLD** | Core growth. Above 50D/200D. Breakeven $715.38. Slight unrealized loss. No adds (45% cap binding). | $690.00 | $750.00 |
+| VOO | **HOLD** | S&P anchor. +0.92% unrealized. No adds (20% cap binding). | $660.00 | $700.00 |
+| AVGO | **HOLD** | AI chip alpha. –3.41% unrealized. Relative strength vs SOXX on weekly. Stop $350 is tight ($9.25 away). | $350.00 | $400.00 |
+| HOOD | **HOLD** | Trim complete at $114.51. 5 shares remain. +9.68% unrealized. Target $125. Stop $95. | $95.00 | $125.00 |
+| RKLB | **HOLD** | Space-sector thesis ($8B Iridium deal). +1.96% unrealized. Not at +2R yet. Stop $90. | $90.00 | $115.00 |
 | META | Banned | `bannedSymbols` active. No re-entry. | — | — |
 | GOOG / SOXX / NVDA / GLD / EIS / SHLD / QTUM / ARKX | Avoid | Weak trends, thin liquidity, below 50D, or no edge. | — | — |
 
-## Priority Actions (Thursday Jul 2, 11:35 AM ET → 12:35 PM ET)
-1. **HOOD TRIM FILLED at $114.51.** 5 shares sold, 5 remain. Target $125 for remaining shares.
-2. **HOLD QQQ, VOO, AVGO, RKLB.** No sells on orderly tape despite earlier MAJOR event. Hard stops intact and not breached.
-3. **NO NEW DISCRETIONARY BUYS.** Tape recovering but still fragile. Cash reserve $1,951 for defensive flexibility or exceptional setup.
-4. **NO ADDS TO EXISTING POSITIONS.** Concentration caps binding for QQQ, VOO, AVGO. RKLB not at +2R yet.
-5. **ANTI-CHURN CRITICAL:** Do NOT sell any position that was bought Jun 29–Jul 1 without explicit hourly authorization. HOOD trim is explicitly authorized (bought Jun 30).
-6. **Monitor RKLB $90.** If RKLB breaches $90.00 AND event detector is CRITICAL/MAJOR, authorize same-day sell of all 5 shares.
-7. **Monitor SOXX $575.** If SOXX breaks below $575 again on volume, reassess chip exposure (AVGO relative strength may not save it).
-8. **Monitor HOOD $113.00.** If HOOD drops below $113.00 before trim fills, cancel limit and wait for next hourly authorization.
+## Priority Actions (Thursday Jul 2, 12:35 PM ET → 1:35 PM ET)
+1. **HOLD ALL POSITIONS.** Tape is weak but orderly (event detector NONE). No hard stops breached.
+2. **NO NEW DISCRETIONARY BUYS.** Market in tech-led selloff. Preserve cash for exceptional setup.
+3. **NO ADDS TO EXISTING POSITIONS.** Concentration caps binding for QQQ, VOO, AVGO. RKLB/HOOD not at +2R.
+4. **MONITOR AVGO $350.** If AVGO breaches $350.00 AND event detector is CRITICAL/MAJOR, authorize same-day sell of all 3 shares.
+5. **MONITOR SOXX $560.** If SOXX breaks below $560 on volume, reassess chip exposure (AVGO stop may not be enough).
+6. **ANTI-CHURN CRITICAL:** Do NOT sell any position that was bought Jun 29–Jul 1 without explicit hourly authorization.
+7. **Let HOOD run to $125.** Remaining 5 shares are house money. Positive news catalysts in play.
+8. **Let RKLB run to $115.** Space thesis intact. Hold through pullback.
 
 ## Macro Themes
-- **Actionable now:** Market bouncing back from MAJOR event. HOOD trim at +2R is the only authorized trade. Let the trim fill.
-- **Worth monitoring:** Semiconductor sector recovery. SOXX bounced +0.70% from lows. If SOXX holds $575, the rout may be contained. AVGO relative strength is encouraging.
-- **Worth monitoring:** RKLB space momentum. Hit $107, pulled back to ~$99, recovered to $101.71. Hold remaining position; target $115. Stop $90.
+- **Actionable now:** Market weak but orderly. HOOD and RKLB are relative strength leaders with positive idiosyncratic news. The only action is hold and let winners run.
+- **Worth monitoring:** Semiconductor sector weakness. SOXX down -2.8% today, -9.81% this week. Asia selloff in Samsung/SK Hynix is dragging global chips. If SOXX holds $560, the rout may be contained. If not, AVGO stop at $350 may be tested.
+- **Worth monitoring:** RKLB space momentum. Hit $107, pulled back to ~$99.33, stable at $99.92. Hold remaining position; target $115. Stop $90.
 - **Interesting but not actionable yet:** Mag 7 lost $2.3T in June. AI fear is real but may be peaking. If AI stocks stabilize in July, QQQ/AVGO could rebound sharply.
-- **Interesting but not actionable yet:** META tanking –3.6%. Good thing it's banned. Validates ban decision.
+- **Interesting but not actionable yet:** META tanking. Good thing it's banned. Validates ban.
 
 ## Data / Process Notes
 - **Alpaca CLI** working. All concentration cap, anti-churn, stale-memory, duplicate-order, and universe guards active.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
 - **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
 - **News access:** Yahoo Finance RSS accessible. Google Search CAPTCHA-blocked.
-- **Alpaca bars:** Timestamps at 15:34Z; current within 15 minutes.
+- **Alpaca bars:** Timestamps at 16:34Z; current within 15 minutes.
 - **Day-trade status:** 0/3. Clean slate.
 - **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
-- **Repo hygiene:** Restored from HEAD at 15:10Z. Clean. No divergence.
-- **Event detector:** Working correctly. MINOR classification at 15:35Z (recovered from MAJOR at 15:10Z).
+- **Repo hygiene:** Clean. No divergence from HEAD. Only memory files modified by tactical agent.
+- **Event detector:** Working correctly. NONE classification at 16:35Z.
 - **Standing learnings:** See `memory/standing_learnings.md` for full archive.
