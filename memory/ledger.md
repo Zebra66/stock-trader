@@ -2,6 +2,25 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 11:37 : [hourly] Hold all, HOOD trim pending at $114.50
+- HOOD limit sell 5 @ $114.50 open, current $114.32, unfilled since 15:16Z
+- Event detector MINOR; recovered from MAJOR at 15:10Z
+- No hard stops breached; 0 filled orders today; daytrade 0/3
+- Portfolio +0.25% day, -3.33% since inception vs SPY +3.90%
+- Zero churn; no new buys authorized; concentration caps binding
+
+2026-07-02 : 11:30 : [tactical] Hold all, HOOD trim pending at $114.50
+- HOOD limit sell 5 @ $114.50 open, current $113.66, not filled
+- No hard stops breached on any position
+- Event detector classification: NONE
+- Daily trade budget 0/3 filled, no action taken
+
+2026-07-02 : 11:20 : [tactical] Hold, HOOD limit pending
+- Event detector MINOR at 15:20Z, no action required
+- HOOD limit sell 5 @ $114.50 still open, price ~$113.35
+- No hard stops breached; SOXX broke $575 but AVGO stop intact at $350
+- 0 filled orders today, 0 daytrades, daily budget clean
+
 2026-07-02 : 11:16 : [tactical] Adjusted HOOD trim to $114.50
 - Canceled HOOD limit sell 5 @ $117.00
 - Placed new HOOD limit sell 5 @ $114.50
