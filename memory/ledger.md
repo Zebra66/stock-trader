@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 10:38 : [hourly] Auth HOOD trim 50% at +2R
+- HOOD at $115.86, +2.2R. Auth SELL 5 shares limit $117.00
+- Equity $9,712.15, gross 79.9%, daytrade 0/3
+- SOXX -2.3%, tech fading. Hold QQQ/VOO/AVGO/RKLB
+- No new buys. Cash reserve for better setup.
+
 2026-07-02 : 10:31 : [tactical] CRITICAL event, no sells triggered
 - SOXX $588.26 CRITICAL -1.91%, SMH -1.52%, XLK -1.13%
 - QQQ $722.17, VOO $687.36, AVGO $369.175, HOOD $115.695, RKLB $103.20
