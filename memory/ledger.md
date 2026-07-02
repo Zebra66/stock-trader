@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 15:37 : [hourly] Hold all, Jul 3 holiday, stops intact
+- Equity $9,582.50, gross 73.7%, cash 26.3%
+- Event detector NONE at 19:35Z. Tape stabilizing.
+- No trades since 18:35Z. Tactical agent clean.
+- Market CLOSED Friday Jul 3. Next session Monday Jul 6.
+- Buy triggers for Monday: RKLB $95.00, HOOD $105.00
+
+2026-07-02 : 15:30 : [tactical] Hold all, no triggers met
+- Event detector NONE at 19:30Z
+- QQQ $710.08 above stop $690.00
+- AVGO $358.66 above stop $350.00
+- HOOD $112.30 above stop $95.00
+- RKLB $99.25 above stop $90.00, buy trigger $95.00 not met
+
+2026-07-02 : 15:20 : [tactical] Hold all, no triggers met
+- Event detector NONE at 19:20Z
+- QQQ $709.19, VOO $681.95, AVGO $357.62, HOOD $112.22, RKLB $98.89
+- All hard stops intact, no breaches
+- Buy triggers not met: RKLB $95.00, HOOD $105.00
+- Daytrade 0/3, gross exposure ~73.7%, no action
+
+2026-07-02 : 15:10 : [tactical] Hold all, no triggers met
+- Event detector MINOR at 19:10Z. No protective action required.
+- QQQ $709.24, VOO $681.95, AVGO $357.13, HOOD $112.34, RKLB $98.70
+- No buy triggers met: RKLB above $95.00, HOOD above $105.00
+- No sell stops breached. Gross exposure 73.6%, daytrades 0/3
+
+2026-07-02 : 14:50 : [tactical] Hold all, no triggers met
+- Event detector NONE at 18:50Z
+- QQQ $711.59 above stop $690.00
+- AVGO $359.01 above stop $350.00
+- HOOD $113.64 above stop $95.00, below add trigger $105.00
+- RKLB $99.30 above stop $90.00, below add trigger $95.00
+
+2026-07-02 : 14:40 : [tactical] Hold all, no triggers met
+- QQQ at $711.615, stop $690.00 not breached
+- VOO at $683.093, stop $660.00 not breached
+- AVGO at $359.765, stop $350.00 not breached
+- HOOD at $112.94, stop $95.00 not breached, buy trigger $105.00 not met
+- RKLB at $99.55, stop $90.00 not breached, buy trigger $95.00 not met
+
 2026-07-02 : 14:37 : [hourly] Hold all, tape weak but stable
 - Equity $9,584.56, gross exposure 73.7%, cash 26.3%
 - No trades since 17:35Z. Tactical agent held all positions.
