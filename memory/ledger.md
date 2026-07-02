@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 11:40 : [tactical] HOOD trim 5 filled at $114.51
+- HOOD limit SELL 5 filled at $114.51, proceeds ~$572.55
+- Cash now $2,523.52, gross exposure 73.9%
+- Daily budget 1/3, daytrade count 0/3
+- Remaining HOOD 5 shares target $125, stop $95
+
 2026-07-02 : 11:37 : [hourly] Hold all, HOOD trim pending at $114.50
 - HOOD limit sell 5 @ $114.50 open, current $114.32, unfilled since 15:16Z
 - Event detector MINOR; recovered from MAJOR at 15:10Z

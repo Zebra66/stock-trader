@@ -9,6 +9,17 @@
 
 ---
 
+## Tactical Cycle Execution — 2026-07-02 15:40Z (Thursday 11:40 AM ET)
+- **Status:** Market OPEN. Event detector **NONE**. No protective action required.
+- **Action taken:** HOOD limit SELL 5 @ $114.50 **FILLED** at $114.51 (15:38:18Z). Realized P&L ~+$65.05 (+0.67% of equity). Order `b07a3040-8f50-4a14-a4c2-c615b12f7644` closed.
+- **Tactical notes:** No other action. All holds remain authorized. Cash increased to $2,523.52.
+- **Current open orders:** NONE.
+- **Holdings:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5.
+- **Gross exposure:** ~73.9%. Within 60–90% offensive band.
+- **Cash:** $2,523.52 (26.1%).
+- **Daytrade count:** 0/3 (no daytrades created).
+- **Anti-churn:** No same-day round trips. HOOD trim valid (bought Jun 30, sold Jul 2 — >24h).
+
 ## Tactical Cycle Execution — 2026-07-02 15:35Z (Thursday 11:35 AM ET)
 - **Status:** Market OPEN. Event detector **MINOR** (recovered from MAJOR at 15:10Z).
 - **Action taken:** No action. HOOD limit SELL 5 @ $114.50 remains open (unfilled since 15:16Z).
@@ -24,7 +35,7 @@
 - **Live broker refresh:** Equity **$9,667.18** | Cash **$1,950.97** | Long **$7,715.37** | Gross **79.81%** | Daytrade **0/3**.
 - **Holdings confirmed:** QQQ 5 ($3,592.43, +0.43%), VOO 2 ($1,372.02, +1.41%), AVGO 3 ($1,099.19, –1.49%), HOOD 10 ($1,143.20, +12.63%), RKLB 5 ($508.53, +3.78%).
 - **Open orders:** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, status `new`, day order).
-- **Filled trades since prior hourly (Jul 2 15:15Z):** NONE. HOOD limit sell at $114.50 remains unfilled.
+- **Filled trades since prior hourly (Jul 2 15:15Z):** NONE at 15:35Z. HOOD limit sell at $114.50 **filled at 15:38Z** at $114.51.
 - **Universe compliance:** All 5 holdings in universe. No breach.
 - **Branch:** Up to date with origin/main.
 
@@ -36,16 +47,16 @@
 | QQQ | 5 | $715.38 | $718.49 | $3,592.43 | 37.2% | +$15.53 | +0.43% |
 | VOO | 2 | $676.46 | $686.01 | $1,372.02 | 14.2% | +$19.10 | +1.41% |
 | AVGO | 3 | $371.95 | $366.40 | $1,099.19 | 11.4% | –$16.67 | –1.49% |
-| HOOD | 10 | $101.50 | $114.32 | $1,143.20 | 11.8% | +$128.20 | +12.63% |
+| HOOD | 5 | $101.50 | $114.35 | $571.75 | 5.9% | +$64.25 | +12.66% |
 | RKLB | 5 | $98.00 | $101.71 | $508.53 | 5.3% | +$18.53 | +3.78% |
-| Cash | — | — | — | $1,950.97 | 20.2% | — | — |
-| **Equity** | — | — | — | **$9,667.18** | **100%** | — | **–3.33%** |
+| Cash | — | — | — | $2,523.52 | 26.1% | — | — |
+| **Equity** | — | — | — | **$9,663.58** | **100%** | — | **–3.36%** |
 
 - **Gross long exposure:** 79.81%
 - **Net exposure:** 79.81%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Portfolio heat (entry-to-stop):** $330.67 (3.42% of equity). Under 6% daily loss cap.
+- **Portfolio heat (entry-to-stop):** $298.17 (3.09% of equity). Under 6% daily loss cap.
 
 ## Performance Review — Thu Jul 2 (11:35 AM ET)
 - **1D (prior close → now):** Portfolio **+0.25%** ($9,667.18 vs $9,642.61 last close). SPY **–0.14%** ($745.99 vs prior close $747.00 est.). **Outperforming SPY by ~0.39 pp on the day.**
@@ -53,7 +64,7 @@
 - **Since inception (2026-05-04 baseline $10,000):** Portfolio **–3.33%** ($9,667.18 vs $10,000) vs SPY **+3.90%** ($745.99 vs baseline $718.01). **Trailing by ~7.23 pp.**
 - What is working: HOOD +12.63% unrealized, +5.2% today; RKLB recovered to +3.78%; VOO anchor +1.41%.
 - What is not working: AVGO –1.49% unrealized, semis weak; QQQ faded –0.9% today from morning highs.
-- What must change: **Lock in HOOD +2R trim.** That single trade adds ~$65 realized P&L (+0.67% of equity) and reduces heat. Zero churn on all other positions.
+- What must change: **HOOD +2R trim locked in at $114.51.** ~+$65 realized P&L (+0.67% of equity). Next: let remaining 5 shares run to $125. Do NOT add new risk until a fresh hourly setup appears.
 
 ## Goal Check
 - **Portfolio since inception:** –3.33% ($9,667.18 vs $10,000 base)
@@ -104,13 +115,13 @@
 | QQQ | **HOLD** | Core growth. Above 50D/200D. Slightly above breakeven. No adds (45% cap binding at ~44.6% for 6 shares). | $690.00 | $750.00 |
 | VOO | **HOLD** | S&P anchor. +1.41% unrealized. No adds (20% cap binding at ~21.2% for 3 shares). | $660.00 | $700.00 |
 | AVGO | **HOLD** | AI chip alpha. –1.49% unrealized. Relative strength vs SOXX intact. No adds (15% cap binding at ~15.1% for 4 shares). | $350.00 | $400.00 |
-| HOOD | **TRIM 50%** | Momentum leader. +12.63% unrealized, ~+1.97R. **Trim 5 shares at limit $114.50 (+2R).** Keep 5 shares for $125 target. | $95.00 (remaining) | $125.00 |
+| HOOD | **HOLD** | Trim complete at $114.51. 5 shares remain. +12.66% unrealized. Target $125. Stop $95. | $95.00 | $125.00 |
 | RKLB | **HOLD** | Space-sector thesis. +3.78% unrealized. Not at +2R yet. Stop $90. | $90.00 | $115.00 |
 | META | Banned | `bannedSymbols` active. No re-entry. | — | — |
 | GOOG / SOXX / NVDA / GLD / EIS / SHLD / QTUM / ARKX | Avoid | Weak trends, thin liquidity, below 50D, or no edge. | — | — |
 
 ## Priority Actions (Thursday Jul 2, 11:35 AM ET → 12:35 PM ET)
-1. **HOLD HOOD TRIM AT $114.50.** Current price $114.32; limit is 16 cents above market and will fill on modest bounce. Do NOT lower the limit. The +2R level is the systematic profit target. Discipline > chasing.
+1. **HOOD TRIM FILLED at $114.51.** 5 shares sold, 5 remain. Target $125 for remaining shares.
 2. **HOLD QQQ, VOO, AVGO, RKLB.** No sells on orderly tape despite earlier MAJOR event. Hard stops intact and not breached.
 3. **NO NEW DISCRETIONARY BUYS.** Tape recovering but still fragile. Cash reserve $1,951 for defensive flexibility or exceptional setup.
 4. **NO ADDS TO EXISTING POSITIONS.** Concentration caps binding for QQQ, VOO, AVGO. RKLB not at +2R yet.

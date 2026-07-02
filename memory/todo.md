@@ -1,4 +1,4 @@
-# Tactical Todo — Updated 2026-07-02 15:35Z (Thursday 11:35 AM ET)
+# Tactical Todo — Updated 2026-07-02 15:40Z (Thursday 11:40 AM ET)
 *Market OPEN (closes 20:00Z). Next hourly: 2026-07-02 16:35Z (Thursday 12:35 PM ET).*
 
 <!-- Event detector MINOR at 15:35Z. Market recovered from MAJOR at 15:10Z. No protective sells triggered. -->
@@ -6,32 +6,22 @@
 ## Current State
 - **Regime:** offensive catch-up (60–90% target band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
-- **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10, RKLB 5. Cash $1,950.97.
-- **Account equity / cash / buying power:** $9,667.18 / $1,950.97 / $29,409.27
-- **Gross long exposure:** 79.81% | **Net exposure:** 79.81% | **Cash:** 20.2%
+- **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5. Cash $2,523.52.
+- **Account equity / cash / buying power:** $9,663.58 / $2,523.52 / $29,363.66
+- **Gross long exposure:** 73.9% | **Net exposure:** 73.9% | **Cash:** 26.1%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
-- **Open orders:** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, status `new`, day order).
+- **Open orders:** NONE.
 - **Market:** OPEN until 20:00Z. Next hourly: 2026-07-02 16:35Z.
-- **Daily trade budget:** 0/3 filled today (new session Jul 2).
-- **Event detector:** MINOR at 15:35Z. Recovered from MAJOR at 15:10Z. No autonomous action required because no hard stops breached.
+- **Daily trade budget:** 1/3 filled today (HOOD trim Jul 2).
+- **Event detector:** NONE at 15:40Z. No protective action required.
 
 ## SELL Instructions — Authorized For Thursday Regular Session
 
-### HOOD — TRIM 5 shares (sell half) — HOLD LIMIT AT $114.50
-- **Entry:** Avg $101.50 (filled Jun 30 14:46Z)
-- **Current:** $114.32 (+12.63% unrealized, ~+1.97R)
-- **Stop:** $95.00 (hard disaster stop for remaining 5 shares). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically AND hourly note explicitly authorizes the exit.
-- **Profit target:** $125.00 for remaining 5 shares. Do NOT trim or sell remaining 5 below $125 without fresh hourly authorization.
-- **Rationale:** Momentum leader. +2R level is $114.50. Limit is 16 cents above market and will fill on modest bounce. Hourly explicitly authorizes holding this limit at the systematic +2R target.
-- **Concentration:** 11.8% of equity pre-trim. After trim ~5.9%. Under 15% cap.
-- **Liquidity note:** HOOD acceptable (27 trades at 15:34Z). LIMIT ORDER ONLY.
-- **TACTICAL INSTRUCTION:**
-  1. **KEEP OPEN** the existing limit SELL 5 HOOD shares @ **$114.50** (day order, placed at 15:16Z). Do NOT cancel unless one of the conditions below is met.
-  2. If price drops below **$113.00** before the order fills, **cancel** and wait for next hourly authorization. Do NOT lower the limit without fresh hourly authorization.
-  3. If price rallies above **$115.50**, do NOT raise the limit. The +2R target is the exit.
-- **ANTI-CHURN:** This is NOT a same-day reversal (bought Jun 30). Valid.
-- **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR (for remaining 5 shares)**
+### HOOD — TRIM COMPLETE
+- **Status:** Limit SELL 5 @ $114.50 **FILLED** at $114.51 (15:38:18Z). Order `b07a3040-8f50-4a14-a4c2-c615b12f7644` closed.
+- **Realized P&L:** ~+$65.05 (+0.67% of equity). No further sells authorized for HOOD today.
+- **Remaining position:** 5 shares. See HOLD Instructions below.
 
 ## HOLD Instructions — Active During Thursday Regular Session
 
@@ -73,8 +63,17 @@
 - **Liquidity note:** RKLB slightly thin (7 trades at 15:34Z). Limit orders preferred.
 - **AUTHORIZE SAME-DAY SELL RKLB if price breaches $90.00 AND event detector is CRITICAL/MAJOR**
 
+### HOOD — HOLD 5 shares (remaining after trim)
+- **Entry:** Avg $101.50 (filled Jun 30 14:46Z)
+- **Current:** $114.35 (+12.66% unrealized, +1.98R)
+- **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically AND hourly note explicitly authorizes the exit.
+- **Profit target:** $125.00. Do NOT trim or sell below $125 without fresh hourly authorization.
+- **Rationale:** Momentum leader. Trim complete at +2R ($114.51). Remaining 5 shares are house money. Let winner run to $125 target.
+- **Concentration:** 5.9% of equity. Under 15% cap.
+- **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR**
+
 ### Total Portfolio Heat
-- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $65.00 + RKLB $40.00 = $330.67 (3.42% of equity). Under 6% daily loss cap.
+- QQQ $126.90 + VOO $32.92 + AVGO $65.85 + HOOD $32.50 + RKLB $40.00 = $298.17 (3.09% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — NONE AUTHORIZED TODAY
 
@@ -83,7 +82,7 @@
 - **DO NOT BUY RKLB** with a new order today.
 
 ### HOOD — DO NOT BUY
-- **Reason:** Already hold 10 shares. After authorized trim to 5 shares, still no add authorized while momentum is extended and tape is weak.
+- **Reason:** Trim complete. Hold 5 shares. No add authorized while momentum is extended.
 - **DO NOT BUY HOOD** today.
 
 ### GOOG — DO NOT BUY
@@ -109,7 +108,7 @@
 - **DO NOT BUY RKLB** today.
 
 ### HOOD — DO NOT ADD
-- **Reason:** At 11.8% of equity pre-trim. Even after trim, no add authorized while momentum is extended.
+- **Reason:** At 5.9% of equity post-trim. No add authorized while momentum is extended.
 - **DO NOT BUY HOOD** today.
 
 ## DO NOT BUY — Symbols Blocked This Cycle
@@ -164,17 +163,17 @@
 - **QQQ:** 24 trades at 15:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
-- **Open orders (pending fill):** HOOD limit SELL 5 @ $114.50 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, day order).
-- **Filled positions today:** NONE
-- **Orders placed today:** 2 (HOOD limit sell at 14:40Z, adjusted at 15:16Z)
-- Cash: $1,950.97 (20.2%)
-- Gross exposure: 79.81%
+- **Open orders (pending fill):** NONE.
+- **Filled positions today:** HOOD SELL 5 @ $114.51 (order `b07a3040-8f50-4a14-a4c2-c615b12f7644`, filled 15:38Z).
+- **Orders placed today:** 1 filled (HOOD limit sell filled at 15:38Z).
+- Cash: $2,523.52 (26.1%)
+- Gross exposure: 73.9%
 
 ## Next Hourly — Thursday Jul 2 16:35Z (12:35 PM ET)
-- HOOD trim limit at $114.50 — HOLD. Do NOT cancel unless price drops below $113.00.
-- Hold QQQ, VOO, AVGO, RKLB.
+- HOOD trim **COMPLETE** at $114.51. Remaining 5 shares target $125.
+- Hold QQQ, VOO, AVGO, RKLB, HOOD.
 - No new buy orders unless a new hourly note explicitly authorizes a 6th position or add.
 - Event detector expected at ~16:07Z. If CRITICAL/MAJOR, evaluate protective sells at hard stops.
-- **Watch HOOD $114.50.** If bounce fills trim, remaining 5 shares target $125.
+- **Watch HOOD $125.** Let remaining winner run to profit target.
 - **Watch SOXX $575.** If SOXX breaks below $575 again, reassess chip exposure.
 - **Watch RKLB $90.** If RKLB breaks below $90 on volume, reassess space-sector posture.
