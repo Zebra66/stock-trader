@@ -1,20 +1,22 @@
-# Tactical Todo — Updated 2026-07-01 19:35Z (Wednesday 3:35 PM ET)
+# Tactical Todo — Updated 2026-07-02 13:30Z (Thursday 9:30 AM ET)
 *Market OPEN (closes 20:00Z). Next hourly: 2026-07-02 13:35Z (Thursday 9:35 AM ET).*
 
+<!-- Autonomous override applied at 2026-07-02 13:30Z due to CRITICAL event (GLD up +1.51%). No protective sells executed; no positions breached hard stops. -->
 <!-- Prior autonomous override at 2026-07-01 19:10Z (MAJOR event on SOXX bounce) resolved. Event detector NONE at 19:35Z. -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% target band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
-- **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10, RKLB 5. Cash $1,950.98.
-- **Account equity / cash / buying power:** $9,683.66 / $1,950.98 / $29,455.42
+- **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 10, RKLB 5. Cash $1,950.97.
+- **Account equity / cash / buying power:** $9,676.75 / $1,950.97 / $29,436.05
 - **Gross long exposure:** 79.9% | **Net exposure:** 79.9% | **Cash:** 20.1%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
 - **Market:** OPEN until 20:00Z. Next hourly: 2026-07-02 13:35Z.
-- **Daily trade budget:** 1/3 filled today (RKLB limit buy filled at 14:58Z).
-- **Macro note:** SOXX stabilized at $607.27 (–5.23% on day, prior close $640.76). Held above $600. AVGO showing relative strength (–1.50% vs SOXX –5.23%). Event detector NONE.
+- **Daily trade budget:** 0/3 filled today (new session Jul 2).
+- **Event detector:** CRITICAL at 13:30Z (GLD up +1.51%). No held positions affected.
+- **Macro note:** SOXX at $599.33. AVGO at $364.64 (–1.85%). HOOD surging at $113.22 (+4.28%).
 
 ## HOLD Instructions — Active During Wednesday Regular Session
 
