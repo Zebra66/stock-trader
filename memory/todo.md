@@ -56,7 +56,7 @@
 - **Rationale:** Momentum leader. Hit +2R per aggressive protocol — sell 50% (5 shares) at limit ~$117.00 or market if above $116.00. Keep 5 shares to run to $125 target. Breakeven is $101.50. Selling remaining 5 at breakeven or small profit is PROHIBITED without hourly authorization.
 - **Concentration:** 11.9% of equity pre-trim. After trim ~6.0%. Under 15% cap.
 - **Liquidity note:** HOOD acceptable (45 trades at 14:34Z). LIMIT ORDER ONLY.
-- **TACTICAL INSTRUCTION:** SELL 5 HOOD shares with limit order at $117.00 or better. If price drops below $115.00, hold and re-evaluate next hourly. This is NOT a same-day reversal (bought Jun 30).
+- **TACTICAL INSTRUCTION:** ~~SELL 5 HOOD shares with limit order at $117.00 or better.~~ ORDER PLACED 14:40Z — limit sell 5 @ $117.00, pending. If price drops below $115.00, cancel and re-evaluate next hourly. This is NOT a same-day reversal (bought Jun 30).
 - **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR (for remaining 5 shares)**
 
 ### RKLB — HOLD 5 shares
@@ -160,8 +160,9 @@
 - **QQQ:** 17 trades at 14:34Z. Acceptable but limit orders preferred.
 
 ## Current Book
-- **Open orders (pending fill):** NONE
+- **Open orders (pending fill):** HOOD limit SELL 5 @ $117.00 (order 385d2b75-e612-44ab-bb6b-8672229f8eba, pending_new)
 - **Filled positions today:** NONE
+- **Orders placed today:** 1 (HOOD limit sell)
 - Cash: $1,950.97 (20.1%)
 - Gross exposure: 79.9%
 

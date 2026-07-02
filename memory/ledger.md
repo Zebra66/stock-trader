@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-02 : 10:41 : [tactical] Placed HOOD limit sell 5@$117
+- HOOD trim: limit sell 5 shares at $117.00, current $116.28
+- Avg entry $101.50, +2.2R unrealized, order pending_new
+- Pre-trade checklist all passed, PDT 0/3, budget 1/3
+- Holding 5 HOOD for $125 target, cash ~$2536 after fill
+
 2026-07-02 : 10:38 : [hourly] Auth HOOD trim 50% at +2R
 - HOOD at $115.86, +2.2R. Auth SELL 5 shares limit $117.00
 - Equity $9,712.15, gross 79.9%, daytrade 0/3

@@ -1,6 +1,15 @@
 # Hourly Macro Memory
 *Updated 2026-07-02 14:35Z (Thursday 10:35 AM ET). Market OPEN (closes 20:00Z). Next regular session hourly: 2026-07-02 15:35Z (Thursday 11:35 AM ET).*
 
+## Tactical Execution — 2026-07-02 14:40Z (Thursday 10:40 AM ET)
+- **Action:** Placed limit sell order for HOOD — 5 shares @ $117.00 (order 385d2b75-e612-44ab-bb6b-8672229f8eba).
+- **Status:** Order pending_new, day order, expires at 20:00Z.
+- **Rationale:** HOOD at +2.2R ($116.28 current, avg entry $101.50). Per hourly authorization and aggressive protocol, trim 50% at +2R. Limit set at $117.00; current price $116.28. Order will fill if HOOD rallies back to $117.
+- **Pre-trade checklist:** All 13 checks passed. Universe OK, no cooldown, no churn (bought Jun 30), market open, PDT clean (0/3), no short sale, explicitly authorized in todo.md, no lock, no HARD_LOCK, data healthy (39 trades), not liquidation, budget 0→1/3.
+- **Holdings after intended fill:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5. Cash ~$2,536 after fill.
+- **Exposure after intended fill:** ~74% gross. Still within 60–90% offensive band.
+- **No other actions:** QQQ/VOO/AVGO/RKLB all well above hard stops. Event detector NONE. No protective sells.
+
 ## Tactical Autonomous Override — 2026-07-02 14:30Z (Thursday 10:30 AM ET)
 - **[AUTONOMOUS_OVERRIDE]** Event detector classification: **CRITICAL** (SOXX -1.91%, SMH -1.52%, XLK -1.13%, QQQ -0.80%).
 - **Held positions evaluated:** AVGO OK (-0.74%), HOOD MINOR (-2.46%), QQQ OK (-0.80%), RKLB MINOR (-2.26%), VOO OK (-0.35%).
