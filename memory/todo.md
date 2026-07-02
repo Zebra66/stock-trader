@@ -3,6 +3,7 @@
 
 <!-- Autonomous override applied at 2026-07-02 13:30Z due to CRITICAL event (GLD up +1.51%). No protective sells executed; no positions breached hard stops. Resolved at 13:35Z. Event detector NONE. -->
 <!-- Prior hourly cycle Jul 1 19:35Z authorized hold-all. No pre-hourly drift detected Jul 2. -->
+<!-- Autonomous override applied at 2026-07-02 14:30Z due to CRITICAL event (SOXX -1.91%, SMH -1.52%). No protective sells executed; no positions breached hard stops. -->
 
 ## Current State
 - **Regime:** offensive catch-up (60–90% target band)

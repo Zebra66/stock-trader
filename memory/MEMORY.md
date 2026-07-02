@@ -120,6 +120,16 @@
 - **Interesting but not actionable yet:** NVDA revenue-sharing model for AI startups. Positive for AI capex broadly but no direct edge for our book.
 - **Interesting but not actionable yet:** META AI cloud business plan. Rallying but banned from book.
 
+---
+
+## Tactical Autonomous Override — 2026-07-02 14:30Z (Thursday 10:30 AM ET)
+- **[AUTONOMOUS_OVERRIDE]** Event detector classification: **CRITICAL** (SOXX -1.91%, SMH -1.52%, XLK -1.13%, QQQ -0.80%).
+- **Held positions evaluated:** AVGO OK (-0.74%), HOOD MINOR (-2.46%), QQQ OK (-0.80%), RKLB MINOR (-2.26%), VOO OK (-0.35%).
+- **Protective sells:** NONE executed. No position breached its authorized hard stop. No position classified CRITICAL or MAJOR in heldPositions array.
+- **Buy suspensions:** All symbols already blocked with `DO NOT BUY` in todo.md. No active BUY triggers to suspend.
+- **Exposure:** Gross long exposure ~80%, unchanged. No new positions opened.
+- **Next hourly:** 14:35Z. Hourly strategist should reassess semiconductor/tech posture given SOXX break below $590.
+
 ## Data / Process Notes
 - **Alpaca CLI** working. All concentration cap, anti-churn, stale-memory, duplicate-order, and universe guards restored to HEAD.
 - **Universal factory guard** active for HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, and todo.md no-buy parser.
