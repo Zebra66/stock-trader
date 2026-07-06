@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-06 : 09:37 : [hourly] Hold all, raise AVGO stop, no chase
+- Strategic blackout resolved after 4-day gap. Zero trades since Jul 2 15:38Z.
+- Portfolio +1.14% vs SPY +0.81% today. Gap narrowed to -7.23 pp.
+- AVGO stop raised to $365.00, target to $420.00 on Apple chip deal through 2031.
+- RKLB relative weakness -2.74% vs rally. Monitor $95.00 before adding.
+- Buy triggers active: RKLB $95.00, HOOD $105.00. Do NOT chase gap-up in MAJOR tape.
+
 2026-07-06 : 09:33 : [tactical] Hold all, CRITICAL rally eval
 - Event detector CRITICAL at 13:30Z: SOXX +3.15%, SMH +2.67%, QQQ +1.06% (rally, not crash)
 - All held positions OK: QQQ $719.41, VOO $688.28, AVGO $373.77, HOOD $112.98, RKLB $100.80
