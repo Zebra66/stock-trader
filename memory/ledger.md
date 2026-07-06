@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-06 : 13:45 : [hourly] Sold RKLB, bought QQQ, cut loser
+- RKLB exited at 3.25 on severe relative weakness (-6.83% today vs SPY +0.75%)
+- QQQ added 1 share @ 21.94; now 44.7% of equity, within 45% cap
+- Portfolio gross exposure 76.6%, cash ,268
+- Goal check: failing both goals, trailing SPY by ~7.73 pp
+- Repo integrity breach detected and resolved; git index restored
+
 2026-07-06 : 12:38 : [hourly] Hold all, suspend RKLB trigger
 - QQQ at $724.48, VOO at $689.94, AVGO at $375.15
 - HOOD at $117.13 (+15.4%), RKLB at $95.78 (-2.27%)
