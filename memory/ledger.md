@@ -2,10 +2,17 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-06 : 14:39 : [hourly] Held all, no trades, guards restored
+- Equity ,692, gross 76.6%, cash 23.4%
+- No trades since 17:43Z; all stops intact
+- CRITICAL: reverted staged safety-guard removals to HEAD
+- HOOD trigger 05 active; RKLB cooldown until 17:43Z Jul 7
+- QQQ anti-churn active; DO NOT SELL today
+
 2026-07-06 : 13:45 : [hourly] Sold RKLB, bought QQQ, cut loser
-- RKLB exited at 3.25 on severe relative weakness (-6.83% today vs SPY +0.75%)
-- QQQ added 1 share @ 21.94; now 44.7% of equity, within 45% cap
-- Portfolio gross exposure 76.6%, cash ,268
+- RKLB exited at $93.25 on severe relative weakness (-6.83% today vs SPY +0.75%)
+- QQQ added 1 share @ $721.94; now 44.7% of equity, within 45% cap
+- Portfolio gross exposure 76.6%, cash $2,268
 - Goal check: failing both goals, trailing SPY by ~7.73 pp
 - Repo integrity breach detected and resolved; git index restored
 
