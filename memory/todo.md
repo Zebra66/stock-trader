@@ -1,6 +1,8 @@
 # Tactical Todo — Updated 2026-07-02 19:35Z (Thursday 3:35 PM ET)
+*Updated by tactical agent 2026-07-06 13:30Z. Event detector CRITICAL. Autonomous override applied.*
 *Market OPEN until 20:00Z. **MARKET CLOSED Friday Jul 3 (Independence Day observed). Next regular session: Monday Jul 6. Next hourly: 2026-07-06 13:35Z (9:35 AM ET).***
 
+<!-- Autonomous override applied at 2026-07-06 13:30Z due to CRITICAL event -->
 <!-- Event detector NONE at 19:35Z. Market stabilizing/rebounding from morning weakness. No protective sells triggered. -->
 
 ## Current State
@@ -77,7 +79,7 @@
 
 ## BUY Triggers — Authorized For Next Regular Session (Monday Jul 6)
 
-### RKLB — BUY 5 shares if price drops below $95.00
+### RKLB — BUY 5 shares if price drops below $95.00 (SUSPENDED — CRITICAL event detected at 2026-07-06 13:30Z)
 - **Trigger:** Limit BUY 5 shares @ $95.00 (day order, regular session only).
 - **Rationale:** Iridium deal thesis intact. Stock pulled back from $107 intraday high to $99.185. $95 is near prior breakout support. R/R = 4:1 ($20 gain to $115 target vs $5 risk to $90 stop). Concentration post-fill = ~10.3% of equity (under 15% cap).
 - **Entry:** $95.00 | **Stop:** $90.00 | **Target:** $115.00 | **R-multiple:** 4.0R
@@ -85,7 +87,7 @@
 - **Rank:** Priority #1 for fresh capital deployment.
 - **Note:** Trigger is valid for Monday Jul 6 regular session. Do NOT place order during pre-market or after-hours.
 
-### HOOD — BUY 5 shares if price drops below $105.00
+### HOOD — BUY 5 shares if price drops below $105.00 (SUSPENDED — CRITICAL event detected at 2026-07-06 13:30Z)
 - **Trigger:** Limit BUY 5 shares @ $105.00 (day order, regular session only).
 - **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a 6.8% dip from current $112.69 and a test of prior resistance-turned-support. R/R = 2:1 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~11.5% of equity (under 15% cap).
 - **Entry:** $105.00 | **Stop:** $95.00 | **Target:** $125.00 | **R-multiple:** 2.0R
