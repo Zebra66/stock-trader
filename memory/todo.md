@@ -1,24 +1,24 @@
-# Tactical Todo — Updated 2026-07-06 14:35Z (Monday 10:35 AM ET)
+# Tactical Todo — Updated 2026-07-06 15:35Z (Monday 11:35 AM ET)
 *Updated by hourly strategist. Fresh directives for Monday Jul 6 regular session.*
 
 ## Current State
 - **Regime:** offensive catch-up with elevated selectivity (60–90% target band)
 - **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
 - **Live book:** QQQ 5, VOO 2, AVGO 3, HOOD 5, RKLB 5. Cash $2,523.50.
-- **Account equity / cash / buying power:** $9,721.78 / $2,523.50 / $30,249.18
+- **Account equity / cash / buying power:** $9,714.03 / $2,523.50 / $30,227.47
 - **Gross long exposure:** 74.0% | **Net exposure:** 74.0% | **Cash:** 26.0%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
 - **Market:** OPEN until 20:00Z.
 - **Daily trade budget:** 0/3 filled today.
-- **Event detector:** NONE at 14:35Z. Market calm. Prior MAJOR at 13:35Z has cooled.
+- **Event detector:** NONE at 15:35Z. Market calm.
 
 ## HOLD Instructions — Active During Monday Jul 6 Regular Session
 
 ### QQQ — HOLD 5 shares
 - **Entry:** Avg $715.38 (filled Jun 29 morning)
-- **Current:** $724.65 (+1.30% unrealized)
+- **Current:** $725.04 (+1.35% unrealized)
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
 - **Rationale:** Core growth. Above 50D/200D. Breakeven surpassed. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
@@ -27,56 +27,56 @@
 
 ### VOO — HOLD 2 shares
 - **Entry:** Avg $676.46 (filled Jun 29 morning)
-- **Current:** $688.98 (+1.85% unrealized)
+- **Current:** $690.02 (+2.00% unrealized)
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
 - **Rationale:** S&P anchor. Breakeven is $676.46. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
-- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would push VOO to ~21.5%, breaching the 20% non-QQQ ETF cap. No adds.
+- **Concentration:** 14.2% of equity. Under 20% cap. Adding 1 share would push VOO to ~21.4%, breaching the 20% non-QQQ ETF cap. No adds.
 - **AUTHORIZE SAME-DAY SELL VOO if price breaches $660.00 AND event detector is CRITICAL/MAJOR**
 
 ### AVGO — HOLD 3 shares
 - **Entry:** Avg $371.95 (filled Jun 29 morning)
-- **Current:** $378.94 (+1.88% unrealized)
+- **Current:** $373.53 (+0.42% unrealized)
 - **Stop:** $365.00 (hard disaster stop). Apple chip supply deal extension through 2031 justifies protecting gains. Do NOT sell below $365 unless event detector flags CRITICAL/MAJOR on AVGO specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $420.00. Structural catalyst supports higher target. Do NOT trim or sell below $420 without fresh hourly authorization.
-- **Rationale:** AI chip alpha. Strong today (+5.2%) on Apple deal news. Breakeven is $371.95. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
-- **Concentration:** 11.7% of equity. Under 15% cap. Adding 1 share would push AVGO to ~14.8%. No adds authorized today — do NOT chase gap.
+- **Rationale:** AI chip alpha. Pulled back from gap-up highs but still above entry. Breakeven is $371.95. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
+- **Concentration:** 11.5% of equity. Under 15% cap. Adding 1 share would push AVGO to ~15.4%, breaching the 15% single-stock cap. No adds authorized today — do NOT chase gap or pullback.
 - **AUTHORIZE SAME-DAY SELL AVGO if price breaches $365.00 AND event detector is CRITICAL/MAJOR**
 
 ### RKLB — HOLD 5 shares
 - **Entry:** Avg $98.00 (filled Jul 1 14:58Z)
-- **Current:** $97.23 (–0.79% unrealized, –0.12R)
+- **Current:** $96.35 (–1.69% unrealized, –0.17R)
 - **Stop:** $90.00 (hard disaster stop). Do NOT sell below $90 unless event detector flags CRITICAL/MAJOR on RKLB specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $115.00. Do NOT trim or sell below $115 without fresh hourly authorization.
-- **Rationale:** 5th position. Space-sector thesis ($8B Iridium deal). Showing relative weakness today (–3.2% today vs QQQ +1.66%). Breakeven is $98.00. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
+- **Rationale:** 5th position. Space-sector thesis ($8B Iridium deal). Showing relative weakness today (–3.88% today vs QQQ +1.46%). Breakeven is $98.00. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
 - **Concentration:** 5.0% of equity. Under 15% single-stock cap.
 - **Liquidity note:** RKLB acceptable. Limit orders preferred.
 - **AUTHORIZE SAME-DAY SELL RKLB if price breaches $90.00 AND event detector is CRITICAL/MAJOR**
 
 ### HOOD — HOLD 5 shares (remaining after trim)
 - **Entry:** Avg $101.50 (filled Jun 30 14:46Z)
-- **Current:** $114.82 (+13.12% unrealized, +2.05R)
+- **Current:** $116.80 (+15.07% unrealized, +2.35R)
 - **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $125.00. Do NOT trim or sell below $125 without fresh hourly authorization.
 - **Rationale:** Momentum leader. Trim complete at +2R ($114.51). Remaining 5 shares are house money. Let winner run to $125 target.
-- **Concentration:** 5.9% of equity. Under 15% cap.
+- **Concentration:** 6.0% of equity. Under 15% cap.
 - **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR**
 
 ### Total Portfolio Heat
-- QQQ $173.10 + VOO $57.92 + AVGO $41.82 + HOOD $99.10 + RKLB $36.15 = $408.09 (4.20% of equity). Under 6% daily loss cap.
+- QQQ $126.90 + VOO $32.92 + AVGO $20.85 + HOOD $32.50 + RKLB $40.00 = $253.17 (2.60% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — Authorized For Monday Jul 6 Regular Session
 
 ### RKLB — BUY 5 shares if price drops below $95.00
 - **Trigger:** Limit BUY 5 shares @ $95.00 (day order, regular session only).
-- **Rationale:** Iridium deal thesis intact. Stock pulled back to $97.23. $95 is near prior breakout support and –2.3% from current. R/R = 4:1 ($20 gain to $115 target vs $5 risk to $90 stop). Concentration post-fill = ~9.8% of equity (under 15% cap).
+- **Rationale:** Iridium deal thesis intact. Stock pulled back to $96.35. $95 is near prior breakout support and –1.4% from current. R/R = 4:1 ($20 gain to $115 target vs $5 risk to $90 stop). Concentration post-fill = ~9.8% of equity (under 15% cap).
 - **Entry:** $95.00 | **Stop:** $90.00 | **Target:** $115.00 | **R-multiple:** 4.0R
 - **Condition:** Only if event detector is NONE or MINOR at time of trigger. Do NOT buy if event detector is CRITICAL/MAJOR. **CRITICAL RELATIVE WEAKNESS RULE: If RKLB is breaking below $95 while SOXX and QQQ are both positive, DO NOT buy RKLB even if the $95 trigger is hit.** Relative weakness in a strong tape is a warning sign. Wait for hourly reassessment.
 - **Rank:** Priority #1 for fresh capital deployment.
 
 ### HOOD — BUY 5 shares if price drops below $105.00
 - **Trigger:** Limit BUY 5 shares @ $105.00 (day order, regular session only).
-- **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a –8.5% dip from current $114.82 and a test of prior resistance-turned-support. R/R = 2:1 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~10.8% of equity (under 15% cap).
+- **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a –10.1% dip from current $116.80 and a test of prior resistance-turned-support. R/R = 2:1 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~10.8% of equity (under 15% cap).
 - **Entry:** $105.00 | **Stop:** $95.00 | **Target:** $125.00 | **R-multiple:** 2.0R
 - **Condition:** Only if event detector is NONE or MINOR at time of trigger. Do NOT buy if event detector is CRITICAL/MAJOR.
 - **Rank:** Priority #2 for fresh capital deployment.
@@ -89,19 +89,19 @@
 - **DO NOT BUY QQQ** today without fresh hourly authorization.
 
 ### VOO — DO NOT ADD
-- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~21.5%, breaching the 20% non-QQQ ETF cap.
+- **Reason:** At 14.2% of equity. Adding 1 share would push VOO to ~21.4%, breaching the 20% non-QQQ ETF cap.
 - **DO NOT BUY VOO** today without fresh hourly authorization.
 
-### AVGO — DO NOT ADD above $375
-- **Reason:** At 11.7% of equity. Adding 1 share would push AVGO to ~14.8%, near 15% cap. Stock surged +5.2% today on Apple deal news — do NOT chase gap-up. Only add on pullback below $375 with fresh hourly authorization.
-- **DO NOT BUY AVGO** above $375 today.
+### AVGO — DO NOT ADD
+- **Reason:** At 11.5% of equity. Adding 1 share would push AVGO to ~15.4%, breaching the 15% single-stock cap. Stock surged +3.6% today on Apple deal news — do NOT chase gap-up or pullback.
+- **DO NOT BUY AVGO** today without fresh hourly authorization.
 
 ### RKLB — DO NOT ADD above $100
-- **Reason:** Current price $97.23. Only add on pullback to $95.00 as authorized above. Do NOT chase above $100.
+- **Reason:** Current price $96.35. Only add on pullback to $95.00 as authorized above. Do NOT chase above $100.
 - **DO NOT BUY RKLB** above $100 today.
 
 ### HOOD — DO NOT ADD above $110
-- **Reason:** Current price $114.82. Only add on pullback to $105.00 as authorized above. Do NOT chase above $110.
+- **Reason:** Current price $116.80. Only add on pullback to $105.00 as authorized above. Do NOT chase above $110.
 - **DO NOT BUY HOOD** above $110 today.
 
 ## DO NOT BUY — Symbols Blocked Monday Jul 6
@@ -111,7 +111,7 @@
 - **DO NOT BUY SOXX** today.
 
 ### NVDA — DO NOT BUY
-- **Reason:** Below 50-day MA. Underperforming SOXX today (+0.67% vs SOXX +3.94%). No edge over AVGO.
+- **Reason:** Below 50-day MA. Underperforming SOXX today (+0.31% vs SOXX +3.94%). No edge over AVGO.
 - **DO NOT BUY NVDA** today.
 
 ### META — DO NOT BUY
@@ -165,11 +165,11 @@
 - Cash: $2,523.50 (26.0%)
 - Gross exposure: 74.0%
 
-## Next Hourly — Monday Jul 6 15:35Z (11:35 AM ET)
+## Next Hourly — Monday Jul 6 16:35Z (12:35 PM ET)
 - Hold QQQ, VOO, AVGO, RKLB, HOOD.
 - **Buy triggers active:** RKLB limit BUY 5 @ $95.00; HOOD limit BUY 5 @ $105.00.
 - No other buy orders authorized without fresh hourly note.
-- Event detector expected at ~15:07Z. If CRITICAL/MAJOR downward, evaluate protective sells at hard stops.
+- Event detector expected at ~16:07Z. If CRITICAL/MAJOR downward, evaluate protective sells at hard stops.
 - **Watch AVGO $365.** Stop level. If breached, same-day sell authorized if event detector is CRITICAL/MAJOR.
 - **Watch RKLB $95.** Relative weakness in flat tape requires caution. Do NOT add if breaking below on relative weakness.
 - **Watch HOOD $125.** Let remaining winner run to profit target.
