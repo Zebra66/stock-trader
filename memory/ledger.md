@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-07 : 11:37 : [hourly] API still glitched, AVGO stop breached
+- Alpaca positions API still returns [] at 15:35Z, true equity ~$9,545
+- AVGO at $364.31 breached hard stop $365.00, loss ~1.1R (~$23)
+- HOLD all positions, HARD_LOCK active, no trades authorized today
+- HOOD at $114.475 (+12.77% unrealized), let run to $125 target
+- Event detector NONE, semis showing slight stabilization
+
+2026-07-07 : 10:42 : [tactical] Hold all; AVGO below stop, no sell auth
+- Positions API blackout; order history authoritative. Holdings: QQQ 6, VOO 2, AVGO 3, HOOD 5
+- AVGO at $362.62 breached hard stop $365.00; event detector MINOR, no sell authorization per todo
+- Prior agent placed canceled AVGO sell_to_open order at $363.95 at 14:38Z; process note
+- HOOD at $112.65 above $105.00 buy trigger; QQQ $706.02, VOO $685.565 above stops
+- No open orders. Daily budget 0/3. Gross exposure ~76%. No action taken
+
 2026-07-07 : 10:41 : [hourly] API corrupted, AVGO stop breached, hard lock
 - Alpaca positions API returns empty since ~10:21Z; portfolio history confirms true equity ~$9,549
 - AVGO at $364.00 breached hard stop $365.00 — sell blocked by API glitch
