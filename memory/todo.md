@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-07-06 19:37Z (Monday 3:37 PM ET)
-*Updated by hourly strategist. Fresh directives for Monday Jul 6 close (remaining ~20 min) and Tuesday Jul 7 regular session.*
+# Tactical Todo — Updated 2026-07-06 23:09Z (Monday 7:09 PM ET)
+*Updated by tactical agent. Market CLOSED. Post-market tactical cycle logged. Awaiting next hourly strategist Tuesday 13:35Z.*
 
 ## Current State
 - **Regime:** offensive catch-up with elevated selectivity (60–90% target band)
@@ -10,7 +10,7 @@
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
-- **Market:** OPEN until 20:00Z.
+- **Market:** CLOSED at 20:00Z. Next session Tuesday Jul 7, 2026 13:30Z.
 - **Daily trade budget:** 2/3 used today (RKLB sell + QQQ buy). One additional fill allowed today without fresh hourly authorization.
 - **Event detector:** NONE at 19:35Z. Market calm.
 
