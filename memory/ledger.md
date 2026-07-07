@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-07 : 15:37 : [hourly] Hold all, QQQ below 50D, AVGO near stop
+- QQQ at $708.57 below 50D $711.74, stop $690.00
+- AVGO at $370.02, hard stop $365.00 remains active
+- HOOD at $113.65, buy trigger $105.00 not reached
+- Portfolio down 1.28% today vs SPY down 0.61%
+- Zero filled orders today, 0/3 budget used
+
+2026-07-07 : 15:30 : [tactical] Hold all, no triggers met
+- Event detector NONE at 19:30Z
+- QQQ $707.67 above $690.00 stop, AVGO $368.17 above $365.00 stop
+- HOOD $113.29 above $95.00 stop, VOO $686.36 above $660.00 stop
+- HOOD $105.00 buy trigger not reached
+- Zero filled orders today, 0/3 budget used
+
+2026-07-07 : 15:20 : [tactical] Hold all, no triggers met
+- QQQ at $707.35 above $690.00 stop, no breach
+- AVGO at $368.01 above $365.00 stop, no breach
+- HOOD at $113.46 above $105.00 buy trigger, no fill
+- VOO at $686.31 above $660.00 stop, no breach
+- Event detector NONE, gross exposure 76.3%, 0/3 trades used
+
+2026-07-07 : 15:10 : [tactical] Hold all; QQQ tests 50D support
+- QQQ at $707.99, testing 50D SMA $711.74
+- AVGO at $368.14, above $365.00 hard stop
+- HOOD at $113.77, above $95.00 stop; no $105 dip trigger
+- Event detector MINOR; no autonomous action
+- 0/3 trade budget used today Jul 7
+
+2026-07-07 : 14:50 : [tactical] Event NONE; all holds; no trades
+- Event detector NONE at 18:50Z; broad market and all held positions OK
+- QQQ at $710.81, AVGO at $369.91, HOOD at $114.11, VOO at $687.45
+- No buy/sell triggers breached; 0/3 daily trade budget used
+- Book unchanged; gross exposure ~76.3%
+
+2026-07-07 : 14:40 : [tactical] Hold all, no triggers met
+- Event detector NONE at 18:40Z. Broad market and held positions OK.
+- QQQ $712.03 above $690.00 stop, VOO $688.37 above $660.00 stop
+- AVGO $370.88 above $365.00 stop, HOOD $114.88 above $95.00 stop
+- HOOD buy trigger $105.00 not met at $114.88
+- Daily trade budget 0/3. Gross exposure 76.4%. No action.
+
 2026-07-07 : 14:37 : [hourly] Hold all, QQQ tests 50D, no trades
 - QQQ at $711.85 testing 50D support, stop $690.00
 - AVGO at $370.71, hard stop $365.00 remains active
