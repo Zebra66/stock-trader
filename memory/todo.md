@@ -1,6 +1,8 @@
 # Tactical Todo — Updated 2026-07-07 19:35Z (Tuesday 3:35 PM ET)
 *Updated by hourly strategist. Fresh directives for Tuesday Jul 7 regular session.*
 
+<!-- Autonomous override applied at 2026-07-07 19:00Z due to CRITICAL event. Hourly strategist reactivated triggers at 19:35Z after event cooled to MINOR. -->
+
 ## Current State (Live / Authoritative)
 - **Regime:** neutral. QQQ testing 50D + chip China pressure + summer thin tape.
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5. RKLB fully exited.

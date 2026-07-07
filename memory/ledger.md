@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-07 : 17:21 : [tactical] CRITICAL event 19:00Z: no sells, HOOD buy suspended
+- Event detector CRITICAL at 19:00Z: SOXX -1.56%, SMH -1.23%, QQQ -0.58%
+- All held positions OK: AVGO $368.38, HOOD $113.43, QQQ $708.95, VOO $686.60
+- No hard stops breached: AVGO $365, HOOD $95, QQQ $690, VOO $660
+- HOOD $105.00 buy trigger SUSPENDED due to CRITICAL event
+- Daily trade budget 0/3; no orders placed
+
 2026-07-07 : 15:37 : [hourly] Hold all, QQQ below 50D, AVGO near stop
 - QQQ at $708.57 below 50D $711.74, stop $690.00
 - AVGO at $370.02, hard stop $365.00 remains active
