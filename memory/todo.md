@@ -1,18 +1,19 @@
-# Tactical Todo — Updated 2026-07-06 23:09Z (Monday 7:09 PM ET)
-*Updated by tactical agent. Market CLOSED. Post-market tactical cycle logged. Awaiting next hourly strategist Tuesday 13:35Z.*
+<!-- Autonomous override applied at 2026-07-07T13:30Z due to CRITICAL event — tactical agent suspended buys, no protective sells authorized -->
+# Tactical Todo — Updated 2026-07-07 13:30Z (Tuesday 9:30 AM ET)
+*Updated by hourly strategist. Fresh directives for Tuesday Jul 7 regular session. AUTONOMOUS OVERRIDE active — see bottom for suspended lines.*
 
 ## Current State
-- **Regime:** offensive catch-up with elevated selectivity (60–90% target band)
-- **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo.
+- **Regime:** offensive catch-up with elevated selectivity (60–90% target band) — ON HOLD due to CRITICAL event
+- **Lock status:** HARD_LOCK LIFTED. Tactical agent may execute normal todo subject to override.
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5. RKLB fully exited.
-- **Account equity / cash / buying power:** $9,719.75 / $2,267.81 / $29,936.67
-- **Gross long exposure:** 76.67% | **Net exposure:** 76.67% | **Cash:** 23.3%
+- **Account equity / cash / buying power:** $9,620.63 / $2,267.81 / $29,659.14
+- **Gross long exposure:** ~76.4% | **Net exposure:** ~76.4% | **Cash:** ~23.6%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
-- **Market:** CLOSED at 20:00Z. Next session Tuesday Jul 7, 2026 13:30Z.
-- **Daily trade budget:** 2/3 used today (RKLB sell + QQQ buy). One additional fill allowed today without fresh hourly authorization.
-- **Event detector:** NONE at 19:35Z. Market calm.
+- **Market:** OPEN. CRITICAL event detected at 13:30Z.
+- **Daily trade budget:** 0/3 used today (Jul 7). Budget resets with new session.
+- **Event detector:** CRITICAL at 13:30Z. Broad market QQQ MAJOR, SOXX CRITICAL, XLK CRITICAL, SMH CRITICAL.
 
 ## HOLD Instructions — Active During Monday Jul 6 Close + Tuesday Jul 7
 
@@ -58,7 +59,7 @@
 
 ## BUY Triggers — Authorized For Tuesday Jul 7 Regular Session
 
-### HOOD — BUY 5 shares if price drops below $105.00
+### HOOD — BUY 5 shares if price drops below $105.00 — SUSPENDED — major event detected at 2026-07-07T13:30Z
 - **Trigger:** Limit BUY 5 shares @ $105.00 (day order, regular session only).
 - **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a –11.4% dip from current $118.51 and a test of prior resistance-turned-support. R/R = 2:1 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~11.0% of equity (under 15% cap).
 - **Entry:** $105.00 | **Stop:** $95.00 | **Target:** $125.00 | **R-multiple:** 2.0R

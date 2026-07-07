@@ -1,5 +1,5 @@
 # Hourly Macro Memory
-*Updated 2026-07-06 23:09Z (Monday 7:09 PM ET). Market CLOSED. Next session: Tuesday Jul 7, 2026 13:30Z.*
+*Updated 2026-07-07 13:30Z (Tuesday 9:30 AM ET). Market OPEN. CRITICAL event detected.*
 
 ## Tactical Cycle Execution — 2026-07-06 23:09Z (Monday 7:09 PM ET)
 - **Status:** Market CLOSED at 20:00Z. Event detector **NONE** at 21:22Z.
@@ -8,15 +8,24 @@
 - **Action taken:** No orders. Market closed. No post-close events.
 - **Tactical notes:** Awaiting next hourly strategist Tuesday 13:35Z for fresh directives. RKLB 24h cooldown expires 2026-07-07 17:43Z.
 
-## Hourly Cycle Summary — 2026-07-06 19:37Z
-- **Status:** Market OPEN. ~23 minutes to close.
-- **Repo integrity:** Clean. Only `memory/ledger.md` and `memory/tactical_last_prices.json` modified (expected tactical artifacts). No source divergence. Branch in sync with origin.
-- **Live broker refresh:** Equity $9,719.75 | Cash $2,267.81 | Long $7,451.94 | Gross 76.67% | Daytrade 0/3.
+## AUTONOMOUS OVERRIDE — Tactical Cycle 2026-07-07 13:30Z
+- **Event detector classification:** CRITICAL
+- **Broad market impact:** QQQ -1.35% (MAJOR), SOXX -5.19% (CRITICAL), XLK -2.29% (CRITICAL), SMH -4.46% (CRITICAL)
+- **Held positions severity:** AVGO MINOR (-1.82%), HOOD MINOR (-1.97%), QQQ OK (-1.35%), VOO OK (-0.27%)
+- **Hard stop check:** NONE BREACHED. QQQ $714.20 > $690.00 | VOO $689.46 > $660.00 | AVGO $370.25 > $365.00 | HOOD $115.53 > $95.00
+- **Action taken:** No protective sells executed. HOOD buy trigger suspended. Gross exposure maintained at ~76.4%.
+- **Reason:** Positions are above authorized hard stops and not individually flagged CRITICAL/MAJOR. Increasing exposure during CRITICAL event is prohibited.
+- **Next expected action:** Await hourly strategist reset at 13:35Z. Re-evaluate stops if semis/tech selling accelerates.
+
+## Hourly Cycle Summary — 2026-07-07 13:30Z
+- **Status:** Market OPEN. CRITICAL event detected at open.
+- **Repo integrity:** Clean. No source divergence. Branch in sync with origin.
+- **Live broker refresh:** Equity $9,620.63 | Cash $2,267.81 | Long $7,352.82 | Gross ~76.4% | Daytrade 0/3.
 - **Holdings confirmed:** QQQ 6, VOO 2, AVGO 3, HOOD 5. RKLB fully exited.
-- **Filled trades this cycle:** NONE since 17:43Z. Tactical windows at 18:40/18:50/19:10/19:20/19:30Z were all hold-only.
-- **Goal check:** Portfolio –2.80% since inception vs SPY +4.75% (752.13 vs 718.01 baseline). **FAILING both goals.** Trailing by ~7.55 pp.
-- **Regime:** Offensive catch-up. Target gross exposure 60–90%. Current 76.67% — within band.
-- **Dominant failure mode:** excessive turnover / friction + bad symbol selection. June churn legacy still drags.
+- **Filled trades this cycle:** NONE today (Jul 7).
+- **Goal check:** Portfolio ~–3.79% since inception vs SPY ~+4.46% (750.03 vs 718.01 baseline). **FAILING both goals.** Trailing by ~8.25 pp.
+- **Regime:** Offensive catch-up ON HOLD due to CRITICAL event. Target gross exposure 60–90%, but no new buys until hourly reset.
+- **Dominant failure mode:** excessive turnover / friction + bad symbol selection. June churn legacy still drags. Today's tech/semi selloff adds pressure.
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
