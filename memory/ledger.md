@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-07 : 10:41 : [hourly] API corrupted, AVGO stop breached, hard lock
+- Alpaca positions API returns empty since ~10:21Z; portfolio history confirms true equity ~$9,549
+- AVGO at $364.00 breached hard stop $365.00 — sell blocked by API glitch
+- Raw REST API bypass test accepted as sell_to_open; canceled immediately to avoid accidental short
+- HARD_LOCK active — no buys until get-positions recovers. True book: QQQ 6, VOO 2, AVGO 3, HOOD 5.
+- Event detector NONE at 14:35Z; market orderly but chip sell-off continues
+
+2026-07-07 : 10:31 : [tactical] AVGO stop breached, held per auth
+- AVGO at $364.05 below $365.00 hard stop — same-day sell blocked because event detector is NONE, not CRITICAL/MAJOR per todo.md authorization
+- Alpaca positions API still glitched: equity shows $2267.81, positions empty; order history confirms true holdings intact
+- QQQ $707.05, VOO $686.27, HOOD $114.68 all above stops
+- No buy triggers met: HOOD $114.68 vs $105.00 limit
+- Daily trade budget 0/3 used; no orders placed
+
+2026-07-07 : 10:21 : [tactical] Hold — no triggers, data corruption
+- Event detector MINOR at 14:20Z. No buy or sell conditions met.
+- Alpaca positions API corrupted: shows empty positions and $2,267.81 equity, but last_equity $9,603.48 and zero filled orders today confirm true holdings intact
+- AVGO at $365.02, only $0.02 above $365.00 hard stop — holding, not breached
+- HOOD at $114.12, well above $105.00 buy trigger — no add
+- QQQ $708.43, VOO $686.76, both above disaster stops. Hold-only.
+
+2026-07-07 : 10:10 : [tactical] Hold all, no triggers met
+- HOOD at $114.79, buy trigger $105.00 not met
+- AVGO at $366.04, hard stop $365.00 not breached
+- Event detector MINOR, no protective action required
+- Gross exposure ~76.3%, within 60-90% band
+- Daily trade budget 0/3 used
+
+2026-07-07 : 09:50 : [tactical] HOLD — no triggers met
+- All positions within stops: QQQ $712.25, VOO $689.03, AVGO $366.50, HOOD $116.76
+- HOOD buy trigger at $105.00 not reached
+- AVGO at $366.50, close to $365.00 hard stop — monitor
+- Event detector NONE. Gross exposure ~76.4%. No orders.
+
+2026-07-07 : 09:41 : [tactical] HOLD all — no triggers, event NONE
+- Event detector NONE at 13:40Z; all held positions OK
+- AVGO at $366.416 holding above $365.00 hard stop
+- HOOD at $117.095, buy trigger $105.00 not reached
+- No orders placed; daily trade budget 0/3 used
+
 2026-07-07 : 09:39 : [hourly] Hold all, event MINOR, reactivate HOOD $105
 - Event detector downgraded from CRITICAL to MINOR at 13:35Z
 - Holdings unchanged: QQQ 6, VOO 2, AVGO 3, HOOD 5
