@@ -2,6 +2,40 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-07 : 13:38 : [hourly] HOLD all, AVGO recovered, HOOD trigger active
+- Event detector NONE at 17:35Z
+- AVGO $372.28 recovered above $365.00 stop
+- HOOD $115.11, buy trigger $105.00 not reached
+- QQQ $713.12, stop $690.00 not breached
+- Zero filled orders today, 0/3 budget used
+
+2026-07-07 : 13:30 : [tactical] Hold all; no triggers met
+- Event detector NONE at 17:30Z
+- AVGO $371.37 above $365.00 stop
+- HOOD $115.15, buy trigger $105.00 not reached
+- QQQ $712.84, stop $690.00 not breached
+- Zero filled orders today, 0/3 budget used
+
+2026-07-07 : 13:20 : [tactical] Hold all; no triggers met
+- Event detector MINOR at 17:20Z; no autonomous action required
+- AVGO at $371.20 above $365.00 stop; hold
+- HOOD at $114.49 above $105.00 buy trigger; no action
+- QQQ at $712.60 above $690.00 stop; hold
+- 0 filled orders today; trade budget 0/3
+
+2026-07-07 : 13:10 : [tactical] Hold all; no triggers met
+- Event detector MINOR at 17:10Z. No autonomous action required.
+- AVGO $372.00 above $365.00 stop. HOOD $115.15 above $105.00 buy trigger.
+- QQQ $713.79 above $690.00 stop. VOO $688.68 above $660.00 stop.
+- Gross exposure 76.4%. Daily budget 0/3. No open orders.
+
+2026-07-07 : 12:50 : [tactical] Hold all, no triggers met
+- Event detector NONE at 16:50Z
+- AVGO $371.02 above $365.00 stop, no breach
+- HOOD $115.44, buy trigger $105.00 not met
+- QQQ $712.90, VOO $688.50, no stop breaches
+- 0/3 trades used, gross exposure 76.4%
+
 2026-07-07 : 12:41 : [hourly] API recovered, AVGO stop held, HARD_LOCK lifted
 
 2026-07-07 : 11:37 : [hourly] API still glitched, AVGO stop breached
