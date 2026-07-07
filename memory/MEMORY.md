@@ -1,3 +1,41 @@
+# Hourly Macro Memory — Post-Market Close
+*Updated 2026-07-07 20:31Z (Tuesday 4:31 PM ET). Market CLOSED. Next session: Wednesday Jul 8, 2026 13:30Z.*
+
+## End-of-Day State — Tuesday Jul 7
+- **Equity close:** $9,577.96 | **Cash:** $2,267.79 | **Long MV:** $7,310.17
+- **Gross exposure:** 76.3% | **Cash:** 23.7%
+- **Daytrade count:** 0/3 | **Pattern day trader:** false
+- **Zero filled orders today.** Canceled AVGO SELL limit @ $363.95 at 14:38Z (tactical agent placed and canceled within 18s; no fill).
+- **Event detector:** MINOR at 19:35Z (final in-hours reading). Broad market stable in final hour; semis weak on daily timeframe.
+
+## Closing Prices vs Stops
+| Symbol | Qty | Avg Entry | Close | Unrealized P&L | Unrealized % | Hard Stop | Distance to Stop |
+|---|---|---|---|---|---|---|---|
+| QQQ | 6 | $716.47 | $710.09 | –$38.30 | –0.89% | $690.00 | +$20.09 |
+| VOO | 2 | $676.46 | $687.01 | +$21.10 | +1.56% | $660.00 | +$27.01 |
+| AVGO | 3 | $371.95 | $371.00 | –$2.85 | –0.26% | $365.00 | +$6.00 |
+| HOOD | 5 | $101.50 | $112.61 | +$55.55 | +10.94% | $95.00 | +$17.61 |
+
+- **Portfolio heat at close:** ~$245 (2.56% of equity). Under 6% daily loss cap.
+- **AVGO hard stop:** $365.00. Closed at $371.00, $6.00 above stop. Price dipped below $365 intraday (~$364.05 at 10:31Z) but recovered.
+
+## Performance — Tuesday Jul 7 (Full Session)
+- **1D:** portfolio –1.21% ($9,695.40 → $9,577.96) vs SPY –0.50% ($751.28 → $747.49). Underperforming by ~0.71 pp.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **–4.22%** vs SPY **+4.11%** (SPY 747.49 vs baseline 718.01). **Trailing by ~8.33 pp.**
+- **Status:** **FAILING both goals.**
+- **Dominant failure mode:** excessive turnover / friction + bad symbol selection. Chip exposure (QQQ/AVGO) hurt by China domestic AI chip headline pressure.
+
+## Wednesday Preview
+- **Regime:** neutral. QQQ closed below 50D ($711.74) at $710.09. This is a technical concern but not yet a disaster. AVGO $6 above hard stop. HOOD still house money.
+- **No binary earnings events** in next 48 hours.
+- **Macro calendar:** Fed ECI Friday; June CPI next Tuesday. Low-conviction deployment until data clarity.
+- **China chip pressure** (DeepSeek AI chip, domestic budgets up) remains the dominant semi headwind. Do not add to chip exposure until stabilization.
+- **HOOD buy trigger $105.00** remains active for Wednesday.
+- **RKLB:** DO NOT RE-BUY regardless of cooldown.
+- **GOOG:** Re-evaluate if reclaims $370.00 on volume > 150% of 20-day average.
+
+---
+
 # Hourly Macro Memory
 *Updated 2026-07-07 19:35Z (Tuesday 3:35 PM ET). Market OPEN. Event detector MINOR.*
 
