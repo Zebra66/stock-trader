@@ -4,15 +4,15 @@ Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
 2026-07-08 : 13:38 : [hourly] Authorized GOOG 1-share add, Iran faded
 - Iran panic faded; SPY recovered from -0.69% to -0.27%, QQQ now +0.20%
-- Authorizing BUY 1 GOOG at limit 57.00 to deploy cash and diversify
+- Authorizing BUY 1 GOOG at limit $357.00 to deploy cash and diversify
 - Regime shifted from neutral to offensive catch-up; target 80-85% gross
-- Existing stops remain: QQQ 00, AVGO 70, HOOD 05
+- Existing stops remain: QQQ $700, AVGO $370, HOOD $105
 - No other buys authorized; HOOD and NVDA on conditional watchlist
 
 2026-07-08 : 13:30 : [tactical] No triggers; held all 4 positions
-- QQQ 10.72 > 00 stop
-- AVGO 92.46 > 70 stop
-- HOOD 11.66 > 05 stop
+- QQQ $710.72 > $700 stop
+- AVGO $392.46 > $370 stop
+- HOOD $111.66 > $105 stop
 - Exposure 76.4% within neutral band
 - No events detected
 
@@ -22,9 +22,9 @@ Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
 - Event detector NONE; no overrides
 
 2026-07-08 : 13:10 : [tactical] No action — all holds, no triggers
-- QQQ 08.78 above 00 stop
-- AVGO 94.01 above 70 stop
-- HOOD 10.80 above 05 stop
+- QQQ $708.78 above $700 stop
+- AVGO $394.01 above $370 stop
+- HOOD $110.80 above $105 stop
 - Exposure 76.5% in 70-80% band
 - Event detector: NONE
 
