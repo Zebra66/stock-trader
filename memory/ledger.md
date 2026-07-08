@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 12:39 : [hourly] Held all, AVGO deal powering alpha
+- Portfolio +0.27% today vs SPY -0.69%
+- AVGO +5.72% on Apple 0B chip deal
+- No trades; defensive stops refreshed
+- Iran ceasefire over, oil +7%, no new buys
+- QQQ 44.1%, AVGO 12.2%, VOO 14.2%, HOOD 5.7%
+
+2026-07-08 : 12:35 : [tactical] No action: stops far, no buys auth
+- QQQ 706.79 > 700 stop, AVGO 392.44 > 370 stop, HOOD 110.98 > 105 stop
+- Gross exposure 76.3% within 70-80% band, no new buys authorized
+- Event detector: NONE, all positions OK
+- Daytrade 0/3, no open orders, no conditions met
+
+2026-07-08 : 12:20 : [tactical] No action — all stops intact
+- QQQ 705.99 > 700 stop, AVGO 388.39 > 370 stop, HOOD 110.54 > 105 stop
+- Gross exposure 76.3%, within 70-80% band
+- Event detector MINOR; no override needed
+- No buy triggers met; no orders placed
+
+2026-07-08 : 12:10 : [tactical] No action — all stops above triggers
+- QQQ 04.24 > 00 stop — no trigger
+- AVGO 86.51 > 70 stop — no trigger
+- HOOD 10.65 > 05 stop — no trigger
+- Event detector: NONE, no override
+- Exposure 76.3%, within 70-80% band
+
+2026-07-08 : 11:50 : [tactical] No action: all holds, stops not hit
+- QQQ 02.37 vs stop 00 — no trigger
+- AVGO 84.88 vs stop 70 — no trigger
+- HOOD 09.66 vs trim 05 — no trigger
+- Gross exposure 76.3%, within 70-80% band
+- Event detector: NONE; no events detected
+
+2026-07-08 : 11:40 : [tactical] No triggers, held all 4 positions
+- QQQ 02.68 > 00 stop
+- AVGO 85.55 > 70 stop
+- HOOD 09.76 > 05 stop
+- Exposure 76.3%, within 70-80% band
+- Event detector: NONE, no override
+
 2026-07-08 : 11:37 : [hourly] Hold all, fixed event-detector bug
 - Equity ,552; gross 76.3% within neutral band
 - No trades since 10:42 hourly; stops intact
