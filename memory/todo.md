@@ -8,7 +8,7 @@
 - **Gross long exposure:** ~76.5% | **Net exposure:** ~76.5% | **Cash:** ~23.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** 1 GOOG buy limit $357.00 (day order, pending)
 - **Market:** OPEN until 16:00 ET. Next tactical runs: 13:40, 13:50, 14:10, 14:20, 14:30, 14:40, 14:50 ET.
 
 ## Position Instructions — Wed Jul 8 (:40, :50 Tactical Runs)
@@ -39,14 +39,13 @@
 - Do NOT add HOOD today. Hourly does NOT authorize new HOOD buys this cycle. Re-evaluation in next hourly.
 - **Anti-churn:** HOOD shares were bought June 30. Any sell today is NOT a daytrade.
 
-### GOOG — BUY 1 SHARE — LIMIT ORDER ONLY
-- Not held. Hourly **EXPLICITLY AUTHORIZES** 1-share add.
-- Rationale: high-quality AI/cloud name down on macro (Iran), not micro. 1Y +103%. Diversifies away from QQQ/semi concentration. Price at $356.93 (Alpaca) is within target dip zone.
-- **Order:** BUY 1 share GOOG with limit price **$357.00** (day order, regular hours only). Do NOT use market order.
-- **Illiquidity note:** GOOG TradeCount ~17, Volume ~803 in latest 10-min bar. Limit order mandatory.
-- **Anti-churn:** If GOOG is bought today, do NOT sell it today under any circumstances.
-- **Post-buy concentration check:** 1 share at $357 = 3.7% of equity. Well within 15% single-stock cap.
-- **Post-buy exposure check:** Gross exposure will rise to ~80.2% ($7,727 / $9,638), within the 80–85% offensive-catch-up band.
+### GOOG — ORDER PLACED — BUY 1 SHARE PENDING FILL — DO NOT ADD — DO NOT SELL TODAY
+- Not held. Hourly **EXPLICITLY AUTHORIZES** 1-share add. Order `dd4d999c` placed at 13:40 ET, limit $357.00, day order, pending_new.
+- Rationale: high-quality AI/cloud name down on macro (Iran), not micro. 1Y +103%. Diversifies away from QQQ/semi concentration. Price $356.905 at time of order, within target dip zone.
+- **Status:** Order pending. If it fills, GOOG becomes a held position with avg entry ~$357.
+- **Anti-churn:** If GOOG is bought (filled) today, do NOT sell it today under any circumstances.
+- **Post-fill concentration check:** 1 share at ~$357 = 3.7% of equity. Well within 15% single-stock cap.
+- **Post-fill exposure check:** Gross exposure will rise to ~80.2% ($7,724 / $9,635), within the 80–85% offensive-catch-up band.
 - **Earnings:** Estimated Jul 23 (~15 days). No binary event in next 48 hours.
 
 ### META — DO NOT BUY
@@ -91,7 +90,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - **VOO data glitch note:** Alpaca bar shows very low trades/vol. This is anomalous. VOO is among the most liquid ETFs globally. Do not treat VOO as illiquid.
 
 ## Today's Deployment Queue
-1. **BUY 1 GOOG** at limit $357.00 — highest priority. Execute now if price ≤ $357.00.
+1. ~~BUY 1 GOOG at limit $357.00~~ — **ORDER PLACED at 13:40 ET.** Monitor for fill.
 2. **No other buys authorized** for this cycle.
 3. **Conditional add queue (requires explicit hourly authorization):**
    - HOOD 1–2 shares if crypto stabilizes and price holds $112+ with volume.
@@ -103,6 +102,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - QQQ 6 (~44.2%), AVGO 3 (~12.2%), VOO 2 (~14.2%), HOOD 5 (~5.8%), GOOG 1 (~3.7%)
 - Cash: ~$1,911 (~19.8%)
 - Gross exposure: ~80.2%
+- **Pending order:** GOOG buy 1 limit $357.00 (day order).
 
 ## Next Hourly Preview — 14:35 PM ET (NOT AUTHORIZED YET)
 - Reassess GOOG fill and price action.
