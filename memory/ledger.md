@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 11:37 : [hourly] Hold all, fixed event-detector bug
+- Equity ,552; gross 76.3% within neutral band
+- No trades since 10:42 hourly; stops intact
+- Fixed event_detector.ts loadLastSnapshot async bug
+- Iran risk-off continues; AVGO +4.28% on Apple deal offsets QQQ/HOOD weakness
+- Off track: -4.48% vs SPY +3.19%; trailing by ~7.67 pp
+
+2026-07-08 : 11:30 : [tactical] No action; all stops intact
+- QQQ 01.84 > 00 stop, AVGO 85.75 > 70 stop, HOOD 09.72 > 05 stop
+- Gross exposure 76.2% within 70-80% neutral band
+- Event detector: NONE. No trades, no overrides.
+- Iran risk-off continues; holding all positions with defensive stops active.
+
+2026-07-08 : 11:20 : [tactical] HOLD all; no triggers hit
+- QQQ 703.38 > 700 stop, AVGO 386.77 > 370 stop, HOOD 110.22 > 105 stop
+- Exposure 76.3% within 70-80% band; no buys authorized
+- Event detector: NONE; no overrides applied
+- Daytrade count 0/3; no PDT concerns
+
+2026-07-08 : 11:10 : [tactical] No triggers hit, holding all positions
+- QQQ 05.09 > 00 stop, AVGO 89.30 > 70 stop, HOOD 10.30 > 05 stop
+- Gross exposure 76.3%, within 70-80% neutral band
+- No buys authorized, Iran risk-off blocker active
+- Event detector: NONE classification
+- Daytrades 0/3, no PDT concerns
+
+2026-07-08 : 10:50 : [tactical] Holding all positions, no triggers
+- QQQ 704.35 > 700 stop — no action
+- AVGO 385.01 > 370 stop — no action
+- HOOD 109.83 > 105 stop — no action
+- Gross exposure 76.3%, within 70-80% band
+- Event detector: NONE, no autonomous override
+
+2026-07-08 : 10:46 : [tactical] No action — all stops intact
+- QQQ 05.36 above 00 stop, AVGO 88.34 above 70 stop, HOOD 10.43 above 05 stop
+- Exposure 76.3% within 70-80% neutral band; no buys authorized
+- Event detector: NONE; no autonomous override applied
+- Daytrade count 0/3; no orders placed
+
 2026-07-08 : 10:45 : [hourly] Repo restored, Iran risk-off, hold all, set stops
 - Repo integrity breach resolved from mass staged deletions
 - Portfolio -4.19% vs SPY +3.42%; both goals failed
