@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-07-08 17:38Z (Wednesday 1:38 PM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~2.4 hours).*
+# Tactical Todo — Updated 2026-07-08 17:50Z (Wednesday 1:50 PM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~2.1 hours).*
 
 ## Current State
 - **Regime:** offensive catch-up (80–85% band)
@@ -8,7 +8,7 @@
 - **Gross long exposure:** ~76.5% | **Net exposure:** ~76.5% | **Cash:** ~23.5%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** 1 GOOG buy limit $357.00 (day order, pending)
+- **Open orders:** NONE
 - **Market:** OPEN until 16:00 ET. Next tactical runs: 13:40, 13:50, 14:10, 14:20, 14:30, 14:40, 14:50 ET.
 
 ## Position Instructions — Wed Jul 8 (:40, :50 Tactical Runs)
@@ -39,13 +39,13 @@
 - Do NOT add HOOD today. Hourly does NOT authorize new HOOD buys this cycle. Re-evaluation in next hourly.
 - **Anti-churn:** HOOD shares were bought June 30. Any sell today is NOT a daytrade.
 
-### GOOG — ORDER PLACED — BUY 1 SHARE PENDING FILL — DO NOT ADD — DO NOT SELL TODAY
-- Not held. Hourly **EXPLICITLY AUTHORIZES** 1-share add. Order `dd4d999c` placed at 13:40 ET, limit $357.00, day order, pending_new.
-- Rationale: high-quality AI/cloud name down on macro (Iran), not micro. 1Y +103%. Diversifies away from QQQ/semi concentration. Price $356.905 at time of order, within target dip zone.
-- **Status:** Order pending. If it fills, GOOG becomes a held position with avg entry ~$357.
-- **Anti-churn:** If GOOG is bought (filled) today, do NOT sell it today under any circumstances.
-- **Post-fill concentration check:** 1 share at ~$357 = 3.7% of equity. Well within 15% single-stock cap.
-- **Post-fill exposure check:** Gross exposure will rise to ~80.2% ($7,724 / $9,635), within the 80–85% offensive-catch-up band.
+### GOOG — HOLD 1 — DO NOT ADD — DO NOT SELL TODAY
+- **Filled:** Order `dd4d999c` filled at ~$356.77 during 13:40–13:50 tactical window. 1 share now held; avg entry ~$356.77.
+- Rationale: high-quality AI/cloud name down on macro (Iran), not micro. 1Y +103%. Diversifies away from QQQ/semi concentration.
+- Unrealized ~–0.07% from avg ~$356.77. Current price $356.555.
+- **Anti-churn:** GOOG bought today; do NOT sell it today under any circumstances.
+- **Concentration check:** 1 share at ~$357 = 3.7% of equity. Well within 15% single-stock cap.
+- **Exposure check:** Gross exposure now ~80.1% ($7,703 / $9,614), within the 80–85% offensive-catch-up band.
 - **Earnings:** Estimated Jul 23 (~15 days). No binary event in next 48 hours.
 
 ### META — DO NOT BUY
@@ -90,7 +90,7 @@ Do not place market orders for these; use limit orders only, or defer.
 - **VOO data glitch note:** Alpaca bar shows very low trades/vol. This is anomalous. VOO is among the most liquid ETFs globally. Do not treat VOO as illiquid.
 
 ## Today's Deployment Queue
-1. ~~BUY 1 GOOG at limit $357.00~~ — **ORDER PLACED at 13:40 ET.** Monitor for fill.
+1. ~~BUY 1 GOOG at limit $357.00~~ — **FILLED at ~$356.77 during 13:40–13:50 window.**
 2. **No other buys authorized** for this cycle.
 3. **Conditional add queue (requires explicit hourly authorization):**
    - HOOD 1–2 shares if crypto stabilizes and price holds $112+ with volume.
