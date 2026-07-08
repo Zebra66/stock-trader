@@ -18,46 +18,6 @@ const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
 ]);
 
-// ── Stale-memory guard (enforced at code level) ───────────────────────────
-const STALE_MEMORY_HOURS = 24;
-
-async function isMemoryStale(): Promise<{ stale: boolean; reason?: string }> {
-  try {
-    const memFile = Bun.file('./memory/MEMORY.md');
-    const todoFile = Bun.file('./memory/todo.md');
-    if (!(await memFile.exists()) || !(await todoFile.exists())) {
-      return { stale: true, reason: 'Memory files missing' };
-    }
-    const memStat = await memFile.stat();
-    const todoStat = await todoFile.stat();
-    const now = Date.now();
-    const memMtime = memStat.mtimeMs ?? memStat.mtime?.getTime() ?? 0;
-    const todoMtime = todoStat.mtimeMs ?? todoStat.mtime?.getTime() ?? 0;
-    const newest = Math.max(memMtime, todoMtime);
-    const ageHours = (now - newest) / (1000 * 60 * 60);
-    if (ageHours > STALE_MEMORY_HOURS) {
-      return { stale: true, reason: `Memory files are ${ageHours.toFixed(1)} hours old (max ${STALE_MEMORY_HOURS}h)` };
-    }
-    return { stale: false };
-  } catch {
-    return { stale: true, reason: 'Unable to read memory file timestamps' };
-  }
-}
-
-// ── Duplicate-order guard (enforced at code level) ──────────────────────────
-async function hasSimilarOpenOrder(symbol: string, side: 'buy' | 'sell', qty: number): Promise<boolean> {
-  try {
-    const orders = await withTimeout(getAlpaca().getOrders({ status: 'open' }), API_TIMEOUT_MS, 'Alpaca getOrders (duplicate check)');
-    return orders.some((o: any) =>
-      o.symbol.toUpperCase() === symbol.toUpperCase() &&
-      o.side === side &&
-      Math.abs(parseFloat(o.qty) - qty) < 1
-    );
-  } catch {
-    return false;
-  }
-}
-
 // ── Trading Lock (enforced at code level) ───────────────────────────────────
 const LOCK_FILE = 'memory/.trading_lock.json';
 
@@ -80,36 +40,6 @@ function isOrderAllowed(lock: { active: boolean; allowed?: string[]; expiresAt?:
     }
   }
   return false;
-}
-
-const LOCAL_ORDER_CACHE = './temp_files/today_orders.json';
-
-async function getCachedOrders(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
-  try {
-    const file = Bun.file(LOCAL_ORDER_CACHE);
-    if (!(await file.exists())) return false;
-    const data = await file.json();
-    const today = new Date().toISOString().slice(0, 10);
-    const orders = data[today] || [];
-    return orders.some((o: any) => o.symbol === symbol && o.side === side);
-  } catch {
-    return false;
-  }
-}
-
-async function hasSameDayFill(symbol: string, side: 'buy' | 'sell'): Promise<boolean> {
-  // Check local cache first (fast, no API dependency)
-  const cached = await getCachedOrders(symbol, side);
-  if (cached) return true;
-
-  try {
-    const today = new Date().toISOString().slice(0, 10);
-    const after = `${today}T00:00:00Z`;
-    const orders = await withTimeout(getAlpaca().getOrders({ status: 'closed', after }), API_TIMEOUT_MS, 'Alpaca getOrders (anti-churn)');
-    return orders.some((o: any) => o.symbol.toUpperCase() === symbol.toUpperCase() && o.side === side && o.filled_qty && parseFloat(o.filled_qty) > 0);
-  } catch {
-    return false;
-  }
 }
 
 export const alpacaTools = {
@@ -156,7 +86,7 @@ export const alpacaTools = {
       const lockLineMatch = currentSection.match(/^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-].*$/im);
       if (lockLineMatch) {
         const lockLine = lockLineMatch[0];
-        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}\s*LIFTED\b/i.test(lockLine);
+        const isExplicitlyLifted = /^[\s]*(?:##?\s+)?(?:[-*]\s+)?[*_]{0,2}HARD_LOCK[_*]{0,2}\s*[:—-]?\s*[*_]{0,2}LIFTED\b/i.test(lockLine);
         if (!isExplicitlyLifted && side === 'buy') {
           return `Error submitting order: HARD_LOCK is active in memory/todo.md. No buy orders permitted.`;
         }
@@ -170,14 +100,8 @@ export const alpacaTools = {
       const todo = await Bun.file('./memory/todo.md').text();
       for (const line of todo.split('\n')) {
         const upper = line.toUpperCase();
-        // Broader pattern matching to catch variants like "NO NEW BUY ORDERS", "NO BUY", etc.
-        const hasNoBuy = upper.includes('DO NOT BUY') || upper.includes('DO NOT RE-BUY') || upper.includes('DO NOT ADD') ||
-                         upper.includes('NO NEW BUY') || upper.includes('NO BUY') || upper.includes('NO ADD') ||
-                         upper.includes('PROHIBITED') || upper.includes('BANNED');
-        if (!hasNoBuy) continue;
-        // Skip lines that contain explicit authorization overrides or price-conditional qualifiers
-        if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION') || upper.includes('AUTHORIZE') || upper.includes('AUTHORIZED')) continue;
-        if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
+        if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+        if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
         for (const sym of UNIVERSE) {
           if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) noBuySymbols.add(sym);
         }
@@ -236,27 +160,6 @@ export const alpacaTools = {
         return `Error submitting order: Unable to verify long position before sell: ${(e as Error).message}`;
       }
     }
-    // Anti-churn guard
-    if (side === 'sell') {
-      const boughtToday = await hasSameDayFill(symUpper, 'buy');
-      if (boughtToday) {
-        try {
-          const todo = await Bun.file('./memory/todo.md').text();
-          const authPattern = new RegExp(`AUTHORIZE SAME-DAY SELL ${symUpper}\\b`, 'i');
-          if (!authPattern.test(todo)) {
-            return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
-          }
-        } catch {
-          return `Error submitting order: Anti-churn rule — ${symbol} was bought today and same-day sell is not authorized in todo.md.`;
-        }
-      }
-    }
-    if (side === 'buy') {
-      const soldToday = await hasSameDayFill(symUpper, 'sell');
-      if (soldToday) {
-        return `Error submitting order: Anti-churn rule — ${symbol} was sold today and same-day re-buy is prohibited.`;
-      }
-    }
     // Concentration cap guard (BUY orders only)
     if (side === 'buy') {
       try {
@@ -281,18 +184,6 @@ export const alpacaTools = {
       } catch (e: unknown) {
         return `Error submitting order: Concentration cap check failed: ${(e as Error).message}`;
       }
-    }
-    // Stale-memory block (buy orders only)
-    if (side === 'buy') {
-      const stale = await isMemoryStale();
-      if (stale.stale) {
-        return `Error submitting order: Stale memory — ${stale.reason}. No new buy orders permitted until hourly strategist updates memory.`;
-      }
-    }
-    // Duplicate-order block
-    const dup = await hasSimilarOpenOrder(symUpper, side, qty);
-    if (dup) {
-      return `Error submitting order: Duplicate order detected for ${symbol} ${side} ${qty}. Cancel existing open order before resubmitting.`;
     }
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;

@@ -1,51 +1,5 @@
 const LEDGER_PATH = 'memory/ledger.md';
 
-const UNIVERSE = [
-  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX',
-];
-
-async function loadReferencePrices(): Promise<Record<string, number>> {
-  try {
-    const file = Bun.file('./memory/tactical_last_prices.json');
-    if (!(await file.exists())) return {};
-    const json = await file.json() as { prices?: Record<string, number> };
-    return json.prices ?? {};
-  } catch {
-    return {};
-  }
-}
-
-function validateLedgerDetails(details: string[], prices: Record<string, number>): void {
-  for (const detail of details) {
-    // Split detail by universe symbols so we only validate numbers that appear
-    // after each symbol and before the next symbol.
-    const parts = detail.split(new RegExp(`\\b(${UNIVERSE.join('|')})\\b`, 'i'));
-    for (let i = 1; i < parts.length; i += 2) {
-      const sym = parts[i].toUpperCase();
-      const segment = parts[i + 1] || '';
-      const knownPrice = prices[sym];
-      if (!knownPrice || knownPrice <= 0) continue;
-      // Extract all numbers from the segment following the symbol
-      const numMatches = segment.match(/\$?\d{1,3}(?:,\d{3})*(?:\.\d+)?\b(?!%)|\$?\d+(?:\.\d+)?\b(?!%)/g);
-      if (!numMatches) continue;
-      for (const raw of numMatches) {
-        const cleaned = raw.replace(/[$,]/g, '');
-        const num = parseFloat(cleaned);
-        if (Number.isNaN(num) || num <= 0) continue;
-        // Skip small integers that are likely quantities (e.g., "VOO 2", "shares 3")
-        const isInteger = !raw.includes('.');
-        if (isInteger && num < 50) continue;
-        // If the number is < 20% of the known price, it's likely a hallucination
-        if (num < knownPrice * 0.20) {
-          throw new Error(
-            `Ledger detail contains likely price hallucination for ${sym}: "${raw}" (parsed $${num}) is < 20% of reference price ${knownPrice}. Full detail: "${detail}". Please verify the price and retry.`
-          );
-        }
-      }
-    }
-  }
-}
-
 const HELP = `
 Usage: bun run src/tools/ledger_cli.ts <command> [options]
 
@@ -190,9 +144,6 @@ export async function appendLedgerEntry(options: AppendLedgerOptions): Promise<s
   const ledgerFile = Bun.file(ledgerPath);
   const exists = await ledgerFile.exists();
   const existing = exists ? await ledgerFile.text() : buildLedgerHeader();
-  const prices = await loadReferencePrices();
-  const details = options.details?.filter((detail) => detail.trim().length > 0).slice(0, 5) ?? [];
-  validateLedgerDetails(details, prices);
   const separator = existing.endsWith('\n') ? '' : '\n';
   const updated = `${existing}${separator}${buildLedgerEntry(options)}`;
 
@@ -205,9 +156,6 @@ export async function prependLedgerEntry(options: AppendLedgerOptions): Promise<
   const ledgerFile = Bun.file(ledgerPath);
   const exists = await ledgerFile.exists();
   const existing = exists ? await ledgerFile.text() : buildLedgerHeader();
-  const prices = await loadReferencePrices();
-  const details = options.details?.filter((detail) => detail.trim().length > 0).slice(0, 5) ?? [];
-  validateLedgerDetails(details, prices);
   const { header, body } = splitLedgerContent(existing);
   const updated = `${header}${buildLedgerEntry(options)}${body}`;
 

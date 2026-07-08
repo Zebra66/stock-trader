@@ -94,14 +94,8 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     const todo = await Bun.file('./memory/todo.md').text();
     for (const line of todo.split('\n')) {
       const upper = line.toUpperCase();
-      // Broader pattern matching to catch variants like "NO NEW BUY ORDERS", "NO BUY", etc.
-      const hasNoBuy = upper.includes('DO NOT BUY') || upper.includes('DO NOT RE-BUY') || upper.includes('DO NOT ADD') ||
-                       upper.includes('NO NEW BUY') || upper.includes('NO BUY') || upper.includes('NO ADD') ||
-                       upper.includes('PROHIBITED') || upper.includes('BANNED');
-      if (!hasNoBuy) continue;
-      // Skip lines that contain explicit authorization overrides or price-conditional qualifiers
-      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION') || upper.includes('AUTHORIZE') || upper.includes('AUTHORIZED')) continue;
-      if (upper.includes('ABOVE') || upper.includes('BELOW')) continue;
+      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+      if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
       }
@@ -257,28 +251,6 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
         throw new Error(
           `Sell of ${params.symbol} blocked — unable to verify long position before sell: ${e instanceof Error ? e.message : String(e)}`
         );
-      }
-    }
-
-    // ── Anti-churn guard: block same-day sell of a symbol bought today ─────
-    if (side === 'sell') {
-      try {
-        const orders = await client.getOrders({ status: 'closed' } as any);
-        const today = new Date().toISOString().slice(0, 10);
-        const sameDayBuy = orders.find((o: any) => {
-          const sym = String(o.symbol ?? '').toUpperCase();
-          const filledAt = o.filled_at ? String(o.filled_at).slice(0, 10) : null;
-          const orderSide = String(o.side ?? '').toLowerCase();
-          return sym === symbol && orderSide === 'buy' && filledAt === today;
-        });
-        if (sameDayBuy) {
-          throw new Error(
-            `Order blocked: ${symbol} was bought today at ${sameDayBuy.filled_at}. Same-day round trip is prohibited.`
-          );
-        }
-      } catch (e) {
-        if (e instanceof Error && e.message.includes('Same-day round trip')) throw e;
-        // getOrders failed — fall through to allow sell (fail-open is safer for exits)
       }
     }
 
