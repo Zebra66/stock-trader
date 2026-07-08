@@ -1,34 +1,33 @@
-# Tactical Todo — Updated 2026-07-07 20:31Z (Tuesday 4:31 PM ET)
-*Updated by hourly strategist. Post-market close. Directives converted to Wednesday Jul 8 regular-session triggers.*
+# Tactical Todo — Updated 2026-07-08 13:35Z (Wednesday 9:35 AM ET)
+*Updated by hourly strategist. Market OPEN. Directives active for remainder of Wednesday Jul 8 regular session.*
 
-<!-- Autonomous override applied at 2026-07-08 13:30Z due to MAJOR event -->
-
-## Current State (End-of-Day / Authoritative)
-- **Regime:** neutral. QQQ below 50D ($711.74) at $710.09 close. Chip China pressure. Summer thin tape.
+## Current State (Authoritative)
+- **Regime:** neutral. QQQ below 50D ($711.74) at $707.90. Iran geopolitical risk (U.S. strikes, ceasefire "over," oil surging). Semis bouncing (SOXX +1.93%). Summer thin tape.
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5. RKLB fully exited.
-- **Account equity / cash:** $9,577.96 / $2,267.79
+- **Account equity / cash:** $9,579.42 / $2,267.79
 - **Gross long exposure:** 76.3% | **Net exposure:** 76.3% | **Cash:** 23.7%
 - **Daytrade count:** 0/3 (clean slate)
 - **Pattern day trader:** false
 - **Open orders:** NONE.
-- **Market:** CLOSED at 20:00Z. Next session Wednesday Jul 8, 2026 13:30Z (9:30 AM ET).
-- **Daily trade budget:** 0/3 used today (Jul 7). Budget resets to 0/3 for Wednesday Jul 8.
-- **Event detector:** MINOR at final in-hours reading (19:35Z). Broad market stable in final hour; semis weak on daily timeframe. No sector rotation.
-- **Zero filled orders today.** Canceled AVGO SELL limit @ $363.95 at 14:38Z (tactical agent placed and canceled within 18s; no fill).
+- **Market:** OPEN. Next hourly 14:35Z (10:35 AM ET).
+- **Daily trade budget:** 0/3 used today (Jul 8).
+- **Event detector:** CRITICAL at 13:35Z (SOXX +1.93% CRITICAL, SMH +1.63% CRITICAL). Held positions all OK. No sector rotation.
+- **Zero filled orders today.** No pre-hourly drift.
 
 ## HOLD Instructions — Active For Wednesday Jul 8 Regular Session
 
 ### QQQ — HOLD 6 shares
 - **Entry:** Avg $716.47 (5 filled Jun 29 morning; 1 filled Jul 6 at $721.94)
-- **Close:** $710.09 (–0.89% unrealized)
+- **Current:** $707.90 (–1.20% unrealized)
 - **Stop:** $690.00 (hard disaster stop). Do NOT sell below $690 unless event detector flags CRITICAL/MAJOR on QQQ specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $750.00. Do NOT trim or sell below $750 without fresh hourly authorization.
-- **Rationale:** Core growth. Closed below 50D SMA ($711.74). Watch $705–$710 support zone at Wednesday open. 44.4% of equity, near 45% cap.
+- **Rationale:** Core growth. 44.3% of equity, near 45% cap. Below 50D SMA ($711.74). Watch $705 support zone.
 - **AUTHORIZE SAME-DAY SELL QQQ if price breaches $690.00 AND event detector is CRITICAL/MAJOR**
+- **AUTHORIZE SAME-DAY SELL 1 QQQ share if price drops decisively below $705.00 on elevated volume** — to reduce concentration risk if 50D support fails. Do NOT full-exit remaining 5 shares into potential bounce.
 
 ### VOO — HOLD 2 shares
 - **Entry:** Avg $676.46 (filled Jun 29 morning)
-- **Close:** $687.01 (+1.56% unrealized)
+- **Current:** $683.65 (+1.06% unrealized)
 - **Stop:** $660.00 (hard disaster stop). Do NOT sell below $660 unless event detector flags CRITICAL/MAJOR on VOO specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $700.00. Do NOT trim or sell below $700 without fresh hourly authorization.
 - **Rationale:** S&P anchor. Breakeven is $676.46. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
@@ -37,42 +36,42 @@
 
 ### AVGO — HOLD 3 shares
 - **Entry:** Avg $371.95 (filled Jun 29 morning)
-- **Close:** $371.00 (–0.26% unrealized)
-- **Stop:** $365.00 (hard disaster stop). Closed $6.00 above stop. Stop remains active.
+- **Current:** $381.51 (+2.57% unrealized)
+- **Stop:** $365.00 (hard disaster stop). Price $16.51 above stop. Stop remains active.
 - **Profit target:** $420.00. Do NOT trim or sell below $420 without fresh hourly authorization.
-- **Rationale:** AI chip alpha. China chip pressure (DeepSeek AI chip, domestic budgets up) is medium-term headwind. Hold with tight stop. Breakeven is $371.95. Selling at breakeven or small loss is PROHIBITED without hourly authorization.
-- **Concentration:** 11.6% of equity. Under 15% cap.
+- **Rationale:** AI chip alpha. Semi bounce today (+2.57%) but NVDA valuation headline adds medium-term caution. Hold with tight stop. Breakeven is $371.95. Selling at breakeven or small profit is PROHIBITED without hourly authorization.
+- **Concentration:** 11.9% of equity. Under 15% cap.
 - **CRITICAL INSTRUCTION:** If price drops below $365.00 during regular session, IMMEDIATELY submit limit SELL 3 AVGO at best bid or limit $364.75. Do NOT wait for next hourly. Stop breach must be honored per trading best practices (cut at -1R).
 - **AUTHORIZE SAME-DAY SELL AVGO if price breaches $365.00 AND event detector is CRITICAL/MAJOR**
 
 ### HOOD — HOLD 5 shares (remaining after trim)
 - **Entry:** Avg $101.50 (filled Jun 30 14:46Z)
-- **Close:** $112.61 (+10.94% unrealized, +2.2R)
+- **Current:** $112.42 (+10.76% unrealized, +2.2R)
 - **Stop:** $95.00 (hard disaster stop). Do NOT sell below $95 unless event detector flags CRITICAL/MAJOR on HOOD specifically AND hourly note explicitly authorizes the exit.
 - **Profit target:** $125.00. Do NOT trim or sell below $125 without fresh hourly authorization.
 - **Rationale:** Momentum leader. Trim complete at +2R ($114.51). Remaining 5 shares are house money. Let winner run to $125 target.
 - **Concentration:** 5.9% of equity. Under 15% cap.
 - **AUTHORIZE SAME-DAY SELL HOOD if price breaches $95.00 AND event detector is CRITICAL/MAJOR**
 
-### Total Portfolio Heat (End-of-Day)
-- QQQ $158.82 + VOO $32.92 + AVGO $20.85 + HOOD $32.50 = $245.09 (2.56% of equity). Under 6% daily loss cap.
+### Total Portfolio Heat
+- QQQ $158.82 + VOO $32.92 + AVGO $20.85 + HOOD $32.50 = $245.09 (2.55% of equity). Under 6% daily loss cap.
 
 ## BUY Triggers — Active For Wednesday Jul 8 Regular Session
 
 ### HOOD — BUY 5 shares if price drops below $105.00
 - **Trigger:** Limit BUY 5 shares @ $105.00 (day order, regular session only).
-- **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a –6.8% dip from $112.61 close and a test of prior resistance-turned-support. R/R = 2.0 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~11.0% of equity (under 15% cap).
+- **Rationale:** Momentum leader with multiple positive catalysts. Pullback to $105 would be a –6.6% dip from $112.42 current and a test of prior resistance-turned-support. R/R = 2.0 ($20 gain to $125 target vs $10 risk to $95 stop). Concentration post-fill = ~10.9% of equity (under 15% cap).
 - **Entry:** $105.00 | **Stop:** $95.00 | **Target:** $125.00 | **R-multiple:** 2.0R
 - **Condition:** Only if event detector is NONE or MINOR at time of trigger. Do NOT buy if event detector is CRITICAL/MAJOR.
 - **Rank:** Priority #1 for fresh capital deployment.
-- **Note:** If HOOD trigger fills, gross exposure rises to ~81.2% (within 70–85% band). Cash remains ~$1,737. Acceptable.
+- **Note:** If HOOD trigger fills, gross exposure rises to ~81.5% (within 70–85% band). Cash remains ~$1,732. Acceptable.
 - **Daily trade budget check:** 0/3 used for Wednesday. If trigger fills, budget becomes 1/3.
-- **STATUS: SUSPENDED — major event detected at 2026-07-08 13:30Z.** HOOD classified MAJOR in event detector heldPositions (-2.84% from prior). Do NOT place buy order until hourly strategist reactivates after next hourly cycle.
+- **STATUS: REACTIVATED at 2026-07-08 13:35Z.** Tactical agent suspended at 13:30Z due to MAJOR event. Hourly strategist reactivates now because HOOD is classified OK by event detector and the initial gap-down has recovered. CRITICAL detector is from SOXX/SMH surge, not a crash in held positions.
 
 ## DO NOT ADD — Existing Positions
 
 ### QQQ — DO NOT ADD
-- **Reason:** At 44.4% of equity. Adding 1 share would push QQQ to ~52%, breaching 45% cap.
+- **Reason:** At 44.3% of equity. Adding 1 share would push QQQ to ~52%, breaching 45% cap.
 - **DO NOT BUY QQQ** without fresh hourly authorization.
 
 ### VOO — DO NOT ADD
@@ -80,21 +79,21 @@
 - **DO NOT BUY VOO** without fresh hourly authorization.
 
 ### AVGO — DO NOT ADD
-- **Reason:** At 11.6% of equity. China chip pressure is medium-term headwind. Chip sector under pressure. Do NOT add to a falling knife.
+- **Reason:** At 11.9% of equity. NVDA valuation headline adds chip-sector caution. Do NOT add to a falling knife even if bouncing today.
 - **DO NOT BUY AVGO** without fresh hourly authorization.
 
 ### RKLB — DO NOT RE-BUY
-- **Reason:** Exited Jul 6 at $93.25. 24-hour cooldown expired, but DO NOT RE-BUY regardless. Still crashing ($83.79, –26.27% 1M). No edge.
+- **Reason:** Exited Jul 6 at $93.25. 24-hour cooldown expired, but DO NOT RE-BUY regardless. Still crashing ($85.37, –28.83% 1M). No edge.
 - **DO NOT RE-BUY RKLB** on Wednesday or until fresh hourly note explicitly authorizes entry.
 
 ## DO NOT BUY — Symbols Blocked Wednesday Jul 8
 
 ### SOXX — DO NOT BUY
-- **Reason:** Overlaps QQQ/AVGO chip exposure. China chip pressure + Samsung earnings profit-taking. Sector under pressure.
+- **Reason:** Overlaps QQQ/AVGO chip exposure. China chip pressure + NVDA valuation headline. Sector under pressure despite today's bounce.
 - **DO NOT BUY SOXX** on Wednesday.
 
 ### NVDA — DO NOT BUY
-- **Reason:** Below 50-day MA ($209.62). Underperforming in chip sell-off. China pressure. No edge over AVGO. Falling knife risk.
+- **Reason:** Below 50-day MA. Underperforming in chip sell-off. NVDA valuation headline today. No edge over AVGO. Falling knife risk.
 - **DO NOT BUY NVDA** on Wednesday.
 
 ### META — DO NOT BUY
@@ -109,7 +108,7 @@
 - **DO NOT BUY EIS`, **DO NOT BUY SHLD`, **DO NOT BUY QTUM`, **DO NOT BUY ARKX** on Wednesday.
 
 ### GOOG — DO NOT BUY
-- **Reason:** Showing relative strength (+3.21% 1W) but still below 50D ($369.36). Volume very light. Needs 50D reclaim on volume > 150% of average AND headline clarity for conviction. Not authorized on Wednesday unless fresh hourly note.
+- **Reason:** Showing relative strength (+2.18% 1W) but still below 50D ($369.36). Volume very light. Needs 50D reclaim on volume > 150% of average AND headline clarity for conviction. Not authorized on Wednesday unless fresh hourly note.
 - **DO NOT BUY GOOG** on Wednesday.
 
 ## Hard Rules / No-Trade Conditions
@@ -144,22 +143,22 @@
 - **VOO:** Thin bar (TradeCount 2) but liquid underlying. Limit orders preferred.
 - **AVGO:** Acceptable but limit orders preferred.
 - **QQQ:** Acceptable but limit orders preferred.
-- **GOOG:** Alpaca bar shows anomalously low TradeCount/Volume (62 trades, 1786 vol). Do NOT use Alpaca bar volume for GOOG liquidity assessment. Underlying is liquid; limit orders preferred.
+- **GOOG:** Alpaca bar shows anomalously low TradeCount/Volume. Do NOT use Alpaca bar volume for GOOG liquidity assessment. Underlying is liquid; limit orders preferred.
 
-## Current Book (End-of-Day)
+## Current Book
 - **Open orders (pending fill):** NONE.
-- **Filled positions today (Jul 7):** NONE.
+- **Filled positions today (Jul 8):** NONE.
 - Cash: $2,267.79 (23.7%)
 - Gross exposure: 76.3%
 
-## Next Hourly — Wednesday Jul 8 13:35Z (9:35 AM ET)
+## Next Hourly — Wednesday Jul 8 14:35Z (10:35 AM ET)
 - HOLD QQQ, VOO, AVGO, HOOD.
 - **If AVGO drops below $365.00:** SELL 3 AVGO immediately via limit order. Do NOT wait for next hourly.
-- **HOOD buy trigger at $105.00 remains ACTIVE for Wednesday.**
+- **HOOD buy trigger at $105.00 ACTIVE** — but only if event detector is NONE or MINOR at time of trigger.
 - **RKLB buy trigger remains DEACTIVATED.** DO NOT RE-BUY.
 - No other buy orders authorized without fresh hourly note.
-- Event detector expected at next tactical windows. If CRITICAL/MAJOR downward, evaluate protective sells at hard stops.
-- **Watch AVGO $365.** Stop active. China chip pressure = elevated risk of breach at open.
+- Event detector expected at next tactical windows. If CRITICAL/MAJOR downward on held positions, evaluate protective sells at hard stops.
+- **Watch AVGO $365.** Stop active. NVDA valuation headline = elevated sentiment risk.
 - **Watch HOOD $125.** Let remaining winner run to profit target.
-- **Watch QQQ $705–$710.** 50D support zone at $711.74. Closed below 50D at $710.09. If it breaks decisively below $705 on volume at Wednesday open, reassess core allocation (potential trim of 1 share to reduce concentration risk, but do not full-exit into potential bounce).
-- **Deploy cash selectively.** No forced deployment. Wait for volume-confirmed setups.
+- **Watch QQQ $705.** 50D support zone at $711.74. Price below 50D at $707.90. If it breaks decisively below $705 on volume, tactical agent may sell 1 QQQ share to reduce concentration.
+- **Deploy cash selectively.** No forced deployment. Wait for volume-confirmed setups after geopolitical clarity.
