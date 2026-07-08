@@ -129,7 +129,8 @@ When the detector reports CRITICAL or MAJOR, stale todo conditions may be danger
   `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "<TL;DR (60 chars max)>" --detail "<detail>" [--detail "<detail>" ...]`
 - The TL;DR must be under 60 characters and communicate the key outcome (trade, hold, or override)
 - Add up to 5 detail bullets: what happened, why, and any unresolved items
-- Example: `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "Bought 1 SOXX breakout" --detail "Trigger 196.50 cleared at 197.10" --detail "One order, no PDT concerns"`
+- **CRITICAL — Shell escaping:** The `ledger_cli.ts` is invoked via `bun run`, which passes arguments through bash. Bash interprets `$` as variable expansion (e.g., `$357` becomes `57` because `$3` expands to empty). **Always use single quotes around detail strings that contain dollar amounts** (e.g., `--detail 'Bought GOOG at $357.00'`) or escape dollar signs as `\$`.
+- Example (safe): `bun run src/tools/ledger_cli.ts prepend --mode tactical --tldr "Bought 1 SOXX breakout" --detail 'Trigger $196.50 cleared at $197.10' --detail "One order, no PDT concerns"`
 - **This step applies even in the NO_ACTION shortcut below** — the ledger entry is cheap and captures the "no decision" signal.
 
 ### Step 7 — Update state and commit (applies to both modes)

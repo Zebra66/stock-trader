@@ -148,3 +148,4 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Event detector state file needs valid `priorTimestamp`.** Confirmed working.
 - **Ledger must be updated every cycle.** Confirmed working.
 - **Geopolitical headlines can reverse quickly.** Iran ceasefire "over" caused morning risk-off, but tape recovered by afternoon. React to price action, not headlines alone.
+- **Ledger CLI shell escaping bug:** `bun run src/tools/ledger_cli.ts ... --detail "$357"` corrupts prices because bash expands `$3` to empty, leaving `57`. **Always use single quotes** around detail strings with dollar amounts: `--detail 'BUY at $357.00'`. Fixed in prompts/hourly.txt and prompts/tactical.txt this cycle.
