@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 09:32 : [tactical] MAJOR event; no sells; holds
+- Event detector MAJOR at 13:30Z; GLD -1.06%, HOOD -2.84% from prior
+- No hard stops breached; QQQ $706.00, AVGO $377.43, VOO $683.60, HOOD $109.79
+- No protective sells; defaulted to inaction per guardrails
+- HOOD $105.00 buy trigger suspended due to MAJOR event
+- Daily trade budget 0/3; no open orders
+
 2026-07-07 : 18:29 : [hourly] Post-market close, no trades, EOD state recorded
 - Equity $9,577.96, cash $2,267.79, gross 76.3%
 - QQQ $710.09, AVGO $371.00, HOOD $112.61, VOO $687.01

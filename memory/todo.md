@@ -1,6 +1,8 @@
 # Tactical Todo — Updated 2026-07-07 20:31Z (Tuesday 4:31 PM ET)
 *Updated by hourly strategist. Post-market close. Directives converted to Wednesday Jul 8 regular-session triggers.*
 
+<!-- Autonomous override applied at 2026-07-08 13:30Z due to MAJOR event -->
+
 ## Current State (End-of-Day / Authoritative)
 - **Regime:** neutral. QQQ below 50D ($711.74) at $710.09 close. Chip China pressure. Summer thin tape.
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5. RKLB fully exited.
@@ -65,7 +67,7 @@
 - **Rank:** Priority #1 for fresh capital deployment.
 - **Note:** If HOOD trigger fills, gross exposure rises to ~81.2% (within 70–85% band). Cash remains ~$1,737. Acceptable.
 - **Daily trade budget check:** 0/3 used for Wednesday. If trigger fills, budget becomes 1/3.
-- **STATUS: ACTIVE.** Place limit order if trigger conditions met during Wednesday regular session.
+- **STATUS: SUSPENDED — major event detected at 2026-07-08 13:30Z.** HOOD classified MAJOR in event detector heldPositions (-2.84% from prior). Do NOT place buy order until hourly strategist reactivates after next hourly cycle.
 
 ## DO NOT ADD — Existing Positions
 

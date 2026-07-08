@@ -148,3 +148,14 @@
 - **Tactical agent note:** Canceled AVGO SELL limit @ $363.95 at 14:38Z (sell_to_open intent, canceled within 18s). No fill, no breach. Monitor for recurrence.
 - **Event detector:** `priorTimestamp` bug persists but does not affect classification. Current classification MINOR.
 - **Standing learnings:** See `memory/standing_learnings.md`.
+
+---
+
+## AUTONOMOUS OVERRIDE — Tactical 2026-07-08 13:30Z
+- **Classification:** MAJOR (event detector at market open)
+- **Trigger:** GLD -1.06% (MAJOR), XLK -0.52% (MINOR), HOOD -2.84% (MAJOR in heldPositions)
+- **Action taken:** NO PROTECTIVE SELLS executed. All hard stops intact: QQQ $706.00 > $690, AVGO $377.43 > $365, VOO $683.60 > $660, HOOD $109.79 > $95.00. Defaulted to inaction per Event Response Mode guardrail ("unsure whether override is safe → default to inaction").
+- **Buy trigger suspended:** HOOD $105.00 limit buy SUSPENDED due to HOOD MAJOR classification. Hourly strategist must reactivate.
+- **Exposure:** Gross 76.3%, cash 23.7%. No change.
+- **Daytrade count:** 0/3 (clean slate).
+- **Next expected action:** Wait for next hourly cycle at 14:35Z (10:35 AM ET) to reassess after market develops.
