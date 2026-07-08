@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 14:37 : [hourly] Held all, GOOG filled, no new adds
+- GOOG buy limit filled at ~$356.77 during 13:40 window
+- Gross exposure 80.1%, within 80-85% offensive band
+- No new discretionary buys authorized this cycle
+- Iran headlines absorbed; SPY -0.43%, tape orderly
+- AVGO +4.95% on Apple deal; QQQ flat, stabilizing
+
+2026-07-08 : 14:30 : [tactical] No action — all stops intact
+- QQQ 09 > 00 stop
+- AVGO 89 > 70 stop
+- HOOD 12 > 05 stop
+- GOOG held, do not sell today
+- Exposure 80.1%, no buys authorized
+
+2026-07-08 : 14:20 : [tactical] Hold all, no triggers breached
+- QQQ $709.87 > $700 stop, AVGO $389.88 > $370 stop, HOOD $111.76 > $105 stop
+- Gross exposure ~80.1%, within offensive band
+- GOOG filled earlier; no new buys authorized this cycle
+- Event detector: NONE. Market orderly.
+
+2026-07-08 : 14:10 : [tactical] No trades, all holds intact
+- QQQ $709.90 > $700 stop
+- AVGO $390.22 > $370 stop
+- HOOD $111.91 > $105 stop
+- GOOG filled earlier; no new buys authorized
+- Exposure 80.1%, regime offensive catch-up
+
 2026-07-08 : 13:50 : [tactical] GOOG filled, no new action
 - GOOG limit order dd4d999c filled at ~$356.77
 - Gross exposure now ~80.1%, within 80-85% band
