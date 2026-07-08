@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 13:38 : [hourly] Authorized GOOG 1-share add, Iran faded
+- Iran panic faded; SPY recovered from -0.69% to -0.27%, QQQ now +0.20%
+- Authorizing BUY 1 GOOG at limit 57.00 to deploy cash and diversify
+- Regime shifted from neutral to offensive catch-up; target 80-85% gross
+- Existing stops remain: QQQ 00, AVGO 70, HOOD 05
+- No other buys authorized; HOOD and NVDA on conditional watchlist
+
+2026-07-08 : 13:30 : [tactical] No triggers; held all 4 positions
+- QQQ 10.72 > 00 stop
+- AVGO 92.46 > 70 stop
+- HOOD 11.66 > 05 stop
+- Exposure 76.4% within neutral band
+- No events detected
+
+2026-07-08 : 13:20 : [tactical] No triggers; held all 4 positions
+- QQQ 709.18 > 700 stop; AVGO 393.04 > 370 stop; HOOD 110.83 > 105 stop
+- Gross exposure 76.4%; no buys authorized
+- Event detector NONE; no overrides
+
+2026-07-08 : 13:10 : [tactical] No action — all holds, no triggers
+- QQQ 08.78 above 00 stop
+- AVGO 94.01 above 70 stop
+- HOOD 10.80 above 05 stop
+- Exposure 76.5% in 70-80% band
+- Event detector: NONE
+
+2026-07-08 : 12:50 : [tactical] No action; all stops intact
+- QQQ 08.42 > 00 stop
+- AVGO 93.45 > 70 stop
+- HOOD 11.14 > 05 stop
+- Exposure 76.4% in 70-80% band
+- Event detector: MINOR, no autonomous action
+
+2026-07-08 : 12:40 : [tactical] No triggers met, held all positions
+- QQQ 07.20 above 00 stop, no sell
+- AVGO 91.84 above 70 stop, no sell
+- HOOD 10.46 above 05 stop, no sell
+- No buys authorized, gross exposure 76.4% within band
+- Event detector classification: NONE, no override
+
 2026-07-08 : 12:39 : [hourly] Held all, AVGO deal powering alpha
 - Portfolio +0.27% today vs SPY -0.69%
 - AVGO +5.72% on Apple 0B chip deal
