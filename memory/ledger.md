@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-08 : 10:45 : [hourly] Repo restored, Iran risk-off, hold all, set stops
+- Repo integrity breach resolved from mass staged deletions
+- Portfolio -4.19% vs SPY +3.42%; both goals failed
+- Iran ceasefire over = modest risk-off; AVGO +4.5% on Apple deal
+- No new buys; neutral 70-80% band; defensive stops set
+- Ledger not updated since May 29; investigate gap
+
+2026-07-08 : 10:41 : [tactical] Stale todo, no trades possible
+- Todo from 2026-05-29, live book 2026-07-08
+- Holdings mismatch: no GOOG/SOXX, added HOOD 5, AVGO 3
+- No valid hourly authorization for current positions
+- AVGO below stale $400 stop but entry/position changed
+- Event detector NONE, market normal
+
 2026-05-29 : 15:40 : [hourly] Held all, flat into weekend close
 - No trades; AVGO recovered to +2.96% today (+0.76% blended)
 - GOOG -1.81% today, support 75-380 holding
