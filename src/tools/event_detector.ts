@@ -65,7 +65,7 @@ function classifyPosition(pctChange: number): EventReport['heldPositions'][0]['s
 
 function loadLastSnapshot(): LastSnapshot | null {
   try {
-    const raw = Bun.file(SNAPSHOT_PATH);
+    const raw = Bun.file(SNAPSHOT_PATH).text();
     return JSON.parse(raw) as LastSnapshot;
   } catch {
     return null;

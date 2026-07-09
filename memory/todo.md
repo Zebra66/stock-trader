@@ -1,63 +1,75 @@
-# Tactical Todo — Updated 2026-05-29 19:35Z (Friday 3:35 PM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~25 mins).*
+# Tactical Todo — Updated 2026-07-09 14:46Z (Thursday 10:46 AM ET)
+*HARD_LOCK LIFTED. Execute authorized orders only. Market open until 16:00 ET (~5h 14m).*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, GOOG 3, VOO 2, SOXX 2, AVGO 2
-- **Account equity / cash / buying power:** ~$10,202 / ~$1,226 / ~$11,428
-- **Gross long exposure:** ~87.98% | **Net exposure:** ~87.98% | **Cash:** ~12.0%
+- **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2
+- **Account equity / cash / buying power:** ~$9,711 / ~$2,260 / ~$11,971
+- **Gross long exposure:** ~76.7% | **Net exposure:** ~76.7% | **Cash:** ~23.3%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. Next open Monday June 1, 09:30 ET.
+- **Open orders:** SOXX 1 share limit $589.50 (buy), HOOD 2 shares limit $114.50 (buy) — placed 14:48Z
+- **Market:** OPEN until 16:00 ET.
 
-## Position Instructions — Fri May 29 (:40, :50 Tactical Runs)
+## Position Instructions — Thu Jul 9 (:50 Tactical Run, and next runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~43.4%, within 45% cap. Adding 1 share would breach cap.
-- Intraday +0.39% (Alpaca). Core liquid growth. Let run into close.
+- Weight ~44.4%, within 45% cap. Adding 1 share would breach cap.
+- Unrealized +0.34% from avg $716.47. Today +1.05%.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $700.00 with limit $699.50. Rationale: trim core on breakdown, keep 5 shares as anchor.
+- Do NOT sell the remaining 5 shares unless hourly note explicitly authorizes.
 
-### GOOG — HOLD 3 — DO NOT ADD
-- Weight ~11.2%, within 15% cap.
-- Unrealized –3.51% from avg $392.92. Today –1.81%. Support $375–$380 holding at $379.12.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES for Monday):** SELL 1 share if price drops below $375.00 with limit $374.50. Rationale: protect capital on breakdown below intraday support.
-- Do NOT sell GOOG for any other reason today.
+### AVGO — HOLD 3 — DO NOT ADD — DO NOT SELL TODAY
+- Position avg $371.95. Current price ~$393.52 (unrealized +5.80%). Today +1.24%.
+- **ANTI-CHURN:** These 3 shares were bought on 2026-06-29. They are NOT same-day buys. However, DO NOT sell AVGO today unless stop is breached.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 3 AVGO shares if price drops below $385.00 with limit $384.50. Rationale: protect +5.8% unrealized gains.
+- **Concentration blocker:** Adding 1 share would cost ~$394, pushing AVGO to ~$1,575 = 16.2% of equity, breaching 15% single-stock cap. DO NOT ADD AVGO.
+
+### HOOD — HOLD 5 — DO NOT SELL TODAY — CONDITIONAL ADD AUTHORIZED
+- Position avg $101.50. Current price ~$115.57 (unrealized +13.86%). Today +1.80%.
+- Best performer in book. Trump/crypto exchange momentum intact.
+- **Conditional add (HOUR EXPLICITLY AUTHORIZES):** BUY 2 shares at limit $114.50 if the price drops to $114.50 or below. Rationale: add to winner on pullback, not chase. If price never hits $114.50, DO NOT buy.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 5 HOOD shares if price drops below $105.00 with limit $104.50. Rationale: protect winner from deep drawdown.
+- Do NOT sell HOOD for any other reason today.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
-- Weight ~13.7%, within 20% non-QQQ ETF cap. Adding 1 share would breach ~20.4% cap.
-- Broad-market anchor. No action required.
+- Weight ~14.2%, within 20% non-QQQ ETF cap.
+- Unrealized +1.66% from avg $676.46. Today +0.36%.
+- **Concentration blocker:** Adding 1 share would cost ~$688, pushing VOO to ~$2,063 = 21.2% of equity, breaching 20% non-QQQ ETF cap. DO NOT ADD VOO.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 2 VOO shares if price drops below $670.00 with limit $669.50. Rationale: protect anchor on broad-market breakdown.
 
-### SOXX — HOLD 2 — DO NOT ADD
-- Weight ~11.1%, within 20% non-QQQ ETF cap.
-- Unrealized +3.11% from avg $550.97. Today –0.24%.
-- **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $540.00 with limit $539.50. Rationale: protect capital on deeper pullback after parabolic run. If triggered, hold remaining 1 share as core.
-- Do NOT add SOXX today. Hourly does NOT authorize new SOXX buys this cycle.
+### SOXX — NEW POSITION — BUY 1 SHARE AUTHORIZED
+- Current price ~$589.18. Thin liquidity (11 trades, 400 vol in latest bar).
+- **BUY (HOUR EXPLICITLY AUTHORIZES):** BUY 1 share at limit $589.50. Rationale: deploy cash into strongest sector (semis), diversify chip exposure beyond AVGO. Use limit order only due to thin liquidity.
+- **Anti-churn:** If this buy fills today, DO NOT sell SOXX today under any circumstances.
+- **Defensive stop (for future sessions):** SELL if price drops below $540.00 with limit $539.50.
 
-### AVGO — HOLD 2 — DO NOT ADD — DO NOT SELL TODAY
-- Position opened at $427.37; 2nd share filled at $444.47. Blended avg $435.92. Current price ~$439.22 (unrealized +0.76% blended). Today +2.96% on $36B Anthropic AI chip debt deal and $1T club headlines.
-- Pre-earnings catalyst (earnings June 3, next Wednesday). Strong fundamental momentum.
-- **ANTI-CHURN CRITICAL:** AVGO 2nd share was bought TODAY at 9:56 AM ET. DO NOT SELL AVGO TODAY under any circumstances. Same-day round trip is prohibited.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES for future sessions):** SELL all AVGO shares if price drops below $400.00 with limit $399.50. Rationale: pre-earnings technical breakdown.
-- Do NOT add AVGO today.
+### GOOG — DO NOT BUY — DO NOT RE-BUY
+- Fully exited July 9 at $348.97. Realized loss ~$7.80.
+- **24-HOUR COOLDOWN:** Do NOT buy GOOG within 24 hours of July 9 10:23 AM ET sale (i.e., not before July 10 10:23 AM ET).
+- **Earnings risk:** GOOG reports ~Jul 23. Q2 bill risk. Hourly explicitly bans re-entry until post-earnings or fresh hourly authorization.
+- `bannedSymbols` does NOT currently include GOOG, but this todo.md line is policy-enforced by the no-buy parser.
 
-### NVDA — DO NOT BUY — DO NOT RE-BUY
-- Fully exited May 27. 24-hour cooldown expired, but hourly explicitly does NOT authorize re-entry today or over the weekend.
-- Re-entry deferred to future hourly authorization. Focus on AVGO/SOXX chip exposure.
+### NVDA — DO NOT BUY — WATCH ONLY
+- Re-entry deferred. Lagging semis; potential catch-up if rotation broadens.
+- **Conditional add (HOUR EXPLICITLY AUTHORIZES for future sessions):** BUY 2 shares at limit $198.00 if price drops to $198.00 or below. Not authorized for this cycle.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
-### RKLB / HOOD / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
-- No edge, weak relative trends, parabolic chase risk, or thin liquidity.
-- Exception: HOOD has momentum (+22.04% 1W) but no clear edge and high churn risk. Hourly explicitly does NOT authorize a buy.
+### RKLB — DO NOT BUY
+- Space sector damaged. Sold July 6 at $93.25, now ~$83.59. No re-entry planned.
+
+### QTUM / SHLD / EIS / ARKX / GLD — DO NOT BUY
+- Thin liquidity, weak relative trends, parabolic chase risk, or no clear catalyst.
 
 ## Hard Rules / No-Trade Conditions
-- **No discretionary buys this cycle or into the close.** Gross exposure is 87.98%; adding any share pushes above 90% upper bound.
-- **No same-day round trips.** If a symbol was bought today, do NOT sell it today unless hourly note explicitly authorizes.
-  - AVGO add filled today at 9:56 AM ET — DO NOT SELL AVGO today under any circumstances.
+- **No discretionary sells today** except stop-loss breaches explicitly authorized above.
+- **No same-day round trips.** If SOXX or HOOD add fills today, DO NOT sell them today.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
+- **If open orders exist from prior cycle, do NOT place duplicate orders.** Verify with `get-orders --status open`.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -76,22 +88,17 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **No new buys authorized** for this cycle or into the close. Exposure band is 80–90%; current 87.98%.
-2. **Conditional add queue for Monday (requires explicit hourly authorization):**
-   - SOXX if pullback to $560 or below.
-   - AVGO if pullback to $425 or below.
-   - GOOG only if it reclaims $385 with volume — but DO NOT average down.
-   - NVDA if it reclaims $220 with volume and chip rotation broadens.
+1. **SOXX:** BUY 1 share at limit $589.50. Highest priority — deploy cash into strongest sector.
+2. **HOOD:** BUY 2 shares at limit $114.50 on pullback. Second priority — add to best performer.
+3. **No other buys authorized** for this cycle.
 
-## Expected Book Into Close
-- QQQ 6 (~43.4%), GOOG 3 (~11.2%), VOO 2 (~13.7%), SOXX 2 (~11.1%), AVGO 2 (~8.6%)
-- Cash: ~$1,226 (~12.0%)
-- Gross exposure: ~87.98%
+## Expected Book After Fills
+- QQQ 6 (~44.4%), AVGO 3 (~12.2%), HOOD 5–7 (~6.0–8.3%), VOO 2 (~14.2%), SOXX 1 (~6.1%)
+- Cash: ~$1,430–$1,660 (~14.8–17.1%)
+- Gross exposure: ~82.9–85.2%
 
-## Next Hourly Preview — Monday June 1, 9:35 AM ET (NOT AUTHORIZED YET)
-- Reassess GOOG support ($375–$380) after weekend Iran-deal headlines.
-- Monitor AVGO momentum into earnings (June 3).
-- Evaluate chip-sector breadth (SOXX vs NVDA vs AVGO).
-- Investigate event detector `priorTimestamp: null` bug and anti-churn code enforcement gap.
-- If GOOG breaks $375 and stop triggers, evaluate rotation of freed cash into SOXX/AVGO on pullback.
-
+## Next Hourly Preview — 11:35 AM ET
+- Monitor SOXX fill and price action.
+- Reassess HOOD pullback trigger if $114.50 not hit.
+- Verify event detector snapshot is persisting correctly (bug fixed this cycle).
+- If no fills by 11:35, evaluate whether to raise limit prices or keep patient.
