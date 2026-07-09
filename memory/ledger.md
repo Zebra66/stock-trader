@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-09 : 09:37 : [hourly] Event lift, AVGO stop up, HOOD add on dip
+- Event detector downgraded from CRITICAL to NONE at open
+- AVGO stop raised to $385 to protect +8% unrealized gains
+- GOOG DO NOT ADD ahead of Jul 23 earnings / Q2 bill risk
+- HOOD conditional add 1 share at limit $112.50 on pullback only
+- Portfolio -2.76% vs SPY +4.15%; gap narrowed to ~6.9 pp
+
 2026-07-09 : 09:32 : [tactical] CRITICAL event: no action needed
 - Semiconductor melt-up at open: SOXX +5.5%, XLK +2.1%, SMH +4.1%, QQQ +1.2%
 - All held positions favorable; no stop-losses breached
