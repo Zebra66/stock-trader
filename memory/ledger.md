@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-09 : 13:38 : [hourly] Held all, kept open limits, no action
+- No fills on HOOD $114.50 or NVDA $198.50 limit orders
+- Gross exposure 82.9% within offensive 80-90% band
+- Semis rebounding; AVGO +8.8% unrealized, HOOD +14.7%
+- Portfolio +1.42% today vs SPY +0.80%
+- No new trades; patience is the edge this cycle
+
+2026-07-09 : 13:30 : [tactical] HOOD/NVDA limits unhit, no action
+- HOOD at 116.87, limit 114.50 not reached
+- NVDA at 202.84, limit 198.50 not reached
+- All stop-losses well above current prices
+- Event detector: NONE, no protective action needed
+
+2026-07-09 : 13:20 : [tactical] No action — all positions within bands
+- No stop-losses breached; QQQ 24, AVGO 04, HOOD 17, VOO 91, SOXX 92
+- HOOD limit 14.50 and NVDA limit 98.50 remain open, un-filled
+- Event detector NONE; gross exposure ~83%; daytrade 0/3
+- Market positive across all holdings; no triggers met
+
+2026-07-09 : 13:10 : [tactical] No action: all stops safe
+- NVDA 02.82 above 98.50 limit, no fill
+- HOOD 16.56 above 14.50 limit, no fill
+- All stop-losses well above triggers: AVGO 03, QQQ 23, HOOD 17, VOO 90, SOXX 91
+- Event detector: NONE. Gross 82.9%, within offensive band.
+- Daytrade 0/3. No PDT concerns.
+
+2026-07-09 : 12:50 : [tactical] No action: stops intact, limits waiting
+- All stops far from breach (AVGO 03 > 85, HOOD 17 > 05, QQQ 22 > 00, VOO 90 > 70, SOXX 89 > 40)
+- HOOD limit 14.50 not hit (price 16.71); NVDA limit 98.50 not hit (price 01.72)
+- Open orders remain active on book
+- Event detector: NONE. Gross exposure 82.9%. Daytrade 0/3.
+- No trades executed; no file updates required
+
+2026-07-09 : 12:40 : [tactical] No action: no triggers met
+- All holdings stable, no stop-losses breached
+- HOOD 16.64 > 14.50 limit, no fill
+- NVDA 01.93 > 98.50 limit, no fill
+- Event detector: NONE, all severities OK
+- Gross exposure 82.9%, within offensive band
+
 2026-07-09 : 12:38 : [hourly] Placed NVDA limit, fixed parser bug
 - Todo.md parser false positive blocked NVDA buys; fixed language and placed 98.50 limit
 - Portfolio -2.46% vs SPY +4.53%; both goals still failed
