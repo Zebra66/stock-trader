@@ -166,3 +166,13 @@ See `memory/standing_learnings.md` for full archive. Key reminders:
 - **Ledger CLI shell escaping bug:** `bun run src/tools/ledger_cli.ts ... --detail "$357"` corrupts prices. **Always use single quotes** around detail strings with dollar amounts: `--detail 'BUY at $357.00'`.
 - **HOOD Trump Accounts launch (Jul 7) is a real product catalyst.** Not just crypto beta. Monitor user adoption metrics if available.
 - **Apple/Broadcom $30B deal is a multi-year revenue anchor.** Treat AVGO as a core holding, not a momentum trade.
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-07-09 13:30Z (Thursday 9:30 AM ET)
+- **Detector classification:** CRITICAL
+- **Trigger:** Massive upward gap in semiconductor and tech ETFs at market open. SOXX +5.53%, XLK +2.14%, SMH +4.09%, QQQ +1.20%. This is a melt-up, not a crash.
+- **Held position impact:** ALL favorable. AVGO +3.55% to $402.87. QQQ +1.20% to $717.94. VOO +0.31%. HOOD flat. GOOG -0.97% (minor, within normal).
+- **Action taken:** No protective sells executed — no stop-losses breached (QQQ $718 > $700 stop; AVGO $403 > $370 stop; HOOD $113 > $105 stop; GOOG $354 > $350 stop). No new buys initiated — CRITICAL event suspends additions per protocol. All existing hold directives remain valid.
+- **Todo status:** GOOG anti-churn from Jul 8 expired with new session. Updated todo.md to reflect Thursday state.
+- **Next expected action:** Hold all positions. Await 9:35 AM hourly for fresh strategic directives. Do not add exposure during CRITICAL classification.

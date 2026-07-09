@@ -1,17 +1,19 @@
-# Tactical Todo — Updated 2026-07-08 19:35Z (Wednesday 3:35 PM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~25 minutes).*
+# Tactical Todo — Updated 2026-07-09 13:30Z (Thursday 9:30 AM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only.*
+
+<!-- Autonomous override applied at 2026-07-09 13:30Z due to CRITICAL event — semiconductor/tech melt-up at open. New buys suspended until hourly reset. -->
 
 ## Current State
 - **Regime:** offensive catch-up (80–85% band)
 - **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2, GOOG 1
-- **Account equity / cash / buying power:** ~$9,634 / ~$1,911 / ~$29,268 (margin)
-- **Gross long exposure:** ~80.2% | **Net exposure:** ~80.2% | **Cash:** ~19.8%
+- **Account equity / cash / buying power:** ~$9,718 / ~$1,911 / ~$29,502 (margin)
+- **Gross long exposure:** ~80.3% | **Net exposure:** ~80.3% | **Cash:** ~19.7%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET. Final tactical runs today: 15:40, 15:50 ET.
+- **Market:** OPEN until 16:00 ET. Next hourly: ~9:35 AM ET. Tactical runs today: 9:40, 9:50, 10:00, 10:10…
 
-## Position Instructions — Wed Jul 8 (:40, :50 Tactical Runs)
+## Position Instructions — Thu Jul 9 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT ADD
 - Weight ~44.2%, near 45% cap. Adding 1 share would breach cap.
@@ -39,14 +41,14 @@
 - Do NOT add HOOD today. Hourly does NOT authorize new HOOD buys this cycle. Re-evaluation in next hourly (tomorrow 9:35 AM ET).
 - **Anti-churn:** HOOD shares bought June 30. Any sell today is NOT a daytrade.
 
-### GOOG — HOLD 1 — DO NOT SELL TODAY — DO NOT ADD
-- **Filled:** Order `dd4d999c` filled at ~$356.77 during 13:40–13:50 tactical window. 1 share now held; avg entry ~$356.77.
+### GOOG — HOLD 1 — DO NOT ADD
+- **Filled:** Order `dd4d999c` filled at ~$356.77 on Jul 8. 1 share now held; avg entry ~$356.77.
 - Rationale: high-quality AI/cloud name down on macro (Iran), not micro. 1Y +102.50%. Diversifies away from QQQ/semi concentration.
-- Unrealized –0.24% from avg ~$356.77. Current price $355.91. Nearly flat.
-- **Anti-churn:** GOOG bought today; do NOT sell it today under any circumstances.
-- **Concentration check:** 1 share at ~$356 = 3.7% of equity. Well within 15% single-stock cap.
-- **GOOG protective stop (for TOMORROW only, NOT today):** If in tomorrow's session price drops below $350.00 with limit $349.50, evaluate SELL 1 share. Today: hold only.
-- **Earnings:** Estimated Jul 23 (~15 days). No binary event in next 48 hours.
+- Unrealized –0.81% from avg ~$356.77. Current price $353.89. Minor dip, within normal range.
+- **Anti-churn:** Jul 8 buy restriction expired with new session. Selling today is permitted if stop breached.
+- **Concentration check:** 1 share at ~$354 = 3.6% of equity. Well within 15% single-stock cap.
+- **GOOG protective stop (ACTIVE TODAY):** SELL 1 share if price drops below $350.00 with limit $349.50. Rationale: protect capital on breakdown below psychological support.
+- **Earnings:** Estimated Jul 23 (~14 days). No binary event in next 48 hours.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
@@ -67,7 +69,7 @@
   - QQQ: 1 share bought July 6. Selling 1 share is OK (FIFO from June 29). Selling 2+ shares creates a daytrade. Do NOT sell 2+ QQQ shares today.
   - HOOD shares bought June 30. Any sell today is NOT a daytrade.
   - AVGO shares bought June 29. Any sell today is NOT a daytrade.
-  - GOOG: bought today; DO NOT sell today.
+  - GOOG: bought July 8; Jul 8 anti-churn expired. Selling today is permitted if stop breached.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately** unless the hourly note explicitly authorizes the protective stop and the price has breached the stop level in the todo. Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
@@ -90,26 +92,27 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 - **VOO data glitch note:** Alpaca bar shows very low trades/vol. This is anomalous. VOO is among the most liquid ETFs globally. Do not treat VOO as illiquid.
 
-## Today's Deployment Queue
-1. ~~BUY 1 GOOG at limit $357.00~~ — **FILLED at ~$356.77 during 13:40–13:50 window.**
-2. **No other buys authorized** for remainder of today.
-3. **Conditional add queue (requires explicit hourly authorization tomorrow):**
-   - HOOD 1–2 shares if price holds $113+ with volume and crypto stable.
-   - GOOG 1 share if price breaks above $360.00 with TradeCount > 20 and volume > 500.
-   - NVDA 1 share if it reclaims $210 with volume > 5,000 and TradeCount > 40, and holds for 30+ minutes.
-   - SOXX 1 share only if it reclaims $560 with TradeCount > 20 and volume > 1,000.
-4. **Blocker:** Only 25 minutes to close. No new entries into the bell.
+## Thursday's Deployment Queue
+1. ~~BUY 1 GOOG at limit $357.00~~ — **FILLED at ~$356.77 on Jul 8.**
+2. **ALL NEW BUYS SUSPENDED** due to CRITICAL event detector flag at open. Do not initiate any buy orders until hourly strategist resets.
+3. **Conditional add queue (SUSPENDED — requires explicit hourly authorization AND event downgrade):**
+   - ~~HOOD 1–2 shares if price holds $113+~~ — SUSPENDED. Current $112.76, not above trigger.
+   - ~~GOOG 1 share if price breaks above $360.00~~ — SUSPENDED. Current $353.89, not above trigger.
+   - ~~NVDA 1 share if it reclaims $210~~ — SUSPENDED. Current $205.29, not above trigger.
+   - ~~SOXX 1 share if it reclaims $560~~ — SUSPENDED. Current $588.37 but TradeCount=1, Volume=40 (unreliable bar). Avoid.
+4. **Blocker:** CRITICAL event classification at open. No new entries until hourly reset.
 
 ## Expected Book Into Close (if no stops trigger)
-- QQQ 6 (~44.2%), AVGO 3 (~12.1%), VOO 2 (~14.2%), HOOD 5 (~5.9%), GOOG 1 (~3.7%)
-- Cash: ~$1,911 (~19.8%)
-- Gross exposure: ~80.2%
+- QQQ 6 (~44.3%), AVGO 3 (~12.4%), VOO 2 (~14.1%), HOOD 5 (~5.8%), GOOG 1 (~3.6%)
+- Cash: ~$1,911 (~19.7%)
+- Gross exposure: ~80.3%
 - **Open orders:** NONE
 
-## Next Hourly Preview — Thu Jul 9 9:35 AM ET (NOT AUTHORIZED YET)
-- Reassess GOOG price action and set protective stop if needed.
-- Monitor QQQ support ($700 / 50D MA).
-- Evaluate AVGO momentum post-Apple deal.
-- Evaluate NVDA $210 reclaim and volume for potential add.
-- Evaluate HOOD strength post-Trump Accounts launch; consider add if $113+ holds.
-- If stops trigger (QQQ < $700, AVGO < $370, HOOD < $105), execute authorized sells and evaluate redeployment.
+## Current Hourly Window — Thu Jul 9 9:35 AM ET
+- **Event override active.** Await hourly strategist directives post-event.
+- Reassess GOOG price action; protective stop at $350 is active.
+- Monitor QQQ support ($700 / 50D MA). Currently $717.94, well above stop.
+- Evaluate AVGO momentum post-Apple deal. Currently $402.87, well above $370 stop.
+- Evaluate NVDA $210 reclaim and volume for potential add (SUSPENDED until event downgrade).
+- Evaluate HOOD strength post-Trump Accounts launch; consider add if $113+ holds (SUSPENDED until event downgrade).
+- If stops trigger (QQQ < $700, AVGO < $370, HOOD < $105, GOOG < $350), execute authorized sells.
