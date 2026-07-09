@@ -2,6 +2,25 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-09 : 11:11 : [tactical] SOXX filled, HOOD order open, no sells
+- SOXX 1 share limit buy filled at 89.47 (avg 89.47)
+- HOOD limit 14.50 buy order still open (price 16.47)
+- No stop-losses breached; no sells triggered
+- Gross exposure 82.8%, cash 17.2%, offensive band maintained
+- Daytrade count 0/3; anti-churn rules respected
+
+2026-07-09 : 10:51 : [tactical] No action — limit orders working
+- SOXX 89.50 and HOOD 14.50 limit buys open, not filled
+- All stop-losses well above current prices
+- Exposure 76.7%, offensive band 80-90%, room to deploy on fills
+- No CRITICAL/MAJOR events detected
+
+2026-07-09 : 10:50 : [tactical] Limit orders working, no fills yet
+- SOXX buy 1 @ 89.50 limit open, current 90.68
+- HOOD buy 2 @ 14.50 limit open, current 15.43
+- No sell stops breached; no daytrade risk
+- Exposure 76.7%, offensive catch-up regime
+
 2026-07-09 : 10:48 : [hourly] Auth SOXX + HOOD adds, fixed event-detector bug
 - Equity ,711 gross 76.7% — deploy cash to catch up
 - Placed SOXX 1@89.50 limit, HOOD 2@14.50 limit

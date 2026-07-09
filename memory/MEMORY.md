@@ -13,8 +13,8 @@
 - **Status:** Market OPEN. ~5 hrs 14 mins to close.
 - **Repo integrity:** Restored. `.gitignore` active. Branch up to date with origin/main.
 - **Live broker refresh:** Equity $9,711.24 | Cash $2,259.98 | Long $7,451.26 | Gross 76.7% | Daytrade 0/3.
-- **Holdings confirmed:** QQQ 6, AVGO 3, HOOD 5, VOO 2.
-- **Open orders:** NONE.
+- **Holdings confirmed:** QQQ 6, AVGO 3, HOOD 5, VOO 2, SOXX 1.
+- **Open orders:** HOOD 2 shares limit $114.50 (buy).
 - **Filled trades since prior hourly (Jul 9 13:35Z):** SOLD 1 GOOG @ $348.97 (limit $348.90). Bought July 8 at $356.77. Realized loss ~$7.80.
 - **Goal check:** Portfolio -2.93% since inception vs SPY +4.21%. **Both goals FAILED.** Trailing SPY by ~7.14 pp.
 - **Regime:** Offensive catch-up. Target gross exposure 80–90%. Current 76.7% — room to deploy.
@@ -25,26 +25,27 @@
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $716.47 | $718.92 | $4,313.52 | 44.4% | +$14.68 | +0.34% |
-| AVGO | 3 | $371.95 | $393.52 | $1,180.56 | 12.2% | +$64.71 | +5.80% |
-| HOOD | 5 | $101.50 | $115.57 | $577.85 | 6.0% | +$70.35 | +13.86% |
-| VOO | 2 | $676.46 | $687.70 | $1,375.40 | 14.2% | +$22.48 | +1.66% |
-| Cash | — | — | — | $2,259.98 | 23.3% | — | — |
-| **Equity** | — | — | — | **$9,711.24** | **100%** | — | **-2.93%** |
+| QQQ | 6 | $716.47 | $721.08 | $4,326.48 | 44.4% | +$27.64 | +0.64% |
+| AVGO | 3 | $371.95 | $395.66 | $1,187.64 | 12.2% | +$71.79 | +6.43% |
+| HOOD | 5 | $101.50 | $116.46 | $582.30 | 6.0% | +$74.80 | +14.74% |
+| VOO | 2 | $676.46 | $688.93 | $1,377.86 | 14.1% | +$24.94 | +1.84% |
+| SOXX | 1 | $589.47 | $591.69 | $591.69 | 6.1% | +$2.22 | +0.38% |
+| Cash | — | — | — | $1,670.51 | 17.2% | — | — |
+| **Equity** | — | — | — | **$9,736.48** | **100%** | — | **-2.64%** |
 
-- **Gross long exposure:** 76.7%
-- **Net exposure:** 76.7%
+- **Gross long exposure:** 82.8%
+- **Net exposure:** 82.8%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** NONE
+- **Open orders:** HOOD 2 shares limit $114.50 (buy)
 
 ## Performance Review — Thu Jul 9 (10:46 AM ET)
-- **1D (today):** portfolio **~+0.7%** ($9,642.60 → $9,711.24) vs SPY **~+0.5%** (baseline 718.01 → ~748.35). **Outperforming SPY by ~0.2 pp today.**
+- **1D (today):** portfolio **~+0.97%** ($9,642.60 → $9,736.48) vs SPY **~+0.52%** (baseline 718.01 → ~749.57). **Outperforming SPY by ~0.45 pp today.**
 - **1W:** Cannot precisely compute due to missing daily snapshots, but broker `last_equity` was $9,642.60 on Jul 8 close → $9,711.24 today = +0.71% 1D.
 - **2W:** N/A — insufficient granular history in restored ledger.
 - **Since inception (2026-05-04 baseline $10,000):** portfolio **-2.93%** vs SPY **+4.21%** (baseline 718.01 → ~748.35). Trailing by ~7.14 pp.
-- What is working: HOOD is the alpha engine (+13.9% unrealized, +49.8% since inception). AVGO custom silicon thesis paying off (+5.8% unrealized). VOO anchor steady (+1.7%).
-- What is not working: QQQ core is barely positive (+0.34% unrealized) because we overpaid on June 29/July 6 rebuys. GOOG repeated churn losses. Cash drag of 23.3% is too high for offensive catch-up.
+- What is working: HOOD is the alpha engine (+14.7% unrealized, +50.8% since inception). AVGO custom silicon thesis paying off (+6.4% unrealized). VOO anchor steady (+1.8%). SOXX fill captures semi momentum (+0.4% already, +5.3% today).
+- What is not working: QQQ core is barely positive (+0.34% unrealized) because we overpaid on June 29/July 6 rebuys. GOOG repeated churn losses. Cash drag reduced to 17.2%. Gross exposure 82.8% now in offensive band.
 - What must change: STOP CHURNING. Deploy cash into high-conviction names and let them run. Every round trip costs ~$10–$30 in slippage + friction on this book.
 
 ## Goal Check
@@ -74,7 +75,7 @@
 | AVGO | Hold | Custom silicon thesis working. +5.8% unrealized. 12.2% weight. No add capacity (1 share = 16.2%, breaches 15% cap). | 8–15% |
 | HOOD | Hold / Add on pullback | Alpha engine. +13.9% unrealized. 6.0% weight, room to add. Buy 2 more on pullback to $114.50. | 6–12% |
 | VOO | Hold | Broad-market anchor. 14.2%, near 20% cap but 1-share add breaches by $121. Hold 2. | 10–20% |
-| SOXX | Buy (new) | Diversified semi exposure. +22% since inception. 0% current. Buy 1 share limit $589.50. | 4–10% |
+| SOXX | Hold | Diversified semi exposure. Limit buy filled at $589.47. 6.1% weight. DO NOT sell today (same-day anti-churn). Stop $540. | 4–10% |
 | META | Avoid | bannedSymbols active. Code-level rejection. | 0% |
 | GOOG | Avoid | 24h cooldown + earnings Jul 23 + churn history. DO NOT BUY. | 0% |
 | NVDA | Watch / Buy on deep pullback | Lagging semis; potential catch-up if rotation broadens. Buy 2 shares if drops to $198. | 0–4% |
@@ -89,7 +90,7 @@
 5. **QQQ stop:** SELL 1 share if price drops below $700.00. Rationale: trim core on breakdown, keep 5 shares.
 6. **HOOD stop:** SELL all 5 shares if price drops below $105.00. Rationale: protect winner.
 7. **VOO stop:** SELL all 2 shares if price drops below $670.00. Rationale: protect anchor.
-8. **Cash target:** After buys, cash ~$1,430 (~14.8%). Gross exposure ~85.1%. Within 80–90% offensive band.
+8. **Cash target:** After SOXX fill, cash ~$1,671 (~17.2%). Gross exposure ~82.8%. Within 80–90% offensive band. HOOD add still pending.
 9. **Anti-churn hard rule:** DO NOT sell any position bought today. If SOXX or HOOD fills today, DO NOT sell them today.
 10. **Event detector:** Bug fixed. Prior snapshot now saved correctly. Next run will show pctChange deltas.
 

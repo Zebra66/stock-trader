@@ -3,12 +3,12 @@
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2
-- **Account equity / cash / buying power:** ~$9,711 / ~$2,260 / ~$11,971
-- **Gross long exposure:** ~76.7% | **Net exposure:** ~76.7% | **Cash:** ~23.3%
+- **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2, SOXX 1
+- **Account equity / cash / buying power:** ~$9,736 / ~$1,671 / ~$11,971
+- **Gross long exposure:** ~82.8% | **Net exposure:** ~82.8% | **Cash:** ~17.2%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
-- **Open orders:** SOXX 1 share limit $589.50 (buy), HOOD 2 shares limit $114.50 (buy) — placed 14:48Z
+- **Open orders:** HOOD 2 shares limit $114.50 (buy) — placed 14:48Z, still open at 15:10Z. SOXX filled.
 - **Market:** OPEN until 16:00 ET.
 
 ## Position Instructions — Thu Jul 9 (:50 Tactical Run, and next runs)
@@ -33,16 +33,16 @@
 - Do NOT sell HOOD for any other reason today.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
-- Weight ~14.2%, within 20% non-QQQ ETF cap.
-- Unrealized +1.66% from avg $676.46. Today +0.36%.
-- **Concentration blocker:** Adding 1 share would cost ~$688, pushing VOO to ~$2,063 = 21.2% of equity, breaching 20% non-QQQ ETF cap. DO NOT ADD VOO.
+- Weight ~14.1%, within 20% non-QQQ ETF cap.
+- Unrealized +1.84% from avg $676.46. Today +0.54%.
+- **Concentration blocker:** Adding 1 share would cost ~$689, pushing VOO to ~$2,067 = 21.2% of equity, breaching 20% non-QQQ ETF cap. DO NOT ADD VOO.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 2 VOO shares if price drops below $670.00 with limit $669.50. Rationale: protect anchor on broad-market breakdown.
 
-### SOXX — NEW POSITION — BUY 1 SHARE AUTHORIZED
-- Current price ~$589.18. Thin liquidity (11 trades, 400 vol in latest bar).
-- **BUY (HOUR EXPLICITLY AUTHORIZES):** BUY 1 share at limit $589.50. Rationale: deploy cash into strongest sector (semis), diversify chip exposure beyond AVGO. Use limit order only due to thin liquidity.
-- **Anti-churn:** If this buy fills today, DO NOT sell SOXX today under any circumstances.
-- **Defensive stop (for future sessions):** SELL if price drops below $540.00 with limit $539.50.
+### SOXX — HOLD 1 — DO NOT SELL TODAY
+- Position avg $589.47. Current price ~$591.69 (unrealized +0.38%). Today +5.28%.
+- **Status:** Limit buy filled today at $589.47.
+- **Anti-churn:** Bought today. DO NOT sell SOXX today under any circumstances.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES for future sessions):** SELL if price drops below $540.00 with limit $539.50.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
 - Fully exited July 9 at $348.97. Realized loss ~$7.80.
@@ -88,14 +88,14 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **SOXX:** BUY 1 share at limit $589.50. Highest priority — deploy cash into strongest sector.
-2. **HOOD:** BUY 2 shares at limit $114.50 on pullback. Second priority — add to best performer.
+1. **SOXX:** Filled at $589.47. Now held 1 share.
+2. **HOOD:** BUY 2 shares at limit $114.50 on pullback. Order open.
 3. **No other buys authorized** for this cycle.
 
 ## Expected Book After Fills
-- QQQ 6 (~44.4%), AVGO 3 (~12.2%), HOOD 5–7 (~6.0–8.3%), VOO 2 (~14.2%), SOXX 1 (~6.1%)
-- Cash: ~$1,430–$1,660 (~14.8–17.1%)
-- Gross exposure: ~82.9–85.2%
+- QQQ 6 (~44.4%), AVGO 3 (~12.2%), HOOD 5–7 (~6.0–8.4%), VOO 2 (~14.1%), SOXX 1 (~6.1%)
+- Cash: ~$1,430–$1,670 (~14.7–17.2%)
+- Gross exposure: ~82.8–85.3%
 
 ## Next Hourly Preview — 11:35 AM ET
 - Monitor SOXX fill and price action.
