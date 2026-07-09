@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-07-09 17:35Z (Thursday 1:35 PM ET)
-*HARD_LOCK LIFTED. Execute authorized orders only. Market open until 20:00Z (~2h 25m).*
+# Tactical Todo — Updated 2026-07-09 18:35Z (Thursday 2:35 PM ET)
+*HARD_LOCK LIFTED. Execute authorized orders only. Market open until 20:00Z (~1h 25m).*
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
 - **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2, SOXX 1
-- **Account equity / cash / buying power:** $9,779.48 / $1,670.51 / $28,959.64
+- **Account equity / cash / buying power:** $9,775.22 / $1,670.51 / $28,947.69
 - **Gross long exposure:** 82.9% | **Net exposure:** 82.9% | **Cash:** 17.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
@@ -15,18 +15,18 @@
 
 ### QQQ — HOLD 6 — NO SELLS OR ADDS AUTHORIZED
 - Weight ~44.4%, within 45% cap. Adding 1 share would breach cap.
-- Unrealized +0.99% from avg $716.47. Today +1.71%.
+- Unrealized +0.95% from avg $716.47. Today +1.67%.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $700.00 with limit $699.50. Rationale: trim core on breakdown, keep 5 shares as anchor.
 - Do NOT sell the remaining 5 shares unless hourly note explicitly authorizes.
 
 ### AVGO — HOLD 3 — NO ADDS AUTHORIZED — DO NOT SELL TODAY
-- Position avg $371.95. Current price $404.60 (unrealized +8.78%). Today +4.09%.
+- Position avg $371.95. Current price $405.39 (unrealized +8.99%). Today +4.30%.
 - **ANTI-CHURN:** These 3 shares were bought on 2026-06-29. They are NOT same-day buys. However, DO NOT sell AVGO today unless stop is breached.
-- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 3 AVGO shares if price drops below $385.00 with limit $384.50. Rationale: protect +8.8% unrealized gains.
-- **Concentration blocker:** Adding 1 share would cost ~$405, pushing AVGO to ~$1,619 = 16.6% of equity, breaching 15% single-stock cap. NO ADDS AUTHORIZED.
+- **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 3 AVGO shares if price drops below $385.00 with limit $384.50. Rationale: protect +8.99% unrealized gains.
+- **Concentration blocker:** Adding 1 share would cost ~$405, pushing AVGO to ~$1,621 = 16.6% of equity, breaching 15% single-stock cap. NO ADDS AUTHORIZED.
 
 ### HOOD — HOLD 5 — DO NOT SELL TODAY — CONDITIONAL ADD AUTHORIZED
-- Position avg $101.50. Current price $116.38 (unrealized +14.66%). Today +2.51%.
+- Position avg $101.50. Current price $116.35 (unrealized +14.63%). Today +2.48%.
 - Best performer in book. Trump/crypto exchange momentum intact.
 - **Conditional add (HOUR EXPLICITLY AUTHORIZES):** BUY 2 shares at limit $114.50 if the price drops to $114.50 or below. Rationale: add to winner on pullback, not chase. If price never hits $114.50, DO NOT buy.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 5 HOOD shares if price drops below $105.00 with limit $104.50. Rationale: protect winner from deep drawdown.
@@ -34,24 +34,24 @@
 
 ### VOO — HOLD 2 — NO SELLS OR ADDS AUTHORIZED
 - Weight ~14.1%, within 20% non-QQQ ETF cap.
-- Unrealized +2.13% from avg $676.46. Today +0.81%.
-- **Concentration blocker:** Adding 1 share would cost ~$691, pushing VOO to ~$2,073 = 21.2% of equity, breaching 20% non-QQQ ETF cap. NO ADDS AUTHORIZED.
+- Unrealized +2.08% from avg $676.46. Today +0.77%.
+- **Concentration blocker:** Adding 1 share would cost ~$691, pushing VOO to ~$2,072 = 21.2% of equity, breaching 20% non-QQQ ETF cap. NO ADDS AUTHORIZED.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL all 2 VOO shares if price drops below $670.00 with limit $669.50. Rationale: protect anchor on broad-market breakdown.
 
 ### SOXX — HOLD 1 — DO NOT SELL TODAY
-- Position avg $589.47. Current price $590.17 (unrealized +0.12%). Today +5.01%.
+- Position avg $589.47. Current price $586.75 (unrealized -0.46%). Today +4.40%.
 - **Status:** Limit buy filled today at $589.47 (10:51 AM ET).
 - **Anti-churn:** Bought today. DO NOT sell SOXX today under any circumstances.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES for future sessions):** SELL if price drops below $540.00 with limit $539.50.
 
 ### NVDA — CONDITIONAL ADD AUTHORIZED — LIMIT BUY ONLY
-- Current price ~$203.01, down slightly today. Lagging semis; rotation away from NVDA into custom silicon/ETF possible.
+- Current price ~$203.82, up slightly today. Lagging semis; rotation away from NVDA into custom silicon/ETF possible.
 - **Limit order placed (HOUR EXPLICITLY AUTHORIZES):** BUY 1 share at limit $198.50. Order is active on the book. Do NOT cancel unless hourly note explicitly says so. Do NOT chase at market.
 - **Stop if filled:** SELL if price drops below $185.00 with limit $184.50 (future sessions only).
 - NVDA — market orders prohibited; limit buy only.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
-- Fully exited July 8 at $348.97. Realized loss ~$7.80. Today down slightly to $352.67.
+- Fully exited July 8 at $348.97. Realized loss ~$7.80. Today at $353.72.
 - **24-HOUR COOLDOWN:** Do NOT buy GOOG within 24 hours of July 8 10:23 AM ET sale (i.e., not before July 9 10:23 AM ET — this has passed, but hourly still bans re-entry).
 - **Earnings risk:** GOOG reports ~Jul 23. Q2 bill risk. Hourly explicitly bans re-entry until post-earnings or fresh hourly authorization.
 
@@ -59,7 +59,7 @@
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
 ### RKLB — DO NOT BUY
-- Space sector damaged. Sold July 6 at $93.25, now $83.64. No re-entry planned.
+- Space sector damaged. Sold July 6 at $93.25, now $84.01. No re-entry planned.
 
 ### QTUM / SHLD / EIS / ARKX / GLD — DO NOT BUY
 - Thin liquidity, weak relative trends, parabolic chase risk, or no clear catalyst.
@@ -96,10 +96,10 @@ Do not place market orders for these; use limit orders only, or defer.
 ## Expected Book After Fills
 - QQQ 6 (~44.4%), AVGO 3 (~12.4%), HOOD 5–7 (~6.0–8.4%), VOO 2 (~14.1%), SOXX 1 (~6.0%), NVDA 0–1 (~0–2.1%)
 - Cash: ~$1,243–$1,472 (~12.7–15.1%)
-- Gross exposure: ~84.9–87.3%
+- Gross exposure: ~85.0–87.4%
 
-## Next Hourly Preview — 14:35 PM ET (18:35Z)
+## Next Hourly Preview — 15:35 PM ET (19:35Z)
 - Monitor NVDA and HOOD limit fill status before close.
-- If no fills by 14:35, orders will expire at 20:00Z. Re-evaluate tomorrow 9:35 AM ET.
+- If no fills by 15:35, orders will expire at 20:00Z. Re-evaluate tomorrow 9:35 AM ET.
 - Reassess AVGO momentum if it continues to run hard.
 - If either order fills, update todo.md to reflect the new position and anti-churn rules.
