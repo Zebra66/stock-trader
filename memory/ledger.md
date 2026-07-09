@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-09 : 15:39 : [hourly] Converted limits to GTC; no fills
+- Canceled NVDA and HOOD day orders, placed GTC at same levels
+- Portfolio +1.18% today vs SPY +0.8%; still trailing by ~7.0pp since inception
+- SOXX filled this morning at 89.47; down -1.27% unrealized intraday
+- All stops safe; gross exposure 82.9%; daytrade 0/3
+- No events; market calm into close
+
+2026-07-09 : 15:30 : [tactical] No triggers met, limit orders open
+- HOOD at 115.20, limit 114.50 not filled
+- NVDA at 203.79, limit 198.50 not filled
+- All stops far from current prices
+- Gross exposure 82.9%, offensive band
+- Market calm, no events
+
+2026-07-09 : 15:20 : [tactical] No triggers hit; orders stand
+- QQQ 723, AVGO 403, HOOD 115, VOO 691, SOXX 585
+- No stops breached, no adds triggered
+- Open limit orders: NVDA 198.50, HOOD 114.50 remain unfilled
+- Event detector: NONE. Gross 82.9%. Daytrade 0/3.
+- No action required; holding all positions
+
+2026-07-09 : 15:10 : [tactical] No action: no triggers met
+- HOOD 15.59 > 14.50 limit, NVDA 03.28 > 98.50 limit
+- All stop-losses well above current prices
+- Open limit orders remain unfilled
+- Event detector: MINOR only, no response needed
+
+2026-07-09 : 14:50 : [tactical] No action — all stops safe, limits open
+- Event detector: NONE. All held positions within stops.
+- HOOD 16.24 > 14.50 limit — unfilled. NVDA 03.60 > 98.50 limit — unfilled.
+- No stop-losses breached. No discretionary trades authorized.
+- 25 min to close. Orders remain active.
+
+2026-07-09 : 14:40 : [tactical] No action; stops safe, limits open
+- No stop-loss triggers breached on any position
+- NVDA limit 98.50 and HOOD limit 14.50 remain open
+- Event detector: NONE; market calm
+- Gross exposure ~83%, within offensive 80-90% band
+- Daytrade count 0/3; no PDT concerns
+
 2026-07-09 : 14:40 : [hourly] Held all, kept limits, no action needed
 - NVDA 98.50 and HOOD 14.50 limit orders remain open
 - Gross exposure 82.9%, within offensive 80-90% band
