@@ -1,11 +1,13 @@
-# Tactical Todo — Updated 2026-07-09 13:35Z (Thursday 9:35 AM ET)
-*HARD_LOCK LIFTED. Event detector: NONE. No open orders. Execute authorized orders only.*
+# Tactical Todo — Updated 2026-07-09 14:20Z (Thursday 10:20 AM ET)
+*HARD_LOCK LIFTED. Event detector: MAJOR (SOXX/SMH). GOOG stop executed. No open orders. Execute authorized orders only.*
+
+<!-- Autonomous override applied at 2026-07-09T14:20Z due to MAJOR event on SOXX/SMH -->
 
 ## Current State
 - **Regime:** offensive catch-up (80–90% band)
-- **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2, GOOG 1
-- **Account equity / cash / buying power:** ~$9,724 / ~$1,911 / ~$29,520 (margin)
-- **Gross long exposure:** ~80.3% | **Net exposure:** ~80.3% | **Cash:** ~19.7%
+- **Live book:** QQQ 6, AVGO 3, HOOD 5, VOO 2 (GOOG exited)
+- **Account equity / cash / buying power:** ~$9,677 / ~$2,260 / ~$29,807 (margin)
+- **Gross long exposure:** ~76.6% | **Net exposure:** ~76.6% | **Cash:** ~23.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -40,15 +42,10 @@
 - Do NOT add HOOD above $112.50 today. If price never reaches $112.50, no action.
 - **Anti-churn:** HOOD shares bought June 30. Any sell today is NOT a daytrade.
 
-### GOOG — HOLD 1 — DO NOT ADD
-- **Filled:** Order `dd4d999c` filled at ~$356.77 on Jul 8. 1 share now held; avg entry ~$356.77.
-- Rationale: high-quality AI/cloud name. 1Y +99.50%.
-- Unrealized –0.91% from avg ~$356.77. Current price $353.54. Down –1.19% today vs QQQ +1.16%.
-- **GOOG protective stop (ACTIVE TODAY):** SELL 1 share if price drops below $350.00 with limit $349.50. Rationale: protect capital on breakdown below psychological support and Q2 bill concern.
-- **DO NOT ADD GOOG today.** Q2 bill uncertainty (Seeking Alpha Jul 8) ahead of Jul 23 earnings creates asymmetric downside risk. No re-entry until post-earnings or charge is quantified and priced in.
-- **Anti-churn:** Jul 8 buy restriction expired with new session. Selling today is permitted if stop breached.
-- **Concentration check:** 1 share at ~$354 = 3.6% of equity. Well within 15% single-stock cap.
-- **Earnings:** Estimated Jul 23 (~14 days). No binary event in next 48 hours.
+### GOOG — EXITED 1 — DO NOT RE-BUY
+- **Stop executed:** SOLD 1 share at limit ~$348.90 on MAJOR event breach of $350.00 stop. Realized loss ~$7.85 vs avg $356.77.
+- **DO NOT RE-BUY GOOG.** Q2 bill uncertainty (Seeking Alpha Jul 8) ahead of Jul 23 earnings creates asymmetric downside risk. No re-entry until post-earnings or charge is quantified and priced in. 24-hour cooldown also applies.
+- **Anti-churn:** Jul 8 buy, Jul 9 sell. New session sale permitted. No same-day round trip.
 
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
@@ -71,7 +68,7 @@
   - QQQ: 1 share bought July 6. Selling 1 share is OK (FIFO from June 29). Selling 2+ shares creates a daytrade. Do NOT sell 2+ QQQ shares today.
   - HOOD shares bought June 30. Any sell today is NOT a daytrade.
   - AVGO shares bought June 29. Any sell today is NOT a daytrade.
-  - GOOG: bought July 8; Jul 8 anti-churn expired. Selling today is permitted if stop breached.
+  - GOOG: bought July 8, sold July 9. Anti-churn expired with new session. Sale was permitted.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately** unless the hourly note explicitly authorizes the protective stop and the price has breached the stop level in the todo. Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
@@ -102,9 +99,9 @@ Do not place market orders for these; use limit orders only, or defer.
 5. **Cash reserve target:** Maintain at least $1,400 cash after any fill. Do not deploy below $1,400 cash unless hourly note explicitly authorizes.
 
 ## Expected Book Into Close (if no stops trigger and no fills)
-- QQQ 6 (~44.4%), AVGO 3 (~12.4%), VOO 2 (~14.1%), HOOD 5 (~5.8%), GOOG 1 (~3.6%)
-- Cash: ~$1,911 (~19.7%)
-- Gross exposure: ~80.3%
+- QQQ 6 (~44.4%), AVGO 3 (~12.4%), VOO 2 (~14.1%), HOOD 5 (~5.8%)
+- Cash: ~$2,260 (~23.4%)
+- Gross exposure: ~76.6%
 - **Open orders:** NONE
 
 ## Current Hourly Window — Thu Jul 9 9:35 AM ET
