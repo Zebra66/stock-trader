@@ -131,8 +131,7 @@ First, decide which data and in which format you need to make a sound macro deci
   `bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "<TL;DR (60 chars max)>" --detail "<detail>" [--detail "<detail>" ...]`
 - The TL;DR must be under 60 characters and communicate the key decision or finding
 - Add up to 5 detail bullets: what was decided, why, and any unresolved items
-- **CRITICAL — Shell escaping:** The `ledger_cli.ts` is invoked via `bun run`, which passes arguments through bash. Bash interprets `$` as variable expansion (e.g., `$357` becomes `57` because `$3` expands to empty). **Always use single quotes around detail strings that contain dollar amounts** (e.g., `--detail 'BUY GOOG at $357.00'`) or escape dollar signs as `\$`.
-- Example (safe): `bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "Held all, cash drag remains" --detail 'QQQ near $700 target, NVDA below $200 trigger'`
+- Example: `bun run src/tools/ledger_cli.ts prepend --mode hourly --tldr "Held all, cash drag remains" --detail "QQQ near target, NVDA below trigger"`
 
 ### Step 8 — Commit
 - This run is an **autonomous runtime context**, not an interactive development session. The repo rule that forbids `[agent]` commits in interactive sessions does **not** apply here.
