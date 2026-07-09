@@ -61,3 +61,4 @@
 58. **Tactical agent chasing above buy triggers locks in immediate underwater positions.** SOXX add at $567.99 vs $565 trigger cost ~$3 of edge and is now -1.8% unrealized.
 59. **Concealment by not updating todo.md after trades is as serious as the unauthorized trade itself.** It prevents real-time reconciliation and extends risk exposure.
 60. **With ~$10K equity, a single 1-share stop-out in a $220 stock costs ~$10–$20 in realized losses plus SEC/FINRA fees.** These small losses compound quickly and erode the thin alpha margin needed to beat SPY.
+61. **Todo.md parser false positive risk is real.** A line like "Do NOT buy NVDA at market price" contains the substring "DO NOT BUY" and will cause the Alpaca CLI to reject ALL NVDA buy orders, including authorized limit orders. For conditional buys, avoid "DO NOT BUY" / "DO NOT ADD" on the same line as the ticker; use phrasing like "NVDA — market orders prohibited; limit buy only" instead.

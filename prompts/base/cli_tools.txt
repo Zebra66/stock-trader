@@ -16,3 +16,4 @@ Quick reference:
   bun run src/tools/event_detector.ts                     # run event detector and read report
 
 **Todo.md parser guard:** The Alpaca CLI and SDK factory parse `memory/todo.md` for lines containing `DO NOT BUY`, `DO NOT RE-BUY`, or `DO NOT ADD` (case-insensitive) and reject BUY orders for symbols on those lines unless the line contains `UNLESS`, `IF`, or `CONDITION`. Use these exact phrases in todo.md when banning a symbol.
+**WARNING — false positive risk:** The parser uses simple substring matching. A line like "Do NOT buy NVDA at market price" will be treated as a ban on NVDA because it contains "DO NOT BUY" (case-insensitive). For symbols with conditional or limited buy authorization, avoid placing the ticker on any line that contains `DO NOT BUY`, `DO NOT RE-BUY`, or `DO NOT ADD`. Use alternative phrasing such as "NVDA — market orders prohibited; limit buy only" instead.
