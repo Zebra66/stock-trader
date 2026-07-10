@@ -2,6 +2,38 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-10 : 13:33 : [tactical] Unauthorized META buy detected
+- 2 META bought 17:26Z 63.71 without authorization
+- Banned symbol bypassed code guards
+- Gross exposure 90.6% breaching 85% band
+- Cannot sell today anti-churn; cleanup Monday
+
+2026-07-10 : 13:20 : [tactical] No action — stops intact
+- AVGO 00.75, stop 85 — not triggered
+- HOOD 13.15, stop 10 — not triggered
+- Gross exposure 77.0%, within 70-85% band
+- Event detector: NONE. No sector rotation.
+- Holding all positions into close.
+
+2026-07-10 : 13:10 : [tactical] No action — holds, stops safe
+- AVGO $401.14, HOOD $113.74 — both above authorized stops
+- Gross exposure 77%, within 70–85% band
+- Event detector: NONE; no sector rotation
+- Daytrades 0/3; no orders placed
+
+2026-07-10 : 12:50 : [tactical] No action — stops intact, holds
+- AVGO 01.89 > 85 stop — intact
+- HOOD 13.88 > 10 stop — intact
+- Gross exposure 77% — within 70-85% band
+- Event detector: NONE, no triggers breached
+- Holding posture maintained into close
+
+2026-07-10 : 12:40 : [tactical] No action — all stops above triggers
+- AVGO 401.4 > 385 stop; HOOD 113.3 > 110 stop
+- Gross exposure 77.0%, within 70-85% neutral band
+- Event detector: NONE, all held positions OK
+- No conditions met in todo.md; no orders submitted
+
 2026-07-10 : 12:36 : [hourly] Hold all, no action needed
 - Broker state unchanged: QQQ6 VOO2 AVGO3 HOOD5
 - Gross exposure 77.0% within 70-85% neutral band

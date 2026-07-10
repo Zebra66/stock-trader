@@ -2,10 +2,10 @@
 *HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~3.5 hrs).*
 
 ## Current State
-- **Regime:** neutral (70–85% band)
-- **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / buying power:** $9,748.58 / $2,239.53 / $11,988.11
-- **Gross long exposure:** 77.0% | **Net exposure:** 77.0% | **Cash:** 23.0%
+- **Regime:** neutral (70–85% band) — **CURRENTLY 90.6% DUE TO UNAUTHORIZED META ADD**
+- **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5, **META 2 (UNAUTHORIZED)**
+- **Account equity / cash / buying power:** $9,751.15 / $912.11 / $11,988.11
+- **Gross long exposure:** 90.6% | **Net exposure:** 90.6% | **Cash:** 9.4%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -43,8 +43,12 @@
 ### NVDA — DO NOT BUY — DO NOT RE-BUY
 - Fully exited June 23. Re-entry deferred. Focus on AVGO for chip exposure.
 
-### META — DO NOT BUY
-- `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
+### META — SELL ALL 2 SHARES Monday open — UNAUTHORIZED POSITION
+- **COMPLIANCE BREACH:** 2 shares bought at 17:26Z today @ $663.71 without authorization. Banned symbol (`bannedSymbols: ["META"]`) and `DO NOT BUY` directive were both bypassed.
+- Current price ~$663.33 (–$0.76 unrealized). Position market value $1,326.66 (~13.6% of equity).
+- **HOUR EXPLICITLY AUTHORIZES:** SELL 2 shares at market open Monday July 13. Use limit order at $660.00 or better. If gap-down below $650, use market order to exit immediately. Rationale: restore compliance, eliminate banned-symbol exposure.
+- **ANTI-CHURN:** Cannot sell today because position was bought today. Code-enforced. Next possible exit: Monday 09:30 ET.
+- **TACTICAL DISCIPLINE:** This position must NOT be held past Monday open. Unauthorized exposure drift of +13.6 pp is unacceptable.
 
 ### SOXX — DO NOT BUY — DO NOT RE-BUY
 - Sold July 10 09:43 ET @ ~$569.04. 24-hour cooldown expires Saturday 13:41Z (after market close). Re-entry requires explicit hourly authorization.
@@ -54,7 +58,7 @@
 - No edge, weak relative trends, parabolic chase risk, or thin liquidity.
 
 ## Hard Rules / No-Trade Conditions
-- **No discretionary buys this cycle or into the close.** Gross exposure is 77.0%; adding any share pushes toward 85% upper bound. Friday + geopolitical risk + HOOD volatility = no new risk today.
+- **No discretionary buys this cycle or into the close.** Gross exposure is 90.6% due to unauthorized META add. No new risk today.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today. If a symbol was sold today, do NOT buy it today. Now **code-enforced** in `alpaca_cli.ts` and `alpaca_client_factory.ts`.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.

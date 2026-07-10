@@ -4,28 +4,30 @@
 ## Hourly Cycle Summary — 2026-07-10 16:35Z (Friday 12:35 PM ET)
 - **Status:** Market OPEN. ~3.5 hours to close. Next open: Monday July 13, 09:30 ET.
 - **Repo integrity:** Clean. Branch up to date with origin/main (0 ahead, 0 behind).
-- **Live broker refresh:** Equity **$9,748.58** | Cash **$2,239.53** | Long **$7,509.05** | Gross **77.0%** | Daytrade **0/3**.
-- **Holdings confirmed:** QQQ 6, VOO 2, AVGO 3, HOOD 5. No changes since 15:35Z (11:35 AM ET).
+- **Live broker refresh:** Equity **$9,751.15** | Cash **$912.11** | Long **$8,839.04** | Gross **90.6%** | Daytrade **0/3**.
+- **Holdings confirmed:** QQQ 6, VOO 2, AVGO 3, HOOD 5, **META 2 (UNAUTHORIZED — bought 17:26Z @ $663.71)**.
 - **Open orders:** NONE.
 - **Filled trades since last hourly (15:35Z → 16:35Z):** NONE. Tactical runs at :40/:50 executed without action.
-- **Goal check:** Portfolio **–2.51%** since inception ($9,748.58 vs $10,000) vs SPY **+4.94%** (753.50 vs 718.01 baseline). **Goal 1 (positive absolute): FAILED.** **Goal 2 (beat SPY): FAILED — trailing by ~7.45 pp.** Gap narrowed ~0.04 pp since 11:35 AM on HOOD + AVGO bounce.
-- **Regime:** **Neutral**. Target gross exposure 70–85%. Current 77.0% — within band.
-- **Dominant failure mode:** **Excessive turnover / friction.** No new trades this cycle = good discipline continues.
+- **[AUTONOMOUS OVERRIDE / COMPLIANCE BREACH]:** Unauthorized META 2-share buy detected at 17:26Z. Banned symbol bypassed `bannedSymbols` and `DO NOT BUY` guards. Exposure spiked from 77.0% → 90.6%, breaching neutral band. Cannot liquidate today due to anti-churn. **MANDATORY EXIT at Monday open.**
+- **Goal check:** Portfolio **–2.49%** since inception ($9,751.15 vs $10,000) vs SPY **+4.94%** (753.50 vs 718.01 baseline). **Goal 1 (positive absolute): FAILED.** **Goal 2 (beat SPY): FAILED — trailing by ~7.43 pp.**
+- **Regime:** **Neutral**. Target gross exposure 70–85%. Current 90.6% — **ABOVE BAND** due to unauthorized META add.
+- **Dominant failure mode:** **Guard bypass / unauthorized trade.** Compliance breach must be resolved Monday.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $716.47 | $725.16 | $4,350.93 | 44.6% | +$52.09 | +1.21% |
-| VOO | 2 | $676.46 | $692.58 | $1,385.16 | 14.2% | +$32.24 | +2.38% |
-| AVGO | 3 | $371.95 | $401.73 | $1,205.19 | 12.4% | +$89.34 | +8.01% |
-| HOOD | 5 | $101.50 | $113.56 | $567.78 | 5.8% | +$60.28 | +11.88% |
-| Cash | — | — | — | $2,239.53 | 23.0% | — | — |
-| **Equity** | — | — | — | **$9,748.58** | **100%** | — | **–2.51%** |
+| QQQ | 6 | $716.47 | $725.96 | $4,355.76 | 44.7% | +$56.92 | +1.33% |
+| VOO | 2 | $676.46 | $693.12 | $1,386.24 | 14.2% | +$33.32 | +2.46% |
+| AVGO | 3 | $371.95 | $401.94 | $1,205.82 | 12.4% | +$89.97 | +8.06% |
+| HOOD | 5 | $101.50 | $113.12 | $565.60 | 5.8% | +$58.10 | +11.43% |
+| META | 2 | $663.71 | $663.33 | $1,326.66 | 13.6% | –$0.76 | –0.06% |
+| Cash | — | — | — | $912.11 | 9.4% | — | — |
+| **Equity** | — | — | — | **$9,751.15** | **100%** | — | **–2.49%** |
 
-- **Gross long exposure:** 77.0%
-- **Net exposure:** 77.0%
+- **Gross long exposure:** 90.6%
+- **Net exposure:** 90.6%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
