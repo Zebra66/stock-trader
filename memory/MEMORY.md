@@ -1,5 +1,20 @@
 # Hourly Macro Memory
-*Updated 2026-07-09 4:07 PM ET. Market CLOSED. Next session: July 10, 2026 9:30 AM ET.*
+*Updated 2026-07-10 9:41 AM ET (tactical execution). Market OPEN.*
+
+## Tactical Execution Summary — 2026-07-10 09:41 AM ET
+- **Action:** SOLD 1 SOXX @ limit $569.00 (filled ~$569.00). Stop breached ($569.91 < $570).
+- **Why:** July 9 hourly directive explicitly authorized cutting SOXX below $570 to stop loss. Do NOT average down.
+- **Pre-trade checklist:** All passed — universe OK, no 24h cooldown, no same-day churn, market open, no PDT risk, explicit authorization quoted, no lock, no HARD_LOCK, data healthy.
+- **Portfolio state post-trade:** Equity $9,706 | Cash $2,240 | Long $7,466 | Gross 76.9%.
+- **Holdings:** QQQ 6, AVGO 3, VOO 2, HOOD 5. SOXX fully exited.
+- **Daytrade count:** 0/3 (SOXX was opened July 9, so this sale is not a daytrade).
+- **Repo note:** Working tree `memory/todo.md` and `memory/MEMORY.md` were corrupted with May 29 stale content by a prior agent cycle. Restored from HEAD (`af715621`) before trading. The pre-fetched context mechanism must not overwrite newer disk state.
+- **Next expected action:** HOLD remaining positions unless stops hit. No new positions without hourly authorization.
+
+---
+
+*Prior hourly state below (2026-07-09 4:07 PM ET).*
+*Market CLOSED. Next session: July 10, 2026 9:30 AM ET.*
 
 ## Data Blackout Recovery
 - **Last hourly run before today:** 2026-05-18 (7+ weeks ago)

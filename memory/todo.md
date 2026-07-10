@@ -3,13 +3,13 @@
 
 ## Current State
 - **Regime:** offensive catch-up
-- **Live book:** QQQ 6, AVGO 3, VOO 2, HOOD 5, SOXX 1
-- **Account equity / cash / buying power:** $9,748.01 / $1,670.51 / $28,917
-- **Gross exposure:** 82.8%
+- **Live book:** QQQ 6, AVGO 3, VOO 2, HOOD 5
+- **Account equity / cash / buying power:** $9,706 / $2,240 / $29,864
+- **Gross exposure:** 76.9%
 - **Pattern day trader:** Unknown (paper API does not expose count; assume PDT rules apply)
-- **Open orders:** NONE (all unauthorized GTC orders canceled)
+- **Open orders:** NONE
 - **Universe compliance:** PASS
-- **Concentration:** QQQ 44.5% (just under 45% cap)
+- **Concentration:** QQQ 44.5% (under 45% cap)
 
 ## Hard Rules / No-Trade Conditions
 - **No new BUY orders** for NVDA, GOOG, RKLB, EIS, SHLD, ARKX unless hourly strategist explicitly authorizes in a fresh note.
@@ -26,7 +26,7 @@
 | AVGO | 3 | $371.95 | <$390 | Protect profit; support near $395 |
 | HOOD | 5 | $101.50 | <$108 | Protect strong gains; prior resistance |
 | VOO | 2 | $676.46 | <$680 | Broad market anchor; tight stop |
-| SOXX | 1 | $589.47 | <$570 | Cut loss; do NOT average down |
+| ~~SOXX~~ | ~~1~~ | ~~$589.47~~ | ~~<$570~~ | ~~STOP EXECUTED 2026-07-10 09:41 ET @ ~$569.00~~ |
 
 ## Today's Activity Log (July 9)
 - 10:23 AM ET: SELL GOOG 1 @ $348.97 — fully liquidated GOOG (bought yesterday @ $356.77, loss -2.2%).
@@ -35,10 +35,9 @@
 - 3:37 PM ET: Tactical agent submitted NVDA limit buy 1 @ $198.50 (later canceled by hourly strategist).
 
 ## Tactical Instructions for July 10
-1. **SELL SOXX 1 share if price drops below $570** — cut the loss. Do NOT average down.
+1. **HOLD all current positions** — no action unless stop levels are hit.
 2. **SELL QQQ 1 share if weight exceeds 45% of equity** (e.g., if QQQ gaps up and pushes weight over cap).
-3. **HOLD all other positions** — no action unless stop levels are hit.
-4. **No new positions** tomorrow unless an extraordinary setup appears and the hourly strategist issues fresh authorization.
+3. **No new positions** today unless an extraordinary setup appears and the hourly strategist issues fresh authorization.
 
 ## Priority Queue (only if hourly note authorizes fresh capital)
 1. META — add on pullback to ~$600 or breakout above $620.
