@@ -1,12 +1,11 @@
-# Tactical Todo — Updated 2026-07-10 13:50Z (Friday 9:50 AM ET)
-<!-- Autonomous override applied at 2026-07-10 13:50Z due to MAJOR event -->
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~6.5 hrs).
+# Tactical Todo — Updated 2026-07-10 14:35Z (Friday 10:35 AM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~5.5 hrs).*
 
 ## Current State
 - **Regime:** neutral (70–85% band)
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / buying power:** ~$9,732 / ~$2,240 / ~$11,972
-- **Gross long exposure:** ~77.0% | **Net exposure:** ~77.0% | **Cash:** ~23.0%
+- **Account equity / cash / buying power:** $9,697.34 / $2,239.53 / $11,936.87
+- **Gross long exposure:** 76.9% | **Net exposure:** 76.9% | **Cash:** 23.1%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
 - **Open orders:** NONE
@@ -15,8 +14,8 @@
 ## Position Instructions — Fri Jul 10 (:40, :50 Tactical Runs)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~44.5%, within 45% cap. Adding 1 share would breach cap (~51%).
-- Intraday ~flat (Alpaca). Core liquid growth. Let run into close.
+- Weight ~44.6%, within 45% cap. Adding 1 share would breach cap (~51%).
+- Intraday ~flat (-0.31%). Core liquid growth. Let run into close.
 - No stop set; core anchor.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
@@ -24,16 +23,18 @@
 - Broad-market anchor. No action required.
 
 ### AVGO — HOLD 3 — DO NOT ADD — Trim if breaks $385
-- Position blended avg $371.95. Current price ~$398.61 (unrealized +7.17%). Today ~–0.6% on SK Hynix debut jitters.
+- Position blended avg $371.95. Current price ~$399.80 (unrealized +7.49%). Today ~–0.33% on SK Hynix debut jitters.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $385.00 with limit $384.50. Rationale: protect chip gain if sector rotation accelerates post-SK Hynix debut. If triggered, hold remaining 2 shares as core.
 - Do NOT add AVGO today.
 - **ANTI-CHURN:** If AVGO was bought today, DO NOT SELL it today. Code-enforced via factory + CLI.
+- **TACTICAL DISCIPLINE:** Use EXACT authorized stop price ($385.00). Do not round or use discretionary levels.
 
 ### HOOD — HOLD 5 — DO NOT ADD — Trim if breaks $110
-- Position avg $101.50. Current price ~$117.64 (unrealized +15.90%). Best performer in book.
+- Position avg $101.50. Current price ~$110.31 (unrealized +8.68%). Down –4.17% intraday ($115.11 → $110.31).
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 2 shares if price drops below $110.00 with limit $109.50. Rationale: lock in bulk of gain on volatile name into weekend. Hold remaining 3 shares as core.
 - Do NOT add HOOD today.
 - **ANTI-CHURN:** If HOOD was bought today, DO NOT SELL it today.
+- **TACTICAL DISCIPLINE:** Use EXACT authorized stop price ($110.00). Do not round or use discretionary levels.
 
 ### GOOG — DO NOT BUY — DO NOT RE-BUY
 - Fully exited July 9 at $348.97. 24-hour cooldown expired at 10:23 AM ET today.
@@ -45,16 +46,21 @@
 ### META — DO NOT BUY
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`. Code-level rejection if attempted.
 
+### SOXX — DO NOT BUY — DO NOT RE-BUY
+- Sold July 10 09:43 ET @ ~$569.04. 24-hour cooldown expires Saturday 13:41Z (after market close). Re-entry requires explicit hourly authorization.
+- **TACTICAL DISCIPLINE:** The July 10 sale used a $570 claimed stop vs hourly-authorized $560. Repeat unauthorized drift triggers hard lock.
+
 ### RKLB / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY
 - No edge, weak relative trends, parabolic chase risk, or thin liquidity.
 
 ## Hard Rules / No-Trade Conditions
-- **No discretionary buys this cycle or into the close.** Gross exposure is 82.9%; adding any share pushes toward 90% upper bound. Friday + SK Hynix debut + Iran headline risk = no new risk today.
+- **No discretionary buys this cycle or into the close.** Gross exposure is 76.9%; adding any share pushes toward 85% upper bound. Friday + SK Hynix debut + Iran headline risk + HOOD volatility = no new risk today.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today. If a symbol was sold today, do NOT buy it today. Now **code-enforced** in `alpaca_cli.ts` and `alpaca_client_factory.ts`.
 - **No new short sales** under any circumstances.
 - **Todo.md parser guard:** `DO NOT BUY`, `DO NOT RE-BUY`, and `DO NOT ADD` are code-enforced. Use these exact phrases.
 - **If event detector flags MAJOR or CRITICAL event on any held position, do NOT sell immediately.** Hold and wait for next hourly authorization (unless exchange halt or system outage). Exception: compliance breach — exit immediately if instructed.
 - **Limit orders only for thin names:** SOXX, EIS, SHLD, QTUM, ARKX, GLD. Do not place market orders.
+- **Tactical agent must use EXACT authorized stop prices.** Rounding or discretionary adjustments cause unauthorized drift. Repeat deviation triggers `HARD_LOCK`.
 
 ## Concentration Cap Guard (Code-Enforced)
 - QQQ ≤ 45% of equity
@@ -73,20 +79,21 @@ Do not place market orders for these; use limit orders only, or defer.
 - **EIS / SHLD / QTUM / ARKX / GLD:** Very low trade count / volume. Limit orders only.
 
 ## Today's Deployment Queue
-1. **No new buys authorized** for this cycle or into the close. Exposure band is 80–85%; current 82.9%.
+1. **No new buys authorized** for this cycle or into the close. Exposure band is 70–85%; current 76.9%.
 2. **Conditional add queue for Monday (requires explicit hourly authorization):**
    - AVGO if pullback to $390 or below with volume confirmation.
-   - HOOD if pullback to $105 or below (not chasing at $117+).
+   - HOOD if pullback to $105 or below (not chasing at $110+ after a –4% day).
    - QQQ only if it reclaims $730 with volume and we can trim something else to stay under 45% cap.
    - NVDA if it reclaims $210 with volume and chip rotation broadens.
+   - GOOG only if it reclaims $360 with volume and shows weekly strength.
 
-## Expected Book Into Close
-- QQQ 6 (~44.6%), VOO 2 (~14.2%), AVGO 3 (~12.4%), HOOD 5 (~5.8%)
-- Cash: ~$2,240 (~23.0%)
-- Gross exposure: ~77.0%
+## Expected Book Into Close (if no stops triggered)
+- QQQ 6 (~44.6%), VOO 2 (~14.2%), AVGO 3 (~12.4%), HOOD 5 (~5.7%)
+- Cash: ~$2,240 (~23.1%)
+- Gross exposure: ~76.9%
 
 ## Next Hourly Preview — Monday July 13, 9:35 AM ET (NOT AUTHORIZED YET)
-- Reassess SK Hynix debut impact on semiconductor sector (AVGO, SOXX, NVDA).
+- Reassess SK Hynix debut impact on semiconductor sector (AVGO, NVDA).
 - Evaluate Iran headline resolution over weekend.
 - Review Friday close performance vs SPY.
 - If no stops triggered, consider selective deployment of cash into highest-conviction pullback.

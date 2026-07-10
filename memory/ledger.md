@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-10 : 10:38 : [hourly] Neutral hold, tighten tactical stops
+- Equity ,697, gross 76.9%, cash 23.1%
+- SOXX unauthorized tactical sale at 69 noted (auth 60)
+- HOOD down -4.2% today, stop at 10 for 2-share trim
+- No new buys today: Friday + Iran risk + SK Hynix volatility
+- Tactical discipline tightened: exact stop prices mandatory
+
+2026-07-10 : 10:30 : [tactical] No action: all holds, no triggers
+- Event detector: NONE. All positions flat/OK.
+- AVGO 00.20 > 85 stop; HOOD 11.47 > 10 stop.
+- No buys authorized. Exposure ~77% within band.
+- SOXX not held (reconciled at 13:50Z). No stale positions.
+- Daytrade 0/3. Market open. No orders placed.
+
+2026-07-10 : 10:20 : [tactical] No action; all stops intact, SOXX gone
+- AVGO 98.96 > 85 stop; HOOD 11.44 > 10 stop
+- No todo.md conditions met; no orders placed
+- SOXX not held per Alpaca (reconciled at 13:50Z)
+- Event detector: MINOR on SOXX; no response required
+
+2026-07-10 : 10:10 : [tactical] All holds, no triggers breached
+- AVGO 00.22 above 85 stop
+- HOOD 11.27 above 10 stop
+- No event detected (classification NONE)
+- Equity ,723 gross 77% cash ,240
+- No orders placed
+
 2026-07-10 : 09:52 : [tactical] MAJOR semi rally, no action
 - Event detector MAJOR: SOXX/SMH +1.4% in 10m (SK Hynix debut)
 - No held positions breached stops; no protective sells executed
