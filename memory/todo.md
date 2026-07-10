@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-07-10 15:35Z (Friday 11:35 AM ET)
-*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~4.5 hrs).*
+# Tactical Todo — Updated 2026-07-10 16:35Z (Friday 12:35 PM ET)
+*HARD_LOCK LIFTED. No open orders. Execute authorized orders only. Market closes at 16:00 ET (~3.5 hrs).*
 
 ## Current State
 - **Regime:** neutral (70–85% band)
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / buying power:** $9,734.92 / $2,239.53 / $11,974.45
+- **Account equity / cash / buying power:** $9,748.58 / $2,239.53 / $11,988.11
 - **Gross long exposure:** 77.0% | **Net exposure:** 77.0% | **Cash:** 23.0%
 - **Daytrade count:** 0/3
 - **Pattern day trader:** false
@@ -15,7 +15,7 @@
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~44.6%, within 45% cap. Adding 1 share would breach cap (~51%).
-- Intraday ~flat (+0.07%). Core liquid growth. Let run into close.
+- Intraday ~flat (+0.26%). Core liquid growth. Let run into close.
 - No stop set; core anchor.
 
 ### VOO — HOLD 2 — DO NOT SELL OR ADD
@@ -23,14 +23,14 @@
 - Broad-market anchor. No action required.
 
 ### AVGO — HOLD 3 — DO NOT ADD — Trim if breaks $385
-- Position blended avg $371.95. Current price ~$400.61 (unrealized +7.71%). Today ~–0.12% on SK Hynix debut jitters, but Apple deal headline supportive.
+- Position blended avg $371.95. Current price ~$401.73 (unrealized +8.01%). Today +0.15% on Apple $30B deal support.
 - **Defensive stop (HOUR EXPLICITLY AUTHORIZES):** SELL 1 share if price drops below $385.00 with limit $384.50. Rationale: protect chip gain if sector rotation accelerates post-SK Hynix debut. If triggered, hold remaining 2 shares as core.
 - Do NOT add AVGO today.
 - **ANTI-CHURN:** If AVGO was bought today, DO NOT SELL it today. Code-enforced via factory + CLI.
 - **TACTICAL DISCIPLINE:** Use EXACT authorized stop price ($385.00). Do not round or use discretionary levels.
 
 ### HOOD — HOLD 5 — DO NOT ADD — Trim if breaks $110
-- Position avg $101.50. Current price ~$112.68 (unrealized +11.02%). Down –2.11% intraday ($115.11 → $112.68), bounced off ~$110.31 low.
+- Position avg $101.50. Current price ~$113.56 (unrealized +11.88%). Down –1.35% intraday ($115.11 → $113.56), bounced off ~$110.31 low.
 - **Defensive trim (HOUR EXPLICITLY AUTHORIZES):** SELL 2 shares if price drops below $110.00 with limit $109.50. Rationale: lock in bulk of gain on volatile name into weekend. Hold remaining 3 shares as core.
 - Do NOT add HOOD today.
 - **ANTI-CHURN:** If HOOD was bought today, DO NOT SELL it today.
@@ -82,17 +82,17 @@ Do not place market orders for these; use limit orders only, or defer.
 1. **No new buys authorized** for this cycle or into the close. Exposure band is 70–85%; current 77.0%.
 2. **Conditional add queue for Monday (requires explicit hourly authorization):**
    - AVGO if pullback to $390 or below with volume confirmation.
-   - HOOD if pullback to $105 or below (not chasing at $112+ after a volatile day).
+   - HOOD if pullback to $105 or below (not chasing at $113+ after a volatile day).
    - QQQ only if it reclaims $730 with volume and we can trim something else to stay under 45% cap.
    - NVDA if it reclaims $210 with volume and chip rotation broadens.
    - GOOG only if it reclaims $360 with volume and shows weekly strength.
 
 ## Expected Book Into Close (if no stops triggered)
-- QQQ 6 (~44.6%), VOO 2 (~14.2%), AVGO 3 (~12.3%), HOOD 5 (~5.8%)
+- QQQ 6 (~44.6%), VOO 2 (~14.2%), AVGO 3 (~12.4%), HOOD 5 (~5.8%)
 - Cash: ~$2,240 (~23.0%)
 - Gross exposure: ~77.0%
 
-## Next Hourly Preview — 15:35Z / 12:35 PM ET (NOT AUTHORIZED YET)
+## Next Hourly Preview — 16:35Z / 13:35 PM ET (NOT AUTHORIZED YET)
 - Monitor HOOD intraday support at $110 and resistance at $115.
 - Monitor AVGO support at $395 and $385 stop level.
 - If no stops triggered, continue hold posture into close.
