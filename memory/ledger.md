@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-10 : 11:38 : [hourly] Held all, no trades, stops intact
+- Equity ,734.92, gross 77.0%, within 70-85% band
+- No filled trades since 10:35 AM ET
+- AVGO 00.61, HOOD 12.68 — stops not triggered
+- Goal check: -2.65% vs SPY +4.84% — gap -7.49 pp
+- No new buys authorized; hold into weekend
+
+2026-07-10 : 11:30 : [tactical] No action — stops not triggered
+- AVGO at 00.87, stop 85 — not breached
+- HOOD at 12.75, stop 10 — not breached
+- Exposure 77.0%, within 70-85% band
+- Event detector: MINOR, no response needed
+- No orders placed
+
+2026-07-10 : 11:20 : [tactical] No action: stops intact, no triggers
+- AVGO 99.77 > 85 stop — no trim
+- HOOD 11.64 > 10 stop — no trim
+- Exposure 77% within 70-85% band
+- Event detector: NONE; no overrides
+- All conditions HOLD, no orders placed
+
+2026-07-10 : 11:10 : [tactical] No action — stops not triggered
+- AVGO 99.31 vs stop 85 — no trigger
+- HOOD 11.49 vs stop 10 — no trigger
+- Gross exposure 76.9%, no buys authorized
+- Event detector: NONE, all positions OK
+
+2026-07-10 : 10:50 : [tactical] No action; stops not breached
+- AVGO 99.33 > 85 stop — no trim
+- HOOD 12.29 > 10 stop — no trim
+- QQQ/VOO flat; no buys authorized
+- Exposure 77% within 70-85% band
+- Daytrade 0/3; no open orders
+
+2026-07-10 : 10:40 : [tactical] No action — stops intact, no triggers
+- AVGO 98.86 > 85 stop — no sell
+- HOOD 11.64 > 10 stop — no sell
+- No buy conditions met; all positions on HOLD
+- Event detector: NONE; gross exposure 76.9% within band
+- 0 orders placed
+
 2026-07-10 : 10:38 : [hourly] Neutral hold, tighten tactical stops
 - Equity ,697, gross 76.9%, cash 23.1%
 - SOXX unauthorized tactical sale at 69 noted (auth 60)
