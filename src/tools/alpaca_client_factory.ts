@@ -88,6 +88,29 @@ const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX',
 ]);
 
+export async function hasSameDayTradeToday(
+  client: Alpaca,
+  symbol: string,
+  side: 'buy' | 'sell'
+): Promise<boolean> {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const after = today.toISOString();
+    const orders = await client.getOrders({ status: 'closed', after, limit: 100 });
+    const opposite = side === 'buy' ? 'sell' : 'buy';
+    return orders.some(
+      (o: any) =>
+        o.symbol?.toUpperCase() === symbol.toUpperCase() &&
+        o.side?.toLowerCase() === opposite &&
+        o.status === 'filled' &&
+        o.filled_at != null
+    );
+  } catch {
+    return false;
+  }
+}
+
 async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
   const blocked = new Set<string>();
   try {
@@ -291,6 +314,19 @@ export function createAlpacaClient(mode: AlpacaMode, env: EnvSource = process.en
           `Concentration cap check failed: ${e instanceof Error ? e.message : String(e)}`
         );
       }
+    }
+
+    // ── Anti-churn / same-day round-trip guard ─────────────────────────────
+    try {
+      const churned = await hasSameDayTradeToday(client, symbol, side);
+      if (churned) {
+        throw new Error(
+          `Order blocked: Same-day round-trip detected for ${symbol} (${side}). Anti-churn rule prohibits buying a symbol that was sold today, or selling a symbol that was bought today.`
+        );
+      }
+    } catch (e) {
+      if (e instanceof Error && e.message.includes('Same-day round-trip')) throw e;
+      // ignore query failures and allow order to proceed
     }
 
     return originalCreateOrder(params);

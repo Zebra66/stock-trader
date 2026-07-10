@@ -65,19 +65,21 @@ function classifyPosition(pctChange: number): EventReport['heldPositions'][0]['s
 
 async function loadLastSnapshot(): Promise<LastSnapshot | null> {
   try {
-    const raw = await Bun.file(SNAPSHOT_PATH).text();
-    return JSON.parse(raw) as LastSnapshot;
+    const file = Bun.file(SNAPSHOT_PATH);
+    if (!(await file.exists())) return null;
+    const text = await file.text();
+    return JSON.parse(text) as LastSnapshot;
   } catch {
     return null;
   }
 }
 
-async function saveSnapshot(prices: Record<string, number>) {
+function saveSnapshot(prices: Record<string, number>) {
   const snapshot: LastSnapshot = {
     timestamp: new Date().toISOString(),
     prices,
   };
-  await Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
+  Bun.write(SNAPSHOT_PATH, JSON.stringify(snapshot, null, 2));
 }
 
 async function fetchPrice(symbol: string): Promise<number | null> {
@@ -201,7 +203,7 @@ export async function detectEvents(): Promise<EventReport> {
   };
 
   // Save snapshot for next run
-  await saveSnapshot(currentPrices);
+  saveSnapshot(currentPrices);
 
   return report;
 }

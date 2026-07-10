@@ -14,6 +14,32 @@ function getAlpaca(): Alpaca {
 
 const API_TIMEOUT_MS = 15_000;
 
+async function hasSameDayTradeTodayCLI(
+  symbol: string,
+  side: 'buy' | 'sell'
+): Promise<boolean> {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const after = today.toISOString();
+    const orders = await withTimeout(
+      getAlpaca().getOrders({ status: 'closed', after, limit: 100 }),
+      API_TIMEOUT_MS,
+      'Alpaca getOrders (anti-churn)'
+    ) as any[];
+    const opposite = side === 'buy' ? 'sell' : 'buy';
+    return orders.some(
+      (o) =>
+        o.symbol?.toUpperCase() === symbol.toUpperCase() &&
+        o.side?.toLowerCase() === opposite &&
+        o.status === 'filled' &&
+        o.filled_at != null
+    );
+  } catch {
+    return false;
+  }
+}
+
 const UNIVERSE = new Set([
   'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
 ]);
@@ -185,6 +211,16 @@ export const alpacaTools = {
         return `Error submitting order: Concentration cap check failed: ${(e as Error).message}`;
       }
     }
+    // Anti-churn / same-day round-trip guard (defense-in-depth with factory)
+    try {
+      const churned = await hasSameDayTradeTodayCLI(symbol, side);
+      if (churned) {
+        return `Error submitting order: Same-day round-trip detected for ${symbol} (${side}). Anti-churn rule prohibits buying a symbol that was sold today, or selling a symbol that was bought today.`;
+      }
+    } catch {
+      // ignore query errors and proceed
+    }
+
     if (process.env.DRY_RUN === '1') {
       return `[DRY RUN] Order NOT submitted: ${side} ${qty} shares of ${symbol} @ ${type}${limitPrice ? ` limit ${limitPrice}` : ''} (${timeInForce})`;
     }

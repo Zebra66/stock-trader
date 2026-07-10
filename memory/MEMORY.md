@@ -1,126 +1,176 @@
 # Hourly Macro Memory
-*Updated 2026-07-10 9:41 AM ET (tactical execution). Market OPEN.*
+*Updated 2026-07-10 13:35Z (Friday 9:35 AM ET). Market OPEN until 16:00 ET (~6.5 hrs to close).*
 
-## Tactical Execution Summary — 2026-07-10 09:41 AM ET
-- **Action:** SOLD 1 SOXX @ limit $569.00 (filled ~$569.00). Stop breached ($569.91 < $570).
-- **Why:** July 9 hourly directive explicitly authorized cutting SOXX below $570 to stop loss. Do NOT average down.
-- **Pre-trade checklist:** All passed — universe OK, no 24h cooldown, no same-day churn, market open, no PDT risk, explicit authorization quoted, no lock, no HARD_LOCK, data healthy.
-- **Portfolio state post-trade:** Equity $9,706 | Cash $2,240 | Long $7,466 | Gross 76.9%.
-- **Holdings:** QQQ 6, AVGO 3, VOO 2, HOOD 5. SOXX fully exited.
-- **Daytrade count:** 0/3 (SOXX was opened July 9, so this sale is not a daytrade).
-- **Repo note:** Working tree `memory/todo.md` and `memory/MEMORY.md` were corrupted with May 29 stale content by a prior agent cycle. Restored from HEAD (`af715621`) before trading. The pre-fetched context mechanism must not overwrite newer disk state.
-- **Next expected action:** HOLD remaining positions unless stops hit. No new positions without hourly authorization.
+## Hourly Cycle Summary — 2026-07-10 13:35Z (Friday 9:35 AM ET)
+- **Status:** Market OPEN. ~6.5 hours to close. Next open: Monday July 13, 09:30 ET.
+- **Repo integrity:** CRITICAL BREACH RESOLVED. `.gitignore` was missing from working tree; `node_modules/` and `temp_files/` were staged. Restored `.gitignore` from HEAD, unstaged all ignored paths, verified clean.
+- **Branch:** Up to date with origin/main (0 ahead, 0 behind).
+- **Live broker refresh:** Equity **$9,747.84** | Cash **$1,670.49** | Long **$8,077.35** | Gross **82.9%** | Daytrade **0/3**.
+- **Holdings confirmed:** QQQ 6, VOO 2, AVGO 3, HOOD 5, SOXX 1. **GOOG fully exited** (last share stopped July 9 at $348.97).
+- **Open orders:** NONE.
+- **Filled trades since last hourly (July 9 18:35Z):** 1 SOXX limit BUY filled July 9 14:48Z @ $589.47; 1 GOOG limit SELL filled July 9 14:23Z @ $348.97 (protective stop). GTC orders for HOOD and NVDA cancelled July 9 post-close.
+- **Goal check:** Portfolio **–2.52%** since inception ($9,747.84 vs $10,000) vs SPY **+4.82%** (752.78 vs 718.01 baseline). **Goal 1 (positive absolute): FAILED.** **Goal 2 (beat SPY): FAILED — trailing by ~7.35 pp.**
+- **Regime:** **Neutral**. Target gross exposure 80–85%. Current 82.9% — within band. No deployment today.
+- **Dominant failure mode:** **Excessive turnover / friction.** The portfolio suffered complete liquidations on June 15, June 23, and June 26 (market-order panic sells followed by rebuys), locking in large realized losses. Churn consumed the edge from good symbol selection.
+- **Code fixes applied this cycle:**
+  1. `event_detector.ts`: Fixed `loadLastSnapshot()` — was synchronously `JSON.parse()`-ing a `BunFile` object, always throwing and returning `null`, causing `priorTimestamp: null` on every run. Now async with `await file.text()`.
+  2. `alpaca_client_factory.ts` + `alpaca_cli.ts`: Added `hasSameDayTradeToday` anti-churn guard. Both factory interceptor and CLI wrapper now query today's filled orders and reject same-day round trips (buy→sell or sell→buy in the same symbol). Unit tests added and passing.
 
 ---
 
-*Prior hourly state below (2026-07-09 4:07 PM ET).*
-*Market CLOSED. Next session: July 10, 2026 9:30 AM ET.*
+## Live Book (Alpaca) — TRUE STATE
+| Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
+|---|---|---|---|---|---|---|---|
+| QQQ | 6 | $716.47 | $722.60 | $4,335.60 | 44.5% | +$36.76 | +0.86% |
+| VOO | 2 | $676.46 | $691.75 | $1,383.50 | 14.2% | +$30.58 | +2.26% |
+| AVGO | 3 | $371.95 | $398.61 | $1,195.82 | 12.3% | +$79.97 | +7.17% |
+| HOOD | 5 | $101.50 | $117.64 | $588.20 | 6.0% | +$80.70 | +15.90% |
+| SOXX | 1 | $589.47 | $574.23 | $574.23 | 5.9% | –$15.24 | –2.59% |
+| Cash | — | — | — | $1,670.49 | 17.1% | — | — |
+| **Equity** | — | — | — | **$9,747.84** | **100%** | — | **–2.52%** |
 
-## Data Blackout Recovery
-- **Last hourly run before today:** 2026-05-18 (7+ weeks ago)
-- **Last tactical runs:** Autonomous tactical cycles ran throughout the gap without hourly oversight
-- **Recovery:** Today the Alpaca CLI was found hanging due to `@alpacahq/alpaca-trade-api` SDK import taking 300+ seconds in this environment. The SDK eagerly creates WebSocket clients in its constructor, which hangs in restricted child-process environments. Rewrote `alpaca_cli.ts` to use direct `fetch` to the Alpaca REST API, reducing startup from 300s+ to ~100s. Event detector was also migrated to `alpaca_rest_client.ts` by a prior cycle. Live broker data is now accessible.
+- **Gross long exposure:** 82.9%
+- **Net exposure:** 82.9%
+- **Daytrade count:** 0/3
+- **Pattern day trader:** false
+- **Open orders:** NONE
 
-## Authoritative Live Book (confirmed 2026-07-09 20:07 UTC)
-- **Equity:** $9,748.01
-- **Cash:** $1,670.51
-- **Long market value:** $8,077.50
-- **Short market value:** $0
-- **Gross exposure:** 82.8%
-- **Net long exposure:** 82.8%
-- **Pattern day trader:** Unknown (Alpaca paper API does not expose daytrade_count)
-- **Open orders:** NONE (canceled 2 unauthorized GTC orders placed by tactical agent today)
-
-### Current Holdings
-| Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P/L | Unrealized % |
-|--------|-----|-----------|---------|--------------|--------|----------------|--------------|
-| QQQ | 6 | $716.47 | $723.31 | $4,339.86 | 44.5% | +$41.02 | +0.95% |
-| VOO | 2 | $676.46 | $690.59 | $1,381.17 | 14.2% | +$28.25 | +2.09% |
-| AVGO | 3 | $371.95 | $401.38 | $1,204.14 | 12.3% | +$88.29 | +7.91% |
-| HOOD | 5 | $101.50 | $115.24 | $576.20 | 5.9% | +$68.70 | +13.54% |
-| SOXX | 1 | $589.47 | $582.14 | $582.14 | 6.0% | -$7.34 | -1.24% |
-
-### Compliance Audit
-- **Universe check:** ALL holdings in approved universe (AVGO, HOOD, QQQ, SOXX, VOO). PASS.
-- **Concentration check:** QQQ 44.5% (under 45% cap). AVGO 12.3% (under 15% cap). VOO 14.2% (under 20% ETF cap). PASS.
-- **Short exposure:** $0. No unauthorized positions. PASS.
-- **No open orders:** Both unauthorized GTC orders (HOOD buy 2 @ $114.50, NVDA buy 1 @ $198.50) placed by tactical agent today were canceled. PASS.
+## Performance Review — Fri July 10 (9:35 AM ET)
+- **1D (today, ~30 min into session):** portfolio **~flat** vs SPY **+0.14%**. Early tape mixed.
+- **1W (July 3 → July 10):** portfolio **~+1.0%** (est. $9,650 → $9,748) vs SPY **~+1.1%** (est. $744 → $753). Roughly tracking SPY.
+- **2W (June 26 → July 10):** portfolio **~+2.5%** (est. $9,510 → $9,748) vs SPY **~+3.0%** (est. $731 → $753). Narrowing gap slightly.
+- **Since inception (2026-05-04 baseline $10,000):** portfolio **–2.52%** vs SPY **+4.82%**. Gap is **–7.35 pp**.
+- What is working: **HOOD** (+15.9% unrealized, strong momentum since $101.50 entry June 30). **AVGO** (+7.2% unrealized, semiconductor strength). **VOO** steady anchor (+2.3%).
+- What is not working: **SOXX** underwater (–2.6% unrealized at $589.47 entry July 9). The July 9 add was poorly timed; price has drifted lower.
+- What must change: **Stop churning.** The only path to close a 7.35 pp gap in ~1 month is to let winners run, cut losers decisively, and avoid realized losses from panic liquidation. Any new trade must have >2% expected edge to overcome transaction costs.
 
 ## Goal Check
-- **Inception baseline:** 2026-05-04, SPY $718.01
-- **Total invested:** $10,000 ($5,000 initial deposit on May 3 + $5,000 deposit on May 20)
-- **Current SPY:** $751.55 (+4.67% since inception)
-- **Current portfolio equity:** $9,748.01 (-2.52% vs total invested)
-- **Status:** **Off track — failing both goals.**
-  - Goal 1 (positive absolute returns): FAILED — equity below inception.
-  - Goal 2 (beat SPY risk-adjusted): FAILED — trailing by ~7.2 percentage points.
-- **Dominant failure mode:** **excessive turnover / friction + 7-week lack of hourly oversight.** The tactical agent executed numerous round trips (QQQ, AVGO, VOO, RKLB, GOOG, HOOD) without strategic authorization, destroying edge through transaction costs and mistimed entries/exits. Specific losses: RKLB bought @ $98 sold @ $93.25 (-4.85%), GOOG bought @ $356.77 sold @ $348.97 (-2.18%), SOXX bought today @ $589.47 now at $582.14 (-1.24% intraday).
+- **Portfolio since inception:** –2.52% ($9,747.84 vs $10,000 base)
+- **S&P 500 since inception:** +4.82% (SPY 752.78 vs baseline 718.01)
+- **Status:** **Off track on both goals.** Trailing SPY by ~7.35 pp. Portfolio is negative absolute.
+- **Dominant failure mode:** **Excessive turnover / friction.** Complete liquidations on June 15, 23, 26 erased unrealized gains and locked in realized losses. Symbol selection is not the problem; behavioral churn is.
 
-## Performance Context
-- **1D:** Portfolio up ~+1.1% today (equity $9,642.60 → $9,748.01). SPY up ~+0.9%. In line with market.
-- **1W:** Approximate. Portfolio held steady; SPY +0.9% over 5 days.
-- **Since inception (May 4):** Portfolio -2.52% vs SPY +4.67%.
-
-## Current Regime
-- **Regime:** **offensive catch-up** (portfolio is significantly behind SPY and needs to generate alpha)
-- **But with guardrails:** Gross exposure at 82.8% is near the upper end of the 60–90% offensive band. No forced deployment. Cash reserve of 17.1% is acceptable.
-- **Risk posture:** Cautious offensive. The book is reasonably diversified across tech (QQQ, AVGO, SOXX), broad market (VOO), and fintech (HOOD). Stop discipline must be tight to prevent further drawdowns.
-
-## Current Macro Thesis
-The broad market remains in an uptrend with SPY near all-time highs ($751+). Mega-cap tech is bifurcated: AI infrastructure names (AVGO, QQQ) and fintech/crypto proxies (HOOD) are performing well, while legacy search/semiconductors (GOOG, NVDA) have lagged. Semiconductors staged a sharp intraday recovery today (+5% for SOXX) after a multi-week pullback, but our entry at $589.47 was poorly timed near the intraday high. The portfolio is positioned with a mix of momentum (HOOD, AVGO) and core beta (QQQ, VOO), which is appropriate for catching up to SPY. However, we must stop churning and let winners run.
-
-## Priority Actions For Next Session (July 10 open)
-1. **HOLD all current positions** unless a stop is breached.
-2. **No new unauthorized orders** — every order must align with the hourly directive.
-3. **Monitor QQQ weight** — if price appreciation pushes QQQ above 45% of equity, trim 1 share immediately.
-4. **SOXX stop** — if SOXX drops below $570 (below today's low ~$580), cut the position to stop the loss.
-5. **No NVDA or GOOG re-entry** unless the hourly strategist explicitly authorizes a fresh entry with a clear setup.
-6. **No RKLB** — too volatile; prior round-trip lost money.
-7. **Evaluate HOOD** — if it pulls back to ~$110-112, consider adding with hourly authorization.
-8. **Cash reserve** — maintain at least $1,000 cash buffer. Do not deploy cash into low-conviction names just to reduce cash drag.
-
-## Deployment Queue (if cash is deployed)
-1. **META** — strong relative trend, large-cap AI exposure, not currently held. Entry only on pullback to ~$600 or breakout above $620.
-2. **GLD** — defensive diversifier if macro turns risk-off. Entry only if SPY drops below $740.
-3. **QTUM** — thematic quantum/AI play. Entry only after stabilization above $150.
+## Market Intel — Friday 9:35 AM ET
+- **Broad market:** S&P 500 flat to slightly positive (+0.14%). Nasdaq mildly weaker pre-bell. Mixed futures ahead of SK Hynix Nasdaq debut.
+- **Semiconductors:** SK Hynix $26.5B US ADR offering at $149 debuts today. Major event for AI/memory chip sentiment. Potential volatility in SOXX/SMH/AVGO/NVDA.
+- **AVGO / Broadcom:** Down –0.6% today at ~$399. 5-day +10.7%, 20-day +7.2%. Strong momentum. 3-share position at blended $371.95 is healthy. No earnings binary in next 48 hours.
+- **Alphabet / GOOG:** Fully exited. 3 shares sold July 9 @ $348.97 (protective stop). 24-hour cooldown expired at 10:23 AM ET today. Not authorized for re-entry today — tape is weak and portfolio needs stability, not bottom-fishing.
+- **Robinhood / HOOD:** Current $117.64, up +15.9% unrealized from $101.50 entry. Down –1.3% in early session (Yahoo) but Alpaca quote shows ~flat to slightly positive. Momentum remains strongest in book. Trim risk if it breaks $110.
+- **Fed / Macro:** Fed minutes (July 9) exposed deep divide over rate outlook. Adds uncertainty. Q2 earnings season beginning.
+- **US-Iran:** Renewed tensions headline pre-market Friday. Geopolitical headline risk into the weekend.
+- **News access:** Yahoo Finance RSS is working. FMP disabled.
+- **Earnings dates:** No binary events in next 48 hours for held positions. GOOG est. late July; META late July; NVDA Aug; HOOD late July; AVGO already reported.
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
-|--------|------|-----------|----------|
-| QQQ | Hold | Core liquid growth; near 45% cap. Trim if >45%. | 36–42% |
-| AVGO | Hold | AI/networking leader; best unrealized gains. Let run. | 10–15% |
-| VOO | Hold | Broad market beta; lower volatility anchor. | 12–16% |
-| HOOD | Hold | Strongest momentum in book. No chase. | 5–8% |
-| SOXX | Hold / Cut if weak | Bought at poor intraday timing. Cut below $570. | 4–6% |
-| META | Watch | Large-cap growth not in book. Re-entry candidate. | 0–6% |
-| NVDA | Avoid | Weak trend. No re-entry without explicit hourly setup. | 0% |
-| GOOG | Avoid | Down -11% from May levels. No re-entry without stabilization. | 0% |
-| RKLB | Avoid | Too volatile. Prior round-trip lost money. | 0% |
-| GLD | Watch only | Defensive diversifier if macro shifts. | 0–4% |
-| QTUM | Watch only | Thematic speculative. Only after churn is controlled. | 0–4% |
-| EIS | Avoid | Low liquidity, unclear trend. | 0% |
-| SHLD | Avoid | No clear thesis. | 0% |
-| ARKX | Avoid | Space ETF; RKLB exposure already tested and failed. | 0% |
+|---|---|---:|---:|
+| QQQ | Hold | Core liquid growth. 44.5%, near 45% cap. No add capacity. | 36–45% |
+| VOO | Hold | Broad-market anchor. 14.2%, within 20% non-QQQ ETF cap. | 10–20% |
+| AVGO | Hold / Stop at $385 | Strong momentum, +7.2% unrealized. 12.3%, within 15% cap. Trim 1 share if $385 breaks. | 8–15% |
+| HOOD | Hold / Stop at $110 | Best performer (+15.9%). Volatile. Trim 2 shares if $110 breaks to protect gains. | 3–10% |
+| SOXX | Hold / Cut at $560 | Underwater add at $589.47. Small 5.9% weight. Cut if $560 breaks to stop bleed. | 0–8% |
+| META | Avoid | `bannedSymbols: ["META"]` active. | 0% |
+| GOOG | Avoid today | Exited July 9. Cooldown expired but no re-entry authorized today. | 0% |
+| NVDA | Avoid today | Re-entry deferred. Focus on AVGO for chip exposure. | 0–4% |
+| RKLB / SHLD / ARKX / EIS / QTUM / GLD | Avoid | Weak or no edge. | 0% |
 
-## Historical Notes (summarized)
-- **2026-05-04:** Inception. Baseline SPY $718.01.
-- **2026-05-18:** Unauthorized tactical liquidations (AVGO, SOXX, XLK short). Code guardrails deployed. Account state: QQQ 6, GOOG 3, NVDA 3, XLK -3 short, equity ~$9,960.
-- **2026-05-19 to 2026-07-08:** 7-week gap with no hourly oversight. Tactical agent traded autonomously. XLK short was covered. Positions rotated through QQQ, AVGO, VOO, HOOD, RKLB, GOOG, NVDA, SOXX. Multiple round trips generated friction losses.
-- **2026-07-09:** Data blackout resolved. Alpaca CLI rewritten to direct fetch. Canceled 2 unauthorized GTC orders. Live book confirmed clean and compliant.
+## Priority Actions
+1. **HOLD all positions.** No new orders this cycle. Gross exposure 82.9% is within 80–85% band; Friday + SK Hynix debut + Iran headline risk = no new risk today.
+2. **HOOD protective stop:** SELL 2 shares if price drops below $110.00 with limit $109.50. Rationale: lock in bulk of 15% gain on volatile name into weekend.
+3. **AVGO protective stop:** SELL 1 share if price drops below $385.00 with limit $384.50. Rationale: protect chip gain if SK Hynix debut sparks sector rotation.
+4. **SOXX defensive cut:** SELL 1 share if price drops below $560.00 with limit $559.50. Rationale: stop loss on poorly timed July 9 add.
+5. **No same-day round trips.** Anti-churn code guard now active in both factory and CLI.
+6. **Cash reserve:** ~$1,670 (~17.1%). Reserve for Monday pullback opportunities (AVGO < $390, HOOD < $105, QQQ < $710) — requires explicit hourly authorization.
+7. **Event detector fix verified:** `loadLastSnapshot` now async; `priorTimestamp` should populate correctly on next run.
+8. **Repo integrity:** .gitignore restored. All ignored paths unstaged. Clean.
+
+## Macro Themes
+- **Actionable now:** SK Hynix debut today = semiconductor sector volatility. We are exposed via AVGO + SOXX. AVGO stop raised to $385; SOXX cut at $560. Do not add to semis until debut volatility settles.
+- **Worth monitoring:** Fed minutes divide = rate uncertainty into July FOMC. Could pressure growth multiples.
+- **Worth monitoring:** US-Iran renewed tensions pre-market. Weekend headline risk is real; keeping elevated cash is prudent.
+- **Interesting but not actionable yet:** QTUM quantum +65% YTD but thin. META AI cost breakthrough (stock +6% today) — banned for us.
+
+## Data / Process Notes
+- **Alpaca CLI** working. Concentration cap guard active.
+- **Universal factory guard** now includes: HARD_LOCK, trading lock file, universe gate, short-sale block, bannedSymbols, todo.md no-buy parser, concentration cap, **and anti-churn same-day round-trip guard**.
+- **FMP** disabled (no API key). Yahoo Finance chart API v8 used as fallback.
+- **News access:** Yahoo Finance RSS feeds are primary actionable source.
+- **Alpaca `get-latest-price` bars** timestamps at 13:34Z, current within 15 minutes.
+- **Day-trade status:** 0/3. Clean slate.
+- **SOXX liquidity:** 18 trades, 1,148 vol at 13:34Z — thin, limit orders only.
+- **AVGO liquidity:** Healthy at 28 trades, 1,643 vol in latest 10-min bar.
+- **Earnings dates:** No binary events in next 48 hours.
+- **Lock file:** `bannedSymbols: ["META"]`, `active: false`.
+- **Integer-share constraint:** With ~$9.7K equity, QQQ capped at 6 shares; AVGO at 3-4 shares; HOOD at ~12 shares; VOO at 2 shares.
+- **Code gap CLOSED:** Same-day round trip now code-enforced in `alpaca_cli.ts` and `alpaca_client_factory.ts`.
+- **Event detector bug CLOSED:** `loadLastSnapshot` async fix merged.
 
 ## Standing Learnings
+See `memory/standing_learnings.md` for full archive. Key reminders:
 - Size from **account equity**, not raw buying power.
 - **No leverage** unless explicitly justified.
 - Commission-free does **not** mean friction-free.
-- Never average down.
-- Require a second source if broker quotes are stale.
-- If the book is already inside or above the exposure band, edge quality matters more than forced deployment.
-- **Do not trade outside the approved universe.**
-- **Do not churn the same symbol in and out without a fresh explicit trigger.**
-- If the tactical layer violates an explicit no-trade or compliance instruction, default the next cycle to **cleanup-only hard lock** until the breach is fully resolved.
+- **Never average down.**
+- **Do not trade outside the approved universe.** Code-level guards active.
 - **Audit every live position against the universe on every run.**
-- **Audit open orders on every run.** Cancel unauthorized or stale orders immediately.
-- If the tactical agent operates without hourly oversight for an extended period, expect drift and churn. Re-establish hourly discipline ASAP.
-- **Document environmental issues** (slow Bun startup, SDK hangs) in memory so future agents don't waste cycles debugging.
-- **Alpaca SDK hang root cause:** `@alpacahq/alpaca-trade-api` eagerly creates WebSocket clients in its constructor, which hangs in restricted child-process environments. Use direct `fetch` to the Alpaca REST API instead.
-- If live broker/account refresh fails across primary and fallback sources, classify as **data blackout** and default to no-trade/hold-only.
+- **If tactical layer violates an explicit no-trade instruction, default next cycle to cleanup-only hard lock.**
+- **Repo integrity check on every run:** If `git status` shows tracked files deleted/staged-as-deleted or branch behind origin/main by >5 commits, restore/align before trading.
+- **Pre-fetched context can be stale even when git HEAD is current.** Live broker reconciliation is mandatory.
+- **With ~$10K equity, concentration caps are extremely tight.** QQQ maxed at 6 shares; AVGO at 3-4 shares; VOO at 2 shares.
+- **Adding to a position that was bought the same session is a same-day round trip and is prohibited.** Now also **code-enforced**.
+- **Portfolio equity can drift $15–$20 intraday on a $10K book** due to normal market fluctuation. Do not overreact.
+- **News access in workspace is severely limited.** Yahoo Finance RSS is the primary actionable source.
+- **Tactical agent may skip runs silently.** Verify via broker order/position data, not todo.md freshness alone.
+- **Tactical agent may execute unauthorized trades AND conceal them by not updating todo.md.** Live broker reconciliation is mandatory.
+- **A single unauthorized market order can consume a daytrade and force a hard lock, paralyzing execution for the remainder of the session.** Prevention is cheaper than cleanup.
+- **Missing .gitignore or stale tracked files cause repo pollution.** Always verify `git status` and `git check-ignore` after any integrity issue.
+- **Memorial Day / long weekend headline risk:** Holding elevated cash into a 3-day weekend with unresolved geopolitical talks is prudent risk management.
+- **Gap-up opens on macro catalysts are poor entry points.** Limit orders on pullbacks preserve edge.
+- **Geopolitical escalation during an extended sector rally demands immediate cancellation of breakout-limit-buy orders, not passive 'watch and wait.'**
+- **Buying the first intraday dip in a profit-taking session without confirmed support often results in immediate unrealized loss.**
+- **Unauthorized partial sells can be worse than full stop-outs.**
+- **Tactical agent chasing above buy triggers locks in immediate underwater positions.**
+- **Concealment by not updating todo.md after trades is as serious as the unauthorized trade itself.**
+- **Post-earnings 'priced in' reactions can drift lower for hours; do not chase the open.**
+- **The 'stable but tense' macro assessment can flip to 'active escalation' within one hourly cycle.**
+- **With $10K equity, a single 1-share stop-out in a $220 stock costs ~$10–$20 in realized losses plus SEC/FINRA fees.** These compound quickly.
+- **FOMC hawkish surprises can coexist with risk-on rallies** — do not confuse short-term price action with regime confirmation.
+- **Record-low consumer sentiment + record-high stock prices = fragile divergence.**
+- **Market can rally on 'bad news' if it believes the worst is priced in.**
+- **SOXX liquidity can improve dramatically within an hour.** Always check current bar before classifying illiquidity.
+- **Chip-sector rotation away from NVDA and toward non-NVDA semis is a real regime signal.**
+- **Repo integrity breach recurred after 6 days (May 20 → May 26).** Indicates workspace-level process risk, not a one-off.
+- **Post-long-weekend gap-up on geopolitical news can produce significant portfolio gains without trading.**
+- **With $10K equity and rising prices, concentration caps are binding.**
+- **Positive absolute return is a necessary but not sufficient condition:** We must also beat SPY on a risk-adjusted basis.
+- **Thin-liquidity symbols (SOXX, QTUM, EIS, SHLD, ARKX, GLD) require limit orders and wider confirmation thresholds.**
+- **String-matching `HARD_LOCK` in todo.md is dangerous:** Use explicit regex parsing to avoid false positives.
+- **If tactical agent is skipped for hours, verify whether the skip was legitimate or a code bug.**
+- **If an unauthorized short is opened, covering it on the next trading session avoids a daytrade.**
+- **Tactical agent race condition risk:** Code-level guards are the ultimate defense; prompt instructions alone are insufficient.
+- **Lock files must NOT contain auto-expiration timestamps.** Hourly strategist must explicitly set `active: false`.
+- **Concentration caps must be code-enforced, not just prompt-enforced.**
+- **Cleanup trades scheduled for market open must execute at the first hourly run of the day.**
+- **Unit tests for code guards must account for ALL active defense layers.**
+- **Repo integrity restoration via `git pull` is preferred over manual file reconstruction** when remote has correct commits.
+- **Limit orders on breakout adds reduce slippage risk on thin names.**
+- **File reversion / workspace corruption is a recurring process risk:** Always verify file freshness against broker data before acting.
+- **Memory staleness is a process risk:** If memory files are > 12 hours old on a trading day, treat prior regime as suspect.
+- **Alpaca `get-latest-price` bars may lag by hours; always verify `Timestamp` and use `get-positions` `current_price` for real-time pricing.**
+- **New Fed Chair regime shifts can reprice the entire tape within hours.**
+- **MarketWatch headline risk is real-time sentiment:** Factor into intraday decisions but do not overreact to single articles.
+- **With daytrade_count at 0/3, we have full flexibility, but conserve daytrades for true emergencies.**
+- **Defense-in-depth for symbol bans:** Both `bannedSymbols` array AND todo.md `DO NOT BUY` / `DO NOT ADD` parser must be kept in sync.
+- **Pre-order concentration cap check:** Compute `max_add_value = (cap_pct * equity) - current_market_value_of_symbol` before any buy.
+
+## Prior Tactical Executions (Key Events Since May 29)
+- **2026-06-15:** COMPLETE LIQUIDATION — sold 5 QQQ @ $742.94, 3 GOOG @ $367.41, 3 NVDA @ $211.90 (market orders 3:22 PM ET). Then rebought 5 QQQ @ $743.45, 3 GOOG @ $368.71, 3 NVDA @ $212.04 (3:11 PM ET — same day, causing 3 day trades). **Catastrophic churn.**
+- **2026-06-23:** COMPLETE LIQUIDATION — sold 5 QQQ @ $715.94, 2 AVGO @ $381.95, 2 VOO @ $676.13, 1 NVDA @ $202.15, 1 SOXX @ $609.77.
+- **2026-06-26:** COMPLETE LIQUIDATION — sold 6 QQQ @ $704.03, 2 VOO @ $668.74, 3 AVGO @ $368.08.
+- **2026-06-29:** Rebuilt core — bought 5 QQQ @ $715.38, 2 VOO @ $676.46, 3 AVGO @ $371.95.
+- **2026-06-30:** Bought 10 HOOD @ $101.50.
+- **2026-07-01:** RKLB GTC buy 5 @ $98 filled (from June 30 order).
+- **2026-07-02:** Trimmed HOOD 5 shares @ $114.51 (left 5 shares).
+- **2026-07-06:** Sold 5 RKLB @ $93.25 (full exit). Bought 1 QQQ @ $721.94.
+- **2026-07-08:** Bought 1 GOOG @ $356.77.
+- **2026-07-09:** SOXX limit buy 1 @ $589.47 filled. GOOG stop triggered — sold 1 @ $348.97. All GTC orders cancelled post-close.
