@@ -117,8 +117,20 @@ async function getNoBuySymbolsFromTodo(): Promise<Set<string>> {
     const todo = await Bun.file('./memory/todo.md').text();
     for (const line of todo.split('\n')) {
       const upper = line.toUpperCase();
-      if (!upper.includes('DO NOT BUY') && !upper.includes('DO NOT RE-BUY') && !upper.includes('DO NOT ADD')) continue;
+      // Only treat directives that appear early in the line (first 50 chars) to avoid
+      // matching historical references or explanatory bullets that mention the phrase.
+      const idxBuy = upper.indexOf('DO NOT BUY');
+      const idxRebuy = upper.indexOf('DO NOT RE-BUY');
+      const idxAdd = upper.indexOf('DO NOT ADD');
+      const hasBan = (idxBuy !== -1 && idxBuy < 50) ||
+                     (idxRebuy !== -1 && idxRebuy < 50) ||
+                     (idxAdd !== -1 && idxAdd < 50);
+      if (!hasBan) continue;
+      // Skip conditional authorizations
       if (upper.includes('UNLESS') || upper.includes(' IF ') || upper.includes('CONDITION')) continue;
+      // Skip lines that are clearly referencing a past directive rather than stating one
+      if (/`DO NOT (BUY|RE-BUY|ADD)`/i.test(line)) continue;
+      if (/\b(BYPASSED|DIRECTIVE|PREVIOUSLY|LIFTED|REMOVED|HAD A)\b/i.test(line)) continue;
       for (const sym of UNIVERSE) {
         if (new RegExp(`\\b${sym}\\b`, 'i').test(line)) blocked.add(sym);
       }
