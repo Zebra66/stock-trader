@@ -1,15 +1,15 @@
-# Tactical Todo — Updated 2026-07-10 18:35Z (Friday 2:35 PM ET)
-*HARD_LOCK LIFTED — Breach resolved. No discretionary buys today due to depleted daytrade budget.*
+# Tactical Todo — Updated 2026-07-10 19:35Z (Friday 3:35 PM ET)
+*HARD_LOCK LIFTED — Breach resolved. PDT limit reached. No discretionary buys today.*
 
 ## Current State
 - **Regime:** neutral (60–80% band target)
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / buying power:** $9,765 / $2,260 / $30,054
-- **Gross long exposure:** 76.9% | **Cash:** 23.1%
-- **Daytrade count:** INFERRED 2–4 used today (META same-day round trip). Do NOT open new positions.
+- **Account equity / cash / buying power:** $9,765 / $2,260 / $30,053
+- **Gross long exposure:** 76.85% | **Cash:** 23.15%
+- **Daytrade count:** CONFIRMED 4 (PDT limit reached). NO NEW POSITIONS.
 - **Pattern day trader:** Unknown
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET (~1.25 hrs). Next open Monday July 13, 09:30 ET.
+- **Market:** OPEN until 16:00 ET (~25 min). Next open Monday July 13, 09:30 ET.
 
 ## Position Instructions — Fri Jul 10 (:40, :50 Tactical Runs)
 
@@ -22,13 +22,13 @@
 - Broad-market anchor. No action.
 
 ### AVGO — HOLD 3 — DO NOT ADD — Trim if breaks $385
-- Position avg $371.95. Current ~$400.08 (unrealized +7.6%).
+- Position avg $371.95. Current ~$399.73 (unrealized +7.5%).
 - **Authorized stop:** SELL 1 share if price drops below $385.00 with limit $384.50. If triggered, hold remaining 2 shares.
 - Do NOT add AVGO today.
 - **ANTI-CHURN:** AVGO was not bought today. A sell would NOT be a same-day round trip.
 
 ### HOOD — HOLD 5 — DO NOT ADD — Trim if breaks $110
-- Position avg $101.50. Current ~$112.38 (unrealized +10.7%).
+- Position avg $101.50. Current ~$112.47 (unrealized +10.8%).
 - **Authorized stop:** SELL 2 shares if price drops below $110.00 with limit $109.50. If triggered, hold remaining 3 shares.
 - Do NOT add HOOD today.
 - **ANTI-CHURN:** HOOD was not bought today. A sell would NOT be a same-day round trip.
@@ -52,7 +52,7 @@
 - No edge, weak relative trends, or thin liquidity.
 
 ## Hard Rules / No-Trade Conditions
-- **NO NEW BUYS TODAY.** Daytrade count is inferred at 2–4. Do NOT open any new positions. If you buy a symbol today and it drops, you cannot sell it today without creating a daytrade. PDT risk is unacceptably high.
+- **NO NEW BUYS TODAY.** PDT limit reached (4 daytrades). Do NOT open any new positions. If you buy a symbol today and it drops, you cannot sell it today without creating a daytrade.
 - **HARD_LOCK LIFTED** at 18:35Z. `memory/.trading_lock.json` has `active: false`. Code-level guards remain active for bannedSymbols and all other checks.
 - **No same-day round trips.** If a symbol was bought today, do NOT sell it today. If a symbol was sold today, do NOT buy it today. Code-enforced.
 - **No new short sales** under any circumstances.
@@ -73,19 +73,20 @@
 - BUY orders for banned symbols are REJECTED regardless of lock active state.
 
 ## Today's Deployment Queue
-- **NO NEW BUYS AUTHORIZED.** Daytrade budget depleted. Weekend risk ahead.
+- **NO NEW BUYS AUTHORIZED.** PDT limit reached. Weekend risk ahead.
 - Monday reassessment queue (requires explicit hourly authorization):
   1. Reassess gross exposure target.
-  2. If defensive posture maintained, consider NVDA or SOXX adds only after cooldown expires.
+  2. If offensive posture selected, consider GOOG, NVDA, or SOXX adds only after cooldown expires.
   3. Rebuild only after full audit passes (`bun run src/tools/audit_positions.ts`).
 
 ## Expected Book Into Close (if no stops triggered)
 - QQQ 6 (~44.6%), VOO 2 (~14.2%), AVGO 3 (~12.3%), HOOD 5 (~5.8%)
-- Cash: ~$2,260 (23.1%)
-- Gross exposure: ~76.9%
+- Cash: ~$2,260 (23.2%)
+- Gross exposure: ~76.85%
 
-## Next Hourly Preview — 19:35Z / 15:35 PM ET
+## Next Hourly Preview — Monday Jul 13 13:35Z / 09:35 AM ET
+- Reassess regime after weekend.
 - Monitor AVGO support at $395 and $385 stop level.
 - Monitor HOOD support at $110 stop level.
-- If no stops triggered, continue hold posture into close.
-- No new risk. No new buys.
+- Check daytrade count at open; if reset to 0, tactical flexibility restored.
+- If no stops triggered over weekend, current book is sound for Monday open.
