@@ -24,6 +24,10 @@ temp_files/
 .env.production.local
 .env.local
 
+# deployer / credential files that must never be committed
+*-deployer-key.json
+github-deployer-key.json
+
 # caches
 .eslintcache
 .cache
