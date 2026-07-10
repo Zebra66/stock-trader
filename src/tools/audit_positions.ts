@@ -24,6 +24,65 @@ interface AuditResult {
   cash: number;
   hardLockRecommended: boolean;
   summary: string;
+  daytradeInference?: {
+    estimatedDaytrades: number;
+    pdtLimitReached: boolean;
+    details: string[];
+  };
+}
+
+async function inferDaytrades(): Promise<AuditResult['daytradeInference']> {
+  try {
+    const client = getDefaultAlpacaClient();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const after = today.toISOString();
+    const orders = await client.getOrders({ status: 'closed', after, limit: 100 }) as any[];
+
+    const filled = orders.filter((o: any) => o.status === 'filled' && o.filled_at != null);
+    const buyOrders = filled.filter((o: any) => o.side?.toLowerCase() === 'buy');
+    const sellOrders = filled.filter((o: any) => o.side?.toLowerCase() === 'sell');
+
+    const details: string[] = [];
+    let estimatedDaytrades = 0;
+
+    // Count same-day round trips: for each buy, if there is a sell of same symbol today
+    for (const buy of buyOrders) {
+      const sym = buy.symbol?.toUpperCase();
+      const buyQty = parseFloat(buy.filled_qty ?? buy.qty ?? '0');
+      const buyTime = new Date(buy.filled_at).getTime();
+      if (!sym || buyQty <= 0) continue;
+
+      let remainingBuyQty = buyQty;
+      for (const sell of sellOrders) {
+        if (sell.symbol?.toUpperCase() !== sym) continue;
+        const sellQty = parseFloat(sell.filled_qty ?? sell.qty ?? '0');
+        const sellTime = new Date(sell.filled_at).getTime();
+        if (sellQty <= 0 || sellTime < buyTime) continue;
+
+        const matched = Math.min(remainingBuyQty, sellQty);
+        if (matched > 0) {
+          estimatedDaytrades += matched;
+          remainingBuyQty -= matched;
+          details.push(`${sym}: ${matched} share(s) bought @ ${buy.filled_avg_price} then sold @ ${sell.filled_avg_price} same day`);
+        }
+      }
+    }
+
+    const pdtLimitReached = estimatedDaytrades >= 3;
+
+    return {
+      estimatedDaytrades,
+      pdtLimitReached,
+      details: details.length > 0 ? details : ['No same-day round trips detected today.'],
+    };
+  } catch (e: unknown) {
+    return {
+      estimatedDaytrades: -1,
+      pdtLimitReached: false,
+      details: [`Daytrade inference failed: ${(e as Error).message}`],
+    };
+  }
 }
 
 async function main(): Promise<void> {
@@ -89,6 +148,7 @@ async function main(): Promise<void> {
     }
   }
 
+  const daytradeInference = await inferDaytrades();
   const hardLockRecommended = unauthorizedPositions.length > 0 || grossExposure > 1.05 || concentrationBreaches.length > 0;
 
   const result: AuditResult = {
@@ -99,9 +159,10 @@ async function main(): Promise<void> {
     equity,
     cash,
     hardLockRecommended,
+    daytradeInference,
     summary: hardLockRecommended
       ? `ALERT: ${unauthorizedPositions.length} unauthorized position(s), ${concentrationBreaches.length} concentration breach(es), gross exposure ${(grossExposure*100).toFixed(1)}%. Recommend HARD_LOCK.`
-      : `OK: All positions authorized, within concentration caps. Gross exposure ${(grossExposure*100).toFixed(1)}%.`,
+      : `OK: All positions authorized, within concentration caps. Gross exposure ${(grossExposure*100).toFixed(1)}%. Estimated daytrades today: ${daytradeInference?.estimatedDaytrades ?? 'N/A'}.`,
   };
 
   console.log(JSON.stringify(result, null, 2));
@@ -112,6 +173,10 @@ async function main(): Promise<void> {
     await Bun.write(alertPath, JSON.stringify(result, null, 2));
     console.error(`\nEMERGENCY: Unauthorized positions detected. Alert written to ${alertPath}.`);
     process.exitCode = 1;
+  }
+
+  if (daytradeInference?.pdtLimitReached) {
+    console.error(`\nWARNING: Estimated daytrades (${daytradeInference.estimatedDaytrades}) reached or exceeded PDT threshold. No same-day sells for positions opened today.`);
   }
 }
 

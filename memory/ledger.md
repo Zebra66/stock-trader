@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-10 : 14:39 : [hourly] Breach resolved: META gone, 4 daytrades
+- Unauthorized META 4 shares liquidated at ~68.38 avg
+- Gross exposure back to 76.9%, cash ,260
+- HARD_LOCK lifted; META remains banned
+- Daytrade count inferred 4 — no new buys today
+- Added daytrade inference to audit_positions.ts
+
 2026-07-10 : 13:39 : [hourly] HARD_LOCK: 4 META unauthorized, 104% exp
 - Tactical agent bypassed all guards, bought 4 META shares
 - Gross exposure 104.2%, cash negative, META 27.2% cap breach

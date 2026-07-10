@@ -1,1 +1,1 @@
-{"active":true,"bannedSymbols":["META"],"reason":"CRITICAL BREACH: unauthorized META buys (4 shares) bypassed all code guards on 2026-07-10. Gross exposure 104%, cash negative. No discretionary buys until hourly strategist explicitly lifts lock after full resolution.","allowed":[]}
+{"active":false,"bannedSymbols":["META"],"reason":"Breach resolved: unauthorized META position liquidated same-day by unknown path. Daytrade count now critically high (inferred 2-4). No discretionary buys today. META remains banned from re-entry.","allowed":[]}
