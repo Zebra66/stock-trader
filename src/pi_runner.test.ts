@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, test } from 'bun:test';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
-import { buildStructuredPiEventRecord, logPiEvent } from './pi_runner';
+import { buildStructuredPiEventRecord, logPiEvent, resolveConfiguredProvider, resolveModel } from './pi_runner';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -23,6 +23,41 @@ function createCapturingLogger() {
     },
   };
 }
+
+describe('pi runner model resolution', () => {
+  test('maps trader-zen models to the opencode provider', () => {
+    expect(resolveConfiguredProvider('trader-zen/grok-4.5')).toEqual({
+      configuredProvider: 'trader-zen',
+      provider: 'opencode',
+      modelID: 'grok-4.5',
+    });
+  });
+
+  test('resolves a known model from the vendored pi-ai catalog', () => {
+    const model = resolveModel('opencode', 'kimi-k2.6');
+    expect(model.id).toBe('kimi-k2.6');
+    expect(model.provider).toBe('opencode');
+  });
+
+  test('resolves grok-4.5 via the supplemental catalog until pi-ai ships it', () => {
+    const model = resolveModel('opencode', 'grok-4.5');
+    expect(model).toMatchObject({
+      id: 'grok-4.5',
+      provider: 'opencode',
+      baseUrl: 'https://opencode.ai/zen/v1',
+      reasoning: true,
+      contextWindow: 500000,
+      maxTokens: 30000,
+      cost: { input: 2, output: 6, cacheRead: 0.5, cacheWrite: 0 },
+    });
+  });
+
+  test('throws a clear error for an unknown model id', () => {
+    expect(() => resolveModel('opencode', 'not-a-real-model')).toThrow(
+      'Unknown model "not-a-real-model" for provider "opencode"',
+    );
+  });
+});
 
 describe('pi runner logging', () => {
   test('logs assistant message_end payloads as readable completion summaries', () => {
