@@ -7,7 +7,7 @@ describe('agent config', () => {
 
     expect(config.modes.hourly.model).toContain('/');
     expect(config.modes.tactical.model).toContain('/');
-    expect(config.modes.hourly.model).toBe('trader-zen/kimi-k2.6');
+    expect(config.modes.hourly.model).toBe('trader-zen/grok-4.5');
     expect(config.modes.tactical.model).toBe('trader-zen/kimi-k2.6');
   });
 
@@ -15,6 +15,13 @@ describe('agent config', () => {
     expect(parseModelSpec('trader-zen/kimi-k2.6')).toEqual({
       providerID: 'trader-zen',
       modelID: 'kimi-k2.6',
+    });
+  });
+
+  test('parseModelSpec splits the trader-zen grok-4.5 spec', () => {
+    expect(parseModelSpec('trader-zen/grok-4.5')).toEqual({
+      providerID: 'trader-zen',
+      modelID: 'grok-4.5',
     });
   });
 });

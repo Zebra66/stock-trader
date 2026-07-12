@@ -3,7 +3,7 @@ import { AgentRunner, AgentRunnerOptions } from './runner_interface';
 import { createAgentSession, loadSkillsFromDir, formatSkillsForPrompt } from '@mariozechner/pi-coding-agent';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
 import { getModel } from '@mariozechner/pi-ai';
-import type { AssistantMessage, AssistantMessageEvent, KnownProvider, StopReason, ToolResultMessage, UserMessage } from '@mariozechner/pi-ai';
+import type { AssistantMessage, AssistantMessageEvent, KnownProvider, Model, StopReason, ToolResultMessage, UserMessage } from '@mariozechner/pi-ai';
 import { parseModelSpec } from './agent_config';
 import { appendStructuredLogEvent } from './logger';
 import fs from 'fs';
@@ -588,7 +588,7 @@ export class PiRunner implements AgentRunner {
 
     const resolvedProvider = resolveConfiguredProvider(options.model);
     applyProviderEnv(resolvedProvider.provider);
-    const model = getModel(resolvedProvider.provider, resolvedProvider.modelID as never);
+    const model = resolveModel(resolvedProvider.provider, resolvedProvider.modelID);
     
     // 2. Create the Agent Session with Pi Coding Agent
     // This automatically supports read, write, edit, bash, and we can configure it to load skills.
@@ -663,6 +663,33 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
     default:
       throw new Error(`Unsupported model provider: ${parsedModel.providerID}`);
   }
+}
+
+// Models available from a provider that the vendored @mariozechner/pi-ai catalog
+// (pinned at 0.73.1) hasn't shipped a generated entry for yet.
+const SUPPLEMENTAL_MODELS: Partial<Record<KnownProvider, Record<string, Model<'openai-completions'>>>> = {
+  opencode: {
+    'grok-4.5': {
+      id: 'grok-4.5',
+      name: 'Grok 4.5',
+      api: 'openai-completions',
+      provider: 'opencode',
+      baseUrl: 'https://opencode.ai/zen/v1',
+      reasoning: true,
+      input: ['text', 'image'],
+      cost: { input: 2, output: 6, cacheRead: 0.5, cacheWrite: 0 },
+      contextWindow: 500000,
+      maxTokens: 30000,
+    },
+  },
+};
+
+export function resolveModel(provider: KnownProvider, modelID: string): Model<never> {
+  const model = getModel(provider, modelID as never) ?? SUPPLEMENTAL_MODELS[provider]?.[modelID];
+  if (!model) {
+    throw new Error(`Unknown model "${modelID}" for provider "${provider}"`);
+  }
+  return model as Model<never>;
 }
 
 export function applyProviderEnv(provider: KnownProvider): void {

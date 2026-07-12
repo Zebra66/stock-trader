@@ -1,7 +1,7 @@
 {
   "modes": {
     "hourly": {
-      "model": "trader-zen/kimi-k2.6"
+      "model": "trader-zen/grok-4.5"
     },
     "tactical": {
       "model": "trader-zen/kimi-k2.6"
