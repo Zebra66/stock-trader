@@ -669,6 +669,19 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
 // (pinned at 0.73.1) hasn't shipped a generated entry for yet.
 const SUPPLEMENTAL_MODELS: Partial<Record<KnownProvider, Record<string, Model<'openai-completions'>>>> = {
   opencode: {
+    // Same shape as the catalog's glm-5.1 entry; Zen prices glm-5.2 identically ($1.40/$4.40 per Mtok).
+    'glm-5.2': {
+      id: 'glm-5.2',
+      name: 'GLM-5.2',
+      api: 'openai-completions',
+      provider: 'opencode',
+      baseUrl: 'https://opencode.ai/zen/v1',
+      reasoning: true,
+      input: ['text'],
+      cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+      contextWindow: 204800,
+      maxTokens: 131072,
+    },
     'grok-4.5': {
       id: 'grok-4.5',
       name: 'Grok 4.5',
