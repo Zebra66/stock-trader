@@ -39,6 +39,19 @@ describe('pi runner model resolution', () => {
     expect(model.provider).toBe('opencode');
   });
 
+  test('resolves glm-5.2 via the supplemental catalog until pi-ai ships it', () => {
+    const model = resolveModel('opencode', 'glm-5.2');
+    expect(model).toMatchObject({
+      id: 'glm-5.2',
+      provider: 'opencode',
+      baseUrl: 'https://opencode.ai/zen/v1',
+      reasoning: true,
+      contextWindow: 1000000,
+      maxTokens: 131072,
+      cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+    });
+  });
+
   test('resolves grok-4.5 via the supplemental catalog until pi-ai ships it', () => {
     const model = resolveModel('opencode', 'grok-4.5');
     expect(model).toMatchObject({

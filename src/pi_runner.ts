@@ -669,6 +669,20 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
 // (pinned at 0.73.1) hasn't shipped a generated entry for yet.
 const SUPPLEMENTAL_MODELS: Partial<Record<KnownProvider, Record<string, Model<'openai-completions'>>>> = {
   opencode: {
+    // Spec per https://opencode.ai/zen/v1/models (mirrored at pi.dev/models/opencode-go/glm-5-2):
+    // priced like glm-5.1 but with a 1M-token context window.
+    'glm-5.2': {
+      id: 'glm-5.2',
+      name: 'GLM-5.2',
+      api: 'openai-completions',
+      provider: 'opencode',
+      baseUrl: 'https://opencode.ai/zen/v1',
+      reasoning: true,
+      input: ['text'],
+      cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+      contextWindow: 1000000,
+      maxTokens: 131072,
+    },
     'grok-4.5': {
       id: 'grok-4.5',
       name: 'Grok 4.5',
