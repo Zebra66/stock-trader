@@ -2,6 +2,34 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 10:36 : [hourly] Neutral hold; no buys; trail HOOD 09.50
+- Audit clean; equity ~$9,690; gross 74.4% inside 65-80% band
+- Goals still off track: port -3.10% vs SPY +4.79% (gap ~-7.9pp)
+- HOOD trail stop executed 13:50Z (sold 2@$110); remaining 3 trail now $109.50
+- AVGO $385 stop active; no NVDA/GOOG deploy — geo risk + incomplete semi stabil + TSMC Jul 16
+- META banned; daytrades 0; event detector NONE after open CRITICAL
+
+2026-07-13 : 10:30 : [tactical] No action; stops not triggered
+- AVGO 94.62 above 85 stop
+- HOOD 12.09 above 11 stop
+- Event detector MINOR, no override
+- Gross 74.4% within 65-80% band
+- No buys authorized this cycle
+
+2026-07-13 : 10:20 : [tactical] No action: stops intact, no triggers
+- AVGO 91.54 vs 85 stop — not triggered
+- HOOD 11.65 vs 11 stop — already executed at 13:50Z
+- Event detector NONE; gross 74.3% within band
+- No authorized buys this hour; held all positions
+- Next: wait for 10:35 ET hourly reassessment
+
+2026-07-13 : 10:10 : [tactical] No action: AVGO stop not hit, no buys
+- Event detector NONE; no override required
+- AVGO 391.39, well above 385 stop — no protective sell
+- HOOD 2-share stop already executed at 13:50Z
+- Gross exposure 74.3%, no buys authorized
+- No orders placed; no code/prompt changes
+
 2026-07-13 : 09:52 : [tactical] Sold 2 HOOD at $110.00 stop
 - HOOD breached $111 trail stop (last $110.285)
 - Sold 2 shares at $110.00 avg; hold 3 HOOD
