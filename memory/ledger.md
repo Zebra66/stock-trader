@@ -2,6 +2,44 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 12:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
+- Equity ~$9631, gross 74.2% inside 65-80% band; daytrades 0; audit clean
+- NVDA four-gate FAIL: QQQ~713, NVDA~$205, SOXX~$554, no CRITICAL only
+- US-Iran/Hormuz + semi selloff + TSMC week = exact cash blocker; no new buys
+- Stops unchanged: AVGO $385/384.50, HOOD trail $109.50/109.00; META banned
+- Portfolio -3.69% vs SPY +4.37% (gap ~-8.1pp); both goals off track
+
+2026-07-13 : 12:30 : [tactical] No stops triggered; held all
+- Event detector: NONE
+- AVGO 88.92 > 85 stop; HOOD 09.87 > 09.50 trail
+- No authorized buys; NVDA gate FAIL at 05.88
+- Gross ~74.2%, daytrades 0, no orders placed
+- Awaiting 16:35Z hourly reassessment
+
+2026-07-13 : 12:20 : [tactical] No triggers; hold-only cycle
+- AVGO 389.37 > 385 stop; HOOD 110.45 > 109.50 trail
+- No buys authorized; NVDA gate still FAIL (206.05 < 209)
+- Event detector NONE; gross exposure 74.2% inside band
+- No orders placed
+
+2026-07-13 : 12:10 : [tactical] Hold cycle: no stops hit
+- Event detector NONE; AVGO 89.75 > 85 stop; HOOD 10.88 > 09.50 stop
+- No fills, no orders, gross exposure 74.3%
+- NVDA gate still FAIL (06.13 < 09); no new buys
+
+2026-07-13 : 11:50 : [tactical] Hold: no stops hit, no buys
+- Event detector NONE; held positions all within stops
+- AVGO 390.04 > 385.00 stop; HOOD 111.30 > 109.50 stop
+- No new buys authorized (NVDA gate fail, cash 25.6%)
+- Gross exposure 74.3% inside 65-80% target band
+- No orders placed; daytrades 0 of 3
+
+2026-07-13 : 11:40 : [tactical] No triggers; holds intact
+- AVGO 391.16 > 385 stop; no trim
+- HOOD 111.125 > 109.50 trail; no trim
+- Event detector NONE; gross 74.4% in band
+- No buy authorization; no orders
+
 2026-07-13 : 11:36 : [hourly] Neutral hold; NVDA gate fail; no buys
 - Audit clean; gross 74.4% inside 65-80%; daytrades 0; open orders none
 - Goal off track: port -3.24% vs SPY +4.74% (gap ~-8.0pp); regime neutral
