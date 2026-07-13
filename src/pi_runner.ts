@@ -3,11 +3,56 @@ import { AgentRunner, AgentRunnerOptions } from './runner_interface';
 import { createAgentSession, loadSkillsFromDir, formatSkillsForPrompt } from '@mariozechner/pi-coding-agent';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
 import { getModel } from '@mariozechner/pi-ai';
-import type { AssistantMessage, AssistantMessageEvent, KnownProvider, Model, StopReason, ToolResultMessage, UserMessage } from '@mariozechner/pi-ai';
+import type {
+  AssistantMessage,
+  AssistantMessageEvent,
+  KnownProvider,
+  Model,
+  StopReason,
+  ToolResultMessage,
+  UserMessage,
+} from '@mariozechner/pi-ai';
 import { parseModelSpec } from './agent_config';
 import { appendStructuredLogEvent } from './logger';
 import fs from 'fs';
 import path from 'path';
+
+const OPENCODE_ZEN_MODEL_FALLBACKS: Record<string, Model<'openai-completions'>> = {
+  'grok-4.5': {
+    id: 'grok-4.5',
+    name: 'Grok 4.5',
+    api: 'openai-completions',
+    provider: 'opencode',
+    baseUrl: 'https://opencode.ai/zen/v1',
+    reasoning: true,
+    input: ['text', 'image'],
+    cost: {
+      input: 2,
+      output: 6,
+      cacheRead: 0.5,
+      cacheWrite: 0,
+    },
+    contextWindow: 500_000,
+    maxTokens: 128_000,
+  },
+  'kimi-k2.7-code': {
+    id: 'kimi-k2.7-code',
+    name: 'Kimi K2.7 Code',
+    api: 'openai-completions',
+    provider: 'opencode',
+    baseUrl: 'https://opencode.ai/zen/v1',
+    reasoning: true,
+    input: ['text', 'image'],
+    cost: {
+      input: 0.95,
+      output: 4,
+      cacheRead: 0.19,
+      cacheWrite: 0,
+    },
+    contextWindow: 262_144,
+    maxTokens: 65_536,
+  },
+};
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 type NormalizedStatus = 'completed' | 'needs tool' | 'truncated' | 'aborted' | 'failed';
@@ -588,8 +633,8 @@ export class PiRunner implements AgentRunner {
 
     const resolvedProvider = resolveConfiguredProvider(options.model);
     applyProviderEnv(resolvedProvider.provider);
-    const model = resolveModel(resolvedProvider.provider, resolvedProvider.modelID);
-    
+    const model = resolvePiModel(resolvedProvider);
+
     // 2. Create the Agent Session with Pi Coding Agent
     // This automatically supports read, write, edit, bash, and we can configure it to load skills.
     const { session } = await createAgentSession({
@@ -655,6 +700,7 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
       };
     case 'google':
     case 'openai':
+    case 'opencode':
       return {
         configuredProvider: parsedModel.providerID,
         provider: parsedModel.providerID,
@@ -665,45 +711,23 @@ export function resolveConfiguredProvider(model: string): ResolvedConfiguredProv
   }
 }
 
-// Models available from a provider that the vendored @mariozechner/pi-ai catalog
-// (pinned at 0.73.1) hasn't shipped a generated entry for yet.
-const SUPPLEMENTAL_MODELS: Partial<Record<KnownProvider, Record<string, Model<'openai-completions'>>>> = {
-  opencode: {
-    // Spec per https://opencode.ai/zen/v1/models (mirrored at pi.dev/models/opencode-go/glm-5-2):
-    // priced like glm-5.1 but with a 1M-token context window.
-    'glm-5.2': {
-      id: 'glm-5.2',
-      name: 'GLM-5.2',
-      api: 'openai-completions',
-      provider: 'opencode',
-      baseUrl: 'https://opencode.ai/zen/v1',
-      reasoning: true,
-      input: ['text'],
-      cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
-      contextWindow: 1000000,
-      maxTokens: 131072,
-    },
-    'grok-4.5': {
-      id: 'grok-4.5',
-      name: 'Grok 4.5',
-      api: 'openai-completions',
-      provider: 'opencode',
-      baseUrl: 'https://opencode.ai/zen/v1',
-      reasoning: true,
-      input: ['text', 'image'],
-      cost: { input: 2, output: 6, cacheRead: 0.5, cacheWrite: 0 },
-      contextWindow: 500000,
-      maxTokens: 30000,
-    },
-  },
-};
-
-export function resolveModel(provider: KnownProvider, modelID: string): Model<never> {
-  const model = getModel(provider, modelID as never) ?? SUPPLEMENTAL_MODELS[provider]?.[modelID];
-  if (!model) {
-    throw new Error(`Unknown model "${modelID}" for provider "${provider}"`);
+export function resolvePiModel(resolved: ResolvedConfiguredProvider): Model<any> {
+  const builtIn = getModel(resolved.provider, resolved.modelID as never);
+  if (builtIn) {
+    return builtIn;
   }
-  return model as Model<never>;
+
+  if (resolved.provider === 'opencode') {
+    const fallback = OPENCODE_ZEN_MODEL_FALLBACKS[resolved.modelID];
+    if (fallback) {
+      return fallback;
+    }
+  }
+
+  throw new Error(
+    `Unknown model "${resolved.modelID}" for provider "${resolved.provider}". ` +
+      `Add it to OPENCODE_ZEN_MODEL_FALLBACKS in src/pi_runner.ts or upgrade @mariozechner/pi-ai.`,
+  );
 }
 
 export function applyProviderEnv(provider: KnownProvider): void {
@@ -723,6 +747,9 @@ export function applyProviderEnv(provider: KnownProvider): void {
   if (provider === 'opencode') {
     if (process.env.ZEN_API_KEY && !process.env.OPENCODE_API_KEY) {
       process.env.OPENCODE_API_KEY = process.env.ZEN_API_KEY;
+    }
+    if (!process.env.OPENCODE_API_KEY) {
+      throw new Error('OPENCODE_API_KEY or ZEN_API_KEY is required for trader-zen/opencode models');
     }
   }
 }

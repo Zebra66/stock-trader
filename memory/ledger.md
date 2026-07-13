@@ -2,11 +2,237 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
-2026-07-13 : 16:12 : [hourly] Mon Jul 13 11:00 ET — repo reset to origin/main after 486-commit gap. CRITICAL event in tech/semis (QQQ -1.8%, AVGO -3.5%, SOXX -4.7%). HOOD oversold 1 share unauthorized. Equity ,621.79 (-1.5% today). Gross exposure 73%. No new buys during event. Hold core.
+2026-07-13 : 16:12 : [hourly] Repo reset after 486-commit gap. CRITICAL tech/semis selloff. HOOD oversold 1 share unauthorized. Equity $9,621.79 (-1.5% today). Gross 73%. No new buys during event. Hold core.
 - Positions: QQQ 6@712.58 AVGO 3@386.40 VOO 2@689.07 HOOD 2@109.59
 - Daytrades: 0/3 used today
 - Event detector: CRITICAL broad tech/semis selloff. SPY resilient (-0.25%).
 - Repo state: reset --hard origin/main (c81068d1) to recover 2-month stale working tree.
+
+2026-07-13 : 15:36 : [hourly] Hold close; AVGO trail 80; no buys
+- Final hourly: equity ~605, gross 69.0% inside 65-80%; audit clean, daytrades 0
+- Authorized AVGO stop filled 19:30Z (1 @ 85.02); remaining 2 trail at 80; HOOD trail 08 active
+- Both goals still failed: port -3.95% vs SPY +4.25% (gap -8.2pp); regime neutral
+- NVDA four-gate still 1/4 FAIL; Hormuz oil bid + TSMC week block deploys into close
+- No new buys/after-hours; META banned; Bing News RSS used (Google News empty)
+
+2026-07-13 : 15:31 : [tactical] Sold 1 AVGO on 85 stop breach
+- AVGO 1-share limit sell at 84.50 filled (order id 8227f837)
+- Stop triggered below 85.00; remaining 2 AVGO hold
+- HOOD 08 trail not triggered (~09.07)
+- Gross exposure 73.1% -> 69.0%; daytrades 0
+- No PDT issues; audit clean; META still banned
+
+2026-07-13 : 15:10 : [tactical] No triggers hit; hold all positions
+- AVGO 385.49 above 385 stop, no action
+- HOOD 109.86 above 108 trail, no action
+- Event detector NONE; no buys authorized
+- Gross 73.1% inside target band
+
+2026-07-13 : 14:50 : [tactical] No conditions met; held all positions
+- AVGO 386.25 > 385 stop; HOOD 110.16 > 108 trail
+- Event detector NONE; no override
+- All stops active; no trades this cycle
+
+2026-07-13 : 14:40 : [tactical] No stops hit; no new buys
+- AVGO 386.30 > 85 stop; HOOD 109.60 > 08 trail
+- No authorized conditions triggered
+- Gross 73.1% inside 65-80% target band
+- Event detector NONE; no override
+
+2026-07-13 : 14:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
+- Equity $9,615 (-3.85%) vs SPY +4.36%; gap ~-8.2 pp. Gross 73.1% inside 65-80%.
+- NVDA four-gate FAIL: QQQ~712, NVDA~$204, SOXX~$553. No new buys. META banned.
+- Prior fill: HOOD 1 @ $109.33 trail (17:40Z) authorized. Remaining HOOD trail now $108.
+- AVGO on-stop ($385.7 vs $385). Only authorized sells: AVGO 1 if <$385, HOOD 1 if <$108.
+- Blocker: Hormuz blockade + oil spike + TSMC Thu + broken semi structure. Neutral not offensive.
+
+2026-07-13 : 14:20 : [tactical] No action: no triggers met
+- Event detector NONE; AVGO 86.46 above 85 stop
+- HOOD 2 held, no active stop
+- No new buys authorized; NVDA 4-gate fail
+- Gross 73.1%, target 65-80%; no orders
+- Daytrades 0/3; no PDT concerns
+
+2026-07-13 : 14:10 : [tactical] Hold-only: AVGO stop not triggered
+- AVGO 386.28 above 385 stop; no action
+- HOOD 109.99; no active stop after trim
+- QQQ/VOO within caps; gross 73.1%
+- No new buys authorized; event detector NONE
+
+2026-07-13 : 13:50 : [tactical] No action: stops intact, no triggers
+- AVGO ~86.00, above 85 stop; no other active conditions
+- Event detector NONE; market soft, no MAJOR/CRITICAL
+- Holdings: QQQ 6, VOO 2, AVGO 3, HOOD 2; gross ~73.1%
+- No buys authorized; no PDT or churn risk
+
+2026-07-13 : 13:41 : [tactical] Sold 1 HOOD at 09.50 trail stop
+- HOOD 1-min low 09.32 and last trade ~09.44 breached authorized 09.50 trail stop
+- Executed limit sell of 1 share at 09.00 via Alpaca CLI; filled
+- Remaining 2 HOOD hold; no new buys; no daytrade created
+- Audit OK: gross 73.1%, daytrades 0, hardLockRecommended false
+
+2026-07-13 : 13:36 : [hourly] Neutral hold; NVDA gates 1/4; HOOD on trail
+- Equity ~$9626 (-3.74% vs SPY +4.42%); gap ~-8.2pp; both goals off track
+- Gross 74.2% inside 65-80% neutral band; no unauthorized drift; daytrades 0; audit clean
+- NVDA four-gate FAIL: QQQ~713, NVDA~$204, SOXX~$554; only no-CRITICAL passes
+- Hormuz blockade reimposed + TSMC ~Thu = cash blocker; no new buys; AVGO stop $385 / HOOD trail $109.50 live
+- Only fill today remains HOOD 2@$110 13:50Z; META banned; no open orders
+
+2026-07-13 : 13:30 : [tactical] Hold: no stops hit, no trades
+- AVGO 86.34 > 85 stop; HOOD 09.56 > 09.50 trail
+- Event detector NONE; gross ~74.2%
+- No NVDA/GOOG entry; all gates fail
+- No orders placed; no overrides
+
+2026-07-13 : 13:10 : [tactical] Hold: no stops hit, no buys auth
+- AVGO 388.59 > 385 stop; HOOD 110.15 > 109.50 trail
+- QQQ 714.28, VOO 689.61 — core holds, no drift
+- Event detector NONE; gross exposure 74.2% inside band
+- No orders placed; daytrades remain 0
+
+2026-07-13 : 12:50 : [tactical] Hold: no stops hit, no buys auth
+- AVGO 386.81 > 385 stop; HOOD 109.84 > 109.50 trail
+- Event detector NONE; all held positions OK
+- No NVDA entry (204.72 < 209 gate)
+- No orders; gross exposure 74.2% inside target band
+
+2026-07-13 : 12:40 : [tactical] Hold-only; stops not hit
+- AVGO 87.07 > 85 stop, HOOD 09.83 > 09.50 trail
+- No event triggers; gross exposure 74.2%
+- No orders placed
+
+2026-07-13 : 12:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
+- Equity ~$9631, gross 74.2% inside 65-80% band; daytrades 0; audit clean
+- NVDA four-gate FAIL: QQQ~713, NVDA~$205, SOXX~$554, no CRITICAL only
+- US-Iran/Hormuz + semi selloff + TSMC week = exact cash blocker; no new buys
+- Stops unchanged: AVGO $385/384.50, HOOD trail $109.50/109.00; META banned
+- Portfolio -3.69% vs SPY +4.37% (gap ~-8.1pp); both goals off track
+
+2026-07-13 : 12:30 : [tactical] No stops triggered; held all
+- Event detector: NONE
+- AVGO 88.92 > 85 stop; HOOD 09.87 > 09.50 trail
+- No authorized buys; NVDA gate FAIL at 05.88
+- Gross ~74.2%, daytrades 0, no orders placed
+- Awaiting 16:35Z hourly reassessment
+
+2026-07-13 : 12:20 : [tactical] No triggers; hold-only cycle
+- AVGO 389.37 > 385 stop; HOOD 110.45 > 109.50 trail
+- No buys authorized; NVDA gate still FAIL (206.05 < 209)
+- Event detector NONE; gross exposure 74.2% inside band
+- No orders placed
+
+2026-07-13 : 12:10 : [tactical] Hold cycle: no stops hit
+- Event detector NONE; AVGO 89.75 > 85 stop; HOOD 10.88 > 09.50 stop
+- No fills, no orders, gross exposure 74.3%
+- NVDA gate still FAIL (06.13 < 09); no new buys
+
+2026-07-13 : 11:50 : [tactical] Hold: no stops hit, no buys
+- Event detector NONE; held positions all within stops
+- AVGO 390.04 > 385.00 stop; HOOD 111.30 > 109.50 stop
+- No new buys authorized (NVDA gate fail, cash 25.6%)
+- Gross exposure 74.3% inside 65-80% target band
+- No orders placed; daytrades 0 of 3
+
+2026-07-13 : 11:40 : [tactical] No triggers; holds intact
+- AVGO 391.16 > 385 stop; no trim
+- HOOD 111.125 > 109.50 trail; no trim
+- Event detector NONE; gross 74.4% in band
+- No buy authorization; no orders
+
+2026-07-13 : 11:36 : [hourly] Neutral hold; NVDA gate fail; no buys
+- Audit clean; gross 74.4% inside 65-80%; daytrades 0; open orders none
+- Goal off track: port -3.24% vs SPY +4.74% (gap ~-8.0pp); regime neutral
+- NVDA four-gate FAIL: QQQ pass, NVDA ~207.5 < 209, SOXX marginal, no CRITICAL
+- US-Iran + TSMC week keep cash blocker; only AVGO 385 / HOOD 109.50 stops authorized
+- META banned; no HOOD re-buy today; no SOXX/GOOG/thin ETF adds
+
+2026-07-13 : 11:30 : [tactical] Hold: stops not triggered
+- Event detector NONE; all held positions OK
+- AVGO 91.60 > 85 stop; HOOD 10.93 > 09.50 stop
+- No orders; no conditions met; gross 74.4% inside band
+
+2026-07-13 : 11:20 : [tactical] No action: stops not hit
+- AVGO 390.71 vs stop 385.00; HOOD 110.69 vs stop 109.50
+- Event detector NONE; gross 74.4% inside 65-80% band
+- No buy conditions authorized this hour; META banned
+- 0 daytrades used; no open orders
+
+2026-07-13 : 11:10 : [tactical] No action: holds safe, stops not hit
+- AVGO 390.79 > 385 stop, HOOD 110.96 > 109.50 stop
+- No authorized buys; gross 74.4% inside band
+- Event detector NONE; no override applied
+- Cash ~,480; awaiting next hourly directive
+
+2026-07-13 : 10:50 : [tactical] No triggers; held all positions
+- AVGO 392.19 > 385 stop, HOOD 110.70 > 109.50 stop
+- Event detector NONE; no protective sells required
+- No authorized buys; gross 74.4% inside 65-80% band
+- No orders placed; daytrades remain 0/3
+
+2026-07-13 : 10:40 : [tactical] Held all positions; no triggers met
+- AVGO 94.52 above 85 stop; HOOD 11.53 above 09.50 trail
+- Gross 74.4% inside 65-80% target band
+- No new buys authorized; cash remains idle
+- Event detector NONE; no protective action required
+
+2026-07-13 : 10:36 : [hourly] Neutral hold; no buys; trail HOOD 09.50
+- Audit clean; equity ~$9,690; gross 74.4% inside 65-80% band
+- Goals still off track: port -3.10% vs SPY +4.79% (gap ~-7.9pp)
+- HOOD trail stop executed 13:50Z (sold 2@$110); remaining 3 trail now $109.50
+- AVGO $385 stop active; no NVDA/GOOG deploy — geo risk + incomplete semi stabil + TSMC Jul 16
+- META banned; daytrades 0; event detector NONE after open CRITICAL
+
+2026-07-13 : 10:30 : [tactical] No action; stops not triggered
+- AVGO 94.62 above 85 stop
+- HOOD 12.09 above 11 stop
+- Event detector MINOR, no override
+- Gross 74.4% within 65-80% band
+- No buys authorized this cycle
+
+2026-07-13 : 10:20 : [tactical] No action: stops intact, no triggers
+- AVGO 91.54 vs 85 stop — not triggered
+- HOOD 11.65 vs 11 stop — already executed at 13:50Z
+- Event detector NONE; gross 74.3% within band
+- No authorized buys this hour; held all positions
+- Next: wait for 10:35 ET hourly reassessment
+
+2026-07-13 : 10:10 : [tactical] No action: AVGO stop not hit, no buys
+- Event detector NONE; no override required
+- AVGO 391.39, well above 385 stop — no protective sell
+- HOOD 2-share stop already executed at 13:50Z
+- Gross exposure 74.3%, no buys authorized
+- No orders placed; no code/prompt changes
+
+2026-07-13 : 09:52 : [tactical] Sold 2 HOOD at $110.00 stop
+- HOOD breached $111 trail stop (last $110.285)
+- Sold 2 shares at $110.00 avg; hold 3 HOOD
+- AVGO $385 stop not hit (price $388.52)
+- Gross exposure fell to 74.3%; audit clean
+- No daytrades created; META remains banned
+
+2026-07-13 : 09:40 : [tactical] Hold: no stops or buys triggered
+- Event detector MINOR — no response mode
+- AVGO 90.05 > 85 stop; HOOD 12.77 > 11 stop
+- No authorized buys; gross 76.6% within band
+- No orders placed; daytrade count 0
+
+2026-07-13 : 09:37 : [hourly] Hold open risk-off; trail HOOD; no buys
+- Equity $9684 (-3.16% inception) vs SPY +4.94%; gap ~-8.1pp. Both goals off track.
+- Audit clean. Gross 76.7% in 65-80% neutral band. Daytrades 0. Open orders none.
+- Open soft: US-Iran + SK Hynix/AI chip selloff. Event CRITICAL@13:30 now MINOR. Tactical held correctly.
+- Directives: HOLD QQQ6/VOO2/AVGO3/HOOD5. AVGO stop $385/1sh. HOOD trail stop raised to $111/2sh. No discretionary buys this hour.
+- Deploy queue deferred to 10:35+ (NVDA then GOOG if tape stabilizes). META remains banned.
+
+2026-07-13 : 09:30 : [tactical] CRITICAL event override: no trades
+- SOXX/SMH CRITICAL event at 13:30Z
+- No protective stops breached; AVGO 94.63>85, HOOD 11.01>10
+- All buy conditions suspended in todo.md
+- No orders placed
+
+2026-07-12 : 09:55 : [tactical] Market closed; no action
+- Sunday 2026-07-12; pre-fetched prices from Fri close
+- No orders possible; all holds intact
+- Event detector NONE; no override
 
 2026-07-10 : 15:37 : [hourly] Hold into close, PDT limit reached
 - Audit clean, no unauthorized positions
