@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 16:12 : [hourly] Mon Jul 13 11:00 ET — repo reset to origin/main after 486-commit gap. CRITICAL event in tech/semis (QQQ -1.8%, AVGO -3.5%, SOXX -4.7%). HOOD oversold 1 share unauthorized. Equity ,621.79 (-1.5% today). Gross exposure 73%. No new buys during event. Hold core.
+- Positions: QQQ 6@712.58 AVGO 3@386.40 VOO 2@689.07 HOOD 2@109.59
+- Daytrades: 0/3 used today
+- Event detector: CRITICAL broad tech/semis selloff. SPY resilient (-0.25%).
+- Repo state: reset --hard origin/main (c81068d1) to recover 2-month stale working tree.
+
 2026-07-10 : 15:37 : [hourly] Hold into close, PDT limit reached
 - Audit clean, no unauthorized positions
 - PDT limit reached (4 daytrades from META breach)
