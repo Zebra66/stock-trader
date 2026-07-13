@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 15:36 : [hourly] Hold close; AVGO trail 80; no buys
+- Final hourly: equity ~605, gross 69.0% inside 65-80%; audit clean, daytrades 0
+- Authorized AVGO stop filled 19:30Z (1 @ 85.02); remaining 2 trail at 80; HOOD trail 08 active
+- Both goals still failed: port -3.95% vs SPY +4.25% (gap -8.2pp); regime neutral
+- NVDA four-gate still 1/4 FAIL; Hormuz oil bid + TSMC week block deploys into close
+- No new buys/after-hours; META banned; Bing News RSS used (Google News empty)
+
 2026-07-13 : 15:31 : [tactical] Sold 1 AVGO on 85 stop breach
 - AVGO 1-share limit sell at 84.50 filled (order id 8227f837)
 - Stop triggered below 85.00; remaining 2 AVGO hold
