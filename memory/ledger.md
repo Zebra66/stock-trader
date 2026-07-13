@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 09:37 : [hourly] Hold open risk-off; trail HOOD; no buys
+- Equity $9684 (-3.16% inception) vs SPY +4.94%; gap ~-8.1pp. Both goals off track.
+- Audit clean. Gross 76.7% in 65-80% neutral band. Daytrades 0. Open orders none.
+- Open soft: US-Iran + SK Hynix/AI chip selloff. Event CRITICAL@13:30 now MINOR. Tactical held correctly.
+- Directives: HOLD QQQ6/VOO2/AVGO3/HOOD5. AVGO stop $385/1sh. HOOD trail stop raised to $111/2sh. No discretionary buys this hour.
+- Deploy queue deferred to 10:35+ (NVDA then GOOG if tape stabilizes). META remains banned.
+
 2026-07-13 : 09:30 : [tactical] CRITICAL event override: no trades
 - SOXX/SMH CRITICAL event at 13:30Z
 - No protective stops breached; AVGO 94.63>85, HOOD 11.01>10
