@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 09:52 : [tactical] Sold 2 HOOD at $110.00 stop
+- HOOD breached $111 trail stop (last $110.285)
+- Sold 2 shares at $110.00 avg; hold 3 HOOD
+- AVGO $385 stop not hit (price $388.52)
+- Gross exposure fell to 74.3%; audit clean
+- No daytrades created; META remains banned
+
+2026-07-13 : 09:40 : [tactical] Hold: no stops or buys triggered
+- Event detector MINOR — no response mode
+- AVGO 90.05 > 85 stop; HOOD 12.77 > 11 stop
+- No authorized buys; gross 76.6% within band
+- No orders placed; daytrade count 0
+
 2026-07-13 : 09:37 : [hourly] Hold open risk-off; trail HOOD; no buys
 - Equity $9684 (-3.16% inception) vs SPY +4.94%; gap ~-8.1pp. Both goals off track.
 - Audit clean. Gross 76.7% in 65-80% neutral band. Daytrades 0. Open orders none.

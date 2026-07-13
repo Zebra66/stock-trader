@@ -1,18 +1,20 @@
-# Tactical Todo — Updated 2026-07-13 13:35Z (Monday 09:35 AM ET)
+# Tactical Todo — Updated 2026-07-13 13:50Z (Monday 09:50 AM ET)
 *Hourly reset after open CRITICAL→MINOR transition. Hold-first posture.*
+* Tactical cycle note at 13:50Z: HOOD $111 trail stop executed — SOLD 2 shares at $110.00 avg. AVGO $385 stop remains active.
 
 ## Current State
 - **Regime:** **neutral** (not defensive panic, not offensive catch-up)
-- **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / BP:** ~$9,684 / $2,260 / ~$29,828
-- **Gross long exposure:** **76.7%** | Target band **65–80%** | Cash **~23.3%**
+- **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 3
+- **Account equity / cash / BP:** ~$9,632 / $2,480 / ~$29,946
+- **Gross long exposure:** **74.3%** | Target band **65–80%** | Cash **~25.7%**
 - **Daytrade count:** **0** (confirmed). Conserve — do not open positions you may need to reverse today.
 - **Open orders:** NONE — cancel any stale order if one appears.
 - **Market:** OPEN. Soft open on US-Iran headlines + semi/AI selloff. SK Hynix plunge pressuring chips.
 - **HARD_LOCK:** inactive (`active: false`). META remains in `bannedSymbols`.
 - **Audit:** clean (13:35Z). No unauthorized positions. No concentration breaches.
 
-## Position Instructions — Mon Jul 13 (tactical :40 / :50)
+## Position Instructions — Mon Jul 13 (tactical :50)
+- HOOD $111 trail stop executed at 13:50Z. AVGO $385 stop remains active.
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~44.4%, within 45% cap. Cap room ~$59 — **cannot add 1 share**.
@@ -28,11 +30,11 @@
 - Do NOT add AVGO today (sector under pressure; also 1 share would breach 15% stock cap at ~$391).
 - **ANTI-CHURN:** AVGO was not bought today. Protective sell is allowed if stop hits.
 
-### HOOD — HOLD 5 — DO NOT ADD — Trail stop $111
-- Avg $101.50. Live ~$113. Best unrealized (~+12%).
-- **Authorized trail stop (UPDATED):** SELL **2** shares if price drops **below $111.00** with **limit $110.50**. If triggered, hold remaining 3.
-- Do NOT add HOOD today.
-- **ANTI-CHURN:** HOOD was not bought today. Protective sell is allowed if stop hits.
+### HOOD — HOLD 3 — DO NOT ADD — DO NOT RE-BUY TODAY
+- **Stop executed at 13:50Z:** SOLD 2 shares at **$110.00** avg after price breached the $111.00 trail stop. Hold remaining 3.
+- Avg $101.50. Current ~$109.78. Unrealized ~+8% on remaining 3.
+- Do NOT add HOOD today. Do NOT re-buy HOOD today (same-day anti-churn; code-enforced).
+- Wait for next hourly directive for any new stop or add.
 
 ### META — BANNED — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
 - `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`.
@@ -52,8 +54,8 @@
 - Weak trends, thin liquidity, or no edge.
 
 ## Hard Rules / No-Trade Conditions
-- **NO DISCRETIONARY BUYS this hour.** Only authorized action is the AVGO/HOOD protective stops above.
-- **Exact cash/deploy blocker:** Risk-off open (US-Iran + SK Hynix/AI-chip scrutiny). Gross already 76.7% inside 65–80% band — no urgency to deploy.
+- **NO DISCRETIONARY BUYS this hour.** Only remaining authorized action is the AVGO protective stop below.
+- **Exact cash/deploy blocker:** Risk-off open (US-Iran + SK Hynix/AI-chip scrutiny). Gross 74.3% inside 65–80% band — no urgency to deploy.
 - **No same-day round trips.** If you buy a symbol today, you may NOT sell it today. If you sell a symbol today, you may NOT buy it back today. Code-enforced.
 - **Conserve daytrades** (0 of 3 used). Protective stop sells on overnight holdings are OK and do not create a daytrade.
 - **No new short sales** under any circumstances.
@@ -76,13 +78,13 @@
 2. **If 10:35+ hourly authorizes:** NVDA 1 share limit (priority 1), then GOOG 1 share (priority 2). Never META. Never thin ETFs without explicit hourly line.
 3. Rebuild only after audit remains clean.
 
-## Expected Book If No Stops Trigger
-- QQQ 6 (~44.4%), VOO 2 (~14.3%), AVGO 3 (~12.1%), HOOD 5 (~5.9%)
-- Cash ~$2,260 (~23.3%)
-- Gross ~76.7%
+## Current Book After HOOD Stop
+- QQQ 6 (~44.5%), VOO 2 (~14.3%), AVGO 3 (~12.1%), HOOD 3 (~3.4%)
+- Cash ~$2,480 (~25.7%)
+- Gross ~74.3%
 
 ## Safeguards For Next 60 Minutes
-- Hold-only unless AVGO < $385 or HOOD < $111.
+- Hold-only unless AVGO < $385.
 - No revenge trading after Fri META breach.
 - No SOXX re-entry on bounce.
 - If gross exposure drifts >15 pp without authorization → hold-only and wait for hourly.
