@@ -1,5 +1,17 @@
 # Hourly Macro Memory
-*Updated 2026-07-13 17:35Z (Monday 1:35 PM ET). Market OPEN.*
+*Updated 2026-07-13 17:40Z (Monday 1:40 PM ET). Market OPEN.*
+
+---
+
+## Tactical Execution Summary — 2026-07-13 17:40Z (Mon 1:40 PM ET)
+- **Status:** Event detector **NONE**. Normal-mode execution. Pre-authorized stop triggered.
+- **Action:** SOLD **1 HOOD** @ ~$109.44 via limit $109.00 (filled). Remaining **2 HOOD**.
+- **Trigger:** HOOD price dropped below the authorized trail stop **$109.50** (1-min low $109.32; current/last trade ~$109.44).
+- **Compliance:** Daytrade count remains **0** (remaining shares were not opened today). No PDT issue. No concentration breach. No new buys. No round-trip.
+- **Holdings after execution:** QQQ 6, VOO 2, AVGO 3, HOOD 2.
+- **Cash / equity:** Cash **$2,589.69** | Equity **$9,617.53** (post-fill).
+- **Gross long exposure:** **73.1%** (inside neutral 65–80% target).
+- **Next action:** Hold all remaining positions. AVGO stop at $385 remains the only active authorized sell. No new buys until hourly authorizes.
 
 ---
 
@@ -8,7 +20,7 @@
 - **Repo integrity:** Branch = origin/main (0/0). `.gitignore` effective. Unrelated local dirty workspace (config/prompts/src staged by other work) **not staged** this cycle.
 - **Audit:** OK. Unauthorized=[] Concentration=[] Gross **74.2%**. Daytrades **0**. hardLockRecommended false.
 - **Live broker:** Equity **$9,626.15** | Cash **$2,480.36** | Long **$7,145.79** | Gross **74.2%** | BP ~$29.9k (do not size from BP).
-- **Holdings:** QQQ 6, VOO 2, AVGO 3, HOOD 3. Open orders: NONE.
+- **Holdings:** QQQ 6, VOO 2, AVGO 3, HOOD 2. Open orders: NONE.
 - **Filled since prior hourly (16:35Z):** NONE. Only fill today remains HOOD 2 @ $110 (13:50Z). No concealment.
 - **Compliance:** META remains banned. HARD_LOCK inactive. No universe breaches.
 - **Goal check:** Portfolio **–3.74%** vs SPY **+4.42%** (SPY ~749.77 vs 718.01). **Both goals FAILED.** Gap **~–8.2 pp**.
@@ -24,15 +36,15 @@
 | QQQ | 6 | $716.47 | $713.00 | $4,278.00 | 44.4% | –$20.84 | –0.49% |
 | VOO | 2 | $676.46 | $689.22 | $1,378.44 | 14.3% | +$25.52 | +1.89% |
 | AVGO | 3 | $371.95 | $386.85 | $1,160.55 | 12.1% | +$44.70 | +4.01% |
-| HOOD | 3 | $101.50 | $109.60 | $328.80 | 3.4% | +$24.30 | +7.98% |
-| Cash | — | — | — | $2,480.36 | 25.8% | — | — |
-| **Equity** | — | — | — | **$9,626.15** | **100%** | — | **–3.74%** |
+| HOOD | 2 | $101.50 | $109.40 | $218.80 | 2.3% | +$15.80 | +7.82% |
+| Cash | — | — | — | $2,589.69 | 26.9% | — | — |
+| **Equity** | — | — | — | **$9,617.53** | **100%** | — | **–3.82%** |
 
-- **Gross long exposure:** 74.2%
+- **Gross long exposure:** 73.1%
 - **Daytrade count:** 0 (audit + order history)
 - **Open orders:** NONE
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
-- **Exposure drift since 16:35Z:** 74.2% → 74.2% (mark-to-market only) — **no unauthorized drift**
+- **Exposure drift since 16:35Z:** 74.2% → 73.1% (authorized HOOD trim) — **no unauthorized drift**
 
 ## Performance Review — Mon July 13 13:35
 - **1D (vs Fri last_equity $9,760.90):** portfolio **–1.38%** vs SPY soft (~flat to slightly red). Nasdaq/tech underperforms on geo + chip tape.

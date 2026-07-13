@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 13:41 : [tactical] Sold 1 HOOD at 09.50 trail stop
+- HOOD 1-min low 09.32 and last trade ~09.44 breached authorized 09.50 trail stop
+- Executed limit sell of 1 share at 09.00 via Alpaca CLI; filled
+- Remaining 2 HOOD hold; no new buys; no daytrade created
+- Audit OK: gross 73.1%, daytrades 0, hardLockRecommended false
+
 2026-07-13 : 13:36 : [hourly] Neutral hold; NVDA gates 1/4; HOOD on trail
 - Equity ~$9626 (-3.74% vs SPY +4.42%); gap ~-8.2pp; both goals off track
 - Gross 74.2% inside 65-80% neutral band; no unauthorized drift; daytrades 0; audit clean
