@@ -2,6 +2,30 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 15:31 : [tactical] Sold 1 AVGO on 85 stop breach
+- AVGO 1-share limit sell at 84.50 filled (order id 8227f837)
+- Stop triggered below 85.00; remaining 2 AVGO hold
+- HOOD 08 trail not triggered (~09.07)
+- Gross exposure 73.1% -> 69.0%; daytrades 0
+- No PDT issues; audit clean; META still banned
+
+2026-07-13 : 15:10 : [tactical] No triggers hit; hold all positions
+- AVGO 385.49 above 385 stop, no action
+- HOOD 109.86 above 108 trail, no action
+- Event detector NONE; no buys authorized
+- Gross 73.1% inside target band
+
+2026-07-13 : 14:50 : [tactical] No conditions met; held all positions
+- AVGO 386.25 > 385 stop; HOOD 110.16 > 108 trail
+- Event detector NONE; no override
+- All stops active; no trades this cycle
+
+2026-07-13 : 14:40 : [tactical] No stops hit; no new buys
+- AVGO 386.30 > 85 stop; HOOD 109.60 > 08 trail
+- No authorized conditions triggered
+- Gross 73.1% inside 65-80% target band
+- Event detector NONE; no override
+
 2026-07-13 : 14:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
 - Equity $9,615 (-3.85%) vs SPY +4.36%; gap ~-8.2 pp. Gross 73.1% inside 65-80%.
 - NVDA four-gate FAIL: QQQ~712, NVDA~$204, SOXX~$553. No new buys. META banned.
