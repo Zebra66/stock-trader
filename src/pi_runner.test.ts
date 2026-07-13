@@ -1,6 +1,12 @@
 import { afterEach, describe, expect, test } from 'bun:test';
 import type { AgentSessionEvent } from '@mariozechner/pi-coding-agent';
-import { buildStructuredPiEventRecord, logPiEvent, resolveConfiguredProvider, resolveModel } from './pi_runner';
+import {
+  applyProviderEnv,
+  buildStructuredPiEventRecord,
+  logPiEvent,
+  resolveConfiguredProvider,
+  resolvePiModel,
+} from './pi_runner';
 
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -25,50 +31,61 @@ function createCapturingLogger() {
 }
 
 describe('pi runner model resolution', () => {
-  test('maps trader-zen models to the opencode provider', () => {
+  const originalZen = process.env.ZEN_API_KEY;
+  const originalOpencode = process.env.OPENCODE_API_KEY;
+
+  afterEach(() => {
+    if (originalZen === undefined) {
+      delete process.env.ZEN_API_KEY;
+    } else {
+      process.env.ZEN_API_KEY = originalZen;
+    }
+
+    if (originalOpencode === undefined) {
+      delete process.env.OPENCODE_API_KEY;
+    } else {
+      process.env.OPENCODE_API_KEY = originalOpencode;
+    }
+  });
+
+  test('maps trader-zen specs to the opencode provider with exact Zen model ids', () => {
     expect(resolveConfiguredProvider('trader-zen/grok-4.5')).toEqual({
       configuredProvider: 'trader-zen',
       provider: 'opencode',
       modelID: 'grok-4.5',
     });
-  });
-
-  test('resolves a known model from the vendored pi-ai catalog', () => {
-    const model = resolveModel('opencode', 'kimi-k2.6');
-    expect(model.id).toBe('kimi-k2.6');
-    expect(model.provider).toBe('opencode');
-  });
-
-  test('resolves glm-5.2 via the supplemental catalog until pi-ai ships it', () => {
-    const model = resolveModel('opencode', 'glm-5.2');
-    expect(model).toMatchObject({
-      id: 'glm-5.2',
+    expect(resolveConfiguredProvider('trader-zen/kimi-k2.7-code')).toEqual({
+      configuredProvider: 'trader-zen',
       provider: 'opencode',
-      baseUrl: 'https://opencode.ai/zen/v1',
-      reasoning: true,
-      contextWindow: 1000000,
-      maxTokens: 131072,
-      cost: { input: 1.4, output: 4.4, cacheRead: 0.26, cacheWrite: 0 },
+      modelID: 'kimi-k2.7-code',
     });
   });
 
-  test('resolves grok-4.5 via the supplemental catalog until pi-ai ships it', () => {
-    const model = resolveModel('opencode', 'grok-4.5');
-    expect(model).toMatchObject({
+  test('resolves grok-4.5 and kimi-k2.7-code even when missing from built-in pi-ai registry', () => {
+    const grok = resolvePiModel(resolveConfiguredProvider('trader-zen/grok-4.5'));
+    const kimi = resolvePiModel(resolveConfiguredProvider('trader-zen/kimi-k2.7-code'));
+
+    expect(grok).toMatchObject({
       id: 'grok-4.5',
       provider: 'opencode',
+      api: 'openai-completions',
       baseUrl: 'https://opencode.ai/zen/v1',
-      reasoning: true,
-      contextWindow: 500000,
-      maxTokens: 30000,
-      cost: { input: 2, output: 6, cacheRead: 0.5, cacheWrite: 0 },
+    });
+    expect(kimi).toMatchObject({
+      id: 'kimi-k2.7-code',
+      provider: 'opencode',
+      api: 'openai-completions',
+      baseUrl: 'https://opencode.ai/zen/v1',
     });
   });
 
-  test('throws a clear error for an unknown model id', () => {
-    expect(() => resolveModel('opencode', 'not-a-real-model')).toThrow(
-      'Unknown model "not-a-real-model" for provider "opencode"',
-    );
+  test('maps ZEN_API_KEY to OPENCODE_API_KEY for opencode provider', () => {
+    delete process.env.OPENCODE_API_KEY;
+    process.env.ZEN_API_KEY = 'test-zen-key';
+
+    applyProviderEnv('opencode');
+
+    expect(process.env.OPENCODE_API_KEY).toBe('test-zen-key');
   });
 });
 

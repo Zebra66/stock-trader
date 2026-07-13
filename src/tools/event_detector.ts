@@ -202,11 +202,8 @@ export async function detectEvents(): Promise<EventReport> {
     recommendedResponse,
   };
 
-  // Save snapshot for next run; if every fetch failed (API outage, no credentials),
-  // keep the prior baseline instead of wiping it with an empty price map
-  if (Object.keys(currentPrices).length > 0) {
-    saveSnapshot(currentPrices);
-  }
+  // Save snapshot for next run
+  saveSnapshot(currentPrices);
 
   return report;
 }
@@ -251,6 +248,4 @@ async function main() {
   await Bun.write('./temp_files/event_report.json', JSON.stringify(report, null, 2));
 }
 
-if (import.meta.main) {
-  main();
-}
+main();

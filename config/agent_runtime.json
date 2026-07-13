@@ -4,7 +4,7 @@
       "model": "trader-zen/grok-4.5"
     },
     "tactical": {
-      "model": "trader-zen/glm-5.2"
+      "model": "trader-zen/kimi-k2.7-code"
     }
   }
 }

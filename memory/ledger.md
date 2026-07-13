@@ -2,6 +2,32 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 14:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
+- Equity $9,615 (-3.85%) vs SPY +4.36%; gap ~-8.2 pp. Gross 73.1% inside 65-80%.
+- NVDA four-gate FAIL: QQQ~712, NVDA~$204, SOXX~$553. No new buys. META banned.
+- Prior fill: HOOD 1 @ $109.33 trail (17:40Z) authorized. Remaining HOOD trail now $108.
+- AVGO on-stop ($385.7 vs $385). Only authorized sells: AVGO 1 if <$385, HOOD 1 if <$108.
+- Blocker: Hormuz blockade + oil spike + TSMC Thu + broken semi structure. Neutral not offensive.
+
+2026-07-13 : 14:20 : [tactical] No action: no triggers met
+- Event detector NONE; AVGO 86.46 above 85 stop
+- HOOD 2 held, no active stop
+- No new buys authorized; NVDA 4-gate fail
+- Gross 73.1%, target 65-80%; no orders
+- Daytrades 0/3; no PDT concerns
+
+2026-07-13 : 14:10 : [tactical] Hold-only: AVGO stop not triggered
+- AVGO 386.28 above 385 stop; no action
+- HOOD 109.99; no active stop after trim
+- QQQ/VOO within caps; gross 73.1%
+- No new buys authorized; event detector NONE
+
+2026-07-13 : 13:50 : [tactical] No action: stops intact, no triggers
+- AVGO ~86.00, above 85 stop; no other active conditions
+- Event detector NONE; market soft, no MAJOR/CRITICAL
+- Holdings: QQQ 6, VOO 2, AVGO 3, HOOD 2; gross ~73.1%
+- No buys authorized; no PDT or churn risk
+
 2026-07-13 : 13:41 : [tactical] Sold 1 HOOD at 09.50 trail stop
 - HOOD 1-min low 09.32 and last trade ~09.44 breached authorized 09.50 trail stop
 - Executed limit sell of 1 share at 09.00 via Alpaca CLI; filled
