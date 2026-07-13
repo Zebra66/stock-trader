@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-07-13 19:35Z (Monday 3:35 PM ET)
-*Final hourly of session. AVGO $385 stop already filled (1 share @ $385.02 at 19:30Z). Remaining book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Soft close — protective trails only; NO new buys.*
+# Tactical Todo — Updated 2026-07-13 22:26Z (Monday 6:26 PM ET)
+*Market CLOSED. No after-hours orders. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. AVGO $380 trail and HOOD $108 trail remain active for Tuesday open.*
 
 ## Current State
 - **Regime:** **neutral** (not defensive panic, not offensive catch-up)
@@ -8,7 +8,7 @@
 - **Gross long exposure:** **~69.0%** | Target band **65–80%** | Cash **~31.0%**
 - **Daytrade count:** **0** (confirmed). Conserve — do not open positions you may need to reverse today.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** OPEN → close ~16:00 ET. Soft afternoon. Hormuz blockade reimposed (oil bid); semis weaker (NVDA ~$204, SOXX ~$552). TSMC earnings ~Thu Jul 16 elevates semi risk.
+- **Market:** CLOSED. Next open Tue 2026-07-14 09:30 ET. Hormuz blockade reimposed (oil bid); semis weaker (NVDA ~$204, SOXX ~$552). TSMC earnings ~Thu Jul 16 elevates semi risk.
 - **HARD_LOCK:** inactive (`active: false`). META remains in `bannedSymbols`.
 - **Audit:** clean (19:35Z). No unauthorized positions. No concentration breaches.
 
