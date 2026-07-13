@@ -2,6 +2,42 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 11:36 : [hourly] Neutral hold; NVDA gate fail; no buys
+- Audit clean; gross 74.4% inside 65-80%; daytrades 0; open orders none
+- Goal off track: port -3.24% vs SPY +4.74% (gap ~-8.0pp); regime neutral
+- NVDA four-gate FAIL: QQQ pass, NVDA ~207.5 < 209, SOXX marginal, no CRITICAL
+- US-Iran + TSMC week keep cash blocker; only AVGO 385 / HOOD 109.50 stops authorized
+- META banned; no HOOD re-buy today; no SOXX/GOOG/thin ETF adds
+
+2026-07-13 : 11:30 : [tactical] Hold: stops not triggered
+- Event detector NONE; all held positions OK
+- AVGO 91.60 > 85 stop; HOOD 10.93 > 09.50 stop
+- No orders; no conditions met; gross 74.4% inside band
+
+2026-07-13 : 11:20 : [tactical] No action: stops not hit
+- AVGO 390.71 vs stop 385.00; HOOD 110.69 vs stop 109.50
+- Event detector NONE; gross 74.4% inside 65-80% band
+- No buy conditions authorized this hour; META banned
+- 0 daytrades used; no open orders
+
+2026-07-13 : 11:10 : [tactical] No action: holds safe, stops not hit
+- AVGO 390.79 > 385 stop, HOOD 110.96 > 109.50 stop
+- No authorized buys; gross 74.4% inside band
+- Event detector NONE; no override applied
+- Cash ~,480; awaiting next hourly directive
+
+2026-07-13 : 10:50 : [tactical] No triggers; held all positions
+- AVGO 392.19 > 385 stop, HOOD 110.70 > 109.50 stop
+- Event detector NONE; no protective sells required
+- No authorized buys; gross 74.4% inside 65-80% band
+- No orders placed; daytrades remain 0/3
+
+2026-07-13 : 10:40 : [tactical] Held all positions; no triggers met
+- AVGO 94.52 above 85 stop; HOOD 11.53 above 09.50 trail
+- Gross 74.4% inside 65-80% target band
+- No new buys authorized; cash remains idle
+- Event detector NONE; no protective action required
+
 2026-07-13 : 10:36 : [hourly] Neutral hold; no buys; trail HOOD 09.50
 - Audit clean; equity ~$9,690; gross 74.4% inside 65-80% band
 - Goals still off track: port -3.10% vs SPY +4.79% (gap ~-7.9pp)
