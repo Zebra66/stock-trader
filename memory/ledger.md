@@ -2,6 +2,17 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 09:30 : [tactical] CRITICAL event override: no trades
+- SOXX/SMH CRITICAL event at 13:30Z
+- No protective stops breached; AVGO 94.63>85, HOOD 11.01>10
+- All buy conditions suspended in todo.md
+- No orders placed
+
+2026-07-12 : 09:55 : [tactical] Market closed; no action
+- Sunday 2026-07-12; pre-fetched prices from Fri close
+- No orders possible; all holds intact
+- Event detector NONE; no override
+
 2026-07-10 : 15:37 : [hourly] Hold into close, PDT limit reached
 - Audit clean, no unauthorized positions
 - PDT limit reached (4 daytrades from META breach)

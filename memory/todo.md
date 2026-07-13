@@ -1,17 +1,28 @@
-# Tactical Todo — Updated 2026-07-10 19:35Z (Friday 3:35 PM ET)
-*HARD_LOCK LIFTED — Breach resolved. PDT limit reached. No discretionary buys today.*
+<!-- Autonomous override applied at 2026-07-13T13:30:03Z due to CRITICAL event (SOXX -2.99%, SMH -2.25%) -->
+
+# Tactical Todo — Updated 2026-07-13 13:30Z (Monday 09:30 AM ET)
+*CRITICAL event override. All BUY conditions suspended until next hourly reset.*
+
+## AUTONOMOUS OVERRIDE — Mon Jul 13 13:30Z
+- **Event detector classification:** CRITICAL (SOXX -2.99%, SMH -2.25%; QQQ MAJOR -1.16%, XLK MAJOR -1.40%, GLD MAJOR -1.12%).
+- **Held positions:** All within authorized stop levels. No protective sells triggered.
+  - AVGO $394.63 > $385 stop.
+  - HOOD $111.01 > $110 stop.
+  - QQQ/VOO have no active stops.
+- **Action:** No trades executed. Suspend all buy conditions; hold existing positions.
+- **Next step:** Wait for 13:35Z hourly reassessment.
 
 ## Current State
-- **Regime:** neutral (60–80% band target)
+- **Regime:** neutral → defensive until hourly reassessment
 - **Live book:** QQQ 6, VOO 2, AVGO 3, HOOD 5
-- **Account equity / cash / buying power:** $9,765 / $2,260 / $30,053
-- **Gross long exposure:** 76.85% | **Cash:** 23.15%
-- **Daytrade count:** CONFIRMED 4 (PDT limit reached). NO NEW POSITIONS.
+- **Account equity / cash / buying power:** $9,689 / $2,260 / $29,840
+- **Gross long exposure:** ~76.6% | **Cash:** ~23.3%
+- **Daytrade count:** TBC at 13:35Z hourly. Assume 0 at new session unless broker shows otherwise.
 - **Pattern day trader:** Unknown
 - **Open orders:** NONE
-- **Market:** OPEN until 16:00 ET (~25 min). Next open Monday July 13, 09:30 ET.
+- **Market:** OPEN. 09:30 ET open just occurred.
 
-## Position Instructions — Fri Jul 10 (:40, :50 Tactical Runs)
+## Position Instructions — Mon Jul 13 (Tactical runs until 13:35Z hourly)
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~44.6%, within 45% cap. Adding 1 share would breach cap.
@@ -73,10 +84,10 @@
 - BUY orders for banned symbols are REJECTED regardless of lock active state.
 
 ## Today's Deployment Queue
-- **NO NEW BUYS AUTHORIZED.** PDT limit reached. Weekend risk ahead.
+- **NO NEW BUYS AUTHORIZED.** CRITICAL event override in effect.
 - Monday reassessment queue (requires explicit hourly authorization):
   1. Reassess gross exposure target.
-  2. If offensive posture selected, consider GOOG, NVDA, or SOXX adds only after cooldown expires.
+  2. If offensive posture selected, consider GOOG adds only after cooldown expires. **NVDA and SOXX adds are SUSPENDED — major event detected at 2026-07-13 13:30Z.**
   3. Rebuild only after full audit passes (`bun run src/tools/audit_positions.ts`).
 
 ## Expected Book Into Close (if no stops triggered)
@@ -85,8 +96,8 @@
 - Gross exposure: ~76.85%
 
 ## Next Hourly Preview — Monday Jul 13 13:35Z / 09:35 AM ET
-- Reassess regime after weekend.
+- **CRITICAL event override active.** Hourly must reassess before any new buys.
 - Monitor AVGO support at $395 and $385 stop level.
 - Monitor HOOD support at $110 stop level.
 - Check daytrade count at open; if reset to 0, tactical flexibility restored.
-- If no stops triggered over weekend, current book is sound for Monday open.
+- If AVGO or HOOD stop breaches, execute authorized protective sell (1 AVGO, 2 HOOD) with limit order.
