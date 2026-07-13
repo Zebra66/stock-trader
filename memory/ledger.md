@@ -2,6 +2,36 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-13 : 13:36 : [hourly] Neutral hold; NVDA gates 1/4; HOOD on trail
+- Equity ~$9626 (-3.74% vs SPY +4.42%); gap ~-8.2pp; both goals off track
+- Gross 74.2% inside 65-80% neutral band; no unauthorized drift; daytrades 0; audit clean
+- NVDA four-gate FAIL: QQQ~713, NVDA~$204, SOXX~$554; only no-CRITICAL passes
+- Hormuz blockade reimposed + TSMC ~Thu = cash blocker; no new buys; AVGO stop $385 / HOOD trail $109.50 live
+- Only fill today remains HOOD 2@$110 13:50Z; META banned; no open orders
+
+2026-07-13 : 13:30 : [tactical] Hold: no stops hit, no trades
+- AVGO 86.34 > 85 stop; HOOD 09.56 > 09.50 trail
+- Event detector NONE; gross ~74.2%
+- No NVDA/GOOG entry; all gates fail
+- No orders placed; no overrides
+
+2026-07-13 : 13:10 : [tactical] Hold: no stops hit, no buys auth
+- AVGO 388.59 > 385 stop; HOOD 110.15 > 109.50 trail
+- QQQ 714.28, VOO 689.61 — core holds, no drift
+- Event detector NONE; gross exposure 74.2% inside band
+- No orders placed; daytrades remain 0
+
+2026-07-13 : 12:50 : [tactical] Hold: no stops hit, no buys auth
+- AVGO 386.81 > 385 stop; HOOD 109.84 > 109.50 trail
+- Event detector NONE; all held positions OK
+- No NVDA entry (204.72 < 209 gate)
+- No orders; gross exposure 74.2% inside target band
+
+2026-07-13 : 12:40 : [tactical] Hold-only; stops not hit
+- AVGO 87.07 > 85 stop, HOOD 09.83 > 09.50 trail
+- No event triggers; gross exposure 74.2%
+- No orders placed
+
 2026-07-13 : 12:36 : [hourly] Neutral hold; NVDA gates 1/4 fail
 - Equity ~$9631, gross 74.2% inside 65-80% band; daytrades 0; audit clean
 - NVDA four-gate FAIL: QQQ~713, NVDA~$205, SOXX~$554, no CRITICAL only
