@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 09:41 : [hourly] VOO cash deploy; MAJOR not CRITICAL
+- Audit clean, gross ~69%, daytrades 0, META banned
+- Corrected VOO cap: 30% override allows 1-2 share limit add; cash 31% is primary drag
+- Event MAJOR (SOXX/SMH); lift full buy freeze; authorize VOO only
+- NVDA gate 3/4 fail (~205<<209); TSMC Thu; hold AVGO/HOOD trails
+- Restored missing .gitignore; node_modules ignore verified
+
 2026-07-14 : 09:41 : [tactical] CRITICAL event override; no trades
 - Event detector CRITICAL: SOXX/GLD/SMH sharply higher; QQQ/XLK MAJOR.
 - Held positions OK: AVGO ~386.54 > 380, HOOD ~109.73 > 108; no stop breaches.
