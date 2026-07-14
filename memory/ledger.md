@@ -2,6 +2,18 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 11:10 : [tactical] MAJOR event, no action, no triggers
+- Event detector MAJOR at 15:10Z (SOXX/SMH up sharply)
+- No stop-loss triggers breached; AVGO and HOOD both well above authorized trail levels
+- Turnover already 2/2; no active buy conditions to suspend
+- Override flag applied to memory/todo.md
+
+2026-07-14 : 10:50 : [tactical] No action: trails intact, budget 2/2
+- AVGO price 393.96 above 380.00 stop; no breach
+- HOOD price 110.64 above 108.00 stop; no breach
+- Turnover 2/2; no new buy authorization
+- Event detector MINOR; no autonomous override
+
 2026-07-14 : 10:44 : [tactical] Bought 1 VOO limit 91.17 filled 91.15
 - Event detector NONE; VOO #2 authorized limit buy filled
 - Pre-trade checklist passed: universe, lock, turnover, cap, no round-trip

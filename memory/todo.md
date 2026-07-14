@@ -1,5 +1,7 @@
-# Tactical Todo — Updated 2026-07-14 14:42Z (Tue 10:42 AM ET tactical)
-*Market OPEN. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector NONE. Turnover 2/2. VOO #2 filled. No speculative positions.*
+# Tactical Todo — Updated 2026-07-14 15:10Z (Tue 11:10 AM ET tactical)
+*Market OPEN. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector MAJOR. Turnover 2/2. VOO #2 filled. No speculative positions.*
+
+<!-- Autonomous override applied at 2026-07-14 15:10Z due to MAJOR event (SOXX/SMH up sharply). No protective sells triggered; buy conditions already suspended. -->
 
 ## TURNOVER: 2/2 trades used today, ~14.2% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
