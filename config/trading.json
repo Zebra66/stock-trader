@@ -1,0 +1,39 @@
+{
+  "universe": [
+    "AVGO",
+    "EIS",
+    "GLD",
+    "GOOG",
+    "HOOD",
+    "META",
+    "NVDA",
+    "QQQ",
+    "QTUM",
+    "RKLB",
+    "SHLD",
+    "SOXX",
+    "VOO",
+    "ARKX"
+  ],
+  "concentration": {
+    "symbolCapsPct": {
+      "QQQ": 45,
+      "VOO": 30
+    },
+    "etfSymbols": ["VOO", "SOXX", "GLD", "EIS", "ARKX", "QTUM", "SHLD"],
+    "etfCapPct": 20,
+    "stockCapPct": 15
+  },
+  "risk": {
+    "hardLockGrossExposureAbove": 1.05
+  },
+  "ledger": {
+    "priceHallucinationMinRatio": 0.2,
+    "priceHallucinationMaxRatio": 5,
+    "skipIntegerBelow": 100
+  },
+  "evaluation": {
+    "inceptionDate": "2026-05-04",
+    "spyBaseline": 718.01
+  }
+}
