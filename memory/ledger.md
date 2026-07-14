@@ -2,6 +2,44 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 13:36 : [hourly] Hold-only: 2/2 spent, caps bind, TSMC
+- Audit OK; gross 83.6% inside neutral 75-90%; equity ~$9693 cash $1594
+- Turnover 2/2 exhausted (VOO fills 14:12Z/14:41Z); only AVGO $380 and HOOD $108 trails allowed
+- Cap-bound cash: VOO room ~$143 QQQ ~$38 — cannot add integer share
+- NVDA 4/4 price gates PASS ~$210.7 but TSMC earnings Thu Jul 16 blocks chip beta
+- Regime neutral unchanged; off track -3.1% vs SPY +4.7%; no new buys rest of session
+
+2026-07-14 : 13:30 : [tactical] NO_ACTION: trails intact, budget spent
+- AVGO 393.47 above 380.00 trail, not triggered
+- HOOD 112.74 above 108.00 trail, not triggered
+- Turnover 2/2 exhausted; only protective exits allowed
+- Event detector NONE; gross 83.5pct inside neutral band
+- No conditions met; no orders submitted
+
+2026-07-14 : 13:20 : [tactical] Hold-only: trails not breached
+- AVGO and HOOD prices remain above authorized trail triggers
+- Turnover 2/2 exhausted; no buy conditions
+- Event detector NONE; gross exposure inside neutral band
+- No orders placed
+
+2026-07-14 : 13:10 : [tactical] NO_ACTION: trails intact, budget spent
+- AVGO 395.07 > 380.00 trail; HOOD 111.46 > 108.00 trail
+- Turnover 2/2 exhausted; no discretionary trades
+- Event detector NONE; gross ~83.5% inside band
+- No conditions met; hold core and protect winners
+
+2026-07-14 : 12:50 : [tactical] No trades; trails not breached
+- Event detector NONE at 16:50Z
+- AVGO 393.18 above 380.00 stop, HOOD 111.02 above 108.00 stop
+- Turnover 2/2 exhausted; only protective exits allowed
+- No conditions met; no orders submitted
+
+2026-07-14 : 12:40 : [tactical] HOLD-ONLY — trails intact, no triggers
+- Turnover 2 of 2 exhausted; no discretionary trades allowed
+- AVGO 393 above 380 stop; HOOD 110 above 108 stop
+- Event detector NONE; no protective exits triggered
+- Gross 83.5% inside 75-90% neutral band
+
 2026-07-14 : 12:36 : [hourly] Hold-only: 2/2 spent, NVDA pass but TSMC
 - Audit OK; gross 83.5% inside neutral 75-90%; daytrades 0
 - Cash ~16.5% cap-bound: VOO room ~$143, QQQ room ~$39 — no integer add
