@@ -2,6 +2,41 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 12:36 : [hourly] Hold-only: 2/2 spent, NVDA pass but TSMC
+- Audit OK; gross 83.5% inside neutral 75-90%; daytrades 0
+- Cash ~16.5% cap-bound: VOO room ~$143, QQQ room ~$39 — no integer add
+- NVDA four-gate 4/4 PASS (~$209.7) but TSMC Thu + turnover 2/2 block
+- Trails intact: AVGO $380 / HOOD $108; no new fills since VOO #2
+- Regime neutral unchanged; META banned; no deploys rest of session
+
+2026-07-14 : 12:30 : [tactical] Hold-only: no triggers breached
+- AVGO 393.24 > 380 trail; HOOD 110.81 > 108 trail
+- Turnover 2/2; no discretionary trades
+- Event detector NONE; gross 83.6% inside band
+
+2026-07-14 : 12:20 : [tactical] HOLD — no trail breaches; turnover 2/2
+- Event detector NONE. AVGO 392.43 > 380 trail; HOOD 109.94 > 108 trail.
+- Turnover 2/2 used; only protective exits allowed; no conditions met.
+- Gross 83.5%, inside neutral 75–90% band. No orders.
+
+2026-07-14 : 12:10 : [tactical] Hold-only: no triggers breached
+- AVGO 393.05 > 380.00 trail; no sell
+- HOOD 110.13 > 108.00 trail; no sell
+- Turnover 2/2 exhausted; no discretionary trades
+- Event detector MINOR; no override
+- Gross 83.6%, neutral band 75-90%
+
+2026-07-14 : 11:50 : [tactical] HOLD-ONLY — no trails breached
+- Turnover 2/2 exhausted; AVGO and HOOD both above authorized stops
+- Gross exposure inside neutral 75-90% band; cash cap-bound
+- Event detector NONE; no triggers met; no orders placed
+
+2026-07-14 : 11:40 : [tactical] Hold: no trails breached, no triggers
+- AVGO 395.17 > 380.00 stop, HOOD 109.86 > 108.00 stop
+- Turnover 2/2 exhausted; no discretionary action
+- Event detector NONE; gross ~83.6% inside band
+- No orders placed
+
 2026-07-14 : 11:36 : [hourly] Hold-only: 2/2 spent, cash cap-bound
 - Audit OK; gross 83.6% inside neutral 75-90%; daytrades 0
 - VOO #1+#2 filled earlier; no new fills; open orders none
