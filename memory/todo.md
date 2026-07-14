@@ -1,6 +1,15 @@
 # Tactical Todo — Updated 2026-07-14 17:35Z (Tue 1:35 PM ET hourly)
 *Market OPEN. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector NONE. Turnover 2/2. HOLD-ONLY rest of session.*
 
+<!-- Autonomous override applied at 2026-07-14 17:36Z due to CRITICAL event (semiconductor upward spike: SMH/SOXX/XLK) -->
+
+## NO NEW BUYS — CRITICAL EVENT
+- Tactical cycle at 17:36Z received pre-fetched event detector report with **CRITICAL** classification (SMH +1.61%, SOXX MAJOR, XLK MAJOR in 10-min window).
+- **All held positions OK; no protective stops breached.** No protective sells executed.
+- Turnover budget **2/2 exhausted** — no new buys were possible anyway.
+- Hold-only posture maintained. Reassess at next hourly.
+
+
 ## TURNOVER: 2/2 trades used today, ~14.2% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
 - VOO #1 used trade #1 (filled 14:12Z @ $689.49). **VOO #2 used trade #2 (filled 14:41Z @ $691.15).** Discretionary turnover **exhausted** for the day.

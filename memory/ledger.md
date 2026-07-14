@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 14:11 : [tactical] CRITICAL semi spike; no action
+- Event detector CRITICAL on SMH/SOXX/XLK upward spike
+- All held positions OK; no stops breached
+- Turnover budget exhausted; no buys authorized
+- Hold-only posture maintained
+
 2026-07-14 : 13:36 : [hourly] Hold-only: 2/2 spent, caps bind, TSMC
 - Audit OK; gross 83.6% inside neutral 75-90%; equity ~$9693 cash $1594
 - Turnover 2/2 exhausted (VOO fills 14:12Z/14:41Z); only AVGO $380 and HOOD $108 trails allowed
