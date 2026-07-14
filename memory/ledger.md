@@ -2,11 +2,87 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
-2026-07-14 : 14:11 : [tactical] CRITICAL semi spike; no action
-- Event detector CRITICAL on SMH/SOXX/XLK upward spike
-- All held positions OK; no stops breached
-- Turnover budget exhausted; no buys authorized
-- Hold-only posture maintained
+2026-07-14 : 16:27 : [hourly] Post-close hold; 2/2 spent, caps bind
+- Market closed; equity ~$9687 gross 83.5% inside neutral 75-90%; cash 16.5% cap-bound (VOO room ~$141, QQQ ~$36)
+- Turnover 2/2 used on authorized VOO fills; only AVGO $380 / HOOD $108 trails next session
+- NVDA 4/4 price gates pass (~$211.5) but TSMC Thu Jul 16 blocks chips; no AH orders
+- Merged diverged branch (local tactical CRITICAL + origin hourlies); audit OK daytrades 0
+- Off track: portfolio ~-3.1% vs SPY ~+4.7%; dominant failure residual cash drag + historical friction
+
+2026-07-14 : 15:36 : [hourly] Hold-only into close; 2/2 spent
+- Gross 83.5% inside neutral 75-90%; cash 16.5% cap-bound (VOO room ~$141, QQQ ~$39)
+- Turnover 2/2 used on authorized VOO fills; only AVGO $380 / HOOD $108 trails remain
+- NVDA 4/4 price gates pass (~$211.7) but TSMC Thu Jul 16 + budget block chips
+- Event detector NONE; META banned; no open orders; trails intact
+- Off track: portfolio ~-3.1% vs SPY ~+4.7%; dominant failure residual cash drag + historical friction
+
+2026-07-14 : 15:30 : [tactical] No conditions met; hold-only
+- Event detector MINOR on SOXX; held positions OK
+- AVGO $390.66 above $380.00 trail; HOOD $112.86 above $108.00 trail
+- Turnover 2/2 exhausted; no new buys authorized
+- No open orders; no action taken
+
+2026-07-14 : 15:20 : [tactical] NO_ACTION: trails intact, budget 2/2
+- AVGO price above 380 trail; HOOD price above 108 trail
+- Turnover 2 of 2 exhausted; only protective exits allowed
+- Gross 83.6%, cash cap-bound, no buy triggers
+- Event detector NONE; no override
+- Held QQQ VOO AVGO HOOD, no orders placed
+
+2026-07-14 : 15:10 : [tactical] Hold-only: no triggers breached
+- Event detector MINOR (SOXX only); held positions OK
+- AVGO 391.30 above 380 trail; HOOD 112.17 above 108 trail
+- Turnover 2/2 exhausted; no new buys authorized
+- No orders submitted
+
+2026-07-14 : 14:50 : [tactical] Hold-only: no trails breached, turnover 2/2
+- Event detector NONE at 18:50Z
+- AVGO 393.40 above 380.00 trail
+- HOOD 112.00 above 108.00 trail
+- Turnover 2/2 used; no new buys
+- No orders placed
+
+2026-07-14 : 14:40 : [tactical] No triggers; hold-only
+- Event detector NONE
+- AVGO and HOOD trails not breached
+- Turnover two of two exhausted; no new orders
+- Gross exposure inside target band
+
+2026-07-14 : 14:36 : [hourly] Hold-only: turnover 2/2, caps bind cash
+- Equity ~$9704, gross 83.6% inside neutral 75-90%; cash 16.4% but VOO room ~$144 / QQQ ~$37 — cannot add 1 share
+- Audit OK, daytrades 0, detector NONE, no open orders; today's only fills remain 2x VOO (authorized)
+- AVGO +5.9% trail $380 intact (cooldown ~0.9h); HOOD +11% trail $108 intact
+- NVDA price gates 4/4 PASS (~$212) but TSMC Thu + turnover block any chip add
+- Off track: port ~-3.0% vs SPY ~+4.8%; next deploy only post-turnover-reset if integer room or post-TSMC
+
+2026-07-14 : 14:30 : [tactical] Hold-only: no trails breached
+- Event detector NONE. AVGO at 394.12, above 380.00 trail; HOOD at 112.79, above 108.00 trail.
+- Turnover 2/2 exhausted; no buy conditions met.
+- Gross 83.6 percent, cash cap-bound; no orders placed.
+
+2026-07-14 : 14:20 : [tactical] NO_ACTION: hold-only, trails intact
+- Event detector NONE; market quiet.
+- AVGO 394.59 > 380 trail; HOOD 113.07 > 108 trail — no stop breach.
+- Turnover 2/2 exhausted; no new buys or adds.
+- No open orders; no override applied.
+- Cash 1594.05, gross ~83.6%, inside target band.
+
+2026-07-14 : 14:10 : [tactical] NO_ACTION: hold-only, no triggers
+- Event detector NONE. AVGO 394.29 > 380 trail; HOOD 113.05 > 108 trail.
+- Turnover 2/2 exhausted; caps bind cash; no conditions met.
+- No orders placed. Hard rules and guardrails respected.
+
+2026-07-14 : 13:50 : [tactical] Hold-only: trails intact, turnover 2/2
+- Event detector NONE at 1750Z
+- AVGO 393.38 above trail 380.00; HOOD 112.84 above trail 108.00
+- Turnover 2/2 exhausted; no discretionary orders
+- No open orders; no action required
+
+2026-07-14 : 13:40 : [tactical] Hold-only: trails intact, no trade
+- Event detector NONE; AVGO 393.08 above 380 trail; HOOD 112.90 above 108 trail
+- Turnover 2/2 exhausted; no new buys authorized
+- Cash cap-bound; QQQ/VOO room below 1 share
+- No orders placed
 
 2026-07-14 : 13:36 : [hourly] Hold-only: 2/2 spent, caps bind, TSMC
 - Audit OK; gross 83.6% inside neutral 75-90%; equity ~$9693 cash $1594
