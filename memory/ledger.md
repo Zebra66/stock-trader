@@ -2,6 +2,24 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 10:36 : [hourly] Auth 2nd VOO; cash drag still main gap
+- Event MINOR (SMH only); audit clean; gross 76.4% cash 23.6%
+- Goal off-track: port ~-3.1% vs SPY ~+4.7%; dominant failure cash drag
+- Trade #1 filled VOO@689.49; authorize VOO #2 limit ~691 for trade #2
+- Post-VOO2: gross ~83-84% VOO~28.5%; remaining cash cap-bound
+- Hold QQQ/AVGO/HOOD; trails 380/108; no NVDA (gate 3/4) META banned
+
+2026-07-14 : 10:30 : [tactical] No action: VOO add blocked by band
+- Event detector NONE, trails not breached
+- Optional 2nd VOO would push gross ~83.5%, outside todo 65-80% band
+- Turnover 1/2; no other authorized conditions met
+
+2026-07-14 : 10:21 : [tactical] No action: exposure band blocks 2nd VOO
+- Event detector NONE; trails intact (AVGO 390.69 above 380.00, HOOD 111.135 above 108.00)
+- Optional 2nd VOO skipped: would push gross exposure to ~83.4%, above 65-80% target band
+- Turnover remains 1/2; no orders placed
+- Standing todo: hold QQQ 6 / VOO 3 / AVGO 2 / HOOD 2, await next check
+
 2026-07-14 : 10:13 : [tactical] Bought 1 VOO @ 689.49
 - Limit 689.57 filled at 689.49
 - Event MAJOR; CRITICAL override lifted
