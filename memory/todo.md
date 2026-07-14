@@ -1,41 +1,40 @@
-<!-- Autonomous override applied at 2026-07-14 13:40Z due to CRITICAL event (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR). VOO cash deploy SUSPENDED. -->
-# Tactical Todo — Updated 2026-07-14 13:40Z (Tue 9:40 AM ET tactical)
-*Market OPEN. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Event detector CRITICAL. NO NEW BUYS until next hourly reset. VOO buy suspended.*
+<!-- Event detector update: 2026-07-14 14:10Z classification MAJOR (SOXX/SMH MAJOR; QQQ/XLK/GLD OK; SPY OK). Prior CRITICAL override lifted per hourly reassessment. VOO cash deploy ACTIVE. -->
+# Tactical Todo — Updated 2026-07-14 14:10Z (Tue 10:10 AM ET tactical)
+*Market OPEN. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Event detector MAJOR. Hourly-authorized VOO limit buy ACTIVE. No new speculative positions.*
 
-## TURNOVER: 0/2 trades used today, ~0% of 20% weekly budget used
+## TURNOVER: 1/2 trades used today, ~7.1% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
-- Prefer the VOO deploy as trade #1 (and optional #2). Do not spend budget on speculative names.
+- VOO deploy used trade #1. Optional 2nd VOO share may use trade #2 if conditions are met. Do not spend budget on speculative names.
 
 ## HARD_LOCK LIFTED / inactive
 - `memory/.trading_lock.json`: `active: false`. META remains in `bannedSymbols`.
-- Fresh 13:40Z event detector classification is **CRITICAL**. Hourly-authorized VOO cash deploy is **SUSPENDED** until next hourly reset. Speculative adds stay off.
+- Fresh 14:10Z event detector classification is **MAJOR**. Hourly-authorized VOO cash deploy is **ACTIVE** (limit order only). Speculative adds stay off.
 
-## NO NEW BUYS — CRITICAL EVENT
-- 13:40Z event detector classification is CRITICAL. All new BUY authorizations are suspended until the next hourly reset, except explicitly authorized protective exits.
-- VOO cash deploy from this hourly note is suspended.
+## NO NEW BUYS — MAJOR EVENT CONTEXT
+- 14:10Z event detector classification is MAJOR (local semi/precious-metals volatility; broad market OK). Speculative new BUY authorizations remain suspended.
+- Hourly-authorized VOO cash deploy is ACTIVE (VOO not flagged MAJOR; limit order only).
 
 ## Current State
 - **Regime:** **neutral** (not defensive panic, not full offensive catch-up)
-- **Live book:** QQQ 6, VOO 2, AVGO 2, HOOD 2
-- **Account equity / cash / BP:** ~$9,660 / $2,975 / ~$30,600
-- **Gross long exposure:** **~69.2%** | Target band **65–80%** | Cash **~30.8%** (VOO deploy suspended due to CRITICAL event).
+- **Live book:** QQQ 6, VOO 3, AVGO 2, HOOD 2
+- **Account equity / cash / BP:** ~$9,660 / $2,285 / ~$30,600
+- **Gross long exposure:** **~76.3%** | Target band **65–80%** | Cash **~23.7%** (VOO deploy filled; cash still above 10% target but within band).
 - **Daytrade count:** **0**. Conserve — do not open a position you may need to reverse today.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** OPEN regular session. Event detector CRITICAL (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR; SPY OK). Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
+- **Market:** OPEN regular session. Event detector MAJOR (SOXX/SMH MAJOR; QQQ/XLK/GLD OK; SPY OK). Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
 - **Audit:** clean. No unauthorized positions. No concentration breaches.
 
 ## Ranked Execution Priority
-1. **BUY 1 VOO** — **SUSPENDED** due to CRITICAL event detector classification. No VOO buy until next hourly reset.
-2. **Optional BUY 1 more VOO** — **SUSPENDED**.
+1. **BUY 1 VOO** — **FILLED 1 @ $689.49** (limit $689.57; 2026-07-14 14:12Z).
+2. **Optional BUY 1 more VOO** — only if event stays ≤ MAJOR, cash >15%, turnover <2. Same limit discipline. Do NOT place now; wait for next tactical check.
 3. **AVGO / HOOD protective trails** if breached (exempt from turnover budget).
 4. **Everything else:** no discretionary buys.
 
 ## Position Instructions
 
-### VOO — HOLD 2 + **BUY 1 AUTHORIZED** (cash discipline)
-- **SUSPENDED — CRITICAL event detected at 2026-07-14 13:40Z; VOO buy is off until next hourly reset.**
-- Weight ~14.3%. **Config cap is VOO 30%** (not 20%). Room ~$1,500 — 1–2 shares OK.
-- **SUSPENDED — was AUTHORIZED NOW:** BUY **1** share VOO with **limit order only**, limit price **≤ last/print** (use ~$689.50 or the live bid/last at submit time; do not chase more than **$0.50** above the print you see). Prefer limit at or slightly below last.
+### VOO — HOLD 3 + **BUY 1 FILLED** (cash discipline)
+- Weight ~21.4%. **Config cap is VOO 30%** (not 20%). Room ~$830 — 1 more share possible if conditions above met.
+- **FILLED 2026-07-14 14:12Z:** Bought **1** share VOO limit **$689.57**, filled at **$689.49**. Do not chase additional shares beyond the authorized optional 2nd share conditions.
 - **Why this beats do-nothing:** cash ~31% is the active drag vs SPY; VOO is the underweight core beta and preferred deploy vehicle when QQQ is near cap. Friction is one limit fill.
 - **Illiquid gate:** VOO TradeCount often low — **market orders prohibited**. Limit only. If bar TradeCount < 5, still OK to use limit (not market).
 - **Post-buy check:** VOO weight must stay ≤30%; gross should land ~76% (1 share) or ~83% (if 2nd share — only if still inside 65–80% target or you stop at 1).
@@ -105,6 +104,6 @@
 - VOO: limit only; cancel unfilled stale VOO limits older than this cycle before replacing.
 
 ## Current Book
-- QQQ 6 (~44.6%), VOO 2 (~14.3%), AVGO 2 (~8.0%), HOOD 2 (~2.3%)
-- Cash ~$2,975 (~30.8%)
-- Gross ~69.2%
+- QQQ 6 (~44.6%), VOO 3 (~21.4%), AVGO 2 (~8.1%), HOOD 2 (~2.3%)
+- Cash ~$2,285 (~23.7%)
+- Gross ~76.3%
