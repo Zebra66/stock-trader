@@ -1,5 +1,5 @@
-# Tactical Todo — Updated 2026-07-14 18:35Z (Tue 2:35 PM ET hourly)
-*Market OPEN. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector NONE. Turnover 2/2. HOLD-ONLY rest of session.*
+# Tactical Todo — Updated 2026-07-14 19:35Z (Tue 3:35 PM ET hourly)
+*Market OPEN (final ~25 min). Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector NONE. Turnover 2/2. HOLD-ONLY through close.*
 
 ## TURNOVER: 2/2 trades used today, ~14.2% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
@@ -11,26 +11,27 @@
 - No HARD_LOCK. Do not invent one.
 
 ## Event context — NONE (not CRITICAL)
-- 18:35Z: SPY/QQQ/SOXX/XLK/GLD/SMH all OK; held AVGO/HOOD/QQQ/VOO all OK. Sector rotation NONE.
+- 19:35Z: SPY/QQQ/SOXX/XLK/GLD/SMH all OK; held AVGO/HOOD/QQQ/VOO all OK. Sector rotation NONE.
 - **No new BUY authorizations** (turnover 2/2 + cap-bound cash + TSMC week on chips).
 - If detector later returns **CRITICAL:** write `NO NEW BUYS — CRITICAL EVENT`; hold existing; only execute authorized stops if breached. Do not market-panic sell core ETFs.
 
 ## Current State
-- **Regime:** **neutral** (doctrine band 75–90%; live ~83.6%) — **do not flip regime today**.
+- **Regime:** **neutral** (doctrine band 75–90%; live ~83.5%) — **do not flip regime today**.
 - **Live book:** QQQ 6, VOO 4, AVGO 2, HOOD 2
-- **Account equity / cash / BP:** ~$9,704 / $1,594 / ~$29,083
-- **Gross long exposure:** **~83.6%** | Target band **75–90%** | Cash **~16.4%** (above 10% but **cap-bound** — see blocker).
+- **Account equity / cash / BP:** ~$9,687 / $1,594 / ~$29,036
+- **Gross long exposure:** **~83.5%** | Target band **75–90%** | Cash **~16.5%** (above 10% but **cap-bound** — see blocker).
 - **Daytrade count:** **0**. No same-day round trips.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** OPEN regular session. Event detector NONE. TSMC earnings ~Thu Jul 16.
+- **Market:** OPEN regular session (final minutes). Event detector NONE. TSMC earnings ~Thu Jul 16.
 - **Audit:** clean. No unauthorized positions. No concentration breaches.
 
 ## Exact cash blocker (mandatory — do not invent deploys)
-- VOO 30% cap room ~**$144** → **cannot buy 1 VOO** (~$692).
-- QQQ 45% cap room ~**$37** → **cannot buy 1 QQQ** (~$722).
-- Chip beta blocked: **TSMC ~Thu Jul 16** (even though NVDA price gates now 4/4 PASS ~$212.4). **No NVDA today.**
+- VOO 30% cap room ~**$141** → **cannot buy 1 VOO** (~$691).
+- QQQ 45% cap room ~**$39** → **cannot buy 1 QQQ** (~$720).
+- Chip beta blocked: **TSMC ~Thu Jul 16** (even though NVDA price gates 4/4 PASS ~$211.7). **No NVDA today.**
 - Thin ETFs (QTUM/ARKX/EIS/SHLD/GLD/RKLB) — no edge / illiquid. **Do not buy.**
 - Turnover 2/2 also blocks discretionary adds.
+- **Do not force end-of-day deploys.**
 
 ## Ranked Execution Priority
 1. **AVGO / HOOD protective trails** if breached (exempt from turnover budget).
@@ -45,13 +46,13 @@
 - **If you bought VOO today, you may NOT sell that VOO today.**
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~44.6%, within 45% cap. Cap room ~$37 — **cannot add 1 share**.
+- Weight ~44.6%, within 45% cap. Cap room ~$39 — **cannot add 1 share**.
 - Core anchor. No stop. No action.
 
 ### AVGO — HOLD 2 — TRAIL 1 @ $380 — DO NOT ADD
-- Avg $371.95, live ~$394.0, unrealized ~+5.9%.
+- Avg $371.95, live ~$391.3, unrealized ~+5.2%.
 - **Authorized trail:** SELL **1** share if price drops **below $380.00** with **limit $379.50**. Hold remaining 1 after trigger.
-- **Do NOT re-buy AVGO** until after **2026-07-13 19:30Z + 24h** (~Tue 19:30Z) and only with fresh hourly authorization. Cooldown still active until ~19:30Z (~0.9h remaining).
+- 24h cooldown from Mon 19:30Z sell has **expired**, but **still do NOT re-buy AVGO** without a fresh hourly authorization (none given). Turnover 2/2 also blocks.
 - Do not lower the trail. Do not tighten.
 
 ### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD
@@ -64,12 +65,12 @@
 - `bannedSymbols: ["META"]` active. CODE-ENFORCED reject on any BUY.
 
 ### NVDA — NO ENTRY (TSMC WEEK + TURNOVER)
-- Live ~$212.4. Price gates now **4/4 PASS**, but **still NO ORDER**.
+- Live ~$211.7. Price gates **4/4 PASS**, but **still NO ORDER**.
 - Blockers: (1) **TSMC earnings ~Thu Jul 16** sector binary; (2) turnover **2/2 exhausted**.
 - Do not chase. Reassess only **post-TSMC** with fresh hourly auth + all four gates.
 
 ### GOOG — NO ENTRY
-- Soft 1w (–2.4%). No edge. Caps/turnover block anyway.
+- Soft 1w (–1.8%). No edge. Caps/turnover block anyway.
 
 ### SOXX — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
 - TSMC risk; turnover exhausted. Market orders prohibited even if later authorized.
@@ -79,7 +80,7 @@
 
 ## Hard Rules / No-Trade Conditions
 - **NO speculative new positions.** Only authorized residual action: AVGO/HOOD trails.
-- **No after-hours / pre-market equity orders.**
+- **No after-hours / pre-market equity orders.** Convert any overnight idea into next regular-session triggers only after next hourly.
 - **No same-day round trips.** Do not sell today's VOO adds. Do not sell QQQ/VOO core.
 - **Conserve daytrades** (0 of 3). Protective stop sells on overnight holdings OK.
 - **No new short sales.**
@@ -95,9 +96,10 @@
 ## Symbol Ban Guard
 - `bannedSymbols: ["META"]`
 
-## Safeguards For Next 60 Minutes
+## Safeguards For Next 60 Minutes / Through Close
 - **Hold-only** except AVGO/HOOD trails if breached.
 - No revenge trading. No SOXX/NVDA chase on green prints (even if NVDA > $209).
+- No end-of-day "use the cash" inventiveness.
 - If gross drifts >15 pp without authorization → hold-only and wait for next hourly.
 - Re-read this file before every order batch (concurrent hourly/tactical risk).
 - **Do not lower stop levels.**
@@ -106,5 +108,5 @@
 
 ## Current Book
 - QQQ 6 (~44.6%), VOO 4 (~28.5%), AVGO 2 (~8.1%), HOOD 2 (~2.3%)
-- Cash ~$1,594 (~16.4%)
-- Gross ~83.6%
+- Cash ~$1,594 (~16.5%)
+- Gross ~83.5%
