@@ -67,9 +67,9 @@
 - **Illiquid gate:** If TradeCount < 5 or volume anomalously low on a candidate, do not market-buy; defer.
 - **Post-order:** If any order fills, update this file with a cycle note and leave a clear execution record.
 
-## Concentration Cap Guard (Code-Enforced)
-- QQQ ≤ 45% | single stock ≤ 15% | non-QQQ ETF ≤ 20%
-- Current: all within caps. QQQ near max. VOO cannot add 1 share.
+## Concentration Cap Guard (Code-Enforced via config/trading.json)
+- Caps: see code/`config/trading.json` (QQQ/VOO overrides, ETF default, stock default).
+- Current: all within caps. QQQ near max. VOO has room under its configured cap for cash deployment.
 
 ## Symbol Ban Guard (Code-Enforced)
 - `bannedSymbols: ["META"]` — BUY rejected regardless of lock active state.
