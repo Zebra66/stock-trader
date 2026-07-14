@@ -1,45 +1,41 @@
-# Tactical Todo — Updated 2026-07-14 14:40Z (Tue 10:35 AM ET hourly)
-*Market OPEN. Book: QQQ 6 / VOO 3 / AVGO 2 / HOOD 2. Event detector MINOR. Hourly-authorized 2nd VOO limit buy ACTIVE. No speculative positions.*
+# Tactical Todo — Updated 2026-07-14 14:42Z (Tue 10:42 AM ET tactical)
+*Market OPEN. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector NONE. Turnover 2/2. VOO #2 filled. No speculative positions.*
 
-## TURNOVER: 1/2 trades used today, ~7.1% of 20% weekly budget used
+## TURNOVER: 2/2 trades used today, ~14.2% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
-- VOO #1 used trade #1 (filled 14:12Z). **Authorized VOO #2 may use trade #2.** After that, turnover exhausted for discretionary trades.
+- VOO #1 used trade #1 (filled 14:12Z @ $689.49). **VOO #2 used trade #2 (filled 14:41Z @ $691.15).** Discretionary turnover exhausted for the day.
 
 ## HARD_LOCK LIFTED / inactive
 - `memory/.trading_lock.json`: `active: false`. META remains in `bannedSymbols`.
 - Fresh 14:35Z event detector classification is **MINOR**. Hourly-authorized 2nd VOO cash deploy is **ACTIVE** (limit order only). Speculative adds stay off.
 
-## Event context — MINOR (not CRITICAL)
-- 14:35Z: SPY/QQQ/SOXX/XLK/GLD OK; SMH MINOR; held AVGO/HOOD/QQQ/VOO all OK.
+## Event context — NONE (not CRITICAL)
+- 14:40Z: SPY/QQQ/SOXX/XLK/GLD/SMH all OK; held AVGO/HOOD/QQQ/VOO all OK.
 - Speculative new BUY authorizations remain suspended (NVDA/GOOG/SOXX/thin ETFs).
-- Hourly-authorized VOO cash deploy #2 is ACTIVE (limit only).
+- VOO #2 cash deploy filled; no further discretionary buys today.
 
 ## Current State
-- **Regime:** **neutral** (doctrine band 75–90%; live ~76.4%)
-- **Live book:** QQQ 6, VOO 3, AVGO 2, HOOD 2
-- **Account equity / cash / BP:** ~$9,686 / $2,285 / ~$29,900
-- **Gross long exposure:** **~76.4%** | Target band **75–90%** | Cash **~23.6%** (still above 10% target).
-- **Daytrade count:** **0**. Conserve — do not open a position you may need to reverse today.
+- **Regime:** **neutral** (doctrine band 75–90%; live ~83.5%)
+- **Live book:** QQQ 6, VOO 4, AVGO 2, HOOD 2
+- **Account equity / cash / BP:** ~$9,685 / $1,594 / ~$29,900
+- **Gross long exposure:** **~83.5%** | Target band **75–90%** | Cash **~16.5%** (still above 10% target; cap-bound).
+- **Daytrade count:** **0**. No same-day round trips.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** OPEN regular session. Event detector MINOR. Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
+- **Market:** OPEN regular session. Event detector NONE. Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
 - **Audit:** clean. No unauthorized positions. No concentration breaches.
 
 ## Ranked Execution Priority
-1. **BUY 1 more VOO** — **ACTIVE NOW** if event ≤ MAJOR (current MINOR OK), cash >15%, turnover <2. Limit only ≤ live last (~$690.50–$691.20). Do **not** chase above live offer.
+1. **VOO #2 — FILLED.** No further discretionary buys today.
 2. **AVGO / HOOD protective trails** if breached (exempt from turnover budget).
-3. **Everything else:** no discretionary buys. After VOO #2 fills, **turnover 2/2 — stop**.
+3. **Everything else:** no discretionary buys. Turnover **2/2 — stop**.
 
 ## Position Instructions
 
-### VOO — HOLD 3 + **BUY 1 more authorized** (cash discipline)
-- Weight ~21.4%. **Config cap is VOO 30%** (not 20%). Room ~$832 → **exactly 1 more share** OK.
-- **Already filled today:** 1 share @ **$689.49** (limit $689.57; 14:12Z). Book is now 3 shares.
-- **Authorized now:** BUY **1** additional VOO, limit ≤ live last/offer (refresh price before submit; ~$690.50–$691.20 at 14:35Z). Prefer limit at or slightly below last. **Market orders prohibited** (TradeCount often <5).
-- **Why this beats do-nothing:** cash ~24% is still the active drag vs SPY; VOO is the only core beta with room; friction is one limit fill. Post-buy: gross ~83–84%, VOO ~28.5% ≤30%, cash ~16%.
-- **Do NOT buy a 3rd additional share** (would push toward/over 30% or exhaust cash without edge).
-- **Post-buy check:** VOO weight ≤30%; cancel any unfilled stale VOO limit before replacing.
-- **If event goes CRITICAL before fill:** cancel/suspend this VOO add; hold; note in this file.
-- HOLD existing 3. No VOO stop. No VOO full exit. **If you buy VOO today, you may NOT sell that VOO today.**
+### VOO — HOLD 4 — DO NOT ADD (turnover 2/2)
+- Weight ~28.5% (4 shares). **Config cap is VOO 30%** (not 20%). Near cap; no more VOO buys today.
+- **Filled today:** 2 shares total — 1 @ **$689.49** (limit $689.57; 14:12Z) and 1 @ **$691.15** (limit $691.17; 14:41Z). Book is now 4 shares.
+- **No further VOO buys today.** Discretionary turnover exhausted.
+- **HOLD existing 4.** No VOO stop. No VOO full exit. **If you buy VOO today, you may NOT sell that VOO today.**
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Weight ~44.6%, within 45% cap. Cap room ~$44 — **cannot add 1 share**.
@@ -104,7 +100,7 @@
 - VOO: limit only; cancel unfilled stale VOO limits older than this cycle before replacing.
 - After turnover 2/2: only protective exits allowed.
 
-## Current Book (pre VOO #2)
-- QQQ 6 (~44.6%), VOO 3 (~21.4%), AVGO 2 (~8.1%), HOOD 2 (~2.3%)
-- Cash ~$2,285 (~23.6%)
-- Gross ~76.4%
+## Current Book (post VOO #2)
+- QQQ 6 (~44.6%), VOO 4 (~28.5%), AVGO 2 (~8.1%), HOOD 2 (~2.3%)
+- Cash ~$1,594 (~16.5%)
+- Gross ~83.5%
