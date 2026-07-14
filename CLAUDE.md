@@ -122,6 +122,13 @@ For more information, read the Bun API docs in `node_modules/bun-types/docs/**.m
 - For `trader-openai/...` models, `OPENAI_API_KEY` must be present in the runtime environment.
 - Repo `.env` values intentionally override inherited shell environment variables for this app's process tree.
 
+### Trading Config
+- Shared trading constants live in `config/trading.json` (universe, concentration caps, evaluation baseline, ledger price-check thresholds, hard-lock exposure).
+- Load via `src/trading_config.ts` (`getTradingConfig()`, `getUniverseSymbols()`, `getConcentrationCapPct()`, etc.). Do **not** hard-code universe lists or cap percentages in `src/`.
+- **When to edit `config/trading.json`:** changing the investable universe, QQQ/VOO/ETF/stock caps, SPY inception baseline, or shared risk thresholds used by multiple code paths.
+- **When not to:** one-off session directives, stops, or regime notes → put those in `memory/todo.md` / `memory/MEMORY.md`. Prompt-only policy prose (turnover language, cash target wording) stays in `prompts/` unless it is also enforced in code.
+- Prompt templates use `{{UNIVERSE}}`, `{{CONCENTRATION_CAPS}}`, and `{{EVALUATION_ANCHOR}}`; `buildPrompt()` fills them from `config/trading.json`. After config changes, run `bun test src/trading_config.test.ts src/tools/concentration_guard.test.ts`.
+
 ### Scheduling
 - **Hourly agent**: Runs at **:35 past every hour** (9:35, 10:35, 11:35 … 3:35 PM ET) while the market is open.
   - Fires 5 minutes after the 9:30 AM Nasdaq open, giving the opening volatility time to settle.
