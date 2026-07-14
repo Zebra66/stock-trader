@@ -1,5 +1,12 @@
+<!-- Autonomous override applied at 2026-07-14 13:30Z due to CRITICAL event (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR) -->
+
 # Tactical Todo — Updated 2026-07-13 22:26Z (Monday 6:26 PM ET)
 *Market CLOSED. No after-hours orders. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. AVGO $380 trail and HOOD $108 trail remain active for Tuesday open.*
+
+## CRITICAL EVENT OVERRIDE — 2026-07-14 13:30Z
+- All buy authorizations and deployment queue items are **SUSPENDED** until the next hourly reset.
+- No new positions; hold existing positions unless authorized stop-losses breach.
+- Event detector: CRITICAL on SOXX/GLD/SMH; MAJOR on QQQ/XLK.
 
 ## Current State
 - **Regime:** **neutral** (not defensive panic, not offensive catch-up)

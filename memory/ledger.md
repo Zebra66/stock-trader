@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 09:30 : [tactical] CRITICAL event override, no trades
+- Event detector CRITICAL at 2026-07-14 13:30Z (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR)
+- Held stops not breached: AVGO ~392.40 above 380 trail; HOOD ~112.12 above 108 trail
+- No protective sells executed; no new positions; all buy conditions suspended
+- Exposure ~69.3 pct, daytrades 0, lock clean
+
 2026-07-13 : 16:12 : [hourly] Repo reset after 486-commit gap. CRITICAL tech/semis selloff. HOOD oversold 1 share unauthorized. Equity $9,621.79 (-1.5% today). Gross 73%. No new buys during event. Hold core.
 - Positions: QQQ 6@712.58 AVGO 3@386.40 VOO 2@689.07 HOOD 2@109.59
 - Daytrades: 0/3 used today

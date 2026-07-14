@@ -1,3 +1,10 @@
+## AUTONOMOUS OVERRIDE — Tactical — 2026-07-14 13:30Z
+- **Event detector classification:** CRITICAL (SOXX, GLD, SMH CRITICAL; QQQ, XLK MAJOR; SPY OK).
+- **Held positions:** AVGO ~$392.40 (stop $380 — not breached), HOOD ~$112.12 (stop $108 — not breached), QQQ ~$719.87, VOO ~$689.93. No protective sells triggered.
+- **Action taken:** Suspended all buy authorizations and deployment queue items. No orders placed. No new positions. Gross exposure ~69.3%.
+- **Reason:** CRITICAL broad-market event detector classification on semis/precious metals/tech; default to no new buys and hold existing positions unless authorized stops breach.
+- **Next expected action:** Await next hourly reset; re-assess only after event detector clears or hourly authorizes explicit protective action.
+
 ## Tactical Execution Summary — 2026-07-13 22:26Z (Monday, 6:26 PM ET)
 - **Status:** Market CLOSED. Event detector: NONE.
 - **Orders placed:** NONE. No after-hours trading permitted.
