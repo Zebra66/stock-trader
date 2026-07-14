@@ -2,6 +2,26 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 11:36 : [hourly] Hold-only: 2/2 spent, cash cap-bound
+- Audit OK; gross 83.6% inside neutral 75-90%; daytrades 0
+- VOO #1+#2 filled earlier; no new fills; open orders none
+- Cash 16.4% blocker: VOO room ~$144, QQQ ~$37, TSMC+NVDA gate
+- AVGO trail $380 / HOOD trail $108 only; META banned; regime neutral
+- Off track: port -3.0% vs SPY +4.7%; dominant residual cash drag + historical friction
+
+2026-07-14 : 11:30 : [tactical] Hold: no triggers, turnover exhausted
+- Event detector NONE at 15:30Z
+- AVGO 396.90 above trail 380; HOOD 110.49 above trail 108
+- Turnover 2/2 today; no discretionary trades allowed
+- No protective stop triggers breached; no orders submitted
+
+2026-07-14 : 11:20 : [tactical] No triggers breached; turnover 2/2; hold
+- Event detector NONE; no MAJOR/CRITICAL event.
+- AVGO 395.36 > 380.00 trail; HOOD 110.15 > 108.00 trail — no protective sells.
+- Turnover budget 2/2 already spent; no new buys authorized.
+- Holdings unchanged: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Gross ~83.5%.
+- Cash ~,594 (16.4%); no open orders; no locks.
+
 2026-07-14 : 11:10 : [tactical] MAJOR event, no action, no triggers
 - Event detector MAJOR at 15:10Z (SOXX/SMH up sharply)
 - No stop-loss triggers breached; AVGO and HOOD both well above authorized trail levels
