@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-14 : 09:41 : [tactical] CRITICAL event override; no trades
+- Event detector CRITICAL: SOXX/GLD/SMH sharply higher; QQQ/XLK MAJOR.
+- Held positions OK: AVGO ~386.54 > 380, HOOD ~109.73 > 108; no stop breaches.
+- No new buys; all buy authorizations remain suspended.
+- No orders placed; turnover budget untouched today.
+- Awaiting next hourly reset or event detector clearing.
+
 2026-07-14 : 09:30 : [tactical] CRITICAL event override, no trades
 - Event detector CRITICAL at 2026-07-14 13:30Z (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR)
 - Held stops not breached: AVGO ~392.40 above 380 trail; HOOD ~112.12 above 108 trail

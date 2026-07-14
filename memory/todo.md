@@ -1,107 +1,104 @@
-<!-- Autonomous override applied at 2026-07-14 13:30Z due to CRITICAL event (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR) -->
+# Tactical Todo — Updated 2026-07-14 13:40Z (Tue 9:35 AM ET hourly)
+*Market OPEN. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Event: MAJOR (semis), not CRITICAL. Cash deploy via VOO authorized.*
 
-# Tactical Todo — Updated 2026-07-13 22:26Z (Monday 6:26 PM ET)
-*Market CLOSED. No after-hours orders. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. AVGO $380 trail and HOOD $108 trail remain active for Tuesday open.*
+## TURNOVER: 0/2 trades used today, ~0% of 20% weekly budget used
+- Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
+- Prefer the VOO deploy as trade #1 (and optional #2). Do not spend budget on speculative names.
 
-## CRITICAL EVENT OVERRIDE — 2026-07-14 13:30Z
-- All buy authorizations and deployment queue items are **SUSPENDED** until the next hourly reset.
-- No new positions; hold existing positions unless authorized stop-losses breach.
-- Event detector: CRITICAL on SOXX/GLD/SMH; MAJOR on QQQ/XLK.
+## HARD_LOCK LIFTED / inactive
+- `memory/.trading_lock.json`: `active: false`. META remains in `bannedSymbols`.
+- Prior 13:30Z CRITICAL buy freeze is **superseded** by this hourly note. Speculative adds stay off; **VOO cash deploy is authorized**.
 
 ## Current State
-- **Regime:** **neutral** (not defensive panic, not offensive catch-up)
+- **Regime:** **neutral** (not defensive panic, not full offensive catch-up)
 - **Live book:** QQQ 6, VOO 2, AVGO 2, HOOD 2
-- **Account equity / cash / BP:** ~$9,605 / $2,975 / ~$30,500
-- **Gross long exposure:** **~69.0%** | Target band **65–80%** | Cash **~31.0%**
-- **Daytrade count:** **0** (confirmed). Conserve — do not open positions you may need to reverse today.
+- **Account equity / cash / BP:** ~$9,660 / $2,975 / ~$30,600
+- **Gross long exposure:** **~69.2%** | Target band **65–80%** (push toward 75–80% via VOO) | Cash **~30.8%**
+- **Daytrade count:** **0**. Conserve — do not open a position you may need to reverse today.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** CLOSED. Next open Tue 2026-07-14 09:30 ET. Hormuz blockade reimposed (oil bid); semis weaker (NVDA ~$204, SOXX ~$552). TSMC earnings ~Thu Jul 16 elevates semi risk.
-- **HARD_LOCK:** inactive (`active: false`). META remains in `bannedSymbols`.
-- **Audit:** clean (19:35Z). No unauthorized positions. No concentration breaches.
+- **Market:** OPEN regular session. SPY ~751 OK; QQQ ~717 OK; SOXX/SMH MAJOR local stress; HOOD MAJOR probe on open. Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
+- **Audit:** clean. No unauthorized positions. No concentration breaches.
 
-## Position Instructions — Mon Jul 13 close + overnight hold
+## Ranked Execution Priority
+1. **BUY 1 VOO** — primary cash-deploy action this hour (see below).
+2. **Optional BUY 1 more VOO** only after #1 fills, if event still ≤ MAJOR (not CRITICAL), cash still >15%, and turnover budget remains.
+3. **AVGO / HOOD protective trails** if breached (exempt from turnover budget).
+4. **Everything else:** no discretionary buys.
+
+## Position Instructions
+
+### VOO — HOLD 2 + **BUY 1 AUTHORIZED** (cash discipline)
+- Weight ~14.3%. **Config cap is VOO 30%** (not 20%). Room ~$1,500 — 1–2 shares OK.
+- **AUTHORIZED NOW:** BUY **1** share VOO with **limit order only**, limit price **≤ last/print** (use ~$689.50 or the live bid/last at submit time; do not chase more than **$0.50** above the print you see). Prefer limit at or slightly below last.
+- **Why this beats do-nothing:** cash ~31% is the active drag vs SPY; VOO is the underweight core beta and preferred deploy vehicle when QQQ is near cap. Friction is one limit fill.
+- **Illiquid gate:** VOO TradeCount often low — **market orders prohibited**. Limit only. If bar TradeCount < 5, still OK to use limit (not market).
+- **Post-buy check:** VOO weight must stay ≤30%; gross should land ~76% (1 share) or ~83% (if 2nd share — only if still inside 65–80% target or you stop at 1).
+- **Optional 2nd share:** only if #1 filled, still same session, event ≤ MAJOR, cash >15%, turnover <2. Same limit discipline. Do **not** buy a 3rd.
+- HOLD existing 2. No VOO stop. No VOO full exit.
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Weight ~44.4%, within 45% cap. Cap room ~$57 — **cannot add 1 share**.
+- Weight ~44.6%, within 45% cap. Cap room ~$40 — **cannot add 1 share**.
 - Core anchor. No stop. No action.
 
-### VOO — HOLD 2 — DO NOT SELL OR ADD
-- Weight ~14.3%. Adding 1 share (~$688) would breach 20% non-QQQ ETF cap.
-- Broad-market anchor. No action.
+### AVGO — HOLD 2 — TRAIL 1 @ $380 — DO NOT ADD
+- Avg $371.95, live ~$388, unrealized ~+4.5%.
+- **Authorized trail:** SELL **1** share if price drops **below $380.00** with **limit $379.50**. Hold remaining 1 after trigger.
+- **Do NOT re-buy AVGO** until after **2026-07-13 19:30Z + 24h** (~Tue 19:30Z) and only with fresh hourly authorization. Cooldown still active this morning.
+- Do not lower the trail.
 
-### AVGO — HOLD 2 — TRAIL 1 @ $380 — DO NOT ADD — DO NOT RE-BUY WITHIN 24H
-- **Sold 1 share today at 19:30Z via limit $384.50 (filled @ $385.02).** Remaining 2 avg $371.95, live ~$385.5, unrealized ~+3.7%.
-- **Authorized overnight trail for remaining risk:** SELL **1** share if price drops **below $380.00** with **limit $379.50**. If triggered, hold remaining 1.
-- **Do NOT add or re-buy AVGO within 24 hours** (hard cooldown) unless hourly explicitly authorizes re-entry.
-- No other AVGO action. Do not lower the trail.
-
-### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD — DO NOT RE-BUY TODAY
-- **Already sold 3 today:** 2 @ $110.00 (13:50Z) + 1 @ $109.33 (17:40Z). Remaining 2 avg $101.50, unrealized ~+7.7%.
-- **Authorized trail for remaining risk:** SELL **1** share if price drops **below $108.00** with **limit $107.50**. If triggered, hold remaining 1.
-- Do NOT add HOOD today. Do NOT re-buy HOOD today (same-day anti-churn; code-enforced after today's sells).
-- No other HOOD action.
+### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD
+- Avg $101.50, live ~$109, unrealized ~+7.7%. Event MAJOR probe earlier — **not** a stop breach.
+- **Authorized trail:** SELL **1** share if price drops **below $108.00** with **limit $107.50**. Hold remaining 1 after trigger.
+- Do NOT add HOOD. Do NOT re-buy HOOD without fresh hourly line.
+- Do not lower the trail.
 
 ### META — BANNED — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
-- `bannedSymbols: ["META"]` active in `memory/.trading_lock.json`.
-- CODE-ENFORCED reject on any BUY. No re-entry.
+- `bannedSymbols: ["META"]` active. CODE-ENFORCED reject on any BUY.
 
-### NVDA — NO ENTRY INTO CLOSE / OVERNIGHT (GATE FAIL — 1/4)
-- Live ~$204. **Required ≥ $209 with firm structure — FAIL**.
-- Other gates: QQQ ≥ $716 **FAIL** (~711); SOXX ≥ $562 **FAIL** (~$552); no CRITICAL PASS.
-- Until hourly explicitly authorizes in a **regular session**: **no order**. Do not chase a bounce. Do not average into weakness. Do **not** place after-hours orders.
+### NVDA — NO ENTRY (GATE FAIL — 3/4)
+- Live ~$205. **Required ≥ $209 firm — FAIL**.
+- Other gates: QQQ ≥ $716 PASS; SOXX ≥ $562 PASS; no CRITICAL PASS.
+- **No order.** Do not chase. TSMC week risk.
 
-### GOOG — NO ENTRY INTO CLOSE / OVERNIGHT
-- Soft 1w (~–3.5%). No authorization.
+### GOOG — NO ENTRY
+- Soft 1w. Prefer VOO for cash deploy.
 
 ### SOXX — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
-- Soft 1m (~–12.1%), thin relative to NVDA, TSMC risk this week. No re-entry.
-- Illiquid gate: TradeCount often low — market orders prohibited even if later authorized.
+- MAJOR event volatility; TSMC risk. Illiquid relative to NVDA — market orders prohibited even if later authorized.
 
 ### RKLB / SHLD / ARKX / EIS / QTUM / GLD — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
 - Weak trends, thin liquidity, or no edge.
 
 ## Hard Rules / No-Trade Conditions
-- **NO DISCRETIONARY BUYS into close or after-hours.** Only authorized actions are the AVGO $380 trail and HOOD $108 trail if triggered.
-- **No after-hours / pre-market equity orders.** Convert any idea into next regular-session review.
-- **Exact cash/deploy blocker:** Geo risk (Hormuz blockade + oil spike) + NVDA four-gate 1/4 + TSMC ~Thu sector event + final minutes of session. Gross ~69% inside 65–80% — no urgency to deploy.
-- **No same-day round trips.** HOOD was sold today → may NOT buy HOOD back today. AVGO was sold today → may NOT buy AVGO back today. If you buy any symbol today, you may NOT sell it today.
-- **Conserve daytrades** (0 of 3 used). Protective stop sells on overnight holdings are OK and do not create a daytrade.
-- **No new short sales** under any circumstances.
-- **If event detector flags MAJOR or CRITICAL** on a held name: do NOT market-panic sell. Only execute if an **explicit authorized stop** in this file is breached. Otherwise hold for next hourly.
-- **Tactical must use EXACT authorized stop prices** ($380.00 / $379.50 for AVGO; $108.00 / $107.50 for HOOD). No discretionary rounding. Do not lower stops to avoid them.
-- **Order Submission Method — ABSOLUTE REQUIREMENT:** Use ONLY `bun run src/tools/alpaca_cli.ts submit-order`. Direct `fetch`/`curl`/SDK bypass of guards is prohibited.
-- **Limit orders only for thin names:** SOXX, EIS, SHLD, QTUM, ARKX, GLD (none authorized today).
-- **Illiquid gate:** If TradeCount < 5 or volume anomalously low on a candidate, do not market-buy; defer.
+- **NO speculative new positions** (NVDA/GOOG/SOXX/META/thin ETFs). Only authorized: VOO limit add(s) + AVGO/HOOD trails.
+- **No after-hours / pre-market equity orders.**
+- **Exact cash blocker for non-VOO names:** MAJOR semi volatility + NVDA four-gate fail + TSMC ~Thu + QQQ cap bind. **No blocker for 1 VOO.**
+- **No same-day round trips.** If you buy VOO today, you may NOT sell that VOO today. Do not sell QQQ/VOO core.
+- **Conserve daytrades** (0 of 3). Protective stop sells on overnight holdings OK.
+- **No new short sales.**
+- **If event detector returns CRITICAL:** suspend any remaining VOO adds; write note; hold existing; only execute authorized stops if breached. Do not market-panic sell.
+- **If event stays MAJOR:** proceed with VOO limit deploy; do not chase semis.
+- **Tactical must use EXACT authorized stop prices** ($380.00 / $379.50 AVGO; $108.00 / $107.50 HOOD).
+- **Order path:** ONLY `bun run src/tools/alpaca_cli.ts submit-order`. No direct fetch/curl/SDK bypass.
 - **Post-order:** If any order fills, update this file with a cycle note and leave a clear execution record.
 
-## Concentration Cap Guard (Code-Enforced via config/trading.json)
-- Caps: see code/`config/trading.json` (QQQ/VOO overrides, ETF default, stock default).
-- Current: all within caps. QQQ near max. VOO has room under its configured cap for cash deployment.
+## Concentration Cap Guard (Code-Enforced)
+- QQQ ≤45%, **VOO ≤30%**, other ETFs ≤20%, stocks ≤15%.
+- Pre-order: `max_add_value = (cap_pct * equity) - current_mv`. For VOO 1 share ~$690, post weight ~21% — OK.
 
-## Symbol Ban Guard (Code-Enforced)
-- `bannedSymbols: ["META"]` — BUY rejected regardless of lock active state.
+## Symbol Ban Guard
+- `bannedSymbols: ["META"]`
 
-## Today's Deployment Queue
-1. **Into close / overnight:** AVGO trail if $380 breached; HOOD trail if $108 breached. No new buys. No AVGO/HOOD re-entry today.
-2. **If later hourly authorizes (Tue+ regular session only):** NVDA 1 share limit (priority 1), then GOOG 1 share (priority 2). Never META. Never thin ETFs without explicit hourly line. Never HOOD re-buy today. AVGO re-entry only after 24h cooldown and explicit hourly line.
-3. Rebuild only after audit remains clean.
+## Safeguards For Next 60 Minutes
+- Execute VOO limit buy first if still unfilled.
+- Hold QQQ/AVGO/HOOD unless trails breach.
+- No revenge trading. No SOXX/NVDA chase on green prints.
+- If gross drifts >15 pp without authorization → hold-only and wait for next hourly.
+- Re-read this file before every order batch (concurrent hourly/tactical risk).
+- **Do not lower stop levels.**
+- VOO: limit only; cancel unfilled stale VOO limits older than this cycle before replacing.
 
 ## Current Book
-- QQQ 6 (~44.4%), VOO 2 (~14.3%), AVGO 2 (~8.0%), HOOD 2 (~2.3%)
-- Cash ~$2,975 (~31.0%)
-- Gross ~69.0%
-
-## Safeguards For Next 60 Minutes / Into Close
-- Hold-only unless AVGO < $380 or HOOD < $108.
-- No revenge trading after Fri META breach.
-- No SOXX re-entry on bounce.
-- No NVDA chase on a single green print — wait for explicit hourly authorization AND all four gates in regular session.
-- If gross exposure drifts >15 pp without authorization → hold-only and wait for hourly.
-- Re-read this file before every order batch (concurrent hourly/tactical risk).
-- **Do not lower stop levels** to "avoid" a stop; execute exactly if breached.
-- **After regular-session close:** no equity orders. Wait for next open / next hourly.
-
-## Next Open Notes (for Tue tactical until first hourly)
-- Default: **HOLD** QQQ/VOO/AVGO/HOOD. Keep same trails if still open.
-- No fresh buys until first hourly of the day reassesses gates and geo tape.
-- META still banned.
+- QQQ 6 (~44.6%), VOO 2 (~14.3%), AVGO 2 (~8.0%), HOOD 2 (~2.3%)
+- Cash ~$2,975 (~30.8%)
+- Gross ~69.2%
