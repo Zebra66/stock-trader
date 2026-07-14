@@ -1,5 +1,6 @@
-# Tactical Todo — Updated 2026-07-14 13:40Z (Tue 9:35 AM ET hourly)
-*Market OPEN. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Event: MAJOR (semis), not CRITICAL. Cash deploy via VOO authorized.*
+<!-- Autonomous override applied at 2026-07-14 13:40Z due to CRITICAL event (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR). VOO cash deploy SUSPENDED. -->
+# Tactical Todo — Updated 2026-07-14 13:40Z (Tue 9:40 AM ET tactical)
+*Market OPEN. Book: QQQ 6 / VOO 2 / AVGO 2 / HOOD 2. Event detector CRITICAL. NO NEW BUYS until next hourly reset. VOO buy suspended.*
 
 ## TURNOVER: 0/2 trades used today, ~0% of 20% weekly budget used
 - Max **2** position-changing trades today. Protective stop exits on overnight holdings are exempt.
@@ -7,29 +8,34 @@
 
 ## HARD_LOCK LIFTED / inactive
 - `memory/.trading_lock.json`: `active: false`. META remains in `bannedSymbols`.
-- Prior 13:30Z CRITICAL buy freeze is **superseded** by this hourly note. Speculative adds stay off; **VOO cash deploy is authorized**.
+- Fresh 13:40Z event detector classification is **CRITICAL**. Hourly-authorized VOO cash deploy is **SUSPENDED** until next hourly reset. Speculative adds stay off.
+
+## NO NEW BUYS — CRITICAL EVENT
+- 13:40Z event detector classification is CRITICAL. All new BUY authorizations are suspended until the next hourly reset, except explicitly authorized protective exits.
+- VOO cash deploy from this hourly note is suspended.
 
 ## Current State
 - **Regime:** **neutral** (not defensive panic, not full offensive catch-up)
 - **Live book:** QQQ 6, VOO 2, AVGO 2, HOOD 2
 - **Account equity / cash / BP:** ~$9,660 / $2,975 / ~$30,600
-- **Gross long exposure:** **~69.2%** | Target band **65–80%** (push toward 75–80% via VOO) | Cash **~30.8%**
+- **Gross long exposure:** **~69.2%** | Target band **65–80%** | Cash **~30.8%** (VOO deploy suspended due to CRITICAL event).
 - **Daytrade count:** **0**. Conserve — do not open a position you may need to reverse today.
 - **Open orders:** NONE — cancel any stale order if one appears.
-- **Market:** OPEN regular session. SPY ~751 OK; QQQ ~717 OK; SOXX/SMH MAJOR local stress; HOOD MAJOR probe on open. Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
+- **Market:** OPEN regular session. Event detector CRITICAL (SOXX/GLD/SMH CRITICAL; QQQ/XLK MAJOR; SPY OK). Hormuz/oil risk background. TSMC earnings ~Thu Jul 16.
 - **Audit:** clean. No unauthorized positions. No concentration breaches.
 
 ## Ranked Execution Priority
-1. **BUY 1 VOO** — primary cash-deploy action this hour (see below).
-2. **Optional BUY 1 more VOO** only after #1 fills, if event still ≤ MAJOR (not CRITICAL), cash still >15%, and turnover budget remains.
+1. **BUY 1 VOO** — **SUSPENDED** due to CRITICAL event detector classification. No VOO buy until next hourly reset.
+2. **Optional BUY 1 more VOO** — **SUSPENDED**.
 3. **AVGO / HOOD protective trails** if breached (exempt from turnover budget).
 4. **Everything else:** no discretionary buys.
 
 ## Position Instructions
 
 ### VOO — HOLD 2 + **BUY 1 AUTHORIZED** (cash discipline)
+- **SUSPENDED — CRITICAL event detected at 2026-07-14 13:40Z; VOO buy is off until next hourly reset.**
 - Weight ~14.3%. **Config cap is VOO 30%** (not 20%). Room ~$1,500 — 1–2 shares OK.
-- **AUTHORIZED NOW:** BUY **1** share VOO with **limit order only**, limit price **≤ last/print** (use ~$689.50 or the live bid/last at submit time; do not chase more than **$0.50** above the print you see). Prefer limit at or slightly below last.
+- **SUSPENDED — was AUTHORIZED NOW:** BUY **1** share VOO with **limit order only**, limit price **≤ last/print** (use ~$689.50 or the live bid/last at submit time; do not chase more than **$0.50** above the print you see). Prefer limit at or slightly below last.
 - **Why this beats do-nothing:** cash ~31% is the active drag vs SPY; VOO is the underweight core beta and preferred deploy vehicle when QQQ is near cap. Friction is one limit fill.
 - **Illiquid gate:** VOO TradeCount often low — **market orders prohibited**. Limit only. If bar TradeCount < 5, still OK to use limit (not market).
 - **Post-buy check:** VOO weight must stay ≤30%; gross should land ~76% (1 share) or ~83% (if 2nd share — only if still inside 65–80% target or you stop at 1).

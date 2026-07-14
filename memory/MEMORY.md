@@ -1,3 +1,10 @@
+## AUTONOMOUS OVERRIDE — Tactical — 2026-07-14 13:40Z
+- **Event detector classification:** CRITICAL (SOXX, GLD, SMH CRITICAL; QQQ, XLK MAJOR; SPY OK).
+- **Held positions:** AVGO ~$386.54 (stop $380 — not breached), HOOD ~$109.73 (stop $108 — not breached), QQQ ~$719.08, VOO ~$690.26. No protective sells triggered.
+- **Action taken:** Suspended the hourly-authorized VOO cash-deploy BUY due to CRITICAL event classification. No orders placed. No new positions. Gross exposure ~69.2%.
+- **Reason:** Event detector CRITICAL overrides MAJOR assumption in hourly note; no new buys during CRITICAL. Holding existing positions until hourly reset reassesses.
+- **Next expected action:** Await next hourly reset; re-assess only after event detector clears or hourly authorizes explicit protective action with CRITICAL justification.
+
 # Hourly Macro Memory
 *Updated 2026-07-14 13:40Z (Tuesday 9:35–9:40 AM ET). First hourly of session. Market OPEN.*
 
