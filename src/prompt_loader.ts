@@ -1,8 +1,11 @@
 import './env';
+import {
+  formatConcentrationCapsSummary,
+  formatUniverseForPrompt,
+  getTradingConfig,
+} from './trading_config';
 
 export type AgentMode = 'hourly' | 'tactical' | 'analyst';
-
-const UNIVERSE = 'AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX';
 
 const CLI_TOOLS_INTRO = `
 ## Available Repo CLI Tools
@@ -64,7 +67,14 @@ export async function buildPrompt(mode: AgentMode): Promise<string> {
 
   const resolved = await resolveIncludes(template, new Set());
 
+  const evaluation = getTradingConfig().evaluation;
+
   return resolved
-    .replaceAll('{{UNIVERSE}}', UNIVERSE)
+    .replaceAll('{{UNIVERSE}}', formatUniverseForPrompt())
+    .replaceAll('{{CONCENTRATION_CAPS}}', formatConcentrationCapsSummary())
+    .replaceAll(
+      '{{EVALUATION_ANCHOR}}',
+      `Fixed ${evaluation.inceptionDate} close baseline (SPY ${evaluation.spyBaseline})`,
+    )
     .replaceAll('{{CLI_TOOLS_INTRO}}', CLI_TOOLS_INTRO);
 }

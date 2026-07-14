@@ -8,6 +8,10 @@ describe('prompt loader', () => {
     expect(prompt).toContain('Hourly Macro Strategist Agent');
     expect(prompt).toContain('Available Repo CLI Tools');
     expect(prompt).toContain('Investment Universe: AVGO, EIS, GLD, GOOG, HOOD, META, NVDA, QQQ, QTUM, RKLB, SHLD, SOXX, VOO, ARKX');
+    expect(prompt).toContain('QQQ ≤45%');
+    expect(prompt).toContain('VOO ≤30%');
+    expect(prompt).not.toContain('{{CONCENTRATION_CAPS}}');
+    expect(prompt).not.toContain('{{EVALUATION_ANCHOR}}');
     expect(prompt).not.toContain('ARKX, META');
     expect(prompt).toContain('beat the S&P 500');
     expect(prompt).not.toContain('bit S&P 500');

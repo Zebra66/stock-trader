@@ -1,4 +1,68 @@
+import { getTradingConfig, getUniverseSymbols } from '../trading_config';
+
 const LEDGER_PATH = 'memory/ledger.md';
+
+async function loadReferencePrices(): Promise<Record<string, number>> {
+  try {
+    const file = Bun.file('./memory/tactical_last_prices.json');
+    if (!(await file.exists())) return {};
+    const json = (await file.json()) as { prices?: Record<string, number> };
+    return json.prices ?? {};
+  } catch {
+    return {};
+  }
+}
+
+function extractNumbers(text: string): Array<{ raw: string; num: number; isInteger: boolean }> {
+  const matches = text.match(/\$?\d{1,3}(?:,\d{3})*(?:\.\d+)?\b(?!%)|\$?\d+(?:\.\d+)?\b(?!%)/g);
+  if (!matches) return [];
+  const out: Array<{ raw: string; num: number; isInteger: boolean }> = [];
+  for (const raw of matches) {
+    const cleaned = raw.replace(/[$,]/g, '');
+    const num = parseFloat(cleaned);
+    if (Number.isNaN(num) || num <= 0) continue;
+    out.push({ raw, num, isInteger: !raw.includes('.') });
+  }
+  return out;
+}
+
+export function validateLedgerDetails(details: string[], prices: Record<string, number>): void {
+  const universe = getUniverseSymbols();
+  const ledger = getTradingConfig().ledger;
+  const symbolPattern = new RegExp(`\\b(${universe.join('|')})\\b`, 'i');
+  for (const detail of details) {
+    const parts = detail.split(symbolPattern);
+    for (let i = 1; i < parts.length; i += 2) {
+      const sym = parts[i].toUpperCase();
+      const segment = parts[i + 1] || '';
+      const knownPrice = prices[sym];
+      if (!knownPrice || knownPrice <= 0) continue;
+
+      const numbers = extractNumbers(segment);
+      const hasPlausiblePrice = numbers.some(
+        ({ num }) =>
+          num >= knownPrice * ledger.priceHallucinationMinRatio &&
+          num <= knownPrice * ledger.priceHallucinationMaxRatio,
+      );
+
+      for (const { raw, num, isInteger } of numbers) {
+        if (isInteger && num < ledger.skipIntegerBelow) continue;
+        if (num >= knownPrice * ledger.priceHallucinationMinRatio) continue;
+        if (hasPlausiblePrice) continue;
+
+        const idx = segment.indexOf(raw);
+        const before = idx >= 0 ? segment.slice(Math.max(0, idx - 40), idx).toLowerCase() : '';
+        if (/(above|below|only|just|by|gain|loss|diff|delta|trail|stop|pp\b|points|exposure|gross)/.test(before)) {
+          continue;
+        }
+
+        throw new Error(
+          `Ledger detail contains likely price hallucination for ${sym}: "${raw}" (parsed $${num}) is < ${ledger.priceHallucinationMinRatio * 100}% of reference price ${knownPrice}. Full detail: "${detail}". Please verify the price and retry.`,
+        );
+      }
+    }
+  }
+}
 
 const HELP = `
 Usage: bun run src/tools/ledger_cli.ts <command> [options]
@@ -140,24 +204,32 @@ function splitLedgerContent(existing: string): { header: string; body: string } 
 }
 
 export async function appendLedgerEntry(options: AppendLedgerOptions): Promise<string> {
+  const details = options.details?.filter((detail) => detail.trim().length > 0).slice(0, 5) ?? [];
+  const prices = await loadReferencePrices();
+  validateLedgerDetails(details, prices);
+
   const ledgerPath = options.ledgerPath ?? LEDGER_PATH;
   const ledgerFile = Bun.file(ledgerPath);
   const exists = await ledgerFile.exists();
   const existing = exists ? await ledgerFile.text() : buildLedgerHeader();
   const separator = existing.endsWith('\n') ? '' : '\n';
-  const updated = `${existing}${separator}${buildLedgerEntry(options)}`;
+  const updated = `${existing}${separator}${buildLedgerEntry({ ...options, details })}`;
 
   await Bun.write(ledgerPath, updated);
   return `Appended ledger entry to ${ledgerPath}`;
 }
 
 export async function prependLedgerEntry(options: AppendLedgerOptions): Promise<string> {
+  const details = options.details?.filter((detail) => detail.trim().length > 0).slice(0, 5) ?? [];
+  const prices = await loadReferencePrices();
+  validateLedgerDetails(details, prices);
+
   const ledgerPath = options.ledgerPath ?? LEDGER_PATH;
   const ledgerFile = Bun.file(ledgerPath);
   const exists = await ledgerFile.exists();
   const existing = exists ? await ledgerFile.text() : buildLedgerHeader();
   const { header, body } = splitLedgerContent(existing);
-  const updated = `${header}${buildLedgerEntry(options)}${body}`;
+  const updated = `${header}${buildLedgerEntry({ ...options, details })}${body}`;
 
   await Bun.write(ledgerPath, updated);
   return `Prepended ledger entry to ${ledgerPath}`;

@@ -43,7 +43,8 @@ async function preFetchContext(mode: AgentMode): Promise<string> {
   }
 
   // 3. Fetch latest prices for universe symbols in parallel
-  const UNIVERSE = ['AVGO', 'EIS', 'GLD', 'GOOG', 'HOOD', 'META', 'NVDA', 'QQQ', 'QTUM', 'RKLB', 'SHLD', 'SOXX', 'VOO', 'ARKX'];
+  const { getUniverseSymbols } = await import('./trading_config');
+  const UNIVERSE = getUniverseSymbols();
   const prices: Record<string, any> = {};
   try {
     const { alpacaTools } = await import('./tools/alpaca_cli');

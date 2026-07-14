@@ -1,5 +1,11 @@
 import { describe, expect, test } from 'bun:test';
-import { appendLedgerEntry, buildLedgerEntry, formatLedgerTimestamp, prependLedgerEntry } from './ledger_cli';
+import {
+  appendLedgerEntry,
+  buildLedgerEntry,
+  formatLedgerTimestamp,
+  prependLedgerEntry,
+  validateLedgerDetails,
+} from './ledger_cli';
 
 async function runCli(args: string[]): Promise<{ stdout: string; stderr: string; exitCode: number }> {
   const proc = Bun.spawn(['bun', 'run', 'src/tools/ledger_cli.ts', ...args], {
@@ -151,5 +157,28 @@ describe('ledger_cli', () => {
 
     expect(prependedIndex).toBeGreaterThan(0);
     expect(existingIndex).toBeGreaterThan(prependedIndex);
+  });
+
+  test('validateLedgerDetails rejects hallucinated prices near a symbol', () => {
+    expect(() =>
+      validateLedgerDetails(['AVGO at $3.61 above hard stop'], { AVGO: 368.65 }),
+    ).toThrow(/price hallucination for AVGO/);
+  });
+
+  test('validateLedgerDetails allows deltas when a plausible price is present', () => {
+    expect(() =>
+      validateLedgerDetails(['AVGO at $368.61, $3.61 above $365.00 hard stop'], {
+        AVGO: 368.65,
+      }),
+    ).not.toThrow();
+  });
+
+  test('validateLedgerDetails allows exposure percentages near symbols', () => {
+    expect(() =>
+      validateLedgerDetails(['QQQ $712.94, VOO $688.41, exposure 76.4%'], {
+        QQQ: 712.94,
+        VOO: 688.41,
+      }),
+    ).not.toThrow();
   });
 });

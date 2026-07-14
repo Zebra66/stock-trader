@@ -1,4 +1,5 @@
 import Alpaca from '@alpacahq/alpaca-trade-api';
+import { getUniverseSet } from '../trading_config';
 import { checkConcentrationCap } from './concentration_guard';
 
 export type AlpacaMode = 'paper' | 'live';
@@ -84,9 +85,7 @@ export function getAlpacaModeLabel(mode: AlpacaMode): string {
   return MODE_LABELS[mode];
 }
 
-const UNIVERSE = new Set([
-  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX',
-]);
+const UNIVERSE = getUniverseSet();
 
 export async function hasSameDayTradeToday(
   client: Alpaca,

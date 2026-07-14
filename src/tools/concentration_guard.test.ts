@@ -27,7 +27,7 @@ describe('checkConcentrationCap', () => {
     expect(result.pct).toBeCloseTo(15.28, 1);
   });
 
-  test('allows buy within ETF cap', () => {
+  test('allows VOO buy within 30% broad-beta cap', () => {
     const result = checkConcentrationCap({
       symbol: 'VOO',
       qty: 1,
@@ -36,15 +36,40 @@ describe('checkConcentrationCap', () => {
       equity: 10135,
     });
     expect(result.ok).toBe(true);
-    expect(result.pct).toBeCloseTo(19.92, 1); // 1379+640=2019 / 10135 = 19.92%
+    expect(result.pct).toBeCloseTo(19.92, 1);
   });
 
-  test('blocks buy that would breach ETF cap', () => {
+  test('allows VOO above former 20% cap when under 30%', () => {
     const result = checkConcentrationCap({
       symbol: 'VOO',
       qty: 2,
       limitPrice: 689,
       currentMktValue: 1379,
+      equity: 10135,
+    });
+    expect(result.ok).toBe(true);
+    expect(result.pct).toBeCloseTo(27.2, 1);
+  });
+
+  test('blocks VOO buy that would breach 30% cap', () => {
+    const result = checkConcentrationCap({
+      symbol: 'VOO',
+      qty: 3,
+      limitPrice: 689,
+      currentMktValue: 1379,
+      equity: 10135,
+    });
+    expect(result.ok).toBe(false);
+    expect(result.error).toContain('VOO concentration cap breached');
+    expect(result.error).toContain('max 30%');
+  });
+
+  test('blocks other ETF buy that would breach 20% cap', () => {
+    const result = checkConcentrationCap({
+      symbol: 'SOXX',
+      qty: 2,
+      limitPrice: 560,
+      currentMktValue: 1100,
       equity: 10135,
     });
     expect(result.ok).toBe(false);

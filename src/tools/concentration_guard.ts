@@ -1,3 +1,5 @@
+import { getConcentrationCapPct, getTradingConfig, isConfiguredEtf } from '../trading_config';
+
 export interface ConcentrationCheckInput {
   symbol: string;
   qty: number;
@@ -13,7 +15,19 @@ export interface ConcentrationCheckResult {
   pct?: number;
 }
 
-const ETF_SYMBOLS = new Set(['VOO', 'SOXX', 'GLD', 'EIS', 'ARKX']);
+export { getConcentrationCapPct };
+
+function breachLabel(symbol: string): string {
+  const sym = symbol.toUpperCase();
+  const overrides = getTradingConfig().concentration.symbolCapsPct;
+  if (overrides[sym] !== undefined) {
+    return `${sym} concentration cap breached`;
+  }
+  if (isConfiguredEtf(sym)) {
+    return 'ETF concentration cap breached';
+  }
+  return 'Single-stock concentration cap breached';
+}
 
 export function checkConcentrationCap(input: ConcentrationCheckInput): ConcentrationCheckResult {
   const { symbol, qty, limitPrice, latestBarPrice, currentMktValue, equity } = input;
@@ -37,26 +51,12 @@ export function checkConcentrationCap(input: ConcentrationCheckInput): Concentra
   const newMkt = currentMktValue + orderValue;
   const pct = (newMkt / equity) * 100;
   const symUpper = symbol.toUpperCase();
-  const isETF = symUpper === 'QQQ' || ETF_SYMBOLS.has(symUpper);
+  const cap = getConcentrationCapPct(symUpper);
 
-  if (symUpper === 'QQQ' && pct > 45) {
+  if (pct > cap) {
     return {
       ok: false,
-      error: `QQQ concentration cap breached. Post-order QQQ would be ${pct.toFixed(2)}% of equity (max 45%).`,
-      pct,
-    };
-  }
-  if (isETF && symUpper !== 'QQQ' && pct > 20) {
-    return {
-      ok: false,
-      error: `ETF concentration cap breached. Post-order ${symbol} would be ${pct.toFixed(2)}% of equity (max 20%).`,
-      pct,
-    };
-  }
-  if (!isETF && pct > 15) {
-    return {
-      ok: false,
-      error: `Single-stock concentration cap breached. Post-order ${symbol} would be ${pct.toFixed(2)}% of equity (max 15%).`,
+      error: `${breachLabel(symUpper)}. Post-order ${symUpper} would be ${pct.toFixed(2)}% of equity (max ${cap}%).`,
       pct,
     };
   }

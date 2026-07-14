@@ -1,9 +1,11 @@
 import '../env';
+import {
+  getSymbolCapFraction,
+  getTradingConfig,
+  getUniverseSet,
+  isConfiguredEtf,
+} from '../trading_config';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
-
-const UNIVERSE = new Set([
-  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
-]);
 
 interface AuditResult {
   timestamp: string;
@@ -115,7 +117,8 @@ async function main(): Promise<void> {
     const marketValue = parseFloat(pos.market_value ?? '0');
     const weight = equity > 0 ? marketValue / equity : 0;
 
-    if (!UNIVERSE.has(symbol)) {
+    const universe = getUniverseSet();
+    if (!universe.has(symbol)) {
       unauthorizedPositions.push({
         symbol,
         qty,
@@ -131,25 +134,29 @@ async function main(): Promise<void> {
       });
     }
 
-    // Concentration caps
-    if (symbol === 'QQQ' && weight > 0.45) {
-      concentrationBreaches.push({ symbol, weight, cap: 0.45, reason: 'QQQ exceeds 45% cap' });
-    }
-    if (symbol !== 'QQQ' && !UNIVERSE.has(symbol)) {
-      // already flagged above
-    } else if (symbol !== 'QQQ' && ['SOXX','VOO','EIS','GLD','QTUM','ARKX','SHLD'].includes(symbol)) {
-      if (weight > 0.20) {
-        concentrationBreaches.push({ symbol, weight, cap: 0.20, reason: 'Non-QQQ ETF exceeds 20% cap' });
-      }
-    } else if (symbol !== 'QQQ' && UNIVERSE.has(symbol)) {
-      if (weight > 0.15) {
-        concentrationBreaches.push({ symbol, weight, cap: 0.15, reason: 'Single stock exceeds 15% cap' });
+    if (universe.has(symbol)) {
+      const capFraction = getSymbolCapFraction(symbol);
+      if (weight > capFraction) {
+        const capPct = Math.round(capFraction * 100);
+        const kind = isConfiguredEtf(symbol) || getTradingConfig().concentration.symbolCapsPct[symbol] !== undefined
+          ? `${symbol} exceeds ${capPct}% cap`
+          : `Single stock exceeds ${capPct}% cap`;
+        concentrationBreaches.push({
+          symbol,
+          weight,
+          cap: capFraction,
+          reason: kind,
+        });
       }
     }
   }
 
   const daytradeInference = await inferDaytrades();
-  const hardLockRecommended = unauthorizedPositions.length > 0 || grossExposure > 1.05 || concentrationBreaches.length > 0;
+  const hardLockExposure = getTradingConfig().risk.hardLockGrossExposureAbove;
+  const hardLockRecommended =
+    unauthorizedPositions.length > 0 ||
+    grossExposure > hardLockExposure ||
+    concentrationBreaches.length > 0;
 
   const result: AuditResult = {
     timestamp: new Date().toISOString(),

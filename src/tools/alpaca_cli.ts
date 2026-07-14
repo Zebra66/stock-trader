@@ -1,4 +1,5 @@
 import '../env';
+import { getUniverseSet } from '../trading_config';
 import { getDefaultAlpacaClient } from './alpaca_client_factory';
 import { withTimeout } from './with_timeout';
 import { checkConcentrationCap } from './concentration_guard';
@@ -40,9 +41,7 @@ async function hasSameDayTradeTodayCLI(
   }
 }
 
-const UNIVERSE = new Set([
-  'AVGO','EIS','GLD','GOOG','HOOD','META','NVDA','QQQ','QTUM','RKLB','SHLD','SOXX','VOO','ARKX'
-]);
+const UNIVERSE = getUniverseSet();
 
 // ── Trading Lock (enforced at code level) ───────────────────────────────────
 const LOCK_FILE = 'memory/.trading_lock.json';
