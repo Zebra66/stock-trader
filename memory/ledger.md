@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 10:20 : [hourly] Hold-only 10:20: weekly TO + caps bind
+- Equity ~9710, gross 83.6% inside neutral 75-90%; cash 16.4% cap-bound (VOO room under 1 share, QQQ room under 1 share)
+- Detector CRITICAL still multi-day UP artifact (not a crash); no panic sells; no new buys
+- Weekly turnover ~21.6% already used Mon-Tue so no discretionary buys despite daily 0/2
+- AVGO trail 380 / HOOD trail 108 intact; META banned; TSMC Thu blocks NVDA
+- Repo: fixed staged mass-delete index again via reset --hard; audit clean daytrades 0
+
+2026-07-15 : 10:20 : [tactical] No action: holds intact, trails not hit
+- Event detector CRITICAL on SOXX/SMH multi-day UP gap artifact; not a crash
+- AVGO price around 393, well above 380 trail
+- HOOD price around 114, well above 108 trail
+- Weekly turnover ~21.6% > 20% ceiling; daily 0/2; no discretionary buys authorized
+- HOLD-ONLY per todo.md; no orders submitted
+
 2026-07-15 : 10:19 : [hourly] Hold-only 10:35; weekly TO + caps bind
 - Gross 83.6% neutral; equity $9711 cash 16.4% cap-bound
 - Weekly TO ~21.6%>20% — no discretionary trades; daily 0/2
