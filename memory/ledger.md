@@ -2,6 +2,33 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 11:36 : [hourly] Hold-only 11:35; cleared CRITICAL override
+- Detector NONE; prior 14:40Z CRITICAL buy-suspension cleared by hourly reassessment
+- Gross 83.5% in neutral 75-90%; equity ~9672 cash 16.5% cap-bound
+- Weekly TO ~21.6%>20% + VOO/QQQ room <1 share block discretionary deploys
+- NVDA 2/4 gates (QQQ+SOXX FAIL); TSMC Thu still blocks chip beta
+- AVGO trail 380 / HOOD trail 108 only; META banned; no trades
+
+2026-07-15 : 11:30 : [tactical] NO_ACTION: no triggers met
+- Event detector NONE at 15:30Z; prior CRITICAL override stale
+- AVGO ~390.19 above 380.00 trail; HOOD ~115.21 above 108.00 trail
+- Weekly turnover exceeded; no discretionary trades authorized
+- No orders placed; no conditions met
+
+2026-07-15 : 11:10 : [tactical] No action: stops intact, no events
+- Event detector NONE at 15:10Z; all broad and held positions OK
+- AVGO price 391.03 above 380.00 trail, HOOD price 115.15 above 108.00 trail; no protective sells
+- Weekly turnover ~21.6pct exceeds 20pct budget; no discretionary buys
+- Open orders none; holdings unchanged QQQ 6 / VOO 4 / AVGO 2 / HOOD 2
+- No conditions met; NO_ACTION
+
+2026-07-15 : 10:50 : [tactical] No triggers met, hold-only
+- Event detector now MINOR (was CRITICAL 14:40Z)
+- AVGO price 391.83 above 380.00 trail; HOOD price 113.81 above 108.00 trail
+- Weekly turnover ~21.6% exceeds 20% budget; no discretionary trades
+- No open orders; no positions changed
+- Awaiting next hourly reset
+
 2026-07-15 : 10:40 : [tactical] CRITICAL event override no trades
 - SOXX/SMH CRITICAL; XLK MAJOR at 14:40Z
 - AVGO/HOOD authorized stops not breached
