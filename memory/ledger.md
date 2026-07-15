@@ -2,6 +2,30 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 15:36 : [hourly] Hold-only into close; weekly TO binds
+- Gross 83.5% neutral; cash 16.5% cap-bound (VOO and QQQ room each under one share)
+- Weekly TO ~21.6% already over 20% — only AVGO trail 380 and HOOD trail 108 allowed
+- Event NONE; TSMC Thu blocks chip beta; NVDA gates at most 2 of 4
+- Goals off track: portfolio about -3.3% vs SPY about +4.9% (gap near -8.2pp)
+- No fills today; audit clean; no after-hours orders
+
+2026-07-15 : 15:30 : [tactical] NO_ACTION: trails intact, no triggers
+- AVGO 393.87 above 380.00 trail; HOOD 115.04 above 108.00 trail
+- Weekly turnover 21.6pct exceeds 20pct budget; no discretionary trades
+- Event detector NONE; gross 83.6pct inside band
+- No orders placed; no conditions breached
+
+2026-07-15 : 15:10 : [tactical] No triggers; hold-only; weekly budget binds
+- AVGO 393.57 > 380 trail; HOOD 115.05 > 108 trail
+- Weekly turnover ~21.6% > 20% ceiling; no discretionary buys
+- Event detector NONE; QQQ 716.1 / VOO 692.26 / AVGO 393.57 / HOOD 115.05
+- No orders placed; no conditions met
+
+2026-07-15 : 14:50 : [tactical] NO_ACTION: no triggers breached
+- AVGO and HOOD both well above authorized trail stops
+- Event detector NONE; weekly turnover over 20% blocks discretionary buys
+- No market orders; no conditions met; hold-only compliant
+
 2026-07-15 : 14:36 : [hourly] Hold-only 2:35; weekly TO+caps bind
 - Detector NONE; equity ~$9698, gross 83.6%, cash 16.4% cap-bound
 - Weekly TO ~21.6%>20% blocks discretionary buys; daily 0/2
