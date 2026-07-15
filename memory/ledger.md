@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 10:36 : [hourly] Hold-only 10:35: weekly TO + caps bind
+- Equity ~9685, gross 83.5% inside neutral 75-90%; cash 16.5% cap-bound (VOO/QQQ room under 1 share)
+- Detector NONE (prior CRITICAL was multi-day UP artifact); no panic sells; no new buys
+- Weekly turnover ~21.6% already used Mon-Tue so no discretionary buys despite daily 0/2
+- NVDA 3/4 gates (SOXX FAIL); TSMC Thu blocks chips; AVGO trail 380 / HOOD trail 108 only
+- Audit clean daytrades 0; META banned; pulled origin +3 before decisions
+
 2026-07-15 : 10:20 : [hourly] Hold-only 10:20: weekly TO + caps bind
 - Equity ~9710, gross 83.6% inside neutral 75-90%; cash 16.4% cap-bound (VOO room under 1 share, QQQ room under 1 share)
 - Detector CRITICAL still multi-day UP artifact (not a crash); no panic sells; no new buys

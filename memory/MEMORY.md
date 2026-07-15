@@ -1,154 +1,158 @@
 # Hourly Macro Memory
-*Updated 2026-07-15 14:20Z (Wednesday ~10:20 AM ET). Market OPEN — first full mid-morning hourly after open hold-only passes.*
+*Updated 2026-07-15 14:36Z (Wednesday 10:35 AM ET). Market OPEN — second full hourly of session.*
 
 ---
 
-## Hourly Cycle Summary — 2026-07-15 14:20Z (Wed ~10:20 AM ET)
-- **Status:** Market **OPEN**. Event detector still labels **CRITICAL**, but severity is a **multi-day UP baseline artifact** (prior print Mon 19:30Z → now: SOXX +1.5%, SMH +1.8%, QQQ +1.4%). **Not a crash.** Session remains orderly risk-on (ASML/AI + bank earnings support). Response: **no new buys** (already bound) + review stops (none near) + hold core.
-- **Repo integrity:** **Critical process breach fixed this cycle** — git index again had mass staged deletions of the entire tree (same class as 09:40Z). Restored via `git reset --hard HEAD`. `.gitignore` present; `git check-ignore node_modules/zod/package.json` OK. Branch = origin/main (0/0).
-- **Audit:** OK. Unauthorized=[] Concentration=[] Gross **83.6%**. Daytrades **0**. `pdtLimitReached` false. hardLockRecommended false.
-- **Live broker (~14:18Z):** Equity **$9,710.40** | Cash **$1,594.04** | Long **$8,116.36** | Gross **83.6%** | BP ~$29.1k (do **not** size from BP).
+## Hourly Cycle Summary — 2026-07-15 14:36Z (Wed 10:35 AM ET)
+- **Status:** Market **OPEN**. Event detector **NONE** (all broad + held OK; sector rotation NONE). Prior mid-morning CRITICAL was multi-day UP-gap artifact; **this print is clean**. Not CRITICAL. Proceed hold-only on process grounds (not crash response).
+- **Repo integrity:** Was behind origin by 3; stashed local ledger/prices noise, fast-forwarded to `b276e001`. Branch = origin/main (0/0). `.gitignore` effective (`git check-ignore node_modules/zod/package.json` OK). Audit **OK**.
+- **Audit:** Unauthorized=[] Concentration=[] Gross **83.5%**. Daytrades **0**. `pdtLimitReached` false. hardLockRecommended false.
+- **Live broker (~14:35Z):** Equity **~$9,685** | Cash **$1,594.04** | Long **~$8,091** | Gross **~83.5%** | BP ~$29.0k (do **not** size from BP).
 - **Holdings:** QQQ 6, VOO 4, AVGO 2, HOOD 2. Open orders: **NONE**.
 - **Today's fills:** **NONE**. Last fills: Tue VOO #1 @ $689.49 / #2 @ $691.15. **No concealment.**
 - **Compliance:** META banned. HARD_LOCK inactive. No universe breaches. No race-condition drift. Gross stable ~83.5–83.6% since Tue close.
-- **Goal check:** Portfolio **–2.90%** vs SPY **+5.21%** (SPY 755.46 vs 718.01). **Both goals FAILED.** Gap **~–8.1 pp**.
-- **Regime:** **Neutral** (no flip — stability doctrine). Target gross **75–90%**. Live **83.6%** — inside band.
-- **Dominant failure mode:** Residual **cash drag** (16.4% >10%) is **cap-bound** + **weekly turnover already spent** + historical friction. Not symbol selection (AVGO/HOOD winners; QQQ/VOO constructive).
-- **This-hour decision:** **HOLD-ONLY.** Daily turnover **0/2**, but **weekly gross turnover already ~21.6% of equity** (Mon HOOD/AVGO trail sells + Tue VOO buys) → **above 20% weekly budget**. Caps still block integer VOO/QQQ. **TSMC ~Thu Jul 16** still blocks new chip beta. Protect AVGO/HOOD via existing trails only.
+- **Goal check:** Portfolio **~–3.1%** vs SPY **~+5.1%** (SPY ~754.5 vs 718.01). **Both goals FAILED.** Gap **~–8.2 pp**.
+- **Regime:** **Neutral** (no flip — stability doctrine). Target gross **75–90%**. Live **83.5%** — inside band.
+- **Dominant failure mode:** Residual **cash drag** (16.5% >10%) is **cap-bound** + **weekly turnover already spent** + historical friction. Not symbol selection (AVGO/HOOD winners; QQQ/VOO firm).
+- **This-hour decision:** **HOLD-ONLY.** Daily turnover **0/2**, weekly gross turnover **~21.6% of equity** (Mon HOOD/AVGO trail sells + Tue VOO buys) → **above 20% weekly budget**. Caps block integer VOO/QQQ. **TSMC ~Thu Jul 16** still blocks new chip beta. **NVDA four-gate 3/4** (SOXX FAIL at ~$553.5). Protect AVGO/HOOD via existing trails only.
 
 ---
 
 ## Live Book (Alpaca) — TRUE STATE
 | Symbol | Qty | Avg Entry | Current | Market Value | Weight | Unrealized P&L | Unrealized % |
 |---|---|---|---|---|---|---|---|
-| QQQ | 6 | $716.47 | $720.31 | $4,321.86 | 44.5% | +$23.02 | +0.54% |
-| VOO | 4 | $683.39 | $694.33 | $2,777.34 | 28.6% | +$43.78 | +1.60% |
-| AVGO | 2 | $371.95 | $393.35 | $786.69 | 8.1% | +$42.79 | +5.75% |
-| HOOD | 2 | $101.50 | $114.06 | $228.12 | 2.3% | +$25.12 | +12.37% |
-| Cash | — | — | — | $1,594.04 | 16.4% | — | — |
-| **Equity** | — | — | — | **$9,710.40** | **100%** | — | **–2.90%** |
+| QQQ | 6 | $716.47 | ~$717.4 | ~$4,305 | ~44.4% | ~+$6 | ~+0.1% |
+| VOO | 4 | $683.39 | ~$693.6 | ~$2,775 | ~28.7% | ~+$41 | ~+1.5% |
+| AVGO | 2 | $371.95 | ~$391.6 | ~$783 | ~8.1% | ~+$39 | ~+5.3% |
+| HOOD | 2 | $101.50 | ~$114.5 | ~$229 | ~2.4% | ~+$26 | ~+12.8% |
+| Cash | — | — | — | $1,594.04 | ~16.5% | — | — |
+| **Equity** | — | — | — | **~$9,685** | **100%** | — | **~–3.1%** |
 
-- **Gross long exposure:** 83.6%
+- **Gross long exposure:** ~83.5%
 - **Daytrade count:** 0
 - **Open orders:** NONE
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
-- **Exposure path:** Tue close ~83.5% → open/mid-morning ~83.6%. No unauthorized drift.
+- **Exposure path:** Tue close ~83.5% → open ~83.6% → mid-morning ~83.5%. No unauthorized drift.
 
-## Performance Review — Wed July 15 mid-morning
-- **1D (vs Tue last_equity $9,681.70):** portfolio **~+0.3%**. SPY firm; absolute still red inception.
-- **1W:** SPY ~+1.3%; portfolio still lagging absolute and relative since inception.
-- **2W:** still trailing SPY; absolute still negative since inception.
-- **Since inception (2026-05-04 $10,000):** portfolio **–2.90%** vs SPY **+5.21%**. Gap **~–8.1 pp**.
-- **What is working:** Core intact; AVGO (~+5.8%) and HOOD (~+12.4%) winners with trails far from price. Process discipline (no overnight churn, audit clean, VOO deploys authorized Tue only).
-- **What is not working:** Absolute still red. Cash ~16.4% idle. Cap math blocks 1-share core adds. Weekly turnover already consumed. Gap to SPY ~8 pp.
-- **What must change today:** **Do not invent trades.** Respect weekly turnover ceiling. Keep trails. Reassess post-TSMC (Thu+) for any chip path; prefer patience over thin-ETF filler.
+## Performance Review — Wed July 15 10:35 ET
+- **1D (vs Tue last_equity $9,681.70):** portfolio **~flat / +0.0–0.1%**. Mild open strength faded; SPY ~flat on day.
+- **1W / 2W:** still trailing SPY; absolute still negative since inception.
+- **Since inception (2026-05-04 $10,000):** portfolio **~–3.1%** vs SPY **~+5.1%**. Gap **~–8.2 pp**.
+- **What is working:** Core intact; AVGO (~+5.3%) and HOOD (~+12.8%) winners with trails far from price. Process: no churn, audit clean, no AH orders, weekly budget respected.
+- **What is not working:** Absolute still red. Cash ~16.5% idle. Cap math blocks 1-share core adds. Weekly turnover already consumed. Gap to SPY ~8 pp.
+- **What must change today:** **Do not invent trades.** Respect weekly turnover ceiling. Keep trails. Reassess only post-TSMC (Thu+) for any chip path; prefer patience over thin-ETF filler.
 
 ## Goal Check
-- **Portfolio since inception:** –2.90%
-- **S&P 500 since inception:** +5.21% (SPY 755.46 vs 718.01)
+- **Portfolio since inception:** ~–3.1%
+- **S&P 500 since inception:** ~+5.1% (SPY ~754.5 vs 718.01)
 - **Status:** **Off track on both goals.**
 - **Dominant failure mode:** Residual **cash drag** (cap-bound) + **weekly turnover ceiling** + historical **turnover/friction**.
 - **Exact cash blocker (write explicitly):**
-  1. VOO 30% room ~**$136** → **cannot buy 1 VOO** (~$694).
-  2. QQQ 45% room ~**$48** → **cannot buy 1 QQQ** (~$720).
+  1. VOO 30% room ~**$131** → **cannot buy 1 VOO** (~$694).
+  2. QQQ 45% room ~**$54** → **cannot buy 1 QQQ** (~$717).
   3. **Weekly turnover already ~21.6%** of equity → **over 20% weekly budget** → discretionary buys **blocked** even though daily is 0/2.
-  4. Chip beta: NVDA price gates roughly **PASS** (~$211.7 ≥ $209; QQQ ≥ $716; SOXX ~$560 just under $562 this print but earlier open was ≥$562), but **TSMC earnings ~Thu Jul 16** remains sector binary + weekly budget binds.
+  4. Chip beta: NVDA four-gate **3/4** — QQQ ≥ $716 **PASS** | NVDA ≥ $209 **PASS** (~$210.6) | SOXX ≥ $562 **FAIL** (~$553.5) | no CRITICAL **PASS**. **TSMC earnings ~Thu Jul 16** remains sector binary regardless.
   5. Thin ETFs (QTUM/ARKX/EIS/SHLD/GLD/RKLB) — weak/illiquid/no edge.
-  6. Event CRITICAL label this pass is **up-move multi-day artifact** → still **no new buys** (already bound); do **not** panic-sell winners.
 
-## Market Intel — Wednesday ~10:20 AM ET
-- **Broad market:** SPY ~755.5, QQQ ~720 firm. ASML/AI trade + bank earnings (BlackRock/MS) supporting risk; wholesale inflation softer. Headline “warning sign” noise — **not** a regime flip.
-- **Geopolitical:** US–Iran escalation live — new strikes, port blockade, Hormuz control language (Reuters/CBS/AP). Oil premium risk **background**, **not** a liquidation trigger for QQQ/VOO core while tape is firm.
-- **Fed/inflation:** Softish wholesale inflation; residual hawk talk in older headlines — stay **neutral**.
-- **Semiconductors:** SOXX ~$560, NVDA ~$211.7, AVGO ~$393 constructive on AI narrative (Nvidia Japan stack, India semi package). **TSMC full earnings ~Thu Jul 16** still the sector binary. **No new chip beta until post-event reassessment.**
-- **AVGO:** 2 shares, ~+5.8%. Trail **$380** intact (~3.4%+ buffer). No add.
-- **HOOD:** 2 shares, ~+12.4%. Trail **$108** intact (~5.3%+ buffer). No add.
-- **NVDA four-gate:** QQQ ≥ $716 **PASS** | NVDA ≥ $209 **PASS** (~211.7) | SOXX ≥ $562 **soft/mixed** (~560 this bar; was ≥ earlier) | no true crash CRITICAL **PASS**. Regardless, **TSMC week + weekly turnover → still NO NVDA today.**
-- **News source:** Google News RSS + Yahoo Finance RSS + Bing News RSS (Google Search tool unavailable). FMP disabled — Yahoo chart fallback for multi-TF returns. Documented.
-- **Earnings:** Yahoo calendarEvents empty for held names / NVDA/GOOG/META/TSM this cycle. Known from prior: **TSMC ~Thu Jul 16**; META/GOOG late July; NVDA Aug. No known binary in next 48h for QQQ/VOO/AVGO/HOOD.
+## Market Intel — Wednesday 10:35 AM ET
+- **Broad market:** SPY ~754.5, QQQ ~717 slightly softer than open (~724). Event severity **NONE**. Orderly; ASML/AI + bank earnings still supporting risk narrative; wholesale inflation in focus. Headline “warning sign” / vol-bet noise — **not** a regime flip.
+- **Geopolitical:** Hormuz/Iran premium — background only; equity tape not liquidating. Not a liquidation trigger for core beta.
+- **Fed:** Soft CPI narrative still supporting risk — stay **neutral**.
+- **Semiconductors:** SOXX ~$553–554 soft vs open (~$570 memory); NVDA ~$210.6 (still ≥ $209); AVGO ~$392 constructive. **TSMC full earnings ~Thu Jul 16** still the sector binary (June revenue / Q2 AI demand; ASML hand-show supportive but NVDA risk headlines exist). **No new chip beta until post-event reassessment.**
+- **AVGO:** 2 shares, ~+5.3%. Trail **$380** intact (~3% buffer). EU cloud groups urge interim measures vs Broadcom (background regulatory noise — **not** a trail change). No add.
+- **HOOD:** 2 shares, ~+12.8%. Trail **$108** intact (~6% buffer). No add.
+- **News source:** Google News RSS + Yahoo Finance RSS (Google Search tool unavailable). FMP disabled — Yahoo chart fallback for multi-TF returns. Documented.
+- **Earnings:** Known: **TSMC ~Thu Jul 16**; META/GOOG late July; NVDA Aug. No known binary in next 48h for QQQ/VOO/AVGO/HOOD.
 
-## Universe Performance Snapshot (Yahoo Finance fallback, ~14:20Z)
+## Universe Performance Snapshot (Yahoo Finance fallback, ~14:35Z)
 | Symbol | Latest | 1w | 1m | 3m | 6m | 1y |
 |---|---|---|---|---|---|---|
-| AVGO | $393.9 | +1.3% | 0.0% | –0.7% | +11.1% | +40.2% |
-| EIS | $122.1 | +2.2% | –3.6% | –4.2% | +3.8% | +30.6% |
-| GLD | $372.8 | –0.4% | –6.0% | –15.4% | –11.6% | +21.5% |
-| GOOG | $364.5 | +1.6% | –0.7% | +9.0% | +8.3% | +99.1% |
-| HOOD | $114.2 | +0.6% | +16.4% | +30.8% | –5.0% | +14.7% |
-| META | $669.0 | +10.9% | +12.7% | –0.4% | +6.0% | –5.8% |
-| NVDA | $211.7 | +3.7% | –0.3% | +6.5% | +14.0% | +24.0% |
-| QQQ | $720.3 | +1.2% | –3.2% | +13.0% | +15.0% | +29.4% |
-| QTUM | $149.8 | –1.7% | –10.9% | +21.4% | +27.7% | +62.0% |
-| RKLB | $78.4 | –6.0% | –28.3% | +6.5% | –9.5% | +75.7% |
-| SHLD | $60.4 | –3.6% | –4.5% | –19.0% | –20.9% | –0.1% |
-| SOXX | $560.1 | –0.4% | –10.9% | +39.4% | +68.0% | +127.4% |
-| VOO | $694.4 | +1.3% | +0.1% | +7.9% | +8.8% | +21.4% |
-| ARKX | $31.8 | –1.6% | –9.6% | –3.1% | –6.3% | +24.3% |
-| SPY | $755.5 | +1.4% | +0.1% | +7.9% | +8.9% | +21.4% |
+| AVGO | $391.1 | +0.6% | –0.7% | –1.8% | +11.2% | +39.2% |
+| EIS | $123.0 | +2.9% | –2.9% | –2.6% | +3.3% | +31.6% |
+| GLD | $372.8 | –0.4% | –6.0% | –15.3% | –11.5% | +21.5% |
+| GOOG | $366.1 | +2.1% | –0.3% | +10.0% | +10.8% | +99.9% |
+| HOOD | $114.4 | +0.8% | +16.6% | +31.8% | +5.2% | +15.0% |
+| META | $674.1 | +11.8% | +13.6% | –0.4% | +8.7% | –5.1% |
+| NVDA | $210.5 | +3.1% | –0.9% | +6.1% | +13.0% | +23.3% |
+| QQQ | $717.0 | +0.8% | –3.6% | +11.9% | +15.4% | +28.8% |
+| QTUM | $149.1 | –2.2% | –11.3% | +19.1% | +25.9% | +61.2% |
+| RKLB | $79.0 | –5.2% | –27.7% | –4.7% | –17.9% | +77.2% |
+| SHLD | $60.7 | –3.2% | –4.1% | –17.7% | –22.1% | +0.2% |
+| SOXX | $552.3 | –1.7% | –12.1% | +36.0% | +61.3% | +124.3% |
+| VOO | $693.5 | +1.2% | –0.1% | +7.5% | +9.0% | +21.3% |
+| ARKX | $31.8 | –1.4% | –9.5% | –4.9% | –9.5% | +24.5% |
+| SPY | $754.5 | +1.2% | 0.0% | +7.5% | +9.1% | +21.3% |
 
 ## Position Map
 | Symbol | Bias | Rationale | Target % |
 |---|---|---:|---:|
-| QQQ | Hold | Core growth. 44.5%, near 45% cap. Cannot add 1 share. | 36–45% |
+| QQQ | Hold | Core growth. ~44.4%, near 45% cap. Cannot add 1 share. | 36–45% |
 | VOO | Hold | 4 sh near 30% cap. Cap room <1 share. Preferred deploy if room ever opens. | 21–30% |
-| AVGO | Hold / Trail $380 | Winner (~+5.8%). Trail intact. No add (weekly budget). | 6–12% |
-| HOOD | Hold / Trail $108 | Winner (~+12.4%). Trail protects. No re-buy. | 2–6% |
+| AVGO | Hold / Trail $380 | Winner (~+5.3%). Trail intact. No add (weekly budget). | 6–12% |
+| HOOD | Hold / Trail $108 | Winner (~+12.8%). Trail protects. No re-buy. | 2–6% |
 | META | **BANNED — NO ENTRY** | Fri unauthorized round-trip. | 0% |
-| NVDA | Watch only — TSMC week | Price gates mostly pass; blocked by TSMC binary + weekly turnover. | 0–4% |
+| NVDA | Watch only — TSMC week | 3/4 gates (SOXX FAIL); blocked by TSMC + weekly turnover. | 0–4% |
 | GOOG | Avoid | No edge vs hold; weekly budget binds. | 0% |
-| SOXX | Avoid | TSMC risk; not needed. | 0% |
+| SOXX | Avoid | TSMC risk; soft print; not needed. | 0% |
 | RKLB / SHLD / ARKX / EIS / QTUM / GLD | Avoid | Weak / thin / no edge. | 0% |
 
-## Priority Actions (this hour)
-1. **HOLD all four positions** unless an authorized trail is breached.
-2. **AVGO trail:** SELL 1 if below **$380.00** limit **$379.50**. Hold remaining 1.
-3. **HOOD trail:** SELL 1 if below **$108.00** limit **$107.50**. Hold remaining 1.
-4. **NO NEW BUYS** — weekly turnover exceeded + caps + TSMC week + false CRITICAL still maps to no-new-buys.
-5. **META remains banned.**
-6. **Conserve daytrades** (0/3). Do not open a position you might reverse today.
-7. **Post-TSMC (Thu+):** only then reassess NVDA four-gate + weekly budget headroom. Do not lower gates overnight.
+## Priority Actions (this hour → next)
+1. **HOLD QQQ / VOO / AVGO / HOOD** — no discretionary position changes.
+2. **AVGO trail only:** SELL 1 if price < **$380.00**, limit **$379.50**. Hold remaining 1. Do not re-buy without fresh hourly.
+3. **HOOD trail only:** SELL 1 if price < **$108.00**, limit **$107.50**. Hold remaining 1.
+4. **META banned.** No NVDA/GOOG/SOXX/thin ETFs today.
+5. **Cash blocker stands:** caps + weekly turnover. Do not force deploys.
+6. **If detector returns CRITICAL (true crash):** hold; only execute authorized stops if breached; write `NO NEW BUYS — CRITICAL EVENT`. No market-panic sells of core ETFs. Do **not** invent HARD_LOCK from multi-day UP gaps.
+7. **Post-TSMC (Thu+):** reassess NVDA four-gate + weekly budget remaining; never invent thin-ETF filler.
 
 ## Ranked Deployment Queue (NOT authorized this hour)
-1. **VOO** — preferred cash vehicle if/when cap room ≥ 1 share AND weekly budget has headroom.
-2. **QQQ** — only if room ≥ 1 share (currently cannot).
-3. **NVDA** — 1 share limit-only post-TSMC if four gates + budget pass.
+1. **VOO** — only if cap room ≥ 1 full share **and** weekly turnover headroom exists. Limit only.
+2. **NVDA** — **NOT authorized until post-TSMC reassessment**; then require all four gates + fresh hourly line + budget.
+3. **GOOG** — not authorized.
 4. **Never META / never thin ETFs without explicit hourly line.**
 
-## Cap Math (equity $9,710.40)
-- QQQ 45% cap: max $4,369.68; held $4,321.86; room **~$48** → cannot add 1 share (~$720).
-- VOO 30% cap: max $2,913.12; held $2,777.34; room **~$136** → cannot add 1 share (~$694).
-- Stock 15% cap: max $1,456.56; AVGO/HOOD well under.
-- Non-QQQ ETF 20% default does not apply to VOO (VOO has own 30% override).
-
 ## Macro Themes
-- **Actionable now:** Hold core. Protect AVGO/HOOD with existing trails only. Respect weekly turnover ceiling. Do not invent deploys.
-- **Worth monitoring:** TSMC full earnings (~Thu Jul 16). Hormuz/Iran escalation path vs firm equity tape. Fed/rate path into July FOMC (background). Bank earnings follow-through.
-- **Interesting but not actionable yet:** META strength (banned). India semi package. SpaceX/ARKX still weak. QTUM thin.
+- **Actionable now:** Hold core. Protect AVGO/HOOD trails. Respect weekly turnover ceiling and cap math. Do not chase NVDA pre-TSMC (SOXX gate also FAIL this hour).
+- **Worth monitoring:** TSMC earnings Thu Jul 16; ASML/AI strength continuity; whether VOO/QQQ prices or equity drift free 1-share room later this week; Hormuz/oil premium; AVGO EU regulatory noise.
+- **Interesting but not actionable yet:** META strength (banned); HOOD 1m +17% (already hold small); NVDA China-export / buy-point headlines (noise until post-TSMC).
+
+## Cap Math (equity ~$9,685)
+- QQQ 45%: max ~$4,358; held ~$4,305; room **~$54** → cannot add 1 (~$717).
+- VOO 30%: max ~$2,906; held ~$2,775; room **~$131** → cannot add 1 (~$694).
+- Stock 15%: max ~$1,453; AVGO/HOOD room ample but thesis/weekly-budget/TSMC block adds.
+- NVDA 1 @ $211: post weight ~2.2% — structure/TSMC week + SOXX gate + weekly budget block today.
 
 ## Data / Process Notes
-- **Audit:** OK. Gross 83.6%. Daytrades 0.
-- **Event detector:** labeled CRITICAL on multi-day UP gap — treat as **false crash signal**; still no new buys (budget/caps/TSMC).
-- **FMP:** disabled. Yahoo Finance chart primary for multi-TF returns; Google/Yahoo/Bing RSS for headlines.
+- **Audit:** OK. Gross 83.5%. Daytrades 0.
+- **Event detector:** 14:35Z **NONE** (prior 10:20 CRITICAL was multi-day UP artifact). Proceed hold-only on turnover/caps.
+- **FMP:** disabled. Yahoo Finance chart primary; Google News RSS + Yahoo RSS for headlines.
+- **Alpaca bars:** EIS bar thin (TradeCount 1); QTUM TradeCount 2 — illiquid. VOO TradeCount often low — limit only if any future add. Bars timestamps ~14:34Z — fresh.
 - **No open orders / no stale GTC blockers.**
-- **tactical_last_prices.json** may dirty — leave unstaged.
+- **Turnover today:** **0/2** daily. **Weekly ~21.6% of 20% budget already used** (Mon–Tue) → discretionary adds **blocked**. Only protective exits allowed.
+- **Git:** was behind origin by 3 (prior hourlies); fast-forwarded before decisions.
 
 ## Standing Learnings
-See `memory/standing_learnings.md` for full archive. Key reminders:
-- Size from **account equity**, not raw buying power. **No leverage** unless explicitly justified.
+See `memory/standing_learnings.md`. Key reminders:
+- Size from **account equity**, not BP. **No leverage.**
 - **Never average down. No universe breaches. Audit every run.**
-- **Direct REST API calls bypass ALL code guards** — prohibited for tactical.
-- **Lock files must NOT auto-expire.** Hourly alone lifts HARD_LOCK.
+- **Direct REST order paths prohibited** for tactical.
+- **Lock files must NOT auto-expire.**
 - **Pre-order concentration cap check** before any buy.
-- **With ~$10K equity, caps are extremely tight** (QQQ maxed at 6; VOO maxed at 4 under 30%).
-- **Conserve daytrades** when count is 0/3.
-- **Event-detector CRITICAL on multi-day UP baselines is a false crash** — do not liquidate; still suspend discretionary buys if already bound.
-- **Four-gate rule for NVDA adds:** QQQ structure + NVDA ≥ trigger + SOXX hold + no true crash CRITICAL. Partial gates = no trade. TSMC binary overrides green gates.
-- **Weekly turnover is hard:** once >20% equity notional used Mon–Fri, only protective exits.
-- **Alpha Preservation:** no full liquidations; no tight core-ETF stops; let winners run; do not flip regime more than once/day without true CRITICAL crash.
+- **With ~$10K equity, caps are tight** (QQQ maxed at 6 shares; VOO 4 near 30%).
+- **VOO symbolCap is 30%** — preferred cash-deployment vehicle when QQQ near 45%.
+- **Four-gate NVDA rule** — partial gates = no trade; **even full price pass does not override TSMC binary week policy.**
+- **Cash ≤10% target in neutral/offensive** — excess for 2+ hours → limit-add underweight core ETF; **if caps bind, write exact blocker** (current state).
+- **No full liquidations. No tight stops on QQQ/VOO/SOXX.**
+- **Neutral band is 75–90%** (doctrine). Live 83.5% is correct; do not de-risk into cash.
+- **Turnover budget is real:** daily **and** weekly. Weekly ceiling binds even when daily is 0/2.
+- **No after-hours / pre-market equity orders** by default.
+- **Event detector multi-day baseline gaps can false-CRITICAL on UP moves** — verify direction before panic response.
 
 ## Prior Tactical Executions (Key Events)
-- **2026-07-14:** BUY 1 VOO @ $689.49 + BUY 1 VOO @ $691.15 (authorized cash deploy). Compliant. Turnover 2/2 that day.
-- **2026-07-13 19:30Z:** SOLD 1 AVGO @ $385.02 (authorized stop). Compliant.
-- **2026-07-13 17:40Z / 13:50Z:** SOLD HOOD 1 @ $109.33 + 2 @ $110.00 (authorized trails). Compliant.
-- **2026-07-10:** Unauthorized META round-trip (bypass). META banned.
-- **2026-06-15/23/26:** Catastrophic full liquidations / churn — primary source of underperformance.
+- **2026-07-14 14:41Z:** BUY 1 VOO @ $691.15 (authorized #2). Compliant.
+- **2026-07-14 14:12Z:** BUY 1 VOO @ $689.49 (authorized #1). Compliant.
+- **2026-07-14 17:36Z:** CRITICAL upward semi spike — correctly no trades.
+- **2026-07-13 19:30Z:** SOLD 1 AVGO @ $385.02 (authorized). Compliant.
+- **2026-07-13 17:40Z / 13:50Z:** HOOD authorized trail sells. Compliant.
+- **2026-07-10:** Unauthorized META round-trip. META banned.
+- **2026-06-15/23/26:** Catastrophic full liquidations — primary underperformance source.
