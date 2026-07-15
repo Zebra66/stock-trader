@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 09:36 : [hourly] Hold-only open: weekly TO spent, caps bind
+- Equity ~$9734, gross 83.6% inside neutral 75-90%; cash 16.4% cap-bound (VOO room ~$144, QQQ ~$38)
+- Weekly turnover ~21.5% already used Mon-Tue → no discretionary buys despite daily 0/2 reset
+- Event MINOR (SOXX only); TSMC Thu still blocks NVDA despite 4/4 price gates
+- AVGO trail $380 / HOOD trail $108 intact; META banned; audit clean
+- Goal: port ~-2.7% vs SPY ~+5.1% — off track; dominant failure cash drag + friction
+
 2026-07-14 : 16:27 : [hourly] Post-close hold; 2/2 spent, caps bind
 - Market closed; equity ~$9687 gross 83.5% inside neutral 75-90%; cash 16.5% cap-bound (VOO room ~$141, QQQ ~$36)
 - Turnover 2/2 used on authorized VOO fills; only AVGO $380 / HOOD $108 trails next session
