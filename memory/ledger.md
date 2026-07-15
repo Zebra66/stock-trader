@@ -2,6 +2,44 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 14:36 : [hourly] Hold-only 2:35; weekly TO+caps bind
+- Detector NONE; equity ~$9698, gross 83.6%, cash 16.4% cap-bound
+- Weekly TO ~21.6%>20% blocks discretionary buys; daily 0/2
+- NVDA gates 2/4 (QQQ+NVDA pass, SOXX fail); TSMC Thu blocks chip beta
+- AVGO trail $380 (~3.6% buf) / HOOD trail $108 (~6.9% buf) only
+- Goal off-track: port -3.0% vs SPY +5.1%; no invent deploys
+
+2026-07-15 : 14:30 : [tactical] Hold-only: no triggers, weekly budget spent
+- AVGO 394.11 > 380 trail; HOOD 115.85 > 108 trail
+- Weekly turnover ~21.7% > 20% ceiling; discretionary buys blocked
+- Event detector NONE; no overrides applied
+- NO_ACTION: no orders submitted
+
+2026-07-15 : 14:20 : [tactical] NO_ACTION: no triggers met
+- AVGO 394.20 above 380 trail; HOOD 115.46 above 108 trail
+- Event detector MINOR on SOXX only, no response required
+- Weekly turnover ~21.7 pct over 20 pct budget binds discretionary buys
+- HOLD-ONLY: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2
+
+2026-07-15 : 14:10 : [tactical] HOLD-ONLY: no trails breached
+- AVGO 395.20 vs trail 380.00; HOOD 115.54 vs trail 108.00
+- Weekly turnover ~21.7% > 20% budget; discretionary buys blocked
+- Event detector NONE; no overrides applied
+- Zero orders placed; cash 1594 USD (~16.5%)
+- Next: monitor trails, reassess post-TSMC
+
+2026-07-15 : 13:50 : [tactical] NO_ACTION: trails intact, no orders
+- Event detector NONE. AVGO 393.30 > 380 trail; HOOD 115.74 > 108 trail.
+- Weekly turnover budget exceeded (~21.7% > 20%); no new buys.
+- Daily fills 0/2; open orders none.
+- No todo triggers met; compliant hold-only cycle.
+
+2026-07-15 : 13:40 : [tactical] NO_ACTION: holds and trails intact
+- Detector CRITICAL is upward SOXX/SMH bounce, not a crash; broad SPY/QQQ green
+- AVGO 392.12 above 380.00 trail; HOOD 115.91 above 108.00 trail
+- HOLD-ONLY per weekly turnover spent; no conditions met
+- Daytrades 0/3, gross ~83.5%, no open orders
+
 2026-07-15 : 13:36 : [hourly] Hold-only 1:35; weekly TO+caps bind
 - Detector NONE (prior upward SOXX CRITICAL cleared); no trades
 - Equity ~$9673, gross 83.5%, cash 16.5% cap-bound
