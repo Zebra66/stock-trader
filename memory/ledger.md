@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 10:40 : [tactical] CRITICAL event override no trades
+- SOXX/SMH CRITICAL; XLK MAJOR at 14:40Z
+- AVGO/HOOD authorized stops not breached
+- Suspended buys, no orders placed
+- Gross 83.5%, exposure unchanged
+
 2026-07-15 : 10:36 : [hourly] Hold-only 10:35: weekly TO + caps bind
 - Equity ~9685, gross 83.5% inside neutral 75-90%; cash 16.5% cap-bound (VOO/QQQ room under 1 share)
 - Detector NONE (prior CRITICAL was multi-day UP artifact); no panic sells; no new buys

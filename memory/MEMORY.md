@@ -1,5 +1,15 @@
 # Hourly Macro Memory
-*Updated 2026-07-15 14:36Z (Wednesday 10:35 AM ET). Market OPEN — second full hourly of session.*
+*Updated 2026-07-15 14:40Z (Wednesday 10:40 AM ET). Market OPEN — CRITICAL event detected by tactical executor.*
+
+---
+
+## Tactical Cycle Summary — 2026-07-15 14:40Z (Wed 10:40 AM ET) [AUTONOMOUS_OVERRIDE]
+- **Event detector:** **CRITICAL** (14:40Z). SOXX -1.96%, SMH -1.68% (CRITICAL); XLK -1.47% (MAJOR); QQQ -0.65% (MINOR). Held positions AVGO/HOOD/QQQ/VOO all OK.
+- **Action:** **NO TRADES.** AVGO trail ($380.00) and HOOD trail ($108.00) are **not breached** (AVGO ~$389.27, HOOD ~$113.67); no protective sells executed.
+- **Override applied:** All buy conditions suspended. `NO NEW BUYS — CRITICAL EVENT` written to `memory/todo.md`. No gross exposure increase; no new positions opened.
+- **Book unchanged:** QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Cash ~$1,594. Gross ~83.5%.
+- **Turnover:** 0/2 daily; weekly budget already exceeded; no discretionary trades regardless of event.
+- **Next expected action:** Reassess at next hourly cycle (or sooner if AVGO/HOOD stop breaches).
 
 ---
 

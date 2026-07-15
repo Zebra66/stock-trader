@@ -11,11 +11,13 @@
 - `memory/.trading_lock.json`: `active: false`. META remains in `bannedSymbols`.
 - No HARD_LOCK. Do not invent one.
 
-## Event context — NONE (not CRITICAL)
-- 14:35Z: SPY/QQQ/SOXX/XLK/GLD/SMH all OK; held AVGO/HOOD/QQQ/VOO all OK. Sector rotation NONE.
-- Prior 10:20 CRITICAL was multi-day UP-gap artifact — **do not re-apply panic response**.
-- **No new BUY authorizations** (weekly turnover spent + cap-bound cash + TSMC week on chips + NVDA SOXX gate FAIL).
-- If detector later returns **CRITICAL** on a true crash: write `NO NEW BUYS — CRITICAL EVENT`; hold existing; only execute authorized stops if breached. Do not market-panic sell core ETFs.
+<!-- Autonomous override applied at 2026-07-15 14:40Z due to CRITICAL event -->
+
+## Event context — **CRITICAL** (autonomous override active)
+- **14:40Z:** Detector reports **CRITICAL** on SOXX (-1.96%) and SMH (-1.68%); **MAJOR** on XLK (-1.47%). QQQ MINOR (-0.65%); SPY/GLD OK. Held AVGO/HOOD/QQQ/VOO all OK.
+- **NO NEW BUYS — CRITICAL EVENT.** All buy conditions are suspended until the next hourly reset.
+- **Hold existing positions.** Only execute authorized stops if breached (AVGO trail $380 / HOOD trail $108 — neither currently breached). Do not market-panic sell core ETFs.
+- **Autonomous override:** No new positions; no gross exposure increase; no discretionary trades until the next hourly cycle reassesses.
 
 ## Current State
 - **Regime:** **neutral** (doctrine band 75–90%; live ~83.5%) — **do not flip regime today**.
