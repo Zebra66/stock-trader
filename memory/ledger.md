@@ -2,6 +2,19 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 16:36 : [hourly] Post-close hold; weekly TO+caps bind
+- Market closed ~4:31 ET; confirmed concurrent 3:35 hold-only plan
+- Equity ~$9697 gross 83.6% neutral; cash 16.4% cap-bound (VOO/QQQ room under 1 share)
+- Weekly TO ~21.6%>20%; 0 fills today; only AVGO trail 380 / HOOD trail 108 next session
+- TSMC Thu blocks chip beta overnight; no AH/pre-market orders
+- Off track: port ~-3.0% vs SPY ~+5.0%; regime stays neutral
+
+2026-07-15 : 15:37 : [tactical] NO_ACTION: no triggers breached
+- AVGO $393.93 > $380.00 trail; HOOD $115.18 > $108.00 trail
+- Event detector NONE (earlier upward CRITICAL artifact cleared)
+- Weekly TO ~21.7% > 20% budget; discretionary buys blocked
+- Gross 83.5% inside neutral band; cash 16.5% cap-bound
+- No orders placed; no conditions met
 2026-07-15 : 15:36 : [hourly] Hold-only into close; weekly TO binds
 - Gross 83.5% neutral; cash 16.5% cap-bound (VOO and QQQ room each under one share)
 - Weekly TO ~21.6% already over 20% — only AVGO trail 380 and HOOD trail 108 allowed
