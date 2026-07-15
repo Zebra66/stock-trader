@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 10:19 : [hourly] Hold-only 10:35; weekly TO + caps bind
+- Gross 83.6% neutral; equity $9711 cash 16.4% cap-bound
+- Weekly TO ~21.6%>20% — no discretionary trades; daily 0/2
+- False CRITICAL multi-day UP gap; SOXX gate FAIL for NVDA; TSMC Thu
+- Repo: unstaged mass-delete + restored clobbered Mon memory from HEAD
+- Trails: AVGO $380 / HOOD $108 only authorized actions
+
 2026-07-15 : 09:43 : [hourly] Hold-only: false CRITICAL, weekly TO binds
 - Equity ~$9717 gross 83.6% inside neutral 75-90%; cash 16.4% cap-bound (VOO room ~$141, QQQ ~$46)
 - Detector CRITICAL is multi-day UP gap (Mon→Wed SOXX +2.8%) not a crash; 9:35 was MINOR; no panic sells
