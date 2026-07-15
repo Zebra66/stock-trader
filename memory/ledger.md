@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 12:36 : [hourly] Hold-only 12:35; weekly TO + caps bind
+- Detector NONE; soft Nasdaq day (~QQQ -1.2%); gross 83.4% in neutral 75-90%
+- Equity ~9621 cash 16.6%; VOO/QQQ cap room under one share blocks core adds
+- Weekly TO ~21.8%>20% + daily 0/2; discretionary buys blocked
+- NVDA gates FAIL (QQQ/NVDA/SOXX); TSMC Thu still blocks chip beta
+- AVGO trail 380 / HOOD trail 108 only; do not tighten; META banned
+
+2026-07-15 : 12:30 : [tactical] No action: holds intact, no triggers
+- Event detector NONE. AVGO 388.09 above 380.00 trail; HOOD 114.02 above 108.00 trail.
+- Weekly turnover ~21.6 pct exceeds 20 pct budget; no discretionary trades authorized.
+- Cash 1594; gross ~83.5 pct; inside neutral 75-90 pct band.
+- No open orders; daytrade count 0; only protective trails permitted.
+
+2026-07-15 : 12:20 : [tactical] No triggers; hold-only
+- AVGO 388.23 > 380.00 trail; no sell
+- HOOD 114.14 > 108.00 trail; no sell
+- Weekly turnover ~21.6% > 20% budget; no discretionary trades
+- Event detector NONE; no override
+- Positions unchanged: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2
+
+2026-07-15 : 12:10 : [tactical] Hold-only, no triggers breached
+- Event detector MINOR on SOXX and SMH only -- normal mode
+- AVGO and HOOD both well above their protective trail stops
+- Weekly turnover ~21.6 pct exceeds 20 pct budget -- discretionary buys blocked
+- No filled trades today; 0 of 2 daily budget used
+
+2026-07-15 : 11:50 : [tactical] No action: trails intact, weekly TO spent
+- AVGO 389.49 above 380.00 trail, HOOD 114.76 above 108.00 trail -- no breach
+- Weekly turnover ~21.6pct > 20pct ceiling binds discretionary trades
+- Event detector NONE; gross ~83.5pct inside band
+- Daily turnover 0 of 2; only protective exits allowed
+- No open orders; no conditions met
+
+2026-07-15 : 11:40 : [tactical] Hold-only: AVGO/HOOD trails intact
+- AVGO ~$390.22 > $380.00 trail; HOOD ~$115.23 > $108.00 trail - no protective sells triggered
+- Weekly turnover ~21.6% of 20% budget exceeded - discretionary buys blocked
+- Event detector NONE; no autonomous override applied
+- No orders submitted; NO_ACTION
+
 2026-07-15 : 11:36 : [hourly] Hold-only 11:35; cleared CRITICAL override
 - Detector NONE; prior 14:40Z CRITICAL buy-suspension cleared by hourly reassessment
 - Gross 83.5% in neutral 75-90%; equity ~9672 cash 16.5% cap-bound
