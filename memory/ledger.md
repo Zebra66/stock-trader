@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-15 : 13:36 : [hourly] Hold-only 1:35; weekly TO+caps bind
+- Detector NONE (prior upward SOXX CRITICAL cleared); no trades
+- Equity ~$9673, gross 83.5%, cash 16.5% cap-bound
+- Weekly TO ~21.7%>20%; VOO/QQQ room below 1 share
+- NVDA gates 1/4; TSMC Thu blocks chip beta; trails AVGO 380 / HOOD 108
+- Off track: port -3.3% vs SPY +4.9%; hold core, no invent
+
 2026-07-15 : 13:25 : [hourly] Up SOXX CRITICAL bounce; hold-only
 - Detector CRITICAL on SOXX/SMH UP rebound — not a crash; held OK; no panic sells
 - Equity ~$9655 gross 83.5% neutral; cash 16.5% blocked by weekly TO ~21.7% + caps + TSMC
