@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 14:36 : [hourly] HOLD-only; weekly TO + caps still bind
+- Audit OK; gross 78.2% inside neutral 75-90%; daytrades 0; open orders none
+- Goal off track: port ~-4.4% vs SPY ~+4.6% (gap ~-8.9pp); cash drag + weekly TO dominant
+- Both authorized trails done (AVGO 9:40, HOOD 13:10); remaining AVGO/HOOD still green — let run
+- Blockers: weekly TO ~27%>20%; VOO room ~09; QQQ room ~5; soft chip/AI tape
+- No new buys/sells; regime stays neutral; next deploy likely Mon+ after TO reset
+
+2026-07-16 : 14:30 : [tactical] HOLD-ONLY: no triggers, no trades
+- Event detector NONE; no CRITICAL/MAJOR event
+- todo.md HOLD-ONLY; no active sell triggers remain
+- Weekly TO exceeded (~27.0pct vs 20pct budget); discretionary buys blocked
+- Book: QQQ 6 / VOO 4 / AVGO 1 / HOOD 1; gross ~78.3pct
+- No orders placed; no action required
+
+2026-07-16 : 14:20 : [tactical] HOLD-ONLY: no triggers met
+- Event detector MINOR; no CRITICAL/MAJOR
+- All active trails already executed (AVGO/HOOD)
+- Weekly TO exceeded; no discretionary buys authorized
+- No price triggers breached in todo.md
+- Book unchanged: QQQ 6 / VOO 4 / AVGO 1 / HOOD 1
+
+2026-07-16 : 14:10 : [tactical] No triggers; HOLD-ONLY
+- Event detector NONE; no active buy/sell conditions
+- Weekly TO exceeded (~27%); caps bind
+- AVGO/HOOD trails already executed today
+- Remaining QQQ/VOO/AVGO/HOOD held
+- No orders placed
+
+2026-07-16 : 13:50 : [tactical] HOLD-ONLY: no active triggers
+- Event detector NONE; todo.md explicitly HOLD-ONLY
+- Weekly turnover ~27.0% exceeds 20% budget; no discretionary buys
+- All authorized trails already executed (AVGO 09:40, HOOD 13:10)
+- Live prices within normal ranges; no price breaches
+
+2026-07-16 : 13:40 : [tactical] NO_ACTION: HOLD-ONLY, no triggers met
+- Event detector NONE; todo.md HOLD-ONLY with no active triggers
+- Weekly turnover exceeded (~27.0% of 20%); no discretionary buys allowed
+- Positions: QQQ 6 / VOO 4 / AVGO 1 / HOOD 1; gross ~78.3%
+- No price breached any authorized stop/entry; no orders placed
+
 2026-07-16 : 13:36 : [hourly] HOLD-only; weekly TO + caps bind
 - Audit OK; gross 78.3%; daytrades 0; detector NONE
 - Both trails done (AVGO 380.65, HOOD 107.51); remaining winners held
