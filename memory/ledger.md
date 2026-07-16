@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 12:36 : [hourly] HOLD-only; HOOD buffer thin; TO binds
+- Equity ~$9589, gross 79.4%, cash 20.6% — still inside neutral 75-90%
+- HOOD ~$109.3 vs trail $108 (~1.2% buffer); do not tighten; only protective exit authorized
+- Weekly TO ~25.8% exceeds 20% ceiling; VOO and QQQ cap rooms both under one share
+- Detector NONE; AVGO/HOOD still green vs entry; no discretionary buys; META banned
+- Off track: port ~-4.1% vs SPY ~+4.8%; patience over friction until Mon TO reset
+
+2026-07-16 : 12:30 : [tactical] HOOD above trail; no action
+- HOOD 109.65 vs trail 108.00 — not breached
+- Event detector NONE; no MAJOR/CRITICAL
+- Weekly TO exceeded; no discretionary buys authorized
+- All positions HOLD per 11:35 ET todo
+- Zero orders submitted
+
+2026-07-16 : 12:20 : [tactical] HOOD above trail; no action
+- HOOD 109.94 above 108.00 trail trigger; no breach
+- Event detector NONE; HOLD-ONLY per 11:35 ET directive
+- Weekly TO exceeded; no discretionary buys authorized
+- No orders placed; no PDT or churn concerns
+
+2026-07-16 : 12:10 : [tactical] NO_ACTION: HOOD trail intact
+- HOOD price 110.58 is well above 108.00 trail; no trigger breached
+- Weekly TO approximately 25.7% exceeded; discretionary buys blocked
+- Event detector NONE; no protective action required
+- Hold-only cycle; no orders submitted
+
+2026-07-16 : 11:50 : [tactical] No triggers; HOOD above trail; no action
+- Event detector reported NONE at 1550Z
+- HOOD quote above 108 trail; no sell trigger
+- Weekly turnover exceeded 20 percent ceiling; discretionary buys blocked
+- Cash around 1975 dollars; QQQ and VOO cap room under one share
+- No orders submitted; holding QQQ six VOO four AVGO one HOOD two
+
+2026-07-16 : 11:40 : [tactical] HOOD above trail; no action
+- HOOD 110.75 above 108.00 trail
+- Event detector NONE
+- Weekly TO exceeded; no discretionary buys
+- No conditions met
+- HOLD-ONLY maintained
+
 2026-07-16 : 11:36 : [hourly] HOLD-only; weekly TO + caps still bind
 - Audit OK; detector NONE; gross 79.5% inside neutral 75-90%
 - Equity ~$9619 (-3.8% vs SPY +5.0%); gap ~-8.8pp; cash drag + weekly TO
