@@ -1,10 +1,11 @@
-# Tactical Todo — Updated 2026-07-16 14:35Z (Thu 10:35 AM ET hourly)
+# Tactical Todo — Updated 2026-07-16 15:35Z (Thu 11:35 AM ET hourly)
 *Market **OPEN**. Book: QQQ 6 / VOO 4 / AVGO 1 / HOOD 2. Event detector **NONE**. HOLD-ONLY. No discretionary buys.*
 
-## MARKET OPEN — HOURLY DIRECTIVES (10:35 ET)
-- Event detector cooled to **NONE** (all broad/held OK). Prior CRITICAL freeze **lifted by hourly**.
+## MARKET OPEN — HOURLY DIRECTIVES (11:35 ET)
+- Event detector **NONE** (all broad/held OK). CRITICAL freeze remains **lifted**.
 - **Weekly turnover still exceeded** → discretionary buys remain **blocked**.
 - TSMC digestion ongoing; do not buy residual chip dip.
+- HOOD soft (~$111 from ~$113.5) but **above** trail $108 — **do not lower trail**.
 - AVGO 9:40 trail already executed; only HOOD trail remains.
 
 ## TURNOVER: 0/2 discretionary trades used today, ~25.7% of 20% weekly budget used (WEEKLY EXCEEDED)
@@ -18,16 +19,16 @@
 
 ## Current State
 - **Regime:** **neutral** (75–90%; live ~79.5%) — **do not flip**.
-- **Live book:** QQQ 6 @ ~$711.9 | VOO 4 @ ~$693.2 | AVGO 1 @ ~$383.3 | HOOD 2 @ ~$113.5
-- **Equity / cash:** ~$9,629 / ~$1,975
+- **Live book:** QQQ 6 @ ~$711.2 | VOO 4 @ ~$693.1 | AVGO 1 @ ~$381.9 | HOOD 2 @ ~$111.1
+- **Equity / cash:** ~$9,619 / ~$1,975
 - **Gross:** **~79.5%** | Cash **~20.5%** (cap-bound + weekly TO)
 - **Daytrade count:** **0** | **Open orders:** NONE
 - **Audit:** clean
 
 ## Exact cash blocker
 1. Weekly TO **~25.7% > 20%** → no discretionary buys.
-2. VOO room ~**$116** < 1 share (~$693).
-3. QQQ room ~**$62** < 1 share (~$712).
+2. VOO room ~**$113** < 1 share (~$693).
+3. QQQ room ~**$61** < 1 share (~$711).
 4. Chip digestion residual; thin ETFs — do not buy.
 5. No single-name add edge that beats do-nothing VOO baseline after friction.
 
@@ -41,16 +42,16 @@
 - Cap room < 1 share. No buy. No stop. No full exit.
 
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
-- Core. No stop. Soft open is not a sell signal. No action.
+- Core. No stop. Soft Nasdaq is not a sell signal. No action.
 
 ### AVGO — HOLD 1 — TRAIL ALREADY EXECUTED 09:40 ET — DO NOT ADD / DO NOT RE-BUY
 - **Trail executed:** SOLD 1 at **$380.65**. 1 share remains.
-- Remaining 1 share avg entry **$371.95**; current ~$383.3; unrealized ~+3.1%.
+- Remaining 1 share avg entry **$371.95**; current ~$381.9; unrealized ~+2.7%.
 - **No new AVGO sell trigger.** Do not full-exit remaining 1. Let winner run.
 - **DO NOT RE-BUY AVGO today** (24-hour cooldown + anti-churn). Do not add.
 
 ### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD
-- Live ~$113.5 (~+11.8% unrealized). **Above trail** $108.00 (~4.8% buffer).
+- Live ~$111.1 (~+9.5% unrealized). **Above trail** $108.00 (~2.8% buffer). Soft session — **do not lower trail**.
 - **SELL 1** if price **below $108.00**, limit **$107.50**. Hold remaining 1.
 - Do not add/re-buy. Do not lower trail.
 
@@ -77,10 +78,10 @@
 - HOLD-ONLY except authorized HOOD protective trail.
 - No SOXX/NVDA/AVGO add into residual TSMC digestion.
 - No "use the cash" inventiveness under weekly TO bind or cap bind.
-- Do not lower stops. Cancel unexpected open orders.
+- Do not lower stops / trails. Cancel unexpected open orders.
 - Re-read this file before every order batch.
 - CRITICAL event language is **lifted** — do not re-impose CRITICAL freeze unless detector returns CRITICAL.
 
 ## Current Book
-- QQQ 6 (~44.4%), VOO 4 (~28.8%), AVGO 1 (~4.0%), HOOD 2 (~2.4%)
+- QQQ 6 (~44.4%), VOO 4 (~28.8%), AVGO 1 (~4.0%), HOOD 2 (~2.3%)
 - Cash ~$1,975 (~20.5%) | Gross ~79.5%

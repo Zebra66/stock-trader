@@ -2,6 +2,40 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 11:36 : [hourly] HOLD-only; weekly TO + caps still bind
+- Audit OK; detector NONE; gross 79.5% inside neutral 75-90%
+- Equity ~$9619 (-3.8% vs SPY +5.0%); gap ~-8.8pp; cash drag + weekly TO
+- QQQ/VOO integer room still closed under caps; weekly TO ~25.7% exceeds 20%
+- HOOD soft ~$111 still above $108 trail; do not re-tighten; AVGO 1 let run
+- No discretionary buys until Mon+ weekly reset and integer room
+
+2026-07-16 : 11:20 : [tactical] NO_ACTION: HOOD trail not hit
+- HOOD price 111.54 above 108 trail; no trigger
+- Event detector NONE; normal mode
+- Weekly TO exceeded and caps block all buys
+- Daily 0/2 discretionary; no protective exit required
+- Hold core QQQ/VOO/AVGO/HOOD
+
+2026-07-16 : 11:10 : [tactical] No conditions met; hold
+- HOOD price 112.00 above 108.00 trail
+- Weekly turnover 25.7% > 20% blocks discretionary buys
+- Event detector NONE; all held positions OK
+- No orders placed
+- AUM ,613, gross ~79.5%, daytrades 0
+
+2026-07-16 : 10:50 : [tactical] No triggers hit; hold-only
+- Event detector NONE; no price breaches
+- HOOD at 113.44, above 108.00 trail; no action
+- AVGO at 382.86; no authorized sell trigger
+- Weekly TO exceeded and caps bind; no buys
+- Zero orders placed
+
+2026-07-16 : 10:40 : [tactical] No trades; HOOD trail not hit
+- HOOD price 113.74 vs trail 108.00 — no breach
+- Event detector NONE; all held positions OK
+- Weekly TO exceeded plus cap binds — no discretionary buys authorized
+- Book unchanged: QQQ 6 / VOO 4 / AVGO 1 / HOOD 2
+
 2026-07-16 : 10:36 : [hourly] HOLD: detector NONE, weekly TO binds
 - Event detector cooled to NONE; lift CRITICAL buy freeze
 - Audit OK; gross 79.5%; equity ~9629; cash ~1975 (20.5%)
