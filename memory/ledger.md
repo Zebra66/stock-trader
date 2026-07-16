@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 17:03 : [hourly] Post-close HOLD; weekly TO + caps bind
+- Market CLOSED; audit OK gross 78.2%; daytrades 0; open orders none
+- Equity ~$9552 cash ~$2082; book QQQ6/VOO4/AVGO1/HOOD1; both trails done
+- Weekly TO ~27%>20% + VOO/QQQ integer room closed; no AH orders
+- Goals off track: port ~-4.5% vs SPY ~+4.6%; cash drag + weekly TO dominant
+- Next reassess Fri 9:35 ET open; regime neutral unchanged
+
 2026-07-16 : 15:36 : [hourly] HOLD-ONLY final hourly; weekly TO binds
 - Audit OK, gross 78.2%, daytrades 0, open orders none
 - Equity ~$9,541 cash ~$2,082; both trails done (AVGO/HOOD)
