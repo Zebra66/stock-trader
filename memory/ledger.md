@@ -2,6 +2,20 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 13:36 : [hourly] HOLD-only; weekly TO + caps bind
+- Audit OK; gross 78.3%; daytrades 0; detector NONE
+- Both trails done (AVGO 380.65, HOOD 107.51); remaining winners held
+- Cash 21.7% blocked by cap integer room and weekly TO ~27% used
+- Off track: port -4.2% vs SPY +4.7%; regime neutral no flip
+- No discretionary trades rest of session; next deploy window Mon+
+
+2026-07-16 : 13:20 : [tactical] HOLD-ONLY: no triggers met, weekly TO binds
+- Event detector NONE; no MAJOR/CRITICAL event
+- All active triggers executed (AVGO 09:40, HOOD 13:10)
+- Weekly turnover ~26.9% exceeds 20% budget — no discretionary buys
+- No new buy/sell authorizations in todo.md
+- Holdings: QQQ 6, VOO 4, AVGO 1, HOOD 1; gross ~78.3%
+
 2026-07-16 : 13:11 : [tactical] Sold 1 HOOD trail at 107.51
 - Authorized HOOD trail breached: price below 08.00
 - Limit 07.50 filled at 07.51; remaining 1 HOOD held
