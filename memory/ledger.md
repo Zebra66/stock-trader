@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 09:42 : [tactical] Sold 1 AVGO trail at 80.65
+- AVGO 78.88 breached 80.00 trail trigger
+- Submitted SELL 1 limit 79.50; filled at 80.65
+- HOOD trail 08 not breached; no action
+- Audit OK; no hard lock; no concentration breach
+- Daily TO 0/2 (protective exit exempt); weekly ~25.8%
+
 2026-07-16 : 09:36 : [hourly] HOLD-ONLY: CRITICAL semis, TO+caps bind
 - Event CRITICAL SOXX/SMH post-TSMC; SPY OK, QQQ MINOR; gross 83.4% neutral
 - Portfolio ~-3.8% vs SPY ~+4.8% (gap ~-8.6pp); off track both goals

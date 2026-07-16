@@ -1,5 +1,19 @@
 # Hourly Macro Memory
-*Updated 2026-07-16 13:40Z (Thursday 9:35 AM ET). Market **OPEN**. Event detector **CRITICAL** (semis). HOLD-ONLY.*
+*Updated 2026-07-16 13:41Z (Thursday 9:40 AM ET). Market **OPEN**. Event detector **MINOR** (cooled from CRITICAL). AVGO trail executed.*
+
+---
+
+## Tactical Execution — 2026-07-16 09:40 ET
+- **Action:** SOLD 1 AVGO at **$380.65** (authorized protective trail).
+- **Trigger:** AVGO quote **$378.88** breached todo.md trail **$380.00**; submitted SELL 1 limit **$379.50**.
+- **Fill:** Filled at **$380.65** within seconds as price recovered above limit.
+- **Why:** todo.md authorized trail; TSMC chip reaction negative; AVGO buffer thin; no full exit.
+- **Remaining book:** QQQ 6 / VOO 4 / AVGO 1 / HOOD 2.
+- **Broker:** Equity **~$9,603** | Cash **~$1,975** | Long **~$7,625** | Gross **~79.4%**.
+- **Daytrades:** 0 | **PDT:** no concern | **Open orders:** NONE.
+- **Turnover:** Daily **0/2** (protective exit exempt from daily budget); weekly **~25.8%** of 20% gross budget (protective exits still add to weekly).
+- **Audit:** OK, no unauthorized positions, no concentration breaches, `hardLockRecommended: false`.
+- **Next:** Monitor HOOD trail $108. No new buys until hourly reassesses detector + weekly TO.
 
 ---
 
@@ -7,9 +21,9 @@
 - **Status:** Market **OPEN** (~5 min after open). Event detector **CRITICAL** (SOXX −2.1%, SMH −1.7%; XLK/GLD MAJOR; SPY OK; QQQ MINOR). Tactical 9:30 override correctly **no-action**.
 - **Repo integrity:** Branch = origin/main (0/0). `.gitignore` effective. Audit **OK**. No unauthorized positions. Open orders **NONE**.
 - **Audit:** Unauthorized=[] Concentration=[] Gross **83.4%**. Daytrades **0**. `pdtLimitReached` false. hardLockRecommended false.
-- **Live broker:** Equity **~$9,616** | Cash **$1,594.04** | Long **~$8,022** | Gross **~83.4%** | BP ~$28.8k (do **not** size from BP).
-- **Holdings:** QQQ 6 @ ~$711.3 | VOO 4 @ ~$691.6 | AVGO 2 @ ~$381.5 | HOOD 2 @ ~$112.2.
-- **Today's fills:** **NONE**. Last fills: Tue VOO. No concealment.
+- **Live broker:** Equity **~$9,603** | Cash **~$1,975** | Long **~$7,625** | Gross **~79.4%** | BP ~$28.8k (do **not** size from BP).
+- **Holdings:** QQQ 6 @ ~$711.3 | VOO 4 @ ~$691.6 | AVGO 1 @ ~$380.7 | HOOD 2 @ ~$112.2.
+- **Today's fills:** **AVGO SELL 1 @ $380.65** (protective trail). Last fills: Tue VOO. No concealment.
 - **Compliance:** META banned. HARD_LOCK inactive. No universe breaches. Gross stable ~83.4–83.6% overnight → open.
 - **Goal check:** Portfolio **~–3.8%** vs SPY **~+4.8%** (SPY ~752.5 vs 718.01). **Both goals FAILED.** Gap **~–8.6 pp**.
 - **Regime:** **Neutral** (no flip — regime stability; CRITICAL is sector-local semis, not broad crash). Target gross **75–90%**. Live **83.4%** — inside band.
@@ -23,12 +37,12 @@
 |---|---|---|---|---|---|---|---|
 | QQQ | 6 | $716.47 | ~$711.3 | ~$4,268 | ~44.4% | ~−$31 | ~−0.7% |
 | VOO | 4 | $683.39 | ~$691.6 | ~$2,766 | ~28.8% | ~+$33 | ~+1.2% |
-| AVGO | 2 | $371.95 | ~$381.5 | ~$763 | ~7.9% | ~+$19 | ~+2.6% |
+| AVGO | 1 | $371.95 | ~$380.7 | ~$381 | ~4.0% | ~+$9 | ~+2.4% |
 | HOOD | 2 | $101.50 | ~$112.2 | ~$224 | ~2.3% | ~+$21 | ~+10.5% |
-| Cash | — | — | — | $1,594.04 | ~16.6% | — | — |
-| **Equity** | — | — | — | **~$9,616** | **100%** | — | **~–3.8%** |
+| Cash | — | — | — | ~$1,975 | ~20.6% | — | — |
+| **Equity** | — | — | — | **~$9,603** | **100%** | — | **~–3.8%** |
 
-- **Gross long exposure:** ~83.4%
+- **Gross long exposure:** ~79.4%
 - **Daytrade count:** 0 | **Open orders:** NONE
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
 - **1D vs last_equity $9,695.32:** ~**−0.8%** (soft open on semis / QQQ).

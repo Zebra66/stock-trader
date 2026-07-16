@@ -1,16 +1,16 @@
-# Tactical Todo — Updated 2026-07-16 13:40Z (Thu 9:35 AM ET hourly)
-*Market **OPEN**. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector CRITICAL (SOXX/SMH). HOLD-ONLY. No new buys.*
+# Tactical Todo — Updated 2026-07-16 13:41Z (Thu 9:40 AM ET tactical)
+*Market **OPEN**. Book: QQQ 6 / VOO 4 / AVGO 1 / HOOD 2. Event detector **MINOR** (cooled). HOLD-ONLY. No new buys.*
 
 ## MARKET OPEN — EVENT RESPONSE + HOURLY CONFIRM
-- **Event detector CRITICAL** (SOXX −2.1%, SMH −1.7%; XLK/GLD MAJOR). Broad SPY OK; QQQ MINOR.
-- **`NO NEW BUYS — CRITICAL EVENT`** for this cycle. No new positions. No increased gross exposure.
+- **Event detector cooled to MINOR** (SOXX −0.6%, SMH −0.6%; prior CRITICAL). Broad SPY OK; QQQ OK; XLK/GLD OK.
+- **`NO NEW BUYS — CRITICAL EVENT`** hourly directive remains in force until next hourly reassesses (tactical does not lift it).
 - **TSMC printed** (beat + raise + AZ capex) but **chip price reaction negative** — do not buy the dip.
-- Hourly confirms tactical 9:30 no-action was correct.
+- Hourly confirms tactical 9:30 no-action was correct; AVGO 9:40 trail executed.
 
-## TURNOVER: 0/2 trades used today, ~21.8% of 20% weekly budget used (WEEKLY EXCEEDED)
-- Mon–Tue ~$2,095 notional already used (HOOD/AVGO trail sells + VOO buys).
+## TURNOVER: 0/2 discretionary trades used today, ~25.8% of 20% weekly budget used (WEEKLY EXCEEDED)
+- Mon–Tue ~$2,095 notional already used (HOOD/AVGO trail sells + VOO buys). **+ $380.65 AVGO protective trail today**.
 - **Weekly ceiling binds** (calendar week Mon Jul 13 – Sun Jul 19).
-- **Only allowed actions (regular session):** AVGO trail / HOOD trail if breached (protective, exempt).
+- **Only allowed actions (regular session):** HOOD trail if breached (protective, exempt). AVGO trail completed.
 
 ## HARD_LOCK LIFTED / inactive
 - `memory/.trading_lock.json`: `active: false`. META in `bannedSymbols`.
@@ -18,9 +18,9 @@
 
 ## Current State
 - **Regime:** **neutral** (75–90%; live ~83.4%) — **do not flip**.
-- **Live book:** QQQ 6 @ ~$711.3 | VOO 4 @ ~$691.6 | AVGO 2 @ ~$381.5 | HOOD 2 @ ~$112.2
-- **Equity / cash:** ~$9,616 / $1,594
-- **Gross:** **~83.4%** | Cash **~16.6%** (cap-bound + weekly TO + CRITICAL)
+- **Live book:** QQQ 6 @ ~$711.3 | VOO 4 @ ~$691.6 | AVGO 1 @ ~$380.7 | HOOD 2 @ ~$112.2
+- **Equity / cash:** ~$9,603 / ~$1,975
+- **Gross:** **~79.4%** | Cash **~20.6%** (protective exit + cap-bound + weekly TO)
 - **Daytrade count:** **0** | **Open orders:** NONE
 - **Audit:** clean
 
@@ -43,10 +43,11 @@
 ### QQQ — HOLD 6 — DO NOT SELL OR ADD
 - Core. No stop. Soft open is not a sell signal. No action.
 
-### AVGO — HOLD 2 — TRAIL 1 @ $380 — DO NOT ADD
-- Live ~$381.5 (~+2.6% unrealized). **Above trail** $380.00 (thin ~0.4% buffer).
-- **SELL 1** if price **below $380.00**, limit **$379.50**. Hold remaining 1.
-- Do not add/re-buy. Do not lower trail. Do not full-exit. Do not panic-sell both on semi weakness.
+### AVGO — HOLD 1 — TRAIL EXECUTED 09:40 ET — DO NOT ADD / DO NOT RE-BUY
+- **Trail executed:** SOLD 1 at **$380.65** after price breached **$380.00**. 1 share remains.
+- Remaining 1 share avg entry **$371.95**; current ~$380.7; unrealized ~+2.4%.
+- **No new AVGO sell trigger** until hourly writes one. Do not full-exit remaining 1.
+- **DO NOT RE-BUY AVGO today** (24-hour cooldown + anti-churn). Do not add. Do not lower stops retroactively.
 
 ### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD
 - Live ~$112.2 (~+10.5% unrealized). **Above trail** $108.00 (~3.7% buffer).
@@ -81,5 +82,5 @@
 - If AVGO trades through $380, execute SELL 1 limit $379.50 only — not both shares.
 
 ## Current Book
-- QQQ 6 (~44.4%), VOO 4 (~28.8%), AVGO 2 (~7.9%), HOOD 2 (~2.3%)
-- Cash ~$1,594 (~16.6%) | Gross ~83.4%
+- QQQ 6 (~44.4%), VOO 4 (~28.8%), AVGO 1 (~4.0%), HOOD 2 (~2.3%)
+- Cash ~$1,975 (~20.6%) | Gross ~79.4%
