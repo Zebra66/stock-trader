@@ -2,6 +2,39 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 10:36 : [hourly] HOLD: detector NONE, weekly TO binds
+- Event detector cooled to NONE; lift CRITICAL buy freeze
+- Audit OK; gross 79.5%; equity ~9629; cash ~1975 (20.5%)
+- Weekly TO ~25.7% exceeds 20% — discretionary buys blocked
+- VOO and QQQ integer share rooms closed under caps
+- HOOD trail 108 kept; AVGO remaining 1 let-run; META banned
+
+2026-07-16 : 10:30 : [tactical] No action; HOOD/AVGO above trails
+- Event detector NONE; all held positions OK
+- HOOD 114.28 above 108.00 trail; no sell
+- AVGO 383.52 above 380.00; no new sell trigger for remaining 1 share
+- Weekly TO ~25.8pct of 20pct budget exceeded; no new buys
+- No conditions met; no orders
+
+2026-07-16 : 10:20 : [tactical] No triggers; HOLD
+- Event detector MINOR; no autonomous action required
+- HOOD well above trail; AVGO no new sell trigger
+- No filled trades needed; no orders placed
+- Caps, weekly TO, no new buy directive block deploys
+
+2026-07-16 : 10:10 : [tactical] CRITICAL event; no conditions met
+- Event detector CRITICAL at 14:10Z (SOXX/SMH up sharply)
+- No held-position stops breached; HOOD/AVGO above trails
+- No buy conditions active; NO NEW BUYS directive already in force
+- No trades executed; NO_ACTION
+
+2026-07-16 : 09:50 : [tactical] No action: no triggers breached
+- Event detector MINOR at 13:50Z; normal mode.
+- HOOD $110.75, above $108.00 trail; no sell.
+- AVGO $378.78; no active sell trigger for remaining 1 share.
+- No open orders; daily turnover 0/2 discretionary; weekly >20% binds buys.
+- All other symbols banned/no-buy; holding QQQ/VOO/AVGO/HOOD.
+
 2026-07-16 : 09:42 : [tactical] Sold 1 AVGO trail at 80.65
 - AVGO 78.88 breached 80.00 trail trigger
 - Submitted SELL 1 limit 79.50; filled at 80.65
