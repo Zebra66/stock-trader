@@ -2,6 +2,24 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 13:11 : [tactical] Sold 1 HOOD trail at 107.51
+- Authorized HOOD trail breached: price below 08.00
+- Limit 07.50 filled at 07.51; remaining 1 HOOD held
+- No other triggers; weekly TO binds all buys
+- Audit OK; gross exposure ~78.3%; daytrades 0
+
+2026-07-16 : 12:50 : [tactical] HOOD above trail; no action
+- HOOD ~108 above 108 trail trigger; no breach
+- Event detector NONE; weekly TO exceeded
+- No orders placed; no PDT concerns
+- Hold QQQ/VOO/AVGO/HOOD
+
+2026-07-16 : 12:40 : [tactical] NO_ACTION: HOOD above 08 trail
+- HOOD price 108.83 above 08.00 protective trail; not triggered
+- Weekly TO exceeded (~25.8%); no discretionary buys
+- Event detector NONE; market open regular session
+- Gross 79.4% inside neutral band; no orders
+
 2026-07-16 : 12:36 : [hourly] HOLD-only; HOOD buffer thin; TO binds
 - Equity ~$9589, gross 79.4%, cash 20.6% — still inside neutral 75-90%
 - HOOD ~$109.3 vs trail $108 (~1.2% buffer); do not tighten; only protective exit authorized
