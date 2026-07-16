@@ -2,6 +2,47 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 15:36 : [hourly] HOLD-ONLY final hourly; weekly TO binds
+- Audit OK, gross 78.2%, daytrades 0, open orders none
+- Equity ~$9,541 cash ~$2,082; both trails done (AVGO/HOOD)
+- Weekly TO ~27.1% > 20% + VOO/QQQ integer room closed
+- Soft chip/AI close; no AH orders; reassess Fri open
+- Goals off track: port ~-4.6% vs SPY ~+4.3%
+
+2026-07-16 : 15:30 : [tactical] HOLD-ONLY: no triggers met
+- Event detector NONE, market regular session
+- Weekly TO ~27% exceeds 20% budget - no discretionary buys
+- No active sell triggers remain; both trails already executed
+- Cash blocked by caps and weekly TO
+- No orders placed
+
+2026-07-16 : 15:20 : [tactical] No triggers; weekly TO blocks buys
+- Event detector NONE; all broad/held positions OK
+- HOLD-ONLY per todo.md; no active sell triggers remain
+- Weekly turnover ~27.0% > 20% ceiling blocks discretionary buys
+- Cash 21.8% but cap-bound: QQQ room ~5, VOO room ~09
+- No orders placed; no action required
+
+2026-07-16 : 15:10 : [tactical] HOLD-ONLY: no triggers, weekly TO exceeded
+- Event detector NONE; normal mode
+- Todo HOLD-ONLY, no active sell triggers remain
+- Weekly TO ~27% of 20% budget exceeded; discretionary buys blocked
+- No orders submitted; no override applied
+- Next: hold until next hourly or Fri open
+
+2026-07-16 : 14:50 : [tactical] HOLD-ONLY: no triggers, weekly TO exceeded
+- Event detector NONE; market OK.
+- All active sell trails already executed today; no remaining sell triggers.
+- No authorized buy conditions; weekly turnover ~27% exceeds 20% budget.
+- No orders placed.
+
+2026-07-16 : 14:40 : [tactical] HOLD-ONLY: no triggers met
+- Event detector NONE; todo.md is HOLD-ONLY
+- No active sell triggers remain; AVGO/HOOD trails already executed
+- Weekly turnover ~27% > 20% budget; discretionary buys blocked
+- QQQ/VOO cap room < 1 share; no deployment possible
+- No orders placed; session continues hold-only
+
 2026-07-16 : 14:36 : [hourly] HOLD-only; weekly TO + caps still bind
 - Audit OK; gross 78.2% inside neutral 75-90%; daytrades 0; open orders none
 - Goal off track: port ~-4.4% vs SPY ~+4.6% (gap ~-8.9pp); cash drag + weekly TO dominant
