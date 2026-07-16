@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-16 : 09:32 : [tactical] CRITICAL event; no stops breached, no action
+- Event detector CRITICAL at 2026-07-16 09:30 ET: SOXX -2.8%, SMH -2.4%, GLD -1.1%
+- Held positions: AVGO MAJOR -2.8% but above 80 stop (83.57); HOOD/QQQ/VOO OK
+- No authorized stop-loss triggered; protective sell not executed
+- No active buy conditions to suspend; todo already HOLD-ONLY
+- Daily turnover 0/2; weekly TO over 20%; no orders placed
+
 2026-07-15 : 16:36 : [hourly] Post-close hold; weekly TO+caps bind
 - Market closed ~4:31 ET; confirmed concurrent 3:35 hold-only plan
 - Equity ~$9697 gross 83.6% neutral; cash 16.4% cap-bound (VOO/QQQ room under 1 share)

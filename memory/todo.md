@@ -1,10 +1,12 @@
-# Tactical Todo — Updated 2026-07-15 20:32Z (Wed ~4:32 PM ET post-close)
-*Market **CLOSED**. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. HOLD overnight. Weekly TO spent. No after-hours / pre-market orders.*
+<!-- Autonomous override applied at 2026-07-16 13:30Z due to CRITICAL event -->
+# Tactical Todo — Updated 2026-07-16 13:30Z (Thu 9:30 AM ET tactical)
+*Market **OPEN**. Book: QQQ 6 / VOO 4 / AVGO 2 / HOOD 2. Event detector CRITICAL (SOXX/SMH/GLD). HOLD-ONLY. No new buys. Await hourly reset.*
 
-## MARKET CLOSED — NEXT REGULAR SESSION ONLY
-- **No after-hours / pre-market equity orders.**
-- Convert all triggers to **next regular session** (Thu open).
-- Overnight: do nothing. Do not invent deploys.
+## MARKET OPEN — EVENT RESPONSE MODE
+- **Event detector CRITICAL at 2026-07-16 09:30 ET:** SOXX -2.81%, SMH -2.37%, GLD -1.15%.
+- **No new buys** initiated during CRITICAL event. No new positions. No increased gross exposure.
+- **Held positions:** AVGO MAJOR -2.78% but still above $380 stop; HOOD/QQQ/VOO OK. No protective stops triggered.
+- **No after-hours / pre-market equity orders.** Regular session active.
 
 ## TURNOVER: 0/2 trades used today, ~21.6% of 20% weekly budget used (WEEKLY EXCEEDED)
 - Mon–Tue ~$2,095 notional already used (HOOD/AVGO trail sells + VOO buys).
@@ -15,25 +17,27 @@
 - `memory/.trading_lock.json`: `active: false`. META in `bannedSymbols`.
 - Do **not** invent HARD_LOCK.
 
-## Event context — NONE into close
-- Last detector **NONE**. Soft-to-mixed day, orderly close.
-- If next session detector shows **true crash** (broad SPY/QQQ CRITICAL down): hold; only execute authorized trails if breached; write `NO NEW BUYS — CRITICAL EVENT`. No market-panic sell of QQQ/VOO.
+## Event context — CRITICAL (autonomous override applied)
+- **2026-07-16 09:30 ET:** Detector **CRITICAL** on broad semis (SOXX/SMH) and GLD MAJOR. Broad SPY/QQQ OK/MINOR.
+- **Tactical response:** No orders placed. No held stop-losses triggered. No active BUY conditions to suspend (todo already HOLD-ONLY).
+- `NO NEW BUYS — CRITICAL EVENT` applies until hourly reset reassesses.
+- No market-panic sell of QQQ/VOO/AVGO/HOOD. Only execute authorized trails if breached.
 
 ## Current State
-- **Regime:** **neutral** (75–90%; live ~83.6%) — **do not flip**.
-- **Live book:** QQQ 6, VOO 4, AVGO 2, HOOD 2
-- **Equity / cash:** ~$9,697 / $1,594
-- **Gross:** **~83.6%** | Cash **~16.4%** (cap-bound + weekly TO)
+- **Regime:** **neutral** (75–90%; live ~83.5%) — **do not flip**.
+- **Live book:** QQQ 6 @ $713.00 | VOO 4 @ $692.42 | AVGO 2 @ $383.57 | HOOD 2 @ $113.69
+- **Equity / cash:** ~$9,638 / $1,594
+- **Gross:** **~83.5%** | Cash **~16.5%** (cap-bound + weekly TO)
 - **Daytrade count:** **0** | **Open orders:** NONE
 - **Audit:** clean
 - **TSMC:** ~Thu Jul 16 (sector binary for chip beta)
 
 ## Exact cash blocker
-1. Weekly TO **~21.6% > 20%** → no discretionary buys.
-2. VOO room ~**$134** < 1 share (~$694).
-3. QQQ room ~**$56** < 1 share (~$718).
+1. Weekly TO **~21.6% > 20%** → no discretionary buys; wait for hourly to confirm counting window.
+2. VOO room ~**$130** < 1 share (~$692).
+3. QQQ room ~**$55** < 1 share (~$716).
 4. TSMC week on chips; thin ETFs — do not buy.
-5. Market closed — no AH deploys.
+5. Event detector CRITICAL → no new buy authorizations.
 
 ## Ranked Execution Priority (Thu regular session)
 1. **AVGO / HOOD trails** if breached only.
@@ -48,14 +52,14 @@
 - Core. No stop. No action. Overnight hold.
 
 ### AVGO — HOLD 2 — TRAIL 1 @ $380 — DO NOT ADD
-- Live ~$394.3 (~+6.0%). **Above trail** (~3.6% buffer).
-- **Next regular session only:** **SELL 1** if price **below $380.00**, limit **$379.50**. Hold remaining 1.
-- Do not add/re-buy. Do not lower trail. Do not full-exit. No AH orders.
+- Live ~$383.57 (~+3.1% unrealized). **Above trail** $380.00 (~0.9% buffer below current).
+- **SELL 1** if price **below $380.00**, limit **$379.50**. Hold remaining 1.
+- Do not add/re-buy. Do not lower trail. Do not full-exit.
 
 ### HOOD — HOLD 2 — TRAIL 1 @ $108 — DO NOT ADD
-- Live ~$115.8 (~+14%). **Above trail** (~6.7% buffer).
-- **Next regular session only:** **SELL 1** if price **below $108.00**, limit **$107.50**. Hold remaining 1.
-- Do not add/re-buy. Do not lower trail. No AH orders.
+- Live ~$113.69 (~+12.0% unrealized). **Above trail** $108.00 (~5.0% buffer below current).
+- **SELL 1** if price **below $108.00**, limit **$107.50**. Hold remaining 1.
+- Do not add/re-buy. Do not lower trail.
 
 ### META — BANNED — DO NOT BUY — DO NOT RE-BUY — DO NOT ADD
 

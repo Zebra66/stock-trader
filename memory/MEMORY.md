@@ -1,5 +1,5 @@
 # Hourly Macro Memory
-*Updated 2026-07-15 20:32Z (Wednesday ~4:32 PM ET). Market **CLOSED**. Post-close confirmation of 3:35 hold-only. Overnight hold.*
+*Updated 2026-07-16 13:30Z (Thursday 9:30 AM ET). Market **OPEN**. Event detector CRITICAL. Tactical override applied. HOLD-ONLY.*
 
 ---
 
@@ -143,3 +143,18 @@ See `memory/standing_learnings.md`. Key reminders:
 - **2026-07-13:** AVGO/HOOD trail sells.
 - **2026-07-10:** META unauthorized — banned.
 - **2026-06:** Full liquidations — primary underperformance.
+
+---
+
+## AUTONOMOUS OVERRIDE — Tactical Event Response — 2026-07-16 13:30Z
+- **[AUTONOMOUS_OVERRIDE]** Event detector **CRITICAL** at 2026-07-16 13:30Z (Thu 9:30 AM ET).
+- **Classification:** CRITICAL (broad semiconductor weakness: SOXX -2.81%, SMH -2.37%; GLD MAJOR -1.15%). Broad SPY/QQQ OK/MINOR.
+- **Held positions reviewed:**
+  - AVGO: MAJOR -2.78% from prior close, current $383.57 > authorized stop $380.00. **No protective sell executed.**
+  - HOOD: OK -1.35%, current $113.69 > authorized stop $108.00. No action.
+  - QQQ: MINOR -0.61%, current $713.00; no stop, no action.
+  - VOO: OK -0.09%, current $692.42; no stop, no action.
+- **Action taken:** No orders placed. No active buy conditions to suspend (todo already HOLD-ONLY). No new positions. No increased exposure.
+- **Why:** Event detector severity is driven by broad semi/GLD weakness, not by held-position stop breaches. Only authorized protective stops (AVGO $380, HOOD $108) are permitted sells; neither triggered. No buys authorized by current todo.md.
+- **Next expected action:** Await 9:35 AM ET hourly strategist reset. Reassess after hourly update and fresh event detector pass. Continue to monitor AVGO $380.00 / HOOD $108.00 stops.
+- **Exposure:** Gross ~83.5% (inside 75–90% neutral band). Cash ~$1,594. No new buys initiated during CRITICAL event.
