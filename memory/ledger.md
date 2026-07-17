@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 14:37 : [hourly] HOLD-ONLY 14:35; TO spent; soft close
+- Audit clean: QQQ6/VOO4, gross 73.1%, daytrades 0, detector NONE
+- Goals off track: portfolio -5.39% vs SPY +3.57% (gap ~-9pp); dominant mode friction+cash drag blocked
+- No trades: daily 2/2 spent (HOOD+AVGO), weekly TO ~32.2%, integer caps closed
+- Regime neutral hold; reassess Mon Jul 20 for VOO limit if room+TO reset+orderly
+- News: Yahoo RSS OK (AI debt wariness); GNews 503; FMP off — Yahoo multi-TF
+
+2026-07-17 : 14:30 : [tactical] HOLD-only: budget spent, no triggers
+- Event detector NONE; market orderly
+- Book QQQ 6 / VOO 4, gross ~73.2%, cash ~,543
+- Daily TO 2/2 spent (HOOD + AVGO); weekly TO ~32.1% > 20% ceiling
+- No active buy/sell triggers breached
+- NO_ACTION: hold core per todo.md
+
+2026-07-17 : 14:20 : [tactical] HOLD-ONLY: budget spent, no triggers
+- Daily turnover 2/2 (HOOD+AVGO), weekly ~32% > 20%
+- No active buy/sell triggers in todo.md
+- Core QQQ/VOO unchanged; event detector NONE
+- No orders placed; no override required
+
+2026-07-17 : 14:10 : [tactical] No action: todo HOLD-only, TO spent
+- Event detector MINOR; no autonomous action required
+- Daily budget 2/2 spent, weekly TO ~32.1% >20%
+- No active buy/sell triggers in todo.md
+- Core QQQ/VOO hold-only per current todo
+- Expected NO_ACTION next cycle
+
+2026-07-17 : 13:50 : [tactical] NO_ACTION: budget spent, hold-only
+- Event detector NONE, no active buy/sell triggers in todo.md
+- Daily turnover 2/2 spent, weekly 32.1% > 20% ceiling
+- Hold QQQ 6 / VOO 4, no orders submitted
+
+2026-07-17 : 13:40 : [tactical] NO_ACTION: budget spent, hold core
+- Daily turnover 2/2 (HOOD+AVGO sells); weekly ~32.1% > 20%
+- No active buy/sell triggers in todo.md
+- Hold QQQ 6 / VOO 4; gross ~73.2%
+- Event detector NONE; no override needed
+- Next reassess Mon Jul 20 if budget+room opens
+
 2026-07-17 : 13:38 : [hourly] HOLD-ONLY 13:35; TO spent; core intact
 - Audit clean; detector NONE after 12:40 CRITICAL cool-down; gross 73.2%
 - Equity ~$9496, cash ~27%; QQQ 6 / VOO 4 held; no open orders
