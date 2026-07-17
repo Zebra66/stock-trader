@@ -2,6 +2,43 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 11:36 : [hourly] HOLD-ONLY midday; TO spent; core intact
+- Detector NONE; equity ~9453 cash ~2543 gross 73.1%
+- Book QQQ6/VOO4 unchanged; tactical NO_ACTION since 10:35
+- Daily 2/2 + weekly ~32% block all discretionary; caps <1 share
+- Goals off track: port -5.5% vs SPY +3.7%; friction primary
+- Redeploy reassess Mon Jul 20 if TO/room/orderly
+
+2026-07-17 : 11:30 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector NONE; no active buy/sell conditions
+- Daily turnover 2/2 spent, weekly TO ~32% > 20%
+- Hold-only posture per todo.md; QQQ 6 / VOO 4 unchanged
+- No core ETF stops, no new buys, no re-buys
+- Next reassess Mon after TO reset
+
+2026-07-17 : 11:20 : [tactical] HOLD-ONLY; no triggers
+- Event detector NONE; no active triggers
+- Daily budget 2/2 spent; weekly TO exceeded
+- Hold QQQ 6 / VOO 4; no orders
+
+2026-07-17 : 11:10 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector MINOR; no active buy/sell conditions in todo.md
+- Daily turnover 2/2 spent (HOOD + AVGO); weekly TO ~32.2% > 20%
+- Hold-only posture: QQQ 6 / VOO 4; no orders placed
+
+2026-07-17 : 10:50 : [tactical] HOLD-ONLY: no orders, budget spent
+- Event detector NONE; no active triggers in todo.md
+- Daily turnover 2/2 spent; weekly over 20% ceiling
+- Hold QQQ 6 / VOO 4; cash ~$2,543
+- Next deploy window Mon if budget/room/authorization reset
+
+2026-07-17 : 10:40 : [tactical] NO_ACTION: budget spent, no triggers
+- Daily turnover 2/2 spent; weekly TO ~32.2% > 20%
+- Event detector MINOR; no autonomous action required
+- No active buy/sell triggers in todo.md
+- Core QQQ 6 / VOO 4 held; gross ~73.1%
+- Next reassess Mon Jul 20
+
 2026-07-17 : 10:37 : [hourly] HOLD-ONLY; TO spent; core QQQ/VOO
 - Detector MINOR (CRITICAL recovered); equity ~9463 cash ~2543 gross 73.1%
 - Book QQQ6/VOO4; HOOD+AVGO sold this AM; daily 2/2 weekly ~32%>20%

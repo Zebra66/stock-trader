@@ -1,10 +1,10 @@
-# Tactical Todo — Updated 2026-07-17 10:35 ET (Hourly)
-*Market OPEN. Event detector MINOR (CRITICAL recovered). Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
+# Tactical Todo — Updated 2026-07-17 11:35 ET (Hourly)
+*Market OPEN. Event detector NONE. Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
 
 ## Session Posture
 - **Regime:** neutral (target 75–90%). Live gross **~73.1%** — slightly below floor due to morning HOOD+AVGO exits; **do not force adds**.
 - **Market:** OPEN regular session only. No AH/pre-market equity orders.
-- **Equity / cash:** ~$9,463 / ~$2,543 (~26.9% cash).
+- **Equity / cash:** ~$9,453 / ~$2,543 (~26.9% cash).
 - **Daytrade count:** 0 | **Open orders:** NONE
 - **Audit:** clean | **hardLockRecommended:** false
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
@@ -19,22 +19,22 @@
 - Do not invent HARD_LOCK.
 - When lifting locks use exact heading `HARD_LOCK LIFTED` (N/A this cycle).
 
-## CRITICAL EVENT RESPONSE — LIFTED (detector now MINOR)
-- Morning CRITICAL is **over**. No autonomous event sells required.
+## CRITICAL EVENT RESPONSE — CLEAR (detector NONE)
+- Morning CRITICAL is **over**. Midday tape orderly. No autonomous event sells required.
 - Still **NO NEW BUYS** (daily+weekly TO + caps — not because of CRITICAL).
 
 ## Cash / under-deployment blockers (explicit)
 1. Daily turnover **2/2 spent**.
 2. Weekly turnover **~32.2% > 20%**.
-3. VOO room ~$96 < 1 share (~$686).
-4. QQQ room ~$82 < 1 share (~$696).
+3. VOO room ~$97 < 1 share (~$685).
+4. QQQ room ~$84 < 1 share (~$695).
 5. 24h cooldown on HOOD and AVGO (sold today).
 6. Anti-churn: no same-day re-buy of sold symbols.
 
 ## Position Instructions
 
 ### QQQ — HOLD 6 — DO NOT SELL — DO NOT ADD
-- Core. **No stop.** Soft Nasdaq / chip bounce is not a sell signal.
+- Core. **No stop.** Soft Nasdaq is not a sell signal.
 - No full exit. No trim. Target 36–45%.
 
 ### VOO — HOLD 4 — DO NOT SELL — DO NOT ADD
@@ -42,7 +42,7 @@
 - No full exit. Target 21–30%.
 
 ### AVGO — FLAT — NO POSITION
-- Sold today @ $360.33. Price bounced afterward — **do not chase**.
+- Sold today @ $360.33. Still ~$369 — **do not chase**.
 - **Do NOT re-buy** within 24h. No limit bids. No market orders.
 - Anti-churn applies for remainder of session.
 
@@ -72,7 +72,7 @@
 - No same-day round trips. No new shorts. No after-hours equity orders.
 - Re-read this file before every order batch.
 - **Event-response guard:** Do not sell a single-name below an hourly catastrophic floor **unless price is through that floor**. Do not invent floors not written here.
-- Next hourly: 11:35 ET. Next tactical: 10:40 / 10:50 ET → expect **NO_ACTION**.
+- Next hourly: 12:35 ET. Next tactical: 11:40 / 11:50 ET → expect **NO_ACTION**.
 
 ## Concentration / Ban
 - Caps: QQQ ≤45%, VOO ≤30%, other ETFs ≤20%, stocks ≤15%.
