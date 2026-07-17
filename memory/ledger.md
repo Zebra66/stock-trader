@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 14:40 : [tactical] CRITICAL event; hold core, no trades
+- Detector CRITICAL at 14:40 ET (SOXX -1.55%, XLK -1.01%, SMH -1.45%)
+- Held QQQ/VOO OK; no active sell triggers; no protective sells
+- NO NEW BUYS — CRITICAL EVENT; daily TO 2/2 + weekly TO 32.2% already blocks
+- No orders placed; override state logged
+- Await 15:35 ET hourly reassessment
+
 2026-07-17 : 14:37 : [hourly] HOLD-ONLY 14:35; TO spent; soft close
 - Audit clean: QQQ6/VOO4, gross 73.1%, daytrades 0, detector NONE
 - Goals off track: portfolio -5.39% vs SPY +3.57% (gap ~-9pp); dominant mode friction+cash drag blocked

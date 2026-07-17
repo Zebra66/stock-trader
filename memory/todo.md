@@ -1,5 +1,6 @@
 # Tactical Todo — Updated 2026-07-17 14:35 ET (Hourly)
-*Market OPEN. Event detector NONE. Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session into close.*
+*Market OPEN. Event detector CRITICAL. Book: QQQ 6 / VOO 4. HOLD-ONLY + NO NEW BUYS.*
+<!-- Autonomous override applied at 2026-07-17 14:40 ET due to CRITICAL event -->
 
 ## Session Posture
 - **Regime:** neutral (target 75–90%). Live gross **~73.1%** — slightly below floor due to morning HOOD+AVGO exits; **do not force adds**.
@@ -19,9 +20,11 @@
 - Do not invent HARD_LOCK.
 - When lifting locks use exact heading `HARD_LOCK LIFTED` (N/A this cycle).
 
-## CRITICAL EVENT RESPONSE — CLEAR (detector NONE)
-- Morning CRITICAL and 12:40 SOXX/SMH spike are **over**. Afternoon tape orderly but soft. No autonomous event sells required.
-- Still **NO NEW BUYS** (daily+weekly TO + caps — not because of CRITICAL).
+## CRITICAL EVENT RESPONSE — ACTIVE (detector CRITICAL at 14:40 ET)
+- **Detector:** CRITICAL due to SOXX -1.55%, XLK -1.01%, SMH -1.45% (broad/held OK: QQQ -0.67%, VOO -0.37%).
+- **NO NEW BUYS — CRITICAL EVENT.** All BUY conditions suspended until next hourly reset.
+- Held QQQ/VOO are within their no-stop hold instructions and not through any authorized stop-loss. No autonomous protective sells required.
+- No full core ETF liquidations. No new positions.
 
 ## Cash / under-deployment blockers (explicit)
 1. Daily turnover **2/2 spent**.
@@ -59,6 +62,7 @@
 ## Active Sell Triggers
 - **NONE.** Do not invent stops, trails, or event-response sells for QQQ/VOO.
 - Core ETF risk is managed at hourly cadence only.
+- Current CRITICAL event (14:40 ET) does **not** override core hold instructions; QQQ/VOO held positions are OK severity.
 - If detector returns CRITICAL: **still no QQQ/VOO sells** unless a future hourly writes an executable condition after two-cycle confirmation. Default = hold core + no new buys.
 
 ## Ranked Execution Priority

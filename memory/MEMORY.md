@@ -1,5 +1,12 @@
 # Hourly Macro Memory
-*Updated 2026-07-17 18:35Z (Friday 2:35 PM ET). Market **OPEN**. Event detector **NONE**.*
+*Updated 2026-07-17 18:40Z (Friday 2:40 PM ET). Market **OPEN**. Event detector **CRITICAL**.*
+
+## Tactical Override — 2026-07-17 14:40 ET
+- **Detector:** CRITICAL (SOXX -1.55%, XLK -1.01%, SMH -1.45%; held QQQ/VOO OK severity).
+- **Autonomous action:** No protective sells. No new buys. Held QQQ 6 / VOO 4 unchanged.
+- **Reason:** todo.md has no active sell triggers; core ETF instructions forbid event-response sells unless hourly writes executable condition after two-cycle confirmation. Daily turnover 2/2 + weekly 32.2% already block buys.
+- **State:** Gross ~73.1%, cash ~26.9%. HARD_LOCK inactive. Await 15:35 ET hourly reset.
+- **[AUTONOMOUS_OVERRIDE]**
 
 ---
 
@@ -163,3 +170,13 @@ See `memory/standing_learnings.md`. Key reminders:
 - **2026-07-13:** AVGO/HOOD trail sells.
 - **2026-07-10:** META unauthorized — banned.
 - **2026-06:** Full liquidations — primary underperformance source.
+
+---
+
+## AUTONOMOUS OVERRIDE — Tactical Event Response — 2026-07-17 14:40 ET
+- **Detector classification:** CRITICAL (SOXX -1.55%, XLK -1.01% MAJOR, SMH -1.45% MAJOR; broad SPY OK; held QQQ/VOO OK).
+- **Action taken:** No protective sells. No new buys. Book unchanged (QQQ 6 / VOO 4).
+- **Override rationale:** todo.md has no active sell triggers and explicitly requires a future hourly, two-cycle-confirmed executable condition to sell QQQ/VOO. No full core ETF liquidations permitted. Held positions are at OK severity, not through stops.
+- **Buy suspension:** `NO NEW BUYS — CRITICAL EVENT` added to `memory/todo.md`. All buy conditions suspended until next hourly reset.
+- **Next expected action:** Hourly cycle at 15:35 ET reassesses; tactical until then remains HOLD-ONLY.
+- **[AUTONOMOUS_OVERRIDE]**
