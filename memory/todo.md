@@ -1,5 +1,7 @@
-# Tactical Todo — Updated 2026-07-17 12:35 ET (Hourly)
-*Market OPEN. Event detector NONE. Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
+<!-- Autonomous override applied at 2026-07-17 12:40 ET due to CRITICAL event (SOXX/SMH spike) — no action required; core held. -->
+
+# Tactical Todo — Updated 2026-07-17 12:40 ET (Hourly)
+*Market OPEN. Event detector CRITICAL (SOXX/SMH spike). Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
 
 ## Session Posture
 - **Regime:** neutral (target 75–90%). Live gross **~73.2%** — slightly below floor due to morning HOOD+AVGO exits; **do not force adds**.

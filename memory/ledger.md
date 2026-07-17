@@ -2,6 +2,12 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 12:40 : [tactical] CRITICAL semis spike; no action
+- Event detector CRITICAL: SOXX +2.0%, SMH +1.5%
+- Held QQQ/VOO unaffected; no active sell triggers
+- Daily 2/2 + weekly TO >20% block all discretionary trades
+- Core held per todo; no protective sells executed
+
 2026-07-17 : 12:36 : [hourly] HOLD-ONLY; TO spent; core intact
 - Equity ~9479, gross 73.2%, cash 26.8% — QQQ 6 / VOO 4 held
 - Goal off track: port -5.21% vs SPY +3.84% (gap -9.1pp); dominant failure = friction + blocked cash drag

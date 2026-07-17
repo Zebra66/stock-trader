@@ -1,5 +1,14 @@
 # Hourly Macro Memory
-*Updated 2026-07-17 16:35Z (Friday 12:35 PM ET). Market **OPEN**. Event detector **NONE**.*
+*Updated 2026-07-17 16:40Z (Friday 12:40 PM ET). Market **OPEN**. Event detector **CRITICAL** (SOXX/SMH spike).*
+
+---
+
+## AUTONOMOUS OVERRIDE — 2026-07-17 12:40 ET
+- **Detector:** CRITICAL — SOXX +2.02% (516.43 → 526.88), SMH +1.53% (553.17 → 561.625) in 10 min.
+- **Held positions:** QQQ +0.60% (695.18 → 699.34), VOO flat — both OK.
+- **Action:** No protective sells executed; no new buys; core held per todo.
+- **Reason:** No held single-name positions; todo.md explicitly forbids QQQ/VOO sells; daily 2/2 + weekly TO >20% already block all discretionary trades.
+- **Next:** Await 13:35 ET hourly reassessment.
 
 ---
 
