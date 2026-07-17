@@ -2,6 +2,45 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 12:36 : [hourly] HOLD-ONLY; TO spent; core intact
+- Equity ~9479, gross 73.2%, cash 26.8% — QQQ 6 / VOO 4 held
+- Goal off track: port -5.21% vs SPY +3.84% (gap -9.1pp); dominant failure = friction + blocked cash drag
+- Daily 2/2 + weekly TO ~32% + integer cap rooms under 1 share block all discretionary trades
+- Detector NONE; regime neutral unchanged; no sells/stops on core; AVGO bounce after exit remains friction lesson
+- Next deploy reassess Mon Jul 20 if TO resets + VOO room + orderly tape
+
+2026-07-17 : 12:30 : [tactical] NO_ACTION: budget spent, hold core
+- Event detector NONE, no triggers
+- Daily TO 2/2 spent, weekly ~32.2% over 20%
+- QQQ 6 / VOO 4 held, no sell authorization
+- Cash blocked: caps <1 share room
+- Next action: Mon+ if budget/room reset
+
+2026-07-17 : 12:20 : [tactical] NO_ACTION: hold-only, budget spent
+- Event detector NONE; no active buy/sell triggers in todo.md
+- Daily turnover 2/2 spent (HOOD + AVGO), weekly TO ~32.2% > 20%
+- Holdings: QQQ 6 / VOO 4; gross ~73%
+- No orders placed; no autonomous override
+
+2026-07-17 : 12:10 : [tactical] MAJOR SOXX event; no action taken
+- Event detector reports MAJOR due to SOXX up 1.37% to about 528
+- Held positions QQQ and VOO both OK; no stop-loss breaches
+- No active buy or sell triggers in todo.md; daily and weekly TO already spent
+- Following HOLD-ONLY posture; no orders submitted
+
+2026-07-17 : 11:50 : [tactical] No triggers; budget spent; NO_ACTION
+- Event detector NONE at 11:50 ET
+- Todo: HOLD-ONLY; daily TO 2/2 + weekly 32.2% spent
+- No active buy/sell triggers; no conditions met
+- Held QQQ 6 / VOO 4; gross ~73.1%
+- Correct decision: inaction avoids unauthorized turnover
+
+2026-07-17 : 11:40 : [tactical] HOLD-only; budget and caps block orders
+- Event detector MINOR (SOXX/SMH); normal mode
+- Daily turnover 2/2 spent (HOOD, AVGO); weekly ~32% > 20%
+- No active buy/sell triggers in todo.md
+- Core QQQ 6 / VOO 4 hold; no position-changing orders
+
 2026-07-17 : 11:36 : [hourly] HOLD-ONLY midday; TO spent; core intact
 - Detector NONE; equity ~9453 cash ~2543 gross 73.1%
 - Book QQQ6/VOO4 unchanged; tactical NO_ACTION since 10:35
