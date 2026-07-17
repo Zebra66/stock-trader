@@ -82,3 +82,7 @@
 ## Current Book
 - QQQ 6 (~44.2%) | VOO 4 (~28.9%)
 - Cash ~$2,543 (~26.9%) | Gross ~73.1%
+
+## Cycle Notes
+- **2026-07-17 ~14:35 ET:** Tactical cycle — Event Response Mode MAJOR (SOXX spike). No authorized sells; no active buy conditions. NO_ACTION.
+- <!-- Autonomous override applied at 2026-07-17 ~14:35 ET due to MAJOR event -->

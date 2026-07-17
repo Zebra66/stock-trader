@@ -145,9 +145,18 @@ See `memory/standing_learnings.md`. Key reminders:
 
 ## Prior Key Events
 - **2026-07-17 14:40 ET:** Detector CRITICAL SOXX/SMH — autonomous hold; no action.
+- **2026-07-17 ~14:35 ET:** Detector MAJOR SOXX bounce — autonomous hold; no action.
 - **2026-07-17 ~9:41 ET:** SOLD 1 AVGO @ $360.33 — event response above floor. Later ~$371.
 - **2026-07-17 ~9:33 ET:** SOLD 1 HOOD @ $100.96 — **not authorized**. Flat HOOD.
 - **2026-07-16:** HOOD/AVGO trail sells authorized prior day; post-close HOLD-ONLY.
 - **2026-07-14:** Two authorized VOO adds.
 - **2026-07-10:** META unauthorized — banned.
 - **2026-06:** Full liquidations — primary underperformance source.
+
+---
+
+## AUTONOMOUS OVERRIDE — Tactical Event Response — 2026-07-17 14:35 ET
+- **Detector classification:** MAJOR (SOXX broad +1.45% in 10-min window; XLK/SMH MINOR bounce; broad SPY/QQQ OK; held QQQ/VOO OK; sector rotation NONE).
+- **Action taken:** NO new orders. No authorized sell triggers existed; no protective sells executed. No active buy conditions were present to suspend.
+- **Override rationale:** Event Response Mode requires a written stop in `todo.md` to sell any held position. Active sell triggers = NONE. Core ETFs QQQ/VOO held at OK severity. Weekly TO exceeded, caps blocked integer adds, and todo.md already prohibited discretionary buys. Default compliant action = hold core.
+- **Post-override book:** QQQ 6 / VOO 4 / cash ~$2,543. No open orders. [AUTONOMOUS_OVERRIDE]
