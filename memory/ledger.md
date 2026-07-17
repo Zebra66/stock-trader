@@ -2,6 +2,46 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 10:37 : [hourly] HOLD-ONLY; TO spent; core QQQ/VOO
+- Detector MINOR (CRITICAL recovered); equity ~9463 cash ~2543 gross 73.1%
+- Book QQQ6/VOO4; HOOD+AVGO sold this AM; daily 2/2 weekly ~32%>20%
+- NO NEW BUYS; caps block integer adds; 24h cooldown HOOD/AVGO
+- Goals off track: port -5.4% vs SPY +4.0%; friction primary failure
+- Accept gross below 75% rest of Friday; redeploy reassess Mon TO reset
+
+2026-07-17 : 10:30 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector MINOR; no autonomous action required
+- todo.md blocks all buys and lists no active sell triggers
+- Daily position-changing budget 2/2 already spent
+- Holdings QQQ 6 / VOO 4, gross ~73%, no drift concerns
+
+2026-07-17 : 10:22 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector recovered to NONE; no new event.
+- TURNOVER 2/2 spent today (HOOD + AVGO protective sells); weekly TO >20%.
+- No buy authorizations in todo.md; all other symbols banned.
+- No sell triggers for QQQ/VOO; both hold.
+- Book QQQ 6 / VOO 4, gross ~73.2%, cash ~,543.
+
+2026-07-17 : 10:11 : [tactical] No action: CRITICAL persists, budget spent
+- Event detector CRITICAL at 14:10Z (QQQ MAJOR, SOXX/XLK/SMH CRITICAL).
+- Held positions QQQ 6 / VOO 4 have no active sell triggers and are not through stops.
+- Daily turnover budget 2/2 already spent (HOOD/AVGO event sells earlier).
+- No new buys or exposure increases during CRITICAL event; all buy lines remain suspended.
+- No conditions met; NO_ACTION.
+
+2026-07-17 : 09:50 : [tactical] NO_ACTION: MAJOR event, no triggers
+- Event detector MAJOR (SOXX +1.13% vs prior) but no held semi positions
+- Todo: hold QQQ 6 / VOO 4; no buy/sell triggers active
+- Daily turnover 2/2 spent; weekly TO 32.4% exceeded
+- No open orders; market open; cash ,543 (27.1%)
+- No action required; book already in safe posture
+
+2026-07-17 : 09:44 : [tactical] No action: budget spent, holds only
+- Event detector now NONE; todo unchanged
+- Daily turnover 2/2 spent; no new buys authorized
+- Hold QQQ 6 / VOO 4; no sell triggers active
+- No orders submitted; no override applied
+
 2026-07-17 : 09:43 : [tactical] Sold AVGO 1 on CRITICAL event
 - Event detector CRITICAL at 09:40 ET: SOXX -4.95%, AVGO -4.11%
 - Sold 1 AVGO limit @ 360.32, filled @ 360.33
