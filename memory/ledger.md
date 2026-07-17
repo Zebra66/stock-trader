@@ -2,6 +2,38 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 13:38 : [hourly] HOLD-ONLY 13:35; TO spent; core intact
+- Audit clean; detector NONE after 12:40 CRITICAL cool-down; gross 73.2%
+- Equity ~$9496, cash ~27%; QQQ 6 / VOO 4 held; no open orders
+- Daily TO 2/2 + weekly ~32% block all discretionary trades rest of Friday
+- Goal off-track: port -5.0% vs SPY +3.9% (~-9.0 pp); dominant failure friction
+- Next deploy reassess Mon Jul 20 if TO reset + VOO integer room + non-CRITICAL
+
+2026-07-17 : 13:30 : [tactical] NO_ACTION: budget spent, hold core
+- Event detector NONE; todo.md HOLD-ONLY
+- Daily TO 2/2 spent, weekly TO ~32.1% > 20%
+- Held QQQ 6 / VOO 4, gross ~73.2%, no active triggers
+- No buys, no sells, no overrides
+
+2026-07-17 : 13:20 : [tactical] NO_ACTION: no todo triggers met
+- Detector NONE; classification none.
+- Daily budget 2/2 spent; weekly TO 32.1% > 20%.
+- No active buy/sell triggers in todo.md.
+- Hold QQQ 6 / VOO 4; gross ~73.2%.
+- No orders placed.
+
+2026-07-17 : 13:10 : [tactical] NO_ACTION: budget spent, hold core
+- Event detector MINOR (SOXX/SMH). No CRITICAL/MAJOR.
+- Daily 2/2 spent, weekly TO ~32.1% > 20%.
+- Holdings QQQ 6 / VOO 4; no active sell triggers.
+- No todo conditions met; no orders executed.
+
+2026-07-17 : 12:50 : [tactical] NO_ACTION: budget spent, hold core
+- Event detector NONE. No active buy/sell triggers in todo.md.
+- Daily turnover 2/2 spent (HOOD + AVGO sells); weekly ~32.1% over 20%.
+- Holdings QQQ 6 / VOO 4; gross ~73.2%. Cash ~,543.
+- No orders placed. Await 13:35 ET hourly reassessment.
+
 2026-07-17 : 12:40 : [tactical] CRITICAL semis spike; no action
 - Event detector CRITICAL: SOXX +2.0%, SMH +1.5%
 - Held QQQ/VOO unaffected; no active sell triggers

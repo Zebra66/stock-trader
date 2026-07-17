@@ -1,12 +1,10 @@
-<!-- Autonomous override applied at 2026-07-17 12:40 ET due to CRITICAL event (SOXX/SMH spike) — no action required; core held. -->
-
-# Tactical Todo — Updated 2026-07-17 12:40 ET (Hourly)
-*Market OPEN. Event detector CRITICAL (SOXX/SMH spike). Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
+# Tactical Todo — Updated 2026-07-17 13:35 ET (Hourly)
+*Market OPEN. Event detector NONE. Book: QQQ 6 / VOO 4. HOLD-ONLY rest of session.*
 
 ## Session Posture
 - **Regime:** neutral (target 75–90%). Live gross **~73.2%** — slightly below floor due to morning HOOD+AVGO exits; **do not force adds**.
 - **Market:** OPEN regular session only. No AH/pre-market equity orders.
-- **Equity / cash:** ~$9,479 / ~$2,543 (~26.8% cash).
+- **Equity / cash:** ~$9,496 / ~$2,543 (~26.8% cash).
 - **Daytrade count:** 0 | **Open orders:** NONE
 - **Audit:** clean | **hardLockRecommended:** false
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
@@ -22,14 +20,14 @@
 - When lifting locks use exact heading `HARD_LOCK LIFTED` (N/A this cycle).
 
 ## CRITICAL EVENT RESPONSE — CLEAR (detector NONE)
-- Morning CRITICAL is **over**. Midday tape orderly. No autonomous event sells required.
+- Morning CRITICAL and 12:40 SOXX/SMH spike are **over**. Midday tape orderly. No autonomous event sells required.
 - Still **NO NEW BUYS** (daily+weekly TO + caps — not because of CRITICAL).
 
 ## Cash / under-deployment blockers (explicit)
 1. Daily turnover **2/2 spent**.
 2. Weekly turnover **~32.1% > 20%**.
-3. VOO room ~$102 < 1 share (~$685).
-4. QQQ room ~$72 < 1 share (~$699).
+3. VOO room ~$104 < 1 share (~$686).
+4. QQQ room ~$64 < 1 share (~$702).
 5. 24h cooldown on HOOD and AVGO (sold today).
 6. Anti-churn: no same-day re-buy of sold symbols.
 
@@ -44,7 +42,7 @@
 - No full exit. Target 21–30%.
 
 ### AVGO — FLAT — NO POSITION
-- Sold today @ $360.33. Now ~$373 — **do not chase**.
+- Sold today @ $360.33. Now ~$375 — **do not chase**.
 - **Do NOT re-buy** within 24h. No limit bids. No market orders.
 - Anti-churn applies for remainder of session.
 
@@ -74,12 +72,12 @@
 - No same-day round trips. No new shorts. No after-hours equity orders.
 - Re-read this file before every order batch.
 - **Event-response guard:** Do not sell a single-name below an hourly catastrophic floor **unless price is through that floor**. Do not invent floors not written here.
-- Next hourly: 13:35 ET. Next tactical: 12:40 / 12:50 ET → expect **NO_ACTION**.
+- Next hourly: 14:35 ET. Next tactical: 13:40 / 13:50 ET → expect **NO_ACTION**.
 
 ## Concentration / Ban
 - Caps: QQQ ≤45%, VOO ≤30%, other ETFs ≤20%, stocks ≤15%.
 - `bannedSymbols: ["META"]`
 
 ## Current Book
-- QQQ 6 (~44.2%) | VOO 4 (~28.9%)
+- QQQ 6 (~44.3%) | VOO 4 (~28.9%)
 - Cash ~$2,543 (~26.8%) | Gross ~73.2%
