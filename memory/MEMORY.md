@@ -158,3 +158,17 @@ See `memory/standing_learnings.md`. Key reminders:
 - **2026-07-13:** AVGO/HOOD trail sells.
 - **2026-07-10:** META unauthorized — banned.
 - **2026-06:** Full liquidations — primary underperformance source.
+
+---
+
+## AUTONOMOUS OVERRIDE — Tactical Event Response — 2026-07-17 09:40 ET
+- **Event detector:** CRITICAL at 2026-07-17T13:40:02Z (09:40 ET). Broad semi crash: SOXX -4.95%, SMH -4.62%, QQQ -2.29%, XLK -2.83%; SPY -0.97% (MINOR).
+- **Held positions affected:** AVGO CRITICAL (-4.11% since prior detector); QQQ MINOR; VOO OK.
+- **Actions taken:**
+  - **09:40 ET:** SOLD 1 AVGO via limit @ 360.32 (filled @ 360.33) in event-response protective exit.
+  - **09:33 ET (prior cycle):** HOOD SELL 1 @ 100.96 filled (event-response protective exit; no longer held).
+- **Book now:** QQQ 6 / VOO 4. Cash ~$2,543 / equity ~$9,399. Gross ~72.9% (drifted below 75% floor due to protective sells; reassess at next hourly).
+- **No new buys, no new positions** during CRITICAL event. All buy lines remain suspended/banned.
+- **Audit:** clean, hardLockRecommended false, daytrades 0.
+- **Turnover:** Today 2 position-changing sells (HOOD 1, AVGO 1) — both event-response protective; weekly TO now ~$3,045 / ~32.4% of equity, exceeding 20% budget.
+- **Next expected action:** Hold core QQQ/VOO; wait for next hourly reset and weekly TO re-eval.

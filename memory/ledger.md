@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 09:43 : [tactical] Sold AVGO 1 on CRITICAL event
+- Event detector CRITICAL at 09:40 ET: SOXX -4.95%, AVGO -4.11%
+- Sold 1 AVGO limit @ 360.32, filled @ 360.33
+- HOOD already sold this morning @ 100.96 in prior event response
+- Gross exposure now 72.9%; book QQQ 6 / VOO 4
+- No new buys; daily discretionary budget 2/2; weekly TO exceeded
+
 2026-07-17 : 09:40 : [hourly] CRITICAL hold; no buys; HOOD flat
 - Detector CRITICAL (QQQ/SOXX/AVGO); SPY -1.1%; gross 76.8% inside 75-90% neutral
 - Equity ~9406 cash ~2183; book QQQ6/VOO4/AVGO1; HOOD sold 100.96 unauthorized vs Thu no-trigger
