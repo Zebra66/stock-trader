@@ -2,6 +2,13 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 09:40 : [hourly] CRITICAL hold; no buys; HOOD flat
+- Detector CRITICAL (QQQ/SOXX/AVGO); SPY -1.1%; gross 76.8% inside 75-90% neutral
+- Equity ~9406 cash ~2183; book QQQ6/VOO4/AVGO1; HOOD sold 100.96 unauthorized vs Thu no-trigger
+- NO NEW BUYS; weekly TO ~28.5%>20%; VOO/QQQ integer room closed
+- AVGO floor only below 349.50 limit 349.00; no core ETF exits; META banned
+- Repo mass-delete staging restored from HEAD; goals off track -5.9% vs SPY +3.4%
+
 2026-07-16 : 17:03 : [hourly] Post-close HOLD; weekly TO + caps bind
 - Market CLOSED; audit OK gross 78.2%; daytrades 0; open orders none
 - Equity ~$9552 cash ~$2082; book QQQ6/VOO4/AVGO1/HOOD1; both trails done
