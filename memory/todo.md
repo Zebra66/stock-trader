@@ -1,14 +1,14 @@
-# Tactical Todo — Updated 2026-07-17 14:35 ET (Hourly)
-*Market OPEN. Event detector CRITICAL. Book: QQQ 6 / VOO 4. HOLD-ONLY + NO NEW BUYS.*
-<!-- Autonomous override applied at 2026-07-17 14:40 ET due to CRITICAL event -->
+# Tactical Todo — Updated 2026-07-17 15:35 ET (Hourly)
+*Market OPEN (~25 min to close). Event detector NONE. Book: QQQ 6 / VOO 4. HOLD-ONLY + NO NEW BUYS.*
 
 ## Session Posture
 - **Regime:** neutral (target 75–90%). Live gross **~73.1%** — slightly below floor due to morning HOOD+AVGO exits; **do not force adds**.
-- **Market:** OPEN regular session only. No AH/pre-market equity orders.
-- **Equity / cash:** ~$9,461 / ~$2,543 (~26.9% cash).
+- **Market:** OPEN regular session only. No AH/pre-market equity orders. After 16:00 ET close → weekend hold.
+- **Equity / cash:** ~$9,453 / ~$2,543 (~26.9% cash).
 - **Daytrade count:** 0 | **Open orders:** NONE
 - **Audit:** clean | **hardLockRecommended:** false
 - **Lock file:** `active: false`, `bannedSymbols: ["META"]`
+- **CRITICAL cooled:** 14:40 CRITICAL is **cleared** (detector NONE). Buy block continues from turnover/cap/cooldown — not from CRITICAL.
 
 ## TURNOVER: 2/2 trades used today, ~32.2% of 20% weekly budget used
 - Today: HOOD SELL 1 @ $100.96; AVGO SELL 1 @ $360.33.
@@ -20,19 +20,14 @@
 - Do not invent HARD_LOCK.
 - When lifting locks use exact heading `HARD_LOCK LIFTED` (N/A this cycle).
 
-## CRITICAL EVENT RESPONSE — ACTIVE (detector CRITICAL at 14:40 ET)
-- **Detector:** CRITICAL due to SOXX -1.55%, XLK -1.01%, SMH -1.45% (broad/held OK: QQQ -0.67%, VOO -0.37%).
-- **NO NEW BUYS — CRITICAL EVENT.** All BUY conditions suspended until next hourly reset.
-- Held QQQ/VOO are within their no-stop hold instructions and not through any authorized stop-loss. No autonomous protective sells required.
-- No full core ETF liquidations. No new positions.
-
 ## Cash / under-deployment blockers (explicit)
 1. Daily turnover **2/2 spent**.
 2. Weekly turnover **~32.2% > 20%**.
-3. VOO room ~$104 < 1 share (~$684).
-4. QQQ room ~$74 < 1 share (~$697).
-5. 24h cooldown on HOOD and AVGO (sold today).
+3. VOO room ~$104 < 1 share (~$683).
+4. QQQ room ~$78 < 1 share (~$696).
+5. 24h cooldown on HOOD and AVGO (sold today ~9:33 / ~9:41 ET).
 6. Anti-churn: no same-day re-buy of sold symbols.
+7. Soft Friday close — no edge after friction vs do-nothing VOO/QQQ core.
 
 ## Position Instructions
 
@@ -45,7 +40,7 @@
 - No full exit. Target 21–30%.
 
 ### AVGO — FLAT — NO POSITION
-- Sold today @ $360.33. Now ~$373 — **do not chase**.
+- Sold today @ $360.33. Now ~$372 — **do not chase**.
 - **Do NOT re-buy** within 24h. No limit bids. No market orders.
 - Anti-churn applies for remainder of session.
 
@@ -62,11 +57,10 @@
 ## Active Sell Triggers
 - **NONE.** Do not invent stops, trails, or event-response sells for QQQ/VOO.
 - Core ETF risk is managed at hourly cadence only.
-- Current CRITICAL event (14:40 ET) does **not** override core hold instructions; QQQ/VOO held positions are OK severity.
-- If detector returns CRITICAL: **still no QQQ/VOO sells** unless a future hourly writes an executable condition after two-cycle confirmation. Default = hold core + no new buys.
+- If detector returns CRITICAL again: **still no QQQ/VOO sells** unless a future hourly writes an executable condition after two-cycle confirmation. Default = hold core + no new buys.
 
 ## Ranked Execution Priority
-1. **Hold book.** No orders expected rest of Friday into close.
+1. **Hold book.** No orders expected into close or weekend.
 2. Mon+ only (not today): VOO limit add if weekly TO headroom + ≥1 share cap room + non-CRITICAL + fresh hourly authorize.
 3. Never re-buy AVGO/HOOD inside 24h. Never META.
 
@@ -76,7 +70,7 @@
 - No same-day round trips. No new shorts. No after-hours equity orders.
 - Re-read this file before every order batch.
 - **Event-response guard:** Do not sell a single-name below an hourly catastrophic floor **unless price is through that floor**. Do not invent floors not written here.
-- Next hourly: 15:35 ET. Next tactical: 14:40 / 14:50 ET → expect **NO_ACTION**.
+- Next hourly: Mon Jul 20 ~9:35 ET (market closed weekend). Next tactical: 15:40 / 15:50 ET → expect **NO_ACTION**.
 
 ## Concentration / Ban
 - Caps: QQQ ≤45%, VOO ≤30%, other ETFs ≤20%, stocks ≤15%.

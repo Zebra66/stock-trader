@@ -2,6 +2,39 @@
 
 Per-cycle summary of the hourly and tactical agent findings and decisions.
 Format: `<YYYY-MM-DD : HH:MM> : [mode] TL;DR`, followed by up to 5 bullets.
+2026-07-17 : 15:36 : [hourly] Hold core; TO spent; CRITICAL cooled
+- Detector NONE at 15:35 (14:40 CRITICAL fully cooled). Book QQQ6/VOO4 unchanged; open orders none.
+- Equity ~$9,453; gross 73.1%; cash 26.9%. Portfolio -5.47% vs SPY +3.48% (gap -9.0 pp). Off track both goals.
+- Daily TO 2/2 (HOOD+AVGO sells); weekly ~32.2%>20%. Cap rooms <1 share VOO/QQQ. No buys, no sells.
+- Regime neutral unchanged. Accept ~73% into close/weekend. Next deploy reassess Mon Jul 20 if TO resets + integer room.
+- News/earnings coverage weak (GNews 503, Yahoo calendar 401). Alpha preservation: do-nothing core beats forced Friday adds.
+
+2026-07-17 : 15:30 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector MINOR at 15:30 ET; prior CRITICAL cooled
+- No active buy/sell triggers in todo.md
+- Daily turnover 2/2 spent, weekly 32.2% > 20%
+- Held QQQ 6 / VOO 4 unchanged
+- Next hourly 15:35 ET reassesses
+
+2026-07-17 : 15:20 : [tactical] Hold core, no orders 15:20 ET
+- Event detector cooled to NONE at 19:20Z; no protective action needed
+- Turnover budget 2/2 spent, weekly 32.2% over 20% ceiling
+- No active buy/sell triggers in todo.md; HOLD-ONLY posture
+- Book unchanged: QQQ 6 / VOO 4
+- Await 15:35 ET hourly reset
+
+2026-07-17 : 15:10 : [tactical] NO_ACTION: budget spent, no triggers
+- Event detector now NONE; CRITICAL event cooled
+- Daily TO 2/2 spent; weekly TO ~32.2% > 20%
+- No active sell triggers in todo.md
+- Hold QQQ 6 / VOO 4; no new buys until hourly reset
+
+2026-07-17 : 14:50 : [tactical] Hold-only: no conditions met, budget spent
+- Detector now NONE; todo still HOLD-ONLY + NO NEW BUYS
+- Daily turnover 2/2 spent; weekly 32.2% > 20%
+- No active sell triggers; QQQ 6 / VOO 4 unchanged
+- Expected NO_ACTION; await 15:35 ET hourly reset
+
 2026-07-17 : 14:40 : [tactical] CRITICAL event; hold core, no trades
 - Detector CRITICAL at 14:40 ET (SOXX -1.55%, XLK -1.01%, SMH -1.45%)
 - Held QQQ/VOO OK; no active sell triggers; no protective sells
